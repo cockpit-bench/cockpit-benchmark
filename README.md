@@ -22,7 +22,7 @@ cd cockpit-benchmark
 
 ## 版本与边界
 
-- 推荐版本：`v0.6.1`
+- 推荐版本：`v0.6.2`
 - APP：72 叶，242/360；Android FW：99 叶，275/468；合计 517/828。
 - 22 个 pending 仓不运输；`can-middleware` 仅为 v0.4 历史补充样例。
 - 旧 archive：https://github.com/cockpit-bench/cockpit-benchmark-v031-archive
