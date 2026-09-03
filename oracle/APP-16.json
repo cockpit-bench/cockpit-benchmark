@@ -1,0 +1,279 @@
+{
+  "schema_version": "2.0.0",
+  "repo_id": "APP-16",
+  "quality_tier": "low",
+  "delivery_status": "active",
+  "review_status": "two_pass_current_head_reviewed",
+  "repository": {
+    "head": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+    "tree": "bb26e4ab643d06a370a527e132b9dd43a3c76939",
+    "branch": "main",
+    "remote_count": 0
+  },
+  "canonical_total": {
+    "score": 20,
+    "max": 40
+  },
+  "canonical_leaves": [
+    {
+      "name": "architecture.componentization",
+      "max_score": 5,
+      "status": "scored",
+      "score": 3,
+      "rubric_band": "中等组件化",
+      "reason": "唯一架构事实：module_count=4、standard_named_module_count=1、base_layered=False、component_friendly=None、circular=False；按任意 N 条与循环依赖规则由高到低锁定 3 分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "architecture.componentization",
+          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "settings.gradle",
+          "line_start": 4,
+          "line_end": 4,
+          "symbol": "include",
+          "observation": "模块清单和依赖图入口。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "正向事实推导与反向逐档复核一致。",
+      "confidence": "high"
+    },
+    {
+      "name": "architecture.decoupling",
+      "max_score": 3,
+      "status": "scored",
+      "score": 2,
+      "rubric_band": "良好解耦",
+      "reason": "唯一架构事实：module_count=4、standard_named_module_count=1、base_layered=False、component_friendly=None、circular=False；按任意 N 条与循环依赖规则由高到低锁定 2 分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "architecture.decoupling",
+          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "settings.gradle",
+          "line_start": 4,
+          "line_end": 4,
+          "symbol": "include",
+          "observation": "模块清单和依赖图入口。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "正向事实推导与反向逐档复核一致。",
+      "confidence": "high"
+    },
+    {
+      "name": "architecture.modularization",
+      "max_score": 3,
+      "status": "scored",
+      "score": 2,
+      "rubric_band": "中等模块化",
+      "reason": "唯一架构事实：module_count=4、standard_named_module_count=1、base_layered=False、component_friendly=None、circular=False；按任意 N 条与循环依赖规则由高到低锁定 2 分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "architecture.modularization",
+          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "settings.gradle",
+          "line_start": 4,
+          "line_end": 4,
+          "symbol": "include",
+          "observation": "模块清单和依赖图入口。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "正向事实推导与反向逐档复核一致。",
+      "confidence": "high"
+    },
+    {
+      "name": "compilation.ci_independence",
+      "max_score": 3,
+      "status": "scored",
+      "score": 1,
+      "rubric_band": "依赖安卓系统层 CI",
+      "reason": "精确 HEAD 的 CI 分类为 android_system_ci；结合流水线内容完整度锁定 1 分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "compilation.ci_independence",
+          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "PREUPLOAD.cfg",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "file",
+          "observation": "CI 配置内容已逐项核对。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "正向事实推导与反向逐档复核一致。",
+      "confidence": "high"
+    },
+    {
+      "name": "compilation.compilation_independence",
+      "max_score": 3,
+      "status": "scored",
+      "score": 0,
+      "rubric_band": "源码依赖",
+      "reason": "依赖事实为 {'has_framework_jar_dependency': True, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': False}；同仓 project 源码依赖优先判 0，不能被 compileSdk 或 framework 表象抬分，锁定 0 分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "compilation.compilation_independence",
+          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "build.gradle",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "file",
+          "observation": "构建依赖声明入口。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "正向事实推导与反向逐档复核一致。",
+      "confidence": "high"
+    },
+    {
+      "name": "compilation.api_version_management",
+      "max_score": 3,
+      "status": "scored",
+      "score": 1,
+      "rubric_band": "手动版本不可控",
+      "reason": "手动版本=True、语义化管理=False、兼容性证据=0、自动化证据=0，锁定 1 分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "compilation.api_version_management",
+          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "build.gradle",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "file",
+          "observation": "版本控制入口。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "正向事实推导与反向逐档复核一致。",
+      "confidence": "high"
+    },
+    {
+      "name": "platform_reuse.platform_upgrade",
+      "max_score": 10,
+      "status": "scored",
+      "score": 3,
+      "rubric_band": "常规适配",
+      "reason": "唯一升级事实={'arch_bound_status': 1, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': True, 'has_non_compatible_api': True, 'version_bound_status': 3}；严格按 10→8→3→0 首个满足档锁定 3 分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "platform_reuse.platform_upgrade",
+          "observation": "该叶的完整 current-HEAD 事实与命中条件。 定向扫描计数={'manifest': 6, 'module_build': 6, 'resource': 2, 'source': 6, 'total': 20}",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "正向事实推导与反向逐档复核一致。",
+      "confidence": "high"
+    },
+    {
+      "name": "platform_reuse.release_branch_strategy",
+      "max_score": 10,
+      "status": "scored",
+      "score": 8,
+      "rubric_band": "同平台同一分支",
+      "reason": "真实 refs 含统一 main 及 8155/8295 平台分支，没有车型级一车一 SOP；按同平台同一分支锁定 8 分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "platform_reuse.release_branch_strategy",
+          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD"
+        },
+        {
+          "source": "git_ref",
+          "path": "refs/heads/platform/8155",
+          "line_start": 0,
+          "line_end": 0,
+          "symbol": "platform/8155",
+          "observation": "8155 使用真实平台分支。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "refs/heads/platform/8155"
+        },
+        {
+          "source": "git_ref",
+          "path": "refs/heads/platform/8295",
+          "line_start": 0,
+          "line_end": 0,
+          "symbol": "platform/8295",
+          "observation": "8295 使用另一真实平台分支。",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "refs/heads/platform/8295"
+        }
+      ],
+      "adjudication": "正向事实推导与反向逐档复核一致。",
+      "confidence": "high"
+    }
+  ],
+  "rubric": {
+    "path": "SCORE_RULES.md",
+    "sha256": "190613d83db6baab49bb66069d1de78fe7ba673f1969ff4e4a5b4c87ecbf7d74"
+  }
+}

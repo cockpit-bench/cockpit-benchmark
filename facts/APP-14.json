@@ -1,0 +1,619 @@
+{
+  "facts": {
+    "api_version": {
+      "automation_evidence": [],
+      "build_configuration_files": [
+        {
+          "git_blob_oid": "c26a0ffc1e8ffbd5bad7aa40cd87c5bca76b90f3",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:build.gradle",
+          "path": "build.gradle"
+        },
+        {
+          "git_blob_oid": "4391bbb184208153295aceaefb179786bb26f40e",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:shell-app/build.gradle",
+          "path": "shell-app/build.gradle"
+        },
+        {
+          "git_blob_oid": "25ffb0d1735b5c7951b53920abf77b38ea5d56db",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:shell-core/build.gradle",
+          "path": "shell-core/build.gradle"
+        }
+      ],
+      "compatibility_evidence": [],
+      "contract": "app_api_version_v2_facts",
+      "dedicated_version_control_files": [
+        {
+          "git_blob_oid": "888838b37a5776ee6bbfec3cce74de474d46bb2e",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:version.properties",
+          "path": "version.properties"
+        }
+      ],
+      "evidence_gaps": [],
+      "has_manual_version_candidate": true,
+      "has_semantic_version_candidate": true,
+      "production_manifest_files": [],
+      "release_note_files": [],
+      "rubric_defined_observation": null,
+      "semantic_candidate_policy": "A semver-shaped Gradle/AndroidManifest literal is manual version evidence; only a dedicated version-control subject can be a semantic-management candidate. CHANGELOG headings and Git tags are not version records.",
+      "version_control_files": [
+        {
+          "git_blob_oid": "c26a0ffc1e8ffbd5bad7aa40cd87c5bca76b90f3",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:build.gradle",
+          "path": "build.gradle"
+        },
+        {
+          "git_blob_oid": "4391bbb184208153295aceaefb179786bb26f40e",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:shell-app/build.gradle",
+          "path": "shell-app/build.gradle"
+        },
+        {
+          "git_blob_oid": "25ffb0d1735b5c7951b53920abf77b38ea5d56db",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:shell-core/build.gradle",
+          "path": "shell-core/build.gradle"
+        },
+        {
+          "git_blob_oid": "888838b37a5776ee6bbfec3cce74de474d46bb2e",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:version.properties",
+          "path": "version.properties"
+        }
+      ],
+      "version_records": [
+        "2.4.0",
+        "24"
+      ]
+    },
+    "architecture": {
+      "architecture_directory_evidence": {
+        "data_paths": [
+          "components/launcher/docklib/src/com/android/car/docklib/data/DockAppItem.kt",
+          "components/launcher/docklib/src/com/android/car/docklib/data/DockItemId.kt",
+          "components/launcher/docklib/src/com/android/car/docklib/data/DockProtoDataController.kt",
+          "components/launcher/docklib/src/com/android/car/docklib/data/DockProtoDataSource.kt",
+          "shell-core/src/main/java/com/android/systemui/cockpit/data/PlatformShellModeSource.java"
+        ],
+        "directory_parts": [
+          "aconfig",
+          "aconfig-platform-compat",
+          "activecall",
+          "activity",
+          "android",
+          "animation",
+          "annotation",
+          "apis",
+          "app",
+          "appactions",
+          "appgrid",
+          "assistive",
+          "audio",
+          "bluetooth",
+          "blurredbackground",
+          "buildsrc",
+          "calllog",
+          "calmmode",
+          "car",
+          "car-launcher-common",
+          "car-lib",
+          "carlauncher",
+          "carlaunchercommon",
+          "cluster",
+          "cockpit",
+          "com",
+          "common",
+          "compat",
+          "components",
+          "contact",
+          "dagger",
+          "data",
+          "datasources",
+          "datastore",
+          "dialer",
+          "dialpad",
+          "docklib",
+          "docklib-util",
+          "dockutil",
+          "domain",
+          "emulator",
+          "entity",
+          "events",
+          "fake",
+          "favorite",
+          "framework",
+          "hal",
+          "hardware",
+          "hidden",
+          "hidden-apis-compat",
+          "hidden-apis-disabled",
+          "hidden-apis-enabled",
+          "homescreen",
+          "hvac",
+          "inject",
+          "java",
+          "keyguard",
+          "launcher",
+          "launcheritem",
+          "lib",
+          "libs",
+          "livedata",
+          "log",
+          "main",
+          "media",
+          "notification",
+          "pagination",
+          "platform",
+          "power",
+          "presentation",
+          "privacy",
+          "proto",
+          "qc",
+          "real",
+          "recents",
+          "recyclerview",
+          "referenceui",
+          "repositories",
+          "restricted",
+          "robotests",
+          "search",
+          "service",
+          "services-car",
+          "settings",
+          "shadows",
+          "shell-app",
+          "shell-core",
+          "shortcuts",
+          "sideloaded",
+          "sms",
+          "src",
+          "statusbar",
+          "statusicon",
+          "storage",
+          "systembar",
+          "systemdialogs",
+          "systemui",
+          "task",
+          "taskstack",
+          "telecom",
+          "testdata",
+          "testing",
+          "toast",
+          "toasts",
+          "toggle",
+          "ui",
+          "user",
+          "userswitcher",
+          "view",
+          "voicerecognition",
+          "volume",
+          "warning",
+          "watchdog",
+          "widget",
+          "window",
+          "wm",
+          "wmshell"
+        ],
+        "domain_paths": [
+          "shell-core/src/main/java/com/android/systemui/cockpit/domain/ShellModeSource.java"
+        ],
+        "file_type_package_paths": [
+          "components/dialer/src/com/android/car/dialer/widget/CallTypeIconsView.java",
+          "components/dialer/src/com/android/car/dialer/widget/LoadingFrameLayout.java",
+          "src/com/android/systemui/car/activity/ActivityBlockingActivity.java",
+          "src/com/android/systemui/car/activity/ContinuousBlankActivity.java",
+          "src/com/android/systemui/car/activity/blurredbackground/BlurTextureProgram.java",
+          "src/com/android/systemui/car/activity/blurredbackground/BlurredSurfaceRenderer.java",
+          "src/com/android/systemui/car/activity/blurredbackground/GLHelper.java"
+        ],
+        "layered_modules": {
+          ":shell-app": [
+            "ui"
+          ],
+          ":shell-core": [
+            "data",
+            "domain"
+          ]
+        },
+        "production_code_path_count": 498,
+        "production_code_paths_sha256": "0fb43da752953c4c92d504c4d44f0efdc4b226b0140af06b79c126278e8d8341",
+        "ui_paths": [
+          "components/dialer/src/com/android/car/dialer/ui/TelecomActivity.java",
+          "components/dialer/src/com/android/car/dialer/ui/TelecomActivityViewModel.java",
+          "components/dialer/src/com/android/car/dialer/ui/TelecomPageTab.java",
+          "components/dialer/src/com/android/car/dialer/ui/ToolbarTitleLiveData.java",
+          "components/dialer/src/com/android/car/dialer/ui/activecall/ConferenceProfileAdapter.java",
+          "components/dialer/src/com/android/car/dialer/ui/activecall/ConferenceProfileViewHolder.java",
+          "components/dialer/src/com/android/car/dialer/ui/activecall/InCallActivity.java",
+          "components/dialer/src/com/android/car/dialer/ui/activecall/InCallFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/activecall/InCallViewModel.java",
+          "components/dialer/src/com/android/car/dialer/ui/activecall/IncomingCallFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/activecall/OnGoingCallControllerBarFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/activecall/OnHoldCallUserProfileFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/activecall/OngoingCallFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/activecall/OngoingConfCallFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/activecall/RingingCallControllerBarFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/calllog/CallHistoryFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/calllog/CallHistoryViewModel.java",
+          "components/dialer/src/com/android/car/dialer/ui/calllog/CallLogAdapter.java",
+          "components/dialer/src/com/android/car/dialer/ui/calllog/CallLogViewHolder.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/ContactResultsLiveData.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/DialerBaseFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/DialerListBaseFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/DialerListViewModel.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/DialerUtils.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/OnItemClickedListener.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/QueryStyle.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/SingleLiveEvent.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/UiCallLogLiveData.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/entity/ActionButton.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/entity/ContactSortingInfo.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/entity/Header.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/entity/HeaderViewHolder.java",
+          "components/dialer/src/com/android/car/dialer/ui/common/entity/UiCallLog.java",
+          "components/dialer/src/com/android/car/dialer/ui/contact/ContactDetailsAdapter.java",
+          "components/dialer/src/com/android/car/dialer/ui/contact/ContactDetailsFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/contact/ContactDetailsViewHolder.java",
+          "components/dialer/src/com/android/car/dialer/ui/contact/ContactDetailsViewModel.java",
+          "components/dialer/src/com/android/car/dialer/ui/contact/ContactListAdapter.java",
+          "components/dialer/src/com/android/car/dialer/ui/contact/ContactListFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/contact/ContactListViewHolder.java",
+          "components/dialer/src/com/android/car/dialer/ui/contact/ContactListViewModel.java",
+          "components/dialer/src/com/android/car/dialer/ui/dialpad/AbstractDialpadFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/dialpad/DialpadFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/dialpad/DialpadRestrictionViewModel.java",
+          "components/dialer/src/com/android/car/dialer/ui/dialpad/InCallDialpadFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/dialpad/KeypadButton.java",
+          "components/dialer/src/com/android/car/dialer/ui/dialpad/KeypadFragment.java",
+          "components/dialer/src/com/android/car/dialer/ui/dialpad/TypeDownResultsAdapter.java",
+          "components/dialer/src/com/android/car/dialer/ui/dialpad/TypeDownResultsViewModel.java",
+          "components/dialer/src/com/android/car/dialer/ui/favorite/AddFavoriteFragment.java"
+        ],
+        "unowned_code_path_count": 316,
+        "unowned_code_samples": [
+          "components/dialer/framework/emulator/src/com/android/car/dialer/framework/SingleHfpEmulatorModule.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/AdbBroadcastReceiver.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/AndroidFrameworkImpl.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/FakeHfpManager.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/FakeModule.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/FakeTelecomManager.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/InCallServiceProxy.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/SimulatedBluetoothDevice.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/CallLogDataHandler.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/CallLogRawData.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/ContactDataHandler.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/ContactRawData.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/DataParser.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/TestData.java",
+          "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/WorkerExecutor.java",
+          "components/dialer/framework/real/src/com/android/car/dialer/framework/AndroidFrameworkImpl.java",
+          "components/dialer/framework/real/src/com/android/car/dialer/framework/InCallServiceProxy.java",
+          "components/dialer/framework/real/src/com/android/car/dialer/framework/ProdModule.java",
+          "components/dialer/framework/src/com/android/car/dialer/framework/AndroidFramework.java",
+          "components/dialer/src/com/android/car/dialer/ComponentFetcher.java",
+          "components/dialer/src/com/android/car/dialer/Constants.java",
+          "components/dialer/src/com/android/car/dialer/DialerApplication.java",
+          "components/dialer/src/com/android/car/dialer/bluetooth/BluetoothPairListLiveData.java",
+          "components/dialer/src/com/android/car/dialer/bluetooth/BluetoothState.java",
+          "components/dialer/src/com/android/car/dialer/bluetooth/BluetoothStateLiveData.java",
+          "components/dialer/src/com/android/car/dialer/bluetooth/CallHistoryManager.java",
+          "components/dialer/src/com/android/car/dialer/bluetooth/HfpDeviceListLiveData.java",
+          "components/dialer/src/com/android/car/dialer/bluetooth/PhoneAccountManager.java",
+          "components/dialer/src/com/android/car/dialer/bluetooth/UiBluetoothMonitor.java",
+          "components/dialer/src/com/android/car/dialer/inject/BluetoothSingleHfpModule.java",
+          "components/dialer/src/com/android/car/dialer/inject/DialerModules.java",
+          "components/dialer/src/com/android/car/dialer/inject/HfpDataModules.java",
+          "components/dialer/src/com/android/car/dialer/livedata/AudioRouteLiveData.java",
+          "components/dialer/src/com/android/car/dialer/livedata/CallDetailLiveData.java",
+          "components/dialer/src/com/android/car/dialer/livedata/CallHistoryLiveData.java",
+          "components/dialer/src/com/android/car/dialer/livedata/CallStateLiveData.java",
+          "components/dialer/src/com/android/car/dialer/livedata/HeartBeatLiveData.java",
+          "components/dialer/src/com/android/car/dialer/livedata/SharedPreferencesLiveData.java",
+          "components/dialer/src/com/android/car/dialer/livedata/SupportedAudioRoutesLiveData.java",
+          "components/dialer/src/com/android/car/dialer/livedata/UnreadMissedCallLiveData.java",
+          "components/dialer/src/com/android/car/dialer/log/L.java",
+          "components/dialer/src/com/android/car/dialer/notification/InCallNotificationController.java",
+          "components/dialer/src/com/android/car/dialer/notification/MissedCallNotificationController.java",
+          "components/dialer/src/com/android/car/dialer/notification/MissedCallReceiver.java",
+          "components/dialer/src/com/android/car/dialer/notification/NotificationService.java",
+          "components/dialer/src/com/android/car/dialer/notification/NotificationUtils.java",
+          "components/dialer/src/com/android/car/dialer/sms/MessagingService.java",
+          "components/dialer/src/com/android/car/dialer/storage/BluetoothBondedListReceiver.java",
+          "components/dialer/src/com/android/car/dialer/storage/CipherConverter.java",
+          "components/dialer/src/com/android/car/dialer/storage/CipherWrapper.java"
+        ]
+      },
+      "contract": "app_architecture_v1_fact_candidates",
+      "cycles": [],
+      "evidence_gaps": [],
+      "excluded_test_or_build_modules": [],
+      "facts": {
+        "code_not_in_root_package": true,
+        "component_friendly_check_count": 3,
+        "component_friendly_checks": {
+          "business_boundary_isolation": false,
+          "common_capability_in_base_core": true,
+          "modules_have_independent_build_entry": true,
+          "no_cross_module_hardcoded_dependency": null,
+          "no_module_cycle": true
+        },
+        "has_base_layered_architecture": true,
+        "has_business_packages": true,
+        "has_circular_dependency": false,
+        "has_file_type_packages": true,
+        "has_layered_directory": true,
+        "is_component_friendly": true,
+        "layered_business_module_count": 2,
+        "module_count": 2,
+        "standard_named_module_count": 2
+      },
+      "internal_dependency_evidence": [
+        {
+          "excerpt": "dependencies { implementation project(':shell-core'); compileOnly files('../prebuilts/framework/framework.jar') }",
+          "from_module": ":shell-app",
+          "git_blob_oid": "4391bbb184208153295aceaefb179786bb26f40e",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:shell-app/build.gradle",
+          "line": 4,
+          "path": "shell-app/build.gradle",
+          "to_module": ":shell-core"
+        }
+      ],
+      "internal_dependency_graph": {
+        ":shell-app": [
+          ":shell-core"
+        ],
+        ":shell-core": []
+      },
+      "modules": [
+        {
+          "build_file": "shell-app/build.gradle",
+          "build_file_anchor": {
+            "git_blob_oid": "4391bbb184208153295aceaefb179786bb26f40e",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:shell-app/build.gradle",
+            "path": "shell-app/build.gradle"
+          },
+          "directory": "shell-app",
+          "name": ":shell-app",
+          "plugin_types": [
+            "android_application",
+            "java"
+          ],
+          "source_roots": [
+            "shell-app/src/main/java",
+            "src",
+            "res"
+          ],
+          "standard_named": true
+        },
+        {
+          "build_file": "shell-core/build.gradle",
+          "build_file_anchor": {
+            "git_blob_oid": "25ffb0d1735b5c7951b53920abf77b38ea5d56db",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:shell-core/build.gradle",
+            "path": "shell-core/build.gradle"
+          },
+          "directory": "shell-core",
+          "name": ":shell-core",
+          "plugin_types": [
+            "android_library",
+            "java"
+          ],
+          "source_roots": [
+            "shell-core/src/main/java",
+            "platform/services-car/service/src"
+          ],
+          "standard_named": true
+        }
+      ],
+      "settings_files": [
+        {
+          "git_blob_oid": "1e0b3eed5f6c4f7a98f4b2ef1114725ab0d26986",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:settings.gradle",
+          "path": "settings.gradle"
+        }
+      ]
+    },
+    "ci": {
+      "android_system_ci_configuration_files": [
+        {
+          "git_blob_oid": "7a9b8ca7b10b256dcbc9c15512986cfdf755a043",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:PREUPLOAD.cfg",
+          "path": "PREUPLOAD.cfg"
+        },
+        {
+          "git_blob_oid": "e50be3ba6ce005011358d399d19216a23072bf81",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:TEST_MAPPING",
+          "path": "TEST_MAPPING"
+        }
+      ],
+      "ci_configuration_files": [
+        {
+          "android_system_ci_markers": [
+            "root:PREUPLOAD.cfg"
+          ],
+          "configuration_kind": "android_system_ci",
+          "contains_build_step": false,
+          "contains_deploy_step": false,
+          "contains_test_step": false,
+          "git_blob_oid": "7a9b8ca7b10b256dcbc9c15512986cfdf755a043",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:PREUPLOAD.cfg",
+          "nonempty": true,
+          "path": "PREUPLOAD.cfg"
+        },
+        {
+          "android_system_ci_markers": [
+            "root:TEST_MAPPING"
+          ],
+          "configuration_kind": "android_system_ci",
+          "contains_build_step": false,
+          "contains_deploy_step": false,
+          "contains_test_step": false,
+          "git_blob_oid": "e50be3ba6ce005011358d399d19216a23072bf81",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:TEST_MAPPING",
+          "nonempty": true,
+          "path": "TEST_MAPPING"
+        }
+      ],
+      "ci_type_candidates": {
+        "classification_if_single_type": "android_system_ci",
+        "has_android_system_ci": true,
+        "has_independent_ci": false
+      },
+      "contract": "ci_v2_facts",
+      "evidence_gaps": [],
+      "independent_ci_configuration_files": [],
+      "no_effective_ci": false,
+      "nonempty_ci_configuration_count": 2,
+      "rubric_defined_observation": null
+    },
+    "compilation": {
+      "build_configuration_files": [
+        {
+          "git_blob_oid": "c26a0ffc1e8ffbd5bad7aa40cd87c5bca76b90f3",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:build.gradle",
+          "path": "build.gradle"
+        },
+        {
+          "git_blob_oid": "4391bbb184208153295aceaefb179786bb26f40e",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:shell-app/build.gradle",
+          "path": "shell-app/build.gradle"
+        },
+        {
+          "git_blob_oid": "25ffb0d1735b5c7951b53920abf77b38ea5d56db",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:shell-core/build.gradle",
+          "path": "shell-core/build.gradle"
+        }
+      ],
+      "contract": "app_compilation_v1_facts",
+      "dependency_type_candidates": {
+        "has_framework_jar_dependency": true,
+        "has_internal_project_source_dependency": true,
+        "has_local_aar_dependency": false,
+        "has_unversioned_external_artifact": false,
+        "has_versioned_external_artifact": false
+      },
+      "evidence_gaps": [],
+      "framework_jar_dependencies": [
+        {
+          "excerpt": "dependencies { implementation project(':shell-core'); compileOnly files('../prebuilts/framework/framework.jar') }",
+          "git_blob_oid": "4391bbb184208153295aceaefb179786bb26f40e",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:shell-app/build.gradle",
+          "line": 4,
+          "path": "shell-app/build.gradle"
+        }
+      ],
+      "internal_project_dependencies": [
+        {
+          "excerpt": "dependencies { implementation project(':shell-core'); compileOnly files('../prebuilts/framework/framework.jar') }",
+          "git_blob_oid": "4391bbb184208153295aceaefb179786bb26f40e",
+          "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:shell-app/build.gradle",
+          "kind": "internal_project_source",
+          "line": 4,
+          "path": "shell-app/build.gradle",
+          "target": ":shell-core"
+        }
+      ],
+      "local_aar_dependencies": [],
+      "maven_artifacts": [],
+      "type_safe_project_accessors": []
+    },
+    "platform_upgrade": {
+      "contract": "app_platform_upgrade_v2_fact_candidates",
+      "evidence_gaps": [],
+      "scan_policy": {
+        "allowed_roots": [
+          "src/main/java",
+          "src/main/kotlin",
+          "src/main/cpp",
+          "src/main/res"
+        ],
+        "allowed_special_files": [
+          "AndroidManifest.xml",
+          "module build.gradle[.kts]",
+          "module CMakeLists.txt"
+        ],
+        "excluded_parts": [
+          "androidtest",
+          "build",
+          "generated",
+          "test",
+          "tests",
+          "third-party",
+          "third_party"
+        ],
+        "mode": "exact_head_targeted_pattern_snapshot",
+        "negative_filters": [
+          "comments",
+          "string_literals_in_source",
+          "Log/Slog/Timber calls",
+          "test and Mock paths",
+          "generated paths"
+        ]
+      },
+      "seven_fact_candidates": {
+        "arch_bound_status": 1,
+        "has_arch_specific_deps": false,
+        "has_complex_permission_adaptation": false,
+        "has_interface_abstraction": false,
+        "has_light_permission_adaptation": true,
+        "has_non_compatible_api": true,
+        "version_bound_status": 1
+      },
+      "targeted_path_counts": {
+        "manifest": 14,
+        "module_build": 3,
+        "resource": 2,
+        "source": 9,
+        "total": 28
+      },
+      "targeted_paths_sha256": "44261d2aba63755278d5b8234c7ecf9bd6f34ec583d71a7f04239168537a9411"
+    },
+    "release_branch_strategy": {
+      "branches": [
+        {
+          "name": "develop",
+          "object_type": "commit",
+          "tip": "f04fca095550796a4812b3133225717ee5aa6f98"
+        },
+        {
+          "name": "main",
+          "object_type": "commit",
+          "tip": "83cc55774e720bc761e90e62ffb94bc61a33973b"
+        },
+        {
+          "name": "platform/8155",
+          "object_type": "commit",
+          "tip": "e78cfb993351ca86eac2777d4ff0c5b50b4abe5f"
+        },
+        {
+          "name": "platform/8295",
+          "object_type": "commit",
+          "tip": "d4afa6cac8e9b2d4125ec0fb8d4aa2ee69ba7f78"
+        },
+        {
+          "name": "release/2026.1",
+          "object_type": "commit",
+          "tip": "2883836c2dd71c7fd5238f78e244bd5c1a871fe7"
+        }
+      ],
+      "contract": "release_branch_strategy_v1_facts",
+      "default_branch": "main",
+      "evidence_gaps": [],
+      "has_unified_main": true,
+      "head_commit": "83cc55774e720bc761e90e62ffb94bc61a33973b",
+      "main_branches": [
+        "main"
+      ],
+      "platform_or_vehicle_suffix_branches": [
+        "platform/8155",
+        "platform/8295",
+        "release/2026.1"
+      ],
+      "release_branches": [
+        "release/2026.1"
+      ],
+      "rubric_defined_observation": null,
+      "sop_branch_count": 0,
+      "sop_branches": []
+    }
+  },
+  "head": "83cc55774e720bc761e90e62ffb94bc61a33973b",
+  "kind": "APP",
+  "repo_id": "APP-14"
+}

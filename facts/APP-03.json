@@ -1,0 +1,1048 @@
+{
+  "facts": {
+    "api_version": {
+      "automation_evidence": [],
+      "build_configuration_files": [
+        {
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "path": "app/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "4a0e2be384ae8ebbd5dea929b615015775d41cdb",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:build.gradle.kts",
+          "path": "build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "path": "comfort/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "path": "diagnostics/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+          "path": "domain/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "path": "hvac-core/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "path": "telemetry/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "path": "vehicle-api/build.gradle.kts"
+        }
+      ],
+      "compatibility_evidence": [
+        {
+          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "line": 14,
+          "path": "app/build.gradle.kts"
+        },
+        {
+          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
+          "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "line": 10,
+          "path": "comfort/build.gradle.kts"
+        },
+        {
+          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
+          "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "line": 10,
+          "path": "diagnostics/build.gradle.kts"
+        },
+        {
+          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
+          "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+          "line": 10,
+          "path": "domain/build.gradle.kts"
+        },
+        {
+          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
+          "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "line": 10,
+          "path": "hvac-core/build.gradle.kts"
+        },
+        {
+          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
+          "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "line": 10,
+          "path": "telemetry/build.gradle.kts"
+        },
+        {
+          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
+          "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "line": 10,
+          "path": "vehicle-api/build.gradle.kts"
+        }
+      ],
+      "contract": "app_api_version_v2_facts",
+      "dedicated_version_control_files": [
+        {
+          "git_blob_oid": "2f822748fa5419ef79b886c0b132fc57787de1e3",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:version.properties",
+          "path": "version.properties"
+        }
+      ],
+      "evidence_gaps": [],
+      "has_manual_version_candidate": true,
+      "has_semantic_version_candidate": true,
+      "production_manifest_files": [
+        {
+          "git_blob_oid": "678c2a4b5e7677d2b59667ba294bbcdb5a27a136",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/src/main/AndroidManifest.xml",
+          "path": "app/src/main/AndroidManifest.xml"
+        },
+        {
+          "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/src/main/AndroidManifest.xml",
+          "path": "comfort/src/main/AndroidManifest.xml"
+        },
+        {
+          "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/src/main/AndroidManifest.xml",
+          "path": "diagnostics/src/main/AndroidManifest.xml"
+        },
+        {
+          "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/src/main/AndroidManifest.xml",
+          "path": "domain/src/main/AndroidManifest.xml"
+        },
+        {
+          "git_blob_oid": "01969353e3a9c0cbee9b0fe285a97b71308a36f6",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/src/main/AndroidManifest.xml",
+          "path": "hvac-core/src/main/AndroidManifest.xml"
+        },
+        {
+          "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/src/main/AndroidManifest.xml",
+          "path": "telemetry/src/main/AndroidManifest.xml"
+        },
+        {
+          "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/src/main/AndroidManifest.xml",
+          "path": "vehicle-api/src/main/AndroidManifest.xml"
+        }
+      ],
+      "release_note_files": [
+        {
+          "git_blob_oid": "036e3c5b741de7a0af3a000a3516742f3c6b3a2e",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:RELEASE_NOTES.md",
+          "path": "RELEASE_NOTES.md"
+        }
+      ],
+      "rubric_defined_observation": null,
+      "semantic_candidate_policy": "A semver-shaped Gradle/AndroidManifest literal is manual version evidence; only a dedicated version-control subject can be a semantic-management candidate. CHANGELOG headings and Git tags are not version records.",
+      "version_control_files": [
+        {
+          "git_blob_oid": "036e3c5b741de7a0af3a000a3516742f3c6b3a2e",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:RELEASE_NOTES.md",
+          "path": "RELEASE_NOTES.md"
+        },
+        {
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "path": "app/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "678c2a4b5e7677d2b59667ba294bbcdb5a27a136",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/src/main/AndroidManifest.xml",
+          "path": "app/src/main/AndroidManifest.xml"
+        },
+        {
+          "git_blob_oid": "4a0e2be384ae8ebbd5dea929b615015775d41cdb",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:build.gradle.kts",
+          "path": "build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "path": "comfort/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/src/main/AndroidManifest.xml",
+          "path": "comfort/src/main/AndroidManifest.xml"
+        },
+        {
+          "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "path": "diagnostics/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/src/main/AndroidManifest.xml",
+          "path": "diagnostics/src/main/AndroidManifest.xml"
+        },
+        {
+          "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+          "path": "domain/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/src/main/AndroidManifest.xml",
+          "path": "domain/src/main/AndroidManifest.xml"
+        },
+        {
+          "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "path": "hvac-core/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "01969353e3a9c0cbee9b0fe285a97b71308a36f6",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/src/main/AndroidManifest.xml",
+          "path": "hvac-core/src/main/AndroidManifest.xml"
+        },
+        {
+          "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "path": "telemetry/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/src/main/AndroidManifest.xml",
+          "path": "telemetry/src/main/AndroidManifest.xml"
+        },
+        {
+          "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "path": "vehicle-api/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/src/main/AndroidManifest.xml",
+          "path": "vehicle-api/src/main/AndroidManifest.xml"
+        },
+        {
+          "git_blob_oid": "2f822748fa5419ef79b886c0b132fc57787de1e3",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:version.properties",
+          "path": "version.properties"
+        }
+      ],
+      "version_records": [
+        "2.1.0",
+        "20100"
+      ]
+    },
+    "architecture": {
+      "architecture_directory_evidence": {
+        "data_paths": [],
+        "directory_parts": [
+          "android",
+          "app",
+          "car",
+          "catalog",
+          "climatix",
+          "cockpitbench",
+          "com",
+          "comfort",
+          "controllers",
+          "detectors",
+          "diagnostics",
+          "domain",
+          "hvac",
+          "hvac-core",
+          "java",
+          "main",
+          "policies",
+          "presentation",
+          "scenes",
+          "schema",
+          "src",
+          "telemetry",
+          "ui",
+          "vehicle",
+          "vehicle-api"
+        ],
+        "domain_paths": [
+          "domain/build.gradle.kts",
+          "domain/src/main/java/com/cockpitbench/climatix/domain/CabinZone.kt",
+          "domain/src/main/java/com/cockpitbench/climatix/domain/ClimateCommand.kt",
+          "domain/src/main/java/com/cockpitbench/climatix/domain/ClimatePolicy.kt",
+          "domain/src/main/java/com/cockpitbench/climatix/domain/ClimateRepository.kt",
+          "domain/src/main/java/com/cockpitbench/climatix/domain/ClimateState.kt",
+          "domain/src/main/java/com/cockpitbench/climatix/domain/ObserveClimate.kt",
+          "domain/src/main/java/com/cockpitbench/climatix/domain/Temperature.kt",
+          "domain/src/main/java/com/cockpitbench/climatix/domain/UpdateClimate.kt"
+        ],
+        "file_type_package_paths": [],
+        "layered_modules": {
+          ":app": [
+            "ui"
+          ],
+          ":domain": [
+            "domain"
+          ],
+          ":hvac-core": [
+            "ui"
+          ]
+        },
+        "production_code_path_count": 115,
+        "production_code_paths_sha256": "a0bb96b806bbfaa6fd6438f03c56fef0da1f1e664c83871cbd7378d4f49f334c",
+        "ui_paths": [
+          "app/src/main/java/com/cockpitbench/climatix/presentation/ClimateActivity.kt",
+          "app/src/main/java/com/cockpitbench/climatix/presentation/ClimateCompositionRoot.kt",
+          "app/src/main/java/com/cockpitbench/climatix/presentation/ClimateRuntime.kt",
+          "app/src/main/java/com/cockpitbench/climatix/presentation/ClimateScreenState.kt",
+          "app/src/main/java/com/cockpitbench/climatix/presentation/ClimateViewModel.kt",
+          "hvac-core/src/main/java/com/android/car/hvac/ui/FanDirectionButtons.java",
+          "hvac-core/src/main/java/com/android/car/hvac/ui/FanSpeedBar.java",
+          "hvac-core/src/main/java/com/android/car/hvac/ui/FanSpeedBarSegment.java",
+          "hvac-core/src/main/java/com/android/car/hvac/ui/HvacPanelRow.java",
+          "hvac-core/src/main/java/com/android/car/hvac/ui/PressAndHoldTouchListener.java",
+          "hvac-core/src/main/java/com/android/car/hvac/ui/SeatWarmerButton.java",
+          "hvac-core/src/main/java/com/android/car/hvac/ui/TemperatureBarOverlay.java",
+          "hvac-core/src/main/java/com/android/car/hvac/ui/ToggleButton.java"
+        ],
+        "unowned_code_path_count": 2,
+        "unowned_code_samples": [
+          "build.gradle.kts",
+          "settings.gradle.kts"
+        ]
+      },
+      "contract": "app_architecture_v1_fact_candidates",
+      "cycles": [],
+      "evidence_gaps": [],
+      "excluded_test_or_build_modules": [],
+      "facts": {
+        "code_not_in_root_package": false,
+        "component_friendly_check_count": 3,
+        "component_friendly_checks": {
+          "business_boundary_isolation": false,
+          "common_capability_in_base_core": true,
+          "modules_have_independent_build_entry": true,
+          "no_cross_module_hardcoded_dependency": null,
+          "no_module_cycle": true
+        },
+        "has_base_layered_architecture": true,
+        "has_business_packages": true,
+        "has_circular_dependency": false,
+        "has_file_type_packages": false,
+        "has_layered_directory": true,
+        "is_component_friendly": true,
+        "layered_business_module_count": 3,
+        "module_count": 7,
+        "standard_named_module_count": 3
+      },
+      "internal_dependency_evidence": [
+        {
+          "excerpt": "implementation(project(\":domain\"))",
+          "from_module": ":app",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "line": 38,
+          "path": "app/build.gradle.kts",
+          "to_module": ":domain"
+        },
+        {
+          "excerpt": "implementation(project(\":vehicle-api\"))",
+          "from_module": ":app",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "line": 39,
+          "path": "app/build.gradle.kts",
+          "to_module": ":vehicle-api"
+        },
+        {
+          "excerpt": "implementation(project(\":hvac-core\"))",
+          "from_module": ":app",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "line": 40,
+          "path": "app/build.gradle.kts",
+          "to_module": ":hvac-core"
+        },
+        {
+          "excerpt": "implementation(project(\":comfort\"))",
+          "from_module": ":app",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "line": 41,
+          "path": "app/build.gradle.kts",
+          "to_module": ":comfort"
+        },
+        {
+          "excerpt": "implementation(project(\":diagnostics\"))",
+          "from_module": ":app",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "line": 42,
+          "path": "app/build.gradle.kts",
+          "to_module": ":diagnostics"
+        },
+        {
+          "excerpt": "implementation(project(\":telemetry\"))",
+          "from_module": ":app",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "line": 43,
+          "path": "app/build.gradle.kts",
+          "to_module": ":telemetry"
+        },
+        {
+          "excerpt": "implementation(project(\":domain\"))",
+          "from_module": ":vehicle-api",
+          "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "line": 19,
+          "path": "vehicle-api/build.gradle.kts",
+          "to_module": ":domain"
+        },
+        {
+          "excerpt": "implementation(project(\":domain\"))",
+          "from_module": ":hvac-core",
+          "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "line": 19,
+          "path": "hvac-core/build.gradle.kts",
+          "to_module": ":domain"
+        },
+        {
+          "excerpt": "implementation(project(\":vehicle-api\"))",
+          "from_module": ":hvac-core",
+          "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "line": 20,
+          "path": "hvac-core/build.gradle.kts",
+          "to_module": ":vehicle-api"
+        },
+        {
+          "excerpt": "implementation(project(\":domain\"))",
+          "from_module": ":comfort",
+          "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "line": 18,
+          "path": "comfort/build.gradle.kts",
+          "to_module": ":domain"
+        },
+        {
+          "excerpt": "implementation(project(\":domain\"))",
+          "from_module": ":diagnostics",
+          "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "line": 18,
+          "path": "diagnostics/build.gradle.kts",
+          "to_module": ":domain"
+        },
+        {
+          "excerpt": "implementation(project(\":domain\"))",
+          "from_module": ":telemetry",
+          "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "line": 18,
+          "path": "telemetry/build.gradle.kts",
+          "to_module": ":domain"
+        }
+      ],
+      "internal_dependency_graph": {
+        ":app": [
+          ":comfort",
+          ":diagnostics",
+          ":domain",
+          ":hvac-core",
+          ":telemetry",
+          ":vehicle-api"
+        ],
+        ":comfort": [
+          ":domain"
+        ],
+        ":diagnostics": [
+          ":domain"
+        ],
+        ":domain": [],
+        ":hvac-core": [
+          ":domain",
+          ":vehicle-api"
+        ],
+        ":telemetry": [
+          ":domain"
+        ],
+        ":vehicle-api": [
+          ":domain"
+        ]
+      },
+      "modules": [
+        {
+          "build_file": "app/build.gradle.kts",
+          "build_file_anchor": {
+            "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+            "path": "app/build.gradle.kts"
+          },
+          "directory": "app",
+          "name": ":app",
+          "plugin_types": [
+            "android_application",
+            "java"
+          ],
+          "source_roots": [
+            "app/src/main/java",
+            "app/src/main/kotlin",
+            "app/src/main/cpp",
+            "app/src/main/res"
+          ],
+          "standard_named": true
+        },
+        {
+          "build_file": "domain/build.gradle.kts",
+          "build_file_anchor": {
+            "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
+            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+            "path": "domain/build.gradle.kts"
+          },
+          "directory": "domain",
+          "name": ":domain",
+          "plugin_types": [
+            "android_library"
+          ],
+          "source_roots": [
+            "domain/src/main/java",
+            "domain/src/main/kotlin",
+            "domain/src/main/cpp",
+            "domain/src/main/res"
+          ],
+          "standard_named": true
+        },
+        {
+          "build_file": "vehicle-api/build.gradle.kts",
+          "build_file_anchor": {
+            "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
+            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+            "path": "vehicle-api/build.gradle.kts"
+          },
+          "directory": "vehicle-api",
+          "name": ":vehicle-api",
+          "plugin_types": [
+            "android_library"
+          ],
+          "source_roots": [
+            "vehicle-api/src/main/java",
+            "vehicle-api/src/main/kotlin",
+            "vehicle-api/src/main/cpp",
+            "vehicle-api/src/main/res"
+          ],
+          "standard_named": false
+        },
+        {
+          "build_file": "hvac-core/build.gradle.kts",
+          "build_file_anchor": {
+            "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
+            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+            "path": "hvac-core/build.gradle.kts"
+          },
+          "directory": "hvac-core",
+          "name": ":hvac-core",
+          "plugin_types": [
+            "android_library"
+          ],
+          "source_roots": [
+            "hvac-core/src/main/java",
+            "hvac-core/src/main/kotlin",
+            "hvac-core/src/main/cpp",
+            "hvac-core/src/main/res"
+          ],
+          "standard_named": true
+        },
+        {
+          "build_file": "comfort/build.gradle.kts",
+          "build_file_anchor": {
+            "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
+            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+            "path": "comfort/build.gradle.kts"
+          },
+          "directory": "comfort",
+          "name": ":comfort",
+          "plugin_types": [
+            "android_library"
+          ],
+          "source_roots": [
+            "comfort/src/main/java",
+            "comfort/src/main/kotlin",
+            "comfort/src/main/cpp",
+            "comfort/src/main/res"
+          ],
+          "standard_named": false
+        },
+        {
+          "build_file": "diagnostics/build.gradle.kts",
+          "build_file_anchor": {
+            "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
+            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+            "path": "diagnostics/build.gradle.kts"
+          },
+          "directory": "diagnostics",
+          "name": ":diagnostics",
+          "plugin_types": [
+            "android_library"
+          ],
+          "source_roots": [
+            "diagnostics/src/main/java",
+            "diagnostics/src/main/kotlin",
+            "diagnostics/src/main/cpp",
+            "diagnostics/src/main/res"
+          ],
+          "standard_named": false
+        },
+        {
+          "build_file": "telemetry/build.gradle.kts",
+          "build_file_anchor": {
+            "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
+            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+            "path": "telemetry/build.gradle.kts"
+          },
+          "directory": "telemetry",
+          "name": ":telemetry",
+          "plugin_types": [
+            "android_library"
+          ],
+          "source_roots": [
+            "telemetry/src/main/java",
+            "telemetry/src/main/kotlin",
+            "telemetry/src/main/cpp",
+            "telemetry/src/main/res"
+          ],
+          "standard_named": false
+        }
+      ],
+      "settings_files": [
+        {
+          "git_blob_oid": "36c28fbdceeb5adda1af1b33b3bf9db0eeed9d3e",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:settings.gradle.kts",
+          "path": "settings.gradle.kts"
+        }
+      ]
+    },
+    "ci": {
+      "android_system_ci_configuration_files": [],
+      "ci_configuration_files": [
+        {
+          "android_system_ci_markers": [],
+          "configuration_kind": "independent_ci",
+          "contains_build_step": true,
+          "contains_deploy_step": false,
+          "contains_test_step": true,
+          "git_blob_oid": "4177d6bdd83fb2079e3adabf78ff3c3d3414880b",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:.github/workflows/android.yml",
+          "nonempty": true,
+          "path": ".github/workflows/android.yml"
+        }
+      ],
+      "ci_type_candidates": {
+        "classification_if_single_type": "independent_ci",
+        "has_android_system_ci": false,
+        "has_independent_ci": true
+      },
+      "contract": "ci_v2_facts",
+      "evidence_gaps": [],
+      "independent_ci_configuration_files": [
+        {
+          "git_blob_oid": "4177d6bdd83fb2079e3adabf78ff3c3d3414880b",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:.github/workflows/android.yml",
+          "path": ".github/workflows/android.yml"
+        }
+      ],
+      "no_effective_ci": false,
+      "nonempty_ci_configuration_count": 1,
+      "rubric_defined_observation": null
+    },
+    "compilation": {
+      "build_configuration_files": [
+        {
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "path": "app/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "4a0e2be384ae8ebbd5dea929b615015775d41cdb",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:build.gradle.kts",
+          "path": "build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "path": "comfort/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "path": "diagnostics/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+          "path": "domain/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "path": "hvac-core/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "path": "telemetry/build.gradle.kts"
+        },
+        {
+          "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "path": "vehicle-api/build.gradle.kts"
+        }
+      ],
+      "contract": "app_compilation_v1_facts",
+      "dependency_type_candidates": {
+        "has_framework_jar_dependency": false,
+        "has_internal_project_source_dependency": true,
+        "has_local_aar_dependency": false,
+        "has_unversioned_external_artifact": false,
+        "has_versioned_external_artifact": true
+      },
+      "evidence_gaps": [],
+      "framework_jar_dependencies": [],
+      "internal_project_dependencies": [
+        {
+          "excerpt": "implementation(project(\":domain\"))",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "kind": "internal_project_source",
+          "line": 38,
+          "path": "app/build.gradle.kts",
+          "target": ":domain"
+        },
+        {
+          "excerpt": "implementation(project(\":vehicle-api\"))",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "kind": "internal_project_source",
+          "line": 39,
+          "path": "app/build.gradle.kts",
+          "target": ":vehicle-api"
+        },
+        {
+          "excerpt": "implementation(project(\":hvac-core\"))",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "kind": "internal_project_source",
+          "line": 40,
+          "path": "app/build.gradle.kts",
+          "target": ":hvac-core"
+        },
+        {
+          "excerpt": "implementation(project(\":comfort\"))",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "kind": "internal_project_source",
+          "line": 41,
+          "path": "app/build.gradle.kts",
+          "target": ":comfort"
+        },
+        {
+          "excerpt": "implementation(project(\":diagnostics\"))",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "kind": "internal_project_source",
+          "line": 42,
+          "path": "app/build.gradle.kts",
+          "target": ":diagnostics"
+        },
+        {
+          "excerpt": "implementation(project(\":telemetry\"))",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "kind": "internal_project_source",
+          "line": 43,
+          "path": "app/build.gradle.kts",
+          "target": ":telemetry"
+        },
+        {
+          "excerpt": "implementation(project(\":domain\"))",
+          "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "kind": "internal_project_source",
+          "line": 18,
+          "path": "comfort/build.gradle.kts",
+          "target": ":domain"
+        },
+        {
+          "excerpt": "implementation(project(\":domain\"))",
+          "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "kind": "internal_project_source",
+          "line": 18,
+          "path": "diagnostics/build.gradle.kts",
+          "target": ":domain"
+        },
+        {
+          "excerpt": "implementation(project(\":domain\"))",
+          "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "kind": "internal_project_source",
+          "line": 19,
+          "path": "hvac-core/build.gradle.kts",
+          "target": ":domain"
+        },
+        {
+          "excerpt": "implementation(project(\":vehicle-api\"))",
+          "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "kind": "internal_project_source",
+          "line": 20,
+          "path": "hvac-core/build.gradle.kts",
+          "target": ":vehicle-api"
+        },
+        {
+          "excerpt": "implementation(project(\":domain\"))",
+          "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "kind": "internal_project_source",
+          "line": 18,
+          "path": "telemetry/build.gradle.kts",
+          "target": ":domain"
+        },
+        {
+          "excerpt": "implementation(project(\":domain\"))",
+          "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "kind": "internal_project_source",
+          "line": 19,
+          "path": "vehicle-api/build.gradle.kts",
+          "target": ":domain"
+        }
+      ],
+      "local_aar_dependencies": [],
+      "maven_artifacts": [
+        {
+          "artifact": "activity-ktx",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "group": "androidx.activity",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "line": 44,
+          "literal_semver": true,
+          "path": "app/build.gradle.kts",
+          "version_expression": "1.9.3"
+        },
+        {
+          "artifact": "lifecycle-viewmodel-ktx",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "group": "androidx.lifecycle",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "line": 45,
+          "literal_semver": true,
+          "path": "app/build.gradle.kts",
+          "version_expression": "2.8.7"
+        },
+        {
+          "artifact": "junit",
+          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "group": "androidx.test.ext",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "line": 46,
+          "literal_semver": true,
+          "path": "app/build.gradle.kts",
+          "version_expression": "1.2.1"
+        },
+        {
+          "artifact": "junit",
+          "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
+          "group": "junit",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "line": 19,
+          "literal_semver": true,
+          "path": "comfort/build.gradle.kts",
+          "version_expression": "4.13.2"
+        },
+        {
+          "artifact": "junit",
+          "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
+          "group": "junit",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "line": 19,
+          "literal_semver": true,
+          "path": "diagnostics/build.gradle.kts",
+          "version_expression": "4.13.2"
+        },
+        {
+          "artifact": "kotlinx-coroutines-core",
+          "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
+          "group": "org.jetbrains.kotlinx",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+          "line": 19,
+          "literal_semver": true,
+          "path": "domain/build.gradle.kts",
+          "version_expression": "1.9.0"
+        },
+        {
+          "artifact": "junit",
+          "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
+          "group": "junit",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+          "line": 20,
+          "literal_semver": true,
+          "path": "domain/build.gradle.kts",
+          "version_expression": "4.13.2"
+        },
+        {
+          "artifact": "junit",
+          "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
+          "group": "junit",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "line": 22,
+          "literal_semver": true,
+          "path": "hvac-core/build.gradle.kts",
+          "version_expression": "4.13.2"
+        },
+        {
+          "artifact": "junit",
+          "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
+          "group": "junit",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "line": 19,
+          "literal_semver": true,
+          "path": "telemetry/build.gradle.kts",
+          "version_expression": "4.13.2"
+        },
+        {
+          "artifact": "kotlinx-coroutines-core",
+          "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
+          "group": "org.jetbrains.kotlinx",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "line": 20,
+          "literal_semver": true,
+          "path": "vehicle-api/build.gradle.kts",
+          "version_expression": "1.9.0"
+        },
+        {
+          "artifact": "junit",
+          "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
+          "group": "junit",
+          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "line": 21,
+          "literal_semver": true,
+          "path": "vehicle-api/build.gradle.kts",
+          "version_expression": "4.13.2"
+        }
+      ],
+      "type_safe_project_accessors": []
+    },
+    "platform_upgrade": {
+      "contract": "app_platform_upgrade_v2_fact_candidates",
+      "evidence_gaps": [],
+      "scan_policy": {
+        "allowed_roots": [
+          "src/main/java",
+          "src/main/kotlin",
+          "src/main/cpp",
+          "src/main/res"
+        ],
+        "allowed_special_files": [
+          "AndroidManifest.xml",
+          "module build.gradle[.kts]",
+          "module CMakeLists.txt"
+        ],
+        "excluded_parts": [
+          "androidtest",
+          "build",
+          "generated",
+          "test",
+          "tests",
+          "third-party",
+          "third_party"
+        ],
+        "mode": "exact_head_targeted_pattern_snapshot",
+        "negative_filters": [
+          "comments",
+          "string_literals_in_source",
+          "Log/Slog/Timber calls",
+          "test and Mock paths",
+          "generated paths"
+        ]
+      },
+      "seven_fact_candidates": {
+        "arch_bound_status": 0,
+        "has_arch_specific_deps": false,
+        "has_complex_permission_adaptation": false,
+        "has_interface_abstraction": false,
+        "has_light_permission_adaptation": false,
+        "has_non_compatible_api": true,
+        "version_bound_status": 0
+      },
+      "targeted_path_counts": {
+        "manifest": 7,
+        "module_build": 7,
+        "resource": 64,
+        "source": 106,
+        "total": 184
+      },
+      "targeted_paths_sha256": "9a9ed04538bf8fcd41307199e48478580c73a5ef63f4131b42fff56da846831b"
+    },
+    "release_branch_strategy": {
+      "branches": [
+        {
+          "name": "develop",
+          "object_type": "commit",
+          "tip": "7fc67a915ef594c8ba573fae90053e286b790713"
+        },
+        {
+          "name": "main",
+          "object_type": "commit",
+          "tip": "c0a37f5985611ffe5b0dbb65bc4352729108d828"
+        },
+        {
+          "name": "platform/8155",
+          "object_type": "commit",
+          "tip": "b313db00f552d9dac3ba3e20a5fc0df0e873d646"
+        },
+        {
+          "name": "platform/8295",
+          "object_type": "commit",
+          "tip": "f6df3cc885c4ba3c6e229800781a78c873665db2"
+        },
+        {
+          "name": "release/1.0",
+          "object_type": "commit",
+          "tip": "85770d2ca3b6038c90a3a3b989b1bbb8c6acadc2"
+        }
+      ],
+      "contract": "release_branch_strategy_v1_facts",
+      "default_branch": "main",
+      "evidence_gaps": [],
+      "has_unified_main": true,
+      "head_commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+      "main_branches": [
+        "main"
+      ],
+      "platform_or_vehicle_suffix_branches": [
+        "platform/8155",
+        "platform/8295"
+      ],
+      "release_branches": [
+        "release/1.0"
+      ],
+      "rubric_defined_observation": null,
+      "sop_branch_count": 0,
+      "sop_branches": []
+    }
+  },
+  "head": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+  "kind": "APP",
+  "repo_id": "APP-03"
+}

@@ -162,7 +162,6 @@
       "delivery": {
         "status": "active",
         "repository_url": "https://github.com/cockpit-bench/aurora-settings.git",
-        "default_branch": "main",
         "expected_head": "150289b5e0d67acf395aa5418e43347207e9c1b4",
         "refs": {
           "refs/heads/develop": "e0d173ae0eb292129ee05b3bdc853b9c019acd06",
@@ -188,7 +187,7 @@
       "business_domain": "座舱 Launcher/系统桌面",
       "commit_count": 17,
       "default_branch": "main",
-      "delivery_status": "pending",
+      "delivery_status": "active",
       "dimensions_covered": [
         "architecture",
         "solid",
@@ -352,7 +351,7 @@
       "quality_rationale": "八个可识别 Soong 模块覆盖 Launcher、Dock、AppGrid、公共库与 system-shell；系统栏、用户切换、窗口和通知控制器来自独立锁定公开 lineage，71 个测试源与 TEST_MAPPING 覆盖桌面/系统壳边界。确定性探针无近重复文件，产品分支均基于最新 main。",
       "quality_tier": "high",
       "relative_path": "repos/app/horizon-launcher",
-      "repo_head": "65141eaabbb8c4110e0f20616b9a27ddb9ec7629",
+      "repo_head": "82f129b9d9c1270ae2707032eee6b79c8dd072f2",
       "size_band": "medium",
       "source": {
         "license": "Apache-2.0",
@@ -370,9 +369,18 @@
       "tracked_files": 437,
       "validation_status": "verified",
       "delivery": {
-        "status": "pending",
-        "repository_url": null,
-        "transport": "metadata_only"
+        "status": "active",
+        "repository_url": "https://github.com/cockpit-bench/horizon-launcher.git",
+        "expected_head": "82f129b9d9c1270ae2707032eee6b79c8dd072f2",
+        "refs": {
+          "refs/heads/develop": "f514ce2e97d90de9a60d40ae02bcfbfcb174f0bb",
+          "refs/heads/main": "82f129b9d9c1270ae2707032eee6b79c8dd072f2",
+          "refs/heads/platform/8155": "29ce9d750e0b7158b0f2d61313420641a385a199",
+          "refs/heads/platform/8295": "30709ae25c06616fdfe9aa3efbd5420b0d3b8ac2",
+          "refs/heads/presubmit/launcher-contracts": "9507ddd5d13a13cf58bd2cee81fb3f2d32ea0d56",
+          "refs/heads/release/2026.1": "af0cf348d8f926e1649c79c0a22759564611b790",
+          "refs/tags/local-sop-2026.1": "af0cf348d8f926e1649c79c0a22759564611b790"
+        }
       }
     },
     {
@@ -388,7 +396,7 @@
       "business_domain": "座舱空调/HVAC",
       "commit_count": 304,
       "default_branch": "main",
-      "delivery_status": "pending",
+      "delivery_status": "active",
       "dimensions_covered": [
         "architecture",
         "solid",
@@ -514,7 +522,7 @@
       "quality_rationale": "在真实 AOSP HVAC 历史之上形成七模块产品子系统：domain 保持纯领域接口，vehicle-api 集中类型化 Binder 与隐藏 API 边界，comfort、diagnostics、telemetry 采用数据驱动运行时并有单元/设备契约测试；平台分支只承载小范围适配差异。",
       "quality_tier": "high",
       "relative_path": "repos/app/climatix-hvac",
-      "repo_head": "6e424d98b49f8093b3303b0c9060813c7e37e7e5",
+      "repo_head": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
       "size_band": "small",
       "source": {
         "license": "Apache-2.0",
@@ -532,9 +540,17 @@
       "tracked_files": 236,
       "validation_status": "verified",
       "delivery": {
-        "status": "pending",
-        "repository_url": null,
-        "transport": "metadata_only"
+        "status": "active",
+        "repository_url": "https://github.com/cockpit-bench/climatix-hvac.git",
+        "expected_head": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+        "refs": {
+          "refs/heads/develop": "7fc67a915ef594c8ba573fae90053e286b790713",
+          "refs/heads/main": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+          "refs/heads/platform/8155": "b313db00f552d9dac3ba3e20a5fc0df0e873d646",
+          "refs/heads/platform/8295": "f6df3cc885c4ba3c6e229800781a78c873665db2",
+          "refs/heads/release/1.0": "85770d2ca3b6038c90a3a3b989b1bbb8c6acadc2",
+          "refs/tags/v1.0.0": "396c63091d227f1331d10b8f6bf9b2ebed9f5691"
+        }
       }
     },
     {
@@ -697,7 +713,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -874,7 +891,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -1113,7 +1131,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -1285,7 +1304,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -1580,7 +1600,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -1778,7 +1799,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -1936,7 +1958,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -2132,7 +2155,6 @@
       "delivery": {
         "status": "active",
         "repository_url": "https://github.com/cockpit-bench/motion-control.git",
-        "default_branch": "main",
         "expected_head": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
         "refs": {
           "refs/heads/develop": "1980fb386da0e5cde632575bc6eef356e9d295c5",
@@ -2307,7 +2329,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -2323,7 +2346,7 @@
       "business_domain": "应用商店/下载/PackageInstaller/权限",
       "commit_count": 28,
       "default_branch": "main",
-      "delivery_status": "pending",
+      "delivery_status": "active",
       "dimensions_covered": [
         "architecture",
         "solid",
@@ -2508,9 +2531,18 @@
       "tracked_files": 270,
       "validation_status": "calibrated",
       "delivery": {
-        "status": "pending",
-        "repository_url": null,
-        "transport": "metadata_only"
+        "status": "active",
+        "repository_url": "https://github.com/cockpit-bench/market-hub.git",
+        "expected_head": "3f421d00c591dc47b7de81f77292aa512eb34992",
+        "refs": {
+          "refs/heads/develop": "3e9736d750046ab2d2ec7d807355ff3e27b2c16f",
+          "refs/heads/main": "3f421d00c591dc47b7de81f77292aa512eb34992",
+          "refs/heads/platform/8155": "f8623eec7728151f121030a58f1643a6e34ad383",
+          "refs/heads/platform/8295": "fad482ad315db0a65c9b6169898ea8a310210623",
+          "refs/heads/release/2026.1": "7a3bcd1ea1125c2aa8feb863c119e8867b599796",
+          "refs/tags/app-foundation-1.0.0": "ebb25c8bbac0feabfdbe994df9ed3fa7610430f5",
+          "refs/tags/market-hub-2026.1": "7a3bcd1ea1125c2aa8feb863c119e8867b599796"
+        }
       }
     },
     {
@@ -2526,7 +2558,7 @@
       "business_domain": "SystemUI/Launcher/电话壳/音频/电源/用户",
       "commit_count": 11,
       "default_branch": "main",
-      "delivery_status": "pending",
+      "delivery_status": "active",
       "dimensions_covered": [
         "architecture",
         "solid",
@@ -2723,7 +2755,7 @@
       "quality_rationale": "18 个 Soong 模块与 197 个测试源提供真实 SystemUI、Launcher、Telecom、audio/power/user/watchdog 边界；结构可维护但产品闭包横跨多个平台入口，存在 35 个 broad catch、12 个反射、149 个隐藏/系统 API 站点、63 个全局状态站点和 17 个超 500 逻辑行生产文件，且没有覆盖所有组合边界的一体化产品测试。",
       "quality_tier": "medium",
       "relative_path": "repos/app/cockpit-shell",
-      "repo_head": "c69ab5f5db7e7d15dbbfd1af3754ebd1b4086e11",
+      "repo_head": "83cc55774e720bc761e90e62ffb94bc61a33973b",
       "size_band": "large",
       "source": {
         "license": "Apache-2.0",
@@ -2741,9 +2773,17 @@
       "tracked_files": 1316,
       "validation_status": "verified",
       "delivery": {
-        "status": "pending",
-        "repository_url": null,
-        "transport": "metadata_only"
+        "status": "active",
+        "repository_url": "https://github.com/cockpit-bench/cockpit-shell.git",
+        "expected_head": "83cc55774e720bc761e90e62ffb94bc61a33973b",
+        "refs": {
+          "refs/heads/develop": "f04fca095550796a4812b3133225717ee5aa6f98",
+          "refs/heads/main": "83cc55774e720bc761e90e62ffb94bc61a33973b",
+          "refs/heads/platform/8155": "e78cfb993351ca86eac2777d4ff0c5b50b4abe5f",
+          "refs/heads/platform/8295": "d4afa6cac8e9b2d4125ec0fb8d4aa2ee69ba7f78",
+          "refs/heads/release/2026.1": "2883836c2dd71c7fd5238f78e244bd5c1a871fe7",
+          "refs/tags/cockpit-shell-2026.1": "2883836c2dd71c7fd5238f78e244bd5c1a871fe7"
+        }
       }
     },
     {
@@ -2933,7 +2973,6 @@
       "delivery": {
         "status": "active",
         "repository_url": "https://github.com/cockpit-bench/atlas-settings.git",
-        "default_branch": "main",
         "expected_head": "abe446eb843ce0b4ceb068b151ff4081b16ce832",
         "refs": {
           "refs/heads/develop": "b551fe7c60932ff235c0ae5ad19d6195907707bf",
@@ -2968,7 +3007,7 @@
       "business_domain": "座舱 Launcher/系统桌面",
       "commit_count": 20,
       "default_branch": "main",
-      "delivery_status": "pending",
+      "delivery_status": "active",
       "dimensions_covered": [
         "architecture",
         "solid",
@@ -3138,7 +3177,7 @@
       "quality_rationale": "九个 Soong 模块中包含 shared、8155、8295 三套完整 Launcher 源码；Activity 继续持有跨域协调器，进程单例反射隐藏服务并重复轮询，三套 profile 与两套平台栈共同造成 183 对近重复。既有 53 个测试源未覆盖新增 vendor/product 和平台复制路径，侧分支缺少后续 main 演进。",
       "quality_tier": "low",
       "relative_path": "repos/app/nova-launcher",
-      "repo_head": "997b2a7589a81c30c93992b3f7871f2afc99ac77",
+      "repo_head": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
       "size_band": "medium",
       "source": {
         "license": "Apache-2.0",
@@ -3156,9 +3195,18 @@
       "tracked_files": 536,
       "validation_status": "verified",
       "delivery": {
-        "status": "pending",
-        "repository_url": null,
-        "transport": "metadata_only"
+        "status": "active",
+        "repository_url": "https://github.com/cockpit-bench/nova-launcher.git",
+        "expected_head": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+        "refs": {
+          "refs/heads/develop": "5eae59466aa7302b1fb76b2a48ebef4e221930e0",
+          "refs/heads/main": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "refs/heads/platform/8155": "12018f5c86295792c08f2dc1c6ddf1ff53d1c87a",
+          "refs/heads/platform/8295": "8d942866a7277643388928721bd043a5a33d83e7",
+          "refs/heads/platform/xinqing": "6c1af62ba51904f824be85a7b7409e3c5dafe657",
+          "refs/heads/release/sop-2025": "9819e8a6017d953300b0a04c32915146823241ee",
+          "refs/tags/local-sop-2025.4": "9819e8a6017d953300b0a04c32915146823241ee"
+        }
       }
     },
     {
@@ -3174,7 +3222,7 @@
       "business_domain": "座舱空调/HVAC",
       "commit_count": 19,
       "default_branch": "main",
-      "delivery_status": "pending",
+      "delivery_status": "active",
       "dimensions_covered": [
         "architecture",
         "solid",
@@ -3277,7 +3325,7 @@
       "quality_rationale": "模拟长期车型交付演进：巨型 Activity 同时承担 UI、业务和车辆控制，全局单例直接反射系统类，8155/8295/芯擎桥接代码高度复制，测试只验证类存在。",
       "quality_tier": "low",
       "relative_path": "repos/app/thermo-control",
-      "repo_head": "85fca70e962f51ebffbc52ab75084e58d3789efb",
+      "repo_head": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e",
       "size_band": "small",
       "source": {
         "license": "Apache-2.0",
@@ -3295,9 +3343,17 @@
       "tracked_files": 171,
       "validation_status": "calibrated",
       "delivery": {
-        "status": "pending",
-        "repository_url": null,
-        "transport": "metadata_only"
+        "status": "active",
+        "repository_url": "https://github.com/cockpit-bench/thermo-control.git",
+        "expected_head": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e",
+        "refs": {
+          "refs/heads/develop": "487b0d1181923b2628d21258d78db89a6eb611dc",
+          "refs/heads/main": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e",
+          "refs/heads/platform/8155": "483e416e1a9edf2f1d60f4ed065186fbaec6d47f",
+          "refs/heads/platform/8295": "dc027394cbc970a47f04e7ed3121f8aa5fe18053",
+          "refs/heads/release/0.9": "d476f5dbf0ec829a9cc2b0d88dd04b7117eda847",
+          "refs/tags/v0.9.0": "f582b4c550acb1349565e8afe50d728fe80e473b"
+        }
       }
     },
     {
@@ -3484,7 +3540,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -3683,7 +3740,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -3877,7 +3935,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -4225,7 +4284,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -4377,7 +4437,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -4394,7 +4455,7 @@
       "business_domain": "车辆 HAL/平台服务",
       "commit_count": 16,
       "default_branch": "main",
-      "delivery_status": "active",
+      "delivery_status": "pending",
       "dimensions_covered": [
         "architecture",
         "solid",
@@ -4538,19 +4599,10 @@
       "tracked_files": 715,
       "validation_status": "calibrated",
       "delivery": {
-        "status": "active",
-        "repository_url": "https://github.com/cockpit-bench/vehicle-hal-adapter.git",
-        "default_branch": "main",
-        "expected_head": "ec746bb6934e75818babfd48bde4e26ba379074c",
-        "refs": {
-          "refs/heads/aosp-new/aosp-new/master": "7ddf964df9f5bec1d3ec35ad569b54a936e8a0c6",
-          "refs/heads/develop": "1237a16267ff51bb2eff5be86e1ed4158e52362c",
-          "refs/heads/main": "ec746bb6934e75818babfd48bde4e26ba379074c",
-          "refs/heads/platform/8155": "270b396861b09795f3bfa27baec414cf635f832c",
-          "refs/heads/platform/8295": "4449839764f794e7994574058147e83d28b61865",
-          "refs/heads/release/2026.1": "886262cab9d266b92bb3413f896661ff7d7d2028",
-          "refs/tags/local-sop-2026.1": "74afbe2ea8f5e165a4285b5af7cfbe2db6e17098"
-        }
+        "status": "pending",
+        "repository_url": null,
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -4719,7 +4771,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -5067,7 +5120,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -5300,7 +5354,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -5653,7 +5708,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -5670,7 +5726,7 @@
       "business_domain": "VMS/SOA 消息网关",
       "commit_count": 15,
       "default_branch": "main",
-      "delivery_status": "active",
+      "delivery_status": "pending",
       "dimensions_covered": [
         "architecture",
         "solid",
@@ -5810,19 +5866,10 @@
       "tracked_files": 723,
       "validation_status": "calibrated",
       "delivery": {
-        "status": "active",
-        "repository_url": "https://github.com/cockpit-bench/soa-gateway.git",
-        "default_branch": "main",
-        "expected_head": "6021ad22c54e7b7e22f21d6d59f294b8d9e3f8c9",
-        "refs": {
-          "refs/heads/aosp-new/aosp-new/master": "7ddf964df9f5bec1d3ec35ad569b54a936e8a0c6",
-          "refs/heads/develop": "22beae5fd4f47e1e0bc58373d8a1ed9e833df99e",
-          "refs/heads/main": "6021ad22c54e7b7e22f21d6d59f294b8d9e3f8c9",
-          "refs/heads/platform/8155": "c79cded97d4f7e7605232d739c92180c5df8c062",
-          "refs/heads/platform/8295": "df09b062ef966586b520edc6268d0fcb59c18ffe",
-          "refs/heads/release/2026.1": "d39721daa46ab21dae568b6325e9bb5b17d3c162",
-          "refs/tags/soa-gateway-2026.1": "1e7dabf4b9630a7da0dc1ba490eb3dee42b077a6"
-        }
+        "status": "pending",
+        "repository_url": null,
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -6005,7 +6052,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -6170,7 +6218,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -6388,7 +6437,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -6602,7 +6652,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -6820,7 +6871,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -7164,7 +7216,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -7319,7 +7372,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -7735,7 +7789,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -7928,7 +7983,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -8090,7 +8146,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -8109,7 +8166,7 @@
       "business_domain": "CAN 总线/信号编解码/车型适配",
       "commit_count": 43,
       "default_branch": "main",
-      "delivery_status": "active",
+      "delivery_status": "pending",
       "dimensions_covered": [
         "architecture",
         "solid",
@@ -8310,22 +8367,10 @@
       "tracked_files": 834,
       "validation_status": "calibrated",
       "delivery": {
-        "status": "active",
-        "repository_url": "https://github.com/cockpit-bench/can-middleware.git",
-        "default_branch": "main",
-        "expected_head": "79994c9b00513768f4774e472d03e288490aa982",
-        "refs": {
-          "refs/heads/develop": "17972646e60426bacb4c200368a78a95cd4c89ac",
-          "refs/heads/main": "79994c9b00513768f4774e472d03e288490aa982",
-          "refs/heads/platform/8155": "389b29d350d3a79d4b26dfbbcc219408e0a90caa",
-          "refs/heads/platform/8295": "1c35da29ffb6a490d2f401c5aa8f82b980aeff28",
-          "refs/heads/release/2026.1": "4a5821c3ed64da587887d81085cc3767beb2a24f",
-          "refs/heads/sop/2026.1-8155-a1": "4d5c45ff64cbfb1b509e7092ef730448c65ea2a0",
-          "refs/heads/sop/2026.1-8155-a2": "abb1d7f0359453b6a051545164c913daf0d3c8ef",
-          "refs/heads/sop/2026.1-8295-b1": "4b983370eb6b21339de4d4bed407438c249beb79",
-          "refs/tags/can-middleware-2026.1": "9f5eb5e246b9c5b019c1be2f84d8c26336d079fe",
-          "refs/tags/framework-foundation-1.0.0": "a4833ffae68fcf82f1d7770a5edf3fe7d23f4c50"
-        }
+        "status": "pending",
+        "repository_url": null,
+        "expected_head": null,
+        "refs": {}
       }
     },
     {
@@ -8664,7 +8709,8 @@
       "delivery": {
         "status": "pending",
         "repository_url": null,
-        "transport": "metadata_only"
+        "expected_head": null,
+        "refs": {}
       }
     }
   ],

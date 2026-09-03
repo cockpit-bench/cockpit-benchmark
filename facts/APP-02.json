@@ -1,0 +1,630 @@
+{
+  "facts": {
+    "api_version": {
+      "automation_evidence": [],
+      "build_configuration_files": [
+        {
+          "git_blob_oid": "d85fc6ccc8c57325db94689f9c826e9c48a4105f",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:build.gradle",
+          "path": "build.gradle"
+        },
+        {
+          "git_blob_oid": "1b76fff3877f94c431d58b08b0c3627bbfccb102",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-app/build.gradle",
+          "path": "launcher-app/build.gradle"
+        },
+        {
+          "git_blob_oid": "df72c362557c396d3a30b7933a8e1194708dd627",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-common/build.gradle",
+          "path": "launcher-common/build.gradle"
+        },
+        {
+          "git_blob_oid": "1a73061fca9c357788bc2ad19dfdb64f38ae232d",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-grid/build.gradle",
+          "path": "launcher-grid/build.gradle"
+        }
+      ],
+      "compatibility_evidence": [],
+      "contract": "app_api_version_v2_facts",
+      "dedicated_version_control_files": [
+        {
+          "git_blob_oid": "da0a8d8312adfd7abaec35ccef2400f3c33cd650",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:version.properties",
+          "path": "version.properties"
+        }
+      ],
+      "evidence_gaps": [],
+      "has_manual_version_candidate": true,
+      "has_semantic_version_candidate": true,
+      "production_manifest_files": [],
+      "release_note_files": [],
+      "rubric_defined_observation": null,
+      "semantic_candidate_policy": "A semver-shaped Gradle/AndroidManifest literal is manual version evidence; only a dedicated version-control subject can be a semantic-management candidate. CHANGELOG headings and Git tags are not version records.",
+      "version_control_files": [
+        {
+          "git_blob_oid": "d85fc6ccc8c57325db94689f9c826e9c48a4105f",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:build.gradle",
+          "path": "build.gradle"
+        },
+        {
+          "git_blob_oid": "1b76fff3877f94c431d58b08b0c3627bbfccb102",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-app/build.gradle",
+          "path": "launcher-app/build.gradle"
+        },
+        {
+          "git_blob_oid": "df72c362557c396d3a30b7933a8e1194708dd627",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-common/build.gradle",
+          "path": "launcher-common/build.gradle"
+        },
+        {
+          "git_blob_oid": "1a73061fca9c357788bc2ad19dfdb64f38ae232d",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-grid/build.gradle",
+          "path": "launcher-grid/build.gradle"
+        },
+        {
+          "git_blob_oid": "da0a8d8312adfd7abaec35ccef2400f3c33cd650",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:version.properties",
+          "path": "version.properties"
+        }
+      ],
+      "version_records": [
+        "2.1.0",
+        "21"
+      ]
+    },
+    "architecture": {
+      "architecture_directory_evidence": {
+        "data_paths": [
+          "docklib/src/com/android/car/docklib/data/DockAppItem.kt",
+          "docklib/src/com/android/car/docklib/data/DockItemId.kt",
+          "docklib/src/com/android/car/docklib/data/DockProtoDataController.kt",
+          "docklib/src/com/android/car/docklib/data/DockProtoDataSource.kt",
+          "launcher-common/src/main/java/com/android/car/launcher/data/PackageLauncherCatalog.java"
+        ],
+        "directory_parts": [
+          "android",
+          "animation",
+          "apis",
+          "app",
+          "appactions",
+          "appgrid",
+          "assistive",
+          "audio",
+          "calmmode",
+          "car",
+          "car-launcher-common",
+          "carlauncher",
+          "carlaunchercommon",
+          "com",
+          "data",
+          "datasources",
+          "datastore",
+          "dialer",
+          "docklib",
+          "docklib-util",
+          "dockutil",
+          "domain",
+          "events",
+          "grid",
+          "hidden",
+          "hidden-apis-compat",
+          "hidden-apis-disabled",
+          "hidden-apis-enabled",
+          "homescreen",
+          "java",
+          "launcher",
+          "launcher-app",
+          "launcher-common",
+          "launcher-grid",
+          "launcheritem",
+          "lib",
+          "libs",
+          "main",
+          "media",
+          "notification",
+          "pagination",
+          "presentation",
+          "proto",
+          "recents",
+          "recyclerview",
+          "repositories",
+          "restricted",
+          "robotests",
+          "shadows",
+          "shortcuts",
+          "src",
+          "systembar",
+          "systemui",
+          "systemui-shell",
+          "task",
+          "taskstack",
+          "telecom",
+          "toasts",
+          "ui",
+          "userswitcher",
+          "view",
+          "window"
+        ],
+        "domain_paths": [
+          "launcher-common/src/main/java/com/android/car/launcher/domain/LauncherCatalog.java"
+        ],
+        "file_type_package_paths": [],
+        "layered_modules": {
+          ":launcher-app": [
+            "ui"
+          ],
+          ":launcher-common": [
+            "data",
+            "domain"
+          ],
+          ":launcher-grid": [
+            "ui"
+          ]
+        },
+        "production_code_path_count": 192,
+        "production_code_paths_sha256": "ad6bf83e9fef3d19305a94327c19631a994aaf07b82ce002635cd13bb68fad80",
+        "ui_paths": [
+          "app/src/com/android/car/carlauncher/homescreen/ui/CardContent.java",
+          "app/src/com/android/car/carlauncher/homescreen/ui/CardHeader.java",
+          "app/src/com/android/car/carlauncher/homescreen/ui/DescriptiveTextView.java",
+          "app/src/com/android/car/carlauncher/homescreen/ui/DescriptiveTextWithControlsView.java",
+          "app/src/com/android/car/carlauncher/homescreen/ui/SeekBarViewModel.java",
+          "app/src/com/android/car/carlauncher/homescreen/ui/TextBlockView.java",
+          "app/src/com/android/car/carlauncher/recents/view/BaseTaskViewHolder.java",
+          "app/src/com/android/car/carlauncher/recents/view/ClearAllViewHolder.java",
+          "app/src/com/android/car/carlauncher/recents/view/DismissTaskClickListener.java",
+          "app/src/com/android/car/carlauncher/recents/view/RecentTasksAdapter.java",
+          "app/src/com/android/car/carlauncher/recents/view/RecentsRecyclerView.java",
+          "app/src/com/android/car/carlauncher/recents/view/TaskClickListener.java",
+          "app/src/com/android/car/carlauncher/recents/view/TaskTouchHelperCallback.java",
+          "app/src/com/android/car/carlauncher/recents/view/TaskTouchListener.java",
+          "app/src/com/android/car/carlauncher/recents/view/TaskViewHolder.java",
+          "docklib/src/com/android/car/docklib/view/DockAdapter.kt",
+          "docklib/src/com/android/car/docklib/view/DockDragListener.kt",
+          "docklib/src/com/android/car/docklib/view/DockItemClickListener.kt",
+          "docklib/src/com/android/car/docklib/view/DockItemLongClickListener.kt",
+          "docklib/src/com/android/car/docklib/view/DockItemViewController.kt",
+          "docklib/src/com/android/car/docklib/view/DockItemViewHolder.kt",
+          "docklib/src/com/android/car/docklib/view/DockView.kt",
+          "docklib/src/com/android/car/docklib/view/animation/ExcitementAnimationHelper.kt",
+          "launcher-app/src/main/java/com/android/car/launcher/ui/LauncherCompositionRoot.java",
+          "launcher-grid/src/main/java/com/android/car/launcher/grid/presentation/GridPresenter.java"
+        ],
+        "unowned_code_path_count": 78,
+        "unowned_code_samples": [
+          "docklib-util/src/com/android/car/dockutil/events/DockCompatUtils.kt",
+          "docklib-util/src/com/android/car/dockutil/events/DockEvent.java",
+          "docklib-util/src/com/android/car/dockutil/events/DockEventSenderHelper.java",
+          "docklib-util/src/com/android/car/dockutil/events/DockPermission.java",
+          "docklib/src/com/android/car/docklib/DockInterface.kt",
+          "docklib/src/com/android/car/docklib/DockViewController.kt",
+          "docklib/src/com/android/car/docklib/DockViewModel.kt",
+          "docklib/src/com/android/car/docklib/ExcludedItemsProvider.kt",
+          "docklib/src/com/android/car/docklib/ResourceExcludedItemsProvider.kt",
+          "docklib/src/com/android/car/docklib/data/DockAppItem.kt",
+          "docklib/src/com/android/car/docklib/data/DockItemId.kt",
+          "docklib/src/com/android/car/docklib/data/DockProtoDataController.kt",
+          "docklib/src/com/android/car/docklib/data/DockProtoDataSource.kt",
+          "docklib/src/com/android/car/docklib/events/DockEventsReceiver.java",
+          "docklib/src/com/android/car/docklib/events/DockPackageChangeReceiver.kt",
+          "docklib/src/com/android/car/docklib/media/MediaUtils.kt",
+          "docklib/src/com/android/car/docklib/task/DockTaskStackChangeListener.java",
+          "docklib/src/com/android/car/docklib/task/TaskUtils.kt",
+          "docklib/src/com/android/car/docklib/view/DockAdapter.kt",
+          "docklib/src/com/android/car/docklib/view/DockDragListener.kt",
+          "docklib/src/com/android/car/docklib/view/DockItemClickListener.kt",
+          "docklib/src/com/android/car/docklib/view/DockItemLongClickListener.kt",
+          "docklib/src/com/android/car/docklib/view/DockItemViewController.kt",
+          "docklib/src/com/android/car/docklib/view/DockItemViewHolder.kt",
+          "docklib/src/com/android/car/docklib/view/DockView.kt",
+          "docklib/src/com/android/car/docklib/view/animation/ExcitementAnimationHelper.kt",
+          "libs/appgrid/lib/robotests/src/com/android/car/carlauncher/AppGridViewModelTest.kt",
+          "libs/appgrid/lib/robotests/src/com/android/car/carlauncher/FakeAppGridRepository.kt",
+          "libs/appgrid/lib/robotests/src/com/android/car/carlauncher/datasources/AppOrderProtoDataSourceImplTest.kt",
+          "libs/appgrid/lib/robotests/src/com/android/car/carlauncher/datasources/ControlCenterMirroringDataSourceImplTest.kt",
+          "libs/appgrid/lib/robotests/src/com/android/car/carlauncher/datasources/LauncherActivitiesDataSourceImplTest.kt",
+          "libs/appgrid/lib/robotests/src/com/android/car/carlauncher/datasources/MediaTemplateAppsDataSourceImplTest.kt",
+          "libs/appgrid/lib/robotests/src/com/android/car/carlauncher/datasources/UXRestrictionsDataSourceImplTest.kt",
+          "libs/appgrid/lib/robotests/src/com/android/car/carlauncher/datasources/restricted/DisabledAppsDataSourceImplTest.kt",
+          "libs/appgrid/lib/robotests/src/com/android/car/carlauncher/datasources/restricted/TosAppsDataSourceImplTest.kt",
+          "libs/appgrid/lib/robotests/src/shadows/ShadowMediaSource.kt",
+          "libs/appgrid/lib/robotests/src/shadows/ShadowResources.kt",
+          "libs/hidden-apis-compat/hidden-apis-disabled/src/com/android/car/hidden/apis/HiddenApiAccess.java",
+          "libs/hidden-apis-compat/hidden-apis-enabled/src/com/android/car/hidden/apis/HiddenApiAccess.java",
+          "systemui-shell/src/com/android/systemui/car/notification/BottomNotificationPanelViewMediator.java",
+          "systemui-shell/src/com/android/systemui/car/notification/CarHeadsUpNotificationSystemContainer.java",
+          "systemui-shell/src/com/android/systemui/car/notification/CarNotificationModule.java",
+          "systemui-shell/src/com/android/systemui/car/notification/NotificationPanelViewController.java",
+          "systemui-shell/src/com/android/systemui/car/notification/NotificationPanelViewMediator.java",
+          "systemui-shell/src/com/android/systemui/car/notification/NotificationShadeWindowControllerImpl.java",
+          "systemui-shell/src/com/android/systemui/car/notification/NotificationVisibilityLogger.java",
+          "systemui-shell/src/com/android/systemui/car/notification/PowerManagerHelper.java",
+          "systemui-shell/src/com/android/systemui/car/notification/TopNotificationPanelViewMediator.java",
+          "systemui-shell/src/com/android/systemui/car/systembar/AssitantButton.java",
+          "systemui-shell/src/com/android/systemui/car/systembar/ButtonRoleHolderController.java"
+        ]
+      },
+      "contract": "app_architecture_v1_fact_candidates",
+      "cycles": [],
+      "evidence_gaps": [],
+      "excluded_test_or_build_modules": [],
+      "facts": {
+        "code_not_in_root_package": true,
+        "component_friendly_check_count": 3,
+        "component_friendly_checks": {
+          "business_boundary_isolation": false,
+          "common_capability_in_base_core": true,
+          "modules_have_independent_build_entry": true,
+          "no_cross_module_hardcoded_dependency": null,
+          "no_module_cycle": true
+        },
+        "has_base_layered_architecture": true,
+        "has_business_packages": true,
+        "has_circular_dependency": false,
+        "has_file_type_packages": false,
+        "has_layered_directory": true,
+        "is_component_friendly": true,
+        "layered_business_module_count": 3,
+        "module_count": 3,
+        "standard_named_module_count": 2
+      },
+      "internal_dependency_evidence": [
+        {
+          "excerpt": "dependencies { implementation project(':launcher-common'); implementation project(':launcher-grid'); compileOnly files('../prebuilts/framework/framework.jar') }",
+          "from_module": ":launcher-app",
+          "git_blob_oid": "1b76fff3877f94c431d58b08b0c3627bbfccb102",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-app/build.gradle",
+          "line": 9,
+          "path": "launcher-app/build.gradle",
+          "to_module": ":launcher-common"
+        },
+        {
+          "excerpt": "dependencies { implementation project(':launcher-common'); implementation project(':launcher-grid'); compileOnly files('../prebuilts/framework/framework.jar') }",
+          "from_module": ":launcher-app",
+          "git_blob_oid": "1b76fff3877f94c431d58b08b0c3627bbfccb102",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-app/build.gradle",
+          "line": 9,
+          "path": "launcher-app/build.gradle",
+          "to_module": ":launcher-grid"
+        },
+        {
+          "excerpt": "dependencies { implementation project(':launcher-common') }",
+          "from_module": ":launcher-grid",
+          "git_blob_oid": "1a73061fca9c357788bc2ad19dfdb64f38ae232d",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-grid/build.gradle",
+          "line": 3,
+          "path": "launcher-grid/build.gradle",
+          "to_module": ":launcher-common"
+        }
+      ],
+      "internal_dependency_graph": {
+        ":launcher-app": [
+          ":launcher-common",
+          ":launcher-grid"
+        ],
+        ":launcher-common": [],
+        ":launcher-grid": [
+          ":launcher-common"
+        ]
+      },
+      "modules": [
+        {
+          "build_file": "launcher-app/build.gradle",
+          "build_file_anchor": {
+            "git_blob_oid": "1b76fff3877f94c431d58b08b0c3627bbfccb102",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-app/build.gradle",
+            "path": "launcher-app/build.gradle"
+          },
+          "directory": "launcher-app",
+          "name": ":launcher-app",
+          "plugin_types": [
+            "android_application",
+            "java"
+          ],
+          "source_roots": [
+            "launcher-app/src/main/java",
+            "app/src",
+            "app/res"
+          ],
+          "standard_named": true
+        },
+        {
+          "build_file": "launcher-common/build.gradle",
+          "build_file_anchor": {
+            "git_blob_oid": "df72c362557c396d3a30b7933a8e1194708dd627",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-common/build.gradle",
+            "path": "launcher-common/build.gradle"
+          },
+          "directory": "launcher-common",
+          "name": ":launcher-common",
+          "plugin_types": [
+            "android_library",
+            "java"
+          ],
+          "source_roots": [
+            "launcher-common/src/main/java",
+            "libs/car-launcher-common/src"
+          ],
+          "standard_named": true
+        },
+        {
+          "build_file": "launcher-grid/build.gradle",
+          "build_file_anchor": {
+            "git_blob_oid": "1a73061fca9c357788bc2ad19dfdb64f38ae232d",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-grid/build.gradle",
+            "path": "launcher-grid/build.gradle"
+          },
+          "directory": "launcher-grid",
+          "name": ":launcher-grid",
+          "plugin_types": [
+            "android_library",
+            "java"
+          ],
+          "source_roots": [
+            "launcher-grid/src/main/java",
+            "libs/appgrid/lib/src"
+          ],
+          "standard_named": false
+        }
+      ],
+      "settings_files": [
+        {
+          "git_blob_oid": "eafea3dbe978391eedff58f97de19df1e52d0eca",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:settings.gradle",
+          "path": "settings.gradle"
+        }
+      ]
+    },
+    "ci": {
+      "android_system_ci_configuration_files": [
+        {
+          "git_blob_oid": "e9cd7f8cfd3c72dd2aa51eb10d4e0f82aec77539",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:PREUPLOAD.cfg",
+          "path": "PREUPLOAD.cfg"
+        },
+        {
+          "git_blob_oid": "eef2d670c69fe17970debac2a1edc3b4c4209242",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:TEST_MAPPING",
+          "path": "TEST_MAPPING"
+        }
+      ],
+      "ci_configuration_files": [
+        {
+          "android_system_ci_markers": [],
+          "configuration_kind": "independent_ci",
+          "contains_build_step": true,
+          "contains_deploy_step": false,
+          "contains_test_step": true,
+          "git_blob_oid": "2f33ca69ada9ec3334e423798b27cd6c7eb08477",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:.github/workflows/android.yml",
+          "nonempty": true,
+          "path": ".github/workflows/android.yml"
+        },
+        {
+          "android_system_ci_markers": [
+            "root:PREUPLOAD.cfg"
+          ],
+          "configuration_kind": "android_system_ci",
+          "contains_build_step": false,
+          "contains_deploy_step": false,
+          "contains_test_step": false,
+          "git_blob_oid": "e9cd7f8cfd3c72dd2aa51eb10d4e0f82aec77539",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:PREUPLOAD.cfg",
+          "nonempty": true,
+          "path": "PREUPLOAD.cfg"
+        },
+        {
+          "android_system_ci_markers": [
+            "root:TEST_MAPPING"
+          ],
+          "configuration_kind": "android_system_ci",
+          "contains_build_step": false,
+          "contains_deploy_step": false,
+          "contains_test_step": false,
+          "git_blob_oid": "eef2d670c69fe17970debac2a1edc3b4c4209242",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:TEST_MAPPING",
+          "nonempty": true,
+          "path": "TEST_MAPPING"
+        }
+      ],
+      "ci_type_candidates": {
+        "classification_if_single_type": "mixed",
+        "has_android_system_ci": true,
+        "has_independent_ci": true
+      },
+      "contract": "ci_v2_facts",
+      "evidence_gaps": [],
+      "independent_ci_configuration_files": [
+        {
+          "git_blob_oid": "2f33ca69ada9ec3334e423798b27cd6c7eb08477",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:.github/workflows/android.yml",
+          "path": ".github/workflows/android.yml"
+        }
+      ],
+      "no_effective_ci": false,
+      "nonempty_ci_configuration_count": 3,
+      "rubric_defined_observation": null
+    },
+    "compilation": {
+      "build_configuration_files": [
+        {
+          "git_blob_oid": "d85fc6ccc8c57325db94689f9c826e9c48a4105f",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:build.gradle",
+          "path": "build.gradle"
+        },
+        {
+          "git_blob_oid": "1b76fff3877f94c431d58b08b0c3627bbfccb102",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-app/build.gradle",
+          "path": "launcher-app/build.gradle"
+        },
+        {
+          "git_blob_oid": "df72c362557c396d3a30b7933a8e1194708dd627",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-common/build.gradle",
+          "path": "launcher-common/build.gradle"
+        },
+        {
+          "git_blob_oid": "1a73061fca9c357788bc2ad19dfdb64f38ae232d",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-grid/build.gradle",
+          "path": "launcher-grid/build.gradle"
+        }
+      ],
+      "contract": "app_compilation_v1_facts",
+      "dependency_type_candidates": {
+        "has_framework_jar_dependency": true,
+        "has_internal_project_source_dependency": true,
+        "has_local_aar_dependency": false,
+        "has_unversioned_external_artifact": false,
+        "has_versioned_external_artifact": false
+      },
+      "evidence_gaps": [],
+      "framework_jar_dependencies": [
+        {
+          "excerpt": "dependencies { implementation project(':launcher-common'); implementation project(':launcher-grid'); compileOnly files('../prebuilts/framework/framework.jar') }",
+          "git_blob_oid": "1b76fff3877f94c431d58b08b0c3627bbfccb102",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-app/build.gradle",
+          "line": 9,
+          "path": "launcher-app/build.gradle"
+        }
+      ],
+      "internal_project_dependencies": [
+        {
+          "excerpt": "dependencies { implementation project(':launcher-common'); implementation project(':launcher-grid'); compileOnly files('../prebuilts/framework/framework.jar') }",
+          "git_blob_oid": "1b76fff3877f94c431d58b08b0c3627bbfccb102",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-app/build.gradle",
+          "kind": "internal_project_source",
+          "line": 9,
+          "path": "launcher-app/build.gradle",
+          "target": ":launcher-common"
+        },
+        {
+          "excerpt": "dependencies { implementation project(':launcher-common'); implementation project(':launcher-grid'); compileOnly files('../prebuilts/framework/framework.jar') }",
+          "git_blob_oid": "1b76fff3877f94c431d58b08b0c3627bbfccb102",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-app/build.gradle",
+          "kind": "internal_project_source",
+          "line": 9,
+          "path": "launcher-app/build.gradle",
+          "target": ":launcher-grid"
+        },
+        {
+          "excerpt": "dependencies { implementation project(':launcher-common') }",
+          "git_blob_oid": "1a73061fca9c357788bc2ad19dfdb64f38ae232d",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-grid/build.gradle",
+          "kind": "internal_project_source",
+          "line": 3,
+          "path": "launcher-grid/build.gradle",
+          "target": ":launcher-common"
+        }
+      ],
+      "local_aar_dependencies": [],
+      "maven_artifacts": [],
+      "type_safe_project_accessors": []
+    },
+    "platform_upgrade": {
+      "contract": "app_platform_upgrade_v2_fact_candidates",
+      "evidence_gaps": [],
+      "scan_policy": {
+        "allowed_roots": [
+          "src/main/java",
+          "src/main/kotlin",
+          "src/main/cpp",
+          "src/main/res"
+        ],
+        "allowed_special_files": [
+          "AndroidManifest.xml",
+          "module build.gradle[.kts]",
+          "module CMakeLists.txt"
+        ],
+        "excluded_parts": [
+          "androidtest",
+          "build",
+          "generated",
+          "test",
+          "tests",
+          "third-party",
+          "third_party"
+        ],
+        "mode": "exact_head_targeted_pattern_snapshot",
+        "negative_filters": [
+          "comments",
+          "string_literals_in_source",
+          "Log/Slog/Timber calls",
+          "test and Mock paths",
+          "generated paths"
+        ]
+      },
+      "seven_fact_candidates": {
+        "arch_bound_status": 0,
+        "has_arch_specific_deps": false,
+        "has_complex_permission_adaptation": false,
+        "has_interface_abstraction": false,
+        "has_light_permission_adaptation": true,
+        "has_non_compatible_api": false,
+        "version_bound_status": 0
+      },
+      "targeted_path_counts": {
+        "manifest": 6,
+        "module_build": 3,
+        "resource": 2,
+        "source": 4,
+        "total": 15
+      },
+      "targeted_paths_sha256": "aa96728951bf4db81b2f37663757a2d018696448b3b8ce9b441f2547e778b661"
+    },
+    "release_branch_strategy": {
+      "branches": [
+        {
+          "name": "develop",
+          "object_type": "commit",
+          "tip": "f514ce2e97d90de9a60d40ae02bcfbfcb174f0bb"
+        },
+        {
+          "name": "main",
+          "object_type": "commit",
+          "tip": "82f129b9d9c1270ae2707032eee6b79c8dd072f2"
+        },
+        {
+          "name": "platform/8155",
+          "object_type": "commit",
+          "tip": "29ce9d750e0b7158b0f2d61313420641a385a199"
+        },
+        {
+          "name": "platform/8295",
+          "object_type": "commit",
+          "tip": "30709ae25c06616fdfe9aa3efbd5420b0d3b8ac2"
+        },
+        {
+          "name": "presubmit/launcher-contracts",
+          "object_type": "commit",
+          "tip": "9507ddd5d13a13cf58bd2cee81fb3f2d32ea0d56"
+        },
+        {
+          "name": "release/2026.1",
+          "object_type": "commit",
+          "tip": "af0cf348d8f926e1649c79c0a22759564611b790"
+        }
+      ],
+      "contract": "release_branch_strategy_v1_facts",
+      "default_branch": "main",
+      "evidence_gaps": [],
+      "has_unified_main": true,
+      "head_commit": "82f129b9d9c1270ae2707032eee6b79c8dd072f2",
+      "main_branches": [
+        "main"
+      ],
+      "platform_or_vehicle_suffix_branches": [
+        "platform/8155",
+        "platform/8295",
+        "release/2026.1"
+      ],
+      "release_branches": [
+        "release/2026.1"
+      ],
+      "rubric_defined_observation": null,
+      "sop_branch_count": 0,
+      "sop_branches": []
+    }
+  },
+  "head": "82f129b9d9c1270ae2707032eee6b79c8dd072f2",
+  "kind": "APP",
+  "repo_id": "APP-02"
+}

@@ -7,9 +7,9 @@ $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 
 $expectedHashes = [ordered]@{
-    'STANDARD_SCORES.json' = '9cd98719a64e789ff72a8a344e808870b58bd632f6cde4c2b1d08faf67dd4f60'
-    'SCORECARD.md'         = '9f43ce3d9aec75f4b1d98a25ac47652d696dd33fdbf596a0137cfdb76d5b5056'
-    'SCORECARD.csv'        = '68d57979ff209b849fa114ed6d27f05dc3e8296f6bff52148d532d6afc3917e2'
+    'STANDARD_SCORES.json' = 'eb20171a70dad393af35862d5e5e3b534d7cf1ed41e12a80058176a52803ed3b'
+    'SCORECARD.md'         = 'ea7117cd965b3708a6ee80967933744081b3e0cf80e8faef8fe83a29fbd1a3d3'
+    'SCORECARD.csv'        = '28ec6af872a6e38a04abb5833d8bde5fba5a51349d8f21531a6e9fb748df2539'
     'SCORE_RULES.md'       = '190613d83db6baab49bb66069d1de78fe7ba673f1969ff4e4a5b4c87ecbf7d74'
 }
 
@@ -44,8 +44,11 @@ foreach ($entry in $expectedHashes.GetEnumerator()) {
 $manifestPath = Join-Path $PSScriptRoot 'manifest.json'
 $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
 $active = @($manifest.repositories | Where-Object { $_.delivery.status -eq 'active' })
-if ($active.Count -ne 6) {
-    throw "Manifest must contain exactly 6 active repositories; found $($active.Count)."
+if ($active.Count -ne 9) {
+    throw "Manifest must contain exactly 9 active APP repositories; found $($active.Count)."
+}
+if (@($active | Where-Object { $_.kind -ne 'APP' }).Count -ne 0) {
+    throw 'This checkpoint must not contain active FW repositories.'
 }
 
 $destinationPath = [IO.Path]::GetFullPath($Destination)
@@ -125,4 +128,4 @@ foreach ($repo in $active) {
 }
 
 $results | Format-Table -AutoSize
-Write-Host "PASS: restored and verified 6 repositories in $destinationPath"
+Write-Host "PASS: restored and verified 9 APP repositories in $destinationPath"
