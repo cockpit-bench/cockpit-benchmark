@@ -7,7 +7,7 @@ $expectedHashes = [ordered]@{
     'SCORECARD.md' = '7fc86963bea885acb092f56a3c36a76468e0dc842300f82fed1fd5a2bb1a54f8'
     'SCORECARD.csv' = '14207a6253bdf2b9c921fbda3ffdc83bdcf323a659ddd1be9df92ee80580b1aa'
     'SCORE_RULES.md' = '28c456ddf16a7d85ae642f11785ce94689412bd715d0cd5140bc51ceb35ca5d9'
-    'manifest.json' = '19db13d4b4c7794aabec57a28f8c3f494276c62759c8c781a4d33c2d1e4f9d5d'
+    'manifest.json' = '0eb8b5d2e6d98322a85143b396bd6ec0041ed1eeec050b9d2e4399fc0dd2fee6'
 }
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) { throw 'git is required.' }
 foreach ($entry in $expectedHashes.GetEnumerator()) {
@@ -31,7 +31,7 @@ foreach ($entry in $active) {
     & git clone --quiet $entry.delivery.repository_url $repoPath
     if ($LASTEXITCODE -ne 0) { throw "Clone failed: $($entry.id)" }
     foreach ($property in $entry.delivery.refs.PSObject.Properties) {
-        if ($property.Name.StartsWith('refs/heads/')) { & git -C $repoPath update-ref $property.Name ([string]$property.Value }
+        if ($property.Name.StartsWith('refs/heads/')) { & git -C $repoPath update-ref $property.Name ([string]$property.Value) }
         if ($LASTEXITCODE -ne 0) { throw "Cannot restore ref $($property.Name)" }
     }
     & git -C $repoPath checkout --quiet $entry.default_branch
