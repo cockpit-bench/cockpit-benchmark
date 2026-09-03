@@ -8,5 +8,5 @@
   "pending_repository_count": 31,
   "fw_status": "pending_correct_android_framework_rubric",
   "completion_policy": "This checkpoint contains only the nine APP repositories and their 72 canonical leaves. No FW score is included.",
-  "release_tag": "v0.5.1-app9"
+  "release_tag": "v0.5.2-app9"
 }

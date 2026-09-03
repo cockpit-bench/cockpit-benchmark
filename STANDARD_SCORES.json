@@ -2,7 +2,7 @@
   "schema_version": "2.0.0",
   "document_type": "app9_benchmark_standard_scores",
   "adjudicator": "current-head two-pass evidence review",
-  "generated_at": "2026-09-03T08:12:32.954436+00:00",
+  "generated_at": "2026-09-03T08:44:11.691651+00:00",
   "contract": {
     "path": "SCORE_RULES.md",
     "sha256": "190613d83db6baab49bb66069d1de78fe7ba673f1969ff4e4a5b4c87ecbf7d74",
@@ -2616,7 +2616,7 @@
   },
   "status": "accepted_public_checkpoint",
   "release": {
-    "tag": "v0.5.1-app9",
+    "tag": "v0.5.2-app9",
     "scope": "9 APP active + 31 pending"
   },
   "rubric": {

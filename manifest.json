@@ -361,12 +361,12 @@
         "upstream_commit": "a945124b0d8bdf24c38cd3141062f6862acad57d",
         "upstream_url": "https://git.codelinaro.org/clo/la/platform/packages/apps/Car/Launcher"
       },
-      "source_files": 412,
-      "source_loc": 36268,
+      "source_files": 421,
+      "source_loc": 36320,
       "tags": [
         "local-sop-2026.1"
       ],
-      "tracked_files": 437,
+      "tracked_files": 449,
       "validation_status": "verified",
       "delivery": {
         "status": "active",
@@ -2765,12 +2765,12 @@
         "upstream_commit": "435ba702f1198e1c249a8b5550c37f27bba73b03",
         "upstream_url": "https://git.codelinaro.org/clo/la/platform/packages/apps/Car/SystemUI"
       },
-      "source_files": 1267,
-      "source_loc": 122003,
+      "source_files": 1275,
+      "source_loc": 122044,
       "tags": [
         "cockpit-shell-2026.1"
       ],
-      "tracked_files": 1316,
+      "tracked_files": 1326,
       "validation_status": "verified",
       "delivery": {
         "status": "active",
@@ -3187,12 +3187,12 @@
         "upstream_commit": "c1dfbf55516eca3fa7613a453c3d0a434e5fe835",
         "upstream_url": "https://github.com/radiosound-com/android_packages_apps_Car_Launcher"
       },
-      "source_files": 513,
-      "source_loc": 40967,
+      "source_files": 525,
+      "source_loc": 41051,
       "tags": [
         "local-sop-2025.4"
       ],
-      "tracked_files": 536,
+      "tracked_files": 550,
       "validation_status": "verified",
       "delivery": {
         "status": "active",
@@ -3335,12 +3335,12 @@
         "upstream_commit": null,
         "upstream_url": null
       },
-      "source_files": 166,
-      "source_loc": 11981,
+      "source_files": 169,
+      "source_loc": 12004,
       "tags": [
         "v0.9.0"
       ],
-      "tracked_files": 171,
+      "tracked_files": 175,
       "validation_status": "calibrated",
       "delivery": {
         "status": "active",
