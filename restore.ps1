@@ -1,131 +1,53 @@
 [CmdletBinding()]
-param(
-    [string]$Destination = (Join-Path $PSScriptRoot 'repos')
-)
-
+param([string]$Destination = (Join-Path $PSScriptRoot 'repos'))
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
-
 $expectedHashes = [ordered]@{
-    'STANDARD_SCORES.json' = 'f8ea1e47dbe8a8d4e12a522d649a9652b05a563f7a594d10f4a82446ec6c01c4'
-    'SCORECARD.md'         = 'ea7117cd965b3708a6ee80967933744081b3e0cf80e8faef8fe83a29fbd1a3d3'
-    'SCORECARD.csv'        = 'c7c2d34c958cebf0d283a5149c91e5b047a8d503591b31039c377f363d099d51'
-    'SCORE_RULES.md'       = '190613d83db6baab49bb66069d1de78fe7ba673f1969ff4e4a5b4c87ecbf7d74'
+    'STANDARD_SCORES.json' = '19a13fa0e57a19cd2793bb924e0a1bb9fda314e3836c983e41a1b53cf852929a'
+    'SCORECARD.md' = '7fc86963bea885acb092f56a3c36a76468e0dc842300f82fed1fd5a2bb1a54f8'
+    'SCORECARD.csv' = '14207a6253bdf2b9c921fbda3ffdc83bdcf323a659ddd1be9df92ee80580b1aa'
+    'SCORE_RULES.md' = '28c456ddf16a7d85ae642f11785ce94689412bd715d0cd5140bc51ceb35ca5d9'
+    'manifest.json' = '19db13d4b4c7794aabec57a28f8c3f494276c62759c8c781a4d33c2d1e4f9d5d'
 }
-
-function Invoke-Git {
-    param(
-        [Parameter(Mandatory = $true)][string]$Repository,
-        [Parameter(Mandatory = $true)][string[]]$Arguments
-    )
-
-    $output = @(& git -C $Repository @Arguments 2>&1)
-    if ($LASTEXITCODE -ne 0) {
-        throw "git -C '$Repository' $($Arguments -join ' ') failed:`n$($output -join "`n")"
-    }
-    return $output
-}
-
-if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
-    throw 'git is required but was not found on PATH.'
-}
-
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) { throw 'git is required.' }
 foreach ($entry in $expectedHashes.GetEnumerator()) {
     $path = Join-Path $PSScriptRoot $entry.Key
-    if (-not (Test-Path -LiteralPath $path -PathType Leaf)) {
-        throw "Required benchmark file is missing: $($entry.Key)"
-    }
+    if (-not (Test-Path -LiteralPath $path -PathType Leaf)) { throw "Missing $($entry.Key)" }
     $actual = (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant()
-    if ($actual -ne $entry.Value) {
-        throw "SHA-256 mismatch for $($entry.Key): expected $($entry.Value), got $actual"
-    }
+    if ($actual -ne $entry.Value) { throw "SHA-256 mismatch for $($entry.Key)" }
 }
-
-$manifestPath = Join-Path $PSScriptRoot 'manifest.json'
-$manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
-$active = @($manifest.repositories | Where-Object { $_.delivery.status -eq 'active' })
-if ($active.Count -ne 9) {
-    throw "Manifest must contain exactly 9 active APP repositories; found $($active.Count)."
-}
-if (@($active | Where-Object { $_.kind -ne 'APP' }).Count -ne 0) {
-    throw 'This checkpoint must not contain active FW repositories.'
-}
-
+$manifest = Get-Content (Join-Path $PSScriptRoot 'manifest.json') -Raw | ConvertFrom-Json
+$active = @($manifest.repositories | Where-Object { $_.delivery_status -eq 'active' })
+if ($active.Count -ne 18) { throw "Expected 18 active repositories, got $($active.Count)" }
 $destinationPath = [IO.Path]::GetFullPath($Destination)
 if (Test-Path -LiteralPath $destinationPath) {
-    if (@(Get-ChildItem -LiteralPath $destinationPath -Force).Count -ne 0) {
-        throw "Destination already exists and is not empty: $destinationPath"
-    }
-} else {
-    New-Item -ItemType Directory -Path $destinationPath | Out-Null
-}
-
+    if (@(Get-ChildItem -LiteralPath $destinationPath -Force).Count -ne 0) { throw "Destination is not empty: $destinationPath" }
+} else { New-Item -ItemType Directory -Path $destinationPath | Out-Null }
 $results = @()
-foreach ($repo in $active) {
-    $kindDirectory = if ($repo.kind -eq 'APP') { 'app' } else { 'framework' }
-    $kindRoot = Join-Path $destinationPath $kindDirectory
-    New-Item -ItemType Directory -Path $kindRoot -Force | Out-Null
-    $repoPath = Join-Path $kindRoot $repo.name
-    if (Test-Path -LiteralPath $repoPath) {
-        throw "Repository destination already exists: $repoPath"
+foreach ($entry in $active) {
+    $kindDir = if ($entry.kind -eq 'APP') { 'app' } else { 'framework' }
+    $repoPath = Join-Path (Join-Path $destinationPath $kindDir) $entry.name
+    New-Item -ItemType Directory -Path (Split-Path $repoPath) -Force | Out-Null
+    & git clone --quiet $entry.delivery.repository_url $repoPath
+    if ($LASTEXITCODE -ne 0) { throw "Clone failed: $($entry.id)" }
+    foreach ($property in $entry.delivery.refs.PSObject.Properties) {
+        if ($property.Name.StartsWith('refs/heads/')) { & git -C $repoPath update-ref $property.Name ([string]$property.Value }
+        if ($LASTEXITCODE -ne 0) { throw "Cannot restore ref $($property.Name)" }
     }
-
-    Write-Host "Cloning $($repo.id) $($repo.name)..."
-    $cloneOutput = @(& git clone --quiet $repo.delivery.repository_url $repoPath 2>&1)
-    if ($LASTEXITCODE -ne 0) {
-        throw "git clone failed for $($repo.id):`n$($cloneOutput -join "`n")"
+    & git -C $repoPath checkout --quiet $entry.default_branch
+    & git -C $repoPath remote remove origin
+    $actual = @{}
+    & git -C $repoPath for-each-ref '--format=%(refname) %(objectname)' refs/heads refs/tags | ForEach-Object {
+        if ($_ -match '^(refs/(?:heads|tags)/\S+) ([0-9a-f]{40,64})$') { $actual[$Matches[1]] = $Matches[2] }
     }
-
-    $expectedRefs = [ordered]@{}
-    foreach ($property in $repo.delivery.refs.PSObject.Properties) {
-        $expectedRefs[$property.Name] = [string]$property.Value
+    if ($actual.Count -ne $entry.delivery.refs.PSObject.Properties.Count) { throw "Ref count mismatch: $($entry.id)" }
+    foreach ($property in $entry.delivery.refs.PSObject.Properties) {
+        if (-not $actual.ContainsKey($property.Name) -or $actual[$property.Name] -ne [string]$property.Value) { throw "Ref mismatch: $($entry.id) $($property.Name)" }
     }
-
-    foreach ($ref in $expectedRefs.GetEnumerator()) {
-        if ($ref.Key.StartsWith('refs/heads/')) {
-            $branch = $ref.Key.Substring('refs/heads/'.Length)
-            Invoke-Git -Repository $repoPath -Arguments @('update-ref', "refs/heads/$branch", $ref.Value) | Out-Null
-        }
-    }
-
-    Invoke-Git -Repository $repoPath -Arguments @('checkout', '--quiet', $repo.default_branch) | Out-Null
-    Invoke-Git -Repository $repoPath -Arguments @('remote', 'remove', 'origin') | Out-Null
-
-    $actualRefs = [ordered]@{}
-    $refLines = Invoke-Git -Repository $repoPath -Arguments @('for-each-ref', '--format=%(refname) %(objectname)', 'refs/heads', 'refs/tags')
-    foreach ($line in $refLines) {
-        if ($line -match '^(refs/(?:heads|tags)/\S+) ([0-9a-f]{40,64})$') {
-            $actualRefs[$Matches[1]] = $Matches[2]
-        }
-    }
-
-    if ($actualRefs.Count -ne $expectedRefs.Count) {
-        throw "Ref count mismatch for $($repo.id): expected $($expectedRefs.Count), got $($actualRefs.Count)."
-    }
-    foreach ($ref in $expectedRefs.GetEnumerator()) {
-        if (-not $actualRefs.Contains($ref.Key)) {
-            throw "Missing ref for $($repo.id): $($ref.Key)"
-        }
-        if ($actualRefs[$ref.Key] -ne $ref.Value) {
-            throw "OID mismatch for $($repo.id) $($ref.Key): expected $($ref.Value), got $($actualRefs[$ref.Key])"
-        }
-    }
-
-    $head = (@(Invoke-Git -Repository $repoPath -Arguments @('rev-parse', 'HEAD')))[0].Trim()
-    if ($head -ne $repo.delivery.expected_head) {
-        throw "HEAD mismatch for $($repo.id): expected $($repo.delivery.expected_head), got $head"
-    }
-
-    $remoteCount = @(Invoke-Git -Repository $repoPath -Arguments @('remote')).Count
-    $results += [pscustomobject]@{
-        ID      = $repo.id
-        Name    = $repo.name
-        Head    = $head.Substring(0, 12)
-        Refs    = $actualRefs.Count
-        Remotes = $remoteCount
-        Status  = 'PASS'
-    }
+    $head = (& git -C $repoPath rev-parse HEAD).Trim()
+    if ($head -ne $entry.delivery.expected_head) { throw "HEAD mismatch: $($entry.id)" }
+    if (@(& git -C $repoPath remote).Count -ne 0) { throw "Remote was not removed: $($entry.id)" }
+    $results += [pscustomobject]@{ ID=$entry.id; Name=$entry.name; Head=$head.Substring(0,12); Refs=$actual.Count; Status='PASS' }
 }
-
 $results | Format-Table -AutoSize
-Write-Host "PASS: restored and verified 9 APP repositories in $destinationPath"
+Write-Host "PASS: restored 18/18 repositories with exact refs and zero remotes."

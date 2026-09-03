@@ -1,0 +1,513 @@
+{
+  "schema_version": "3.0.0",
+  "repo_id": "FW-16",
+  "quality_tier": "low",
+  "size_band": "large",
+  "delivery_status": "active",
+  "review_status": "two_pass_current_head_reviewed",
+  "repository": {
+    "head": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+    "tree": "07334b47df55459396df48bc2fa576aff0ea0442",
+    "branch": "main",
+    "remote_count": 0
+  },
+  "canonical_total": {
+    "score": 18,
+    "max": 52
+  },
+  "canonical_leaves": [
+    {
+      "name": "compilation.ci_independence",
+      "max_score": 3,
+      "status": "scored",
+      "score": 1,
+      "reason": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置。",
+      "score_reasoning": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置。",
+      "analysis": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "compilation.ci_independence",
+          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "TEST_MAPPING",
+          "line_start": 2,
+          "line_end": 2,
+          "symbol": "reviewed code evidence",
+          "observation": "CI 入口及实际阶段定义。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "confidence": "high"
+    },
+    {
+      "name": "compilation.compilation_independence",
+      "max_score": 3,
+      "status": "scored",
+      "score": 0,
+      "reason": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
+      "score_reasoning": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
+      "analysis": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "compilation.compilation_independence",
+          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "Android.bp",
+          "line_start": 5,
+          "line_end": 5,
+          "symbol": "reviewed code evidence",
+          "observation": "Soong/Gradle 直接源码依赖声明。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "Android.bp",
+          "line_start": 5,
+          "line_end": 5,
+          "symbol": "reviewed code evidence",
+          "observation": "Soong/Gradle 直接源码依赖声明。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "confidence": "high"
+    },
+    {
+      "name": "compilation.api_version_management",
+      "max_score": 3,
+      "status": "scored",
+      "score": 3,
+      "reason": "存在 current/released API baseline 与 check_api/checkapi 或等价兼容验证，版本可控并约束向后兼容。",
+      "score_reasoning": "存在 current/released API baseline 与 check_api/checkapi 或等价兼容验证，版本可控并约束向后兼容。",
+      "analysis": "存在 current/released API baseline 与 check_api/checkapi 或等价兼容验证，版本可控并约束向后兼容。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "compilation.api_version_management",
+          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "car-lib/api/current.txt",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "reviewed code evidence",
+          "observation": "版本、兼容范围或 API baseline 构建绑定。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "car-lib/Android.bp",
+          "line_start": 132,
+          "line_end": 132,
+          "symbol": "reviewed code evidence",
+          "observation": "版本、兼容范围或 API baseline 构建绑定。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "confidence": "high"
+    },
+    {
+      "name": "quality.integration_test",
+      "max_score": 3,
+      "status": "scored",
+      "score": 2,
+      "reason": "测试目标和断言有效，关键模块交互覆盖代理达到 50%；没有绑定 100% 执行结果，不能给 3。",
+      "score_reasoning": "测试目标和断言有效，关键模块交互覆盖代理达到 50%；没有绑定 100% 执行结果，不能给 3。",
+      "analysis": "测试目标和断言有效，关键模块交互覆盖代理达到 50%；没有绑定 100% 执行结果，不能给 3。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "quality.integration_test",
+          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "car-lib/src/android/car/test/CarLocationTestHelper.java",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "reviewed code evidence",
+          "observation": "真实测试源与断言。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "TEST_MAPPING",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "reviewed code evidence",
+          "observation": "测试套件/映射配置。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "confidence": "high"
+    },
+    {
+      "name": "solid_principle.single_responsibility",
+      "max_score": 4,
+      "status": "scored",
+      "score": 1,
+      "reason": "PlatformCompatRuntime/Service 与多个全局 registry/cache/polling 对象混合平台兼容职责，且复制整套 legacy car-lib。 按 0–4 独立档位锁定 1 分。",
+      "score_reasoning": "PlatformCompatRuntime/Service 与多个全局 registry/cache/polling 对象混合平台兼容职责，且复制整套 legacy car-lib。 按 0–4 独立档位锁定 1 分。",
+      "analysis": "PlatformCompatRuntime/Service 与多个全局 registry/cache/polling 对象混合平台兼容职责，且复制整套 legacy car-lib。 按 0–4 独立档位锁定 1 分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "solid_principle.single_responsibility",
+          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatRuntime.java",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "reviewed code evidence",
+          "observation": "PlatformCompatRuntime/Service 与多个全局 registry/cache/polling 对象混合平台兼容职责，且复制整套 legacy car-lib。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "reviewed code evidence",
+          "observation": "用于交叉核对该原则的第二处独立代码边界。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "confidence": "high",
+      "issues": [
+        "PlatformCompatRuntime/Service 与多个全局 registry/cache/polling 对象混合平台兼容职责，且复制整套 legacy car-lib。"
+      ],
+      "recommendations": [
+        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+      ]
+    },
+    {
+      "name": "solid_principle.open_closed",
+      "max_score": 4,
+      "status": "scored",
+      "score": 1,
+      "reason": "平台规则、hidden API 和 vendor bridge 通过集中分支扩展，新增平台需要修改多个核心类。 按 0–4 独立档位锁定 1 分。",
+      "score_reasoning": "平台规则、hidden API 和 vendor bridge 通过集中分支扩展，新增平台需要修改多个核心类。 按 0–4 独立档位锁定 1 分。",
+      "analysis": "平台规则、hidden API 和 vendor bridge 通过集中分支扩展，新增平台需要修改多个核心类。 按 0–4 独立档位锁定 1 分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "solid_principle.open_closed",
+          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "reviewed code evidence",
+          "observation": "平台规则、hidden API 和 vendor bridge 通过集中分支扩展，新增平台需要修改多个核心类。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "compat/aidl/com/cockpitbench/platformcompat/IPlatformCompat.aidl",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "reviewed code evidence",
+          "observation": "用于交叉核对该原则的第二处独立代码边界。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "confidence": "high",
+      "issues": [
+        "平台规则、hidden API 和 vendor bridge 通过集中分支扩展，新增平台需要修改多个核心类。"
+      ],
+      "recommendations": [
+        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+      ]
+    },
+    {
+      "name": "solid_principle.liskov_substitution",
+      "max_score": 4,
+      "status": "scored",
+      "score": 2,
+      "reason": "Binder Stub 与 callback 基本维持声明契约，但兼容副本和 fallback 路径缺少替换性验证。 按 0–4 独立档位锁定 2 分。",
+      "score_reasoning": "Binder Stub 与 callback 基本维持声明契约，但兼容副本和 fallback 路径缺少替换性验证。 按 0–4 独立档位锁定 2 分。",
+      "analysis": "Binder Stub 与 callback 基本维持声明契约，但兼容副本和 fallback 路径缺少替换性验证。 按 0–4 独立档位锁定 2 分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "solid_principle.liskov_substitution",
+          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "compat/aidl/com/cockpitbench/platformcompat/IPlatformCompat.aidl",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "reviewed code evidence",
+          "observation": "Binder Stub 与 callback 基本维持声明契约，但兼容副本和 fallback 路径缺少替换性验证。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatRuntime.java",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "reviewed code evidence",
+          "observation": "用于交叉核对该原则的第二处独立代码边界。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "confidence": "high",
+      "issues": [
+        "Binder Stub 与 callback 基本维持声明契约，但兼容副本和 fallback 路径缺少替换性验证。"
+      ],
+      "recommendations": [
+        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+      ]
+    },
+    {
+      "name": "solid_principle.interface_segregation",
+      "max_score": 4,
+      "status": "scored",
+      "score": 1,
+      "reason": "IPlatformCompat 聚合兼容命令、状态、callback 等多类客户端能力，接口隔离较弱。 按 0–4 独立档位锁定 1 分。",
+      "score_reasoning": "IPlatformCompat 聚合兼容命令、状态、callback 等多类客户端能力，接口隔离较弱。 按 0–4 独立档位锁定 1 分。",
+      "analysis": "IPlatformCompat 聚合兼容命令、状态、callback 等多类客户端能力，接口隔离较弱。 按 0–4 独立档位锁定 1 分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "solid_principle.interface_segregation",
+          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatRuntime.java",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "reviewed code evidence",
+          "observation": "IPlatformCompat 聚合兼容命令、状态、callback 等多类客户端能力，接口隔离较弱。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "reviewed code evidence",
+          "observation": "用于交叉核对该原则的第二处独立代码边界。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "confidence": "high",
+      "issues": [
+        "IPlatformCompat 聚合兼容命令、状态、callback 等多类客户端能力，接口隔离较弱。"
+      ],
+      "recommendations": [
+        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+      ]
+    },
+    {
+      "name": "solid_principle.dependency_inversion",
+      "max_score": 4,
+      "status": "scored",
+      "score": 1,
+      "reason": "运行时依赖静态 registry、具体 fallback/cache/polling 与反射 vendor 实现，高层未依赖可注入抽象。 按 0–4 独立档位锁定 1 分。",
+      "score_reasoning": "运行时依赖静态 registry、具体 fallback/cache/polling 与反射 vendor 实现，高层未依赖可注入抽象。 按 0–4 独立档位锁定 1 分。",
+      "analysis": "运行时依赖静态 registry、具体 fallback/cache/polling 与反射 vendor 实现，高层未依赖可注入抽象。 按 0–4 独立档位锁定 1 分。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "solid_principle.dependency_inversion",
+          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "reviewed code evidence",
+          "observation": "运行时依赖静态 registry、具体 fallback/cache/polling 与反射 vendor 实现，高层未依赖可注入抽象。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "compat/aidl/com/cockpitbench/platformcompat/IPlatformCompat.aidl",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "reviewed code evidence",
+          "observation": "用于交叉核对该原则的第二处独立代码边界。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "confidence": "high",
+      "issues": [
+        "运行时依赖静态 registry、具体 fallback/cache/polling 与反射 vendor 实现，高层未依赖可注入抽象。"
+      ],
+      "recommendations": [
+        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+      ]
+    },
+    {
+      "name": "platform_reuse.platform_upgrade",
+      "max_score": 10,
+      "status": "scored",
+      "score": 3,
+      "reason": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 3。",
+      "score_reasoning": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 3。",
+      "analysis": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 3。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "platform_reuse.platform_upgrade",
+          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "car-lib/src/android/car/VehiclePropertyIds.java",
+          "line_start": 2279,
+          "line_end": 2279,
+          "symbol": "reviewed code evidence",
+          "observation": "Android 平台绑定或抽象事实。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "current_head",
+          "path": "car-builtin-lib/src/android/car/builtin/os/BinderHelper.java",
+          "line_start": 63,
+          "line_end": 63,
+          "symbol": "reviewed code evidence",
+          "observation": "Android 平台绑定或抽象事实。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        }
+      ],
+      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "confidence": "high"
+    },
+    {
+      "name": "platform_reuse.release_branch_strategy",
+      "max_score": 10,
+      "status": "scored",
+      "score": 3,
+      "reason": "真实 refs 同时存在平台分支和车型/SOP release 分支，车型拆分更细，锁定 3。",
+      "score_reasoning": "真实 refs 同时存在平台分支和车型/SOP release 分支，车型拆分更细，锁定 3。",
+      "analysis": "真实 refs 同时存在平台分支和车型/SOP release 分支，车型拆分更细，锁定 3。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "platform_reuse.release_branch_strategy",
+          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD"
+        },
+        {
+          "source": "git_ref",
+          "path": ".git",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "refs/heads/platform/8155",
+          "observation": "平台/车型分支 tip 与 main 不同，命名和实际对象共同证明复用粒度。",
+          "commit": "93ccc6f808390533175a71aca35192f1a1f704bb",
+          "ref": "refs/heads/platform/8155"
+        },
+        {
+          "source": "git_ref",
+          "path": ".git",
+          "line_start": 1,
+          "line_end": 1,
+          "symbol": "refs/heads/platform/8295",
+          "observation": "平台/车型分支 tip 与 main 不同，命名和实际对象共同证明复用粒度。",
+          "commit": "068b6972dc4b5f3ded6b55d1800746b914243f3b",
+          "ref": "refs/heads/platform/8295"
+        }
+      ],
+      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "confidence": "high"
+    }
+  ]
+}
