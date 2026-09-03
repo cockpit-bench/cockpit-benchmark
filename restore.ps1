@@ -7,9 +7,9 @@ $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 
 $expectedHashes = [ordered]@{
-    'STANDARD_SCORES.json' = 'eb20171a70dad393af35862d5e5e3b534d7cf1ed41e12a80058176a52803ed3b'
+    'STANDARD_SCORES.json' = 'd04e520d842400069ced73e62c9b0279df7bd7e671d5cb312e031f46e79d1148'
     'SCORECARD.md'         = 'ea7117cd965b3708a6ee80967933744081b3e0cf80e8faef8fe83a29fbd1a3d3'
-    'SCORECARD.csv'        = '28ec6af872a6e38a04abb5833d8bde5fba5a51349d8f21531a6e9fb748df2539'
+    'SCORECARD.csv'        = 'c7c2d34c958cebf0d283a5149c91e5b047a8d503591b31039c377f363d099d51'
     'SCORE_RULES.md'       = '190613d83db6baab49bb66069d1de78fe7ba673f1969ff4e4a5b4c87ecbf7d74'
 }
 

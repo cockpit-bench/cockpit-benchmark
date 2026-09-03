@@ -2,7 +2,7 @@
   "schema_version": "2.0.0",
   "document_type": "app9_benchmark_standard_scores",
   "adjudicator": "current-head two-pass evidence review",
-  "generated_at": "2026-09-03T07:43:42.503853+00:00",
+  "generated_at": "2026-09-03T08:12:32.954436+00:00",
   "contract": {
     "path": "SCORE_RULES.md",
     "sha256": "190613d83db6baab49bb66069d1de78fe7ba673f1969ff4e4a5b4c87ecbf7d74",
@@ -86,8 +86,8 @@
       "name": "climatix-hvac",
       "kind": "APP",
       "path": "repos/app/climatix-hvac",
-      "head": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
-      "tree": "e7ae266f1f301f24bf0c383d79071fb0b1061666",
+      "head": "5141af902414a8b5404da756a51e89a57d07d2e5",
+      "tree": "ebe6b21b448132adafcbf9822ed390acad2134fc",
       "branch": "main",
       "worktree_clean": true,
       "total": {
@@ -110,7 +110,7 @@
               "line_end": 1,
               "symbol": "architecture.componentization",
               "observation": "该叶的完整 current-HEAD 事实与命中条件。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             },
             {
@@ -120,7 +120,7 @@
               "line_end": 4,
               "symbol": "include",
               "observation": "模块清单和依赖图入口。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             }
           ],
@@ -142,7 +142,7 @@
               "line_end": 1,
               "symbol": "architecture.decoupling",
               "observation": "该叶的完整 current-HEAD 事实与命中条件。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             },
             {
@@ -152,7 +152,7 @@
               "line_end": 4,
               "symbol": "include",
               "observation": "模块清单和依赖图入口。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             }
           ],
@@ -174,7 +174,7 @@
               "line_end": 1,
               "symbol": "architecture.modularization",
               "observation": "该叶的完整 current-HEAD 事实与命中条件。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             },
             {
@@ -184,7 +184,7 @@
               "line_end": 4,
               "symbol": "include",
               "observation": "模块清单和依赖图入口。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             }
           ],
@@ -206,7 +206,7 @@
               "line_end": 1,
               "symbol": "compilation.ci_independence",
               "observation": "该叶的完整 current-HEAD 事实与命中条件。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             },
             {
@@ -216,7 +216,7 @@
               "line_end": 1,
               "symbol": "file",
               "observation": "CI 配置内容已逐项核对。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             }
           ],
@@ -238,7 +238,7 @@
               "line_end": 1,
               "symbol": "compilation.compilation_independence",
               "observation": "该叶的完整 current-HEAD 事实与命中条件。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             },
             {
@@ -248,7 +248,7 @@
               "line_end": 1,
               "symbol": "file",
               "observation": "构建依赖声明入口。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             }
           ],
@@ -270,7 +270,7 @@
               "line_end": 1,
               "symbol": "compilation.api_version_management",
               "observation": "该叶的完整 current-HEAD 事实与命中条件。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             },
             {
@@ -280,7 +280,7 @@
               "line_end": 1,
               "symbol": "file",
               "observation": "版本控制入口。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             }
           ],
@@ -302,7 +302,7 @@
               "line_end": 1,
               "symbol": "platform_reuse.platform_upgrade",
               "observation": "该叶的完整 current-HEAD 事实与命中条件。 定向扫描计数={'manifest': 7, 'module_build': 7, 'resource': 64, 'source': 106, 'total': 184}",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             }
           ],
@@ -324,7 +324,7 @@
               "line_end": 1,
               "symbol": "platform_reuse.release_branch_strategy",
               "observation": "该叶的完整 current-HEAD 事实与命中条件。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "HEAD"
             },
             {
@@ -334,7 +334,7 @@
               "line_end": 0,
               "symbol": "platform/8155",
               "observation": "8155 使用真实平台分支。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "refs/heads/platform/8155"
             },
             {
@@ -344,7 +344,7 @@
               "line_end": 0,
               "symbol": "platform/8295",
               "observation": "8295 使用另一真实平台分支。",
-              "commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+              "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
               "ref": "refs/heads/platform/8295"
             }
           ],
@@ -2614,9 +2614,9 @@
     "score_sum_matches": true,
     "target_scores_used_as_answers": false
   },
-  "status": "accepted_app9_current_head_standard_scores",
+  "status": "accepted_public_checkpoint",
   "release": {
-    "tag": "v0.5.0-app9",
+    "tag": "v0.5.1-app9",
     "scope": "9 APP active + 31 pending"
   },
   "rubric": {

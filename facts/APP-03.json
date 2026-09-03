@@ -4,93 +4,93 @@
       "automation_evidence": [],
       "build_configuration_files": [
         {
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
           "path": "app/build.gradle.kts"
         },
         {
           "git_blob_oid": "4a0e2be384ae8ebbd5dea929b615015775d41cdb",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:build.gradle.kts",
           "path": "build.gradle.kts"
         },
         {
           "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:comfort/build.gradle.kts",
           "path": "comfort/build.gradle.kts"
         },
         {
           "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:diagnostics/build.gradle.kts",
           "path": "diagnostics/build.gradle.kts"
         },
         {
           "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/build.gradle.kts",
           "path": "domain/build.gradle.kts"
         },
         {
           "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/build.gradle.kts",
           "path": "hvac-core/build.gradle.kts"
         },
         {
           "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:telemetry/build.gradle.kts",
           "path": "telemetry/build.gradle.kts"
         },
         {
           "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/build.gradle.kts",
           "path": "vehicle-api/build.gradle.kts"
         }
       ],
       "compatibility_evidence": [
         {
           "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
-          "line": 14,
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
+          "line": 16,
           "path": "app/build.gradle.kts"
         },
         {
           "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
           "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:comfort/build.gradle.kts",
           "line": 10,
           "path": "comfort/build.gradle.kts"
         },
         {
           "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
           "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:diagnostics/build.gradle.kts",
           "line": 10,
           "path": "diagnostics/build.gradle.kts"
         },
         {
           "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
           "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/build.gradle.kts",
           "line": 10,
           "path": "domain/build.gradle.kts"
         },
         {
           "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
           "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/build.gradle.kts",
           "line": 10,
           "path": "hvac-core/build.gradle.kts"
         },
         {
           "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
           "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:telemetry/build.gradle.kts",
           "line": 10,
           "path": "telemetry/build.gradle.kts"
         },
         {
           "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
           "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/build.gradle.kts",
           "line": 10,
           "path": "vehicle-api/build.gradle.kts"
         }
@@ -99,7 +99,7 @@
       "dedicated_version_control_files": [
         {
           "git_blob_oid": "2f822748fa5419ef79b886c0b132fc57787de1e3",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:version.properties",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:version.properties",
           "path": "version.properties"
         }
       ],
@@ -109,44 +109,44 @@
       "production_manifest_files": [
         {
           "git_blob_oid": "678c2a4b5e7677d2b59667ba294bbcdb5a27a136",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/src/main/AndroidManifest.xml",
           "path": "app/src/main/AndroidManifest.xml"
         },
         {
           "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:comfort/src/main/AndroidManifest.xml",
           "path": "comfort/src/main/AndroidManifest.xml"
         },
         {
           "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:diagnostics/src/main/AndroidManifest.xml",
           "path": "diagnostics/src/main/AndroidManifest.xml"
         },
         {
           "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/src/main/AndroidManifest.xml",
           "path": "domain/src/main/AndroidManifest.xml"
         },
         {
           "git_blob_oid": "01969353e3a9c0cbee9b0fe285a97b71308a36f6",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/AndroidManifest.xml",
           "path": "hvac-core/src/main/AndroidManifest.xml"
         },
         {
           "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:telemetry/src/main/AndroidManifest.xml",
           "path": "telemetry/src/main/AndroidManifest.xml"
         },
         {
           "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/src/main/AndroidManifest.xml",
           "path": "vehicle-api/src/main/AndroidManifest.xml"
         }
       ],
       "release_note_files": [
         {
           "git_blob_oid": "036e3c5b741de7a0af3a000a3516742f3c6b3a2e",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:RELEASE_NOTES.md",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:RELEASE_NOTES.md",
           "path": "RELEASE_NOTES.md"
         }
       ],
@@ -155,87 +155,87 @@
       "version_control_files": [
         {
           "git_blob_oid": "036e3c5b741de7a0af3a000a3516742f3c6b3a2e",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:RELEASE_NOTES.md",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:RELEASE_NOTES.md",
           "path": "RELEASE_NOTES.md"
         },
         {
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
           "path": "app/build.gradle.kts"
         },
         {
           "git_blob_oid": "678c2a4b5e7677d2b59667ba294bbcdb5a27a136",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/src/main/AndroidManifest.xml",
           "path": "app/src/main/AndroidManifest.xml"
         },
         {
           "git_blob_oid": "4a0e2be384ae8ebbd5dea929b615015775d41cdb",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:build.gradle.kts",
           "path": "build.gradle.kts"
         },
         {
           "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:comfort/build.gradle.kts",
           "path": "comfort/build.gradle.kts"
         },
         {
           "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:comfort/src/main/AndroidManifest.xml",
           "path": "comfort/src/main/AndroidManifest.xml"
         },
         {
           "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:diagnostics/build.gradle.kts",
           "path": "diagnostics/build.gradle.kts"
         },
         {
           "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:diagnostics/src/main/AndroidManifest.xml",
           "path": "diagnostics/src/main/AndroidManifest.xml"
         },
         {
           "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/build.gradle.kts",
           "path": "domain/build.gradle.kts"
         },
         {
           "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/src/main/AndroidManifest.xml",
           "path": "domain/src/main/AndroidManifest.xml"
         },
         {
           "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/build.gradle.kts",
           "path": "hvac-core/build.gradle.kts"
         },
         {
           "git_blob_oid": "01969353e3a9c0cbee9b0fe285a97b71308a36f6",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/AndroidManifest.xml",
           "path": "hvac-core/src/main/AndroidManifest.xml"
         },
         {
           "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:telemetry/build.gradle.kts",
           "path": "telemetry/build.gradle.kts"
         },
         {
           "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:telemetry/src/main/AndroidManifest.xml",
           "path": "telemetry/src/main/AndroidManifest.xml"
         },
         {
           "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/build.gradle.kts",
           "path": "vehicle-api/build.gradle.kts"
         },
         {
           "git_blob_oid": "94cbbcfc396aca20240417158bac4d52ba4e1a14",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/src/main/AndroidManifest.xml",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/src/main/AndroidManifest.xml",
           "path": "vehicle-api/src/main/AndroidManifest.xml"
         },
         {
           "git_blob_oid": "2f822748fa5419ef79b886c0b132fc57787de1e3",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:version.properties",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:version.properties",
           "path": "version.properties"
         }
       ],
@@ -348,54 +348,54 @@
         {
           "excerpt": "implementation(project(\":domain\"))",
           "from_module": ":app",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
-          "line": 38,
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
+          "line": 40,
           "path": "app/build.gradle.kts",
           "to_module": ":domain"
         },
         {
           "excerpt": "implementation(project(\":vehicle-api\"))",
           "from_module": ":app",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
-          "line": 39,
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
+          "line": 41,
           "path": "app/build.gradle.kts",
           "to_module": ":vehicle-api"
         },
         {
           "excerpt": "implementation(project(\":hvac-core\"))",
           "from_module": ":app",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
-          "line": 40,
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
+          "line": 42,
           "path": "app/build.gradle.kts",
           "to_module": ":hvac-core"
         },
         {
           "excerpt": "implementation(project(\":comfort\"))",
           "from_module": ":app",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
-          "line": 41,
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
+          "line": 43,
           "path": "app/build.gradle.kts",
           "to_module": ":comfort"
         },
         {
           "excerpt": "implementation(project(\":diagnostics\"))",
           "from_module": ":app",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
-          "line": 42,
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
+          "line": 44,
           "path": "app/build.gradle.kts",
           "to_module": ":diagnostics"
         },
         {
           "excerpt": "implementation(project(\":telemetry\"))",
           "from_module": ":app",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
-          "line": 43,
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
+          "line": 45,
           "path": "app/build.gradle.kts",
           "to_module": ":telemetry"
         },
@@ -403,7 +403,7 @@
           "excerpt": "implementation(project(\":domain\"))",
           "from_module": ":vehicle-api",
           "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/build.gradle.kts",
           "line": 19,
           "path": "vehicle-api/build.gradle.kts",
           "to_module": ":domain"
@@ -412,7 +412,7 @@
           "excerpt": "implementation(project(\":domain\"))",
           "from_module": ":hvac-core",
           "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/build.gradle.kts",
           "line": 19,
           "path": "hvac-core/build.gradle.kts",
           "to_module": ":domain"
@@ -421,7 +421,7 @@
           "excerpt": "implementation(project(\":vehicle-api\"))",
           "from_module": ":hvac-core",
           "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/build.gradle.kts",
           "line": 20,
           "path": "hvac-core/build.gradle.kts",
           "to_module": ":vehicle-api"
@@ -430,7 +430,7 @@
           "excerpt": "implementation(project(\":domain\"))",
           "from_module": ":comfort",
           "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:comfort/build.gradle.kts",
           "line": 18,
           "path": "comfort/build.gradle.kts",
           "to_module": ":domain"
@@ -439,7 +439,7 @@
           "excerpt": "implementation(project(\":domain\"))",
           "from_module": ":diagnostics",
           "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:diagnostics/build.gradle.kts",
           "line": 18,
           "path": "diagnostics/build.gradle.kts",
           "to_module": ":domain"
@@ -448,7 +448,7 @@
           "excerpt": "implementation(project(\":domain\"))",
           "from_module": ":telemetry",
           "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:telemetry/build.gradle.kts",
           "line": 18,
           "path": "telemetry/build.gradle.kts",
           "to_module": ":domain"
@@ -485,8 +485,8 @@
         {
           "build_file": "app/build.gradle.kts",
           "build_file_anchor": {
-            "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+            "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+            "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
             "path": "app/build.gradle.kts"
           },
           "directory": "app",
@@ -507,7 +507,7 @@
           "build_file": "domain/build.gradle.kts",
           "build_file_anchor": {
             "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
-            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+            "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/build.gradle.kts",
             "path": "domain/build.gradle.kts"
           },
           "directory": "domain",
@@ -527,7 +527,7 @@
           "build_file": "vehicle-api/build.gradle.kts",
           "build_file_anchor": {
             "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
-            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+            "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/build.gradle.kts",
             "path": "vehicle-api/build.gradle.kts"
           },
           "directory": "vehicle-api",
@@ -547,7 +547,7 @@
           "build_file": "hvac-core/build.gradle.kts",
           "build_file_anchor": {
             "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
-            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+            "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/build.gradle.kts",
             "path": "hvac-core/build.gradle.kts"
           },
           "directory": "hvac-core",
@@ -567,7 +567,7 @@
           "build_file": "comfort/build.gradle.kts",
           "build_file_anchor": {
             "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
-            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+            "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:comfort/build.gradle.kts",
             "path": "comfort/build.gradle.kts"
           },
           "directory": "comfort",
@@ -587,7 +587,7 @@
           "build_file": "diagnostics/build.gradle.kts",
           "build_file_anchor": {
             "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
-            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+            "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:diagnostics/build.gradle.kts",
             "path": "diagnostics/build.gradle.kts"
           },
           "directory": "diagnostics",
@@ -607,7 +607,7 @@
           "build_file": "telemetry/build.gradle.kts",
           "build_file_anchor": {
             "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
-            "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+            "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:telemetry/build.gradle.kts",
             "path": "telemetry/build.gradle.kts"
           },
           "directory": "telemetry",
@@ -627,7 +627,7 @@
       "settings_files": [
         {
           "git_blob_oid": "36c28fbdceeb5adda1af1b33b3bf9db0eeed9d3e",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:settings.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:settings.gradle.kts",
           "path": "settings.gradle.kts"
         }
       ]
@@ -641,8 +641,8 @@
           "contains_build_step": true,
           "contains_deploy_step": false,
           "contains_test_step": true,
-          "git_blob_oid": "4177d6bdd83fb2079e3adabf78ff3c3d3414880b",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:.github/workflows/android.yml",
+          "git_blob_oid": "f0d4f6a711d8a370ef05715a02b2062d9a3f1f80",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:.github/workflows/android.yml",
           "nonempty": true,
           "path": ".github/workflows/android.yml"
         }
@@ -656,8 +656,8 @@
       "evidence_gaps": [],
       "independent_ci_configuration_files": [
         {
-          "git_blob_oid": "4177d6bdd83fb2079e3adabf78ff3c3d3414880b",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:.github/workflows/android.yml",
+          "git_blob_oid": "f0d4f6a711d8a370ef05715a02b2062d9a3f1f80",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:.github/workflows/android.yml",
           "path": ".github/workflows/android.yml"
         }
       ],
@@ -668,43 +668,43 @@
     "compilation": {
       "build_configuration_files": [
         {
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
           "path": "app/build.gradle.kts"
         },
         {
           "git_blob_oid": "4a0e2be384ae8ebbd5dea929b615015775d41cdb",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:build.gradle.kts",
           "path": "build.gradle.kts"
         },
         {
           "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:comfort/build.gradle.kts",
           "path": "comfort/build.gradle.kts"
         },
         {
           "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:diagnostics/build.gradle.kts",
           "path": "diagnostics/build.gradle.kts"
         },
         {
           "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/build.gradle.kts",
           "path": "domain/build.gradle.kts"
         },
         {
           "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/build.gradle.kts",
           "path": "hvac-core/build.gradle.kts"
         },
         {
           "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:telemetry/build.gradle.kts",
           "path": "telemetry/build.gradle.kts"
         },
         {
           "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/build.gradle.kts",
           "path": "vehicle-api/build.gradle.kts"
         }
       ],
@@ -721,62 +721,62 @@
       "internal_project_dependencies": [
         {
           "excerpt": "implementation(project(\":domain\"))",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
           "kind": "internal_project_source",
-          "line": 38,
+          "line": 40,
           "path": "app/build.gradle.kts",
           "target": ":domain"
         },
         {
           "excerpt": "implementation(project(\":vehicle-api\"))",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
           "kind": "internal_project_source",
-          "line": 39,
+          "line": 41,
           "path": "app/build.gradle.kts",
           "target": ":vehicle-api"
         },
         {
           "excerpt": "implementation(project(\":hvac-core\"))",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
           "kind": "internal_project_source",
-          "line": 40,
+          "line": 42,
           "path": "app/build.gradle.kts",
           "target": ":hvac-core"
         },
         {
           "excerpt": "implementation(project(\":comfort\"))",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
           "kind": "internal_project_source",
-          "line": 41,
+          "line": 43,
           "path": "app/build.gradle.kts",
           "target": ":comfort"
         },
         {
           "excerpt": "implementation(project(\":diagnostics\"))",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
           "kind": "internal_project_source",
-          "line": 42,
+          "line": 44,
           "path": "app/build.gradle.kts",
           "target": ":diagnostics"
         },
         {
           "excerpt": "implementation(project(\":telemetry\"))",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
           "kind": "internal_project_source",
-          "line": 43,
+          "line": 45,
           "path": "app/build.gradle.kts",
           "target": ":telemetry"
         },
         {
           "excerpt": "implementation(project(\":domain\"))",
           "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:comfort/build.gradle.kts",
           "kind": "internal_project_source",
           "line": 18,
           "path": "comfort/build.gradle.kts",
@@ -785,7 +785,7 @@
         {
           "excerpt": "implementation(project(\":domain\"))",
           "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:diagnostics/build.gradle.kts",
           "kind": "internal_project_source",
           "line": 18,
           "path": "diagnostics/build.gradle.kts",
@@ -794,7 +794,7 @@
         {
           "excerpt": "implementation(project(\":domain\"))",
           "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/build.gradle.kts",
           "kind": "internal_project_source",
           "line": 19,
           "path": "hvac-core/build.gradle.kts",
@@ -803,7 +803,7 @@
         {
           "excerpt": "implementation(project(\":vehicle-api\"))",
           "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/build.gradle.kts",
           "kind": "internal_project_source",
           "line": 20,
           "path": "hvac-core/build.gradle.kts",
@@ -812,7 +812,7 @@
         {
           "excerpt": "implementation(project(\":domain\"))",
           "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:telemetry/build.gradle.kts",
           "kind": "internal_project_source",
           "line": 18,
           "path": "telemetry/build.gradle.kts",
@@ -821,7 +821,7 @@
         {
           "excerpt": "implementation(project(\":domain\"))",
           "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/build.gradle.kts",
           "kind": "internal_project_source",
           "line": 19,
           "path": "vehicle-api/build.gradle.kts",
@@ -832,30 +832,30 @@
       "maven_artifacts": [
         {
           "artifact": "activity-ktx",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
           "group": "androidx.activity",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
-          "line": 44,
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
+          "line": 46,
           "literal_semver": true,
           "path": "app/build.gradle.kts",
           "version_expression": "1.9.3"
         },
         {
           "artifact": "lifecycle-viewmodel-ktx",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
           "group": "androidx.lifecycle",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
-          "line": 45,
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
+          "line": 47,
           "literal_semver": true,
           "path": "app/build.gradle.kts",
           "version_expression": "2.8.7"
         },
         {
           "artifact": "junit",
-          "git_blob_oid": "6d6f5914b7e2d0aa95e0e52ab15d718973e00c4d",
+          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
           "group": "androidx.test.ext",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:app/build.gradle.kts",
-          "line": 46,
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
+          "line": 48,
           "literal_semver": true,
           "path": "app/build.gradle.kts",
           "version_expression": "1.2.1"
@@ -864,7 +864,7 @@
           "artifact": "junit",
           "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
           "group": "junit",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:comfort/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:comfort/build.gradle.kts",
           "line": 19,
           "literal_semver": true,
           "path": "comfort/build.gradle.kts",
@@ -874,7 +874,7 @@
           "artifact": "junit",
           "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
           "group": "junit",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:diagnostics/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:diagnostics/build.gradle.kts",
           "line": 19,
           "literal_semver": true,
           "path": "diagnostics/build.gradle.kts",
@@ -884,7 +884,7 @@
           "artifact": "kotlinx-coroutines-core",
           "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
           "group": "org.jetbrains.kotlinx",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/build.gradle.kts",
           "line": 19,
           "literal_semver": true,
           "path": "domain/build.gradle.kts",
@@ -894,7 +894,7 @@
           "artifact": "junit",
           "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
           "group": "junit",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:domain/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/build.gradle.kts",
           "line": 20,
           "literal_semver": true,
           "path": "domain/build.gradle.kts",
@@ -904,7 +904,7 @@
           "artifact": "junit",
           "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
           "group": "junit",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:hvac-core/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/build.gradle.kts",
           "line": 22,
           "literal_semver": true,
           "path": "hvac-core/build.gradle.kts",
@@ -914,7 +914,7 @@
           "artifact": "junit",
           "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
           "group": "junit",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:telemetry/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:telemetry/build.gradle.kts",
           "line": 19,
           "literal_semver": true,
           "path": "telemetry/build.gradle.kts",
@@ -924,7 +924,7 @@
           "artifact": "kotlinx-coroutines-core",
           "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
           "group": "org.jetbrains.kotlinx",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/build.gradle.kts",
           "line": 20,
           "literal_semver": true,
           "path": "vehicle-api/build.gradle.kts",
@@ -934,7 +934,7 @@
           "artifact": "junit",
           "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
           "group": "junit",
-          "head_blob": "c0a37f5985611ffe5b0dbb65bc4352729108d828:vehicle-api/build.gradle.kts",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/build.gradle.kts",
           "line": 21,
           "literal_semver": true,
           "path": "vehicle-api/build.gradle.kts",
@@ -1004,7 +1004,7 @@
         {
           "name": "main",
           "object_type": "commit",
-          "tip": "c0a37f5985611ffe5b0dbb65bc4352729108d828"
+          "tip": "5141af902414a8b5404da756a51e89a57d07d2e5"
         },
         {
           "name": "platform/8155",
@@ -1026,7 +1026,7 @@
       "default_branch": "main",
       "evidence_gaps": [],
       "has_unified_main": true,
-      "head_commit": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+      "head_commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
       "main_branches": [
         "main"
       ],
@@ -1042,7 +1042,7 @@
       "sop_branches": []
     }
   },
-  "head": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+  "head": "5141af902414a8b5404da756a51e89a57d07d2e5",
   "kind": "APP",
   "repo_id": "APP-03"
 }

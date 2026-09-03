@@ -4,7 +4,7 @@
 
 | ID | Repo | Role | Final HEAD | GitHub |
 |---|---|---|---|---|
-| APP-03 | climatix-hvac | high/small | c0a37f5985611ffe5b0dbb65bc4352729108d828 | https://github.com/cockpit-bench/climatix-hvac |
+| APP-03 | climatix-hvac | high/small | 5141af902414a8b5404da756a51e89a57d07d2e5 | https://github.com/cockpit-bench/climatix-hvac |
 | APP-02 | horizon-launcher | high/medium | 82f129b9d9c1270ae2707032eee6b79c8dd072f2 | https://github.com/cockpit-bench/horizon-launcher |
 | APP-01 | aurora-settings | high/large | 150289b5e0d67acf395aa5418e43347207e9c1b4 | https://github.com/cockpit-bench/aurora-settings |
 | APP-13 | market-hub | medium/small | 3f421d00c591dc47b7de81f77292aa512eb34992 | https://github.com/cockpit-bench/market-hub |

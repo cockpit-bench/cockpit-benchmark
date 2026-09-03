@@ -28,7 +28,8 @@
 
 ## 版本
 
-- 当前标签：v0.5.0-app9
+- 当前标签：v0.5.1-app9
+- `v0.5.0-app9` 保留为首个 APP-9 检查点；其 APP-03 HEAD 的 GitHub Actions 未完成 AAOS 边界拆分验证，已由本标签前向纠正，不再作为推荐版本。
 - APP：9/9 已评分，72/72 叶有标准分与证据。
 - FW：0/9，本版本明确 pending。
 - v0.4.0 保留原 Dev-6 历史；其中 FW 使用的 embedded 旧口径不得继承到后续 Android FW 正式版本。

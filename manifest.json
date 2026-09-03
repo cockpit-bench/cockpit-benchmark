@@ -394,7 +394,7 @@
       "build_system": "Gradle",
       "buildability": "aosp_required",
       "business_domain": "座舱空调/HVAC",
-      "commit_count": 304,
+      "commit_count": 307,
       "default_branch": "main",
       "delivery_status": "active",
       "dimensions_covered": [
@@ -522,7 +522,7 @@
       "quality_rationale": "在真实 AOSP HVAC 历史之上形成七模块产品子系统：domain 保持纯领域接口，vehicle-api 集中类型化 Binder 与隐藏 API 边界，comfort、diagnostics、telemetry 采用数据驱动运行时并有单元/设备契约测试；平台分支只承载小范围适配差异。",
       "quality_tier": "high",
       "relative_path": "repos/app/climatix-hvac",
-      "repo_head": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+      "repo_head": "5141af902414a8b5404da756a51e89a57d07d2e5",
       "size_band": "small",
       "source": {
         "license": "Apache-2.0",
@@ -533,19 +533,19 @@
         "upstream_url": "https://git.codelinaro.org/clo/la/platform/packages/apps/Car/Hvac"
       },
       "source_files": 222,
-      "source_loc": 10774,
+      "source_loc": 10787,
       "tags": [
         "v1.0.0"
       ],
-      "tracked_files": 236,
+      "tracked_files": 240,
       "validation_status": "verified",
       "delivery": {
         "status": "active",
         "repository_url": "https://github.com/cockpit-bench/climatix-hvac.git",
-        "expected_head": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+        "expected_head": "5141af902414a8b5404da756a51e89a57d07d2e5",
         "refs": {
           "refs/heads/develop": "7fc67a915ef594c8ba573fae90053e286b790713",
-          "refs/heads/main": "c0a37f5985611ffe5b0dbb65bc4352729108d828",
+          "refs/heads/main": "5141af902414a8b5404da756a51e89a57d07d2e5",
           "refs/heads/platform/8155": "b313db00f552d9dac3ba3e20a5fc0df0e873d646",
           "refs/heads/platform/8295": "f6df3cc885c4ba3c6e229800781a78c873665db2",
           "refs/heads/release/1.0": "85770d2ca3b6038c90a3a3b989b1bbb8c6acadc2",
