@@ -1,0 +1,8 @@
+* text=auto
+
+# These four files are byte-frozen benchmark artifacts. Keep repository and
+# working-tree bytes identical on Windows, macOS, and Linux.
+STANDARD_SCORES.json -text
+SCORECARD.md -text
+SCORECARD.csv -text
+SCORE_RULES.md -text

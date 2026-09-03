@@ -1,0 +1,103 @@
+{
+  "schema_version": "2.0.0",
+  "scope_id": "public-core-six-v040",
+  "release": "v0.4.0",
+  "organization": "cockpit-bench",
+  "wrapper_url": "https://github.com/cockpit-bench/cockpit-benchmark.git",
+  "inventory_repository_count": 40,
+  "active_repository_count": 6,
+  "pending_repository_count": 34,
+  "active_repositories": [
+    {
+      "id": "APP-01",
+      "name": "aurora-settings",
+      "kind": "APP",
+      "quality_tier": "high",
+      "repository_url": "https://github.com/cockpit-bench/aurora-settings.git",
+      "head": "150289b5e0d67acf395aa5418e43347207e9c1b4",
+      "ref_count": 6
+    },
+    {
+      "id": "APP-11",
+      "name": "motion-control",
+      "kind": "APP",
+      "quality_tier": "medium",
+      "repository_url": "https://github.com/cockpit-bench/motion-control.git",
+      "head": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
+      "ref_count": 9
+    },
+    {
+      "id": "APP-15",
+      "name": "atlas-settings",
+      "kind": "APP",
+      "quality_tier": "low",
+      "repository_url": "https://github.com/cockpit-bench/atlas-settings.git",
+      "head": "abe446eb843ce0b4ceb068b151ff4081b16ce832",
+      "ref_count": 15
+    },
+    {
+      "id": "FW-03",
+      "name": "vehicle-hal-adapter",
+      "kind": "FRAMEWORK",
+      "quality_tier": "high",
+      "repository_url": "https://github.com/cockpit-bench/vehicle-hal-adapter.git",
+      "head": "ec746bb6934e75818babfd48bde4e26ba379074c",
+      "ref_count": 7
+    },
+    {
+      "id": "FW-08",
+      "name": "soa-gateway",
+      "kind": "FRAMEWORK",
+      "quality_tier": "medium",
+      "repository_url": "https://github.com/cockpit-bench/soa-gateway.git",
+      "head": "6021ad22c54e7b7e22f21d6d59f294b8d9e3f8c9",
+      "ref_count": 7
+    },
+    {
+      "id": "FW-19",
+      "name": "can-middleware",
+      "kind": "FRAMEWORK",
+      "quality_tier": "low",
+      "repository_url": "https://github.com/cockpit-bench/can-middleware.git",
+      "head": "79994c9b00513768f4774e472d03e288490aa982",
+      "ref_count": 10
+    }
+  ],
+  "pending_repository_ids": [
+    "APP-02",
+    "APP-03",
+    "APP-04",
+    "APP-05",
+    "APP-06",
+    "APP-07",
+    "APP-08",
+    "APP-09",
+    "APP-10",
+    "APP-12",
+    "APP-13",
+    "APP-14",
+    "APP-16",
+    "APP-17",
+    "APP-18",
+    "APP-19",
+    "APP-20",
+    "FW-01",
+    "FW-02",
+    "FW-04",
+    "FW-05",
+    "FW-06",
+    "FW-07",
+    "FW-09",
+    "FW-10",
+    "FW-11",
+    "FW-12",
+    "FW-13",
+    "FW-14",
+    "FW-15",
+    "FW-16",
+    "FW-17",
+    "FW-18",
+    "FW-20"
+  ],
+  "policy": "Only the six active repositories are published and scored. Pending repositories are metadata-only."
+}
