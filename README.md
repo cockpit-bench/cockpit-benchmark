@@ -65,7 +65,7 @@ cockpit-benchmark/
 
 ## 历史版本
 
-旧的 40 仓大包和 `transport-v0.3.1` 历史保留在只读 archive：[`caobotao1234-star/cockpit-benchmark`](https://github.com/caobotao1234-star/cockpit-benchmark)。它用于追溯，不是当前推荐下载入口。
+旧的 40 仓大包和 `transport-v0.3.1` 历史保留在只读 archive：[`cockpit-bench/cockpit-benchmark-v031-archive`](https://github.com/cockpit-bench/cockpit-benchmark-v031-archive)。它用于追溯，不是当前推荐下载入口。
 
 ## 许可证边界
 

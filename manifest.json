@@ -8678,7 +8678,7 @@
     "version": "v0.4.0",
     "organization": "cockpit-bench",
     "wrapper_url": "https://github.com/cockpit-bench/cockpit-benchmark.git",
-    "legacy_archive_url": "https://github.com/caobotao1234-star/cockpit-benchmark",
+    "legacy_archive_url": "https://github.com/cockpit-bench/cockpit-benchmark-v031-archive",
     "active_repository_count": 6,
     "pending_repository_count": 34,
     "layout": "thin-wrapper-plus-six-independent-repositories",
