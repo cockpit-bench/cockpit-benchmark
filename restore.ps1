@@ -7,7 +7,7 @@ $expectedHashes = [ordered]@{
     'SCORECARD.md' = '413c934f88838f5de4c0b4ac4f5940cfc78072769f7609e20d17c088d89f67ec'
     'SCORECARD.csv' = 'a76068a27f4534b37b82ab32559b3cbc51ab9e86b4b99ad615b44de5b6edd560'
     'SCORE_RULES.md' = 'b52d8dcc270cd3cc2bb8ecf942c59adbb1128038d9256ff7ad0835599f096764'
-    'manifest.json' = 'aae0177cd0c8cad32cabfb8776e95a3077ad5064608f7f8b778275af6d1631cd'
+    'manifest.json' = '59d54407abb6921c79a14887bcc6ddc22118d17a8a91f48b604fbe87b6f93e06'
 }
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) { throw 'git is required.' }
 foreach ($entry in $expectedHashes.GetEnumerator()) {

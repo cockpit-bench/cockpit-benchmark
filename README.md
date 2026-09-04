@@ -15,7 +15,7 @@
 ```powershell
 git clone https://github.com/cockpit-bench/cockpit-benchmark.git
 cd cockpit-benchmark
-.estore.ps1 -Destination D:\cockpit-validation18
+.\restore.ps1 -Destination D:\cockpit-validation18
 ```
 
 评测时一次只把一个源码仓交给 Agent；不要把 wrapper、oracle、facts、SCORECARD 或质量标签作为 Agent 输入。Agent 输出后，按 `STANDARD_SCORES.json` 同名叶比较。
@@ -24,9 +24,9 @@ cd cockpit-benchmark
 
 ## 版本与边界
 
-- 推荐版本：`v0.7.0`
+- 推荐版本：`v0.7.1`
 - APP：72 叶，223/360；Android FW：99 叶，263/468；合计 486/828。
-- v0.7.0 修复 Git ref tip 绑定、统一 3.0 Oracle/合同 hash、物化全部 APP facts，并采用外部构建闭包及风险单调平台升级口径。
+- v0.7.0/v0.7.1 修复 Git ref tip 绑定、统一 3.0 Oracle/合同 hash、物化全部 APP facts，并采用外部构建闭包及风险单调平台升级口径；v0.7.1 修正 README 的 PowerShell 恢复命令显示。
 - 22 个 pending 仓不运输；`can-middleware` 仅为 v0.4 历史补充样例。
 - 旧 archive：https://github.com/cockpit-bench/cockpit-benchmark-v031-archive
 - 每个源码仓保留自己的许可证、来源和全部 heads/tags；源码仓不含答案。
