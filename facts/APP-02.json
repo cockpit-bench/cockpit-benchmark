@@ -132,7 +132,6 @@
           "grid",
           "hidden",
           "hidden-apis-compat",
-          "hidden-apis-disabled",
           "hidden-apis-enabled",
           "homescreen",
           "java",
@@ -183,8 +182,258 @@
             "ui"
           ]
         },
-        "production_code_path_count": 181,
-        "production_code_paths_sha256": "50191ef908b05c80a3a4f22cb2393ac992d5ed310829b56b6139730592404545",
+        "production_code_path_count": 180,
+        "production_code_paths_sha256": "8611e6f689b47a1b087486d0574687bf44ee095cde3a6359d6580be38fc8a495",
+        "soong_build_files": [
+          {
+            "git_blob_oid": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:Android.bp",
+            "path": "Android.bp"
+          },
+          {
+            "git_blob_oid": "fde4bd581c777f4fc7f4649c503356bcec170392",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/Android.bp",
+            "path": "app/Android.bp"
+          },
+          {
+            "git_blob_oid": "29ae2156520dd5a7af9fa00eeba3c74dd317d0b1",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:docklib-util/Android.bp",
+            "path": "docklib-util/Android.bp"
+          },
+          {
+            "git_blob_oid": "8fd678582c878bd4341a4f0d0930f08f8bec0288",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:docklib/Android.bp",
+            "path": "docklib/Android.bp"
+          },
+          {
+            "git_blob_oid": "22b05f9a1d0a7e6fad0e330cba6ca1825ee332e8",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/Android.bp",
+            "path": "libs/appgrid/Android.bp"
+          },
+          {
+            "git_blob_oid": "befe8fce558866e1a0b2401d961ea606cff01380",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/keys/Android.bp",
+            "path": "libs/appgrid/keys/Android.bp"
+          },
+          {
+            "git_blob_oid": "ebecfe1762e16155eb1c1249b2cd112668978962",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/car-launcher-common/Android.bp",
+            "path": "libs/car-launcher-common/Android.bp"
+          },
+          {
+            "git_blob_oid": "866f7737b2c766636d527e4903746578b7b75aaa",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/hidden-apis-compat/hidden-apis-enabled/Android.bp",
+            "path": "libs/hidden-apis-compat/hidden-apis-enabled/Android.bp"
+          },
+          {
+            "git_blob_oid": "520c338855c1bb04c4b664892611f0b733e659f9",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:systemui-shell/Android.bp",
+            "path": "systemui-shell/Android.bp"
+          }
+        ],
+        "soong_owned_unowned_code_path_count": 66,
+        "soong_owned_unowned_code_samples": [
+          {
+            "build_file": "docklib-util/Android.bp",
+            "path": "docklib-util/src/com/android/car/dockutil/events/DockCompatUtils.kt"
+          },
+          {
+            "build_file": "docklib-util/Android.bp",
+            "path": "docklib-util/src/com/android/car/dockutil/events/DockEvent.java"
+          },
+          {
+            "build_file": "docklib-util/Android.bp",
+            "path": "docklib-util/src/com/android/car/dockutil/events/DockEventSenderHelper.java"
+          },
+          {
+            "build_file": "docklib-util/Android.bp",
+            "path": "docklib-util/src/com/android/car/dockutil/events/DockPermission.java"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/DockInterface.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/DockViewController.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/DockViewModel.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/ExcludedItemsProvider.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/ResourceExcludedItemsProvider.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/data/DockAppItem.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/data/DockItemId.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/data/DockProtoDataController.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/data/DockProtoDataSource.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/events/DockEventsReceiver.java"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/events/DockPackageChangeReceiver.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/media/MediaUtils.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/task/DockTaskStackChangeListener.java"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/task/TaskUtils.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/view/DockAdapter.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/view/DockDragListener.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/view/DockItemClickListener.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/view/DockItemLongClickListener.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/view/DockItemViewController.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/view/DockItemViewHolder.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/view/DockView.kt"
+          },
+          {
+            "build_file": "docklib/Android.bp",
+            "path": "docklib/src/com/android/car/docklib/view/animation/ExcitementAnimationHelper.kt"
+          },
+          {
+            "build_file": "libs/hidden-apis-compat/hidden-apis-enabled/Android.bp",
+            "path": "libs/hidden-apis-compat/hidden-apis-enabled/src/com/android/car/hidden/apis/HiddenApiAccess.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/notification/BottomNotificationPanelViewMediator.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/notification/CarHeadsUpNotificationSystemContainer.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/notification/CarNotificationModule.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/notification/NotificationPanelViewController.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/notification/NotificationPanelViewMediator.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/notification/NotificationShadeWindowControllerImpl.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/notification/NotificationVisibilityLogger.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/notification/PowerManagerHelper.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/notification/TopNotificationPanelViewMediator.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/AssitantButton.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/ButtonRoleHolderController.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/ButtonSelectionStateController.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/ButtonSelectionStateListener.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/CameraPrivacyChipViewController.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/CarSystemBar.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/CarSystemBarButton.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/CarSystemBarController.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/CarSystemBarModule.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/CarSystemBarView.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/CarSystemBarViewFactory.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/HvacButton.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/MicPrivacyChipViewController.java"
+          },
+          {
+            "build_file": "systemui-shell/Android.bp",
+            "path": "systemui-shell/src/com/android/systemui/car/systembar/PrivacyChipViewController.java"
+          }
+        ],
         "ui_paths": [
           "app/src/com/android/car/carlauncher/homescreen/ui/CardContent.java",
           "app/src/com/android/car/carlauncher/homescreen/ui/CardHeader.java",
@@ -212,7 +461,7 @@
           "launcher-app/src/main/java/com/android/car/launcher/ui/LauncherCompositionRoot.java",
           "launcher-grid/src/main/java/com/android/car/launcher/grid/presentation/GridPresenter.java"
         ],
-        "unowned_code_path_count": 67,
+        "unowned_code_path_count": 66,
         "unowned_code_samples": [
           "docklib-util/src/com/android/car/dockutil/events/DockCompatUtils.kt",
           "docklib-util/src/com/android/car/dockutil/events/DockEvent.java",
@@ -240,7 +489,6 @@
           "docklib/src/com/android/car/docklib/view/DockItemViewHolder.kt",
           "docklib/src/com/android/car/docklib/view/DockView.kt",
           "docklib/src/com/android/car/docklib/view/animation/ExcitementAnimationHelper.kt",
-          "libs/hidden-apis-compat/hidden-apis-disabled/src/com/android/car/hidden/apis/HiddenApiAccess.java",
           "libs/hidden-apis-compat/hidden-apis-enabled/src/com/android/car/hidden/apis/HiddenApiAccess.java",
           "systemui-shell/src/com/android/systemui/car/notification/BottomNotificationPanelViewMediator.java",
           "systemui-shell/src/com/android/systemui/car/notification/CarHeadsUpNotificationSystemContainer.java",
@@ -263,41 +511,14 @@
           "systemui-shell/src/com/android/systemui/car/systembar/CarSystemBarView.java",
           "systemui-shell/src/com/android/systemui/car/systembar/CarSystemBarViewFactory.java",
           "systemui-shell/src/com/android/systemui/car/systembar/HvacButton.java",
-          "systemui-shell/src/com/android/systemui/car/systembar/MicPrivacyChipViewController.java"
-        ]
+          "systemui-shell/src/com/android/systemui/car/systembar/MicPrivacyChipViewController.java",
+          "systemui-shell/src/com/android/systemui/car/systembar/PrivacyChipViewController.java"
+        ],
+        "unresolved_unowned_code_path_count": 0,
+        "unresolved_unowned_code_samples": []
       },
       "componentization_metrics": {
         "explicit_public_contracts": [
-          {
-            "declaration_kind": "interface",
-            "declaration_name": "CalmModeEventType",
-            "excerpt": "public @interface CalmModeEventType {",
-            "git_blob_oid": "5a437fd51f885002134ffbc03573343c50cdd14d",
-            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/src/com/android/car/carlauncher/calmmode/CalmModeStatsLogHelper.java",
-            "line": 47,
-            "module": ":launcher-app",
-            "path": "app/src/com/android/car/carlauncher/calmmode/CalmModeStatsLogHelper.java"
-          },
-          {
-            "declaration_kind": "interface",
-            "declaration_name": "CalmModeLaunchType",
-            "excerpt": "public @interface CalmModeLaunchType {",
-            "git_blob_oid": "5a437fd51f885002134ffbc03573343c50cdd14d",
-            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/src/com/android/car/carlauncher/calmmode/CalmModeStatsLogHelper.java",
-            "line": 65,
-            "module": ":launcher-app",
-            "path": "app/src/com/android/car/carlauncher/calmmode/CalmModeStatsLogHelper.java"
-          },
-          {
-            "declaration_kind": "abstract_class",
-            "declaration_name": "CardPresenter",
-            "excerpt": "public abstract class CardPresenter implements HomeCardInterface.Presenter {",
-            "git_blob_oid": "b63e6c3fae59cb9fb6ef5e93d3764e6fe4dd96f7",
-            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/src/com/android/car/carlauncher/homescreen/CardPresenter.java",
-            "line": 24,
-            "module": ":launcher-app",
-            "path": "app/src/com/android/car/carlauncher/homescreen/CardPresenter.java"
-          },
           {
             "declaration_kind": "interface",
             "declaration_name": "OnViewLifecycleChangeListener",
@@ -400,16 +621,6 @@
           },
           {
             "declaration_kind": "interface",
-            "declaration_name": "OnProgressUpdateListener",
-            "excerpt": "interface OnProgressUpdateListener {",
-            "git_blob_oid": "1d1409b7b1725b40ff9bed97eb05c4b2f24df0d2",
-            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/src/com/android/car/carlauncher/homescreen/audio/AudioModel.java",
-            "line": 48,
-            "module": ":launcher-app",
-            "path": "app/src/com/android/car/carlauncher/homescreen/audio/AudioModel.java"
-          },
-          {
-            "declaration_kind": "interface",
             "declaration_name": "IntentHandler",
             "excerpt": "public interface IntentHandler {",
             "git_blob_oid": "753dec35aa85794b1d7dd6febd672f8d1e93a539",
@@ -467,6 +678,66 @@
             "line": 218,
             "module": ":launcher-app",
             "path": "app/src/com/android/car/carlauncher/homescreen/audio/media/MediaCardPanelViewPagerAdapter.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "InCallListener",
+            "excerpt": "public interface InCallListener {",
+            "git_blob_oid": "ee6526337cb7bf0a6481ed985e3a78d8c1c9f20d",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/src/com/android/car/carlauncher/homescreen/audio/telecom/InCallServiceImpl.java",
+            "line": 137,
+            "module": ":launcher-app",
+            "path": "app/src/com/android/car/carlauncher/homescreen/audio/telecom/InCallServiceImpl.java"
+          },
+          {
+            "declaration_kind": "abstract_class",
+            "declaration_name": "CardContent",
+            "excerpt": "public abstract class CardContent {",
+            "git_blob_oid": "1df67f9fca0932719fd23014270604be18cb7cef",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/src/com/android/car/carlauncher/homescreen/ui/CardContent.java",
+            "line": 24,
+            "module": ":launcher-app",
+            "path": "app/src/com/android/car/carlauncher/homescreen/ui/CardContent.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "RecentTasksProviderInterface",
+            "excerpt": "public interface RecentTasksProviderInterface {",
+            "git_blob_oid": "29975d6551b31d56abace1ccb7d22f024ce1880b",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/src/com/android/car/carlauncher/recents/RecentTasksProviderInterface.java",
+            "line": 31,
+            "module": ":launcher-app",
+            "path": "app/src/com/android/car/carlauncher/recents/RecentTasksProviderInterface.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "RecentsDataChangeListener",
+            "excerpt": "interface RecentsDataChangeListener {",
+            "git_blob_oid": "29975d6551b31d56abace1ccb7d22f024ce1880b",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/src/com/android/car/carlauncher/recents/RecentTasksProviderInterface.java",
+            "line": 118,
+            "module": ":launcher-app",
+            "path": "app/src/com/android/car/carlauncher/recents/RecentTasksProviderInterface.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "LauncherCatalog",
+            "excerpt": "public interface LauncherCatalog {",
+            "git_blob_oid": "ce5233be3e557437284e69fcb6564a2f9fd7400b",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-common/src/main/java/com/android/car/launcher/domain/LauncherCatalog.java",
+            "line": 5,
+            "module": ":launcher-common",
+            "path": "launcher-common/src/main/java/com/android/car/launcher/domain/LauncherCatalog.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "PageSnapListener",
+            "excerpt": "public interface PageSnapListener {",
+            "git_blob_oid": "8b7716a8ca4c3bfaedf825a1e766d49e538e0dae",
+            "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/lib/src/com/android/car/carlauncher/AppGridPageSnapper.java",
+            "line": 305,
+            "module": ":launcher-grid",
+            "path": "libs/appgrid/lib/src/com/android/car/carlauncher/AppGridPageSnapper.java"
           }
         ],
         "replaceable_components": [
@@ -496,13 +767,13 @@
       "excluded_test_or_build_modules": [],
       "facts": {
         "api_dependency_edge_count": 0,
-        "business_boundary_isolation": false,
+        "business_boundary_isolation": true,
         "code_not_in_root_package": true,
         "cohesive_module_count": 3,
         "common_capability_in_base_core": true,
-        "component_friendly_check_count": 3,
+        "component_friendly_check_count": 4,
         "component_friendly_checks": {
-          "business_boundary_isolation": false,
+          "business_boundary_isolation": true,
           "common_capability_in_base_core": true,
           "modules_have_independent_build_entry": true,
           "no_cross_module_hardcoded_dependency": null,
@@ -512,7 +783,7 @@
         "cross_module_source_intrusion_count": 0,
         "dependency_cycle_count": 0,
         "dependency_scc_count": 3,
-        "explicit_public_contract_count": 52,
+        "explicit_public_contract_count": 41,
         "has_base_layered_architecture": true,
         "has_business_packages": true,
         "has_circular_dependency": false,
@@ -875,6 +1146,7 @@
           "androidtests",
           "build",
           "generated",
+          "hidden-apis-disabled",
           "robotests",
           "test",
           "tests",

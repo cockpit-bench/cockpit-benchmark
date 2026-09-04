@@ -13,22 +13,22 @@
 ## 使用
 
 ```powershell
-git clone https://github.com/cockpit-bench/cockpit-benchmark.git
+git clone --branch v0.7.4 --depth 1 https://github.com/cockpit-bench/cockpit-benchmark.git
 cd cockpit-benchmark
 .\restore.ps1 -Destination D:\cockpit-validation18
 ```
 
 评测时一次只把一个源码仓复制到独立临时目录交给 Agent；其工作目录及父目录不得包含 wrapper、oracle、facts、SCORECARD 或质量标签。Agent 输出后，按 `STANDARD_SCORES.json` 同名叶比较。
 
-Evaluator 必须拒绝缺叶、重复叶、合同外叶、非法分值和伪造证据；`failed` 叶保持 null，不补零；仓总分必须等于合法 scored 叶求和。Release 3 分必须引用车型/SOP ref，理由中的“锁定 X”必须与机器分相同。
+Evaluator 必须拒绝缺叶、重复叶、合同外叶、非法分值和伪造证据；`failed` 叶保持 null，不补零；仓总分必须等于合法 scored 叶求和。Release 3 分必须引用含车型身份且有真实差异的单车型 SOP ref；通用年份 SOP 线不算车型线。理由中的“锁定 X”必须与机器分相同。
 
 本集合是公开 Dev/Regression Set，适合 Prompt 开发、规则回归与正式核心验证；公开答案和共享上游谱系意味着它不能替代私有、谱系隔离的最终 Holdout。
 
 ## 版本与边界
 
-- 推荐版本：`v0.7.3`
-- APP：72 叶，213/360；Android FW：99 叶，262/468；合计 475/828。
-- v0.7.3 包含 v0.7.2 的 Gold 修正，并冻结全部 Oracle/facts 的跨平台字节以保证恢复校验；v0.7.0–v0.7.2 保留为历史。
+- 推荐版本：`v0.7.4`
+- APP：72 叶，216/360；Android FW：99 叶，272/468；合计 488/828。
+- v0.7.4 完成 Release 车型粒度仲裁、APP-02 架构边界修正、组件契约收紧及 9 个 FW LSP 专项复核；v0.7.0–v0.7.3 保留为历史。
 - 22 个 pending 仓不运输；`can-middleware` 仅为 v0.4 历史补充样例。
 - 旧 archive：https://github.com/cockpit-bench/cockpit-benchmark-v031-archive
 - 每个源码仓保留自己的许可证、来源和全部 heads/tags；源码仓不含答案。

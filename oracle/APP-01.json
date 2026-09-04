@@ -13,7 +13,7 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
+    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e"
   },
   "canonical_total": {
     "score": 24,
@@ -25,8 +25,8 @@
       "score": 5,
       "max_score": 5,
       "status": "scored",
-      "score_reasoning": "真实构建模块=4、可复用组件=3、可替换组件=3、显式公开契约=126、源码归属边界=True；按组件复用/替换构念锁定 5。",
-      "analysis": "真实构建模块=4、可复用组件=3、可替换组件=3、显式公开契约=126、源码归属边界=True；按组件复用/替换构念锁定 5。",
+      "score_reasoning": "真实构建模块=4、可复用组件=3、可替换组件=3、显式公开契约=94、源码归属边界=True；按组件复用/替换构念锁定 5。",
+      "analysis": "真实构建模块=4、可复用组件=3、可替换组件=3、显式公开契约=94、源码归属边界=True；按组件复用/替换构念锁定 5。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -42,12 +42,12 @@
         },
         {
           "source": "current_head",
-          "path": "app/src/main/java/com/android/car/settings/applications/AppListFragment.java",
+          "path": "settings-common/src/main/java/com/android/car/settings/common/ActionButtonInfo.java",
           "commit": "150289b5e0d67acf395aa5418e43347207e9c1b4",
           "ref": "HEAD",
-          "start_line": 29,
-          "end_line": 29,
-          "symbol": "public abstract class AppListFragment extends SettingsFragment {",
+          "start_line": 52,
+          "end_line": 52,
+          "symbol": "private WeakReference<ButtonInfoChangeListener> mButtonInfoChangeListener;",
           "claim": "组件显式接口/抽象契约。",
           "observation": "组件显式接口/抽象契约。",
           "evidence_type": "source",
@@ -75,8 +75,8 @@
       "score": 2,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=4；按依赖方向/传播构念锁定 2。",
-      "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=4；按依赖方向/传播构念锁定 2。",
+      "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=4、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 2。",
+      "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=4、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",

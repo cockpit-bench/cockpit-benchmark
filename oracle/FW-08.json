@@ -13,7 +13,7 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
+    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e"
   },
   "canonical_total": {
     "score": 39,
@@ -321,26 +321,39 @@
           "path": "native/transport/include/fw08/transport/ipc_transport.h",
           "commit": "69e60531c7a3474c288a6702c84f5758a3950139",
           "ref": "HEAD",
-          "start_line": 17,
-          "end_line": 17,
-          "symbol": "TransportHealth",
-          "claim": "fake/Unix transport 与 callback 保持同一生命周期契约。",
-          "observation": "fake/Unix transport 与 callback 保持同一生命周期契约。",
+          "start_line": 25,
+          "end_line": 25,
+          "symbol": "IpcTransport",
+          "claim": "IpcTransport 声明生命周期和传输合同。",
+          "observation": "IpcTransport 声明生命周期和传输合同。",
           "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "lsp_contract_0"
         },
         {
           "source": "current_head",
-          "path": "native/application/include/fw08/application/soa_gateway_service.h",
+          "path": "native/transport/include/fw08/transport/unix_socket_transport.h",
           "commit": "69e60531c7a3474c288a6702c84f5758a3950139",
           "ref": "HEAD",
-          "start_line": 22,
-          "end_line": 22,
-          "symbol": "SoaGatewayService",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 11,
+          "end_line": 11,
+          "symbol": "UnixSocketTransport",
+          "claim": "UnixSocketTransport 完整覆写传输合同。",
+          "observation": "UnixSocketTransport 完整覆写传输合同。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "lsp_contract_1"
+        },
+        {
+          "source": "current_head",
+          "path": "native/tests/support/fake_ipc_transport.h",
+          "commit": "69e60531c7a3474c288a6702c84f5758a3950139",
+          "ref": "HEAD",
+          "start_line": 11,
+          "end_line": 11,
+          "symbol": "FakeIpcTransport",
+          "claim": "测试替身证明消费者可按父类型替换实现。",
+          "observation": "测试替身证明消费者可按父类型替换实现。",
+          "evidence_type": "source",
+          "independent_group": "lsp_contract_2"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent band check agree.",
@@ -495,8 +508,8 @@
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
-      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
       "evidence": [
         {
           "source": "git_ref",

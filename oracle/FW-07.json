@@ -13,7 +13,7 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
+    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e"
   },
   "canonical_total": {
     "score": 42,
@@ -318,29 +318,42 @@
       "evidence": [
         {
           "source": "current_head",
-          "path": "cpp/telemetry/cartelemetryd/src/TelemetryServer.h",
+          "path": "service/src/com/android/car/CarDiagnosticService.java",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
           "ref": "HEAD",
-          "start_line": 46,
-          "end_line": 46,
-          "symbol": "class TelemetryServer {",
-          "claim": "Manager/Service 与 Binder callback 保持父契约。",
-          "observation": "Manager/Service 与 Binder callback 保持父契约。",
+          "start_line": 556,
+          "end_line": 556,
+          "symbol": "DiagnosticRecord",
+          "claim": "DiagnosticRecord 定义诊断记录生命周期合同。",
+          "observation": "DiagnosticRecord 定义诊断记录生命周期合同。",
           "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "lsp_contract_0"
         },
         {
           "source": "current_head",
-          "path": "service/src/com/android/car/watchdog/WatchdogPerfHandler.java",
+          "path": "service/src/com/android/car/CarDiagnosticService.java",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
           "ref": "HEAD",
-          "start_line": 164,
-          "end_line": 164,
-          "symbol": "public final class WatchdogPerfHandler {",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 571,
+          "end_line": 571,
+          "symbol": "LiveFrameRecord",
+          "claim": "LiveFrameRecord 以父类型被服务调用。",
+          "observation": "LiveFrameRecord 以父类型被服务调用。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "lsp_contract_1"
+        },
+        {
+          "source": "current_head",
+          "path": "service/src/com/android/car/CarDiagnosticService.java",
+          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
+          "ref": "HEAD",
+          "start_line": 596,
+          "end_line": 596,
+          "symbol": "FreezeFrameRecord",
+          "claim": "FreezeFrameRecord 保持相同启停/更新契约。",
+          "observation": "FreezeFrameRecord 保持相同启停/更新契约。",
+          "evidence_type": "source",
+          "independent_group": "lsp_contract_2"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent band check agree.",
@@ -495,8 +508,8 @@
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
-      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
       "evidence": [
         {
           "source": "git_ref",

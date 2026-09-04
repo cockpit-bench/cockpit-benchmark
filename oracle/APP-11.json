@@ -13,7 +13,7 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
+    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e"
   },
   "canonical_total": {
     "score": 21,
@@ -42,12 +42,12 @@
         },
         {
           "source": "current_head",
-          "path": "foundation-api/src/main/aidl/com/cockpitbench/foundation/api/ICockpitEventListener.aidl",
+          "path": "foundation-core/src/main/java/com/cockpitbench/foundation/core/CockpitClock.java",
           "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
           "ref": "HEAD",
-          "start_line": 2,
-          "end_line": 2,
-          "symbol": "oneway interface ICockpitEventListener { void onEvent(String domain, String event, in android.os.Bundle payload); }",
+          "start_line": 16,
+          "end_line": 16,
+          "symbol": "package com.cockpitbench.foundation.core; public interface CockpitClock { long now(); }",
           "claim": "组件显式接口/抽象契约。",
           "observation": "组件显式接口/抽象契约。",
           "evidence_type": "source",
@@ -75,8 +75,8 @@
       "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1；按依赖方向/传播构念锁定 3。",
-      "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1；按依赖方向/传播构念锁定 3。",
+      "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 3。",
+      "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -310,8 +310,8 @@
       "score": 3,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "存在车型/SOP 分支 ['sop/2026.1-model-a1', 'sop/2026.1-model-b2']，按最细车型级策略锁定 3。",
-      "analysis": "存在车型/SOP 分支 ['sop/2026.1-model-a1', 'sop/2026.1-model-b2']，按最细车型级策略锁定 3。",
+      "score_reasoning": "存在含车型身份且有真实差异的单车型 SOP 分支 ['sop/2026.1-model-a1', 'sop/2026.1-model-b2']，按最细车型级策略锁定 3。",
+      "analysis": "存在含车型身份且有真实差异的单车型 SOP 分支 ['sop/2026.1-model-a1', 'sop/2026.1-model-b2']，按最细车型级策略锁定 3。",
       "evidence": [
         {
           "source": "git_ref",

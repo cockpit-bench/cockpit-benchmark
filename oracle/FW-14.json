@@ -13,7 +13,7 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
+    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e"
   },
   "canonical_total": {
     "score": 29,
@@ -318,29 +318,42 @@
       "evidence": [
         {
           "source": "current_head",
-          "path": "update-manager/src/com/cockpitbench/update/IUpdateStatusListener.aidl",
+          "path": "updater-app/src/com/android/car/systemupdater/UpdateLayoutFragment.java",
           "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
           "ref": "HEAD",
-          "start_line": 2,
-          "end_line": 2,
-          "symbol": "oneway interface IUpdateStatusListener { void onStatusChanged(int status, int progress, String detail); }",
-          "claim": "Binder Stub 与 callback 覆写基本保持父契约。",
-          "observation": "Binder Stub 与 callback 覆写基本保持父契约。",
+          "start_line": 241,
+          "end_line": 241,
+          "symbol": "CarUpdateEngineCallback",
+          "claim": "CarUpdateEngineCallback 遵守平台更新回调父契约。",
+          "observation": "CarUpdateEngineCallback 遵守平台更新回调父契约。",
           "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "lsp_contract_0"
         },
         {
           "source": "current_head",
-          "path": "update-manager/src/com/cockpitbench/update/UpdateManagerService.java",
+          "path": "updater-app/src/com/android/car/systemupdater/UpdateLayoutFragment.java",
           "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
           "ref": "HEAD",
-          "start_line": 9,
-          "end_line": 9,
-          "symbol": "public final class UpdateManagerService extends IUpdateManager.Stub {",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 244,
+          "end_line": 244,
+          "symbol": "CarUpdateEngineCallback",
+          "claim": "状态回调正确覆写且被 UpdateEngine 绑定。",
+          "observation": "状态回调正确覆写且被 UpdateEngine 绑定。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "lsp_contract_1"
+        },
+        {
+          "source": "current_head",
+          "path": "updater-app/src/com/android/car/systemupdater/UpdateLayoutFragment.java",
+          "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
+          "ref": "HEAD",
+          "start_line": 261,
+          "end_line": 261,
+          "symbol": "CarUpdateEngineCallback",
+          "claim": "完成回调保持父契约语义。",
+          "observation": "完成回调保持父契约语义。",
+          "evidence_type": "source",
+          "independent_group": "lsp_contract_2"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent band check agree.",
@@ -495,8 +508,8 @@
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
-      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
       "evidence": [
         {
           "source": "git_ref",

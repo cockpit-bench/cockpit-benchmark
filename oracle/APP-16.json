@@ -13,7 +13,7 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
+    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e"
   },
   "canonical_total": {
     "score": 20,
@@ -25,8 +25,8 @@
       "score": 3,
       "max_score": 5,
       "status": "scored",
-      "score_reasoning": "真实构建模块=4、可复用组件=3、可替换组件=0、显式公开契约=87、源码归属边界=False；按组件复用/替换构念锁定 3。",
-      "analysis": "真实构建模块=4、可复用组件=3、可替换组件=0、显式公开契约=87、源码归属边界=False；按组件复用/替换构念锁定 3。",
+      "score_reasoning": "真实构建模块=4、可复用组件=3、可替换组件=0、显式公开契约=66、源码归属边界=True；按组件复用/替换构念锁定 3。",
+      "analysis": "真实构建模块=4、可复用组件=3、可替换组件=0、显式公开契约=66、源码归属边界=True；按组件复用/替换构念锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -42,19 +42,6 @@
         },
         {
           "source": "current_head",
-          "path": "app/src/com/android/car/carlauncher/calmmode/CalmModeStatsLogHelper.java",
-          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
-          "ref": "HEAD",
-          "start_line": 43,
-          "end_line": 43,
-          "symbol": "values",
-          "claim": "组件显式接口/抽象契约。",
-          "observation": "组件显式接口/抽象契约。",
-          "evidence_type": "source",
-          "independent_group": "component_contract"
-        },
-        {
-          "source": "current_head",
           "path": "legacy-platform/build.gradle",
           "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
           "ref": "HEAD",
@@ -65,6 +52,19 @@
           "observation": "被其他模块复用的独立构建组件。",
           "evidence_type": "source",
           "independent_group": "reusable_component"
+        },
+        {
+          "source": "current_head",
+          "path": "app/Android.bp",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD",
+          "start_line": 34,
+          "end_line": 34,
+          "symbol": "android_library {",
+          "claim": "独立 Soong 构建边界；不以注解或常量接口冒充组件契约。",
+          "observation": "独立 Soong 构建边界；不以注解或常量接口冒充组件契约。",
+          "evidence_type": "source",
+          "independent_group": "soong_component_boundary"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
@@ -75,8 +75,8 @@
       "score": 2,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=3、平台变更传播模块=4；按依赖方向/传播构念锁定 2。",
-      "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=3、平台变更传播模块=4；按依赖方向/传播构念锁定 2。",
+      "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=3、平台变更传播模块=4、Soong 已归属/仍未归属源码=73/0；按依赖方向/传播构念锁定 2。",
+      "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=3、平台变更传播模块=4、Soong 已归属/仍未归属源码=73/0；按依赖方向/传播构念锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -102,6 +102,19 @@
           "observation": "决定依赖方向或具体实现耦合的模块边。",
           "evidence_type": "source",
           "independent_group": "dependency_direction"
+        },
+        {
+          "source": "current_head",
+          "path": "app/Android.bp",
+          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+          "ref": "HEAD",
+          "start_line": 34,
+          "end_line": 34,
+          "symbol": "android_library {",
+          "claim": "原 Gradle 图外源码由真实 Android.bp 模块归属，不能作为跨边界负面事实。",
+          "observation": "原 Gradle 图外源码由真实 Android.bp 模块归属，不能作为跨边界负面事实。",
+          "evidence_type": "source",
+          "independent_group": "soong_ownership"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",

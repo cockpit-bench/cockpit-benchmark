@@ -78,7 +78,7 @@ FW 在评估引擎侧为 7 个 Agent；SOLID 一次调用产出 /20，但 benchm
 
 为避免只换术语不换测量，Gold 必须另外物化三组互不替代的决定性事实：
 
-- componentization：`reusable_component_count`、`replaceable_component_count`、`shared_capability_owner_count`、`explicit_public_contract_count`；
+- componentization：`reusable_component_count`、`replaceable_component_count`、`shared_capability_owner_count`、`explicit_public_contract_count`；其中显式契约必须声明可调用方法或可替换属性，`@interface`、纯常量容器、枚举和无行为 marker interface 不计组件契约；
 - decoupling：`reverse_dependency_edge_count`、`cross_module_source_intrusion_count`、`concrete_implementation_edge_count`、`dependency_cycle_count`、`platform_change_propagation_module_count`；
 - modularization：`real_build_module_count`、`cohesive_module_count`、`module_test_entry_count`、`api_dependency_edge_count`、`implementation_dependency_edge_count`、`dependency_scc_count`。
 
@@ -164,11 +164,11 @@ Gradle Kotlin 构建脚本（`build.gradle.kts`、`settings.gradle.kts`）不是
 读取真实本地 heads/tags、同版本 SOP 数量、分支实际差异和命名后判定：
 
 - 0：无明确 release 分支策略。
-- 3：单车型单 SOP，车型拆分最细。
+- 3：存在可由 ref 名和真实差异共同证明的“单车型单 SOP”专用通道，车型拆分最细；ref 必须含车型身份（如 `model-a1`），仅有年份/版本型 `release/sop-2025` 或 `sop/2025` 不足以得到 3 分。
 - 8：同平台同一分支，平台内车型共用。
 - 10：跨平台统一主干/无后缀统一分支；现实中极少。
 
-有 main 不自动等于 10；存在平台或车型分支时必须按更细粒度事实判定。
+有 main 不自动等于 10；存在平台或车型分支时必须按更细粒度事实判定。通用 SOP 发布线可以与平台共用分支并存：当 SOP ref 不含车型身份、而真实 `platform/*` ref 存在时，按平台复用事实判 8，不得仅因 ref 名含 `sop` 降为 3。
 
 ## 3. Android Framework 评分规则
 

@@ -13,7 +13,7 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
+    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e"
   },
   "canonical_total": {
     "score": 31,
@@ -292,29 +292,29 @@
       "evidence": [
         {
           "source": "current_head",
-          "path": "manager-runtime/src/com/cockpitbench/managerkit/PlatformManagerFallback.java",
+          "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerRegistry.java",
           "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
           "ref": "HEAD",
-          "start_line": 20,
-          "end_line": 20,
-          "symbol": "public final class PlatformManagerFallback {",
-          "claim": "VehiclePropertyBackend 遵守 Backend 调用合同。",
-          "observation": "VehiclePropertyBackend 遵守 Backend 调用合同。",
+          "start_line": 17,
+          "end_line": 17,
+          "symbol": "import java.util.*; public final class ManagerRegistry { public interface Backend{ManagerResult call(ManagerCall value);",
+          "claim": "Backend 声明统一调用合同。",
+          "observation": "Backend 声明统一调用合同。",
           "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "lsp_contract_0"
         },
         {
           "source": "current_head",
-          "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerGatewayService.java",
+          "path": "manager-runtime/src/com/cockpitbench/managerkit/VehiclePropertyBackend.java",
           "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
           "ref": "HEAD",
-          "start_line": 20,
-          "end_line": 20,
-          "symbol": "public final class ManagerGatewayService extends IManagerGateway.Stub {",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 21,
+          "end_line": 21,
+          "symbol": "public final class VehiclePropertyBackend implements ManagerRegistry.Backend {",
+          "claim": "VehiclePropertyBackend 实现该合同；尚无第二个生产实现或替换测试。",
+          "observation": "VehiclePropertyBackend 实现该合同；尚无第二个生产实现或替换测试。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "lsp_contract_1"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent band check agree.",
@@ -469,8 +469,8 @@
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
-      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
       "evidence": [
         {
           "source": "git_ref",

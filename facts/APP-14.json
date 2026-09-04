@@ -146,7 +146,6 @@
           "hardware",
           "hidden",
           "hidden-apis-compat",
-          "hidden-apis-disabled",
           "hidden-apis-enabled",
           "homescreen",
           "hvac",
@@ -233,8 +232,288 @@
             "domain"
           ]
         },
-        "production_code_path_count": 487,
-        "production_code_paths_sha256": "c7da180a84bff29b9e89faf63f115cd41559705f3ef6c78a67f86fa88ffe2330",
+        "production_code_path_count": 486,
+        "production_code_paths_sha256": "aede7bf2f4c5f2ba8cf388ddd2e434a281b88852f70f8cbb1ec88ad4970ec424",
+        "soong_build_files": [
+          {
+            "git_blob_oid": "12d3666fe32956101bbd2e7126270ffa72bad2fb",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:Android.bp",
+            "path": "Android.bp"
+          },
+          {
+            "git_blob_oid": "9f1dcd41fe56e0993b8604f3d1d628231959877b",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:components/dialer/Android.bp",
+            "path": "components/dialer/Android.bp"
+          },
+          {
+            "git_blob_oid": "e288a930c826e547c5206f8ed6851e760c86b52a",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/Android.bp"
+          },
+          {
+            "git_blob_oid": "fcca88c53f903bdccee066a16b23084da93b64b3",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:components/dialer/testing/Android.bp",
+            "path": "components/dialer/testing/Android.bp"
+          },
+          {
+            "git_blob_oid": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:components/launcher/Android.bp",
+            "path": "components/launcher/Android.bp"
+          },
+          {
+            "git_blob_oid": "fde4bd581c777f4fc7f4649c503356bcec170392",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:components/launcher/app/Android.bp",
+            "path": "components/launcher/app/Android.bp"
+          },
+          {
+            "git_blob_oid": "29ae2156520dd5a7af9fa00eeba3c74dd317d0b1",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:components/launcher/docklib-util/Android.bp",
+            "path": "components/launcher/docklib-util/Android.bp"
+          },
+          {
+            "git_blob_oid": "8fd678582c878bd4341a4f0d0930f08f8bec0288",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:components/launcher/docklib/Android.bp",
+            "path": "components/launcher/docklib/Android.bp"
+          },
+          {
+            "git_blob_oid": "22b05f9a1d0a7e6fad0e330cba6ca1825ee332e8",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:components/launcher/libs/appgrid/Android.bp",
+            "path": "components/launcher/libs/appgrid/Android.bp"
+          },
+          {
+            "git_blob_oid": "befe8fce558866e1a0b2401d961ea606cff01380",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:components/launcher/libs/appgrid/keys/Android.bp",
+            "path": "components/launcher/libs/appgrid/keys/Android.bp"
+          },
+          {
+            "git_blob_oid": "ebecfe1762e16155eb1c1249b2cd112668978962",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:components/launcher/libs/car-launcher-common/Android.bp",
+            "path": "components/launcher/libs/car-launcher-common/Android.bp"
+          },
+          {
+            "git_blob_oid": "866f7737b2c766636d527e4903746578b7b75aaa",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:components/launcher/libs/hidden-apis-compat/hidden-apis-enabled/Android.bp",
+            "path": "components/launcher/libs/hidden-apis-compat/hidden-apis-enabled/Android.bp"
+          },
+          {
+            "git_blob_oid": "afdb19e22b509dc2d35c9b0c1dee52bd7c509ce4",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:samples/sample1/rro/Android.bp",
+            "path": "samples/sample1/rro/Android.bp"
+          },
+          {
+            "git_blob_oid": "8dc009bff9cdab103dd88010355ea44dc7cd88e7",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:samples/sample2/rro/Android.bp",
+            "path": "samples/sample2/rro/Android.bp"
+          },
+          {
+            "git_blob_oid": "8a55c09f7f694e78a489719758ffe588fc72acdf",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:samples/sample3/rro/Android.bp",
+            "path": "samples/sample3/rro/Android.bp"
+          }
+        ],
+        "soong_owned_unowned_code_path_count": 304,
+        "soong_owned_unowned_code_samples": [
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/emulator/src/com/android/car/dialer/framework/SingleHfpEmulatorModule.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/AdbBroadcastReceiver.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/AndroidFrameworkImpl.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/FakeHfpManager.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/FakeModule.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/FakeTelecomManager.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/InCallServiceProxy.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/SimulatedBluetoothDevice.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/CallLogDataHandler.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/CallLogRawData.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/ContactDataHandler.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/ContactRawData.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/DataParser.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/TestData.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/fake/src/com/android/car/dialer/framework/testdata/WorkerExecutor.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/real/src/com/android/car/dialer/framework/AndroidFrameworkImpl.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/real/src/com/android/car/dialer/framework/InCallServiceProxy.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/real/src/com/android/car/dialer/framework/ProdModule.java"
+          },
+          {
+            "build_file": "components/dialer/framework/Android.bp",
+            "path": "components/dialer/framework/src/com/android/car/dialer/framework/AndroidFramework.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/ComponentFetcher.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/Constants.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/DialerApplication.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/bluetooth/BluetoothPairListLiveData.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/bluetooth/BluetoothState.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/bluetooth/BluetoothStateLiveData.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/bluetooth/CallHistoryManager.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/bluetooth/HfpDeviceListLiveData.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/bluetooth/PhoneAccountManager.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/bluetooth/UiBluetoothMonitor.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/inject/BluetoothSingleHfpModule.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/inject/DialerModules.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/inject/HfpDataModules.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/livedata/AudioRouteLiveData.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/livedata/CallDetailLiveData.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/livedata/CallHistoryLiveData.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/livedata/CallStateLiveData.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/livedata/HeartBeatLiveData.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/livedata/SharedPreferencesLiveData.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/livedata/SupportedAudioRoutesLiveData.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/livedata/UnreadMissedCallLiveData.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/log/L.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/notification/InCallNotificationController.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/notification/MissedCallNotificationController.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/notification/MissedCallReceiver.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/notification/NotificationService.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/notification/NotificationUtils.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/sms/MessagingService.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/storage/BluetoothBondedListReceiver.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/storage/CipherConverter.java"
+          },
+          {
+            "build_file": "components/dialer/Android.bp",
+            "path": "components/dialer/src/com/android/car/dialer/storage/CipherWrapper.java"
+          }
+        ],
         "ui_paths": [
           "components/dialer/src/com/android/car/dialer/ui/TelecomActivity.java",
           "components/dialer/src/com/android/car/dialer/ui/TelecomActivityViewModel.java",
@@ -287,7 +566,7 @@
           "components/dialer/src/com/android/car/dialer/ui/dialpad/TypeDownResultsViewModel.java",
           "components/dialer/src/com/android/car/dialer/ui/favorite/AddFavoriteFragment.java"
         ],
-        "unowned_code_path_count": 305,
+        "unowned_code_path_count": 304,
         "unowned_code_samples": [
           "components/dialer/framework/emulator/src/com/android/car/dialer/framework/SingleHfpEmulatorModule.java",
           "components/dialer/framework/fake/src/com/android/car/dialer/framework/AdbBroadcastReceiver.java",
@@ -339,30 +618,12 @@
           "components/dialer/src/com/android/car/dialer/storage/BluetoothBondedListReceiver.java",
           "components/dialer/src/com/android/car/dialer/storage/CipherConverter.java",
           "components/dialer/src/com/android/car/dialer/storage/CipherWrapper.java"
-        ]
+        ],
+        "unresolved_unowned_code_path_count": 0,
+        "unresolved_unowned_code_samples": []
       },
       "componentization_metrics": {
         "explicit_public_contracts": [
-          {
-            "declaration_kind": "interface",
-            "declaration_name": "AudioContext",
-            "excerpt": "public @interface AudioContext {",
-            "git_blob_oid": "994acf4cde1e9284429f277d973401ce195787b5",
-            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:platform/services-car/service/src/com/android/car/audio/CarAudioContext.java",
-            "line": 298,
-            "module": ":shell-core",
-            "path": "platform/services-car/service/src/com/android/car/audio/CarAudioContext.java"
-          },
-          {
-            "declaration_kind": "interface",
-            "declaration_name": "CarVolumeListVersion",
-            "excerpt": "public @interface CarVolumeListVersion {",
-            "git_blob_oid": "9c5a61fb726e3bcfa859cb8fe0881f8db2c5da1c",
-            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:platform/services-car/service/src/com/android/car/audio/CarVolume.java",
-            "line": 252,
-            "module": ":shell-core",
-            "path": "platform/services-car/service/src/com/android/car/audio/CarVolume.java"
-          },
           {
             "declaration_kind": "interface",
             "declaration_name": "CarFocusCallback",
@@ -380,16 +641,6 @@
             "git_blob_oid": "f819cf026a4c0e89d865d2675637dc065efa42b5",
             "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:platform/services-car/service/src/com/android/car/audio/hal/AudioControlWrapper.java",
             "line": 39,
-            "module": ":shell-core",
-            "path": "platform/services-car/service/src/com/android/car/audio/hal/AudioControlWrapper.java"
-          },
-          {
-            "declaration_kind": "interface",
-            "declaration_name": "AudioControlFeature",
-            "excerpt": "@interface AudioControlFeature {",
-            "git_blob_oid": "f819cf026a4c0e89d865d2675637dc065efa42b5",
-            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:platform/services-car/service/src/com/android/car/audio/hal/AudioControlWrapper.java",
-            "line": 54,
             "module": ":shell-core",
             "path": "platform/services-car/service/src/com/android/car/audio/hal/AudioControlWrapper.java"
           },
@@ -435,16 +686,6 @@
           },
           {
             "declaration_kind": "interface",
-            "declaration_name": "ErrorCode",
-            "excerpt": "@interface ErrorCode{}",
-            "git_blob_oid": "042de8db2f3a8e5d1e2781747b9f46e122d75f2c",
-            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:platform/services-car/service/src/com/android/car/power/PolicyOperationStatus.java",
-            "line": 53,
-            "module": ":shell-core",
-            "path": "platform/services-car/service/src/com/android/car/power/PolicyOperationStatus.java"
-          },
-          {
-            "declaration_kind": "interface",
             "declaration_name": "BinderDeathCallback",
             "excerpt": "interface BinderDeathCallback {",
             "git_blob_oid": "8f9d33e4ba8103ef762182bdaf9ebf1e522d39c9",
@@ -452,16 +693,6 @@
             "line": 163,
             "module": ":shell-core",
             "path": "platform/services-car/service/src/com/android/car/user/AppLifecycleListener.java"
-          },
-          {
-            "declaration_kind": "interface",
-            "declaration_name": "PreCreationStage",
-            "excerpt": "public @interface PreCreationStage { }",
-            "git_blob_oid": "c1e23c95454e1def03260a613ef9031c74476a5f",
-            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:platform/services-car/service/src/com/android/car/user/CarUserService.java",
-            "line": 264,
-            "module": ":shell-core",
-            "path": "platform/services-car/service/src/com/android/car/user/CarUserService.java"
           },
           {
             "declaration_kind": "interface",
@@ -494,16 +725,6 @@
             "path": "platform/services-car/service/src/com/android/car/user/ExperimentalCarUserService.java"
           },
           {
-            "declaration_kind": "interface",
-            "declaration_name": "InitialUserInfoType",
-            "excerpt": "public @interface InitialUserInfoType { }",
-            "git_blob_oid": "1d12194130931e3b07403d81090218b30be61b66",
-            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:platform/services-car/service/src/com/android/car/user/InitialUserSetter.java",
-            "line": 119,
-            "module": ":shell-core",
-            "path": "platform/services-car/service/src/com/android/car/user/InitialUserSetter.java"
-          },
-          {
             "declaration_kind": "abstract_class",
             "declaration_name": "TimeSource",
             "excerpt": "public abstract class TimeSource {",
@@ -515,26 +736,6 @@
           },
           {
             "declaration_kind": "interface",
-            "declaration_name": "UxStateType",
-            "excerpt": "private @interface UxStateType{}",
-            "git_blob_oid": "2ccce62f2aa7ebe3df76f904c5dd7adfa1e0517d",
-            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:platform/services-car/service/src/com/android/car/watchdog/WatchdogPerfHandler.java",
-            "line": 212,
-            "module": ":shell-core",
-            "path": "platform/services-car/service/src/com/android/car/watchdog/WatchdogPerfHandler.java"
-          },
-          {
-            "declaration_kind": "interface",
-            "declaration_name": "DatabaseStateType",
-            "excerpt": "private @interface DatabaseStateType{}",
-            "git_blob_oid": "3e153f0267351e1570aab35cc18a7385d4c9a0ef",
-            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:platform/services-car/service/src/com/android/car/watchdog/WatchdogStorage.java",
-            "line": 95,
-            "module": ":shell-core",
-            "path": "platform/services-car/service/src/com/android/car/watchdog/WatchdogStorage.java"
-          },
-          {
-            "declaration_kind": "interface",
             "declaration_name": "ShellModeSource",
             "excerpt": "public interface ShellModeSource {",
             "git_blob_oid": "09c438568e393f62764527743cfa075de4141e37",
@@ -542,6 +743,86 @@
             "line": 3,
             "module": ":shell-core",
             "path": "shell-core/src/main/java/com/android/systemui/cockpit/domain/ShellModeSource.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "CarGlobalRootComponent",
+            "excerpt": "public interface CarGlobalRootComponent extends GlobalRootComponent {",
+            "git_blob_oid": "cfa0ac509dff88823bae6baa38106ae75d4e311b",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:src/com/android/systemui/CarGlobalRootComponent.java",
+            "line": 30,
+            "module": ":shell-app",
+            "path": "src/com/android/systemui/CarGlobalRootComponent.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Builder",
+            "excerpt": "interface Builder extends GlobalRootComponent.Builder {",
+            "git_blob_oid": "cfa0ac509dff88823bae6baa38106ae75d4e311b",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:src/com/android/systemui/CarGlobalRootComponent.java",
+            "line": 35,
+            "module": ":shell-app",
+            "path": "src/com/android/systemui/CarGlobalRootComponent.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "CarSysUIComponent",
+            "excerpt": "public interface CarSysUIComponent extends SysUIComponent {",
+            "git_blob_oid": "7511e9b8546bc7a748167295b4c77cee4c95eee8",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:src/com/android/systemui/CarSysUIComponent.java",
+            "line": 41,
+            "module": ":shell-app",
+            "path": "src/com/android/systemui/CarSysUIComponent.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Builder",
+            "excerpt": "interface Builder extends SysUIComponent.Builder {",
+            "git_blob_oid": "7511e9b8546bc7a748167295b4c77cee4c95eee8",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:src/com/android/systemui/CarSysUIComponent.java",
+            "line": 47,
+            "module": ":shell-app",
+            "path": "src/com/android/systemui/CarSysUIComponent.java"
+          },
+          {
+            "declaration_kind": "abstract_class",
+            "declaration_name": "CarSystemUICoreStartableModule",
+            "excerpt": "abstract class CarSystemUICoreStartableModule {",
+            "git_blob_oid": "149766738274263c5c65c7b5217aa7bc6414f926",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:src/com/android/systemui/CarSystemUICoreStartableModule.kt",
+            "line": 44,
+            "module": ":shell-app",
+            "path": "src/com/android/systemui/CarSystemUICoreStartableModule.kt"
+          },
+          {
+            "declaration_kind": "abstract_class",
+            "declaration_name": "CarSystemUIModule",
+            "excerpt": "abstract class CarSystemUIModule {",
+            "git_blob_oid": "dfb5a19b159aa0cf12fb2b0f83821103889d7d59",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:src/com/android/systemui/CarSystemUIModule.java",
+            "line": 94,
+            "module": ":shell-app",
+            "path": "src/com/android/systemui/CarSystemUIModule.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "CarDeviceProvisionedController",
+            "excerpt": "public interface CarDeviceProvisionedController extends DeviceProvisionedController {",
+            "git_blob_oid": "44e43fe9af8c342399c45bad28c38f138ddcf563",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:src/com/android/systemui/car/CarDeviceProvisionedController.java",
+            "line": 25,
+            "module": ":shell-app",
+            "path": "src/com/android/systemui/car/CarDeviceProvisionedController.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "CarServiceOnConnectedListener",
+            "excerpt": "public interface CarServiceOnConnectedListener {",
+            "git_blob_oid": "013ee1c8d1fe33face61e74e6c0991417bf02623",
+            "head_blob": "83cc55774e720bc761e90e62ffb94bc61a33973b:src/com/android/systemui/car/CarServiceProvider.java",
+            "line": 106,
+            "module": ":shell-app",
+            "path": "src/com/android/systemui/car/CarServiceProvider.java"
           }
         ],
         "replaceable_components": [
@@ -570,13 +851,13 @@
       "excluded_test_or_build_modules": [],
       "facts": {
         "api_dependency_edge_count": 0,
-        "business_boundary_isolation": false,
+        "business_boundary_isolation": true,
         "code_not_in_root_package": true,
         "cohesive_module_count": 2,
         "common_capability_in_base_core": true,
-        "component_friendly_check_count": 3,
+        "component_friendly_check_count": 4,
         "component_friendly_checks": {
-          "business_boundary_isolation": false,
+          "business_boundary_isolation": true,
           "common_capability_in_base_core": true,
           "modules_have_independent_build_entry": true,
           "no_cross_module_hardcoded_dependency": null,
@@ -586,7 +867,7 @@
         "cross_module_source_intrusion_count": 0,
         "dependency_cycle_count": 0,
         "dependency_scc_count": 2,
-        "explicit_public_contract_count": 76,
+        "explicit_public_contract_count": 55,
         "has_base_layered_architecture": true,
         "has_business_packages": true,
         "has_circular_dependency": false,
@@ -836,6 +1117,7 @@
           "androidtests",
           "build",
           "generated",
+          "hidden-apis-disabled",
           "robotests",
           "test",
           "tests",

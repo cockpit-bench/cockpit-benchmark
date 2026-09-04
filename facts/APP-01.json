@@ -215,9 +215,14 @@
         },
         "production_code_path_count": 621,
         "production_code_paths_sha256": "23e39274adbe90f2469e6716413e299e25f08986de15589ab5faae5a9fdef972",
+        "soong_build_files": [],
+        "soong_owned_unowned_code_path_count": 0,
+        "soong_owned_unowned_code_samples": [],
         "ui_paths": [],
         "unowned_code_path_count": 0,
-        "unowned_code_samples": []
+        "unowned_code_samples": [],
+        "unresolved_unowned_code_path_count": 0,
+        "unresolved_unowned_code_samples": []
       },
       "componentization_metrics": {
         "explicit_public_contracts": [
@@ -302,26 +307,6 @@
             "path": "app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAppsPickerBasePreferenceController.java"
           },
           {
-            "declaration_kind": "abstract_class",
-            "declaration_name": "DefaultAppsPickerEntryBasePreferenceController",
-            "excerpt": "public abstract class DefaultAppsPickerEntryBasePreferenceController extends",
-            "git_blob_oid": "fda215f6ab65adaba58a85d9954d8189b7bdecfd",
-            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAppsPickerEntryBasePreferenceController.java",
-            "line": 33,
-            "module": ":app",
-            "path": "app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAppsPickerEntryBasePreferenceController.java"
-          },
-          {
-            "declaration_kind": "abstract_class",
-            "declaration_name": "AppLaunchSettingsBasePreferenceController",
-            "excerpt": "public abstract class AppLaunchSettingsBasePreferenceController<V extends Preference> extends",
-            "git_blob_oid": "2cedc08e6820a545c4f46938922aeda78339db22",
-            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/managedomainurls/AppLaunchSettingsBasePreferenceController.java",
-            "line": 42,
-            "module": ":app",
-            "path": "app/src/main/java/com/android/car/settings/applications/managedomainurls/AppLaunchSettingsBasePreferenceController.java"
-          },
-          {
             "declaration_kind": "interface",
             "declaration_name": "Callback",
             "excerpt": "public interface Callback {",
@@ -372,16 +357,6 @@
             "path": "app/src/main/java/com/android/car/settings/language/LanguageBasePreferenceController.java"
           },
           {
-            "declaration_kind": "abstract_class",
-            "declaration_name": "BaseNotificationsPreferenceController",
-            "excerpt": "public abstract class BaseNotificationsPreferenceController<T extends Preference> extends",
-            "git_blob_oid": "9b389f0f5c93c245d0eb0be1af9443d2b09d7176",
-            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/notifications/BaseNotificationsPreferenceController.java",
-            "line": 41,
-            "module": ":app",
-            "path": "app/src/main/java/com/android/car/settings/notifications/BaseNotificationsPreferenceController.java"
-          },
-          {
             "declaration_kind": "interface",
             "declaration_name": "NotificationSwitchListener",
             "excerpt": "public interface NotificationSwitchListener {",
@@ -420,6 +395,66 @@
             "line": 21,
             "module": ":app",
             "path": "app/src/main/java/com/android/car/settings/quicksettings/StateChangedListener.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Callback",
+            "excerpt": "public interface Callback {",
+            "git_blob_oid": "8b78e4ea51a7eaf078640e6bec560aaafac2c5b1",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/storage/AppsStorageStatsManager.java",
+            "line": 42,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/storage/AppsStorageStatsManager.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "VolumeListener",
+            "excerpt": "public interface VolumeListener {",
+            "git_blob_oid": "7a0ec73e25aa0f0bd2d368b369ba535f81570459",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/storage/StorageSettingsManager.java",
+            "line": 47,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/storage/StorageSettingsManager.java"
+          },
+          {
+            "declaration_kind": "abstract_class",
+            "declaration_name": "StorageSizeBasePreferenceController",
+            "excerpt": "public abstract class StorageSizeBasePreferenceController extends",
+            "git_blob_oid": "77ecbb42bb69dc6ddbceda228147b36d2e159a11",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/storage/StorageSizeBasePreferenceController.java",
+            "line": 31,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/storage/StorageSizeBasePreferenceController.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "ButtonInfoChangeListener",
+            "excerpt": "interface ButtonInfoChangeListener {",
+            "git_blob_oid": "0046e3d651c0589038fd3c7e8c3b0a8cd28d033f",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/common/ActionButtonInfo.java",
+            "line": 245,
+            "module": ":settings-common",
+            "path": "settings-common/src/main/java/com/android/car/settings/common/ActionButtonInfo.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "UpdateToggleButtonListener",
+            "excerpt": "public interface UpdateToggleButtonListener {",
+            "git_blob_oid": "0b852e87a8869cb5c6cd9948815022117b6f9c38",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-connectivity/src/main/java/com/android/car/settings/bluetooth/BluetoothDevicePreference.java",
+            "line": 173,
+            "module": ":settings-connectivity",
+            "path": "settings-connectivity/src/main/java/com/android/car/settings/bluetooth/BluetoothDevicePreference.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "OnChangeListener",
+            "excerpt": "public interface OnChangeListener {",
+            "git_blob_oid": "f45e3f68f7a8a6238da4dc37b51df47fa5f18c42",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-security/src/main/java/com/android/car/settings/accounts/AccountTypesHelper.java",
+            "line": 41,
+            "module": ":settings-security",
+            "path": "settings-security/src/main/java/com/android/car/settings/accounts/AccountTypesHelper.java"
           }
         ],
         "replaceable_components": [
@@ -470,7 +505,7 @@
         "cross_module_source_intrusion_count": 0,
         "dependency_cycle_count": 0,
         "dependency_scc_count": 4,
-        "explicit_public_contract_count": 126,
+        "explicit_public_contract_count": 94,
         "has_base_layered_architecture": false,
         "has_business_packages": true,
         "has_circular_dependency": false,
@@ -825,6 +860,7 @@
           "androidtests",
           "build",
           "generated",
+          "hidden-apis-disabled",
           "robotests",
           "test",
           "tests",

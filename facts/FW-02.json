@@ -222,14 +222,10 @@
     "assertion_count": 1768,
     "empty_test_count": 0,
     "execution": {
-      "status": "passed",
-      "head": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-      "passed": 5,
-      "failed": 0,
-      "pass_rate": 1.0,
-      "coverage_proxy": 0.866667,
-      "run_id": 33758455763,
-      "url": "https://github.com/cockpit-bench/vehicle-property-service/actions/runs/33758455763"
+      "status": "not_run",
+      "passed": null,
+      "failed": null,
+      "head": "8421f37236e92270ff98b620ef45e9b0becc96a0"
     }
   },
   "platform_upgrade": {

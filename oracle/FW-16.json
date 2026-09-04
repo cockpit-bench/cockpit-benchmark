@@ -13,10 +13,10 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
+    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e"
   },
   "canonical_total": {
-    "score": 13,
+    "score": 18,
     "max": 52
   },
   "canonical_leaves": [
@@ -300,8 +300,8 @@
       "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "Binder callback 基本维持声明契约但缺少跨版本替换测试。 按独立 0–4 档位锁定 2。",
-      "analysis": "Binder callback 基本维持声明契约但缺少跨版本替换测试。 按独立 0–4 档位锁定 2。",
+      "score_reasoning": "PlatformCompatService 实现生成的 IPlatformCompat.Stub 合同，未发现收紧前置条件，但只有单一生产实现且缺少跨版本替换测试。 按独立 0–4 档位锁定 2。",
+      "analysis": "PlatformCompatService 实现生成的 IPlatformCompat.Stub 合同，未发现收紧前置条件，但只有单一生产实现且缺少跨版本替换测试。 按独立 0–4 档位锁定 2。",
       "evidence": [
         {
           "source": "current_head",
@@ -311,29 +311,29 @@
           "start_line": 3,
           "end_line": 3,
           "symbol": "interface IPlatformCompat {",
-          "claim": "Binder callback 基本维持声明契约但缺少跨版本替换测试。",
-          "observation": "Binder callback 基本维持声明契约但缺少跨版本替换测试。",
+          "claim": "IPlatformCompat 声明 Binder 父契约。",
+          "observation": "IPlatformCompat 声明 Binder 父契约。",
           "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "lsp_contract_0"
         },
         {
           "source": "current_head",
-          "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatRuntime.java",
+          "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatService.java",
           "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
           "ref": "HEAD",
           "start_line": 19,
           "end_line": 19,
-          "symbol": "public final class PlatformCompatRuntime {",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "symbol": "public final class PlatformCompatService extends IPlatformCompat.Stub {",
+          "claim": "PlatformCompatService 实现生成 Stub；无跨版本替换测试。",
+          "observation": "PlatformCompatService 实现生成 Stub；无跨版本替换测试。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "lsp_contract_1"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "Binder callback 基本维持声明契约但缺少跨版本替换测试。"
+        "PlatformCompatService 实现生成的 IPlatformCompat.Stub 合同，未发现收紧前置条件，但只有单一生产实现且缺少跨版本替换测试。"
       ],
       "recommendations": [
         "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
@@ -479,29 +479,12 @@
     },
     {
       "name": "platform_reuse.release_branch_strategy",
-      "score": 3,
+      "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "存在决定 3 分档的真实分支 refs=['refs/heads/release/sop-2025']，锁定 3。",
-      "analysis": "存在决定 3 分档的真实分支 refs=['refs/heads/release/sop-2025']，锁定 3。",
+      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
       "evidence": [
-        {
-          "source": "git_ref",
-          "path": "refs/heads/release/sop-2025",
-          "ref": "refs/heads/release/sop-2025",
-          "commit": "2234a82e84b34d2d36c5a4bc220313238e5daf13",
-          "commit_oid": "2234a82e84b34d2d36c5a4bc220313238e5daf13",
-          "tree_oid": "7f83142f90b924762091fcc85cf030f9f93f66b5",
-          "merge_base": "471ee8a6438a6982dc5e433b51858b25e9632464",
-          "ahead": 1,
-          "behind": 5,
-          "changed_files": 1,
-          "symbol": "refs/heads/release/sop-2025",
-          "claim": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
-          "observation": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
-          "evidence_type": "git_ref",
-          "independent_group": "branch_0"
-        },
         {
           "source": "git_ref",
           "path": "refs/heads/platform/8155",
@@ -514,10 +497,10 @@
           "behind": 5,
           "changed_files": 1,
           "symbol": "refs/heads/platform/8155",
-          "claim": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
-          "observation": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
+          "claim": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+          "observation": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
           "evidence_type": "git_ref",
-          "independent_group": "branch_1"
+          "independent_group": "branch_0"
         },
         {
           "source": "git_ref",
@@ -531,8 +514,25 @@
           "behind": 5,
           "changed_files": 1,
           "symbol": "refs/heads/platform/8295",
-          "claim": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
-          "observation": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
+          "claim": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+          "observation": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_1"
+        },
+        {
+          "source": "git_ref",
+          "path": "refs/heads/platform/xinqing",
+          "ref": "refs/heads/platform/xinqing",
+          "commit": "a79b428ffc3e3bd90003ef628ff4c1323b2f8243",
+          "commit_oid": "a79b428ffc3e3bd90003ef628ff4c1323b2f8243",
+          "tree_oid": "7554a4151044833f70de99c2a42febe0e8653a6b",
+          "merge_base": "471ee8a6438a6982dc5e433b51858b25e9632464",
+          "ahead": 1,
+          "behind": 5,
+          "changed_files": 1,
+          "symbol": "refs/heads/platform/xinqing",
+          "claim": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+          "observation": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
           "evidence_type": "git_ref",
           "independent_group": "branch_2"
         }

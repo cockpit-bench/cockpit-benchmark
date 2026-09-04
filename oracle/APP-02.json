@@ -13,20 +13,20 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
+    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e"
   },
   "canonical_total": {
-    "score": 29,
+    "score": 32,
     "max": 40
   },
   "canonical_leaves": [
     {
       "name": "architecture.componentization",
-      "score": 3,
+      "score": 5,
       "max_score": 5,
       "status": "scored",
-      "score_reasoning": "真实构建模块=3、可复用组件=2、可替换组件=2、显式公开契约=52、源码归属边界=False；按组件复用/替换构念锁定 3。",
-      "analysis": "真实构建模块=3、可复用组件=2、可替换组件=2、显式公开契约=52、源码归属边界=False；按组件复用/替换构念锁定 3。",
+      "score_reasoning": "真实构建模块=3、可复用组件=2、可替换组件=2、显式公开契约=41、源码归属边界=True；按组件复用/替换构念锁定 5。",
+      "analysis": "真实构建模块=3、可复用组件=2、可替换组件=2、显式公开契约=41、源码归属边界=True；按组件复用/替换构念锁定 5。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -42,12 +42,12 @@
         },
         {
           "source": "current_head",
-          "path": "app/src/com/android/car/carlauncher/calmmode/CalmModeStatsLogHelper.java",
+          "path": "launcher-common/src/main/java/com/android/car/launcher/domain/LauncherCatalog.java",
           "commit": "82f129b9d9c1270ae2707032eee6b79c8dd072f2",
           "ref": "HEAD",
-          "start_line": 43,
-          "end_line": 43,
-          "symbol": "values",
+          "start_line": 5,
+          "end_line": 5,
+          "symbol": "public interface LauncherCatalog {",
           "claim": "组件显式接口/抽象契约。",
           "observation": "组件显式接口/抽象契约。",
           "evidence_type": "source",
@@ -72,11 +72,11 @@
     },
     {
       "name": "architecture.decoupling",
-      "score": 2,
+      "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1；按依赖方向/传播构念锁定 2。",
-      "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1；按依赖方向/传播构念锁定 2。",
+      "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1、Soong 已归属/仍未归属源码=66/0；按依赖方向/传播构念锁定 3。",
+      "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1、Soong 已归属/仍未归属源码=66/0；按依赖方向/传播构念锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -102,6 +102,19 @@
           "observation": "平台变化传播所处模块边界。",
           "evidence_type": "source",
           "independent_group": "change_propagation"
+        },
+        {
+          "source": "current_head",
+          "path": "app/Android.bp",
+          "commit": "82f129b9d9c1270ae2707032eee6b79c8dd072f2",
+          "ref": "HEAD",
+          "start_line": 34,
+          "end_line": 34,
+          "symbol": "android_library {",
+          "claim": "原 Gradle 图外源码由真实 Android.bp 模块归属，不能作为跨边界负面事实。",
+          "observation": "原 Gradle 图外源码由真实 Android.bp 模块归属，不能作为跨边界负面事实。",
+          "evidence_type": "source",
+          "independent_group": "soong_ownership"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",

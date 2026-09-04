@@ -13,7 +13,7 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
+    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e"
   },
   "canonical_total": {
     "score": 40,
@@ -305,29 +305,42 @@
       "evidence": [
         {
           "source": "current_head",
-          "path": "api/src/android/car/hardware/property/ICarProperty.aidl",
+          "path": "runtime/src/com/android/car/VehicleStub.java",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
           "ref": "HEAD",
-          "start_line": 26,
-          "end_line": 26,
-          "symbol": "interface ICarProperty {",
-          "claim": "AIDL/HIDL VehicleStub 实现遵守共同读写和订阅契约。",
-          "observation": "AIDL/HIDL VehicleStub 实现遵守共同读写和订阅契约。",
+          "start_line": 39,
+          "end_line": 39,
+          "symbol": "public abstract class VehicleStub {",
+          "claim": "VehicleStub 定义共同 HAL 读写/订阅契约。",
+          "observation": "VehicleStub 定义共同 HAL 读写/订阅契约。",
           "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "lsp_contract_0"
         },
         {
           "source": "current_head",
-          "path": "platform/src/com/cockpitbench/vehicleproperty/VehiclePropertyPolicy.java",
+          "path": "runtime/src/com/android/car/AidlVehicleStub.java",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
           "ref": "HEAD",
-          "start_line": 22,
-          "end_line": 22,
-          "symbol": "public final class VehiclePropertyPolicy {",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 64,
+          "end_line": 64,
+          "symbol": "final class AidlVehicleStub extends VehicleStub {",
+          "claim": "AIDL 实现可替换 VehicleStub。",
+          "observation": "AIDL 实现可替换 VehicleStub。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "lsp_contract_1"
+        },
+        {
+          "source": "current_head",
+          "path": "runtime/src/com/android/car/HidlVehicleStub.java",
+          "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
+          "ref": "HEAD",
+          "start_line": 44,
+          "end_line": 44,
+          "symbol": "final class HidlVehicleStub extends VehicleStub {",
+          "claim": "HIDL 实现可替换 VehicleStub。",
+          "observation": "HIDL 实现可替换 VehicleStub。",
+          "evidence_type": "source",
+          "independent_group": "lsp_contract_2"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent band check agree.",
@@ -482,8 +495,8 @@
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
-      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
       "evidence": [
         {
           "source": "git_ref",

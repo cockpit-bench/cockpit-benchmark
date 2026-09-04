@@ -272,6 +272,9 @@
         },
         "production_code_path_count": 106,
         "production_code_paths_sha256": "a8273c05d598c1425782f68ae612142ef344d34b51a92345bcb4a7e0fc58c9e4",
+        "soong_build_files": [],
+        "soong_owned_unowned_code_path_count": 0,
+        "soong_owned_unowned_code_samples": [],
         "ui_paths": [
           "app/src/main/java/com/cockpitbench/climatix/presentation/ClimateActivity.kt",
           "app/src/main/java/com/cockpitbench/climatix/presentation/ClimateCompositionRoot.kt",
@@ -288,7 +291,9 @@
           "hvac-core/src/main/java/com/android/car/hvac/ui/ToggleButton.java"
         ],
         "unowned_code_path_count": 0,
-        "unowned_code_samples": []
+        "unowned_code_samples": [],
+        "unresolved_unowned_code_path_count": 0,
+        "unresolved_unowned_code_samples": []
       },
       "componentization_metrics": {
         "explicit_public_contracts": [
@@ -333,36 +338,6 @@
             "path": "domain/src/main/java/com/cockpitbench/climatix/domain/ClimateRepository.kt"
           },
           {
-            "declaration_kind": "abstract_class",
-            "declaration_name": "Callback",
-            "excerpt": "public static abstract class Callback {",
-            "git_blob_oid": "0e60b6893d85c0e69673af711cdc5dc2f53c60db",
-            "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/HvacController.java",
-            "line": 60,
-            "module": ":hvac-core",
-            "path": "hvac-core/src/main/java/com/android/car/hvac/HvacController.java"
-          },
-          {
-            "declaration_kind": "interface",
-            "declaration_name": "HvacPanelState",
-            "excerpt": "private @interface HvacPanelState {}",
-            "git_blob_oid": "2be664aae2497421eec0dcf9b9b3331cd7b5c692",
-            "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/controllers/HvacPanelController.java",
-            "line": 78,
-            "module": ":hvac-core",
-            "path": "hvac-core/src/main/java/com/android/car/hvac/controllers/HvacPanelController.java"
-          },
-          {
-            "declaration_kind": "interface",
-            "declaration_name": "FanDirection",
-            "excerpt": "public @interface FanDirection {}",
-            "git_blob_oid": "a7a6f3f3935e0ccdff28837fc635a6230492e021",
-            "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/ui/FanDirectionButtons.java",
-            "line": 41,
-            "module": ":hvac-core",
-            "path": "hvac-core/src/main/java/com/android/car/hvac/ui/FanDirectionButtons.java"
-          },
-          {
             "declaration_kind": "interface",
             "declaration_name": "FanDirectionClickListener",
             "excerpt": "public interface FanDirectionClickListener {",
@@ -389,16 +364,6 @@
             "git_blob_oid": "93ee76e0dc79cd72c09d7d2b7646fe16f7701456",
             "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/ui/SeatWarmerButton.java",
             "line": 38,
-            "module": ":hvac-core",
-            "path": "hvac-core/src/main/java/com/android/car/hvac/ui/SeatWarmerButton.java"
-          },
-          {
-            "declaration_kind": "interface",
-            "declaration_name": "HeatingLevel",
-            "excerpt": "public @interface HeatingLevel {}",
-            "git_blob_oid": "93ee76e0dc79cd72c09d7d2b7646fe16f7701456",
-            "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/ui/SeatWarmerButton.java",
-            "line": 43,
             "module": ":hvac-core",
             "path": "hvac-core/src/main/java/com/android/car/hvac/ui/SeatWarmerButton.java"
           },
@@ -534,7 +499,7 @@
         "cross_module_source_intrusion_count": 0,
         "dependency_cycle_count": 0,
         "dependency_scc_count": 7,
-        "explicit_public_contract_count": 19,
+        "explicit_public_contract_count": 15,
         "has_base_layered_architecture": true,
         "has_business_packages": true,
         "has_circular_dependency": false,
@@ -1359,6 +1324,7 @@
           "androidtests",
           "build",
           "generated",
+          "hidden-apis-disabled",
           "robotests",
           "test",
           "tests",

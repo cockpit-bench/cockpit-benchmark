@@ -1,11 +1,11 @@
 {
   "schema_version": "3.0.0",
   "document_type": "validation18_benchmark_standard_scores",
-  "generated_at": "2026-09-04T01:48:17.121776+00:00",
+  "generated_at": "2026-09-04T05:28:33.148915+00:00",
   "contract": {
     "path": "SCORE_RULES.md",
-    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7",
-    "rubric_version": "score-rules-android-fw-v3.1",
+    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e",
+    "rubric_version": "score-rules-android-fw-v3.2",
     "app_leaf_count_per_repo": 8,
     "app_max_per_repo": 40,
     "framework_leaf_count_per_repo": 11,
@@ -16,7 +16,7 @@
     "repository_count": 18,
     "pending_repository_count": 22,
     "leaf_count": 171,
-    "score": 475,
+    "score": 488,
     "max_score": 828
   },
   "repositories": [
@@ -41,8 +41,8 @@
           "score": 5,
           "max_score": 5,
           "status": "scored",
-          "score_reasoning": "真实构建模块=7、可复用组件=6、可替换组件=6、显式公开契约=19、源码归属边界=True；按组件复用/替换构念锁定 5。",
-          "analysis": "真实构建模块=7、可复用组件=6、可替换组件=6、显式公开契约=19、源码归属边界=True；按组件复用/替换构念锁定 5。",
+          "score_reasoning": "真实构建模块=7、可复用组件=6、可替换组件=6、显式公开契约=15、源码归属边界=True；按组件复用/替换构念锁定 5。",
+          "analysis": "真实构建模块=7、可复用组件=6、可替换组件=6、显式公开契约=15、源码归属边界=True；按组件复用/替换构念锁定 5。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -91,8 +91,8 @@
           "score": 3,
           "max_score": 3,
           "status": "scored",
-          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1；按依赖方向/传播构念锁定 3。",
-          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1；按依赖方向/传播构念锁定 3。",
+          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 3。",
+          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 3。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -407,17 +407,17 @@
       "branch": "main",
       "worktree_clean": true,
       "total": {
-        "score": 29,
+        "score": 32,
         "max": 40
       },
       "leaves": [
         {
           "name": "architecture.componentization",
-          "score": 3,
+          "score": 5,
           "max_score": 5,
           "status": "scored",
-          "score_reasoning": "真实构建模块=3、可复用组件=2、可替换组件=2、显式公开契约=52、源码归属边界=False；按组件复用/替换构念锁定 3。",
-          "analysis": "真实构建模块=3、可复用组件=2、可替换组件=2、显式公开契约=52、源码归属边界=False；按组件复用/替换构念锁定 3。",
+          "score_reasoning": "真实构建模块=3、可复用组件=2、可替换组件=2、显式公开契约=41、源码归属边界=True；按组件复用/替换构念锁定 5。",
+          "analysis": "真实构建模块=3、可复用组件=2、可替换组件=2、显式公开契约=41、源码归属边界=True；按组件复用/替换构念锁定 5。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -433,12 +433,12 @@
             },
             {
               "source": "current_head",
-              "path": "app/src/com/android/car/carlauncher/calmmode/CalmModeStatsLogHelper.java",
+              "path": "launcher-common/src/main/java/com/android/car/launcher/domain/LauncherCatalog.java",
               "commit": "82f129b9d9c1270ae2707032eee6b79c8dd072f2",
               "ref": "HEAD",
-              "start_line": 43,
-              "end_line": 43,
-              "symbol": "values",
+              "start_line": 5,
+              "end_line": 5,
+              "symbol": "public interface LauncherCatalog {",
               "claim": "组件显式接口/抽象契约。",
               "observation": "组件显式接口/抽象契约。",
               "evidence_type": "source",
@@ -463,11 +463,11 @@
         },
         {
           "name": "architecture.decoupling",
-          "score": 2,
+          "score": 3,
           "max_score": 3,
           "status": "scored",
-          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1；按依赖方向/传播构念锁定 2。",
-          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1；按依赖方向/传播构念锁定 2。",
+          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1、Soong 已归属/仍未归属源码=66/0；按依赖方向/传播构念锁定 3。",
+          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1、Soong 已归属/仍未归属源码=66/0；按依赖方向/传播构念锁定 3。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -493,6 +493,19 @@
               "observation": "平台变化传播所处模块边界。",
               "evidence_type": "source",
               "independent_group": "change_propagation"
+            },
+            {
+              "source": "current_head",
+              "path": "app/Android.bp",
+              "commit": "82f129b9d9c1270ae2707032eee6b79c8dd072f2",
+              "ref": "HEAD",
+              "start_line": 34,
+              "end_line": 34,
+              "symbol": "android_library {",
+              "claim": "原 Gradle 图外源码由真实 Android.bp 模块归属，不能作为跨边界负面事实。",
+              "observation": "原 Gradle 图外源码由真实 Android.bp 模块归属，不能作为跨边界负面事实。",
+              "evidence_type": "source",
+              "independent_group": "soong_ownership"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
@@ -795,8 +808,8 @@
           "score": 5,
           "max_score": 5,
           "status": "scored",
-          "score_reasoning": "真实构建模块=4、可复用组件=3、可替换组件=3、显式公开契约=126、源码归属边界=True；按组件复用/替换构念锁定 5。",
-          "analysis": "真实构建模块=4、可复用组件=3、可替换组件=3、显式公开契约=126、源码归属边界=True；按组件复用/替换构念锁定 5。",
+          "score_reasoning": "真实构建模块=4、可复用组件=3、可替换组件=3、显式公开契约=94、源码归属边界=True；按组件复用/替换构念锁定 5。",
+          "analysis": "真实构建模块=4、可复用组件=3、可替换组件=3、显式公开契约=94、源码归属边界=True；按组件复用/替换构念锁定 5。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -812,12 +825,12 @@
             },
             {
               "source": "current_head",
-              "path": "app/src/main/java/com/android/car/settings/applications/AppListFragment.java",
+              "path": "settings-common/src/main/java/com/android/car/settings/common/ActionButtonInfo.java",
               "commit": "150289b5e0d67acf395aa5418e43347207e9c1b4",
               "ref": "HEAD",
-              "start_line": 29,
-              "end_line": 29,
-              "symbol": "public abstract class AppListFragment extends SettingsFragment {",
+              "start_line": 52,
+              "end_line": 52,
+              "symbol": "private WeakReference<ButtonInfoChangeListener> mButtonInfoChangeListener;",
               "claim": "组件显式接口/抽象契约。",
               "observation": "组件显式接口/抽象契约。",
               "evidence_type": "source",
@@ -845,8 +858,8 @@
           "score": 2,
           "max_score": 3,
           "status": "scored",
-          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=4；按依赖方向/传播构念锁定 2。",
-          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=4；按依赖方向/传播构念锁定 2。",
+          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=4、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 2。",
+          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=4、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 2。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -1230,12 +1243,12 @@
             },
             {
               "source": "current_head",
-              "path": "foundation-api/src/main/aidl/com/cockpitbench/foundation/api/ICockpitEventListener.aidl",
+              "path": "foundation-core/src/main/java/com/cockpitbench/foundation/core/CockpitClock.java",
               "commit": "3f421d00c591dc47b7de81f77292aa512eb34992",
               "ref": "HEAD",
-              "start_line": 2,
-              "end_line": 2,
-              "symbol": "oneway interface ICockpitEventListener { void onEvent(String domain, String event, in android.os.Bundle payload); }",
+              "start_line": 16,
+              "end_line": 16,
+              "symbol": "package com.cockpitbench.foundation.core; public interface CockpitClock { long now(); }",
               "claim": "组件显式接口/抽象契约。",
               "observation": "组件显式接口/抽象契约。",
               "evidence_type": "source",
@@ -1263,8 +1276,8 @@
           "score": 3,
           "max_score": 3,
           "status": "scored",
-          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=0；按依赖方向/传播构念锁定 3。",
-          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=0；按依赖方向/传播构念锁定 3。",
+          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=0、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 3。",
+          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=0、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 3。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -1583,12 +1596,12 @@
             },
             {
               "source": "current_head",
-              "path": "foundation-api/src/main/aidl/com/cockpitbench/foundation/api/ICockpitEventListener.aidl",
+              "path": "foundation-core/src/main/java/com/cockpitbench/foundation/core/CockpitClock.java",
               "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
               "ref": "HEAD",
-              "start_line": 2,
-              "end_line": 2,
-              "symbol": "oneway interface ICockpitEventListener { void onEvent(String domain, String event, in android.os.Bundle payload); }",
+              "start_line": 16,
+              "end_line": 16,
+              "symbol": "package com.cockpitbench.foundation.core; public interface CockpitClock { long now(); }",
               "claim": "组件显式接口/抽象契约。",
               "observation": "组件显式接口/抽象契约。",
               "evidence_type": "source",
@@ -1616,8 +1629,8 @@
           "score": 3,
           "max_score": 3,
           "status": "scored",
-          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1；按依赖方向/传播构念锁定 3。",
-          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1；按依赖方向/传播构念锁定 3。",
+          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 3。",
+          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 3。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -1851,8 +1864,8 @@
           "score": 3,
           "max_score": 10,
           "status": "scored",
-          "score_reasoning": "存在车型/SOP 分支 ['sop/2026.1-model-a1', 'sop/2026.1-model-b2']，按最细车型级策略锁定 3。",
-          "analysis": "存在车型/SOP 分支 ['sop/2026.1-model-a1', 'sop/2026.1-model-b2']，按最细车型级策略锁定 3。",
+          "score_reasoning": "存在含车型身份且有真实差异的单车型 SOP 分支 ['sop/2026.1-model-a1', 'sop/2026.1-model-b2']，按最细车型级策略锁定 3。",
+          "analysis": "存在含车型身份且有真实差异的单车型 SOP 分支 ['sop/2026.1-model-a1', 'sop/2026.1-model-b2']，按最细车型级策略锁定 3。",
           "evidence": [
             {
               "source": "git_ref",
@@ -1915,8 +1928,8 @@
           "score": 3,
           "max_score": 5,
           "status": "scored",
-          "score_reasoning": "真实构建模块=2、可复用组件=1、可替换组件=1、显式公开契约=76、源码归属边界=False；按组件复用/替换构念锁定 3。",
-          "analysis": "真实构建模块=2、可复用组件=1、可替换组件=1、显式公开契约=76、源码归属边界=False；按组件复用/替换构念锁定 3。",
+          "score_reasoning": "真实构建模块=2、可复用组件=1、可替换组件=1、显式公开契约=55、源码归属边界=True；按组件复用/替换构念锁定 3。",
+          "analysis": "真实构建模块=2、可复用组件=1、可替换组件=1、显式公开契约=55、源码归属边界=True；按组件复用/替换构念锁定 3。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -1932,19 +1945,6 @@
             },
             {
               "source": "current_head",
-              "path": "platform/services-car/service/src/com/android/car/audio/CarAudioContext.java",
-              "commit": "83cc55774e720bc761e90e62ffb94bc61a33973b",
-              "ref": "HEAD",
-              "start_line": 42,
-              "end_line": 42,
-              "symbol": "public final class CarAudioContext {",
-              "claim": "组件显式接口/抽象契约。",
-              "observation": "组件显式接口/抽象契约。",
-              "evidence_type": "source",
-              "independent_group": "component_contract"
-            },
-            {
-              "source": "current_head",
               "path": "shell-core/build.gradle",
               "commit": "83cc55774e720bc761e90e62ffb94bc61a33973b",
               "ref": "HEAD",
@@ -1955,6 +1955,19 @@
               "observation": "被其他模块复用的独立构建组件。",
               "evidence_type": "source",
               "independent_group": "reusable_component"
+            },
+            {
+              "source": "current_head",
+              "path": "Android.bp",
+              "commit": "83cc55774e720bc761e90e62ffb94bc61a33973b",
+              "ref": "HEAD",
+              "start_line": 20,
+              "end_line": 20,
+              "symbol": "android_library {",
+              "claim": "独立 Soong 构建边界；不以注解或常量接口冒充组件契约。",
+              "observation": "独立 Soong 构建边界；不以注解或常量接口冒充组件契约。",
+              "evidence_type": "source",
+              "independent_group": "soong_component_boundary"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
@@ -1965,8 +1978,8 @@
           "score": 2,
           "max_score": 3,
           "status": "scored",
-          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=2；按依赖方向/传播构念锁定 2。",
-          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=2；按依赖方向/传播构念锁定 2。",
+          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=2、Soong 已归属/仍未归属源码=304/0；按依赖方向/传播构念锁定 2。",
+          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=2、Soong 已归属/仍未归属源码=304/0；按依赖方向/传播构念锁定 2。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -1992,6 +2005,19 @@
               "observation": "平台变化传播所处模块边界。",
               "evidence_type": "source",
               "independent_group": "change_propagation"
+            },
+            {
+              "source": "current_head",
+              "path": "Android.bp",
+              "commit": "83cc55774e720bc761e90e62ffb94bc61a33973b",
+              "ref": "HEAD",
+              "start_line": 20,
+              "end_line": 20,
+              "symbol": "android_library {",
+              "claim": "原 Gradle 图外源码由真实 Android.bp 模块归属，不能作为跨边界负面事实。",
+              "observation": "原 Gradle 图外源码由真实 Android.bp 模块归属，不能作为跨边界负面事实。",
+              "evidence_type": "source",
+              "independent_group": "soong_ownership"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
@@ -2324,19 +2350,6 @@
             },
             {
               "source": "current_head",
-              "path": "vehicle/src/main/aidl/com/cockpitbench/thermo/vehicle/ILegacyClimateService.aidl",
-              "commit": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e",
-              "ref": "HEAD",
-              "start_line": 3,
-              "end_line": 3,
-              "symbol": "interface ILegacyClimateService {",
-              "claim": "组件显式接口/抽象契约。",
-              "observation": "组件显式接口/抽象契约。",
-              "evidence_type": "source",
-              "independent_group": "component_contract"
-            },
-            {
-              "source": "current_head",
               "path": "vehicle/build.gradle.kts",
               "commit": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e",
               "ref": "HEAD",
@@ -2357,8 +2370,8 @@
           "score": 2,
           "max_score": 3,
           "status": "scored",
-          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=2；按依赖方向/传播构念锁定 2。",
-          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=2；按依赖方向/传播构念锁定 2。",
+          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=2、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 2。",
+          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=2、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 2。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -2682,8 +2695,8 @@
           "score": 3,
           "max_score": 5,
           "status": "scored",
-          "score_reasoning": "真实构建模块=4、可复用组件=3、可替换组件=0、显式公开契约=87、源码归属边界=False；按组件复用/替换构念锁定 3。",
-          "analysis": "真实构建模块=4、可复用组件=3、可替换组件=0、显式公开契约=87、源码归属边界=False；按组件复用/替换构念锁定 3。",
+          "score_reasoning": "真实构建模块=4、可复用组件=3、可替换组件=0、显式公开契约=66、源码归属边界=True；按组件复用/替换构念锁定 3。",
+          "analysis": "真实构建模块=4、可复用组件=3、可替换组件=0、显式公开契约=66、源码归属边界=True；按组件复用/替换构念锁定 3。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -2699,19 +2712,6 @@
             },
             {
               "source": "current_head",
-              "path": "app/src/com/android/car/carlauncher/calmmode/CalmModeStatsLogHelper.java",
-              "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
-              "ref": "HEAD",
-              "start_line": 43,
-              "end_line": 43,
-              "symbol": "values",
-              "claim": "组件显式接口/抽象契约。",
-              "observation": "组件显式接口/抽象契约。",
-              "evidence_type": "source",
-              "independent_group": "component_contract"
-            },
-            {
-              "source": "current_head",
               "path": "legacy-platform/build.gradle",
               "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
               "ref": "HEAD",
@@ -2722,6 +2722,19 @@
               "observation": "被其他模块复用的独立构建组件。",
               "evidence_type": "source",
               "independent_group": "reusable_component"
+            },
+            {
+              "source": "current_head",
+              "path": "app/Android.bp",
+              "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+              "ref": "HEAD",
+              "start_line": 34,
+              "end_line": 34,
+              "symbol": "android_library {",
+              "claim": "独立 Soong 构建边界；不以注解或常量接口冒充组件契约。",
+              "observation": "独立 Soong 构建边界；不以注解或常量接口冒充组件契约。",
+              "evidence_type": "source",
+              "independent_group": "soong_component_boundary"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
@@ -2732,8 +2745,8 @@
           "score": 2,
           "max_score": 3,
           "status": "scored",
-          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=3、平台变更传播模块=4；按依赖方向/传播构念锁定 2。",
-          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=3、平台变更传播模块=4；按依赖方向/传播构念锁定 2。",
+          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=3、平台变更传播模块=4、Soong 已归属/仍未归属源码=73/0；按依赖方向/传播构念锁定 2。",
+          "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=3、平台变更传播模块=4、Soong 已归属/仍未归属源码=73/0；按依赖方向/传播构念锁定 2。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -2759,6 +2772,19 @@
               "observation": "决定依赖方向或具体实现耦合的模块边。",
               "evidence_type": "source",
               "independent_group": "dependency_direction"
+            },
+            {
+              "source": "current_head",
+              "path": "app/Android.bp",
+              "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
+              "ref": "HEAD",
+              "start_line": 34,
+              "end_line": 34,
+              "symbol": "android_library {",
+              "claim": "原 Gradle 图外源码由真实 Android.bp 模块归属，不能作为跨边界负面事实。",
+              "observation": "原 Gradle 图外源码由真实 Android.bp 模块归属，不能作为跨边界负面事实。",
+              "evidence_type": "source",
+              "independent_group": "soong_ownership"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
@@ -3074,8 +3100,8 @@
           "score": 3,
           "max_score": 5,
           "status": "scored",
-          "score_reasoning": "真实构建模块=3、可复用组件=1、可替换组件=1、显式公开契约=145、源码归属边界=False；按组件复用/替换构念锁定 3。",
-          "analysis": "真实构建模块=3、可复用组件=1、可替换组件=1、显式公开契约=145、源码归属边界=False；按组件复用/替换构念锁定 3。",
+          "score_reasoning": "真实构建模块=3、可复用组件=1、可替换组件=1、显式公开契约=121、源码归属边界=False；按组件复用/替换构念锁定 3。",
+          "analysis": "真实构建模块=3、可复用组件=1、可替换组件=1、显式公开契约=121、源码归属边界=False；按组件复用/替换构念锁定 3。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -3088,19 +3114,6 @@
               "observation": "可复用、可替换组件及显式公开契约事实。",
               "evidence_type": "structured_fact",
               "independent_group": "derived_fact"
-            },
-            {
-              "source": "current_head",
-              "path": "app/src/main/java/com/android/car/settings/accounts/ChooseAccountPreferenceController.java",
-              "commit": "abe446eb843ce0b4ceb068b151ff4081b16ce832",
-              "ref": "HEAD",
-              "start_line": 232,
-              "end_line": 232,
-              "symbol": "AddAccountListener",
-              "claim": "组件显式接口/抽象契约。",
-              "observation": "组件显式接口/抽象契约。",
-              "evidence_type": "source",
-              "independent_group": "component_contract"
             },
             {
               "source": "current_head",
@@ -3124,8 +3137,8 @@
           "score": 2,
           "max_score": 3,
           "status": "scored",
-          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=1、具体实现依赖边=0、平台变更传播模块=3；按依赖方向/传播构念锁定 2。",
-          "analysis": "环=0、反向依赖=0、跨模块源码侵入=1、具体实现依赖边=0、平台变更传播模块=3；按依赖方向/传播构念锁定 2。",
+          "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=1、具体实现依赖边=0、平台变更传播模块=3、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 2。",
+          "analysis": "环=0、反向依赖=0、跨模块源码侵入=1、具体实现依赖边=0、平台变更传播模块=3、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 2。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -3385,26 +3398,9 @@
           "score": 3,
           "max_score": 10,
           "status": "scored",
-          "score_reasoning": "存在车型/SOP 分支 ['release/sop-2024', 'sop/2024-model-a1', 'sop/2024-model-b2']，按最细车型级策略锁定 3。",
-          "analysis": "存在车型/SOP 分支 ['release/sop-2024', 'sop/2024-model-a1', 'sop/2024-model-b2']，按最细车型级策略锁定 3。",
+          "score_reasoning": "存在含车型身份且有真实差异的单车型 SOP 分支 ['sop/2024-model-a1', 'sop/2024-model-b2']，按最细车型级策略锁定 3。",
+          "analysis": "存在含车型身份且有真实差异的单车型 SOP 分支 ['sop/2024-model-a1', 'sop/2024-model-b2']，按最细车型级策略锁定 3。",
           "evidence": [
-            {
-              "source": "git_ref",
-              "path": "refs/heads/release/sop-2024",
-              "ref": "refs/heads/release/sop-2024",
-              "commit": "081a37a09d224e38197faf864f4a98878b8233cb",
-              "commit_oid": "081a37a09d224e38197faf864f4a98878b8233cb",
-              "tree_oid": "a8b0ff9cc112b1da7f448c54c1c60c8e6ef5658a",
-              "merge_base": "ecb547dc59d14d2f5b01133657e3fe49fbe3ebe6",
-              "ahead": 1,
-              "behind": 4,
-              "changed_files": 1,
-              "symbol": "refs/heads/release/sop-2024",
-              "claim": "车型/SOP 分支的真实 tip/tree 和差异决定 3 分档。",
-              "observation": "车型/SOP 分支的真实 tip/tree 和差异决定 3 分档。",
-              "evidence_type": "git_ref",
-              "independent_group": "branch_0"
-            },
             {
               "source": "git_ref",
               "path": "refs/heads/sop/2024-model-a1",
@@ -3420,7 +3416,7 @@
               "claim": "车型/SOP 分支的真实 tip/tree 和差异决定 3 分档。",
               "observation": "车型/SOP 分支的真实 tip/tree 和差异决定 3 分档。",
               "evidence_type": "git_ref",
-              "independent_group": "branch_1"
+              "independent_group": "branch_0"
             },
             {
               "source": "git_ref",
@@ -3437,7 +3433,7 @@
               "claim": "车型/SOP 分支的真实 tip/tree 和差异决定 3 分档。",
               "observation": "车型/SOP 分支的真实 tip/tree 和差异决定 3 分档。",
               "evidence_type": "git_ref",
-              "independent_group": "branch_2"
+              "independent_group": "branch_1"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
@@ -3746,29 +3742,42 @@
           "evidence": [
             {
               "source": "current_head",
-              "path": "api/src/android/car/hardware/property/ICarProperty.aidl",
+              "path": "runtime/src/com/android/car/VehicleStub.java",
               "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
               "ref": "HEAD",
-              "start_line": 26,
-              "end_line": 26,
-              "symbol": "interface ICarProperty {",
-              "claim": "AIDL/HIDL VehicleStub 实现遵守共同读写和订阅契约。",
-              "observation": "AIDL/HIDL VehicleStub 实现遵守共同读写和订阅契约。",
+              "start_line": 39,
+              "end_line": 39,
+              "symbol": "public abstract class VehicleStub {",
+              "claim": "VehicleStub 定义共同 HAL 读写/订阅契约。",
+              "observation": "VehicleStub 定义共同 HAL 读写/订阅契约。",
               "evidence_type": "source",
-              "independent_group": "solid_primary"
+              "independent_group": "lsp_contract_0"
             },
             {
               "source": "current_head",
-              "path": "platform/src/com/cockpitbench/vehicleproperty/VehiclePropertyPolicy.java",
+              "path": "runtime/src/com/android/car/AidlVehicleStub.java",
               "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
               "ref": "HEAD",
-              "start_line": 22,
-              "end_line": 22,
-              "symbol": "public final class VehiclePropertyPolicy {",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "start_line": 64,
+              "end_line": 64,
+              "symbol": "final class AidlVehicleStub extends VehicleStub {",
+              "claim": "AIDL 实现可替换 VehicleStub。",
+              "observation": "AIDL 实现可替换 VehicleStub。",
               "evidence_type": "source",
-              "independent_group": "solid_secondary"
+              "independent_group": "lsp_contract_1"
+            },
+            {
+              "source": "current_head",
+              "path": "runtime/src/com/android/car/HidlVehicleStub.java",
+              "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
+              "ref": "HEAD",
+              "start_line": 44,
+              "end_line": 44,
+              "symbol": "final class HidlVehicleStub extends VehicleStub {",
+              "claim": "HIDL 实现可替换 VehicleStub。",
+              "observation": "HIDL 实现可替换 VehicleStub。",
+              "evidence_type": "source",
+              "independent_group": "lsp_contract_2"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent band check agree.",
@@ -3923,8 +3932,8 @@
           "score": 8,
           "max_score": 10,
           "status": "scored",
-          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
-          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
           "evidence": [
             {
               "source": "git_ref",
@@ -4261,29 +4270,42 @@
           "evidence": [
             {
               "source": "current_head",
-              "path": "native/application/include/fw03/application/vehicle_service.h",
-              "commit": "7cb9206c8a8af76c7800cc6cda70255240e937e0",
-              "ref": "HEAD",
-              "start_line": 18,
-              "end_line": 18,
-              "symbol": "CallerContext",
-              "claim": "AidlVehicleStub/HidlVehicleStub 保持 VehicleStub 合同。",
-              "observation": "AidlVehicleStub/HidlVehicleStub 保持 VehicleStub 合同。",
-              "evidence_type": "source",
-              "independent_group": "solid_primary"
-            },
-            {
-              "source": "current_head",
               "path": "service/src/com/android/car/VehicleStub.java",
               "commit": "7cb9206c8a8af76c7800cc6cda70255240e937e0",
               "ref": "HEAD",
               "start_line": 38,
               "end_line": 38,
               "symbol": "public abstract class VehicleStub {",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "VehicleStub 定义共同 HAL 合同并负责实现选择。",
+              "observation": "VehicleStub 定义共同 HAL 合同并负责实现选择。",
               "evidence_type": "source",
-              "independent_group": "solid_secondary"
+              "independent_group": "lsp_contract_0"
+            },
+            {
+              "source": "current_head",
+              "path": "service/src/com/android/car/AidlVehicleStub.java",
+              "commit": "7cb9206c8a8af76c7800cc6cda70255240e937e0",
+              "ref": "HEAD",
+              "start_line": 64,
+              "end_line": 64,
+              "symbol": "final class AidlVehicleStub extends VehicleStub {",
+              "claim": "AIDL 子类覆写共同合同。",
+              "observation": "AIDL 子类覆写共同合同。",
+              "evidence_type": "source",
+              "independent_group": "lsp_contract_1"
+            },
+            {
+              "source": "current_head",
+              "path": "service/src/com/android/car/HidlVehicleStub.java",
+              "commit": "7cb9206c8a8af76c7800cc6cda70255240e937e0",
+              "ref": "HEAD",
+              "start_line": 44,
+              "end_line": 44,
+              "symbol": "final class HidlVehicleStub extends VehicleStub {",
+              "claim": "HIDL 子类覆写共同合同。",
+              "observation": "HIDL 子类覆写共同合同。",
+              "evidence_type": "source",
+              "independent_group": "lsp_contract_2"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent band check agree.",
@@ -4434,8 +4456,8 @@
           "score": 8,
           "max_score": 10,
           "status": "scored",
-          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
-          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
           "evidence": [
             {
               "source": "git_ref",
@@ -4802,29 +4824,42 @@
           "evidence": [
             {
               "source": "current_head",
-              "path": "cpp/telemetry/cartelemetryd/src/TelemetryServer.h",
+              "path": "service/src/com/android/car/CarDiagnosticService.java",
               "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
               "ref": "HEAD",
-              "start_line": 46,
-              "end_line": 46,
-              "symbol": "class TelemetryServer {",
-              "claim": "Manager/Service 与 Binder callback 保持父契约。",
-              "observation": "Manager/Service 与 Binder callback 保持父契约。",
+              "start_line": 556,
+              "end_line": 556,
+              "symbol": "DiagnosticRecord",
+              "claim": "DiagnosticRecord 定义诊断记录生命周期合同。",
+              "observation": "DiagnosticRecord 定义诊断记录生命周期合同。",
               "evidence_type": "source",
-              "independent_group": "solid_primary"
+              "independent_group": "lsp_contract_0"
             },
             {
               "source": "current_head",
-              "path": "service/src/com/android/car/watchdog/WatchdogPerfHandler.java",
+              "path": "service/src/com/android/car/CarDiagnosticService.java",
               "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
               "ref": "HEAD",
-              "start_line": 164,
-              "end_line": 164,
-              "symbol": "public final class WatchdogPerfHandler {",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "start_line": 571,
+              "end_line": 571,
+              "symbol": "LiveFrameRecord",
+              "claim": "LiveFrameRecord 以父类型被服务调用。",
+              "observation": "LiveFrameRecord 以父类型被服务调用。",
               "evidence_type": "source",
-              "independent_group": "solid_secondary"
+              "independent_group": "lsp_contract_1"
+            },
+            {
+              "source": "current_head",
+              "path": "service/src/com/android/car/CarDiagnosticService.java",
+              "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
+              "ref": "HEAD",
+              "start_line": 596,
+              "end_line": 596,
+              "symbol": "FreezeFrameRecord",
+              "claim": "FreezeFrameRecord 保持相同启停/更新契约。",
+              "observation": "FreezeFrameRecord 保持相同启停/更新契约。",
+              "evidence_type": "source",
+              "independent_group": "lsp_contract_2"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent band check agree.",
@@ -4979,8 +5014,8 @@
           "score": 8,
           "max_score": 10,
           "status": "scored",
-          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
-          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
           "evidence": [
             {
               "source": "git_ref",
@@ -5321,29 +5356,29 @@
           "evidence": [
             {
               "source": "current_head",
-              "path": "manager-runtime/src/com/cockpitbench/managerkit/PlatformManagerFallback.java",
+              "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerRegistry.java",
               "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
               "ref": "HEAD",
-              "start_line": 20,
-              "end_line": 20,
-              "symbol": "public final class PlatformManagerFallback {",
-              "claim": "VehiclePropertyBackend 遵守 Backend 调用合同。",
-              "observation": "VehiclePropertyBackend 遵守 Backend 调用合同。",
+              "start_line": 17,
+              "end_line": 17,
+              "symbol": "import java.util.*; public final class ManagerRegistry { public interface Backend{ManagerResult call(ManagerCall value);",
+              "claim": "Backend 声明统一调用合同。",
+              "observation": "Backend 声明统一调用合同。",
               "evidence_type": "source",
-              "independent_group": "solid_primary"
+              "independent_group": "lsp_contract_0"
             },
             {
               "source": "current_head",
-              "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerGatewayService.java",
+              "path": "manager-runtime/src/com/cockpitbench/managerkit/VehiclePropertyBackend.java",
               "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
               "ref": "HEAD",
-              "start_line": 20,
-              "end_line": 20,
-              "symbol": "public final class ManagerGatewayService extends IManagerGateway.Stub {",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "start_line": 21,
+              "end_line": 21,
+              "symbol": "public final class VehiclePropertyBackend implements ManagerRegistry.Backend {",
+              "claim": "VehiclePropertyBackend 实现该合同；尚无第二个生产实现或替换测试。",
+              "observation": "VehiclePropertyBackend 实现该合同；尚无第二个生产实现或替换测试。",
               "evidence_type": "source",
-              "independent_group": "solid_secondary"
+              "independent_group": "lsp_contract_1"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent band check agree.",
@@ -5498,8 +5533,8 @@
           "score": 8,
           "max_score": 10,
           "status": "scored",
-          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
-          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
           "evidence": [
             {
               "source": "git_ref",
@@ -5869,26 +5904,39 @@
               "path": "native/transport/include/fw08/transport/ipc_transport.h",
               "commit": "69e60531c7a3474c288a6702c84f5758a3950139",
               "ref": "HEAD",
-              "start_line": 17,
-              "end_line": 17,
-              "symbol": "TransportHealth",
-              "claim": "fake/Unix transport 与 callback 保持同一生命周期契约。",
-              "observation": "fake/Unix transport 与 callback 保持同一生命周期契约。",
+              "start_line": 25,
+              "end_line": 25,
+              "symbol": "IpcTransport",
+              "claim": "IpcTransport 声明生命周期和传输合同。",
+              "observation": "IpcTransport 声明生命周期和传输合同。",
               "evidence_type": "source",
-              "independent_group": "solid_primary"
+              "independent_group": "lsp_contract_0"
             },
             {
               "source": "current_head",
-              "path": "native/application/include/fw08/application/soa_gateway_service.h",
+              "path": "native/transport/include/fw08/transport/unix_socket_transport.h",
               "commit": "69e60531c7a3474c288a6702c84f5758a3950139",
               "ref": "HEAD",
-              "start_line": 22,
-              "end_line": 22,
-              "symbol": "SoaGatewayService",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "start_line": 11,
+              "end_line": 11,
+              "symbol": "UnixSocketTransport",
+              "claim": "UnixSocketTransport 完整覆写传输合同。",
+              "observation": "UnixSocketTransport 完整覆写传输合同。",
               "evidence_type": "source",
-              "independent_group": "solid_secondary"
+              "independent_group": "lsp_contract_1"
+            },
+            {
+              "source": "current_head",
+              "path": "native/tests/support/fake_ipc_transport.h",
+              "commit": "69e60531c7a3474c288a6702c84f5758a3950139",
+              "ref": "HEAD",
+              "start_line": 11,
+              "end_line": 11,
+              "symbol": "FakeIpcTransport",
+              "claim": "测试替身证明消费者可按父类型替换实现。",
+              "observation": "测试替身证明消费者可按父类型替换实现。",
+              "evidence_type": "source",
+              "independent_group": "lsp_contract_2"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent band check agree.",
@@ -6043,8 +6091,8 @@
           "score": 8,
           "max_score": 10,
           "status": "scored",
-          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
-          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
           "evidence": [
             {
               "source": "git_ref",
@@ -6411,29 +6459,42 @@
           "evidence": [
             {
               "source": "current_head",
-              "path": "update-manager/src/com/cockpitbench/update/IUpdateStatusListener.aidl",
+              "path": "updater-app/src/com/android/car/systemupdater/UpdateLayoutFragment.java",
               "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
               "ref": "HEAD",
-              "start_line": 2,
-              "end_line": 2,
-              "symbol": "oneway interface IUpdateStatusListener { void onStatusChanged(int status, int progress, String detail); }",
-              "claim": "Binder Stub 与 callback 覆写基本保持父契约。",
-              "observation": "Binder Stub 与 callback 覆写基本保持父契约。",
+              "start_line": 241,
+              "end_line": 241,
+              "symbol": "CarUpdateEngineCallback",
+              "claim": "CarUpdateEngineCallback 遵守平台更新回调父契约。",
+              "observation": "CarUpdateEngineCallback 遵守平台更新回调父契约。",
               "evidence_type": "source",
-              "independent_group": "solid_primary"
+              "independent_group": "lsp_contract_0"
             },
             {
               "source": "current_head",
-              "path": "update-manager/src/com/cockpitbench/update/UpdateManagerService.java",
+              "path": "updater-app/src/com/android/car/systemupdater/UpdateLayoutFragment.java",
               "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
               "ref": "HEAD",
-              "start_line": 9,
-              "end_line": 9,
-              "symbol": "public final class UpdateManagerService extends IUpdateManager.Stub {",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "start_line": 244,
+              "end_line": 244,
+              "symbol": "CarUpdateEngineCallback",
+              "claim": "状态回调正确覆写且被 UpdateEngine 绑定。",
+              "observation": "状态回调正确覆写且被 UpdateEngine 绑定。",
               "evidence_type": "source",
-              "independent_group": "solid_secondary"
+              "independent_group": "lsp_contract_1"
+            },
+            {
+              "source": "current_head",
+              "path": "updater-app/src/com/android/car/systemupdater/UpdateLayoutFragment.java",
+              "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
+              "ref": "HEAD",
+              "start_line": 261,
+              "end_line": 261,
+              "symbol": "CarUpdateEngineCallback",
+              "claim": "完成回调保持父契约语义。",
+              "observation": "完成回调保持父契约语义。",
+              "evidence_type": "source",
+              "independent_group": "lsp_contract_2"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent band check agree.",
@@ -6588,8 +6649,8 @@
           "score": 8,
           "max_score": 10,
           "status": "scored",
-          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
-          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
           "evidence": [
             {
               "source": "git_ref",
@@ -6912,21 +6973,21 @@
           "score": 2,
           "max_score": 4,
           "status": "scored",
-          "score_reasoning": "profile 子类大体保持共同基类契约。 按独立 0–4 档位锁定 2。",
-          "analysis": "profile 子类大体保持共同基类契约。 按独立 0–4 档位锁定 2。",
+          "score_reasoning": "CarRuntimeService 实现生成的 ICarRuntime.Stub 合同，未发现收紧前置条件或拒绝父契约，但缺少第二个生产实现和替换测试。 按独立 0–4 档位锁定 2。",
+          "analysis": "CarRuntimeService 实现生成的 ICarRuntime.Stub 合同，未发现收紧前置条件或拒绝父契约，但缺少第二个生产实现和替换测试。 按独立 0–4 档位锁定 2。",
           "evidence": [
             {
               "source": "current_head",
-              "path": "platform/src/com/cockpitbench/carruntime/product/AuroraBaseRuntimeProfile.java",
+              "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
               "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
               "ref": "HEAD",
-              "start_line": 24,
-              "end_line": 24,
-              "symbol": "public final class AuroraBaseRuntimeProfile {",
-              "claim": "profile 子类大体保持共同基类契约。",
-              "observation": "profile 子类大体保持共同基类契约。",
+              "start_line": 3,
+              "end_line": 3,
+              "symbol": "interface ICarRuntime {",
+              "claim": "ICarRuntime 声明 Binder 父契约。",
+              "observation": "ICarRuntime 声明 Binder 父契约。",
               "evidence_type": "source",
-              "independent_group": "solid_primary"
+              "independent_group": "lsp_contract_0"
             },
             {
               "source": "current_head",
@@ -6936,16 +6997,16 @@
               "start_line": 48,
               "end_line": 48,
               "symbol": "public final class CarRuntimeService extends ICarRuntime.Stub {",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "CarRuntimeService 实现生成 Stub；替换证据限于单一实现。",
+              "observation": "CarRuntimeService 实现生成 Stub；替换证据限于单一实现。",
               "evidence_type": "source",
-              "independent_group": "solid_secondary"
+              "independent_group": "lsp_contract_1"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent band check agree.",
           "confidence": "high",
           "issues": [
-            "profile 子类大体保持共同基类契约。"
+            "CarRuntimeService 实现生成的 ICarRuntime.Stub 合同，未发现收紧前置条件或拒绝父契约，但缺少第二个生产实现和替换测试。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
@@ -7094,8 +7155,8 @@
           "score": 8,
           "max_score": 10,
           "status": "scored",
-          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
-          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
           "evidence": [
             {
               "source": "git_ref",
@@ -7160,7 +7221,7 @@
       "branch": "main",
       "worktree_clean": true,
       "total": {
-        "score": 14,
+        "score": 19,
         "max": 52
       },
       "leaves": [
@@ -7418,8 +7479,8 @@
           "score": 2,
           "max_score": 4,
           "status": "scored",
-          "score_reasoning": "vehicle profile 基本保持共同读取映射契约。 按独立 0–4 档位锁定 2。",
-          "analysis": "vehicle profile 基本保持共同读取映射契约。 按独立 0–4 档位锁定 2。",
+          "score_reasoning": "VehiclePlatformService 实现生成的 IVehiclePlatform.Stub 合同，未发现空实现/异常式拒绝，但只有单一生产实现且无替换测试。 按独立 0–4 档位锁定 2。",
+          "analysis": "VehiclePlatformService 实现生成的 IVehiclePlatform.Stub 合同，未发现空实现/异常式拒绝，但只有单一生产实现且无替换测试。 按独立 0–4 档位锁定 2。",
           "evidence": [
             {
               "source": "current_head",
@@ -7429,29 +7490,29 @@
               "start_line": 3,
               "end_line": 3,
               "symbol": "interface IVehiclePlatform {",
-              "claim": "vehicle profile 基本保持共同读取映射契约。",
-              "observation": "vehicle profile 基本保持共同读取映射契约。",
+              "claim": "IVehiclePlatform 声明 Binder 父契约。",
+              "observation": "IVehiclePlatform 声明 Binder 父契约。",
               "evidence_type": "source",
-              "independent_group": "solid_primary"
+              "independent_group": "lsp_contract_0"
             },
             {
               "source": "current_head",
-              "path": "platform/src/com/cockpitbench/vehicleplatform/PlatformSignalCoordinator.java",
+              "path": "platform/src/com/cockpitbench/vehicleplatform/VehiclePlatformService.java",
               "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
               "ref": "HEAD",
-              "start_line": 26,
-              "end_line": 26,
-              "symbol": "public final class PlatformSignalCoordinator {",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "start_line": 19,
+              "end_line": 19,
+              "symbol": "public final class VehiclePlatformService extends IVehiclePlatform.Stub {",
+              "claim": "VehiclePlatformService 实现生成 Stub；无第二实现替换测试。",
+              "observation": "VehiclePlatformService 实现生成 Stub；无第二实现替换测试。",
               "evidence_type": "source",
-              "independent_group": "solid_secondary"
+              "independent_group": "lsp_contract_1"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent band check agree.",
           "confidence": "high",
           "issues": [
-            "vehicle profile 基本保持共同读取映射契约。"
+            "VehiclePlatformService 实现生成的 IVehiclePlatform.Stub 合同，未发现空实现/异常式拒绝，但只有单一生产实现且无替换测试。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
@@ -7597,29 +7658,12 @@
         },
         {
           "name": "platform_reuse.release_branch_strategy",
-          "score": 3,
+          "score": 8,
           "max_score": 10,
           "status": "scored",
-          "score_reasoning": "存在决定 3 分档的真实分支 refs=['refs/heads/release/sop-2019']，锁定 3。",
-          "analysis": "存在决定 3 分档的真实分支 refs=['refs/heads/release/sop-2019']，锁定 3。",
+          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
           "evidence": [
-            {
-              "source": "git_ref",
-              "path": "refs/heads/release/sop-2019",
-              "ref": "refs/heads/release/sop-2019",
-              "commit": "0f866904ae21d162731a3939b7f5efb1b0d6017b",
-              "commit_oid": "0f866904ae21d162731a3939b7f5efb1b0d6017b",
-              "tree_oid": "ad3b97fbab8b8130c979b61aeb11ada04ffaa65d",
-              "merge_base": "43a56d3edb0aa7296aec1a9bef82c6c3cfc71558",
-              "ahead": 1,
-              "behind": 4,
-              "changed_files": 1,
-              "symbol": "refs/heads/release/sop-2019",
-              "claim": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
-              "observation": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
-              "evidence_type": "git_ref",
-              "independent_group": "branch_0"
-            },
             {
               "source": "git_ref",
               "path": "refs/heads/platform/8155",
@@ -7632,10 +7676,10 @@
               "behind": 4,
               "changed_files": 1,
               "symbol": "refs/heads/platform/8155",
-              "claim": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
-              "observation": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
+              "claim": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+              "observation": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
               "evidence_type": "git_ref",
-              "independent_group": "branch_1"
+              "independent_group": "branch_0"
             },
             {
               "source": "git_ref",
@@ -7649,8 +7693,25 @@
               "behind": 4,
               "changed_files": 1,
               "symbol": "refs/heads/platform/8295",
-              "claim": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
-              "observation": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
+              "claim": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+              "observation": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+              "evidence_type": "git_ref",
+              "independent_group": "branch_1"
+            },
+            {
+              "source": "git_ref",
+              "path": "refs/heads/platform/xinqing",
+              "ref": "refs/heads/platform/xinqing",
+              "commit": "e4e968216af43e9b612b2bed5b150887a2b93c0c",
+              "commit_oid": "e4e968216af43e9b612b2bed5b150887a2b93c0c",
+              "tree_oid": "2d45f508c4335b034220d51dc2393faee06979ce",
+              "merge_base": "43a56d3edb0aa7296aec1a9bef82c6c3cfc71558",
+              "ahead": 1,
+              "behind": 4,
+              "changed_files": 1,
+              "symbol": "refs/heads/platform/xinqing",
+              "claim": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+              "observation": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
               "evidence_type": "git_ref",
               "independent_group": "branch_2"
             }
@@ -7683,7 +7744,7 @@
       "branch": "main",
       "worktree_clean": true,
       "total": {
-        "score": 13,
+        "score": 18,
         "max": 52
       },
       "leaves": [
@@ -7967,8 +8028,8 @@
           "score": 2,
           "max_score": 4,
           "status": "scored",
-          "score_reasoning": "Binder callback 基本维持声明契约但缺少跨版本替换测试。 按独立 0–4 档位锁定 2。",
-          "analysis": "Binder callback 基本维持声明契约但缺少跨版本替换测试。 按独立 0–4 档位锁定 2。",
+          "score_reasoning": "PlatformCompatService 实现生成的 IPlatformCompat.Stub 合同，未发现收紧前置条件，但只有单一生产实现且缺少跨版本替换测试。 按独立 0–4 档位锁定 2。",
+          "analysis": "PlatformCompatService 实现生成的 IPlatformCompat.Stub 合同，未发现收紧前置条件，但只有单一生产实现且缺少跨版本替换测试。 按独立 0–4 档位锁定 2。",
           "evidence": [
             {
               "source": "current_head",
@@ -7978,29 +8039,29 @@
               "start_line": 3,
               "end_line": 3,
               "symbol": "interface IPlatformCompat {",
-              "claim": "Binder callback 基本维持声明契约但缺少跨版本替换测试。",
-              "observation": "Binder callback 基本维持声明契约但缺少跨版本替换测试。",
+              "claim": "IPlatformCompat 声明 Binder 父契约。",
+              "observation": "IPlatformCompat 声明 Binder 父契约。",
               "evidence_type": "source",
-              "independent_group": "solid_primary"
+              "independent_group": "lsp_contract_0"
             },
             {
               "source": "current_head",
-              "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatRuntime.java",
+              "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatService.java",
               "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
               "ref": "HEAD",
               "start_line": 19,
               "end_line": 19,
-              "symbol": "public final class PlatformCompatRuntime {",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "symbol": "public final class PlatformCompatService extends IPlatformCompat.Stub {",
+              "claim": "PlatformCompatService 实现生成 Stub；无跨版本替换测试。",
+              "observation": "PlatformCompatService 实现生成 Stub；无跨版本替换测试。",
               "evidence_type": "source",
-              "independent_group": "solid_secondary"
+              "independent_group": "lsp_contract_1"
             }
           ],
           "adjudication": "v3 final-HEAD source review and independent band check agree.",
           "confidence": "high",
           "issues": [
-            "Binder callback 基本维持声明契约但缺少跨版本替换测试。"
+            "PlatformCompatService 实现生成的 IPlatformCompat.Stub 合同，未发现收紧前置条件，但只有单一生产实现且缺少跨版本替换测试。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
@@ -8146,29 +8207,12 @@
         },
         {
           "name": "platform_reuse.release_branch_strategy",
-          "score": 3,
+          "score": 8,
           "max_score": 10,
           "status": "scored",
-          "score_reasoning": "存在决定 3 分档的真实分支 refs=['refs/heads/release/sop-2025']，锁定 3。",
-          "analysis": "存在决定 3 分档的真实分支 refs=['refs/heads/release/sop-2025']，锁定 3。",
+          "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+          "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
           "evidence": [
-            {
-              "source": "git_ref",
-              "path": "refs/heads/release/sop-2025",
-              "ref": "refs/heads/release/sop-2025",
-              "commit": "2234a82e84b34d2d36c5a4bc220313238e5daf13",
-              "commit_oid": "2234a82e84b34d2d36c5a4bc220313238e5daf13",
-              "tree_oid": "7f83142f90b924762091fcc85cf030f9f93f66b5",
-              "merge_base": "471ee8a6438a6982dc5e433b51858b25e9632464",
-              "ahead": 1,
-              "behind": 5,
-              "changed_files": 1,
-              "symbol": "refs/heads/release/sop-2025",
-              "claim": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
-              "observation": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
-              "evidence_type": "git_ref",
-              "independent_group": "branch_0"
-            },
             {
               "source": "git_ref",
               "path": "refs/heads/platform/8155",
@@ -8181,10 +8225,10 @@
               "behind": 5,
               "changed_files": 1,
               "symbol": "refs/heads/platform/8155",
-              "claim": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
-              "observation": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
+              "claim": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+              "observation": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
               "evidence_type": "git_ref",
-              "independent_group": "branch_1"
+              "independent_group": "branch_0"
             },
             {
               "source": "git_ref",
@@ -8198,8 +8242,25 @@
               "behind": 5,
               "changed_files": 1,
               "symbol": "refs/heads/platform/8295",
-              "claim": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
-              "observation": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
+              "claim": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+              "observation": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+              "evidence_type": "git_ref",
+              "independent_group": "branch_1"
+            },
+            {
+              "source": "git_ref",
+              "path": "refs/heads/platform/xinqing",
+              "ref": "refs/heads/platform/xinqing",
+              "commit": "a79b428ffc3e3bd90003ef628ff4c1323b2f8243",
+              "commit_oid": "a79b428ffc3e3bd90003ef628ff4c1323b2f8243",
+              "tree_oid": "7554a4151044833f70de99c2a42febe0e8653a6b",
+              "merge_base": "471ee8a6438a6982dc5e433b51858b25e9632464",
+              "ahead": 1,
+              "behind": 5,
+              "changed_files": 1,
+              "symbol": "refs/heads/platform/xinqing",
+              "claim": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+              "observation": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
               "evidence_type": "git_ref",
               "independent_group": "branch_2"
             }

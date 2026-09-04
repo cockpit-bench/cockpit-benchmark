@@ -335,14 +335,10 @@
     "assertion_count": 6699,
     "empty_test_count": 0,
     "execution": {
-      "status": "passed",
-      "head": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-      "passed": 5,
-      "failed": 0,
-      "pass_rate": 1.0,
-      "coverage_proxy": 0.866667,
-      "run_id": 33758464550,
-      "url": "https://github.com/cockpit-bench/vehicle-diagnostics/actions/runs/33758464550"
+      "status": "not_run",
+      "passed": null,
+      "failed": null,
+      "head": "2c8b686a34552e48a647c4b8ab734a214775b0e0"
     }
   },
   "platform_upgrade": {

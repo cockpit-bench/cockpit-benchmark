@@ -13,7 +13,7 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
+    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e"
   },
   "canonical_total": {
     "score": 12,
@@ -274,21 +274,21 @@
       "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "profile 子类大体保持共同基类契约。 按独立 0–4 档位锁定 2。",
-      "analysis": "profile 子类大体保持共同基类契约。 按独立 0–4 档位锁定 2。",
+      "score_reasoning": "CarRuntimeService 实现生成的 ICarRuntime.Stub 合同，未发现收紧前置条件或拒绝父契约，但缺少第二个生产实现和替换测试。 按独立 0–4 档位锁定 2。",
+      "analysis": "CarRuntimeService 实现生成的 ICarRuntime.Stub 合同，未发现收紧前置条件或拒绝父契约，但缺少第二个生产实现和替换测试。 按独立 0–4 档位锁定 2。",
       "evidence": [
         {
           "source": "current_head",
-          "path": "platform/src/com/cockpitbench/carruntime/product/AuroraBaseRuntimeProfile.java",
+          "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
           "ref": "HEAD",
-          "start_line": 24,
-          "end_line": 24,
-          "symbol": "public final class AuroraBaseRuntimeProfile {",
-          "claim": "profile 子类大体保持共同基类契约。",
-          "observation": "profile 子类大体保持共同基类契约。",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "interface ICarRuntime {",
+          "claim": "ICarRuntime 声明 Binder 父契约。",
+          "observation": "ICarRuntime 声明 Binder 父契约。",
           "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "lsp_contract_0"
         },
         {
           "source": "current_head",
@@ -298,16 +298,16 @@
           "start_line": 48,
           "end_line": 48,
           "symbol": "public final class CarRuntimeService extends ICarRuntime.Stub {",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "claim": "CarRuntimeService 实现生成 Stub；替换证据限于单一实现。",
+          "observation": "CarRuntimeService 实现生成 Stub；替换证据限于单一实现。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "lsp_contract_1"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "profile 子类大体保持共同基类契约。"
+        "CarRuntimeService 实现生成的 ICarRuntime.Stub 合同，未发现收紧前置条件或拒绝父契约，但缺少第二个生产实现和替换测试。"
       ],
       "recommendations": [
         "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
@@ -456,8 +456,8 @@
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
-      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
       "evidence": [
         {
           "source": "git_ref",

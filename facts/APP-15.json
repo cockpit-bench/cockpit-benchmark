@@ -169,9 +169,14 @@
         },
         "production_code_path_count": 702,
         "production_code_paths_sha256": "ec7023d2047e24fd69b9c6cc584dde5043308e868abb8e34caf7b3eb13598d33",
+        "soong_build_files": [],
+        "soong_owned_unowned_code_path_count": 0,
+        "soong_owned_unowned_code_samples": [],
         "ui_paths": [],
         "unowned_code_path_count": 0,
-        "unowned_code_samples": []
+        "unowned_code_samples": [],
+        "unresolved_unowned_code_path_count": 0,
+        "unresolved_unowned_code_samples": []
       },
       "componentization_metrics": {
         "explicit_public_contracts": [
@@ -236,26 +241,6 @@
             "path": "app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAppsPickerBasePreferenceController.java"
           },
           {
-            "declaration_kind": "abstract_class",
-            "declaration_name": "DefaultAppsPickerEntryBasePreferenceController",
-            "excerpt": "public abstract class DefaultAppsPickerEntryBasePreferenceController extends",
-            "git_blob_oid": "e64df673aed971a29ebe1e4b5915106c6312a7eb",
-            "head_blob": "abe446eb843ce0b4ceb068b151ff4081b16ce832:app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAppsPickerEntryBasePreferenceController.java",
-            "line": 33,
-            "module": ":app",
-            "path": "app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAppsPickerEntryBasePreferenceController.java"
-          },
-          {
-            "declaration_kind": "abstract_class",
-            "declaration_name": "AppLaunchSettingsBasePreferenceController",
-            "excerpt": "public abstract class AppLaunchSettingsBasePreferenceController<V extends Preference> extends",
-            "git_blob_oid": "40adda3c25771fecbb5d23fd59829880eaae811d",
-            "head_blob": "abe446eb843ce0b4ceb068b151ff4081b16ce832:app/src/main/java/com/android/car/settings/applications/managedomainurls/AppLaunchSettingsBasePreferenceController.java",
-            "line": 42,
-            "module": ":app",
-            "path": "app/src/main/java/com/android/car/settings/applications/managedomainurls/AppLaunchSettingsBasePreferenceController.java"
-          },
-          {
             "declaration_kind": "interface",
             "declaration_name": "Callback",
             "excerpt": "public interface Callback {",
@@ -287,16 +272,6 @@
           },
           {
             "declaration_kind": "abstract_class",
-            "declaration_name": "BluetoothDevicePreferenceController",
-            "excerpt": "public abstract class BluetoothDevicePreferenceController<V extends Preference> extends",
-            "git_blob_oid": "4fc12c328418844c7176e2b55fbf3a9d6d176a58",
-            "head_blob": "abe446eb843ce0b4ceb068b151ff4081b16ce832:app/src/main/java/com/android/car/settings/bluetooth/BluetoothDevicePreferenceController.java",
-            "line": 39,
-            "module": ":app",
-            "path": "app/src/main/java/com/android/car/settings/bluetooth/BluetoothDevicePreferenceController.java"
-          },
-          {
-            "declaration_kind": "abstract_class",
             "declaration_name": "BluetoothDevicesGroupPreferenceController",
             "excerpt": "public abstract class BluetoothDevicesGroupPreferenceController extends",
             "git_blob_oid": "854882168ec574038b17ce8942f922529d383afb",
@@ -314,16 +289,6 @@
             "line": 60,
             "module": ":app",
             "path": "app/src/main/java/com/android/car/settings/bluetooth/BluetoothPairingDialogFragment.java"
-          },
-          {
-            "declaration_kind": "abstract_class",
-            "declaration_name": "BluetoothPreferenceController",
-            "excerpt": "public abstract class BluetoothPreferenceController<V extends Preference> extends",
-            "git_blob_oid": "6c9ce009baf53fd13557e093ae7c3e18e5ca81f7",
-            "head_blob": "abe446eb843ce0b4ceb068b151ff4081b16ce832:app/src/main/java/com/android/car/settings/bluetooth/BluetoothPreferenceController.java",
-            "line": 46,
-            "module": ":app",
-            "path": "app/src/main/java/com/android/car/settings/bluetooth/BluetoothPreferenceController.java"
           },
           {
             "declaration_kind": "abstract_class",
@@ -374,6 +339,66 @@
             "line": 39,
             "module": ":app",
             "path": "app/src/main/java/com/android/car/settings/common/BaseFragment.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "OnButtonClickListener",
+            "excerpt": "public interface OnButtonClickListener {",
+            "git_blob_oid": "28e4ad19c9b67545d6819b3e81df3fcff5dbabaa",
+            "head_blob": "abe446eb843ce0b4ceb068b151ff4081b16ce832:app/src/main/java/com/android/car/settings/common/ButtonPreference.java",
+            "line": 37,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/common/ButtonPreference.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "ConfirmListener",
+            "excerpt": "public interface ConfirmListener {",
+            "git_blob_oid": "a9e9e6832389472832d1df76679f5a8aa500e620",
+            "head_blob": "abe446eb843ce0b4ceb068b151ff4081b16ce832:app/src/main/java/com/android/car/settings/common/ConfirmationDialogFragment.java",
+            "line": 264,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/common/ConfirmationDialogFragment.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "RejectListener",
+            "excerpt": "public interface RejectListener {",
+            "git_blob_oid": "a9e9e6832389472832d1df76679f5a8aa500e620",
+            "head_blob": "abe446eb843ce0b4ceb068b151ff4081b16ce832:app/src/main/java/com/android/car/settings/common/ConfirmationDialogFragment.java",
+            "line": 273,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/common/ConfirmationDialogFragment.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "FragmentController",
+            "excerpt": "public interface FragmentController {",
+            "git_blob_oid": "404dac06eaefc64d7675a3d7212198745b3e74a2",
+            "head_blob": "abe446eb843ce0b4ceb068b151ff4081b16ce832:app/src/main/java/com/android/car/settings/common/FragmentController.java",
+            "line": 30,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/common/FragmentController.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "OnChangeListener",
+            "excerpt": "public interface OnChangeListener {",
+            "git_blob_oid": "f45e3f68f7a8a6238da4dc37b51df47fa5f18c42",
+            "head_blob": "abe446eb843ce0b4ceb068b151ff4081b16ce832:modern-settings/src/main/java/com/android/car/settings/accounts/AccountTypesHelper.java",
+            "line": 41,
+            "module": ":modern-settings",
+            "path": "modern-settings/src/main/java/com/android/car/settings/accounts/AccountTypesHelper.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Callback",
+            "excerpt": "public interface Callback{void changed(String domain,Bundle state);}",
+            "git_blob_oid": "f1a9f42f62d6b2278e5f9e8d7ad2529b69477721",
+            "head_blob": "abe446eb843ce0b4ceb068b151ff4081b16ce832:platform-bridge/src/main/java/com/android/car/settings/platform/SettingsCallbackRegistry.java",
+            "line": 20,
+            "module": ":platform-bridge",
+            "path": "platform-bridge/src/main/java/com/android/car/settings/platform/SettingsCallbackRegistry.java"
           }
         ],
         "replaceable_components": [
@@ -426,7 +451,7 @@
         "cross_module_source_intrusion_count": 1,
         "dependency_cycle_count": 0,
         "dependency_scc_count": 3,
-        "explicit_public_contract_count": 145,
+        "explicit_public_contract_count": 121,
         "has_base_layered_architecture": false,
         "has_business_packages": true,
         "has_circular_dependency": false,
@@ -689,6 +714,7 @@
           "androidtests",
           "build",
           "generated",
+          "hidden-apis-disabled",
           "robotests",
           "test",
           "tests",

@@ -121,9 +121,14 @@
         "layered_modules": {},
         "production_code_path_count": 153,
         "production_code_paths_sha256": "a79145dda0dd78c6779c0bd6b9bba5c982276a60b3ba3a4d0aa91630aa3c3934",
+        "soong_build_files": [],
+        "soong_owned_unowned_code_path_count": 0,
+        "soong_owned_unowned_code_samples": [],
         "ui_paths": [],
         "unowned_code_path_count": 0,
-        "unowned_code_samples": []
+        "unowned_code_samples": [],
+        "unresolved_unowned_code_path_count": 0,
+        "unresolved_unowned_code_samples": []
       },
       "componentization_metrics": {
         "explicit_public_contracts": [
@@ -420,6 +425,7 @@
           "androidtests",
           "build",
           "generated",
+          "hidden-apis-disabled",
           "robotests",
           "test",
           "tests",
