@@ -4,529 +4,536 @@
   "quality_tier": "high",
   "size_band": "large",
   "delivery_status": "active",
-  "review_status": "two_pass_current_head_reviewed",
+  "review_status": "v3_current_head_reviewed",
   "repository": {
     "head": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
     "tree": "da76d960bed2ad387d05551a228b3e9e0ffaae3b",
     "branch": "main",
     "remote_count": 0
   },
+  "rubric": {
+    "path": "SCORE_RULES.md",
+    "sha256": "b52d8dcc270cd3cc2bb8ecf942c59adbb1128038d9256ff7ad0835599f096764"
+  },
   "canonical_total": {
-    "score": 41,
+    "score": 42,
     "max": 52
   },
   "canonical_leaves": [
     {
       "name": "compilation.ci_independence",
+      "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score": 3,
-      "reason": "独立 GitHub Actions 包含真实构建、测试、覆盖率门禁和报告上传，且 final HEAD 运行成功。",
       "score_reasoning": "独立 GitHub Actions 包含真实构建、测试、覆盖率门禁和报告上传，且 final HEAD 运行成功。",
       "analysis": "独立 GitHub Actions 包含真实构建、测试、覆盖率门禁和报告上传，且 final HEAD 运行成功。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-07.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.ci_independence",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/ci",
+          "symbol": "ci",
+          "claim": "CI 文件及真实阶段计数。",
+          "observation": "CI 文件及真实阶段计数。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": ".github/workflows/native.yml",
-          "line_start": 2,
-          "line_end": 2,
-          "symbol": "reviewed code evidence",
-          "observation": "CI 入口及实际阶段定义。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
-        },
-        {
-          "source": "github_actions",
-          "path": "https://github.com/cockpit-bench/vehicle-diagnostics/actions/runs/33758464550",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "33758464550",
-          "observation": "final HEAD 构建、测试、质量门禁和报告流水线成功。",
-          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "name: Native build test and coverage",
+          "claim": "CI 构建/测试/报告入口。",
+          "observation": "CI 构建/测试/报告入口。",
+          "evidence_type": "source",
+          "independent_group": "ci_pipeline"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "compilation.compilation_independence",
+      "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score": 0,
-      "reason": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
-      "score_reasoning": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
-      "analysis": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
+      "score_reasoning": "仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': True, 'external_dependencies_declared': True, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [{'path': 'README.md', 'line': 5, 'match': 'complete build requires an AAOS'}], 'standalone_target_anchors': [{'path': '.github/workflows/native.yml', 'line': 2, 'match': 'build'}, {'path': '.github/workflows/native.yml', 'line': 5, 'match': 'build'}, {'path': '.github/workflows/native.yml', 'line': 12, 'match': 'cmake'}, {'path': 'native/CMakeLists.txt', 'line': 2, 'match': 'project('}, {'path': 'native/application/CMakeLists.txt', 'line': 1, 'match': 'add_executable('}, {'path': 'native/common/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/contract/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/hal/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/middleware/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/platform/CMakeLists.txt', 'line': 1, 'match': 'add_library('}]}；锁定 1。",
+      "analysis": "仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': True, 'external_dependencies_declared': True, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [{'path': 'README.md', 'line': 5, 'match': 'complete build requires an AAOS'}], 'standalone_target_anchors': [{'path': '.github/workflows/native.yml', 'line': 2, 'match': 'build'}, {'path': '.github/workflows/native.yml', 'line': 5, 'match': 'build'}, {'path': '.github/workflows/native.yml', 'line': 12, 'match': 'cmake'}, {'path': 'native/CMakeLists.txt', 'line': 2, 'match': 'project('}, {'path': 'native/application/CMakeLists.txt', 'line': 1, 'match': 'add_executable('}, {'path': 'native/common/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/contract/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/hal/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/middleware/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/platform/CMakeLists.txt', 'line': 1, 'match': 'add_library('}]}；锁定 1。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-07.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.compilation_independence",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/compilation/external_build_closure",
+          "symbol": "external_build_closure",
+          "claim": "仓外构建闭包事实。",
+          "observation": "仓外构建闭包事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "Android.bp",
-          "line_start": 5,
-          "line_end": 5,
-          "symbol": "reviewed code evidence",
-          "observation": "Soong/Gradle 直接源码依赖声明。",
+          "path": "README.md",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 5,
+          "end_line": 5,
+          "symbol": "A complete build requires an AAOS/AOSP product tree and Soong dependencies.",
+          "claim": "平台依赖或独立目标入口。",
+          "observation": "平台依赖或独立目标入口。",
+          "evidence_type": "source",
+          "independent_group": "build_boundary_0"
         },
         {
           "source": "current_head",
-          "path": "Android.bp",
-          "line_start": 5,
-          "line_end": 5,
-          "symbol": "reviewed code evidence",
-          "observation": "Soong/Gradle 直接源码依赖声明。",
+          "path": ".github/workflows/native.yml",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "name: Native build test and coverage",
+          "claim": "平台依赖或独立目标入口。",
+          "observation": "平台依赖或独立目标入口。",
+          "evidence_type": "source",
+          "independent_group": "build_boundary_1"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "compilation.api_version_management",
+      "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score": 3,
-      "reason": "存在 current/released API baseline 与 check_api/checkapi 或等价兼容验证，版本可控并约束向后兼容。",
-      "score_reasoning": "存在 current/released API baseline 与 check_api/checkapi 或等价兼容验证，版本可控并约束向后兼容。",
-      "analysis": "存在 current/released API baseline 与 check_api/checkapi 或等价兼容验证，版本可控并约束向后兼容。",
+      "score_reasoning": "专用语义版本证据=2、有效 API 检查=3；锁定 3。",
+      "analysis": "专用语义版本证据=2、有效 API 检查=3；锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-07.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.api_version_management",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/api_version",
+          "symbol": "api_version",
+          "claim": "仅接受专用版本和真实 API 检查。",
+          "observation": "仅接受专用版本和真实 API 检查。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "car-lib/api/current.txt",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "版本、兼容范围或 API baseline 构建绑定。",
+          "path": "native/CMakeLists.txt",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 2,
+          "end_line": 2,
+          "symbol": "project(fw07_vehicle_diagnostics VERSION 2.1.0 LANGUAGES CXX)",
+          "claim": "语义版本或 API baseline 检查。",
+          "observation": "语义版本或 API baseline 检查。",
+          "evidence_type": "source",
+          "independent_group": "api_control_0"
+        },
+        {
+          "source": "current_head",
+          "path": "native/VERSION",
+          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "2.1.0",
+          "claim": "语义版本或 API baseline 检查。",
+          "observation": "语义版本或 API baseline 检查。",
+          "evidence_type": "source",
+          "independent_group": "api_control_1"
         },
         {
           "source": "current_head",
           "path": "car-lib/Android.bp",
-          "line_start": 132,
-          "line_end": 132,
-          "symbol": "reviewed code evidence",
-          "observation": "版本、兼容范围或 API baseline 构建绑定。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 105,
+          "end_line": 105,
+          "symbol": "name: \"android-car-last-released-api\",",
+          "claim": "语义版本或 API baseline 检查。",
+          "observation": "语义版本或 API baseline 检查。",
+          "evidence_type": "source",
+          "independent_group": "api_control_2"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "quality.integration_test",
+      "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score": 3,
-      "reason": "真实断言覆盖关键模块交互，覆盖代理达到 50%，且 final HEAD 独立流水线测试 100% 通过。",
       "score_reasoning": "真实断言覆盖关键模块交互，覆盖代理达到 50%，且 final HEAD 独立流水线测试 100% 通过。",
       "analysis": "真实断言覆盖关键模块交互，覆盖代理达到 50%，且 final HEAD 独立流水线测试 100% 通过。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-07.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "quality.integration_test",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/integration_test",
+          "symbol": "integration_test",
+          "claim": "测试断言、配置和执行绑定。",
+          "observation": "测试断言、配置和执行绑定。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": "car-lib/src/android/car/test/CarLocationTestHelper.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "真实测试源与断言。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 29,
+          "end_line": 29,
+          "symbol": "public class CarLocationTestHelper {",
+          "claim": "真实测试方法与断言。",
+          "observation": "真实测试方法与断言。",
+          "evidence_type": "source",
+          "independent_group": "test_source"
         },
         {
           "source": "current_head",
           "path": "TEST_MAPPING",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "测试套件/映射配置。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
-        },
-        {
-          "source": "github_actions",
-          "path": "https://github.com/cockpit-bench/vehicle-diagnostics/actions/runs/33758464550",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "33758464550",
-          "observation": "final HEAD 流水线测试全部通过。",
-          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 2,
+          "end_line": 2,
+          "symbol": "\"auto-service-experimental-code-presubmit\": [",
+          "claim": "Android 测试套件配置。",
+          "observation": "Android 测试套件配置。",
+          "evidence_type": "source",
+          "independent_group": "test_config"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "solid_principle.single_responsibility",
+      "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score": 2,
-      "reason": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 超过两千逻辑行，拉低 SRP。 按 0–4 独立档位锁定 2 分。",
-      "score_reasoning": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 超过两千逻辑行，拉低 SRP。 按 0–4 独立档位锁定 2 分。",
-      "analysis": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 超过两千逻辑行，拉低 SRP。 按 0–4 独立档位锁定 2 分。",
+      "score_reasoning": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 体量过大。 按独立 0–4 档位锁定 2。",
+      "analysis": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 体量过大。 按独立 0–4 档位锁定 2。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-07.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.single_responsibility",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "service/src/com/android/car/watchdog/WatchdogPerfHandler.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 超过两千逻辑行，拉低 SRP。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 164,
+          "end_line": 164,
+          "symbol": "public final class WatchdogPerfHandler {",
+          "claim": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 体量过大。",
+          "observation": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 体量过大。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 23,
+          "end_line": 23,
+          "symbol": "interface ICarDiagnostic {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 超过两千逻辑行，拉低 SRP。"
+        "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 体量过大。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.open_closed",
+      "score": 3,
       "max_score": 4,
       "status": "scored",
-      "score": 3,
-      "reason": "遥测 listener、watchdog AIDL 和 HAL service 可通过接口扩展，策略变化不集中在单个 switch。 按 0–4 独立档位锁定 3 分。",
-      "score_reasoning": "遥测 listener、watchdog AIDL 和 HAL service 可通过接口扩展，策略变化不集中在单个 switch。 按 0–4 独立档位锁定 3 分。",
-      "analysis": "遥测 listener、watchdog AIDL 和 HAL service 可通过接口扩展，策略变化不集中在单个 switch。 按 0–4 独立档位锁定 3 分。",
+      "score_reasoning": "listener、watchdog AIDL 与 HAL service 提供扩展点。 按独立 0–4 档位锁定 3。",
+      "analysis": "listener、watchdog AIDL 与 HAL service 提供扩展点。 按独立 0–4 档位锁定 3。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-07.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.open_closed",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "遥测 listener、watchdog AIDL 和 HAL service 可通过接口扩展，策略变化不集中在单个 switch。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 23,
+          "end_line": 23,
+          "symbol": "interface ICarDiagnostic {",
+          "claim": "listener、watchdog AIDL 与 HAL service 提供扩展点。",
+          "observation": "listener、watchdog AIDL 与 HAL service 提供扩展点。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "cpp/telemetry/cartelemetryd/src/TelemetryServer.h",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 46,
+          "end_line": 46,
+          "symbol": "class TelemetryServer {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "遥测 listener、watchdog AIDL 和 HAL service 可通过接口扩展，策略变化不集中在单个 switch。"
+        "listener、watchdog AIDL 与 HAL service 提供扩展点。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.liskov_substitution",
+      "score": 3,
       "max_score": 4,
       "status": "scored",
-      "score": 3,
-      "reason": "Manager/Service 与 Binder callback 的继承实现保留父契约，未发现空实现替代主路径。 按 0–4 独立档位锁定 3 分。",
-      "score_reasoning": "Manager/Service 与 Binder callback 的继承实现保留父契约，未发现空实现替代主路径。 按 0–4 独立档位锁定 3 分。",
-      "analysis": "Manager/Service 与 Binder callback 的继承实现保留父契约，未发现空实现替代主路径。 按 0–4 独立档位锁定 3 分。",
+      "score_reasoning": "Manager/Service 与 Binder callback 保持父契约。 按独立 0–4 档位锁定 3。",
+      "analysis": "Manager/Service 与 Binder callback 保持父契约。 按独立 0–4 档位锁定 3。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-07.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.liskov_substitution",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "cpp/telemetry/cartelemetryd/src/TelemetryServer.h",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "Manager/Service 与 Binder callback 的继承实现保留父契约，未发现空实现替代主路径。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 46,
+          "end_line": 46,
+          "symbol": "class TelemetryServer {",
+          "claim": "Manager/Service 与 Binder callback 保持父契约。",
+          "observation": "Manager/Service 与 Binder callback 保持父契约。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "service/src/com/android/car/watchdog/WatchdogPerfHandler.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 164,
+          "end_line": 164,
+          "symbol": "public final class WatchdogPerfHandler {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "Manager/Service 与 Binder callback 的继承实现保留父契约，未发现空实现替代主路径。"
+        "Manager/Service 与 Binder callback 保持父契约。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.interface_segregation",
+      "score": 3,
       "max_score": 4,
       "status": "scored",
-      "score": 3,
-      "reason": "诊断、遥测、资源过载接口按领域拆分，客户端无需依赖全部车辆服务能力。 按 0–4 独立档位锁定 3 分。",
-      "score_reasoning": "诊断、遥测、资源过载接口按领域拆分，客户端无需依赖全部车辆服务能力。 按 0–4 独立档位锁定 3 分。",
-      "analysis": "诊断、遥测、资源过载接口按领域拆分，客户端无需依赖全部车辆服务能力。 按 0–4 独立档位锁定 3 分。",
+      "score_reasoning": "诊断、遥测、资源过载接口按领域拆分。 按独立 0–4 档位锁定 3。",
+      "analysis": "诊断、遥测、资源过载接口按领域拆分。 按独立 0–4 档位锁定 3。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-07.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.interface_segregation",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "service/src/com/android/car/watchdog/WatchdogPerfHandler.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "诊断、遥测、资源过载接口按领域拆分，客户端无需依赖全部车辆服务能力。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 164,
+          "end_line": 164,
+          "symbol": "public final class WatchdogPerfHandler {",
+          "claim": "诊断、遥测、资源过载接口按领域拆分。",
+          "observation": "诊断、遥测、资源过载接口按领域拆分。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 23,
+          "end_line": 23,
+          "symbol": "interface ICarDiagnostic {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "诊断、遥测、资源过载接口按领域拆分，客户端无需依赖全部车辆服务能力。"
+        "诊断、遥测、资源过载接口按领域拆分。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.dependency_inversion",
+      "score": 3,
       "max_score": 4,
       "status": "scored",
-      "score": 3,
-      "reason": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作；少量具体服务构造仍限制到良好档。 按 0–4 独立档位锁定 3 分。",
-      "score_reasoning": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作；少量具体服务构造仍限制到良好档。 按 0–4 独立档位锁定 3 分。",
-      "analysis": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作；少量具体服务构造仍限制到良好档。 按 0–4 独立档位锁定 3 分。",
+      "score_reasoning": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作。 按独立 0–4 档位锁定 3。",
+      "analysis": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作。 按独立 0–4 档位锁定 3。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-07.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.dependency_inversion",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作；少量具体服务构造仍限制到良好档。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 23,
+          "end_line": 23,
+          "symbol": "interface ICarDiagnostic {",
+          "claim": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作。",
+          "observation": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "cpp/telemetry/cartelemetryd/src/TelemetryServer.h",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 46,
+          "end_line": 46,
+          "symbol": "class TelemetryServer {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "服务通过 AIDL、HalServiceBase 与 listener 抽象协作；少量具体服务构造仍限制到良好档。"
+        "服务通过 AIDL、HalServiceBase 与 listener 抽象协作。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "platform_reuse.platform_upgrade",
+      "score": 10,
       "max_score": 10,
       "status": "scored",
-      "score": 10,
-      "reason": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 1, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 10。",
-      "score_reasoning": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 1, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 10。",
-      "analysis": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 1, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 10。",
+      "score_reasoning": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': False, 'has_arch_specific_deps': False, 'version_bound_status': 0, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 10。",
+      "analysis": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': False, 'has_arch_specific_deps': False, 'version_bound_status': 0, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 10。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-07.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "platform_reuse.platform_upgrade",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/platform_upgrade_review",
+          "symbol": "platform_upgrade_review",
+          "claim": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
+          "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "car-lib/src/android/car/VehiclePropertyIds.java",
-          "line_start": 2279,
-          "line_end": 2279,
-          "symbol": "reviewed code evidence",
-          "observation": "Android 平台绑定或抽象事实。",
+          "path": "service/src/com/android/car/watchdog/WatchdogPerfHandler.java",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 164,
+          "end_line": 164,
+          "symbol": "public final class WatchdogPerfHandler {",
+          "claim": "平台访问风险或隔离边界。",
+          "observation": "平台访问风险或隔离边界。",
+          "evidence_type": "source",
+          "independent_group": "platform_primary"
         },
         {
           "source": "current_head",
-          "path": "car-lib/src/android/car/AoapService.java",
-          "line_start": 58,
-          "line_end": 58,
-          "symbol": "reviewed code evidence",
-          "observation": "Android 平台绑定或抽象事实。",
+          "path": "car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 23,
+          "end_line": 23,
+          "symbol": "interface ICarDiagnostic {",
+          "claim": "独立适配/服务边界。",
+          "observation": "独立适配/服务边界。",
+          "evidence_type": "source",
+          "independent_group": "platform_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
+      "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score": 8,
-      "reason": "真实 refs 显示按平台共用分支，锁定 8。",
       "score_reasoning": "真实 refs 显示按平台共用分支，锁定 8。",
       "analysis": "真实 refs 显示按平台共用分支，锁定 8。",
       "evidence": [
         {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-07.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "platform_reuse.release_branch_strategy",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD"
-        },
-        {
           "source": "git_ref",
-          "path": ".git",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "refs/heads/platform/8155",
-          "observation": "平台/车型分支 tip 与 main 不同，命名和实际对象共同证明复用粒度。",
+          "path": "refs/heads/platform/8155",
+          "ref": "refs/heads/platform/8155",
           "commit": "85f0ccfb542ae84b40d3314c9de2d6d9fab195b0",
-          "ref": "refs/heads/platform/8155"
+          "commit_oid": "85f0ccfb542ae84b40d3314c9de2d6d9fab195b0",
+          "tree_oid": "4380ee992185ff83d158687b3867315c88193a9f",
+          "merge_base": "8bb2a496bbe8ab7be5ee348973a921b016702251",
+          "ahead": 1,
+          "behind": 3,
+          "changed_files": 1,
+          "symbol": "refs/heads/platform/8155",
+          "claim": "分支真实 tip/tree 与 main 差异。",
+          "observation": "分支真实 tip/tree 与 main 差异。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_0"
         },
         {
           "source": "git_ref",
-          "path": ".git",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "refs/heads/platform/8295",
-          "observation": "平台/车型分支 tip 与 main 不同，命名和实际对象共同证明复用粒度。",
+          "path": "refs/heads/platform/8295",
+          "ref": "refs/heads/platform/8295",
           "commit": "87130476985f8886d380d9198c80c1edb826f1c8",
-          "ref": "refs/heads/platform/8295"
+          "commit_oid": "87130476985f8886d380d9198c80c1edb826f1c8",
+          "tree_oid": "577544d804d5a356f09524bbc3b0c760e3e2663f",
+          "merge_base": "8bb2a496bbe8ab7be5ee348973a921b016702251",
+          "ahead": 1,
+          "behind": 3,
+          "changed_files": 1,
+          "symbol": "refs/heads/platform/8295",
+          "claim": "分支真实 tip/tree 与 main 差异。",
+          "observation": "分支真实 tip/tree 与 main 差异。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_1"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     }
   ]

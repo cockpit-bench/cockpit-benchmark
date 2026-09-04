@@ -1,4 +1,8 @@
 {
+  "schema_version": "3.0.0",
+  "repo_id": "APP-13",
+  "kind": "APP",
+  "head": "3f421d00c591dc47b7de81f77292aa512eb34992",
   "facts": {
     "api_version": {
       "automation_evidence": [],
@@ -65,7 +69,7 @@
         }
       ],
       "compatibility_evidence": [],
-      "contract": "app_api_version_v2_facts",
+      "contract": "app_api_version_v3_facts",
       "dedicated_version_control_files": [],
       "evidence_gaps": [],
       "has_manual_version_candidate": true,
@@ -159,8 +163,28 @@
         }
       ],
       "version_records": [
-        "1.0",
-        1
+        {
+          "git_blob_oid": "a8852c8f259dc59670f911fa3c8888e544808a96",
+          "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-app/build.gradle",
+          "line": 3,
+          "management_candidate": "manual_literal",
+          "path": "market-app/build.gradle",
+          "semantic": false,
+          "semantic_format": false,
+          "source": "gradle_version_name_literal",
+          "value": "1.0"
+        },
+        {
+          "git_blob_oid": "a8852c8f259dc59670f911fa3c8888e544808a96",
+          "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-app/build.gradle",
+          "line": 3,
+          "management_candidate": "manual_literal",
+          "path": "market-app/build.gradle",
+          "semantic": false,
+          "semantic_format": false,
+          "source": "gradle_version_code_literal",
+          "value": 1
+        }
       ]
     },
     "architecture": {
@@ -198,7 +222,7 @@
         "unowned_code_path_count": 0,
         "unowned_code_samples": []
       },
-      "contract": "app_architecture_v1_fact_candidates",
+      "contract": "app_architecture_v3_fact_candidates",
       "cycles": [],
       "evidence_gaps": [],
       "excluded_test_or_build_modules": [
@@ -206,7 +230,9 @@
         ":market-tests"
       ],
       "facts": {
+        "business_boundary_isolation": true,
         "code_not_in_root_package": true,
+        "common_capability_in_base_core": true,
         "component_friendly_check_count": 4,
         "component_friendly_checks": {
           "business_boundary_isolation": true,
@@ -223,6 +249,7 @@
         "is_component_friendly": true,
         "layered_business_module_count": 0,
         "module_count": 9,
+        "modules_have_independent_build_entry": true,
         "standard_named_module_count": 3
       },
       "internal_dependency_evidence": [
@@ -678,13 +705,17 @@
           "path": "market-tests/build.gradle"
         }
       ],
-      "contract": "app_compilation_v1_facts",
+      "contract": "external_build_closure_v3_facts",
       "dependency_type_candidates": {
+        "critical_dependencies_version_pinned": true,
+        "external_dependencies_declared": true,
         "has_framework_jar_dependency": false,
         "has_internal_project_source_dependency": true,
         "has_local_aar_dependency": false,
+        "has_meaningful_standalone_target": true,
         "has_unversioned_external_artifact": false,
-        "has_versioned_external_artifact": true
+        "has_versioned_external_artifact": true,
+        "requires_full_platform_source": false
       },
       "evidence_gaps": [],
       "framework_jar_dependencies": [],
@@ -893,10 +924,20 @@
           "version_expression": "4.13.2"
         }
       ],
+      "platform_source_requirement_evidence": [],
+      "standalone_build_evidence": [
+        {
+          "excerpt": "plugins {",
+          "git_blob_oid": "d4a042a3cec3e519e360a1726b0366296c9b999c",
+          "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:build.gradle",
+          "line": 1,
+          "path": "build.gradle"
+        }
+      ],
       "type_safe_project_accessors": []
     },
     "platform_upgrade": {
-      "contract": "app_platform_upgrade_v2_fact_candidates",
+      "contract": "android_platform_upgrade_v3_fact_candidates",
       "evidence_gaps": [],
       "scan_policy": {
         "allowed_roots": [
@@ -929,13 +970,190 @@
         ]
       },
       "seven_fact_candidates": {
-        "arch_bound_status": 0,
-        "has_arch_specific_deps": false,
-        "has_complex_permission_adaptation": false,
-        "has_interface_abstraction": false,
-        "has_light_permission_adaptation": false,
-        "has_non_compatible_api": false,
-        "version_bound_status": 0
+        "arch_bound_status": {
+          "build_evidence": {
+            "abi_filters": [],
+            "load_library": [],
+            "native_import": []
+          },
+          "business_modules": [],
+          "enum": "0-3",
+          "fallback_load": false,
+          "multi_abi": false,
+          "source_evidence": {
+            "cpu_abi": [],
+            "load_library": [],
+            "supported_abis": []
+          },
+          "value": 0
+        },
+        "has_arch_specific_deps": {
+          "abi_values": [],
+          "evidence": {
+            "abi_filters": [],
+            "load_library": [],
+            "native_import": []
+          },
+          "single_abi_native_import": false,
+          "value": false
+        },
+        "has_complex_permission_adaptation": {
+          "evidence": {
+            "notification_channel": [],
+            "runtime_check": [],
+            "runtime_request": [],
+            "scoped_storage": [],
+            "versioned_permission": []
+          },
+          "value": false
+        },
+        "has_interface_abstraction": {
+          "classification_policy": "Requires an explicitly platform/version/architecture-named adapter or strategy declaration, a current-head implementation, and an actual platform, SDK/version, ABI, or non-compatible API call inside that implementation. Only a status actually covered by such a call receives the abstraction cap; UI callbacks, providers, names alone, and arbitrary abstract classes do not qualify.",
+          "covered_statuses": [],
+          "evidence": [],
+          "rejected_generic_declarations": [
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "CockpitClock",
+              "excerpt": "package com.cockpitbench.foundation.core; public interface CockpitClock { long now(); }",
+              "git_blob_oid": "263a0387eab4cd3dba30b815330f3d936096678f",
+              "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-core/src/main/java/com/cockpitbench/foundation/core/CockpitClock.java",
+              "line": 16,
+              "path": "foundation-core/src/main/java/com/cockpitbench/foundation/core/CockpitClock.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "Repository",
+              "excerpt": "public interface Repository<T> { T find(String id); List<T> snapshot(); void save(String id,T value); void remove(String id); }",
+              "git_blob_oid": "958048dd76e462d76e57975d84035c8819cd1034",
+              "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-core/src/main/java/com/cockpitbench/foundation/core/Repository.java",
+              "line": 3,
+              "path": "foundation-core/src/main/java/com/cockpitbench/foundation/core/Repository.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "Observer",
+              "excerpt": "public interface Observer {",
+              "git_blob_oid": "a5cbdc828cd1a4e1626707ea0233ac8a4a174c6b",
+              "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-core/src/main/java/com/cockpitbench/foundation/core/SessionSupervisor.java",
+              "line": 50,
+              "path": "foundation-core/src/main/java/com/cockpitbench/foundation/core/SessionSupervisor.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "Action",
+              "excerpt": "public interface Action {",
+              "git_blob_oid": "82fb096dc12ac8a5fa49c826573fb78dd4f41d0b",
+              "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-core/src/main/java/com/cockpitbench/foundation/core/WorkflowEngine.java",
+              "line": 50,
+              "path": "foundation-core/src/main/java/com/cockpitbench/foundation/core/WorkflowEngine.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "Observer",
+              "excerpt": "public interface Observer {",
+              "git_blob_oid": "82fb096dc12ac8a5fa49c826573fb78dd4f41d0b",
+              "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-core/src/main/java/com/cockpitbench/foundation/core/WorkflowEngine.java",
+              "line": 57,
+              "path": "foundation-core/src/main/java/com/cockpitbench/foundation/core/WorkflowEngine.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "Observer",
+              "excerpt": "public final class BinderConnectionSupervisor implements IBinder.DeathRecipient,AutoCloseable { public interface Observer{void onConnected(IBinder binder);void onDisconnected();}",
+              "git_blob_oid": "228551c4b9461c9c5330ef142930cbb5e6412a76",
+              "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-platform/src/main/java/com/cockpitbench/foundation/platform/BinderConnectionSupervisor.java",
+              "line": 3,
+              "path": "foundation-platform/src/main/java/com/cockpitbench/foundation/platform/BinderConnectionSupervisor.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "Client",
+              "excerpt": "package com.cockpitbench.market.core;import com.cockpitbench.market.*;import java.util.*;import java.util.concurrent.*;public final class DownloadCoordinator implements AutoCloseab",
+              "git_blob_oid": "f05053264ef819106be98d1aa0422e9b4fa0becd",
+              "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-core/src/main/java/com/cockpitbench/market/core/DownloadCoordinator.java",
+              "line": 16,
+              "path": "market-core/src/main/java/com/cockpitbench/market/core/DownloadCoordinator.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "Listener",
+              "excerpt": "package com.cockpitbench.market.core;import com.cockpitbench.market.*;import java.util.*;import java.util.concurrent.*;public final class DownloadCoordinator implements AutoCloseab",
+              "git_blob_oid": "f05053264ef819106be98d1aa0422e9b4fa0becd",
+              "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-core/src/main/java/com/cockpitbench/market/core/DownloadCoordinator.java",
+              "line": 16,
+              "path": "market-core/src/main/java/com/cockpitbench/market/core/DownloadCoordinator.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "Installer",
+              "excerpt": "package com.cockpitbench.market.core;import com.cockpitbench.market.*;import java.util.*;public final class InstallerSessionCoordinator{public interface Installer{int create(String",
+              "git_blob_oid": "cc94a7e0b1ed3514e00a21a68d6e17bd88597a85",
+              "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-core/src/main/java/com/cockpitbench/market/core/InstallerSessionCoordinator.java",
+              "line": 16,
+              "path": "market-core/src/main/java/com/cockpitbench/market/core/InstallerSessionCoordinator.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "Gate",
+              "excerpt": "package com.cockpitbench.market.platform;import android.os.*;import com.cockpitbench.market.*;import com.cockpitbench.market.core.*;import java.util.*;public final class MarketBind",
+              "git_blob_oid": "665273b1769d8aa35dff1aa73c3b133a647b7d0f",
+              "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-platform/src/main/java/com/cockpitbench/market/platform/MarketBinderService.java",
+              "line": 16,
+              "path": "market-platform/src/main/java/com/cockpitbench/market/platform/MarketBinderService.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            }
+          ],
+          "rejected_uncovered_implementations": [],
+          "unimplemented_platform_declarations": [],
+          "value": false
+        },
+        "has_light_permission_adaptation": {
+          "declarations": [
+            {
+              "git_blob_oid": "3c523cdbd7a4c0b431565e6244313daf2c82c0f1",
+              "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-app/src/main/AndroidManifest.xml",
+              "line": 1,
+              "path": "market-app/src/main/AndroidManifest.xml",
+              "permission": "android.permission.INSTALL_PACKAGES",
+              "upgrade_relevant": false
+            }
+          ],
+          "relevant_permissions": [],
+          "value": false
+        },
+        "has_non_compatible_api": {
+          "evidence": {
+            "internal_android_api": [],
+            "reflection_class_lookup": [],
+            "reflection_method_invoke": [],
+            "system_properties_api": [],
+            "vendor_private_namespace": []
+          },
+          "value": false
+        },
+        "version_bound_status": {
+          "business_modules": [],
+          "centralized_or_compatibility_layer": false,
+          "classification_policy": "Only current-platform Build.VERSION.SDK_INT control flow and specified RequiresApi/TargetApi annotations are in scope. Comparisons of an app's targetSdkVersion metadata with VERSION_CODES are excluded.",
+          "enum": "0-3",
+          "evidence": {
+            "current_sdk_control_flow": [],
+            "standard_annotation": []
+          },
+          "excluded_target_sdk_comparisons": [],
+          "standard_annotation_paths": [],
+          "value": 0
+        }
       },
       "targeted_path_counts": {
         "manifest": 1,
@@ -994,8 +1212,5 @@
       "sop_branch_count": 0,
       "sop_branches": []
     }
-  },
-  "head": "3f421d00c591dc47b7de81f77292aa512eb34992",
-  "kind": "APP",
-  "repo_id": "APP-13"
+  }
 }

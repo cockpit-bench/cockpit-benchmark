@@ -91,6 +91,65 @@
       "tests/vehiclehal_test/Android.bp",
       "vehicle-hal-support-lib/Android.bp"
     ],
+    "external_build_closure": {
+      "requires_full_platform_source": true,
+      "has_meaningful_standalone_target": true,
+      "external_dependencies_declared": true,
+      "critical_dependencies_version_pinned": false,
+      "platform_requirement_anchors": [],
+      "standalone_target_anchors": [
+        {
+          "path": ".github/workflows/native-ci.yml",
+          "line": 17,
+          "match": "build"
+        },
+        {
+          "path": ".github/workflows/native-ci.yml",
+          "line": 31,
+          "match": "build"
+        },
+        {
+          "path": ".github/workflows/native-ci.yml",
+          "line": 32,
+          "match": "cmake"
+        },
+        {
+          "path": "native/CMakeLists.txt",
+          "line": 3,
+          "match": "project("
+        },
+        {
+          "path": "native/CMakeLists.txt",
+          "line": 25,
+          "match": "cmake"
+        },
+        {
+          "path": "native/application/CMakeLists.txt",
+          "line": 1,
+          "match": "add_library("
+        },
+        {
+          "path": "native/application/CMakeLists.txt",
+          "line": 15,
+          "match": "add_executable("
+        },
+        {
+          "path": "native/common/CMakeLists.txt",
+          "line": 1,
+          "match": "add_library("
+        },
+        {
+          "path": "native/contract/CMakeLists.txt",
+          "line": 24,
+          "match": "build"
+        },
+        {
+          "path": "native/contract/CMakeLists.txt",
+          "line": 25,
+          "match": "CMake"
+        }
+      ]
+    },
     "source_dependency_anchors": [
       {
         "path": "Android.bp",
@@ -141,56 +200,31 @@
     ],
     "semver_anchors": [
       {
-        "path": ".github/workflows/native-ci.yml",
-        "line": 32,
-        "match": "3.31.6"
+        "path": "native/CMakeLists.txt",
+        "line": 5,
+        "match": "1.0.1"
       },
       {
-        "path": ".github/workflows/native-ci.yml",
-        "line": 32,
-        "match": "1.11.1"
-      },
-      {
-        "path": ".github/workflows/native-ci.yml",
-        "line": 62,
-        "match": "3.31.6"
-      },
-      {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicy.java",
-        "line": 67,
-        "match": "1.0.23"
-      },
-      {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicy.java",
-        "line": 199,
-        "match": "1.0.23"
+        "path": "native/VERSION",
+        "line": 1,
+        "match": "1.0.1"
       }
     ],
     "compatibility_anchors": [
       {
-        "path": "car-lib/src/android/car/cluster/renderer/InstrumentClusterRenderingService.java",
-        "line": 238,
-        "match": "Released"
+        "path": "native/contract/include/fw03/api/vehicle_hal_api_version.h",
+        "line": 11,
+        "match": "MIN_COMPATIBLE"
       },
       {
-        "path": "car-lib/src/android/car/cluster/renderer/InstrumentClusterRenderingService.java",
-        "line": 332,
-        "match": "Released"
+        "path": "native/contract/include/fw03/api/vehicle_hal_api_version.h",
+        "line": 19,
+        "match": "min_compatible"
       },
       {
-        "path": "car-lib/src/com/android/car/internal/CarSafetyAccessibilityServiceImplBase.java",
-        "line": 23,
-        "match": "compatibility"
-      },
-      {
-        "path": "car-lib/src/com/android/car/internal/NotificationHelperBase.java",
-        "line": 28,
-        "match": "compatibility"
-      },
-      {
-        "path": "car-lib/src/com/android/car/internal/ProxiedService.java",
-        "line": 29,
-        "match": "compatibility"
+        "path": "native/contract/include/fw03/api/vehicle_hal_api_version.h",
+        "line": 19,
+        "match": "MIN_COMPATIBLE"
       }
     ]
   },
@@ -351,6 +385,15 @@
       ],
       "static_access": []
     }
+  },
+  "platform_upgrade_review": {
+    "has_non_compatible_api": true,
+    "has_arch_specific_deps": false,
+    "version_bound_status": 1,
+    "arch_bound_status": 1,
+    "has_interface_abstraction": true,
+    "has_light_permission_adaptation": false,
+    "has_complex_permission_adaptation": false
   },
   "branches": {
     "refs": [

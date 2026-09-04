@@ -3,11 +3,11 @@ param([string]$Destination = (Join-Path $PSScriptRoot 'repos'))
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 $expectedHashes = [ordered]@{
-    'STANDARD_SCORES.json' = '19a13fa0e57a19cd2793bb924e0a1bb9fda314e3836c983e41a1b53cf852929a'
-    'SCORECARD.md' = '7fc86963bea885acb092f56a3c36a76468e0dc842300f82fed1fd5a2bb1a54f8'
-    'SCORECARD.csv' = '14207a6253bdf2b9c921fbda3ffdc83bdcf323a659ddd1be9df92ee80580b1aa'
-    'SCORE_RULES.md' = '28c456ddf16a7d85ae642f11785ce94689412bd715d0cd5140bc51ceb35ca5d9'
-    'manifest.json' = '2fd3d4dc026df2c7dc1e03eca8187b483f3a435f7cc7be24bfc6a8a8682f4d99'
+    'STANDARD_SCORES.json' = '89bb9fdbe15a28a92c7c8f734b0fda393ff9db6fd53dc4762deffce029950c7e'
+    'SCORECARD.md' = '413c934f88838f5de4c0b4ac4f5940cfc78072769f7609e20d17c088d89f67ec'
+    'SCORECARD.csv' = 'a76068a27f4534b37b82ab32559b3cbc51ab9e86b4b99ad615b44de5b6edd560'
+    'SCORE_RULES.md' = 'b52d8dcc270cd3cc2bb8ecf942c59adbb1128038d9256ff7ad0835599f096764'
+    'manifest.json' = 'aae0177cd0c8cad32cabfb8776e95a3077ad5064608f7f8b778275af6d1631cd'
 }
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) { throw 'git is required.' }
 foreach ($entry in $expectedHashes.GetEnumerator()) {

@@ -4,499 +4,497 @@
   "quality_tier": "low",
   "size_band": "small",
   "delivery_status": "active",
-  "review_status": "two_pass_current_head_reviewed",
+  "review_status": "v3_current_head_reviewed",
   "repository": {
     "head": "29be0c67ef8380e66b2782a7403163ab84e9c821",
     "tree": "d35af723ccc53a9dbf3c909241d3cfd8951df7bc",
     "branch": "main",
     "remote_count": 0
   },
+  "rubric": {
+    "path": "SCORE_RULES.md",
+    "sha256": "b52d8dcc270cd3cc2bb8ecf942c59adbb1128038d9256ff7ad0835599f096764"
+  },
   "canonical_total": {
-    "score": 15,
+    "score": 12,
     "max": 52
   },
   "canonical_leaves": [
     {
       "name": "compilation.ci_independence",
+      "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score": 1,
-      "reason": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置。",
       "score_reasoning": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置。",
       "analysis": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-15.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.ci_independence",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/ci",
+          "symbol": "ci",
+          "claim": "CI 文件及真实阶段计数。",
+          "observation": "CI 文件及真实阶段计数。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": "TEST_MAPPING",
-          "line_start": 2,
-          "line_end": 2,
-          "symbol": "reviewed code evidence",
-          "observation": "CI 入口及实际阶段定义。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "{",
+          "claim": "CI 构建/测试/报告入口。",
+          "observation": "CI 构建/测试/报告入口。",
+          "evidence_type": "source",
+          "independent_group": "ci_pipeline"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "compilation.compilation_independence",
+      "score": 0,
       "max_score": 3,
       "status": "scored",
-      "score": 0,
-      "reason": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
-      "score_reasoning": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
-      "analysis": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
+      "score_reasoning": "仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': False, 'external_dependencies_declared': False, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [{'path': 'README.md', 'line': 4, 'match': 'Requires AAOS'}], 'standalone_target_anchors': []}；锁定 0。",
+      "analysis": "仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': False, 'external_dependencies_declared': False, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [{'path': 'README.md', 'line': 4, 'match': 'Requires AAOS'}], 'standalone_target_anchors': []}；锁定 0。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-15.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.compilation_independence",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/compilation/external_build_closure",
+          "symbol": "external_build_closure",
+          "claim": "仓外构建闭包事实。",
+          "observation": "仓外构建闭包事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
+        {
+          "source": "current_head",
+          "path": "README.md",
+          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
+          "ref": "HEAD",
+          "start_line": 4,
+          "end_line": 4,
+          "symbol": "display, media, diagnostics, OTA, and account integrations. Requires AAOS platform APIs.",
+          "claim": "平台依赖或独立目标入口。",
+          "observation": "平台依赖或独立目标入口。",
+          "evidence_type": "source",
+          "independent_group": "build_boundary_0"
         },
         {
           "source": "current_head",
           "path": "Android.bp",
-          "line_start": 13,
-          "line_end": 13,
-          "symbol": "reviewed code evidence",
-          "observation": "Soong/Gradle 直接源码依赖声明。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
-        },
-        {
-          "source": "current_head",
-          "path": "Android.bp",
-          "line_start": 13,
-          "line_end": 13,
-          "symbol": "reviewed code evidence",
-          "observation": "Soong/Gradle 直接源码依赖声明。",
-          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 13,
+          "end_line": 13,
+          "symbol": "srcs: [\"api/src/**/*.java\", \"api/src/**/*.aidl\"],",
+          "claim": "实际构建依赖入口。",
+          "observation": "实际构建依赖入口。",
+          "evidence_type": "source",
+          "independent_group": "declared_dependency"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "compilation.api_version_management",
+      "score": 0,
       "max_score": 3,
       "status": "scored",
-      "score": 0,
-      "reason": "没有专用版本文件、构建集成或 API baseline，锁定 0。",
-      "score_reasoning": "没有专用版本文件、构建集成或 API baseline，锁定 0。",
-      "analysis": "没有专用版本文件、构建集成或 API baseline，锁定 0。",
+      "score_reasoning": "专用语义版本证据=0、有效 API 检查=0；锁定 0。",
+      "analysis": "专用语义版本证据=0、有效 API 检查=0；锁定 0。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-15.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.api_version_management",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
-        },
-        {
-          "source": "current_head",
-          "path": "Android.bp",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "构建入口未定义版本或 API baseline。",
-          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/api_version",
+          "symbol": "api_version",
+          "claim": "仅接受专用版本和真实 API 检查。",
+          "observation": "仅接受专用版本和真实 API 检查。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "quality.integration_test",
+      "score": 0,
       "max_score": 3,
       "status": "scored",
-      "score": 0,
-      "reason": "仅有类存在性检查和 assertTrue(true) 占位测试，按合同锁定 0。",
       "score_reasoning": "仅有类存在性检查和 assertTrue(true) 占位测试，按合同锁定 0。",
       "analysis": "仅有类存在性检查和 assertTrue(true) 占位测试，按合同锁定 0。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-15.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "quality.integration_test",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/integration_test",
+          "symbol": "integration_test",
+          "claim": "测试断言、配置和执行绑定。",
+          "observation": "测试断言、配置和执行绑定。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": "tests/integration/com/cockpitbench/carruntime/CarRuntimeServiceLaunchTest.java",
-          "line_start": 19,
-          "line_end": 19,
-          "symbol": "reviewed code evidence",
-          "observation": "真实测试源与断言。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 19,
+          "end_line": 19,
+          "symbol": "import static org.junit.Assert.assertNotNull;",
+          "claim": "真实测试方法与断言。",
+          "observation": "真实测试方法与断言。",
+          "evidence_type": "source",
+          "independent_group": "test_source"
         },
         {
           "source": "current_head",
           "path": "TEST_MAPPING",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "测试套件/映射配置。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 2,
+          "end_line": 2,
+          "symbol": "\"presubmit\": [{ \"name\": \"cockpit-car-runtime-integration-tests\" }]",
+          "claim": "Android 测试套件配置。",
+          "observation": "Android 测试套件配置。",
+          "evidence_type": "source",
+          "independent_group": "test_config"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "solid_principle.single_responsibility",
+      "score": 0,
       "max_score": 4,
       "status": "scored",
-      "score": 0,
-      "reason": "CarRuntimeService 集中 18 个业务域、权限、反射、审计和 54 个 Binder 方法，是明确上帝类。 按 0–4 独立档位锁定 0 分。",
-      "score_reasoning": "CarRuntimeService 集中 18 个业务域、权限、反射、审计和 54 个 Binder 方法，是明确上帝类。 按 0–4 独立档位锁定 0 分。",
-      "analysis": "CarRuntimeService 集中 18 个业务域、权限、反射、审计和 54 个 Binder 方法，是明确上帝类。 按 0–4 独立档位锁定 0 分。",
+      "score_reasoning": "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。 按独立 0–4 档位锁定 0。",
+      "analysis": "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。 按独立 0–4 档位锁定 0。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-15.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.single_responsibility",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "CarRuntimeService 集中 18 个业务域、权限、反射、审计和 54 个 Binder 方法，是明确上帝类。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 48,
+          "end_line": 48,
+          "symbol": "public final class CarRuntimeService extends ICarRuntime.Stub {",
+          "claim": "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。",
+          "observation": "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "interface ICarRuntime {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "CarRuntimeService 集中 18 个业务域、权限、反射、审计和 54 个 Binder 方法，是明确上帝类。"
+        "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.open_closed",
+      "score": 1,
       "max_score": 4,
       "status": "scored",
-      "score": 1,
-      "reason": "新增车型/业务域需要复制 profile/coordinator 并修改中心服务，核心对扩展不封闭。 按 0–4 独立档位锁定 1 分。",
-      "score_reasoning": "新增车型/业务域需要复制 profile/coordinator 并修改中心服务，核心对扩展不封闭。 按 0–4 独立档位锁定 1 分。",
-      "analysis": "新增车型/业务域需要复制 profile/coordinator 并修改中心服务，核心对扩展不封闭。 按 0–4 独立档位锁定 1 分。",
+      "score_reasoning": "新增业务域需修改中心服务，核心对扩展不封闭。 按独立 0–4 档位锁定 1。",
+      "analysis": "新增业务域需修改中心服务，核心对扩展不封闭。 按独立 0–4 档位锁定 1。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-15.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.open_closed",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "新增车型/业务域需要复制 profile/coordinator 并修改中心服务，核心对扩展不封闭。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "interface ICarRuntime {",
+          "claim": "新增业务域需修改中心服务，核心对扩展不封闭。",
+          "observation": "新增业务域需修改中心服务，核心对扩展不封闭。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "platform/src/com/cockpitbench/carruntime/product/AuroraBaseRuntimeProfile.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 24,
+          "end_line": 24,
+          "symbol": "public final class AuroraBaseRuntimeProfile {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "新增车型/业务域需要复制 profile/coordinator 并修改中心服务，核心对扩展不封闭。"
+        "新增业务域需修改中心服务，核心对扩展不封闭。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.liskov_substitution",
+      "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score": 2,
-      "reason": "大量 product profile 子类沿用共同基类，未见普遍收紧契约；但复制式继承可维护性一般。 按 0–4 独立档位锁定 2 分。",
-      "score_reasoning": "大量 product profile 子类沿用共同基类，未见普遍收紧契约；但复制式继承可维护性一般。 按 0–4 独立档位锁定 2 分。",
-      "analysis": "大量 product profile 子类沿用共同基类，未见普遍收紧契约；但复制式继承可维护性一般。 按 0–4 独立档位锁定 2 分。",
+      "score_reasoning": "profile 子类大体保持共同基类契约。 按独立 0–4 档位锁定 2。",
+      "analysis": "profile 子类大体保持共同基类契约。 按独立 0–4 档位锁定 2。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-15.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.liskov_substitution",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "platform/src/com/cockpitbench/carruntime/product/AuroraBaseRuntimeProfile.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "大量 product profile 子类沿用共同基类，未见普遍收紧契约；但复制式继承可维护性一般。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 24,
+          "end_line": 24,
+          "symbol": "public final class AuroraBaseRuntimeProfile {",
+          "claim": "profile 子类大体保持共同基类契约。",
+          "observation": "profile 子类大体保持共同基类契约。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 48,
+          "end_line": 48,
+          "symbol": "public final class CarRuntimeService extends ICarRuntime.Stub {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "大量 product profile 子类沿用共同基类，未见普遍收紧契约；但复制式继承可维护性一般。"
+        "profile 子类大体保持共同基类契约。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.interface_segregation",
+      "score": 0,
       "max_score": 4,
       "status": "scored",
-      "score": 0,
-      "reason": "ICarRuntime 将 18 个域的读写重置共 54 个方法强制给所有客户端，严重违反接口隔离。 按 0–4 独立档位锁定 0 分。",
-      "score_reasoning": "ICarRuntime 将 18 个域的读写重置共 54 个方法强制给所有客户端，严重违反接口隔离。 按 0–4 独立档位锁定 0 分。",
-      "analysis": "ICarRuntime 将 18 个域的读写重置共 54 个方法强制给所有客户端，严重违反接口隔离。 按 0–4 独立档位锁定 0 分。",
+      "score_reasoning": "ICarRuntime 强制所有客户端依赖多业务域能力。 按独立 0–4 档位锁定 0。",
+      "analysis": "ICarRuntime 强制所有客户端依赖多业务域能力。 按独立 0–4 档位锁定 0。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-15.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.interface_segregation",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "ICarRuntime 将 18 个域的读写重置共 54 个方法强制给所有客户端，严重违反接口隔离。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 48,
+          "end_line": 48,
+          "symbol": "public final class CarRuntimeService extends ICarRuntime.Stub {",
+          "claim": "ICarRuntime 强制所有客户端依赖多业务域能力。",
+          "observation": "ICarRuntime 强制所有客户端依赖多业务域能力。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "interface ICarRuntime {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "ICarRuntime 将 18 个域的读写重置共 54 个方法强制给所有客户端，严重违反接口隔离。"
+        "ICarRuntime 强制所有客户端依赖多业务域能力。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.dependency_inversion",
+      "score": 0,
       "max_score": 4,
       "status": "scored",
-      "score": 0,
-      "reason": "中心服务直接构造全部 facade、保存静态 INSTANCE，并反射 ServiceManager，几乎没有依赖倒置。 按 0–4 独立档位锁定 0 分。",
-      "score_reasoning": "中心服务直接构造全部 facade、保存静态 INSTANCE，并反射 ServiceManager，几乎没有依赖倒置。 按 0–4 独立档位锁定 0 分。",
-      "analysis": "中心服务直接构造全部 facade、保存静态 INSTANCE，并反射 ServiceManager，几乎没有依赖倒置。 按 0–4 独立档位锁定 0 分。",
+      "score_reasoning": "中心服务直接构造 facade 并保存全局实例。 按独立 0–4 档位锁定 0。",
+      "analysis": "中心服务直接构造 facade 并保存全局实例。 按独立 0–4 档位锁定 0。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-15.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.dependency_inversion",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "中心服务直接构造全部 facade、保存静态 INSTANCE，并反射 ServiceManager，几乎没有依赖倒置。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "interface ICarRuntime {",
+          "claim": "中心服务直接构造 facade 并保存全局实例。",
+          "observation": "中心服务直接构造 facade 并保存全局实例。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "platform/src/com/cockpitbench/carruntime/product/AuroraBaseRuntimeProfile.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 24,
+          "end_line": 24,
+          "symbol": "public final class AuroraBaseRuntimeProfile {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "中心服务直接构造全部 facade、保存静态 INSTANCE，并反射 ServiceManager，几乎没有依赖倒置。"
+        "中心服务直接构造 facade 并保存全局实例。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "platform_reuse.platform_upgrade",
+      "score": 0,
       "max_score": 10,
       "status": "scored",
-      "score": 3,
-      "reason": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 3。",
-      "score_reasoning": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 3。",
-      "analysis": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 3。",
+      "score_reasoning": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。",
+      "analysis": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-15.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "platform_reuse.platform_upgrade",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/platform_upgrade_review",
+          "symbol": "platform_upgrade_review",
+          "claim": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
+          "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "api/src/android/car/VehiclePropertyIds.java",
-          "line_start": 2279,
-          "line_end": 2279,
-          "symbol": "reviewed code evidence",
-          "observation": "Android 平台绑定或抽象事实。",
+          "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 48,
+          "end_line": 48,
+          "symbol": "public final class CarRuntimeService extends ICarRuntime.Stub {",
+          "claim": "平台访问风险或隔离边界。",
+          "observation": "平台访问风险或隔离边界。",
+          "evidence_type": "source",
+          "independent_group": "platform_primary"
         },
         {
           "source": "current_head",
-          "path": "api/src/android/car/AoapService.java",
-          "line_start": 58,
-          "line_end": 58,
-          "symbol": "reviewed code evidence",
-          "observation": "Android 平台绑定或抽象事实。",
+          "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "interface ICarRuntime {",
+          "claim": "独立适配/服务边界。",
+          "observation": "独立适配/服务边界。",
+          "evidence_type": "source",
+          "independent_group": "platform_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
+      "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score": 8,
-      "reason": "真实 refs 显示按平台共用分支，锁定 8。",
       "score_reasoning": "真实 refs 显示按平台共用分支，锁定 8。",
       "analysis": "真实 refs 显示按平台共用分支，锁定 8。",
       "evidence": [
         {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-15.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "platform_reuse.release_branch_strategy",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD"
-        },
-        {
           "source": "git_ref",
-          "path": ".git",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "refs/heads/platform/8155",
-          "observation": "平台/车型分支 tip 与 main 不同，命名和实际对象共同证明复用粒度。",
+          "path": "refs/heads/platform/8155",
+          "ref": "refs/heads/platform/8155",
           "commit": "d2c21ebaf7409378645444b9976d8fa53b20d7d6",
-          "ref": "refs/heads/platform/8155"
+          "commit_oid": "d2c21ebaf7409378645444b9976d8fa53b20d7d6",
+          "tree_oid": "8f33718195ec58e1dfa8f530f34f286703f8e254",
+          "merge_base": "a3995339b479b2293ef5c29b4cb043a1ccfcd65c",
+          "ahead": 1,
+          "behind": 12,
+          "changed_files": 1,
+          "symbol": "refs/heads/platform/8155",
+          "claim": "分支真实 tip/tree 与 main 差异。",
+          "observation": "分支真实 tip/tree 与 main 差异。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_0"
         },
         {
           "source": "git_ref",
-          "path": ".git",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "refs/heads/platform/8295",
-          "observation": "平台/车型分支 tip 与 main 不同，命名和实际对象共同证明复用粒度。",
+          "path": "refs/heads/platform/8295",
+          "ref": "refs/heads/platform/8295",
           "commit": "8ef2b0f2a5fb25a37662d773bd4947a59e25f909",
-          "ref": "refs/heads/platform/8295"
+          "commit_oid": "8ef2b0f2a5fb25a37662d773bd4947a59e25f909",
+          "tree_oid": "e24a2132ccce21d07d72716652599d6c2ef8e1a2",
+          "merge_base": "a3995339b479b2293ef5c29b4cb043a1ccfcd65c",
+          "ahead": 1,
+          "behind": 12,
+          "changed_files": 1,
+          "symbol": "refs/heads/platform/8295",
+          "claim": "分支真实 tip/tree 与 main 差异。",
+          "observation": "分支真实 tip/tree 与 main 差异。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_1"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     }
   ]

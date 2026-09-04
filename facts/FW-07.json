@@ -176,6 +176,71 @@
       "tests/vehiclehal_test/Android.bp",
       "vehicle-hal-support-lib/Android.bp"
     ],
+    "external_build_closure": {
+      "requires_full_platform_source": true,
+      "has_meaningful_standalone_target": true,
+      "external_dependencies_declared": true,
+      "critical_dependencies_version_pinned": false,
+      "platform_requirement_anchors": [
+        {
+          "path": "README.md",
+          "line": 5,
+          "match": "complete build requires an AAOS"
+        }
+      ],
+      "standalone_target_anchors": [
+        {
+          "path": ".github/workflows/native.yml",
+          "line": 2,
+          "match": "build"
+        },
+        {
+          "path": ".github/workflows/native.yml",
+          "line": 5,
+          "match": "build"
+        },
+        {
+          "path": ".github/workflows/native.yml",
+          "line": 12,
+          "match": "cmake"
+        },
+        {
+          "path": "native/CMakeLists.txt",
+          "line": 2,
+          "match": "project("
+        },
+        {
+          "path": "native/application/CMakeLists.txt",
+          "line": 1,
+          "match": "add_executable("
+        },
+        {
+          "path": "native/common/CMakeLists.txt",
+          "line": 1,
+          "match": "add_library("
+        },
+        {
+          "path": "native/contract/CMakeLists.txt",
+          "line": 1,
+          "match": "add_library("
+        },
+        {
+          "path": "native/hal/CMakeLists.txt",
+          "line": 1,
+          "match": "add_library("
+        },
+        {
+          "path": "native/middleware/CMakeLists.txt",
+          "line": 1,
+          "match": "add_library("
+        },
+        {
+          "path": "native/platform/CMakeLists.txt",
+          "line": 1,
+          "match": "add_library("
+        }
+      ]
+    },
     "source_dependency_anchors": [
       {
         "path": "Android.bp",
@@ -228,29 +293,14 @@
     ],
     "semver_anchors": [
       {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicy.java",
-        "line": 67,
-        "match": "1.0.23"
+        "path": "native/CMakeLists.txt",
+        "line": 2,
+        "match": "2.1.0"
       },
       {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicy.java",
-        "line": 199,
-        "match": "1.0.23"
-      },
-      {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicyFilter.java",
-        "line": 45,
-        "match": "1.0.23"
-      },
-      {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicyFilter.java",
-        "line": 176,
-        "match": "1.0.23"
-      },
-      {
-        "path": "car-lib/src/android/car/input/CustomInputEvent.java",
-        "line": 73,
-        "match": "1.0.15"
+        "path": "native/VERSION",
+        "line": 1,
+        "match": "2.1.0"
       }
     ],
     "compatibility_anchors": [
@@ -261,23 +311,13 @@
       },
       {
         "path": "car-lib/Android.bp",
-        "line": 107,
-        "match": "released"
-      },
-      {
-        "path": "car-lib/Android.bp",
         "line": 109,
         "match": "last-released"
       },
       {
-        "path": "car-lib/src/android/car/Car.java",
-        "line": 1444,
-        "match": "released"
-      },
-      {
-        "path": "car-lib/src/android/car/Car.java",
-        "line": 1481,
-        "match": "released"
+        "path": "car-lib/Android.bp",
+        "line": 111,
+        "match": "last-released"
       }
     ]
   },
@@ -442,6 +482,15 @@
       ],
       "static_access": []
     }
+  },
+  "platform_upgrade_review": {
+    "has_non_compatible_api": false,
+    "has_arch_specific_deps": false,
+    "version_bound_status": 0,
+    "arch_bound_status": 0,
+    "has_interface_abstraction": true,
+    "has_light_permission_adaptation": false,
+    "has_complex_permission_adaptation": false
   },
   "branches": {
     "refs": [

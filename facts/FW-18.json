@@ -50,6 +50,14 @@
       "migration/aidl/tests/vehiclehal/Android.bp",
       "migration/aidl/vehicle-hal-support-lib/Android.bp"
     ],
+    "external_build_closure": {
+      "requires_full_platform_source": true,
+      "has_meaningful_standalone_target": false,
+      "external_dependencies_declared": false,
+      "critical_dependencies_version_pinned": false,
+      "platform_requirement_anchors": [],
+      "standalone_target_anchors": []
+    },
     "source_dependency_anchors": [
       {
         "path": "Android.bp",
@@ -98,33 +106,7 @@
       "car-lib/api/current.txt",
       "car-lib/api/removed.txt"
     ],
-    "semver_anchors": [
-      {
-        "path": "migration/aidl/car-hardware/power/CarPowerPolicy.java",
-        "line": 67,
-        "match": "1.0.23"
-      },
-      {
-        "path": "migration/aidl/car-hardware/power/CarPowerPolicy.java",
-        "line": 199,
-        "match": "1.0.23"
-      },
-      {
-        "path": "migration/aidl/car-hardware/power/CarPowerPolicyFilter.java",
-        "line": 45,
-        "match": "1.0.23"
-      },
-      {
-        "path": "migration/aidl/car-hardware/power/CarPowerPolicyFilter.java",
-        "line": 176,
-        "match": "1.0.23"
-      },
-      {
-        "path": "migration/aidl/car-vms/VmsLayer.java",
-        "line": 77,
-        "match": "1.0.14"
-      }
-    ],
+    "semver_anchors": [],
     "compatibility_anchors": [
       {
         "path": "apicheck.mk",
@@ -133,23 +115,13 @@
       },
       {
         "path": "apicheck.mk",
-        "line": 150,
-        "match": "released"
-      },
-      {
-        "path": "apicheck.mk",
         "line": 155,
         "match": "last-released"
       },
       {
-        "path": "car-lib/src/android/car/CarProjectionManager.java",
-        "line": 72,
-        "match": "Compatibility"
-      },
-      {
-        "path": "car-lib/src/android/car/CarProjectionManager.java",
-        "line": 107,
-        "match": "Compatibility"
+        "path": "apicheck.mk",
+        "line": 159,
+        "match": "checkapi"
       }
     ]
   },
@@ -318,6 +290,15 @@
       ],
       "static_access": []
     }
+  },
+  "platform_upgrade_review": {
+    "has_non_compatible_api": true,
+    "has_arch_specific_deps": false,
+    "version_bound_status": 3,
+    "arch_bound_status": 2,
+    "has_interface_abstraction": false,
+    "has_light_permission_adaptation": false,
+    "has_complex_permission_adaptation": false
   },
   "branches": {
     "refs": [

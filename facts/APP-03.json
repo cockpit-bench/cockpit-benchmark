@@ -1,4 +1,8 @@
 {
+  "schema_version": "3.0.0",
+  "repo_id": "APP-03",
+  "kind": "APP",
+  "head": "5141af902414a8b5404da756a51e89a57d07d2e5",
   "facts": {
     "api_version": {
       "automation_evidence": [],
@@ -44,58 +48,8 @@
           "path": "vehicle-api/build.gradle.kts"
         }
       ],
-      "compatibility_evidence": [
-        {
-          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
-          "git_blob_oid": "c2431d00cc7ac008df8d388d445aa9988959526c",
-          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/build.gradle.kts",
-          "line": 16,
-          "path": "app/build.gradle.kts"
-        },
-        {
-          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
-          "git_blob_oid": "26952e6f070883c82b8eeb3c02363c9eebf75106",
-          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:comfort/build.gradle.kts",
-          "line": 10,
-          "path": "comfort/build.gradle.kts"
-        },
-        {
-          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
-          "git_blob_oid": "c25e1243b67ff3ad16941b18f250f08830b9d6d6",
-          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:diagnostics/build.gradle.kts",
-          "line": 10,
-          "path": "diagnostics/build.gradle.kts"
-        },
-        {
-          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
-          "git_blob_oid": "6032988f63051cdcf048b69c81778af862671d1e",
-          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/build.gradle.kts",
-          "line": 10,
-          "path": "domain/build.gradle.kts"
-        },
-        {
-          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
-          "git_blob_oid": "bcaf0a064cbb93ff628df348d04e2208a8f2242a",
-          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/build.gradle.kts",
-          "line": 10,
-          "path": "hvac-core/build.gradle.kts"
-        },
-        {
-          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
-          "git_blob_oid": "b43b31e1a67b72aa97a45ee596e2486bfa4b24ce",
-          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:telemetry/build.gradle.kts",
-          "line": 10,
-          "path": "telemetry/build.gradle.kts"
-        },
-        {
-          "excerpt": "sourceCompatibility = JavaVersion.VERSION_17",
-          "git_blob_oid": "0ec0ced738bcfa43c7f9e0b747b02a3a5dcdb9bc",
-          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/build.gradle.kts",
-          "line": 10,
-          "path": "vehicle-api/build.gradle.kts"
-        }
-      ],
-      "contract": "app_api_version_v2_facts",
+      "compatibility_evidence": [],
+      "contract": "app_api_version_v3_facts",
       "dedicated_version_control_files": [
         {
           "git_blob_oid": "2f822748fa5419ef79b886c0b132fc57787de1e3",
@@ -240,8 +194,28 @@
         }
       ],
       "version_records": [
-        "2.1.0",
-        "20100"
+        {
+          "git_blob_oid": "2f822748fa5419ef79b886c0b132fc57787de1e3",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:version.properties",
+          "line": 1,
+          "management_candidate": "dedicated_version_control",
+          "path": "version.properties",
+          "semantic": true,
+          "semantic_format": true,
+          "source": "dedicated_version_file",
+          "value": "2.1.0"
+        },
+        {
+          "git_blob_oid": "2f822748fa5419ef79b886c0b132fc57787de1e3",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:version.properties",
+          "line": 2,
+          "management_candidate": "manual_literal",
+          "path": "version.properties",
+          "semantic": false,
+          "semantic_format": false,
+          "source": "dedicated_version_file_literal",
+          "value": "20100"
+        }
       ]
     },
     "architecture": {
@@ -320,12 +294,14 @@
           "settings.gradle.kts"
         ]
       },
-      "contract": "app_architecture_v1_fact_candidates",
+      "contract": "app_architecture_v3_fact_candidates",
       "cycles": [],
       "evidence_gaps": [],
       "excluded_test_or_build_modules": [],
       "facts": {
+        "business_boundary_isolation": false,
         "code_not_in_root_package": false,
+        "common_capability_in_base_core": true,
         "component_friendly_check_count": 3,
         "component_friendly_checks": {
           "business_boundary_isolation": false,
@@ -342,6 +318,7 @@
         "is_component_friendly": true,
         "layered_business_module_count": 3,
         "module_count": 7,
+        "modules_have_independent_build_entry": true,
         "standard_named_module_count": 3
       },
       "internal_dependency_evidence": [
@@ -708,13 +685,17 @@
           "path": "vehicle-api/build.gradle.kts"
         }
       ],
-      "contract": "app_compilation_v1_facts",
+      "contract": "external_build_closure_v3_facts",
       "dependency_type_candidates": {
+        "critical_dependencies_version_pinned": true,
+        "external_dependencies_declared": true,
         "has_framework_jar_dependency": false,
         "has_internal_project_source_dependency": true,
         "has_local_aar_dependency": false,
+        "has_meaningful_standalone_target": true,
         "has_unversioned_external_artifact": false,
-        "has_versioned_external_artifact": true
+        "has_versioned_external_artifact": true,
+        "requires_full_platform_source": true
       },
       "evidence_gaps": [],
       "framework_jar_dependencies": [],
@@ -941,10 +922,28 @@
           "version_expression": "4.13.2"
         }
       ],
+      "platform_source_requirement_evidence": [
+        {
+          "excerpt": "legacy AOSP HVAC component, and lifecycle-aware HMI. The repository requires AAOS platform APIs;",
+          "git_blob_oid": "9404c1d74ec5cbd23eb64402fd49a64e409a5632",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:README.md",
+          "line": 4,
+          "path": "README.md"
+        }
+      ],
+      "standalone_build_evidence": [
+        {
+          "excerpt": "- uses: gradle/actions/setup-gradle@v4",
+          "git_blob_oid": "f0d4f6a711d8a370ef05715a02b2062d9a3f1f80",
+          "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:.github/workflows/android.yml",
+          "line": 15,
+          "path": ".github/workflows/android.yml"
+        }
+      ],
       "type_safe_project_accessors": []
     },
     "platform_upgrade": {
-      "contract": "app_platform_upgrade_v2_fact_candidates",
+      "contract": "android_platform_upgrade_v3_fact_candidates",
       "evidence_gaps": [],
       "scan_policy": {
         "allowed_roots": [
@@ -977,13 +976,373 @@
         ]
       },
       "seven_fact_candidates": {
-        "arch_bound_status": 0,
-        "has_arch_specific_deps": false,
-        "has_complex_permission_adaptation": false,
-        "has_interface_abstraction": false,
-        "has_light_permission_adaptation": false,
-        "has_non_compatible_api": true,
-        "version_bound_status": 0
+        "arch_bound_status": {
+          "build_evidence": {
+            "abi_filters": [],
+            "load_library": [],
+            "native_import": []
+          },
+          "business_modules": [],
+          "enum": "0-3",
+          "fallback_load": false,
+          "multi_abi": false,
+          "source_evidence": {
+            "cpu_abi": [],
+            "load_library": [],
+            "supported_abis": []
+          },
+          "value": 0
+        },
+        "has_arch_specific_deps": {
+          "abi_values": [],
+          "evidence": {
+            "abi_filters": [],
+            "load_library": [],
+            "native_import": []
+          },
+          "single_abi_native_import": false,
+          "value": false
+        },
+        "has_complex_permission_adaptation": {
+          "evidence": {
+            "notification_channel": [],
+            "runtime_check": [],
+            "runtime_request": [],
+            "scoped_storage": [],
+            "versioned_permission": []
+          },
+          "value": false
+        },
+        "has_interface_abstraction": {
+          "classification_policy": "Requires an explicitly platform/version/architecture-named adapter or strategy declaration, a current-head implementation, and an actual platform, SDK/version, ABI, or non-compatible API call inside that implementation. Only a status actually covered by such a call receives the abstraction cap; UI callbacks, providers, names alone, and arbitrary abstract classes do not qualify.",
+          "covered_statuses": [],
+          "evidence": [
+            {
+              "classification": "platform_logic_abstraction",
+              "declaration_kind": "interface",
+              "declaration_name": "ClimateServiceLocator",
+              "excerpt": "interface ClimateServiceLocator {",
+              "git_blob_oid": "d9436414978e319958fdfb42a78e8e512b81a806",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt",
+              "implementation_evidence": [
+                {
+                  "actual_platform_call_evidence": [
+                    {
+                      "call_kind": "reflection_class_lookup",
+                      "covered_fact": "non_compatible_api",
+                      "excerpt": "val serviceManager = Class.forName(\"android.os.ServiceManager\")",
+                      "git_blob_oid": "d9436414978e319958fdfb42a78e8e512b81a806",
+                      "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt",
+                      "line": 29,
+                      "path": "vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt"
+                    },
+                    {
+                      "call_kind": "reflection_method_invoke",
+                      "covered_fact": "non_compatible_api",
+                      "excerpt": "checkService.invoke(null, profile.serviceName) as? IBinder",
+                      "git_blob_oid": "d9436414978e319958fdfb42a78e8e512b81a806",
+                      "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt",
+                      "line": 31,
+                      "path": "vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt"
+                    }
+                  ],
+                  "covered_facts": [
+                    "non_compatible_api"
+                  ],
+                  "excerpt": "class PlatformClimateServiceLocator(",
+                  "git_blob_oid": "d9436414978e319958fdfb42a78e8e512b81a806",
+                  "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt",
+                  "implementation_name": "PlatformClimateServiceLocator",
+                  "line": 25,
+                  "path": "vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt"
+                }
+              ],
+              "line": 21,
+              "path": "vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt"
+            }
+          ],
+          "rejected_generic_declarations": [
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "ComfortPolicy",
+              "excerpt": "interface ComfortPolicy {",
+              "git_blob_oid": "92ec9009704da27940557a162fa876e4342fdf7c",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:comfort/src/main/java/com/cockpitbench/climatix/comfort/ComfortPolicy.kt",
+              "line": 19,
+              "path": "comfort/src/main/java/com/cockpitbench/climatix/comfort/ComfortPolicy.kt",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "Detector",
+              "excerpt": "interface Detector {",
+              "git_blob_oid": "c46a5d0569f2c2501f1822aee1d7bfbf6ba45c71",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:diagnostics/src/main/java/com/cockpitbench/climatix/diagnostics/Detector.kt",
+              "line": 27,
+              "path": "diagnostics/src/main/java/com/cockpitbench/climatix/diagnostics/Detector.kt",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "ClimateCommand",
+              "excerpt": "sealed interface ClimateCommand {",
+              "git_blob_oid": "e80b29f1b8966bf59ae6efa775a1307562ff12e3",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/src/main/java/com/cockpitbench/climatix/domain/ClimateCommand.kt",
+              "line": 19,
+              "path": "domain/src/main/java/com/cockpitbench/climatix/domain/ClimateCommand.kt",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "ClimateRepository",
+              "excerpt": "interface ClimateRepository : AutoCloseable {",
+              "git_blob_oid": "f711564dc58ca4da68b699fdfb582a431e3379f3",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/src/main/java/com/cockpitbench/climatix/domain/ClimateRepository.kt",
+              "line": 21,
+              "path": "domain/src/main/java/com/cockpitbench/climatix/domain/ClimateRepository.kt",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "abstract_class",
+              "declaration_name": "Callback",
+              "excerpt": "public static abstract class Callback {",
+              "git_blob_oid": "0e60b6893d85c0e69673af711cdc5dc2f53c60db",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/HvacController.java",
+              "line": 60,
+              "path": "hvac-core/src/main/java/com/android/car/hvac/HvacController.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "HvacPanelState",
+              "excerpt": "private @interface HvacPanelState {}",
+              "git_blob_oid": "2be664aae2497421eec0dcf9b9b3331cd7b5c692",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/controllers/HvacPanelController.java",
+              "line": 78,
+              "path": "hvac-core/src/main/java/com/android/car/hvac/controllers/HvacPanelController.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "FanDirection",
+              "excerpt": "public @interface FanDirection {}",
+              "git_blob_oid": "a7a6f3f3935e0ccdff28837fc635a6230492e021",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/ui/FanDirectionButtons.java",
+              "line": 41,
+              "path": "hvac-core/src/main/java/com/android/car/hvac/ui/FanDirectionButtons.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "FanDirectionClickListener",
+              "excerpt": "public interface FanDirectionClickListener {",
+              "git_blob_oid": "a7a6f3f3935e0ccdff28837fc635a6230492e021",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/ui/FanDirectionButtons.java",
+              "line": 52,
+              "path": "hvac-core/src/main/java/com/android/car/hvac/ui/FanDirectionButtons.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "FanSpeedButtonClickListener",
+              "excerpt": "public interface FanSpeedButtonClickListener {",
+              "git_blob_oid": "f8936ec0d0a84f78059ee56bb48791d1d676fb28",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/ui/FanSpeedBar.java",
+              "line": 39,
+              "path": "hvac-core/src/main/java/com/android/car/hvac/ui/FanSpeedBar.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "SeatWarmerButtonClickListener",
+              "excerpt": "public interface SeatWarmerButtonClickListener{",
+              "git_blob_oid": "93ee76e0dc79cd72c09d7d2b7646fe16f7701456",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/ui/SeatWarmerButton.java",
+              "line": 38,
+              "path": "hvac-core/src/main/java/com/android/car/hvac/ui/SeatWarmerButton.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "HeatingLevel",
+              "excerpt": "public @interface HeatingLevel {}",
+              "git_blob_oid": "93ee76e0dc79cd72c09d7d2b7646fe16f7701456",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/ui/SeatWarmerButton.java",
+              "line": 43,
+              "path": "hvac-core/src/main/java/com/android/car/hvac/ui/SeatWarmerButton.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "TemperatureAdjustClickListener",
+              "excerpt": "public interface TemperatureAdjustClickListener {",
+              "git_blob_oid": "5d5e845dd3f4a9b7f1ff0261aaf1e064e107d3fc",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/ui/TemperatureBarOverlay.java",
+              "line": 44,
+              "path": "hvac-core/src/main/java/com/android/car/hvac/ui/TemperatureBarOverlay.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "ToggleListener",
+              "excerpt": "public interface ToggleListener {",
+              "git_blob_oid": "ae5a3bf2f3e4fc19a65713930e03ec750d9610b3",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/java/com/android/car/hvac/ui/ToggleButton.java",
+              "line": 31,
+              "path": "hvac-core/src/main/java/com/android/car/hvac/ui/ToggleButton.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "TelemetrySink",
+              "excerpt": "interface TelemetrySink {",
+              "git_blob_oid": "7a616c5f30e152b5c6d9e7332092782c43c753ca",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:telemetry/src/main/java/com/cockpitbench/climatix/telemetry/TelemetrySink.kt",
+              "line": 19,
+              "path": "telemetry/src/main/java/com/cockpitbench/climatix/telemetry/TelemetrySink.kt",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            },
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "UploadState",
+              "excerpt": "sealed interface UploadState {",
+              "git_blob_oid": "e974dc68123f14ec854f731234426db7465f2812",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:telemetry/src/main/java/com/cockpitbench/climatix/telemetry/UploadStateMachine.kt",
+              "line": 22,
+              "path": "telemetry/src/main/java/com/cockpitbench/climatix/telemetry/UploadStateMachine.kt",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            }
+          ],
+          "rejected_uncovered_implementations": [
+            {
+              "excerpt": "object DefaultClimatePlatformProfile : ClimatePlatformProfile {",
+              "git_blob_oid": "4d5da7c8507d5c26935fc21c375995c7fd8fc030",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimatePlatformProfile.kt",
+              "implementation_name": "DefaultClimatePlatformProfile",
+              "line": 30,
+              "path": "vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimatePlatformProfile.kt",
+              "rejection_reason": "implementation contains no current-head platform, SDK/version, ABI, or non-compatible platform API call"
+            },
+            {
+              "excerpt": "class CatalogBackedClimatePlatformProfile(",
+              "git_blob_oid": "b71dda5bfe593ce6fd49635bdbac6b7e31004b6a",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/catalog/CatalogBackedClimatePlatformProfile.kt",
+              "implementation_name": "CatalogBackedClimatePlatformProfile",
+              "line": 21,
+              "path": "vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/catalog/CatalogBackedClimatePlatformProfile.kt",
+              "rejection_reason": "implementation contains no current-head platform, SDK/version, ABI, or non-compatible platform API call"
+            }
+          ],
+          "unimplemented_platform_declarations": [],
+          "value": true
+        },
+        "has_light_permission_adaptation": {
+          "declarations": [
+            {
+              "git_blob_oid": "678c2a4b5e7677d2b59667ba294bbcdb5a27a136",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:app/src/main/AndroidManifest.xml",
+              "line": 3,
+              "path": "app/src/main/AndroidManifest.xml",
+              "permission": "android.car.permission.CONTROL_CAR_CLIMATE",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "01969353e3a9c0cbee9b0fe285a97b71308a36f6",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/AndroidManifest.xml",
+              "line": 24,
+              "path": "hvac-core/src/main/AndroidManifest.xml",
+              "permission": "android.car.permission.CONTROL_CAR_CLIMATE",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "01969353e3a9c0cbee9b0fe285a97b71308a36f6",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/AndroidManifest.xml",
+              "line": 25,
+              "path": "hvac-core/src/main/AndroidManifest.xml",
+              "permission": "android.permission.RECEIVE_BOOT_COMPLETED",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "01969353e3a9c0cbee9b0fe285a97b71308a36f6",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/AndroidManifest.xml",
+              "line": 27,
+              "path": "hvac-core/src/main/AndroidManifest.xml",
+              "permission": "android.permission.INTERNAL_SYSTEM_WINDOW",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "01969353e3a9c0cbee9b0fe285a97b71308a36f6",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/AndroidManifest.xml",
+              "line": 29,
+              "path": "hvac-core/src/main/AndroidManifest.xml",
+              "permission": "android.permission.INTERACT_ACROSS_USERS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "01969353e3a9c0cbee9b0fe285a97b71308a36f6",
+              "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:hvac-core/src/main/AndroidManifest.xml",
+              "line": 30,
+              "path": "hvac-core/src/main/AndroidManifest.xml",
+              "permission": "android.permission.INTERACT_ACROSS_USERS_FULL",
+              "upgrade_relevant": false
+            }
+          ],
+          "relevant_permissions": [],
+          "value": false
+        },
+        "has_non_compatible_api": {
+          "evidence": {
+            "internal_android_api": [],
+            "reflection_class_lookup": [
+              {
+                "excerpt": "val serviceManager = Class.forName(\"android.os.ServiceManager\")",
+                "git_blob_oid": "d9436414978e319958fdfb42a78e8e512b81a806",
+                "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt",
+                "line": 29,
+                "path": "vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt"
+              }
+            ],
+            "reflection_method_invoke": [
+              {
+                "excerpt": "operator fun invoke() = repository.observe()",
+                "git_blob_oid": "ef6191c7d5091ab7fea677c102d5509f08211852",
+                "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/src/main/java/com/cockpitbench/climatix/domain/ObserveClimate.kt",
+                "line": 20,
+                "path": "domain/src/main/java/com/cockpitbench/climatix/domain/ObserveClimate.kt"
+              },
+              {
+                "excerpt": "suspend operator fun invoke(command: ClimateCommand): Result<Unit> =",
+                "git_blob_oid": "c37b6a6d0d69319433b6c4ec4e89e91bb2b6b5c9",
+                "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:domain/src/main/java/com/cockpitbench/climatix/domain/UpdateClimate.kt",
+                "line": 23,
+                "path": "domain/src/main/java/com/cockpitbench/climatix/domain/UpdateClimate.kt"
+              },
+              {
+                "excerpt": "checkService.invoke(null, profile.serviceName) as? IBinder",
+                "git_blob_oid": "d9436414978e319958fdfb42a78e8e512b81a806",
+                "head_blob": "5141af902414a8b5404da756a51e89a57d07d2e5:vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt",
+                "line": 31,
+                "path": "vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt"
+              }
+            ],
+            "system_properties_api": [],
+            "vendor_private_namespace": []
+          },
+          "value": true
+        },
+        "version_bound_status": {
+          "business_modules": [],
+          "centralized_or_compatibility_layer": false,
+          "classification_policy": "Only current-platform Build.VERSION.SDK_INT control flow and specified RequiresApi/TargetApi annotations are in scope. Comparisons of an app's targetSdkVersion metadata with VERSION_CODES are excluded.",
+          "enum": "0-3",
+          "evidence": {
+            "current_sdk_control_flow": [],
+            "standard_annotation": []
+          },
+          "excluded_target_sdk_comparisons": [],
+          "standard_annotation_paths": [],
+          "value": 0
+        }
       },
       "targeted_path_counts": {
         "manifest": 7,
@@ -1041,8 +1400,5 @@
       "sop_branch_count": 0,
       "sop_branches": []
     }
-  },
-  "head": "5141af902414a8b5404da756a51e89a57d07d2e5",
-  "kind": "APP",
-  "repo_id": "APP-03"
+  }
 }

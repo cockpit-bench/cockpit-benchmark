@@ -4,499 +4,497 @@
   "quality_tier": "low",
   "size_band": "medium",
   "delivery_status": "active",
-  "review_status": "two_pass_current_head_reviewed",
+  "review_status": "v3_current_head_reviewed",
   "repository": {
     "head": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
     "tree": "84870db913e7d491ee4a80938d97a2b4f2f7e757",
     "branch": "main",
     "remote_count": 0
   },
+  "rubric": {
+    "path": "SCORE_RULES.md",
+    "sha256": "b52d8dcc270cd3cc2bb8ecf942c59adbb1128038d9256ff7ad0835599f096764"
+  },
   "canonical_total": {
-    "score": 19,
+    "score": 14,
     "max": 52
   },
   "canonical_leaves": [
     {
       "name": "compilation.ci_independence",
+      "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score": 1,
-      "reason": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置。",
       "score_reasoning": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置。",
       "analysis": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-18.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.ci_independence",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/ci",
+          "symbol": "ci",
+          "claim": "CI 文件及真实阶段计数。",
+          "observation": "CI 文件及真实阶段计数。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": "PREUPLOAD.cfg",
-          "line_start": 2,
-          "line_end": 2,
-          "symbol": "reviewed code evidence",
-          "observation": "CI 入口及实际阶段定义。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "[Hook Scripts]",
+          "claim": "CI 构建/测试/报告入口。",
+          "observation": "CI 构建/测试/报告入口。",
+          "evidence_type": "source",
+          "independent_group": "ci_pipeline"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "compilation.compilation_independence",
+      "score": 0,
       "max_score": 3,
       "status": "scored",
-      "score": 0,
-      "reason": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
-      "score_reasoning": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
-      "analysis": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
+      "score_reasoning": "仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': False, 'external_dependencies_declared': False, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [], 'standalone_target_anchors': []}；锁定 0。",
+      "analysis": "仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': False, 'external_dependencies_declared': False, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [], 'standalone_target_anchors': []}；锁定 0。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-18.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.compilation_independence",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/compilation/external_build_closure",
+          "symbol": "external_build_closure",
+          "claim": "仓外构建闭包事实。",
+          "observation": "仓外构建闭包事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": "Android.bp",
-          "line_start": 14,
-          "line_end": 14,
-          "symbol": "reviewed code evidence",
-          "observation": "Soong/Gradle 直接源码依赖声明。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
-        },
-        {
-          "source": "current_head",
-          "path": "Android.bp",
-          "line_start": 14,
-          "line_end": 14,
-          "symbol": "reviewed code evidence",
-          "observation": "Soong/Gradle 直接源码依赖声明。",
-          "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 12,
+          "end_line": 12,
+          "symbol": "java_library {",
+          "claim": "实际构建依赖入口。",
+          "observation": "实际构建依赖入口。",
+          "evidence_type": "source",
+          "independent_group": "declared_dependency"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "compilation.api_version_management",
+      "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score": 3,
-      "reason": "存在 current/released API baseline 与 check_api/checkapi 或等价兼容验证，版本可控并约束向后兼容。",
-      "score_reasoning": "存在 current/released API baseline 与 check_api/checkapi 或等价兼容验证，版本可控并约束向后兼容。",
-      "analysis": "存在 current/released API baseline 与 check_api/checkapi 或等价兼容验证，版本可控并约束向后兼容。",
+      "score_reasoning": "专用语义版本证据=0、有效 API 检查=3；锁定 1。",
+      "analysis": "专用语义版本证据=0、有效 API 检查=3；锁定 1。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-18.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.api_version_management",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
-        },
-        {
-          "source": "current_head",
-          "path": "car-lib/api/current.txt",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "版本、兼容范围或 API baseline 构建绑定。",
-          "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/api_version",
+          "symbol": "api_version",
+          "claim": "仅接受专用版本和真实 API 检查。",
+          "observation": "仅接受专用版本和真实 API 检查。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": "apicheck.mk",
-          "line_start": 159,
-          "line_end": 159,
-          "symbol": "reviewed code evidence",
-          "observation": "版本、兼容范围或 API baseline 构建绑定。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 147,
+          "end_line": 147,
+          "symbol": "checkapi: $(car_module)-check-public-api",
+          "claim": "语义版本或 API baseline 检查。",
+          "observation": "语义版本或 API baseline 检查。",
+          "evidence_type": "source",
+          "independent_group": "api_control_0"
+        },
+        {
+          "source": "current_head",
+          "path": "apicheck.mk",
+          "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
+          "ref": "HEAD",
+          "start_line": 155,
+          "end_line": 155,
+          "symbol": "# Check that the API we're building hasn't broken the last-released SDK version",
+          "claim": "语义版本或 API baseline 检查。",
+          "observation": "语义版本或 API baseline 检查。",
+          "evidence_type": "source",
+          "independent_group": "api_control_1"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "quality.integration_test",
+      "score": 2,
       "max_score": 3,
       "status": "scored",
-      "score": 2,
-      "reason": "测试目标和断言有效，关键模块交互覆盖代理达到 50%；没有绑定 100% 执行结果，不能给 3。",
       "score_reasoning": "测试目标和断言有效，关键模块交互覆盖代理达到 50%；没有绑定 100% 执行结果，不能给 3。",
       "analysis": "测试目标和断言有效，关键模块交互覆盖代理达到 50%；没有绑定 100% 执行结果，不能给 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-18.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "quality.integration_test",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/integration_test",
+          "symbol": "integration_test",
+          "claim": "测试断言、配置和执行绑定。",
+          "observation": "测试断言、配置和执行绑定。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": "car-lib/src/android/car/test/CarTestManagerBinderWrapper.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "真实测试源与断言。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 27,
+          "end_line": 27,
+          "symbol": "public class CarTestManagerBinderWrapper implements CarManagerBase {",
+          "claim": "真实测试方法与断言。",
+          "observation": "真实测试方法与断言。",
+          "evidence_type": "source",
+          "independent_group": "test_source"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "solid_principle.single_responsibility",
+      "score": 1,
       "max_score": 4,
       "status": "scored",
-      "score": 1,
-      "reason": "PlatformSignalCoordinator 汇集连接、缓存、回调、profile、fallback 与 journal，职责明显混杂。 按 0–4 独立档位锁定 1 分。",
-      "score_reasoning": "PlatformSignalCoordinator 汇集连接、缓存、回调、profile、fallback 与 journal，职责明显混杂。 按 0–4 独立档位锁定 1 分。",
-      "analysis": "PlatformSignalCoordinator 汇集连接、缓存、回调、profile、fallback 与 journal，职责明显混杂。 按 0–4 独立档位锁定 1 分。",
+      "score_reasoning": "PlatformSignalCoordinator 汇集连接、缓存、回调、profile 与 fallback。 按独立 0–4 档位锁定 1。",
+      "analysis": "PlatformSignalCoordinator 汇集连接、缓存、回调、profile 与 fallback。 按独立 0–4 档位锁定 1。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-18.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.single_responsibility",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "platform/src/com/cockpitbench/vehicleplatform/PlatformSignalCoordinator.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "PlatformSignalCoordinator 汇集连接、缓存、回调、profile、fallback 与 journal，职责明显混杂。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 26,
+          "end_line": 26,
+          "symbol": "public final class PlatformSignalCoordinator {",
+          "claim": "PlatformSignalCoordinator 汇集连接、缓存、回调、profile 与 fallback。",
+          "observation": "PlatformSignalCoordinator 汇集连接、缓存、回调、profile 与 fallback。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "platform/src/com/cockpitbench/vehicleplatform/LegacyPlatformRouter.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 26,
+          "end_line": 26,
+          "symbol": "public final class LegacyPlatformRouter {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "PlatformSignalCoordinator 汇集连接、缓存、回调、profile、fallback 与 journal，职责明显混杂。"
+        "PlatformSignalCoordinator 汇集连接、缓存、回调、profile 与 fallback。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.open_closed",
+      "score": 1,
       "max_score": 4,
       "status": "scored",
-      "score": 1,
-      "reason": "新增平台依赖修改 router/profile 选择与 fallback 逻辑，扩展点有限。 按 0–4 独立档位锁定 1 分。",
-      "score_reasoning": "新增平台依赖修改 router/profile 选择与 fallback 逻辑，扩展点有限。 按 0–4 独立档位锁定 1 分。",
-      "analysis": "新增平台依赖修改 router/profile 选择与 fallback 逻辑，扩展点有限。 按 0–4 独立档位锁定 1 分。",
+      "score_reasoning": "新增平台需要修改 router/profile 与 fallback 分支。 按独立 0–4 档位锁定 1。",
+      "analysis": "新增平台需要修改 router/profile 与 fallback 分支。 按独立 0–4 档位锁定 1。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-18.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.open_closed",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "platform/src/com/cockpitbench/vehicleplatform/LegacyPlatformRouter.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "新增平台依赖修改 router/profile 选择与 fallback 逻辑，扩展点有限。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 26,
+          "end_line": 26,
+          "symbol": "public final class LegacyPlatformRouter {",
+          "claim": "新增平台需要修改 router/profile 与 fallback 分支。",
+          "observation": "新增平台需要修改 router/profile 与 fallback 分支。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "platform/aidl/com/cockpitbench/vehicleplatform/IVehiclePlatform.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "interface IVehiclePlatform {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "新增平台依赖修改 router/profile 选择与 fallback 逻辑，扩展点有限。"
+        "新增平台需要修改 router/profile 与 fallback 分支。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.liskov_substitution",
+      "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score": 2,
-      "reason": "三个 vehicle profile 保持相同读取映射契约，未发现替代时抛不支持的主路径。 按 0–4 独立档位锁定 2 分。",
-      "score_reasoning": "三个 vehicle profile 保持相同读取映射契约，未发现替代时抛不支持的主路径。 按 0–4 独立档位锁定 2 分。",
-      "analysis": "三个 vehicle profile 保持相同读取映射契约，未发现替代时抛不支持的主路径。 按 0–4 独立档位锁定 2 分。",
+      "score_reasoning": "vehicle profile 基本保持共同读取映射契约。 按独立 0–4 档位锁定 2。",
+      "analysis": "vehicle profile 基本保持共同读取映射契约。 按独立 0–4 档位锁定 2。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-18.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.liskov_substitution",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "platform/aidl/com/cockpitbench/vehicleplatform/IVehiclePlatform.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "三个 vehicle profile 保持相同读取映射契约，未发现替代时抛不支持的主路径。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "interface IVehiclePlatform {",
+          "claim": "vehicle profile 基本保持共同读取映射契约。",
+          "observation": "vehicle profile 基本保持共同读取映射契约。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "platform/src/com/cockpitbench/vehicleplatform/PlatformSignalCoordinator.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 26,
+          "end_line": 26,
+          "symbol": "public final class PlatformSignalCoordinator {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "三个 vehicle profile 保持相同读取映射契约，未发现替代时抛不支持的主路径。"
+        "vehicle profile 基本保持共同读取映射契约。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.interface_segregation",
+      "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score": 2,
-      "reason": "IVehiclePlatform 六个方法覆盖信号与连接生命周期，尚未达到胖接口，但客户端仍耦合 reset/reconnect。 按 0–4 独立档位锁定 2 分。",
-      "score_reasoning": "IVehiclePlatform 六个方法覆盖信号与连接生命周期，尚未达到胖接口，但客户端仍耦合 reset/reconnect。 按 0–4 独立档位锁定 2 分。",
-      "analysis": "IVehiclePlatform 六个方法覆盖信号与连接生命周期，尚未达到胖接口，但客户端仍耦合 reset/reconnect。 按 0–4 独立档位锁定 2 分。",
+      "score_reasoning": "IVehiclePlatform 同时暴露信号和连接生命周期。 按独立 0–4 档位锁定 2。",
+      "analysis": "IVehiclePlatform 同时暴露信号和连接生命周期。 按独立 0–4 档位锁定 2。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-18.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.interface_segregation",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "platform/src/com/cockpitbench/vehicleplatform/PlatformSignalCoordinator.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "IVehiclePlatform 六个方法覆盖信号与连接生命周期，尚未达到胖接口，但客户端仍耦合 reset/reconnect。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 26,
+          "end_line": 26,
+          "symbol": "public final class PlatformSignalCoordinator {",
+          "claim": "IVehiclePlatform 同时暴露信号和连接生命周期。",
+          "observation": "IVehiclePlatform 同时暴露信号和连接生命周期。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "platform/src/com/cockpitbench/vehicleplatform/LegacyPlatformRouter.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 26,
+          "end_line": 26,
+          "symbol": "public final class LegacyPlatformRouter {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "IVehiclePlatform 六个方法覆盖信号与连接生命周期，尚未达到胖接口，但客户端仍耦合 reset/reconnect。"
+        "IVehiclePlatform 同时暴露信号和连接生命周期。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.dependency_inversion",
+      "score": 1,
       "max_score": 4,
       "status": "scored",
-      "score": 1,
-      "reason": "Service 依赖全局 Coordinator.get()，Coordinator 又依赖具体 LegacyPlatformRouter，抽象和注入不足。 按 0–4 独立档位锁定 1 分。",
-      "score_reasoning": "Service 依赖全局 Coordinator.get()，Coordinator 又依赖具体 LegacyPlatformRouter，抽象和注入不足。 按 0–4 独立档位锁定 1 分。",
-      "analysis": "Service 依赖全局 Coordinator.get()，Coordinator 又依赖具体 LegacyPlatformRouter，抽象和注入不足。 按 0–4 独立档位锁定 1 分。",
+      "score_reasoning": "Service 依赖全局 Coordinator，后者依赖具体 LegacyPlatformRouter。 按独立 0–4 档位锁定 1。",
+      "analysis": "Service 依赖全局 Coordinator，后者依赖具体 LegacyPlatformRouter。 按独立 0–4 档位锁定 1。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-18.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.dependency_inversion",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "platform/src/com/cockpitbench/vehicleplatform/LegacyPlatformRouter.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "Service 依赖全局 Coordinator.get()，Coordinator 又依赖具体 LegacyPlatformRouter，抽象和注入不足。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 26,
+          "end_line": 26,
+          "symbol": "public final class LegacyPlatformRouter {",
+          "claim": "Service 依赖全局 Coordinator，后者依赖具体 LegacyPlatformRouter。",
+          "observation": "Service 依赖全局 Coordinator，后者依赖具体 LegacyPlatformRouter。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "platform/aidl/com/cockpitbench/vehicleplatform/IVehiclePlatform.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "interface IVehiclePlatform {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "Service 依赖全局 Coordinator.get()，Coordinator 又依赖具体 LegacyPlatformRouter，抽象和注入不足。"
+        "Service 依赖全局 Coordinator，后者依赖具体 LegacyPlatformRouter。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "platform_reuse.platform_upgrade",
+      "score": 0,
       "max_score": 10,
       "status": "scored",
-      "score": 3,
-      "reason": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 3。",
-      "score_reasoning": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 3。",
-      "analysis": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 3。",
+      "score_reasoning": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。",
+      "analysis": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-18.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "platform_reuse.platform_upgrade",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/platform_upgrade_review",
+          "symbol": "platform_upgrade_review",
+          "claim": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
+          "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "car-lib/src/android/car/hardware/CarPropertyConfig.java",
-          "line_start": 205,
-          "line_end": 205,
-          "symbol": "reviewed code evidence",
-          "observation": "Android 平台绑定或抽象事实。",
+          "path": "platform/src/com/cockpitbench/vehicleplatform/PlatformSignalCoordinator.java",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 26,
+          "end_line": 26,
+          "symbol": "public final class PlatformSignalCoordinator {",
+          "claim": "平台访问风险或隔离边界。",
+          "observation": "平台访问风险或隔离边界。",
+          "evidence_type": "source",
+          "independent_group": "platform_primary"
         },
         {
           "source": "current_head",
-          "path": "car-lib/Android.mk",
-          "line_start": 42,
-          "line_end": 42,
-          "symbol": "reviewed code evidence",
-          "observation": "Android 平台绑定或抽象事实。",
+          "path": "platform/src/com/cockpitbench/vehicleplatform/LegacyPlatformRouter.java",
           "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 26,
+          "end_line": 26,
+          "symbol": "public final class LegacyPlatformRouter {",
+          "claim": "独立适配/服务边界。",
+          "observation": "独立适配/服务边界。",
+          "evidence_type": "source",
+          "independent_group": "platform_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
+      "score": 3,
       "max_score": 10,
       "status": "scored",
-      "score": 3,
-      "reason": "真实 refs 同时存在平台分支和车型/SOP release 分支，车型拆分更细，锁定 3。",
       "score_reasoning": "真实 refs 同时存在平台分支和车型/SOP release 分支，车型拆分更细，锁定 3。",
       "analysis": "真实 refs 同时存在平台分支和车型/SOP release 分支，车型拆分更细，锁定 3。",
       "evidence": [
         {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-18.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "platform_reuse.release_branch_strategy",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-          "ref": "HEAD"
-        },
-        {
           "source": "git_ref",
-          "path": ".git",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "refs/heads/platform/8155",
-          "observation": "平台/车型分支 tip 与 main 不同，命名和实际对象共同证明复用粒度。",
+          "path": "refs/heads/platform/8155",
+          "ref": "refs/heads/platform/8155",
           "commit": "1cd1c6a43839fb526de6df597312286c6a95d9bf",
-          "ref": "refs/heads/platform/8155"
+          "commit_oid": "1cd1c6a43839fb526de6df597312286c6a95d9bf",
+          "tree_oid": "dea1bc7cb3675a452e364ec5349dc93e374464a3",
+          "merge_base": "43a56d3edb0aa7296aec1a9bef82c6c3cfc71558",
+          "ahead": 1,
+          "behind": 4,
+          "changed_files": 1,
+          "symbol": "refs/heads/platform/8155",
+          "claim": "分支真实 tip/tree 与 main 差异。",
+          "observation": "分支真实 tip/tree 与 main 差异。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_0"
         },
         {
           "source": "git_ref",
-          "path": ".git",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "refs/heads/platform/8295",
-          "observation": "平台/车型分支 tip 与 main 不同，命名和实际对象共同证明复用粒度。",
+          "path": "refs/heads/platform/8295",
+          "ref": "refs/heads/platform/8295",
           "commit": "bce6dc6fca9eda196edaaff305bf6ffc4ccf0e72",
-          "ref": "refs/heads/platform/8295"
+          "commit_oid": "bce6dc6fca9eda196edaaff305bf6ffc4ccf0e72",
+          "tree_oid": "a4a6cd9271e2a39ee568e060f9be449d06a509ac",
+          "merge_base": "43a56d3edb0aa7296aec1a9bef82c6c3cfc71558",
+          "ahead": 1,
+          "behind": 4,
+          "changed_files": 1,
+          "symbol": "refs/heads/platform/8295",
+          "claim": "分支真实 tip/tree 与 main 差异。",
+          "observation": "分支真实 tip/tree 与 main 差异。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_1"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     }
   ]

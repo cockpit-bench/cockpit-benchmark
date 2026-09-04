@@ -1,6 +1,6 @@
 # APP / Android Framework 现行评分合同（Benchmark 版）
 
-版本：2026-09-03-v2  
+版本：2026-09-04-v3  
 用途：为座舱 Android APP 与 Android Framework benchmark 生成逐叶标准分。  
 纪律：本文件是唯一评分事实源；allowlist 之外的维度必须丢弃，不得从旧 rubric 换算或补零。
 
@@ -13,6 +13,16 @@
 5. 分档按本文指定顺序判定；“任意 N 条”达到即锁档。
 6. 注释、字符串、日志、测试 Mock、生成代码中的探针命中不算生产证据。
 7. 被测 Agent 每次只能看到一个源码仓；wrapper、oracle、facts、SCORECARD 和标准分不得进入评测输入。
+8. 证据必须证明该叶的具体判断：结构化事实使用 JSON Pointer，代码使用真实行段与符号，Git 分支使用 ref 对应的真实 tip/tree。`file:1`、泛化的“reviewed code evidence”或同一锚点重复两次不算独立证据。
+9. 本公开 Validation-18 定位为 Dev/Regression benchmark；它不等同于私有、谱系隔离的最终 Holdout。源码仓名称和描述不得直接暴露 high/medium/low 标签。
+
+### 0.1 可复现体量分层
+
+只统计 final HEAD 中的生产源码；排除 `.git`、构建产物、生成代码、vendored/third_party 依赖、二进制、测试和资源文件。`source_files` 与 `source_loc` 必须同时落入同一档：
+
+- APP small：`source_files < 300` 且 `source_loc < 30,000`；medium：`300–999` 且 `30,000–79,999`；large：`source_files >= 1,000` 且 `source_loc >= 80,000`。
+- FW small：`250–599` 且 `30,000–79,999`；medium：`600–1,499` 且 `80,000–199,999`；large：`source_files >= 1,500` 且 `source_loc >= 200,000`。
+- 两个指标跨档或未达到 FW small 下限时标记 `size_band=unresolved`，不得按目标矩阵强贴标签。
 
 ## 1. 维度总表
 
@@ -64,25 +74,28 @@ FW 在评估引擎侧为 7 个 Agent；SOLID 一次调用产出 /20，但 benchm
 - `has_circular_dependency`：模块依赖图存在环。
 - `is_component_friendly`：以下五项任意至少三项为真：无模块环、业务边界隔离且无跨模块源码侵入、公共能力下沉 base/core、模块可独立编译、无跨模块硬编码依赖。
 
-三个架构叶必须使用同一组上述事实。
+三个架构叶必须使用同一组上述事实，但分别衡量不同构念，不能把同一“任意 N 条”结果换量程重复三次：组件化看可复用/可替换组件，解耦看依赖方向与修改传播，模块化看构建模块边界与内聚。
 
 ### 2.2 `architecture.componentization`（0/1/3/5）
 
-- 5：以下任意两项：base layered；module_count≥2；standard_named_module_count≥2；至少两个业务模块有职责分层；component-friendly。
-- 3：以下任意两项：base layered；module_count≥2；standard_named_module_count≥1；存在业务分包。
-- 1：以下任意一项：有分层目录；仅文件类型分包；代码不在根包。
-- 0：均不满足。
+- 5：存在至少两个有独立构建入口、职责边界明确的业务/公共组件，并且公共能力已下沉 base/core 或由显式接口边界复用；仅目录命名或模块数量不够。
+- 3：存在至少两个真实构建模块且有业务分包，但复用、替换或公共能力边界不完整。
+- 1：只有包级分层/文件类型分包，或代码虽不在根包但没有真实组件边界。
+- 0：生产代码基本为单体根包，未形成可识别组件。
 
 ### 2.3 `architecture.decoupling`（0/1/2/3）
 
-- 3：高级条件同 2.2 的 5 分档，任意两项。
-- 2：中级条件同 2.2 的 3 分档，任意两项。
-- 1：基础条件同 2.2 的 1 分档，任意一项。
-- 0：均不满足。
+- 3：无模块环、无跨模块源码目录侵入，依赖方向稳定，公共能力下沉或通过接口/依赖注入隔离；修改一个平台/业务实现不要求修改多个无关模块。
+- 2：无模块环且主要边界可识别，但存在跨模块源码侵入、反向依赖、硬编码具体实现或公共能力未下沉中的一类问题。
+- 1：虽有包/模块划分，但多处直接跨边界引用、硬编码或修改传播明显。
+- 0：存在模块环，或核心模块彼此强耦合到无法形成稳定依赖方向。
 
 ### 2.4 `architecture.modularization`（0/1/2/3）
 
-先判 `has_circular_dependency=true`，直接 0；否则档位与 2.3 相同。
+- 3：无模块环，至少三个职责内聚的真实构建模块，至少两个规范命名模块，并具有模块级构建/测试入口或清晰 API/implementation 边界。
+- 2：无模块环且至少两个真实构建模块，模块职责基本可辨，但独立测试/发布或 API 边界不完整。
+- 1：只有包级分层，或名义模块缺少独立构建边界。
+- 0：单体无模块结构，或存在模块循环依赖（一票否决）。
 
 ### 2.5 `compilation.ci_independence`（0–3）
 
@@ -95,14 +108,14 @@ FW 在评估引擎侧为 7 个 Agent；SOLID 一次调用产出 /20，但 benchm
 
 ### 2.6 `compilation.compilation_independence`（0–3）
 
-从构建配置按最强约束优先判定：
+评分对象是“仓库外部构建闭包”，同仓 `implementation project(...)` 或 Soong 模块依赖属于正常模块化，不再自动扣到 0。按最强外部约束判定：
 
-- 0：模块通过 `implementation project(...)`、Soong 源码模块或其他方式直接编译依赖源码。
-- 1：依赖 `framework.jar`。
-- 2：依赖 SDK/AAR。
-- 3：依赖带版本管理和稳定兼容承诺的 SDK。
+- 0：必须依赖完整 Android 平台源码树、未随仓声明的 sibling repository 或仓外源码，且当前仓不能独立构建任何有意义的生产单元。
+- 1：可局部构建有意义单元，但完整构建依赖未版本化的 `framework.jar`、私有 stubs、平台环境注入或未锁定预编译物。
+- 2：仓内源码模块闭包完整，仓外依赖均通过明确 SDK/AAR/JAR/stub/Maven 或预构建接口获得，并有可重复的模块级构建入口。
+- 3：满足 2，且关键跨仓 SDK/API 全部版本锁定，具有真实兼容性检查/承诺，构建环境可重复或近似 hermetic。
 
-源码依赖存在时优先锁 0，不能被同时存在的版本化第三方依赖抬分。
+`compileSdk`、`sdk_version` 或普通第三方依赖版本本身不能证明 2/3；必须结合完整依赖链和实际构建入口。
 
 ### 2.7 `compilation.api_version_management`（0–3）
 
@@ -112,6 +125,8 @@ FW 在评估引擎侧为 7 个 Agent；SOLID 一次调用产出 /20，但 benchm
 - 3：版本可控，并存在真实前后兼容保证/基线检查。
 
 版本证据包括专用版本文件、构建集成、API baseline、兼容性任务和发布说明；Git tag 或 CHANGELOG 标题不能单独证明版本可控。
+
+下列内容不得计为 API 兼容性证据：`sourceCompatibility`、`targetCompatibility`、`compileSdk`、`minSdk`、普通版本号文件、只检查 baseline 文件存在/包含固定字符串的任务。3 分必须能从当前公开 API 提取结果与已发布 baseline 做真实 diff，识别删除、签名或可见性变化，或使用等价的 metalava/checkapi/ABI 检查。
 
 ### 2.8 `platform_reuse.platform_upgrade`（10/8/3/0）
 
@@ -125,12 +140,14 @@ FW 在评估引擎侧为 7 个 Agent；SOLID 一次调用产出 /20，但 benchm
 6. `has_light_permission_adaptation`：只需 Manifest 轻量权限适配。
 7. `has_complex_permission_adaptation`：高版本需修改蓝牙/存储/位置/通知等运行时逻辑。
 
-兼容层/接口抽象覆盖的 version/arch 绑定状态强制≤1。令 `total=version_bound_status+arch_bound_status`，严格按 10→8→3→0 判定并在首个满足档锁定：
+兼容层/接口抽象只有在证据证明覆盖相应风险时，才能把对应 version/arch 绑定状态计为≤1。令 `total=version_bound_status+arch_bound_status`，采用风险单调的硬门槛：
 
-- 10，以下任意两项：无非兼容 API 且无架构专属依赖；total≤1；有接口抽象；无复杂权限适配。
-- 8，以下任意两项：无非兼容 API 且无架构专属依赖；total≤3；有轻量权限适配；有接口抽象。
-- 3，以下任意一项：无非兼容 API 或无架构专属依赖；total≤4；有轻量权限适配；有接口抽象。
-- 0，未命中更高档且出现非兼容 API、单架构闭源依赖、total≥5，或硬编码权限逻辑导致核心功能无法兼容。
+- 10：无未封装非兼容 API、无单架构专属依赖、total≤1，并且存在明确接口隔离或至少两个 Android 平台版本的自动兼容验证。
+- 8：风险集中在可定位 adapter/compat 层并有 fallback，或虽无非兼容/架构风险但缺少 10 分所需的接口隔离/跨版本自动验证；total≤3。
+- 3：存在未封装 vendor/private/reflection API、两至三个业务模块的平台硬编码、复杂权限适配或无统一抽象，但仍有可行迁移路径；该类负向事实对分数封顶为 3。
+- 0：单架构闭源依赖无 fallback、核心链路深度绑定（total≥5）、多处绕过稳定接口且无隔离，或权限/平台硬编码使核心功能无法迁移。
+
+正常使用公开 Android Framework API 不属于非兼容 API；vendor private、`@hide`、系统类反射属于。已集中封装且有降级方案的非公开 API 最高 8，未封装则最高 3。
 
 ### 2.9 `platform_reuse.release_branch_strategy`（10/8/3/0）
 
@@ -157,14 +174,7 @@ FW 必须是座舱 Android Framework 层仓库，以 Java/Kotlin/AIDL/Soong 或 
 
 ### 3.3 `compilation.compilation_independence`（0–3）
 
-检查 Gradle/POM/Soong 构建、模块依赖方式和 SDK 边界：
-
-- 0：直接源码依赖，例如 `implementation project(...)` 或直接编译同仓/平台源码模块。
-- 1：依赖 `framework.jar`。
-- 2：依赖 SDK/AAR。
-- 3：依赖带版本管理和兼容机制的稳定 SDK。
-
-按实际依赖链的最强约束锁档；不能把 `compileSdk` 本身当成稳定 SDK。
+使用 APP 2.6 相同的“仓库外部构建闭包”定义。Android Soong 同仓模块依赖不自动判 0；只有确实需要仓外平台源码且无任何有意义独立构建单元才是 0。Framework 正常依赖公开 Android SDK/stub 与依赖私有 `framework.jar`/整棵平台树必须区分。
 
 ### 3.4 `compilation.api_version_management`（0–3）
 
@@ -174,6 +184,8 @@ FW 必须是座舱 Android Framework 层仓库，以 Java/Kotlin/AIDL/Soong 或 
 - 3：完善的版本控制机制，同时存在真实向后兼容保证或 API baseline 验证。
 
 检查 version.properties、构建集成、API/current.txt、兼容任务、CHANGELOG/RELEASE_NOTES；标签或说明文件不能单独抬分。
+
+APP 2.7 的兼容性证据排除项同样适用。AOSP 源码中普通注释里的 `released`/`compatibility`、Java 语言级别和任意三段数字都不是 API 版本管理证据。
 
 ### 3.5 `quality.integration_test`（0–3）
 
@@ -208,7 +220,7 @@ LSP 无继承/替换证据时不得凭空给高分；按 `failed` 处理，或�
 
 ### 3.7 `platform_reuse.platform_upgrade`（10/8/3/0）
 
-使用 APP 2.8 完全相同的 Android 七事实、负向过滤、豁免规则和 10→8→3→0 锁档流程。FW 重点检查系统服务启动链、Manager/Service、Binder/AIDL、HAL Java 适配、权限与 JNI/ABI；不得出现 RTOS/BSP/寄存器评分语义。
+使用 APP 2.8 完全相同的 Android 七事实和风险单调硬门槛。FW 重点检查系统服务启动链、Manager/Service、Binder/AIDL、HAL Java 适配、权限与 JNI/ABI；公开 Framework API 的正常使用不扣分，vendor private/reflection/hidden API 是否隔离和降级才决定封顶；不得出现 RTOS/BSP/寄存器评分语义。
 
 ### 3.8 `platform_reuse.release_branch_strategy`（10/8/3/0）
 
@@ -223,6 +235,14 @@ LSP 无继承/替换证据时不得凭空给高分；按 `failed` 处理，或�
 - `analysis`
 - 至少一个可定位证据；需要判断的叶原则上至少两个独立锚点
 - SOLID 额外输出 `issues`、`recommendations`
+
+证据对象至少包含 `source`、`path`、`commit`、`claim`、`evidence_type`、`independent_group`，并按类型补充：
+
+- 代码：`start_line`、`end_line`、真实 `symbol`；行段必须直接支持 claim。
+- 结构化 facts：`json_pointer`，不得用第 1 行代表整份文件。
+- Git ref：`ref`、`commit_oid`、`tree_oid`；`commit_oid` 必须等于该 ref 实际 tip，并与 manifest/facts 一致。
+
+需要判断的叶至少两个不同 `independent_group`；纯粹的确定性缺失/计数事实允许一个结构化锚点。Schema、合同 hash 和字段必须在同一 release 的全部 18 个 oracle 中完全一致。
 
 计数：
 

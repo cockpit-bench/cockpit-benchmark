@@ -1,279 +1,407 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "3.0.0",
   "repo_id": "APP-03",
   "quality_tier": "high",
+  "size_band": "small",
   "delivery_status": "active",
-  "review_status": "two_pass_current_head_reviewed",
+  "review_status": "v3_current_head_reviewed",
   "repository": {
     "head": "5141af902414a8b5404da756a51e89a57d07d2e5",
     "tree": "ebe6b21b448132adafcbf9822ed390acad2134fc",
     "branch": "main",
     "remote_count": 0
   },
+  "rubric": {
+    "path": "SCORE_RULES.md",
+    "sha256": "b52d8dcc270cd3cc2bb8ecf942c59adbb1128038d9256ff7ad0835599f096764"
+  },
   "canonical_total": {
-    "score": 35,
+    "score": 32,
     "max": 40
   },
   "canonical_leaves": [
     {
       "name": "architecture.componentization",
+      "score": 5,
       "max_score": 5,
       "status": "scored",
-      "score": 5,
-      "rubric_band": "高级组件化",
-      "reason": "唯一架构事实：module_count=7、standard_named_module_count=3、base_layered=True、component_friendly=True、circular=False；按任意 N 条与循环依赖规则由高到低锁定 5 分。",
+      "score_reasoning": "共享事实 module_count=7、standard=3、boundary=False、common=True、cycle=False；按 componentization 独立构念锁定 5。",
+      "analysis": "共享事实 module_count=7、standard=3、boundary=False、common=True、cycle=False；按 componentization 独立构念锁定 5。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/APP-03.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "architecture.componentization",
-          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
           "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/facts/architecture/facts",
+          "symbol": "facts",
+          "claim": "共享架构事实。",
+          "observation": "共享架构事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": "settings.gradle.kts",
-          "line_start": 4,
-          "line_end": 4,
-          "symbol": "include",
-          "observation": "模块清单和依赖图入口。",
           "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
-        }
-      ],
-      "adjudication": "正向事实推导与反向逐档复核一致。",
-      "confidence": "high"
-    },
-    {
-      "name": "architecture.decoupling",
-      "max_score": 3,
-      "status": "scored",
-      "score": 3,
-      "rubric_band": "优秀解耦",
-      "reason": "唯一架构事实：module_count=7、standard_named_module_count=3、base_layered=True、component_friendly=True、circular=False；按任意 N 条与循环依赖规则由高到低锁定 3 分。",
-      "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/APP-03.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "architecture.decoupling",
-          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
-          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
-        },
-        {
-          "source": "current_head",
-          "path": "settings.gradle.kts",
-          "line_start": 4,
-          "line_end": 4,
-          "symbol": "include",
-          "observation": "模块清单和依赖图入口。",
-          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
-        }
-      ],
-      "adjudication": "正向事实推导与反向逐档复核一致。",
-      "confidence": "high"
-    },
-    {
-      "name": "architecture.modularization",
-      "max_score": 3,
-      "status": "scored",
-      "score": 3,
-      "rubric_band": "高度模块化",
-      "reason": "唯一架构事实：module_count=7、standard_named_module_count=3、base_layered=True、component_friendly=True、circular=False；按任意 N 条与循环依赖规则由高到低锁定 3 分。",
-      "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/APP-03.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "architecture.modularization",
-          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
-          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
-        },
-        {
-          "source": "current_head",
-          "path": "settings.gradle.kts",
-          "line_start": 4,
-          "line_end": 4,
-          "symbol": "include",
-          "observation": "模块清单和依赖图入口。",
-          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
-        }
-      ],
-      "adjudication": "正向事实推导与反向逐档复核一致。",
-      "confidence": "high"
-    },
-    {
-      "name": "compilation.ci_independence",
-      "max_score": 3,
-      "status": "scored",
-      "score": 3,
-      "rubric_band": "完整标准化 CI/CD 流水线",
-      "reason": "精确 HEAD 的 CI 分类为 independent_ci；结合流水线内容完整度锁定 3 分。",
-      "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/APP-03.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.ci_independence",
-          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
-          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
-        },
-        {
-          "source": "current_head",
-          "path": ".github/workflows/android.yml",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "file",
-          "observation": "CI 配置内容已逐项核对。",
-          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
-        }
-      ],
-      "adjudication": "正向事实推导与反向逐档复核一致。",
-      "confidence": "high"
-    },
-    {
-      "name": "compilation.compilation_independence",
-      "max_score": 3,
-      "status": "scored",
-      "score": 0,
-      "rubric_band": "源码依赖",
-      "reason": "依赖事实为 {'has_framework_jar_dependency': False, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': True}；同仓 project 源码依赖优先判 0，不能被 compileSdk 或 framework 表象抬分，锁定 0 分。",
-      "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/APP-03.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.compilation_independence",
-          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
-          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 4,
+          "end_line": 4,
+          "symbol": "include(\":app\", \":domain\", \":vehicle-api\", \":hvac-core\", \":comfort\", \":diagnostics\", \":telemetry\")",
+          "claim": "真实模块清单与构建边界。",
+          "observation": "真实模块清单与构建边界。",
+          "evidence_type": "source",
+          "independent_group": "module_graph"
         },
         {
           "source": "current_head",
           "path": "app/build.gradle.kts",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "file",
-          "observation": "构建依赖声明入口。",
           "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "plugins {",
+          "claim": "模块插件和依赖声明。",
+          "observation": "模块插件和依赖声明。",
+          "evidence_type": "source",
+          "independent_group": "module_build"
         }
       ],
-      "adjudication": "正向事实推导与反向逐档复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
+      "confidence": "high"
+    },
+    {
+      "name": "architecture.decoupling",
+      "score": 2,
+      "max_score": 3,
+      "status": "scored",
+      "score_reasoning": "共享事实 module_count=7、standard=3、boundary=False、common=True、cycle=False；按 decoupling 独立构念锁定 2。",
+      "analysis": "共享事实 module_count=7、standard=3、boundary=False、common=True、cycle=False；按 decoupling 独立构念锁定 2。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-03.json",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "json_pointer": "/facts/architecture/facts",
+          "symbol": "facts",
+          "claim": "共享架构事实。",
+          "observation": "共享架构事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
+        {
+          "source": "current_head",
+          "path": "settings.gradle.kts",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "start_line": 4,
+          "end_line": 4,
+          "symbol": "include(\":app\", \":domain\", \":vehicle-api\", \":hvac-core\", \":comfort\", \":diagnostics\", \":telemetry\")",
+          "claim": "真实模块清单与构建边界。",
+          "observation": "真实模块清单与构建边界。",
+          "evidence_type": "source",
+          "independent_group": "module_graph"
+        },
+        {
+          "source": "current_head",
+          "path": "app/build.gradle.kts",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "plugins {",
+          "claim": "模块插件和依赖声明。",
+          "observation": "模块插件和依赖声明。",
+          "evidence_type": "source",
+          "independent_group": "module_build"
+        }
+      ],
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
+      "confidence": "high"
+    },
+    {
+      "name": "architecture.modularization",
+      "score": 3,
+      "max_score": 3,
+      "status": "scored",
+      "score_reasoning": "共享事实 module_count=7、standard=3、boundary=False、common=True、cycle=False；按 modularization 独立构念锁定 3。",
+      "analysis": "共享事实 module_count=7、standard=3、boundary=False、common=True、cycle=False；按 modularization 独立构念锁定 3。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-03.json",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "json_pointer": "/facts/architecture/facts",
+          "symbol": "facts",
+          "claim": "共享架构事实。",
+          "observation": "共享架构事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
+        {
+          "source": "current_head",
+          "path": "settings.gradle.kts",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "start_line": 4,
+          "end_line": 4,
+          "symbol": "include(\":app\", \":domain\", \":vehicle-api\", \":hvac-core\", \":comfort\", \":diagnostics\", \":telemetry\")",
+          "claim": "真实模块清单与构建边界。",
+          "observation": "真实模块清单与构建边界。",
+          "evidence_type": "source",
+          "independent_group": "module_graph"
+        },
+        {
+          "source": "current_head",
+          "path": "app/build.gradle.kts",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "plugins {",
+          "claim": "模块插件和依赖声明。",
+          "observation": "模块插件和依赖声明。",
+          "evidence_type": "source",
+          "independent_group": "module_build"
+        }
+      ],
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
+      "confidence": "high"
+    },
+    {
+      "name": "compilation.ci_independence",
+      "score": 3,
+      "max_score": 3,
+      "status": "scored",
+      "score_reasoning": "CI 分类=independent_ci，锁定 3。",
+      "analysis": "CI 分类=independent_ci，锁定 3。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-03.json",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "json_pointer": "/facts/ci",
+          "symbol": "ci",
+          "claim": "CI 配置枚举和阶段判定。",
+          "observation": "CI 配置枚举和阶段判定。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
+        {
+          "source": "current_head",
+          "path": ".github/workflows/android.yml",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "start_line": 15,
+          "end_line": 15,
+          "symbol": "- uses: gradle/actions/setup-gradle@v4",
+          "claim": "可执行 CI 入口。",
+          "observation": "可执行 CI 入口。",
+          "evidence_type": "source",
+          "independent_group": "ci_pipeline"
+        }
+      ],
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
+      "confidence": "high"
+    },
+    {
+      "name": "compilation.compilation_independence",
+      "score": 1,
+      "max_score": 3,
+      "status": "scored",
+      "score_reasoning": "仓外构建闭包={'critical_dependencies_version_pinned': True, 'external_dependencies_declared': True, 'has_framework_jar_dependency': False, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_meaningful_standalone_target': True, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': True, 'requires_full_platform_source': True}；同仓模块依赖不扣分，锁定 1。",
+      "analysis": "仓外构建闭包={'critical_dependencies_version_pinned': True, 'external_dependencies_declared': True, 'has_framework_jar_dependency': False, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_meaningful_standalone_target': True, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': True, 'requires_full_platform_source': True}；同仓模块依赖不扣分，锁定 1。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-03.json",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "json_pointer": "/facts/compilation/dependency_type_candidates",
+          "symbol": "dependency_type_candidates",
+          "claim": "仓外构建闭包事实。",
+          "observation": "仓外构建闭包事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
+        {
+          "source": "current_head",
+          "path": "README.md",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "start_line": 4,
+          "end_line": 4,
+          "symbol": "legacy AOSP HVAC component, and lifecycle-aware HMI. The repository requires AAOS platform APIs;",
+          "claim": "平台依赖或可独立构建入口。",
+          "observation": "平台依赖或可独立构建入口。",
+          "evidence_type": "source",
+          "independent_group": "build_boundary_0"
+        },
+        {
+          "source": "current_head",
+          "path": ".github/workflows/android.yml",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "start_line": 15,
+          "end_line": 15,
+          "symbol": "- uses: gradle/actions/setup-gradle@v4",
+          "claim": "平台依赖或可独立构建入口。",
+          "observation": "平台依赖或可独立构建入口。",
+          "evidence_type": "source",
+          "independent_group": "build_boundary_1"
+        }
+      ],
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
       "confidence": "high"
     },
     {
       "name": "compilation.api_version_management",
+      "score": 2,
       "max_score": 3,
       "status": "scored",
-      "score": 3,
-      "rubric_band": "版本可控且前后兼容",
-      "reason": "手动版本=True、语义化管理=True、兼容性证据=7、自动化证据=0，锁定 3 分。",
+      "score_reasoning": "语义版本=True、有效兼容检查=0、自动绑定=0；已排除 Java/SDK 级别和固定字符串检查，锁定 2。",
+      "analysis": "语义版本=True、有效兼容检查=0、自动绑定=0；已排除 Java/SDK 级别和固定字符串检查，锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/APP-03.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.api_version_management",
-          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
           "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/facts/api_version",
+          "symbol": "api_version",
+          "claim": "有效版本与 API 兼容机制事实。",
+          "observation": "有效版本与 API 兼容机制事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": "version.properties",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "file",
-          "observation": "版本控制入口。",
           "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "apiVersion=2.1.0",
+          "claim": "版本或真实 API baseline 机制。",
+          "observation": "版本或真实 API baseline 机制。",
+          "evidence_type": "source",
+          "independent_group": "api_control_0"
+        },
+        {
+          "source": "current_head",
+          "path": "version.properties",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "start_line": 2,
+          "end_line": 2,
+          "symbol": "versionCode=20100",
+          "claim": "版本或真实 API baseline 机制。",
+          "observation": "版本或真实 API baseline 机制。",
+          "evidence_type": "source",
+          "independent_group": "api_control_1"
         }
       ],
-      "adjudication": "正向事实推导与反向逐档复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
       "confidence": "high"
     },
     {
       "name": "platform_reuse.platform_upgrade",
+      "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score": 10,
-      "rubric_band": "极速适配",
-      "reason": "唯一升级事实={'arch_bound_status': 0, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_non_compatible_api': True, 'version_bound_status': 0}；严格按 10→8→3→0 首个满足档锁定 10 分。",
+      "score_reasoning": "Android 七事实={'arch_bound_status': 0, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_non_compatible_api': True, 'version_bound_status': 0}；按风险单调硬门槛锁定 8。",
+      "analysis": "Android 七事实={'arch_bound_status': 0, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_non_compatible_api': True, 'version_bound_status': 0}；按风险单调硬门槛锁定 8。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/APP-03.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "platform_reuse.platform_upgrade",
-          "observation": "该叶的完整 current-HEAD 事实与命中条件。 定向扫描计数={'manifest': 7, 'module_build': 7, 'resource': 64, 'source': 106, 'total': 184}",
           "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/facts/platform_upgrade/seven_fact_candidates",
+          "symbol": "seven_fact_candidates",
+          "claim": "Android 七事实及风险封顶。",
+          "observation": "Android 七事实及风险封顶。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
+        {
+          "source": "current_head",
+          "path": "vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "start_line": 29,
+          "end_line": 29,
+          "symbol": "find",
+          "claim": "平台风险或隔离边界。",
+          "observation": "平台风险或隔离边界。",
+          "evidence_type": "source",
+          "independent_group": "platform_source_0"
+        },
+        {
+          "source": "current_head",
+          "path": "domain/src/main/java/com/cockpitbench/climatix/domain/ObserveClimate.kt",
+          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
+          "ref": "HEAD",
+          "start_line": 20,
+          "end_line": 20,
+          "symbol": "invoke",
+          "claim": "平台风险或隔离边界。",
+          "observation": "平台风险或隔离边界。",
+          "evidence_type": "source",
+          "independent_group": "platform_source_1"
         }
       ],
-      "adjudication": "正向事实推导与反向逐档复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
       "confidence": "high"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
+      "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score": 8,
-      "rubric_band": "同平台同一分支",
-      "reason": "真实 refs 含统一 main 及 8155/8295 平台分支，没有车型级一车一 SOP；按同平台同一分支锁定 8 分。",
+      "score_reasoning": "真实 refs 同时存在 main 与平台分支、无车型级一车一 SOP，锁定 8。",
+      "analysis": "真实 refs 同时存在 main 与平台分支、无车型级一车一 SOP，锁定 8。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/APP-03.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "platform_reuse.release_branch_strategy",
-          "observation": "该叶的完整 current-HEAD 事实与命中条件。",
-          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "HEAD"
-        },
         {
           "source": "git_ref",
           "path": "refs/heads/platform/8155",
-          "line_start": 0,
-          "line_end": 0,
-          "symbol": "platform/8155",
-          "observation": "8155 使用真实平台分支。",
-          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "refs/heads/platform/8155"
+          "ref": "refs/heads/platform/8155",
+          "commit": "b313db00f552d9dac3ba3e20a5fc0df0e873d646",
+          "commit_oid": "b313db00f552d9dac3ba3e20a5fc0df0e873d646",
+          "tree_oid": "f71b1bf49a32039d669f9c587b15174a80a37bd9",
+          "merge_base": "ac879cfbd59347cbc7a607f9cd7799f5b30aebda",
+          "ahead": 6,
+          "behind": 4,
+          "changed_files": 2,
+          "symbol": "refs/heads/platform/8155",
+          "claim": "平台分支的真实 tip/tree 和差异。",
+          "observation": "平台分支的真实 tip/tree 和差异。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_0"
         },
         {
           "source": "git_ref",
           "path": "refs/heads/platform/8295",
-          "line_start": 0,
-          "line_end": 0,
-          "symbol": "platform/8295",
-          "observation": "8295 使用另一真实平台分支。",
-          "commit": "5141af902414a8b5404da756a51e89a57d07d2e5",
-          "ref": "refs/heads/platform/8295"
+          "ref": "refs/heads/platform/8295",
+          "commit": "f6df3cc885c4ba3c6e229800781a78c873665db2",
+          "commit_oid": "f6df3cc885c4ba3c6e229800781a78c873665db2",
+          "tree_oid": "382946c4dc5332023e3e130d7d9cd2184b3c467a",
+          "merge_base": "ac879cfbd59347cbc7a607f9cd7799f5b30aebda",
+          "ahead": 6,
+          "behind": 4,
+          "changed_files": 2,
+          "symbol": "refs/heads/platform/8295",
+          "claim": "平台分支的真实 tip/tree 和差异。",
+          "observation": "平台分支的真实 tip/tree 和差异。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_1"
         }
       ],
-      "adjudication": "正向事实推导与反向逐档复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
       "confidence": "high"
     }
-  ],
-  "rubric": {
-    "path": "SCORE_RULES.md",
-    "sha256": "190613d83db6baab49bb66069d1de78fe7ba673f1969ff4e4a5b4c87ecbf7d74"
-  }
+  ]
 }

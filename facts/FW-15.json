@@ -36,6 +36,20 @@
     "build_files": [
       "Android.bp"
     ],
+    "external_build_closure": {
+      "requires_full_platform_source": true,
+      "has_meaningful_standalone_target": false,
+      "external_dependencies_declared": false,
+      "critical_dependencies_version_pinned": false,
+      "platform_requirement_anchors": [
+        {
+          "path": "README.md",
+          "line": 4,
+          "match": "Requires AAOS"
+        }
+      ],
+      "standalone_target_anchors": []
+    },
     "source_dependency_anchors": [
       {
         "path": "Android.bp",
@@ -81,55 +95,8 @@
   },
   "api_version": {
     "candidate_files": [],
-    "semver_anchors": [
-      {
-        "path": "api/src/android/car/hardware/power/CarPowerPolicy.java",
-        "line": 67,
-        "match": "1.0.23"
-      },
-      {
-        "path": "api/src/android/car/hardware/power/CarPowerPolicy.java",
-        "line": 199,
-        "match": "1.0.23"
-      },
-      {
-        "path": "api/src/android/car/hardware/power/CarPowerPolicyFilter.java",
-        "line": 45,
-        "match": "1.0.23"
-      },
-      {
-        "path": "api/src/android/car/hardware/power/CarPowerPolicyFilter.java",
-        "line": 176,
-        "match": "1.0.23"
-      }
-    ],
-    "compatibility_anchors": [
-      {
-        "path": "api/src/android/car/Car.java",
-        "line": 1444,
-        "match": "released"
-      },
-      {
-        "path": "api/src/android/car/Car.java",
-        "line": 1481,
-        "match": "released"
-      },
-      {
-        "path": "api/src/android/car/Car.java",
-        "line": 1497,
-        "match": "released"
-      },
-      {
-        "path": "api/src/android/car/CarProjectionManager.java",
-        "line": 134,
-        "match": "released"
-      },
-      {
-        "path": "api/src/android/car/CarProjectionManager.java",
-        "line": 143,
-        "match": "released"
-      }
-    ]
+    "semver_anchors": [],
+    "compatibility_anchors": []
   },
   "integration_test": {
     "test_source_count": 2,
@@ -266,6 +233,15 @@
       ],
       "static_access": []
     }
+  },
+  "platform_upgrade_review": {
+    "has_non_compatible_api": true,
+    "has_arch_specific_deps": false,
+    "version_bound_status": 3,
+    "arch_bound_status": 2,
+    "has_interface_abstraction": false,
+    "has_light_permission_adaptation": false,
+    "has_complex_permission_adaptation": false
   },
   "branches": {
     "refs": [

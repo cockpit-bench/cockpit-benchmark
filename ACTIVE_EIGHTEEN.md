@@ -9,4 +9,6 @@
 | Android FW 中 | FW-10 cockpit-manager-kit | FW-08 soa-gateway | FW-14 update-manager-service |
 | Android FW 低 | FW-15 car-runtime-service | FW-18 vehicle-platform-service | FW-16 platform-compat-service |
 
+体量按 SCORE_RULES.md 的 final-HEAD 生产源码双阈值确定；两个指标跨档时标记 unresolved，不按矩阵角色强贴。
+
 其余 22 仓 pending，不运输。`can-middleware` 仅保留为 v0.4 历史补充样例，不计入本版本。

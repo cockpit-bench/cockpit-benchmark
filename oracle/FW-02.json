@@ -4,529 +4,523 @@
   "quality_tier": "high",
   "size_band": "small",
   "delivery_status": "active",
-  "review_status": "two_pass_current_head_reviewed",
+  "review_status": "v3_current_head_reviewed",
   "repository": {
     "head": "8421f37236e92270ff98b620ef45e9b0becc96a0",
     "tree": "fb5453ec6edaca0429c2d49d88e856cac3ad9732",
     "branch": "main",
     "remote_count": 0
   },
+  "rubric": {
+    "path": "SCORE_RULES.md",
+    "sha256": "b52d8dcc270cd3cc2bb8ecf942c59adbb1128038d9256ff7ad0835599f096764"
+  },
   "canonical_total": {
-    "score": 41,
+    "score": 40,
     "max": 52
   },
   "canonical_leaves": [
     {
       "name": "compilation.ci_independence",
+      "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score": 3,
-      "reason": "独立 GitHub Actions 包含真实构建、测试、覆盖率门禁和报告上传，且 final HEAD 运行成功。",
       "score_reasoning": "独立 GitHub Actions 包含真实构建、测试、覆盖率门禁和报告上传，且 final HEAD 运行成功。",
       "analysis": "独立 GitHub Actions 包含真实构建、测试、覆盖率门禁和报告上传，且 final HEAD 运行成功。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-02.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.ci_independence",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/ci",
+          "symbol": "ci",
+          "claim": "CI 文件及真实阶段计数。",
+          "observation": "CI 文件及真实阶段计数。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": ".github/workflows/native.yml",
-          "line_start": 2,
-          "line_end": 2,
-          "symbol": "reviewed code evidence",
-          "observation": "CI 入口及实际阶段定义。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
-        },
-        {
-          "source": "github_actions",
-          "path": "https://github.com/cockpit-bench/vehicle-property-service/actions/runs/33758455763",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "33758455763",
-          "observation": "final HEAD 构建、测试、质量门禁和报告流水线成功。",
-          "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "name: Native build test and coverage",
+          "claim": "CI 构建/测试/报告入口。",
+          "observation": "CI 构建/测试/报告入口。",
+          "evidence_type": "source",
+          "independent_group": "ci_pipeline"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "compilation.compilation_independence",
+      "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score": 0,
-      "reason": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
-      "score_reasoning": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
-      "analysis": "构建图直接编译同仓 Soong/Gradle 源码模块；源码依赖优先锁定 0，不能被 compileSdk/sdk_version 表象抬分。",
+      "score_reasoning": "仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': True, 'external_dependencies_declared': False, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [{'path': 'README.md', 'line': 4, 'match': 'requires an AOSP'}], 'standalone_target_anchors': [{'path': '.github/workflows/native.yml', 'line': 2, 'match': 'build'}, {'path': '.github/workflows/native.yml', 'line': 5, 'match': 'build'}, {'path': '.github/workflows/native.yml', 'line': 12, 'match': 'cmake'}, {'path': 'native/CMakeLists.txt', 'line': 2, 'match': 'project('}, {'path': 'native/application/CMakeLists.txt', 'line': 1, 'match': 'add_executable('}, {'path': 'native/common/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/contract/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/hal/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/middleware/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/platform/CMakeLists.txt', 'line': 1, 'match': 'add_library('}]}；锁定 1。",
+      "analysis": "仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': True, 'external_dependencies_declared': False, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [{'path': 'README.md', 'line': 4, 'match': 'requires an AOSP'}], 'standalone_target_anchors': [{'path': '.github/workflows/native.yml', 'line': 2, 'match': 'build'}, {'path': '.github/workflows/native.yml', 'line': 5, 'match': 'build'}, {'path': '.github/workflows/native.yml', 'line': 12, 'match': 'cmake'}, {'path': 'native/CMakeLists.txt', 'line': 2, 'match': 'project('}, {'path': 'native/application/CMakeLists.txt', 'line': 1, 'match': 'add_executable('}, {'path': 'native/common/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/contract/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/hal/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/middleware/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/platform/CMakeLists.txt', 'line': 1, 'match': 'add_library('}]}；锁定 1。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-02.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.compilation_independence",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/compilation/external_build_closure",
+          "symbol": "external_build_closure",
+          "claim": "仓外构建闭包事实。",
+          "observation": "仓外构建闭包事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "Android.bp",
-          "line_start": 13,
-          "line_end": 13,
-          "symbol": "reviewed code evidence",
-          "observation": "Soong/Gradle 直接源码依赖声明。",
+          "path": "README.md",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 4,
+          "end_line": 4,
+          "symbol": "The repository is a dependency-oriented platform slice and requires an AOSP/AAOS build tree.",
+          "claim": "平台依赖或独立目标入口。",
+          "observation": "平台依赖或独立目标入口。",
+          "evidence_type": "source",
+          "independent_group": "build_boundary_0"
         },
         {
           "source": "current_head",
-          "path": "Android.bp",
-          "line_start": 13,
-          "line_end": 13,
-          "symbol": "reviewed code evidence",
-          "observation": "Soong/Gradle 直接源码依赖声明。",
+          "path": ".github/workflows/native.yml",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "name: Native build test and coverage",
+          "claim": "平台依赖或独立目标入口。",
+          "observation": "平台依赖或独立目标入口。",
+          "evidence_type": "source",
+          "independent_group": "build_boundary_1"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "compilation.api_version_management",
+      "score": 2,
       "max_score": 3,
       "status": "scored",
-      "score": 2,
-      "reason": "VERSION/CMake 使用三段语义化版本，但缺少覆盖完整 Android API 的兼容 baseline。",
-      "score_reasoning": "VERSION/CMake 使用三段语义化版本，但缺少覆盖完整 Android API 的兼容 baseline。",
-      "analysis": "VERSION/CMake 使用三段语义化版本，但缺少覆盖完整 Android API 的兼容 baseline。",
+      "score_reasoning": "专用语义版本证据=2、有效 API 检查=0；锁定 2。",
+      "analysis": "专用语义版本证据=2、有效 API 检查=0；锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-02.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "compilation.api_version_management",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
-        },
-        {
-          "source": "current_head",
-          "path": "native/VERSION",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "版本、兼容范围或 API baseline 构建绑定。",
-          "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/api_version",
+          "symbol": "api_version",
+          "claim": "仅接受专用版本和真实 API 检查。",
+          "observation": "仅接受专用版本和真实 API 检查。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": "native/CMakeLists.txt",
-          "line_start": 2,
-          "line_end": 2,
-          "symbol": "reviewed code evidence",
-          "observation": "版本、兼容范围或 API baseline 构建绑定。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 2,
+          "end_line": 2,
+          "symbol": "project(fw02_vehicle_property VERSION 2.1.0 LANGUAGES CXX)",
+          "claim": "语义版本或 API baseline 检查。",
+          "observation": "语义版本或 API baseline 检查。",
+          "evidence_type": "source",
+          "independent_group": "api_control_0"
+        },
+        {
+          "source": "current_head",
+          "path": "native/VERSION",
+          "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "2.1.0",
+          "claim": "语义版本或 API baseline 检查。",
+          "observation": "语义版本或 API baseline 检查。",
+          "evidence_type": "source",
+          "independent_group": "api_control_1"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "quality.integration_test",
+      "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score": 3,
-      "reason": "真实断言覆盖关键模块交互，覆盖代理达到 50%，且 final HEAD 独立流水线测试 100% 通过。",
       "score_reasoning": "真实断言覆盖关键模块交互，覆盖代理达到 50%，且 final HEAD 独立流水线测试 100% 通过。",
       "analysis": "真实断言覆盖关键模块交互，覆盖代理达到 50%，且 final HEAD 独立流水线测试 100% 通过。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-02.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "quality.integration_test",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/integration_test",
+          "symbol": "integration_test",
+          "claim": "测试断言、配置和执行绑定。",
+          "observation": "测试断言、配置和执行绑定。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": "native/tests/vehicle_property_integration_test.cpp",
-          "line_start": 7,
-          "line_end": 7,
-          "symbol": "reviewed code evidence",
-          "observation": "真实测试源与断言。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 6,
+          "end_line": 6,
+          "symbol": "FixedClock",
+          "claim": "真实测试方法与断言。",
+          "observation": "真实测试方法与断言。",
+          "evidence_type": "source",
+          "independent_group": "test_source"
         },
         {
           "source": "current_head",
           "path": "TEST_MAPPING",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "测试套件/映射配置。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
-        },
-        {
-          "source": "github_actions",
-          "path": "https://github.com/cockpit-bench/vehicle-property-service/actions/runs/33758455763",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "33758455763",
-          "observation": "final HEAD 流水线测试全部通过。",
-          "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 2,
+          "end_line": 2,
+          "symbol": "\"presubmit\": [",
+          "claim": "Android 测试套件配置。",
+          "observation": "Android 测试套件配置。",
+          "evidence_type": "source",
+          "independent_group": "test_config"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "solid_principle.single_responsibility",
+      "score": 3,
       "max_score": 4,
       "status": "scored",
-      "score": 3,
-      "reason": "策略、平台访问、HAL 与 Binder 职责有边界；仍保留 CarShellCommand 等大类，故为良好而非优秀。 按 0–4 独立档位锁定 3 分。",
-      "score_reasoning": "策略、平台访问、HAL 与 Binder 职责有边界；仍保留 CarShellCommand 等大类，故为良好而非优秀。 按 0–4 独立档位锁定 3 分。",
-      "analysis": "策略、平台访问、HAL 与 Binder 职责有边界；仍保留 CarShellCommand 等大类，故为良好而非优秀。 按 0–4 独立档位锁定 3 分。",
+      "score_reasoning": "策略、平台访问、HAL 与 Binder 职责有边界；仍保留较大的命令处理类。 按独立 0–4 档位锁定 3。",
+      "analysis": "策略、平台访问、HAL 与 Binder 职责有边界；仍保留较大的命令处理类。 按独立 0–4 档位锁定 3。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-02.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.single_responsibility",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "platform/src/com/cockpitbench/vehicleproperty/VehiclePropertyPolicy.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "策略、平台访问、HAL 与 Binder 职责有边界；仍保留 CarShellCommand 等大类，故为良好而非优秀。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 22,
+          "end_line": 22,
+          "symbol": "public final class VehiclePropertyPolicy {",
+          "claim": "策略、平台访问、HAL 与 Binder 职责有边界；仍保留较大的命令处理类。",
+          "observation": "策略、平台访问、HAL 与 Binder 职责有边界；仍保留较大的命令处理类。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "runtime/src/com/android/car/VehicleStub.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 39,
+          "end_line": 39,
+          "symbol": "public abstract class VehicleStub {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "策略、平台访问、HAL 与 Binder 职责有边界；仍保留 CarShellCommand 等大类，故为良好而非优秀。"
+        "策略、平台访问、HAL 与 Binder 职责有边界；仍保留较大的命令处理类。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.open_closed",
+      "score": 3,
       "max_score": 4,
       "status": "scored",
-      "score": 3,
-      "reason": "VehicleStub 与策略对象提供扩展点，平台/HAL 变化无需集中改写属性策略。 按 0–4 独立档位锁定 3 分。",
-      "score_reasoning": "VehicleStub 与策略对象提供扩展点，平台/HAL 变化无需集中改写属性策略。 按 0–4 独立档位锁定 3 分。",
-      "analysis": "VehicleStub 与策略对象提供扩展点，平台/HAL 变化无需集中改写属性策略。 按 0–4 独立档位锁定 3 分。",
+      "score_reasoning": "VehicleStub 与策略对象提供扩展点。 按独立 0–4 档位锁定 3。",
+      "analysis": "VehicleStub 与策略对象提供扩展点。 按独立 0–4 档位锁定 3。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-02.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.open_closed",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "runtime/src/com/android/car/VehicleStub.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "VehicleStub 与策略对象提供扩展点，平台/HAL 变化无需集中改写属性策略。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 39,
+          "end_line": 39,
+          "symbol": "public abstract class VehicleStub {",
+          "claim": "VehicleStub 与策略对象提供扩展点。",
+          "observation": "VehicleStub 与策略对象提供扩展点。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "api/src/android/car/hardware/property/ICarProperty.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 26,
+          "end_line": 26,
+          "symbol": "interface ICarProperty {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "VehicleStub 与策略对象提供扩展点，平台/HAL 变化无需集中改写属性策略。"
+        "VehicleStub 与策略对象提供扩展点。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.liskov_substitution",
+      "score": 3,
       "max_score": 4,
       "status": "scored",
-      "score": 3,
-      "reason": "AIDL/HIDL VehicleStub 实现遵守共同读写、订阅和死亡通知契约，异常语义一致。 按 0–4 独立档位锁定 3 分。",
-      "score_reasoning": "AIDL/HIDL VehicleStub 实现遵守共同读写、订阅和死亡通知契约，异常语义一致。 按 0–4 独立档位锁定 3 分。",
-      "analysis": "AIDL/HIDL VehicleStub 实现遵守共同读写、订阅和死亡通知契约，异常语义一致。 按 0–4 独立档位锁定 3 分。",
+      "score_reasoning": "AIDL/HIDL VehicleStub 实现遵守共同读写和订阅契约。 按独立 0–4 档位锁定 3。",
+      "analysis": "AIDL/HIDL VehicleStub 实现遵守共同读写和订阅契约。 按独立 0–4 档位锁定 3。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-02.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.liskov_substitution",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "api/src/android/car/hardware/property/ICarProperty.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "AIDL/HIDL VehicleStub 实现遵守共同读写、订阅和死亡通知契约，异常语义一致。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 26,
+          "end_line": 26,
+          "symbol": "interface ICarProperty {",
+          "claim": "AIDL/HIDL VehicleStub 实现遵守共同读写和订阅契约。",
+          "observation": "AIDL/HIDL VehicleStub 实现遵守共同读写和订阅契约。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "platform/src/com/cockpitbench/vehicleproperty/VehiclePropertyPolicy.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 22,
+          "end_line": 22,
+          "symbol": "public final class VehiclePropertyPolicy {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "AIDL/HIDL VehicleStub 实现遵守共同读写、订阅和死亡通知契约，异常语义一致。"
+        "AIDL/HIDL VehicleStub 实现遵守共同读写和订阅契约。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.interface_segregation",
+      "score": 3,
       "max_score": 4,
       "status": "scored",
-      "score": 3,
-      "reason": "属性、回调和策略接口按客户端职责拆分，未把所有车辆能力压入单一新接口。 按 0–4 独立档位锁定 3 分。",
-      "score_reasoning": "属性、回调和策略接口按客户端职责拆分，未把所有车辆能力压入单一新接口。 按 0–4 独立档位锁定 3 分。",
-      "analysis": "属性、回调和策略接口按客户端职责拆分，未把所有车辆能力压入单一新接口。 按 0–4 独立档位锁定 3 分。",
+      "score_reasoning": "属性、回调和策略接口按客户端职责拆分。 按独立 0–4 档位锁定 3。",
+      "analysis": "属性、回调和策略接口按客户端职责拆分。 按独立 0–4 档位锁定 3。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-02.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.interface_segregation",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "platform/src/com/cockpitbench/vehicleproperty/VehiclePropertyPolicy.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "属性、回调和策略接口按客户端职责拆分，未把所有车辆能力压入单一新接口。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 22,
+          "end_line": 22,
+          "symbol": "public final class VehiclePropertyPolicy {",
+          "claim": "属性、回调和策略接口按客户端职责拆分。",
+          "observation": "属性、回调和策略接口按客户端职责拆分。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "runtime/src/com/android/car/VehicleStub.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 39,
+          "end_line": 39,
+          "symbol": "public abstract class VehicleStub {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "属性、回调和策略接口按客户端职责拆分，未把所有车辆能力压入单一新接口。"
+        "属性、回调和策略接口按客户端职责拆分。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "solid_principle.dependency_inversion",
+      "score": 3,
       "max_score": 4,
       "status": "scored",
-      "score": 3,
-      "reason": "服务主要依赖 VehicleStub/HalClient 等抽象；PlatformVehicleAccess 的反射仍是边界内具体机制。 按 0–4 独立档位锁定 3 分。",
-      "score_reasoning": "服务主要依赖 VehicleStub/HalClient 等抽象；PlatformVehicleAccess 的反射仍是边界内具体机制。 按 0–4 独立档位锁定 3 分。",
-      "analysis": "服务主要依赖 VehicleStub/HalClient 等抽象；PlatformVehicleAccess 的反射仍是边界内具体机制。 按 0–4 独立档位锁定 3 分。",
+      "score_reasoning": "服务主要依赖 VehicleStub/HalClient 抽象，平台反射被收敛在边界内。 按独立 0–4 档位锁定 3。",
+      "analysis": "服务主要依赖 VehicleStub/HalClient 抽象，平台反射被收敛在边界内。 按独立 0–4 档位锁定 3。",
       "evidence": [
-        {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-02.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "solid_principle.dependency_inversion",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
-        },
         {
           "source": "current_head",
           "path": "runtime/src/com/android/car/VehicleStub.java",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "服务主要依赖 VehicleStub/HalClient 等抽象；PlatformVehicleAccess 的反射仍是边界内具体机制。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 39,
+          "end_line": 39,
+          "symbol": "public abstract class VehicleStub {",
+          "claim": "服务主要依赖 VehicleStub/HalClient 抽象，平台反射被收敛在边界内。",
+          "observation": "服务主要依赖 VehicleStub/HalClient 抽象，平台反射被收敛在边界内。",
+          "evidence_type": "source",
+          "independent_group": "solid_primary"
         },
         {
           "source": "current_head",
           "path": "api/src/android/car/hardware/property/ICarProperty.aidl",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "reviewed code evidence",
-          "observation": "用于交叉核对该原则的第二处独立代码边界。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 26,
+          "end_line": 26,
+          "symbol": "interface ICarProperty {",
+          "claim": "第二个独立类型边界用于核对同一原则。",
+          "observation": "第二个独立类型边界用于核对同一原则。",
+          "evidence_type": "source",
+          "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high",
       "issues": [
-        "服务主要依赖 VehicleStub/HalClient 等抽象；PlatformVehicleAccess 的反射仍是边界内具体机制。"
+        "服务主要依赖 VehicleStub/HalClient 抽象，平台反射被收敛在边界内。"
       ],
       "recommendations": [
-        "针对所列证据边界做最小职责/抽象改进，并以现有测试保持行为契约。"
+        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
       ]
     },
     {
       "name": "platform_reuse.platform_upgrade",
+      "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score": 10,
-      "reason": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 10。",
-      "score_reasoning": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 10。",
-      "analysis": "Android 七事实为 {'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；严格按 10→8→3→0 首个满足档锁定 10。",
+      "score_reasoning": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 8。",
+      "analysis": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 8。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-02.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "platform_reuse.platform_upgrade",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/platform_upgrade_review",
+          "symbol": "platform_upgrade_review",
+          "claim": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
+          "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "api/src/android/car/VehiclePropertyIds.java",
-          "line_start": 2279,
-          "line_end": 2279,
-          "symbol": "reviewed code evidence",
-          "observation": "Android 平台绑定或抽象事实。",
+          "path": "platform/src/com/cockpitbench/vehicleproperty/VehiclePropertyPolicy.java",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 22,
+          "end_line": 22,
+          "symbol": "public final class VehiclePropertyPolicy {",
+          "claim": "平台访问风险或隔离边界。",
+          "observation": "平台访问风险或隔离边界。",
+          "evidence_type": "source",
+          "independent_group": "platform_primary"
         },
         {
           "source": "current_head",
-          "path": "api/src/android/car/AoapService.java",
-          "line_start": 58,
-          "line_end": 58,
-          "symbol": "reviewed code evidence",
-          "observation": "Android 平台绑定或抽象事实。",
+          "path": "runtime/src/com/android/car/VehicleStub.java",
           "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 39,
+          "end_line": 39,
+          "symbol": "public abstract class VehicleStub {",
+          "claim": "独立适配/服务边界。",
+          "observation": "独立适配/服务边界。",
+          "evidence_type": "source",
+          "independent_group": "platform_secondary"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
+      "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score": 8,
-      "reason": "真实 refs 显示按平台共用分支，锁定 8。",
       "score_reasoning": "真实 refs 显示按平台共用分支，锁定 8。",
       "analysis": "真实 refs 显示按平台共用分支，锁定 8。",
       "evidence": [
         {
-          "source": "current_head_fact_snapshot",
-          "path": "facts/FW-02.json",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "platform_reuse.release_branch_strategy",
-          "observation": "该叶的 final-HEAD 全量事实、计数与候选证据。",
-          "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-          "ref": "HEAD"
-        },
-        {
           "source": "git_ref",
-          "path": ".git",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "refs/heads/platform/8155",
-          "observation": "平台/车型分支 tip 与 main 不同，命名和实际对象共同证明复用粒度。",
+          "path": "refs/heads/platform/8155",
+          "ref": "refs/heads/platform/8155",
           "commit": "fab2b54427e9a46b5f096d464ccafafc899c8c35",
-          "ref": "refs/heads/platform/8155"
+          "commit_oid": "fab2b54427e9a46b5f096d464ccafafc899c8c35",
+          "tree_oid": "87fe963ed371d4ebec8ebf727278b7a78c96c75b",
+          "merge_base": "08201c6278d25198577f2428c92dd2483032bf20",
+          "ahead": 5,
+          "behind": 3,
+          "changed_files": 3,
+          "symbol": "refs/heads/platform/8155",
+          "claim": "分支真实 tip/tree 与 main 差异。",
+          "observation": "分支真实 tip/tree 与 main 差异。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_0"
         },
         {
           "source": "git_ref",
-          "path": ".git",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "refs/heads/platform/8295",
-          "observation": "平台/车型分支 tip 与 main 不同，命名和实际对象共同证明复用粒度。",
+          "path": "refs/heads/platform/8295",
+          "ref": "refs/heads/platform/8295",
           "commit": "1c687eb3c8523279f6f62465b1fdf366dc108994",
-          "ref": "refs/heads/platform/8295"
+          "commit_oid": "1c687eb3c8523279f6f62465b1fdf366dc108994",
+          "tree_oid": "6ce9f3be22046322c69b5337999ce2776f73b64b",
+          "merge_base": "08201c6278d25198577f2428c92dd2483032bf20",
+          "ahead": 5,
+          "behind": 3,
+          "changed_files": 3,
+          "symbol": "refs/heads/platform/8295",
+          "claim": "分支真实 tip/tree 与 main 差异。",
+          "observation": "分支真实 tip/tree 与 main 差异。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_1"
         }
       ],
-      "adjudication": "final HEAD 正向定档与逐档反向复核一致。",
+      "adjudication": "v3 final-HEAD source review and independent band check agree.",
       "confidence": "high"
     }
   ]

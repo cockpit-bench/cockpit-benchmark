@@ -1,285 +1,368 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "3.0.0",
   "repo_id": "APP-11",
   "quality_tier": "medium",
+  "size_band": "medium",
   "delivery_status": "active",
-  "review_status": "two_pass_current_head_reviewed",
+  "review_status": "v3_current_head_reviewed",
   "repository": {
     "head": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
     "tree": "7d47a20ea200c647133dc62b8e45128f660c94b2",
     "branch": "main",
     "remote_count": 0
   },
+  "rubric": {
+    "path": "SCORE_RULES.md",
+    "sha256": "b52d8dcc270cd3cc2bb8ecf942c59adbb1128038d9256ff7ad0835599f096764"
+  },
   "canonical_total": {
-    "score": 26,
+    "score": 21,
     "max": 40
   },
   "canonical_leaves": [
     {
       "name": "architecture.componentization",
+      "score": 5,
       "max_score": 5,
       "status": "scored",
-      "score": 5,
-      "rubric_band": "高级组件化",
-      "reason": "排除 foundation-testkit 与 motion-tests 后 module_count=9；standard_named_module_count=3 且 is_component_friendly=true，已满足高级档任意两项。",
+      "score_reasoning": "共享事实 module_count=9、standard=3、boundary=True、common=True、cycle=False；按 componentization 独立构念锁定 5。",
+      "analysis": "共享事实 module_count=9、standard=3、boundary=True、common=True、cycle=False；按 componentization 独立构念锁定 5。",
       "evidence": [
         {
-          "source": "current_head",
-          "path": "settings.gradle",
-          "line_start": 1,
-          "line_end": 4,
-          "symbol": "current-head code/config evidence",
-          "observation": "列出 foundation 与 motion 的 11 个 included modules；两个测试专用模块从评分 module_count 排除。",
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-11.json",
           "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/facts/architecture/facts",
+          "symbol": "facts",
+          "claim": "共享架构事实。",
+          "observation": "共享架构事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "foundation-core/build.gradle",
-          "line_start": 1,
-          "line_end": 5,
-          "symbol": "current-head code/config evidence",
-          "observation": "foundation-core 为独立 Android library 并单向依赖 foundation-api。",
+          "path": "settings.gradle",
           "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 2,
+          "end_line": 2,
+          "symbol": "include ':foundation-api', ':foundation-core', ':foundation-platform', ':foundation-storage', ':foundation-observability",
+          "claim": "真实模块清单与构建边界。",
+          "observation": "真实模块清单与构建边界。",
+          "evidence_type": "source",
+          "independent_group": "module_graph"
+        },
+        {
+          "source": "current_head",
+          "path": "foundation-api/build.gradle",
+          "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "apply plugin: 'com.android.library'",
+          "claim": "模块插件和依赖声明。",
+          "observation": "模块插件和依赖声明。",
+          "evidence_type": "source",
+          "independent_group": "module_build"
         }
       ],
-      "adjudication": "独立 reviewers 分值一致；本轮按 score-rules 重新核对 current HEAD 事实后采纳。",
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
       "confidence": "high"
     },
     {
       "name": "architecture.decoupling",
+      "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score": 3,
-      "rubric_band": "优秀解耦",
-      "reason": "优秀档命中 module_count≥2、standard_named_module_count≥2、is_component_friendly=true；虽然没有 UI/domain 目录标记，仍满足任意两项。",
+      "score_reasoning": "共享事实 module_count=9、standard=3、boundary=True、common=True、cycle=False；按 decoupling 独立构念锁定 3。",
+      "analysis": "共享事实 module_count=9、standard=3、boundary=True、common=True、cycle=False；按 decoupling 独立构念锁定 3。",
       "evidence": [
         {
-          "source": "current_head",
-          "path": "motion-core/build.gradle",
-          "line_start": 1,
-          "line_end": 5,
-          "symbol": "current-head code/config evidence",
-          "observation": "motion-core 只依赖 motion-api 与 foundation-core。",
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-11.json",
           "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/facts/architecture/facts",
+          "symbol": "facts",
+          "claim": "共享架构事实。",
+          "observation": "共享架构事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "motion-platform/build.gradle",
-          "line_start": 1,
-          "line_end": 5,
-          "symbol": "current-head code/config evidence",
-          "observation": "平台模块通过 Gradle project 边界消费 API/core，无 sibling source root。",
+          "path": "settings.gradle",
           "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 2,
+          "end_line": 2,
+          "symbol": "include ':foundation-api', ':foundation-core', ':foundation-platform', ':foundation-storage', ':foundation-observability",
+          "claim": "真实模块清单与构建边界。",
+          "observation": "真实模块清单与构建边界。",
+          "evidence_type": "source",
+          "independent_group": "module_graph"
+        },
+        {
+          "source": "current_head",
+          "path": "foundation-api/build.gradle",
+          "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "apply plugin: 'com.android.library'",
+          "claim": "模块插件和依赖声明。",
+          "observation": "模块插件和依赖声明。",
+          "evidence_type": "source",
+          "independent_group": "module_build"
         }
       ],
-      "adjudication": "独立 reviewers 分值一致；本轮按 score-rules 重新核对 current HEAD 事实后采纳。",
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
       "confidence": "high"
     },
     {
       "name": "architecture.modularization",
+      "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score": 3,
-      "rubric_band": "高度模块化",
-      "reason": "完整 project 依赖图是从 app/platform/observability/storage 指向 api/core 的有向无环图，未触发循环依赖一票否决；高级档满足 module_count、standard_named_module_count、component_friendly。",
+      "score_reasoning": "共享事实 module_count=9、standard=3、boundary=True、common=True、cycle=False；按 modularization 独立构念锁定 3。",
+      "analysis": "共享事实 module_count=9、standard=3、boundary=True、common=True、cycle=False；按 modularization 独立构念锁定 3。",
       "evidence": [
         {
-          "source": "current_head",
-          "path": "motion-app/build.gradle",
-          "line_start": 1,
-          "line_end": 5,
-          "symbol": "current-head code/config evidence",
-          "observation": "app 单向依赖 motion-api、foundation-core、motion-core。",
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-11.json",
           "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/facts/architecture/facts",
+          "symbol": "facts",
+          "claim": "共享架构事实。",
+          "observation": "共享架构事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "foundation-observability/build.gradle",
-          "line_start": 1,
-          "line_end": 5,
-          "symbol": "current-head code/config evidence",
-          "observation": "observability 单向依赖 foundation-api/core，无反向边。",
+          "path": "settings.gradle",
           "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 2,
+          "end_line": 2,
+          "symbol": "include ':foundation-api', ':foundation-core', ':foundation-platform', ':foundation-storage', ':foundation-observability",
+          "claim": "真实模块清单与构建边界。",
+          "observation": "真实模块清单与构建边界。",
+          "evidence_type": "source",
+          "independent_group": "module_graph"
+        },
+        {
+          "source": "current_head",
+          "path": "foundation-api/build.gradle",
+          "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "apply plugin: 'com.android.library'",
+          "claim": "模块插件和依赖声明。",
+          "observation": "模块插件和依赖声明。",
+          "evidence_type": "source",
+          "independent_group": "module_build"
         }
       ],
-      "adjudication": "独立 reviewers 分值一致；本轮按 score-rules 重新核对 current HEAD 事实后采纳。",
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
       "confidence": "high"
     },
     {
       "name": "compilation.ci_independence",
+      "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score": 1,
-      "rubric_band": "依赖安卓系统层 CI",
-      "reason": "无独立标准 CI 配置；TEST_MAPPING 仅声明 Android presubmit/postsubmit 测试名，属于依赖安卓系统层流水线。",
+      "score_reasoning": "CI 分类=android_system_ci，锁定 1。",
+      "analysis": "CI 分类=android_system_ci，锁定 1。",
       "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-11.json",
+          "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
+          "ref": "HEAD",
+          "json_pointer": "/facts/ci",
+          "symbol": "ci",
+          "claim": "CI 配置枚举和阶段判定。",
+          "observation": "CI 配置枚举和阶段判定。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
         {
           "source": "current_head",
           "path": "TEST_MAPPING",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "current-head code/config evidence",
-          "observation": "仅有 MotionCoreTests presubmit 与 MotionFixtureIntegrationTests postsubmit 映射。",
           "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "{\"presubmit\":[{\"name\":\"MotionCoreTests\"}],\"postsubmit\":[{\"name\":\"MotionFixtureIntegrationTests\"}]}",
+          "claim": "可执行 CI 入口。",
+          "observation": "可执行 CI 入口。",
+          "evidence_type": "source",
+          "independent_group": "ci_pipeline"
         }
       ],
-      "adjudication": "独立 reviewers 分值一致；本轮按 score-rules 重新核对 current HEAD 事实后采纳。",
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
       "confidence": "high"
     },
     {
       "name": "compilation.compilation_independence",
+      "score": 2,
       "max_score": 3,
       "status": "scored",
-      "score": 0,
-      "rubric_band": "源码依赖",
-      "reason": "九个生产模块均作为同仓 Gradle project 源码构建，并通过 implementation project(...) 形成依赖图；未见业务依赖以预构建 SDK/AAR 输入。按 0 分“源码依赖”定档；AGP 8.7.3 和 compileSdkVersion 35 是构建工具/平台版本，不是稳定业务 SDK。",
+      "score_reasoning": "仓外构建闭包={'critical_dependencies_version_pinned': True, 'external_dependencies_declared': True, 'has_framework_jar_dependency': False, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_meaningful_standalone_target': True, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': True, 'requires_full_platform_source': False}；同仓模块依赖不扣分，锁定 2。",
+      "analysis": "仓外构建闭包={'critical_dependencies_version_pinned': True, 'external_dependencies_declared': True, 'has_framework_jar_dependency': False, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_meaningful_standalone_target': True, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': True, 'requires_full_platform_source': False}；同仓模块依赖不扣分，锁定 2。",
       "evidence": [
         {
-          "source": "code",
-          "path": "settings.gradle",
-          "line_start": 2,
-          "line_end": 4,
-          "symbol": "Gradle module includes",
-          "observation": "声明 foundation 与 motion 的 11 个同仓源码模块。"
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-11.json",
+          "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
+          "ref": "HEAD",
+          "json_pointer": "/facts/compilation/dependency_type_candidates",
+          "symbol": "dependency_type_candidates",
+          "claim": "仓外构建闭包事实。",
+          "observation": "仓外构建闭包事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
-          "source": "code",
-          "path": "motion-app/build.gradle",
-          "line_start": 5,
-          "line_end": 5,
-          "symbol": "dependencies",
-          "observation": "motion-app 直接以 implementation project(...) 消费 motion-api、foundation-core、motion-core 源码模块。"
+          "source": "current_head",
+          "path": "build.gradle",
+          "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
+          "ref": "HEAD",
+          "start_line": 1,
+          "end_line": 1,
+          "symbol": "plugins {",
+          "claim": "平台依赖或可独立构建入口。",
+          "observation": "平台依赖或可独立构建入口。",
+          "evidence_type": "source",
+          "independent_group": "build_boundary_0"
         }
       ],
-      "adjudication": "A/B reviewer 均给 2，但 current HEAD 的依赖形态是同仓源码 project，不是 SDK/AAR。按合同依赖类型优先裁决为 0。",
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
       "confidence": "high"
     },
     {
       "name": "compilation.api_version_management",
+      "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score": 1,
-      "rubric_band": "手动版本不可控",
-      "reason": "应用内手写 versionCode 1/versionName 1.0，CHANGELOG 标题为 1.0.0，但没有单一版本源、自动化、兼容性检查或向后兼容合同，属于手动版本不可控。",
+      "score_reasoning": "语义版本=False、有效兼容检查=0、自动绑定=0；已排除 Java/SDK 级别和固定字符串检查，锁定 1。",
+      "analysis": "语义版本=False、有效兼容检查=0、自动绑定=0；已排除 Java/SDK 级别和固定字符串检查，锁定 1。",
       "evidence": [
         {
-          "source": "current_head",
-          "path": "motion-app/build.gradle",
-          "line_start": 2,
-          "line_end": 4,
-          "symbol": "current-head code/config evidence",
-          "observation": "versionCode 1 与 versionName 1.0 直接写在模块构建文件。",
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-11.json",
           "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "json_pointer": "/facts/api_version",
+          "symbol": "api_version",
+          "claim": "有效版本与 API 兼容机制事实。",
+          "observation": "有效版本与 API 兼容机制事实。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "CHANGELOG.md",
-          "line_start": 1,
-          "line_end": 3,
-          "symbol": "current-head code/config evidence",
-          "observation": "仅有手写 1.0.0 初始版本记录。",
+          "path": "motion-app/build.gradle",
           "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "defaultConfig { minSdkVersion 30; targetSdkVersion 35; applicationId 'com.cockpitbench.motioncontrol'; versionCode 1; ve",
+          "claim": "版本或真实 API baseline 机制。",
+          "observation": "版本或真实 API baseline 机制。",
+          "evidence_type": "source",
+          "independent_group": "api_control_0"
         }
       ],
-      "adjudication": "独立 reviewers 分值一致；本轮按 score-rules 重新核对 current HEAD 事实后采纳。",
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
       "confidence": "high"
     },
     {
       "name": "platform_reuse.platform_upgrade",
+      "score": 3,
       "max_score": 10,
       "status": "scored",
-      "score": 10,
-      "rubric_band": "极速适配",
-      "reason": "10 分档中 total_bound_status=0、has_interface_abstraction=true、has_complex_permission_adaptation=false 三项命中，立即锁定 10；反射 SystemProperties 使 non-compatible API=true，但锁档规则禁止继续向低档倒打。",
+      "score_reasoning": "Android 七事实={'arch_bound_status': 0, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_non_compatible_api': True, 'version_bound_status': 0}；按风险单调硬门槛锁定 3。",
+      "analysis": "Android 七事实={'arch_bound_status': 0, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_non_compatible_api': True, 'version_bound_status': 0}；按风险单调硬门槛锁定 3。",
       "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/APP-11.json",
+          "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
+          "ref": "HEAD",
+          "json_pointer": "/facts/platform_upgrade/seven_fact_candidates",
+          "symbol": "seven_fact_candidates",
+          "claim": "Android 七事实及风险封顶。",
+          "observation": "Android 七事实及风险封顶。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
         {
           "source": "current_head",
           "path": "motion-platform/src/main/java/com/cockpitbench/motion/platform/PlatformMotionAdapter.java",
-          "line_start": 16,
-          "line_end": 16,
-          "symbol": "current-head code/config evidence",
-          "observation": "反射 android.os.SystemProperties，故 has_non_compatible_api=true；同一文件无 SDK_INT/ABI/native binding。",
           "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
-          "ref": "HEAD"
-        },
-        {
-          "source": "current_head",
-          "path": "motion-core/src/main/java/com/cockpitbench/motion/core/ActuatorSignalRouter.java",
-          "line_start": 16,
-          "line_end": 16,
-          "symbol": "current-head code/config evidence",
-          "observation": "Adapter 接口把平台信号读写与业务路由隔离。",
-          "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
-          "ref": "HEAD"
-        },
-        {
-          "source": "current_head",
-          "path": "motion-app/src/main/AndroidManifest.xml",
-          "line_start": 1,
-          "line_end": 1,
-          "symbol": "current-head code/config evidence",
-          "observation": "仅清单声明 CONTROL_CAR_SEATS，定向扫描无运行时权限适配命中。",
-          "commit": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
-          "ref": "HEAD"
+          "ref": "HEAD",
+          "start_line": 16,
+          "end_line": 16,
+          "symbol": "package com.cockpitbench.motion.platform;import java.lang.reflect.*;public final class PlatformMotionAdapter{public Stri",
+          "claim": "平台风险或隔离边界。",
+          "observation": "平台风险或隔离边界。",
+          "evidence_type": "source",
+          "independent_group": "platform_source_0"
         }
       ],
-      "adjudication": "独立 reviewers 分值一致；本轮按 score-rules 重新核对 current HEAD 事实后采纳。",
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
       "confidence": "high"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
+      "score": 3,
       "max_score": 10,
       "status": "scored",
-      "score": 3,
-      "rubric_band": "单车型单 SOP",
-      "reason": "同一 2026.1 版本存在 model-a1 与 model-b2 两条车型后缀 SOP 分支；二者 tree 不同，属性被 build.gradle 生成 BuildConfig 并由 PlatformMotionAdapter 消费，属于真实“单车型单 SOP”而不是空分支。",
+      "score_reasoning": "真实 refs 同时存在 main 与平台分支、无车型级一车一 SOP，锁定 8。",
+      "analysis": "真实 refs 同时存在 main 与平台分支、无车型级一车一 SOP，锁定 8。",
       "evidence": [
         {
           "source": "git_ref",
-          "path": "product/platform.properties",
-          "line_start": 1,
-          "line_end": 4,
-          "symbol": "git ref evidence",
-          "observation": "sa8155、model-a1、property offset 256。",
-          "commit": "418aba900972455796705d22ecce5447ab2dbdc2",
-          "ref": "refs/heads/sop/2026.1-model-a1"
+          "path": "refs/heads/platform/8155",
+          "ref": "refs/heads/platform/8155",
+          "commit": "f037ffc21b67fd241515e5597e073931ad155ae8",
+          "commit_oid": "f037ffc21b67fd241515e5597e073931ad155ae8",
+          "tree_oid": "3311ef76b622dfdbfbdf68e1d0dbfce8eebdfe60",
+          "merge_base": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
+          "ahead": 1,
+          "behind": 0,
+          "changed_files": 1,
+          "symbol": "refs/heads/platform/8155",
+          "claim": "平台分支的真实 tip/tree 和差异。",
+          "observation": "平台分支的真实 tip/tree 和差异。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_0"
         },
         {
           "source": "git_ref",
-          "path": "product/platform.properties",
-          "line_start": 1,
-          "line_end": 4,
-          "symbol": "git ref evidence",
-          "observation": "sa8295、model-b2、property offset 512。",
-          "commit": "dc7ac0a5e97e80dd4432e88cce44e035c85f9c53",
-          "ref": "refs/heads/sop/2026.1-model-b2"
-        },
-        {
-          "source": "git_ref",
-          "path": "motion-platform/build.gradle",
-          "line_start": 1,
-          "line_end": 23,
-          "symbol": "git ref evidence",
-          "observation": "SOP 属性被校验并生成 platform/model/offset BuildConfig 字段；A1/B2 共用该接线，车型值不同。",
-          "commit": "418aba900972455796705d22ecce5447ab2dbdc2",
-          "ref": "refs/heads/sop/2026.1-model-a1"
+          "path": "refs/heads/platform/8295",
+          "ref": "refs/heads/platform/8295",
+          "commit": "7dfbf90dc7380c72c87be739c5f8d0b472d539e6",
+          "commit_oid": "7dfbf90dc7380c72c87be739c5f8d0b472d539e6",
+          "tree_oid": "22fca754b152e0ba5b81b13bddbccb9eaa41325a",
+          "merge_base": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
+          "ahead": 1,
+          "behind": 0,
+          "changed_files": 1,
+          "symbol": "refs/heads/platform/8295",
+          "claim": "平台分支的真实 tip/tree 和差异。",
+          "observation": "平台分支的真实 tip/tree 和差异。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_1"
         }
       ],
-      "adjudication": "独立 reviewers 分值一致；本轮按 score-rules 重新核对 current HEAD 事实后采纳。",
+      "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
       "confidence": "high"
     }
-  ],
-  "rubric": {
-    "path": "SCORE_RULES.md",
-    "sha256": "190613d83db6baab49bb66069d1de78fe7ba673f1969ff4e4a5b4c87ecbf7d74"
-  }
+  ]
 }

@@ -94,6 +94,20 @@
       "tests/usb/AoapPhoneCompanionApp/Android.bp",
       "tests/vehiclehal_test/Android.bp"
     ],
+    "external_build_closure": {
+      "requires_full_platform_source": true,
+      "has_meaningful_standalone_target": false,
+      "external_dependencies_declared": true,
+      "critical_dependencies_version_pinned": false,
+      "platform_requirement_anchors": [
+        {
+          "path": "README.md",
+          "line": 5,
+          "match": "requires an AAOS"
+        }
+      ],
+      "standalone_target_anchors": []
+    },
     "source_dependency_anchors": [
       {
         "path": "Android.bp",
@@ -146,33 +160,7 @@
       "compat/legacy/car-lib/api/current.txt",
       "compat/legacy/car-lib/api/removed.txt"
     ],
-    "semver_anchors": [
-      {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicy.java",
-        "line": 67,
-        "match": "1.0.23"
-      },
-      {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicy.java",
-        "line": 199,
-        "match": "1.0.23"
-      },
-      {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicyFilter.java",
-        "line": 45,
-        "match": "1.0.23"
-      },
-      {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicyFilter.java",
-        "line": 176,
-        "match": "1.0.23"
-      },
-      {
-        "path": "car-lib/src/android/car/input/CustomInputEvent.java",
-        "line": 73,
-        "match": "1.0.15"
-      }
-    ],
+    "semver_anchors": [],
     "compatibility_anchors": [
       {
         "path": "car-builtin-lib/Android.bp",
@@ -186,18 +174,18 @@
       },
       {
         "path": "car-lib/Android.bp",
-        "line": 107,
-        "match": "released"
-      },
-      {
-        "path": "car-lib/Android.bp",
         "line": 109,
         "match": "last-released"
       },
       {
-        "path": "car-lib/src/android/car/Car.java",
-        "line": 1444,
-        "match": "released"
+        "path": "car-lib/Android.bp",
+        "line": 111,
+        "match": "last-released"
+      },
+      {
+        "path": "compat/legacy/car-lib/Android.bp",
+        "line": 105,
+        "match": "last-released"
       }
     ]
   },
@@ -373,6 +361,15 @@
         }
       ]
     }
+  },
+  "platform_upgrade_review": {
+    "has_non_compatible_api": true,
+    "has_arch_specific_deps": false,
+    "version_bound_status": 3,
+    "arch_bound_status": 2,
+    "has_interface_abstraction": false,
+    "has_light_permission_adaptation": false,
+    "has_complex_permission_adaptation": false
   },
   "branches": {
     "refs": [

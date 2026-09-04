@@ -82,6 +82,71 @@
       "soa-service/build.gradle",
       "soa-vms-tests/build.gradle"
     ],
+    "external_build_closure": {
+      "requires_full_platform_source": true,
+      "has_meaningful_standalone_target": true,
+      "external_dependencies_declared": true,
+      "critical_dependencies_version_pinned": false,
+      "platform_requirement_anchors": [
+        {
+          "path": "README.md",
+          "line": 4,
+          "match": "complete build still requires AOSP"
+        }
+      ],
+      "standalone_target_anchors": [
+        {
+          "path": "APP_BUILD",
+          "line": 7,
+          "match": "build"
+        },
+        {
+          "path": "APP_BUILD",
+          "line": 9,
+          "match": "cmake"
+        },
+        {
+          "path": "APP_BUILD",
+          "line": 15,
+          "match": "cmake"
+        },
+        {
+          "path": "native/CMakeLists.txt",
+          "line": 3,
+          "match": "project("
+        },
+        {
+          "path": "native/CMakeLists.txt",
+          "line": 28,
+          "match": "cmake"
+        },
+        {
+          "path": "native/application/CMakeLists.txt",
+          "line": 1,
+          "match": "add_library("
+        },
+        {
+          "path": "native/application/CMakeLists.txt",
+          "line": 7,
+          "match": "add_library("
+        },
+        {
+          "path": "native/application/CMakeLists.txt",
+          "line": 13,
+          "match": "add_executable("
+        },
+        {
+          "path": "native/broker/CMakeLists.txt",
+          "line": 1,
+          "match": "add_library("
+        },
+        {
+          "path": "native/broker/CMakeLists.txt",
+          "line": 7,
+          "match": "add_library("
+        }
+      ]
+    },
     "source_dependency_anchors": [
       {
         "path": "soa-service/build.gradle",
@@ -109,58 +174,22 @@
     ],
     "semver_anchors": [
       {
-        "path": "build.gradle",
-        "line": 2,
-        "match": "8.7.3"
+        "path": "native/CMakeLists.txt",
+        "line": 5,
+        "match": "1.5.0"
       },
       {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicy.java",
-        "line": 67,
-        "match": "1.0.23"
+        "path": "native/CMakeLists.txt",
+        "line": 23,
+        "match": "1.14.0"
       },
       {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicy.java",
-        "line": 199,
-        "match": "1.0.23"
-      },
-      {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicyFilter.java",
-        "line": 45,
-        "match": "1.0.23"
-      },
-      {
-        "path": "car-lib/src/android/car/hardware/power/CarPowerPolicyFilter.java",
-        "line": 176,
-        "match": "1.0.23"
+        "path": "native/VERSION",
+        "line": 1,
+        "match": "1.5.0"
       }
     ],
-    "compatibility_anchors": [
-      {
-        "path": "car-lib/src/android/car/Car.java",
-        "line": 1444,
-        "match": "released"
-      },
-      {
-        "path": "car-lib/src/android/car/Car.java",
-        "line": 1481,
-        "match": "released"
-      },
-      {
-        "path": "car-lib/src/android/car/Car.java",
-        "line": 1497,
-        "match": "released"
-      },
-      {
-        "path": "car-lib/src/android/car/CarProjectionManager.java",
-        "line": 134,
-        "match": "released"
-      },
-      {
-        "path": "car-lib/src/android/car/CarProjectionManager.java",
-        "line": 143,
-        "match": "released"
-      }
-    ]
+    "compatibility_anchors": []
   },
   "integration_test": {
     "test_source_count": 20,
@@ -321,6 +350,15 @@
         }
       ]
     }
+  },
+  "platform_upgrade_review": {
+    "has_non_compatible_api": false,
+    "has_arch_specific_deps": false,
+    "version_bound_status": 0,
+    "arch_bound_status": 0,
+    "has_interface_abstraction": true,
+    "has_light_permission_adaptation": false,
+    "has_complex_permission_adaptation": false
   },
   "branches": {
     "refs": [

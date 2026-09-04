@@ -1,4 +1,8 @@
 {
+  "schema_version": "3.0.0",
+  "repo_id": "APP-02",
+  "kind": "APP",
+  "head": "82f129b9d9c1270ae2707032eee6b79c8dd072f2",
   "facts": {
     "api_version": {
       "automation_evidence": [],
@@ -25,7 +29,7 @@
         }
       ],
       "compatibility_evidence": [],
-      "contract": "app_api_version_v2_facts",
+      "contract": "app_api_version_v3_facts",
       "dedicated_version_control_files": [
         {
           "git_blob_oid": "da0a8d8312adfd7abaec35ccef2400f3c33cd650",
@@ -68,8 +72,28 @@
         }
       ],
       "version_records": [
-        "2.1.0",
-        "21"
+        {
+          "git_blob_oid": "da0a8d8312adfd7abaec35ccef2400f3c33cd650",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:version.properties",
+          "line": 1,
+          "management_candidate": "dedicated_version_control",
+          "path": "version.properties",
+          "semantic": true,
+          "semantic_format": true,
+          "source": "dedicated_version_file",
+          "value": "2.1.0"
+        },
+        {
+          "git_blob_oid": "da0a8d8312adfd7abaec35ccef2400f3c33cd650",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:version.properties",
+          "line": 2,
+          "management_candidate": "manual_literal",
+          "path": "version.properties",
+          "semantic": false,
+          "semantic_format": false,
+          "source": "dedicated_version_file_literal",
+          "value": "21"
+        }
       ]
     },
     "architecture": {
@@ -244,12 +268,14 @@
           "systemui-shell/src/com/android/systemui/car/systembar/ButtonRoleHolderController.java"
         ]
       },
-      "contract": "app_architecture_v1_fact_candidates",
+      "contract": "app_architecture_v3_fact_candidates",
       "cycles": [],
       "evidence_gaps": [],
       "excluded_test_or_build_modules": [],
       "facts": {
+        "business_boundary_isolation": false,
         "code_not_in_root_package": true,
+        "common_capability_in_base_core": true,
         "component_friendly_check_count": 3,
         "component_friendly_checks": {
           "business_boundary_isolation": false,
@@ -266,6 +292,7 @@
         "is_component_friendly": true,
         "layered_business_module_count": 3,
         "module_count": 3,
+        "modules_have_independent_build_entry": true,
         "standard_named_module_count": 2
       },
       "internal_dependency_evidence": [
@@ -468,13 +495,17 @@
           "path": "launcher-grid/build.gradle"
         }
       ],
-      "contract": "app_compilation_v1_facts",
+      "contract": "external_build_closure_v3_facts",
       "dependency_type_candidates": {
+        "critical_dependencies_version_pinned": false,
+        "external_dependencies_declared": false,
         "has_framework_jar_dependency": true,
         "has_internal_project_source_dependency": true,
         "has_local_aar_dependency": false,
+        "has_meaningful_standalone_target": true,
         "has_unversioned_external_artifact": false,
-        "has_versioned_external_artifact": false
+        "has_versioned_external_artifact": false,
+        "requires_full_platform_source": true
       },
       "evidence_gaps": [],
       "framework_jar_dependencies": [
@@ -517,10 +548,28 @@
       ],
       "local_aar_dependencies": [],
       "maven_artifacts": [],
+      "platform_source_requirement_evidence": [
+        {
+          "excerpt": "from Soong modules and requires an AAOS/AOSP platform tree for a complete product build.",
+          "git_blob_oid": "9776edcfcdcf2343639b600aa0b471664933edfa",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:README.md",
+          "line": 5,
+          "path": "README.md"
+        }
+      ],
+      "standalone_build_evidence": [
+        {
+          "excerpt": "name: Android build and API check",
+          "git_blob_oid": "2f33ca69ada9ec3334e423798b27cd6c7eb08477",
+          "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:.github/workflows/android.yml",
+          "line": 2,
+          "path": ".github/workflows/android.yml"
+        }
+      ],
       "type_safe_project_accessors": []
     },
     "platform_upgrade": {
-      "contract": "app_platform_upgrade_v2_fact_candidates",
+      "contract": "android_platform_upgrade_v3_fact_candidates",
       "evidence_gaps": [],
       "scan_policy": {
         "allowed_roots": [
@@ -553,13 +602,502 @@
         ]
       },
       "seven_fact_candidates": {
-        "arch_bound_status": 0,
-        "has_arch_specific_deps": false,
-        "has_complex_permission_adaptation": false,
-        "has_interface_abstraction": false,
-        "has_light_permission_adaptation": true,
-        "has_non_compatible_api": false,
-        "version_bound_status": 0
+        "arch_bound_status": {
+          "build_evidence": {
+            "abi_filters": [],
+            "load_library": [],
+            "native_import": []
+          },
+          "business_modules": [],
+          "enum": "0-3",
+          "fallback_load": false,
+          "multi_abi": false,
+          "source_evidence": {
+            "cpu_abi": [],
+            "load_library": [],
+            "supported_abis": []
+          },
+          "value": 0
+        },
+        "has_arch_specific_deps": {
+          "abi_values": [],
+          "evidence": {
+            "abi_filters": [],
+            "load_library": [],
+            "native_import": []
+          },
+          "single_abi_native_import": false,
+          "value": false
+        },
+        "has_complex_permission_adaptation": {
+          "evidence": {
+            "notification_channel": [],
+            "runtime_check": [],
+            "runtime_request": [],
+            "scoped_storage": [],
+            "versioned_permission": []
+          },
+          "value": false
+        },
+        "has_interface_abstraction": {
+          "classification_policy": "Requires an explicitly platform/version/architecture-named adapter or strategy declaration, a current-head implementation, and an actual platform, SDK/version, ABI, or non-compatible API call inside that implementation. Only a status actually covered by such a call receives the abstraction cap; UI callbacks, providers, names alone, and arbitrary abstract classes do not qualify.",
+          "covered_statuses": [],
+          "evidence": [],
+          "rejected_generic_declarations": [
+            {
+              "declaration_kind": "interface",
+              "declaration_name": "LauncherCatalog",
+              "excerpt": "public interface LauncherCatalog {",
+              "git_blob_oid": "ce5233be3e557437284e69fcb6564a2f9fd7400b",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:launcher-common/src/main/java/com/android/car/launcher/domain/LauncherCatalog.java",
+              "line": 5,
+              "path": "launcher-common/src/main/java/com/android/car/launcher/domain/LauncherCatalog.java",
+              "rejection_reason": "name does not identify both a platform/version/architecture concept and an adapter/strategy abstraction role"
+            }
+          ],
+          "rejected_uncovered_implementations": [],
+          "unimplemented_platform_declarations": [],
+          "value": false
+        },
+        "has_light_permission_adaptation": {
+          "declarations": [
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 22,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.car.permission.ACCESS_CAR_PROJECTION_STATUS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 24,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.car.permission.CONTROL_CAR_APP_LAUNCH",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 26,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.ACTIVITY_EMBEDDING",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 28,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.CHANGE_COMPONENT_ENABLED_STATE",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 30,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.START_TASKS_FROM_RECENTS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 32,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.CONTROL_INCALL_EXPERIENCE",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 34,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.INJECT_EVENTS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 36,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.INTERNAL_SYSTEM_WINDOW",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 38,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.MANAGE_ACTIVITY_TASKS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 40,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.REORDER_TASKS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 42,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.REMOVE_TASKS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 45,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.GET_TASKS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 47,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.MANAGE_USERS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 49,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.MEDIA_CONTENT_CONTROL",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 51,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.PACKAGE_USAGE_STATS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 53,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.QUERY_ALL_PACKAGES",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 55,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.READ_CONTACTS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 57,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.READ_PHONE_STATE",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 59,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.MONITOR_INPUT",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 61,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.SYSTEM_ALERT_WINDOW",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 63,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.ACCESS_VOICE_INTERACTION_SERVICE",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 65,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.READ_DEVICE_CONFIG",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 67,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.POST_NOTIFICATIONS",
+              "upgrade_relevant": true
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 68,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.FORCE_STOP_PACKAGES",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 69,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.INTERACT_ACROSS_USERS_FULL",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 71,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.car.permission.MANAGE_CAR_SYSTEM_UI",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 73,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.car.permission.CAR_EXTERIOR_ENVIRONMENT",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 75,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.car.permission.CONTROL_CAR_CLIMATE",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 77,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.car.permission.CAR_MONITOR_CLUSTER_NAVIGATION_STATE",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "b6100e222bfb63539c4fd7ddfbbdb3f956263c59",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:app/AndroidManifest.xml",
+              "line": 79,
+              "path": "app/AndroidManifest.xml",
+              "permission": "android.permission.ACCESS_NOTIFICATIONS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "c3178e5ff8da97c543319bc9fa040579c347a1d9",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:docklib/AndroidManifest.xml",
+              "line": 21,
+              "path": "docklib/AndroidManifest.xml",
+              "permission": "android.permission.INTERACT_ACROSS_USERS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "c3178e5ff8da97c543319bc9fa040579c347a1d9",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:docklib/AndroidManifest.xml",
+              "line": 23,
+              "path": "docklib/AndroidManifest.xml",
+              "permission": "android.permission.MEDIA_CONTENT_CONTROL",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "c3178e5ff8da97c543319bc9fa040579c347a1d9",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:docklib/AndroidManifest.xml",
+              "line": 25,
+              "path": "docklib/AndroidManifest.xml",
+              "permission": "android.permission.ACCESS_NOTIFICATIONS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "128489ad0607b17e638c076d83aab691da85c40b",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/app/src/main/AndroidManifest.xml",
+              "line": 23,
+              "path": "libs/appgrid/app/src/main/AndroidManifest.xml",
+              "permission": "android.permission.START_TASKS_FROM_RECENTS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "128489ad0607b17e638c076d83aab691da85c40b",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/app/src/main/AndroidManifest.xml",
+              "line": 25,
+              "path": "libs/appgrid/app/src/main/AndroidManifest.xml",
+              "permission": "android.permission.QUERY_ALL_PACKAGES",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "128489ad0607b17e638c076d83aab691da85c40b",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/app/src/main/AndroidManifest.xml",
+              "line": 27,
+              "path": "libs/appgrid/app/src/main/AndroidManifest.xml",
+              "permission": "android.permission.MEDIA_CONTENT_CONTROL",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "128489ad0607b17e638c076d83aab691da85c40b",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/app/src/main/AndroidManifest.xml",
+              "line": 28,
+              "path": "libs/appgrid/app/src/main/AndroidManifest.xml",
+              "permission": "android.permission.INTERACT_ACROSS_USERS_FULL",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "128489ad0607b17e638c076d83aab691da85c40b",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/app/src/main/AndroidManifest.xml",
+              "line": 29,
+              "path": "libs/appgrid/app/src/main/AndroidManifest.xml",
+              "permission": "android.permission.FORCE_STOP_PACKAGES",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "128489ad0607b17e638c076d83aab691da85c40b",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/app/src/main/AndroidManifest.xml",
+              "line": 31,
+              "path": "libs/appgrid/app/src/main/AndroidManifest.xml",
+              "permission": "android.permission.MANAGE_USERS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "128489ad0607b17e638c076d83aab691da85c40b",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/app/src/main/AndroidManifest.xml",
+              "line": 32,
+              "path": "libs/appgrid/app/src/main/AndroidManifest.xml",
+              "permission": "android.permission.CREATE_USERS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "128489ad0607b17e638c076d83aab691da85c40b",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/app/src/main/AndroidManifest.xml",
+              "line": 34,
+              "path": "libs/appgrid/app/src/main/AndroidManifest.xml",
+              "permission": "android.permission.CHANGE_COMPONENT_ENABLED_STATE",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "ccae000a07bce34e700139c57e06553ecb1b0fab",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/lib/AndroidManifest.xml",
+              "line": 22,
+              "path": "libs/appgrid/lib/AndroidManifest.xml",
+              "permission": "android.permission.QUERY_ALL_PACKAGES",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "ccae000a07bce34e700139c57e06553ecb1b0fab",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/lib/AndroidManifest.xml",
+              "line": 25,
+              "path": "libs/appgrid/lib/AndroidManifest.xml",
+              "permission": "android.permission.START_TASKS_FROM_RECENTS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "ccae000a07bce34e700139c57e06553ecb1b0fab",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/lib/AndroidManifest.xml",
+              "line": 26,
+              "path": "libs/appgrid/lib/AndroidManifest.xml",
+              "permission": "android.permission.MEDIA_CONTENT_CONTROL",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "ccae000a07bce34e700139c57e06553ecb1b0fab",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/lib/AndroidManifest.xml",
+              "line": 28,
+              "path": "libs/appgrid/lib/AndroidManifest.xml",
+              "permission": "android.permission.MANAGE_USERS",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "ccae000a07bce34e700139c57e06553ecb1b0fab",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/lib/AndroidManifest.xml",
+              "line": 29,
+              "path": "libs/appgrid/lib/AndroidManifest.xml",
+              "permission": "android.permission.MEDIA_CONTENT_CONTROL",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "ccae000a07bce34e700139c57e06553ecb1b0fab",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/lib/AndroidManifest.xml",
+              "line": 30,
+              "path": "libs/appgrid/lib/AndroidManifest.xml",
+              "permission": "android.permission.INTERACT_ACROSS_USERS_FULL",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "ccae000a07bce34e700139c57e06553ecb1b0fab",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/appgrid/lib/AndroidManifest.xml",
+              "line": 33,
+              "path": "libs/appgrid/lib/AndroidManifest.xml",
+              "permission": "com.android.car.docklib.permission.BROADCAST_SENDER",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "8fee1c018a5fcc378f8f8aa33b8d56e8d4bda4c3",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/car-launcher-common/AndroidManifest.xml",
+              "line": 20,
+              "path": "libs/car-launcher-common/AndroidManifest.xml",
+              "permission": "android.permission.SYSTEM_ALERT_WINDOW",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "8fee1c018a5fcc378f8f8aa33b8d56e8d4bda4c3",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/car-launcher-common/AndroidManifest.xml",
+              "line": 21,
+              "path": "libs/car-launcher-common/AndroidManifest.xml",
+              "permission": "android.permission.FORCE_STOP_PACKAGES",
+              "upgrade_relevant": false
+            },
+            {
+              "git_blob_oid": "8fee1c018a5fcc378f8f8aa33b8d56e8d4bda4c3",
+              "head_blob": "82f129b9d9c1270ae2707032eee6b79c8dd072f2:libs/car-launcher-common/AndroidManifest.xml",
+              "line": 22,
+              "path": "libs/car-launcher-common/AndroidManifest.xml",
+              "permission": "android.permission.INTERACT_ACROSS_USERS",
+              "upgrade_relevant": false
+            }
+          ],
+          "relevant_permissions": [
+            "android.permission.POST_NOTIFICATIONS"
+          ],
+          "value": true
+        },
+        "has_non_compatible_api": {
+          "evidence": {
+            "internal_android_api": [],
+            "reflection_class_lookup": [],
+            "reflection_method_invoke": [],
+            "system_properties_api": [],
+            "vendor_private_namespace": []
+          },
+          "value": false
+        },
+        "version_bound_status": {
+          "business_modules": [],
+          "centralized_or_compatibility_layer": false,
+          "classification_policy": "Only current-platform Build.VERSION.SDK_INT control flow and specified RequiresApi/TargetApi annotations are in scope. Comparisons of an app's targetSdkVersion metadata with VERSION_CODES are excluded.",
+          "enum": "0-3",
+          "evidence": {
+            "current_sdk_control_flow": [],
+            "standard_annotation": []
+          },
+          "excluded_target_sdk_comparisons": [],
+          "standard_annotation_paths": [],
+          "value": 0
+        }
       },
       "targeted_path_counts": {
         "manifest": 6,
@@ -623,8 +1161,5 @@
       "sop_branch_count": 0,
       "sop_branches": []
     }
-  },
-  "head": "82f129b9d9c1270ae2707032eee6b79c8dd072f2",
-  "kind": "APP",
-  "repo_id": "APP-02"
+  }
 }

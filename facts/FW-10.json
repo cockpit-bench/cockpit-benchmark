@@ -73,6 +73,56 @@
       "manager-tests/build.gradle",
       "settings.gradle"
     ],
+    "external_build_closure": {
+      "requires_full_platform_source": true,
+      "has_meaningful_standalone_target": true,
+      "external_dependencies_declared": true,
+      "critical_dependencies_version_pinned": false,
+      "platform_requirement_anchors": [
+        {
+          "path": "README.md",
+          "line": 4,
+          "match": "requires an AOSP"
+        }
+      ],
+      "standalone_target_anchors": [
+        {
+          "path": "APP_BUILD",
+          "line": 1,
+          "match": "cmake"
+        },
+        {
+          "path": "APP_BUILD",
+          "line": 2,
+          "match": "build"
+        },
+        {
+          "path": "APP_BUILD",
+          "line": 2,
+          "match": "cmake"
+        },
+        {
+          "path": "native/CMakeLists.txt",
+          "line": 2,
+          "match": "project("
+        },
+        {
+          "path": "native/middleware/CMakeLists.txt",
+          "line": 1,
+          "match": "add_library("
+        },
+        {
+          "path": "native/service/CMakeLists.txt",
+          "line": 1,
+          "match": "add_library("
+        },
+        {
+          "path": "native/tests/CMakeLists.txt",
+          "line": 6,
+          "match": "add_executable("
+        }
+      ]
+    },
     "source_dependency_anchors": [
       {
         "path": "manager-runtime/build.gradle",
@@ -90,53 +140,12 @@
     "candidate_files": [],
     "semver_anchors": [
       {
-        "path": "api/src/android/car/hardware/power/CarPowerPolicy.java",
-        "line": 67,
-        "match": "1.0.23"
-      },
-      {
-        "path": "api/src/android/car/hardware/power/CarPowerPolicy.java",
-        "line": 199,
-        "match": "1.0.23"
-      },
-      {
-        "path": "api/src/android/car/hardware/power/CarPowerPolicyFilter.java",
-        "line": 45,
-        "match": "1.0.23"
-      },
-      {
-        "path": "api/src/android/car/hardware/power/CarPowerPolicyFilter.java",
-        "line": 176,
-        "match": "1.0.23"
+        "path": "native/CMakeLists.txt",
+        "line": 2,
+        "match": "1.4.0"
       }
     ],
-    "compatibility_anchors": [
-      {
-        "path": "api/src/android/car/Car.java",
-        "line": 1444,
-        "match": "released"
-      },
-      {
-        "path": "api/src/android/car/Car.java",
-        "line": 1481,
-        "match": "released"
-      },
-      {
-        "path": "api/src/android/car/Car.java",
-        "line": 1497,
-        "match": "released"
-      },
-      {
-        "path": "api/src/android/car/CarProjectionManager.java",
-        "line": 134,
-        "match": "released"
-      },
-      {
-        "path": "api/src/android/car/CarProjectionManager.java",
-        "line": 143,
-        "match": "released"
-      }
-    ]
+    "compatibility_anchors": []
   },
   "integration_test": {
     "test_source_count": 70,
@@ -289,6 +298,15 @@
       ],
       "static_access": []
     }
+  },
+  "platform_upgrade_review": {
+    "has_non_compatible_api": true,
+    "has_arch_specific_deps": false,
+    "version_bound_status": 1,
+    "arch_bound_status": 0,
+    "has_interface_abstraction": true,
+    "has_light_permission_adaptation": false,
+    "has_complex_permission_adaptation": false
   },
   "branches": {
     "refs": [

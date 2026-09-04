@@ -20,10 +20,13 @@ cd cockpit-benchmark
 
 评测时一次只把一个源码仓交给 Agent；不要把 wrapper、oracle、facts、SCORECARD 或质量标签作为 Agent 输入。Agent 输出后，按 `STANDARD_SCORES.json` 同名叶比较。
 
+本集合是公开 Dev/Regression Set，适合 Prompt 开发、规则回归与正式核心验证；公开答案和共享上游谱系意味着它不能替代私有、谱系隔离的最终 Holdout。
+
 ## 版本与边界
 
-- 推荐版本：`v0.6.3`
-- APP：72 叶，242/360；Android FW：99 叶，275/468；合计 517/828。
+- 推荐版本：`v0.7.0`
+- APP：72 叶，223/360；Android FW：99 叶，263/468；合计 486/828。
+- v0.7.0 修复 Git ref tip 绑定、统一 3.0 Oracle/合同 hash、物化全部 APP facts，并采用外部构建闭包及风险单调平台升级口径。
 - 22 个 pending 仓不运输；`can-middleware` 仅为 v0.4 历史补充样例。
 - 旧 archive：https://github.com/cockpit-bench/cockpit-benchmark-v031-archive
 - 每个源码仓保留自己的许可证、来源和全部 heads/tags；源码仓不含答案。
