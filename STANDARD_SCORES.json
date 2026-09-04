@@ -1,7 +1,7 @@
 {
   "schema_version": "3.0.0",
   "document_type": "validation18_benchmark_standard_scores",
-  "generated_at": "2026-09-04T15:53:55.113072+00:00",
+  "generated_at": "2026-09-04T16:07:31.857884+00:00",
   "contract": {
     "path": "SCORE_RULES.md",
     "sha256": "c367412668bf3f96231462bad501cec04c0c2bce44a9dbc0206acdaf31ed9465",

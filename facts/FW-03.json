@@ -266,17 +266,17 @@
       "artifacts": [
         {
           "artifact_id": 9894029425,
-          "name": "coverage-contract",
+          "name": "fw03-coverage-contract-reports",
           "digest": "sha256:676dcd21155a9191aa5e8d6255f574781afb2b8c4477beb68c352660943701be"
         },
         {
           "artifact_id": 9894027515,
-          "name": "Release-test-results",
+          "name": "fw03-Release-test-results",
           "digest": "sha256:6fcca617e8e70df53edb707ec5a90d0973a13916acedf7816a74d536b55a1f7d"
         },
         {
           "artifact_id": 9894026690,
-          "name": "Debug-test-results",
+          "name": "fw03-Debug-test-results",
           "digest": "sha256:7ecd77b8b5f12ff3091b02bb54d40f23dfa5cbe9dde269ffc5c262ea6e88db20"
         }
       ]
