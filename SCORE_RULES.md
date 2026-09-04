@@ -1,6 +1,6 @@
 # APP / Android Framework 现行评分合同（Benchmark 版）
 
-版本：2026-09-04-v3.1  
+版本：2026-09-04-v3.3  
 用途：为座舱 Android APP 与 Android Framework benchmark 生成逐叶标准分。  
 纪律：本文件是唯一评分事实源；allowlist 之外的维度必须丢弃，不得从旧 rubric 换算或补零。
 
@@ -206,7 +206,11 @@ APP 2.7 的兼容性证据排除项同样适用。AOSP 源码中普通注释里�
 - 2：目标明确、预期合理、大部分通过，关键模块交互覆盖率或经定义的覆盖代理≥50%。
 - 3：满足 2 分全部条件且绑定 final HEAD 的执行通过率为 100%。
 
-不得仅凭测试文件数量给 2/3；没有可复现执行结果时不能声称 100% 通过。
+不得仅凭测试文件或断言数量给 2/3；没有绑定 final HEAD 的可复现执行结果时，最高 1 分，不得声称“大部分通过”或“100% 通过”。
+
+执行事实必须区分本地提取器执行与远程 CI 执行。CI 证明至少固化 provider、run ID/URL、final HEAD SHA、workflow path 及其 Git blob/SHA-256、job 结论、测试命令、通过/失败数、覆盖范围与门槛；若有 JUnit/coverage artifact，同时固化摘要和 digest。不能把 native 子目录覆盖率表述为整仓覆盖率。
+
+2 分所用的“覆盖代理”必须可复算：显式记录代理名称、定义、范围、分子、分母、数值及被覆盖/全部关键跨模块交互边。空字段、测试文件数、断言数不是覆盖代理。
 
 ### 3.6 SOLID 五原则（各 0–4，共 20）
 
@@ -226,7 +230,15 @@ APP 2.7 的兼容性证据排除项同样适用。AOSP 源码中普通注释里�
 - 3：良好遵循，符合汽车领域可靠性/可维护性规范。
 - 4：优秀遵循，体现汽车领域优秀实践。
 
-LSP 无继承/替换证据时不得凭空给高分；按 `failed` 处理，或在仓库设计中提供真实可判断的继承契约。低质量样本仍须可构建/可解析，不能用语法错误制造低分。
+LSP 无可判断的父子/实现契约时为 `failed`；存在契约时按以下可观察门槛裁决：
+
+- 0：子类/实现有空覆写、无条件抛错、收紧前置条件或破坏后置条件等明确替换违反。
+- 1：可识别契约，但有多处未解释覆写/异常语义风险，替换可靠性差。
+- 2：至少一个真实生产实现，关键 override 经核对且无明显违反，但没有第二个生产实现或可复用 contract/substitution test。
+- 3：至少两个真实生产实现均保持父契约，或至少一个生产实现通过可复用 contract/substitution test。
+- 4：多个生产实现均通过系统化 contract/substitution test，并显式覆盖异常、边界、前置和后置语义。
+
+LSP 事实至少记录 `parent_symbol`、`child_symbols`、继承/实现关系、关键 `overridden_methods`、空覆写/无条件抛错/前后置风险计数、生产实现数与 substitution test 数。低质量样本仍须可构建/可解析，不能用语法错误制造低分。
 
 ### 3.7 `platform_reuse.platform_upgrade`（10/8/3/0）
 
@@ -253,6 +265,8 @@ LSP 无继承/替换证据时不得凭空给高分；按 `failed` 处理，或�
 - Git ref：`ref`、`commit_oid`、`tree_oid`；`commit_oid` 必须等于该 ref 实际 tip，并与 manifest/facts 一致。
 
 需要判断的叶至少两个不同 `independent_group`；纯粹的确定性缺失/计数事实允许一个结构化锚点。Schema、合同 hash 和字段必须在同一 release 的全部 18 个 oracle 中完全一致。
+
+证据生成器必须校验 `symbol` 确实出现在给定行段，且该行段的语义直接支持 claim。集成测试的源码证据必须指向真实 `@Test`/`TEST(...)` 用例及其断言，helper、Binder wrapper、`@TestApi` 注解和类名含 `Test` 均不能代替测试方法证据。
 
 计数：
 

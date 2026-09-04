@@ -13,10 +13,10 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e"
+    "sha256": "c367412668bf3f96231462bad501cec04c0c2bce44a9dbc0206acdaf31ed9465"
   },
   "canonical_total": {
-    "score": 39,
+    "score": 38,
     "max": 52
   },
   "canonical_leaves": [
@@ -172,36 +172,36 @@
     },
     {
       "name": "quality.integration_test",
-      "score": 2,
+      "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "测试目标和断言有效，关键模块交互覆盖代理达到 50%；没有绑定 100% 执行结果，不能给 3；锁定 2。",
-      "analysis": "测试目标和断言有效，关键模块交互覆盖代理达到 50%；没有绑定 100% 执行结果，不能给 3；锁定 2。",
+      "score_reasoning": "有 13 个含真实用例与断言的测试源，但无 final HEAD 执行和可复算覆盖代理；锁定 1。",
+      "analysis": "有 13 个含真实用例与断言的测试源，但无 final HEAD 执行和可复算覆盖代理；锁定 1。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-08.json",
           "commit": "69e60531c7a3474c288a6702c84f5758a3950139",
           "ref": "HEAD",
-          "json_pointer": "/integration_test",
-          "symbol": "integration_test",
-          "claim": "测试断言、配置和执行绑定。",
-          "observation": "测试断言、配置和执行绑定。",
+          "json_pointer": "/integration_test/executable_test_sources",
+          "symbol": "executable_test_sources",
+          "claim": "可执行测试用例与断言事实。",
+          "observation": "可执行测试用例与断言事实。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "car-lib/src/android/car/test/CarLocationTestHelper.java",
+          "path": "native/tests/gateway_codec_test.cpp",
           "commit": "69e60531c7a3474c288a6702c84f5758a3950139",
           "ref": "HEAD",
-          "start_line": 29,
-          "end_line": 29,
-          "symbol": "public class CarLocationTestHelper {",
-          "claim": "真实测试方法与断言。",
-          "observation": "真实测试方法与断言。",
+          "start_line": 11,
+          "end_line": 14,
+          "symbol": "TEST(GatewayCodecTest, RoundTripsEveryRequestAndResponseShape)",
+          "claim": "真实测试用例与断言直接验证交互行为。",
+          "observation": "真实测试用例与断言直接验证交互行为。",
           "evidence_type": "source",
-          "independent_group": "test_source"
+          "independent_group": "test_case"
         },
         {
           "source": "current_head",
@@ -316,6 +316,18 @@
       "score_reasoning": "fake/Unix transport 与 callback 保持同一生命周期契约。 按独立 0–4 档位锁定 3。",
       "analysis": "fake/Unix transport 与 callback 保持同一生命周期契约。 按独立 0–4 档位锁定 3。",
       "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-08.json",
+          "commit": "69e60531c7a3474c288a6702c84f5758a3950139",
+          "ref": "HEAD",
+          "json_pointer": "/lsp_review",
+          "symbol": "lsp_review",
+          "claim": "父契约、生产实现数、替换测试和违反计数。",
+          "observation": "父契约、生产实现数、替换测试和违反计数。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
         {
           "source": "current_head",
           "path": "native/transport/include/fw08/transport/ipc_transport.h",

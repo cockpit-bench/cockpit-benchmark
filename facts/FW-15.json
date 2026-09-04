@@ -70,26 +70,6 @@
         "path": "Android.bp",
         "line": 29,
         "match": "srcs: ["
-      },
-      {
-        "path": "Android.bp",
-        "line": 30,
-        "match": "libs: ["
-      },
-      {
-        "path": "Android.bp",
-        "line": 36,
-        "match": "srcs: ["
-      },
-      {
-        "path": "Android.bp",
-        "line": 37,
-        "match": "libs: ["
-      },
-      {
-        "path": "Android.bp",
-        "line": 43,
-        "match": "srcs: ["
       }
     ]
   },
@@ -100,20 +80,35 @@
   },
   "integration_test": {
     "test_source_count": 2,
+    "executable_test_source_count": 0,
+    "executable_test_sources": [],
     "config_files": [
       "TEST_MAPPING"
     ],
     "assertion_count": 2,
     "empty_test_count": 1,
-    "execution": {
+    "local_execution": {
       "status": "not_run",
+      "reason": "benchmark fact extractor did not execute repository tests locally",
       "passed": null,
       "failed": null,
       "head": "29be0c67ef8380e66b2782a7403163ab84e9c821"
+    },
+    "ci_execution_evidence": null,
+    "coverage_proxy": {
+      "status": "unavailable",
+      "definition": null,
+      "scope": null,
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "covered_interaction_edges": [],
+      "total_interaction_edges": []
     }
   },
   "platform_upgrade": {
     "counts": {
+      "test_cases": 0,
       "assertions": 0,
       "empty_tests": 0,
       "reflection": 6,
@@ -126,6 +121,7 @@
       "static_access": 0
     },
     "anchors": {
+      "test_cases": [],
       "assertions": [],
       "empty_tests": [],
       "reflection": [
@@ -137,11 +133,6 @@
         {
           "path": "api/src/android/car/hardware/CarPropertyConfig.java",
           "line": 419,
-          "match": "Class.forName"
-        },
-        {
-          "path": "api/src/android/car/hardware/CarPropertyValue.java",
-          "line": 151,
           "match": "Class.forName"
         }
       ],
@@ -155,11 +146,6 @@
           "path": "Android.bp",
           "line": 23,
           "match": "platform_apis: true"
-        },
-        {
-          "path": "Android.bp",
-          "line": 31,
-          "match": "platform_apis: true"
         }
       ],
       "sdk_branch": [
@@ -172,11 +158,6 @@
           "path": "api/src/android/car/Car.java",
           "line": 110,
           "match": "Build.VERSION"
-        },
-        {
-          "path": "api/src/android/car/Car.java",
-          "line": 110,
-          "match": "SDK_INT"
         }
       ],
       "permissions": [],
@@ -190,11 +171,6 @@
           "path": "api/src/android/car/AoapService.java",
           "line": 83,
           "match": "interface"
-        },
-        {
-          "path": "api/src/android/car/Car.java",
-          "line": 1105,
-          "match": "interface"
         }
       ],
       "unsupported": [
@@ -206,11 +182,6 @@
         {
           "path": "api/src/android/car/Car.java",
           "line": 1465,
-          "match": "return null;"
-        },
-        {
-          "path": "api/src/android/car/Car.java",
-          "line": 1473,
           "match": "return null;"
         }
       ],
@@ -224,11 +195,6 @@
           "path": "api/src/android/car/Car.java",
           "line": 2151,
           "match": "new CarSensorManager("
-        },
-        {
-          "path": "api/src/android/car/Car.java",
-          "line": 2154,
-          "match": "new CarInfoManager("
         }
       ],
       "static_access": []
@@ -285,6 +251,34 @@
       }
     ],
     "vehicle_or_sop_heads": []
+  },
+  "lsp_review": {
+    "parent_symbol": {
+      "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
+      "line": 3,
+      "symbol": "ICarRuntime",
+      "match": "interface ICarRuntime"
+    },
+    "child_symbols": [
+      {
+        "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
+        "line": 48,
+        "symbol": "CarRuntimeService",
+        "match": "extends ICarRuntime.Stub",
+        "relationship": "extends_or_implements",
+        "production": true
+      }
+    ],
+    "overridden_method_count": 54,
+    "empty_override_count": 0,
+    "unconditional_throw_count": 0,
+    "stricter_precondition_count": 0,
+    "weakened_postcondition_count": 0,
+    "confirmed_contract_violations": [],
+    "production_implementation_count": 1,
+    "substitution_tests": [],
+    "substitution_test_count": 0,
+    "systematic_contract_test": false
   },
   "solid_signals": {
     "production_files": 320,
@@ -454,30 +448,6 @@
         "unsupported": 0,
         "concrete_new": 2,
         "static_access": 0
-      },
-      {
-        "path": "api/src/android/car/hardware/CarSensorEvent.java",
-        "logical_lines": 591,
-        "is_test": false,
-        "reflection": 0,
-        "hidden_api": 0,
-        "broad_catches": 0,
-        "global_state": 0,
-        "unsupported": 2,
-        "concrete_new": 0,
-        "static_access": 0
-      },
-      {
-        "path": "api/src/android/car/hardware/property/CarPropertyManager.java",
-        "logical_lines": 583,
-        "is_test": false,
-        "reflection": 0,
-        "hidden_api": 0,
-        "broad_catches": 0,
-        "global_state": 0,
-        "unsupported": 2,
-        "concrete_new": 2,
-        "static_access": 0
       }
     ],
     "coupling_hotspots": [
@@ -514,30 +484,6 @@
         "broad_catches": 0,
         "global_state": 0,
         "unsupported": 0,
-        "concrete_new": 2,
-        "static_access": 0
-      },
-      {
-        "path": "api/src/android/car/CarAppFocusManager.java",
-        "logical_lines": 320,
-        "is_test": false,
-        "reflection": 0,
-        "hidden_api": 1,
-        "broad_catches": 0,
-        "global_state": 0,
-        "unsupported": 0,
-        "concrete_new": 2,
-        "static_access": 0
-      },
-      {
-        "path": "api/src/android/car/hardware/property/CarPropertyManager.java",
-        "logical_lines": 583,
-        "is_test": false,
-        "reflection": 0,
-        "hidden_api": 0,
-        "broad_catches": 0,
-        "global_state": 0,
-        "unsupported": 2,
         "concrete_new": 2,
         "static_access": 0
       }

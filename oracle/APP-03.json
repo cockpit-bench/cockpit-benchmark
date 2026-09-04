@@ -13,7 +13,7 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "5ddc67686e0f7f6f485fa12cc77463b6d8fa8fc4cf69ff012f39d1e98205446e"
+    "sha256": "c367412668bf3f96231462bad501cec04c0c2bce44a9dbc0206acdaf31ed9465"
   },
   "canonical_total": {
     "score": 33,
@@ -47,7 +47,7 @@
           "ref": "HEAD",
           "start_line": 19,
           "end_line": 19,
-          "symbol": "interface ComfortPolicy {",
+          "symbol": "ComfortPolicy",
           "claim": "组件显式接口/抽象契约。",
           "observation": "组件显式接口/抽象契约。",
           "evidence_type": "source",

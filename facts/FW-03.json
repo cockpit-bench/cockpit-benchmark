@@ -39,11 +39,6 @@
           "path": ".github/workflows/native-ci.yml",
           "line": 31,
           "match": "build"
-        },
-        {
-          "path": ".github/workflows/native-ci.yml",
-          "line": 32,
-          "match": "m"
         }
       ],
       "test": [
@@ -56,11 +51,6 @@
           "path": ".github/workflows/native-ci.yml",
           "line": 41,
           "match": "Test"
-        },
-        {
-          "path": ".github/workflows/native-ci.yml",
-          "line": 41,
-          "match": "JUnit"
         }
       ],
       "quality_or_report": [
@@ -72,11 +62,6 @@
         {
           "path": ".github/workflows/native-ci.yml",
           "line": 71,
-          "match": "coverage"
-        },
-        {
-          "path": ".github/workflows/native-ci.yml",
-          "line": 85,
           "match": "coverage"
         }
       ]
@@ -170,26 +155,6 @@
         "path": "Android.bp",
         "line": 68,
         "match": "srcs: ["
-      },
-      {
-        "path": "Android.bp",
-        "line": 72,
-        "match": "static_libs: ["
-      },
-      {
-        "path": "service/Android.bp",
-        "line": 34,
-        "match": "srcs: ["
-      },
-      {
-        "path": "service/Android.bp",
-        "line": 60,
-        "match": "libs: ["
-      },
-      {
-        "path": "service/Android.bp",
-        "line": 74,
-        "match": "static_libs: ["
       }
     ]
   },
@@ -214,22 +179,122 @@
   },
   "integration_test": {
     "test_source_count": 304,
+    "executable_test_source_count": 241,
+    "executable_test_sources": [
+      {
+        "path": "native/tests/client_ipc_vertical_integration_test.cpp",
+        "test_case_anchors": [
+          {
+            "path": "native/tests/client_ipc_vertical_integration_test.cpp",
+            "line": 168,
+            "match": "TEST("
+          }
+        ],
+        "assertion_anchors": [
+          {
+            "path": "native/tests/client_ipc_vertical_integration_test.cpp",
+            "line": 170,
+            "match": "ASSERT_TRUE("
+          }
+        ]
+      }
+    ],
     "config_files": [
       "TEST_MAPPING",
       "tests/carservice_test/AndroidTest.xml",
       "tests/carservice_unit_test/AndroidTest.xml"
     ],
-    "assertion_count": 5828,
+    "assertion_count": 6464,
     "empty_test_count": 0,
-    "execution": {
+    "local_execution": {
       "status": "not_run",
+      "reason": "benchmark fact extractor did not execute repository tests locally",
       "passed": null,
       "failed": null,
       "head": "7cb9206c8a8af76c7800cc6cda70255240e937e0"
+    },
+    "ci_execution_evidence": {
+      "provider": "github_actions",
+      "run_id": 33757391217,
+      "run_url": "https://github.com/cockpit-bench/vehicle-hal-adapter/actions/runs/33757391217",
+      "head": "7cb9206c8a8af76c7800cc6cda70255240e937e0",
+      "conclusion": "success",
+      "workflow": {
+        "path": ".github/workflows/native-ci.yml",
+        "blob_oid": "e664cad340d791188a0090a0f7873fc5aee735b9",
+        "sha256": "80c935cc1d5cc793d7bc06e16c676b07929c4ae62ea42e9057ffae24e7e4208a"
+      },
+      "jobs": [
+        {
+          "job_id": 100655002539,
+          "name": "Debug",
+          "conclusion": "success"
+        },
+        {
+          "job_id": 100655002606,
+          "name": "Release",
+          "conclusion": "success"
+        },
+        {
+          "job_id": 100655002620,
+          "name": "sanitizer",
+          "conclusion": "success"
+        },
+        {
+          "job_id": 100655002836,
+          "name": "coverage-and-contract",
+          "conclusion": "success"
+        }
+      ],
+      "test_command": "ctest --output-on-failure --output-junit test-results.xml",
+      "coverage_command": "gcovr --root native --fail-under-line 80",
+      "test_summary": {
+        "passed": 84,
+        "failed": 0,
+        "skipped": 0,
+        "pass_rate": 1.0
+      },
+      "coverage": {
+        "scope": "native/ excluding native/tests/",
+        "line_rate": 0.8318070818,
+        "line_covered": 2725,
+        "line_total": 3276,
+        "threshold": 0.8,
+        "report_sha256": "99b09ecebe2ef5c95baf363103b91bec9dd6f2b2e4c564f84084828ab20d5662",
+        "junit_sha256": "f8ab535e0889e29eec0d2ad2adb641ca5174710e84ada950f7729d934c109348"
+      },
+      "artifacts": [
+        {
+          "artifact_id": 9894029425,
+          "name": "coverage-contract",
+          "digest": "sha256:676dcd21155a9191aa5e8d6255f574781afb2b8c4477beb68c352660943701be"
+        },
+        {
+          "artifact_id": 9894027515,
+          "name": "Release-test-results",
+          "digest": "sha256:6fcca617e8e70df53edb707ec5a90d0973a13916acedf7816a74d536b55a1f7d"
+        },
+        {
+          "artifact_id": 9894026690,
+          "name": "Debug-test-results",
+          "digest": "sha256:7ecd77b8b5f12ff3091b02bb54d40f23dfa5cbe9dde269ffc5c262ea6e88db20"
+        }
+      ]
+    },
+    "coverage_proxy": {
+      "status": "unavailable",
+      "definition": null,
+      "scope": null,
+      "numerator": null,
+      "denominator": null,
+      "value": null,
+      "covered_interaction_edges": [],
+      "total_interaction_edges": []
     }
   },
   "platform_upgrade": {
     "counts": {
+      "test_cases": 0,
       "assertions": 3,
       "empty_tests": 0,
       "reflection": 8,
@@ -242,6 +307,7 @@
       "static_access": 0
     },
     "anchors": {
+      "test_cases": [],
       "assertions": [
         {
           "path": "car-lib/src/android/car/content/pm/AppBlockingPackageInfo.java",
@@ -251,11 +317,6 @@
         {
           "path": "car-lib/src/android/car/content/pm/AppBlockingPackageInfo.java",
           "line": 119,
-          "match": "verify("
-        },
-        {
-          "path": "car-lib/src/android/car/content/pm/AppBlockingPackageInfo.java",
-          "line": 157,
           "match": "verify("
         }
       ],
@@ -270,11 +331,6 @@
           "path": "car-lib/src/android/car/hardware/CarPropertyValue.java",
           "line": 151,
           "match": "Class.forName"
-        },
-        {
-          "path": "car-lib/src/com/android/car/internal/util/DebugUtils.java",
-          "line": 39,
-          "match": "getDeclaredField"
         }
       ],
       "hidden_api": [
@@ -287,11 +343,6 @@
           "path": "Android.bp",
           "line": 63,
           "match": "platform_apis: true"
-        },
-        {
-          "path": "Android.bp",
-          "line": 73,
-          "match": "platform_apis: true"
         }
       ],
       "sdk_branch": [
@@ -303,11 +354,6 @@
         {
           "path": "car-lib/src/android/car/hardware/property/CarPropertyManager.java",
           "line": 543,
-          "match": "Build.VERSION"
-        },
-        {
-          "path": "car-lib/src/android/car/hardware/property/CarPropertyManager.java",
-          "line": 674,
           "match": "Build.VERSION"
         }
       ],
@@ -322,11 +368,6 @@
           "path": "car-lib/src/android/car/admin/CarDevicePolicyManager.java",
           "line": 114,
           "match": "interface"
-        },
-        {
-          "path": "car-lib/src/android/car/admin/CreateUserResult.java",
-          "line": 70,
-          "match": "interface"
         }
       ],
       "unsupported": [
@@ -338,11 +379,6 @@
         {
           "path": "car-lib/src/android/car/cluster/renderer/InstrumentClusterRenderingService.java",
           "line": 379,
-          "match": "return null;"
-        },
-        {
-          "path": "car-lib/src/android/car/cluster/renderer/InstrumentClusterRenderingService.java",
-          "line": 406,
           "match": "return null;"
         }
       ],
@@ -356,11 +392,6 @@
           "path": "car-lib/src/android/car/cluster/ClusterHomeManager.java",
           "line": 171,
           "match": "new IClusterNavigationStateListenerImpl("
-        },
-        {
-          "path": "car-lib/src/android/car/content/pm/CarAppBlockingPolicyService.java",
-          "line": 45,
-          "match": "new ICarAppBlockingPolicyImpl("
         }
       ],
       "static_access": []
@@ -421,6 +452,42 @@
       }
     ],
     "vehicle_or_sop_heads": []
+  },
+  "lsp_review": {
+    "parent_symbol": {
+      "path": "service/src/com/android/car/VehicleStub.java",
+      "line": 38,
+      "symbol": "VehicleStub",
+      "match": "abstract class VehicleStub"
+    },
+    "child_symbols": [
+      {
+        "path": "service/src/com/android/car/AidlVehicleStub.java",
+        "line": 64,
+        "symbol": "AidlVehicleStub",
+        "match": "class AidlVehicleStub extends VehicleStub",
+        "relationship": "extends_or_implements",
+        "production": true
+      },
+      {
+        "path": "service/src/com/android/car/HidlVehicleStub.java",
+        "line": 44,
+        "symbol": "HidlVehicleStub",
+        "match": "class HidlVehicleStub extends VehicleStub",
+        "relationship": "extends_or_implements",
+        "production": true
+      }
+    ],
+    "overridden_method_count": 41,
+    "empty_override_count": 0,
+    "unconditional_throw_count": 2,
+    "stricter_precondition_count": 0,
+    "weakened_postcondition_count": 0,
+    "confirmed_contract_violations": [],
+    "production_implementation_count": 2,
+    "substitution_tests": [],
+    "substitution_test_count": 0,
+    "systematic_contract_test": false
   },
   "solid_signals": {
     "production_files": 305,
@@ -594,30 +661,6 @@
         "unsupported": 0,
         "concrete_new": 0,
         "static_access": 0
-      },
-      {
-        "path": "tests/carservice_unit_test/src/com/android/car/user/CarUserServiceTest.java",
-        "logical_lines": 2022,
-        "is_test": true,
-        "reflection": 0,
-        "hidden_api": 0,
-        "broad_catches": 0,
-        "global_state": 0,
-        "unsupported": 4,
-        "concrete_new": 1,
-        "static_access": 0
-      },
-      {
-        "path": "tests/carservice_unit_test/src/com/android/car/hal/UserHalServiceTest.java",
-        "logical_lines": 1397,
-        "is_test": true,
-        "reflection": 0,
-        "hidden_api": 0,
-        "broad_catches": 0,
-        "global_state": 0,
-        "unsupported": 3,
-        "concrete_new": 18,
-        "static_access": 0
       }
     ],
     "coupling_hotspots": [
@@ -655,30 +698,6 @@
         "global_state": 0,
         "unsupported": 2,
         "concrete_new": 9,
-        "static_access": 0
-      },
-      {
-        "path": "tests/carservice_unit_test/src/com/android/car/storagemonitoring/CarStorageMonitoringTest.java",
-        "logical_lines": 647,
-        "is_test": true,
-        "reflection": 0,
-        "hidden_api": 0,
-        "broad_catches": 0,
-        "global_state": 0,
-        "unsupported": 1,
-        "concrete_new": 7,
-        "static_access": 0
-      },
-      {
-        "path": "car-lib/src/com/android/car/internal/LargeParcelable.java",
-        "logical_lines": 207,
-        "is_test": false,
-        "reflection": 0,
-        "hidden_api": 0,
-        "broad_catches": 6,
-        "global_state": 1,
-        "unsupported": 2,
-        "concrete_new": 0,
         "static_access": 0
       }
     ]
