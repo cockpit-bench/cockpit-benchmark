@@ -240,6 +240,8 @@
     "version_bound_status": 3,
     "arch_bound_status": 2,
     "has_interface_abstraction": false,
+    "non_compatible_api_covered_by_abstraction": false,
+    "uncovered_non_compatible_api_count": 1,
     "has_light_permission_adaptation": false,
     "has_complex_permission_adaptation": false
   },

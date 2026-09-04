@@ -119,44 +119,88 @@
         "domain_paths": [],
         "file_type_package_paths": [],
         "layered_modules": {},
-        "production_code_path_count": 157,
-        "production_code_paths_sha256": "974e4b2773372e7965c5ef376d4f0874a12bc6c22148fa068de1a3ee0346dcd9",
+        "production_code_path_count": 153,
+        "production_code_paths_sha256": "a79145dda0dd78c6779c0bd6b9bba5c982276a60b3ba3a4d0aa91630aa3c3934",
         "ui_paths": [],
-        "unowned_code_path_count": 2,
-        "unowned_code_samples": [
-          "build.gradle.kts",
-          "settings.gradle.kts"
-        ]
+        "unowned_code_path_count": 0,
+        "unowned_code_samples": []
+      },
+      "componentization_metrics": {
+        "explicit_public_contracts": [
+          {
+            "declaration_kind": "aidl_interface",
+            "declaration_name": "ILegacyClimateService",
+            "excerpt": "interface ILegacyClimateService {",
+            "git_blob_oid": "b5885c5aa60db9e1f354400f469b84e50c05f98c",
+            "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/aidl/com/cockpitbench/thermo/vehicle/ILegacyClimateService.aidl",
+            "line": 3,
+            "module": ":vehicle",
+            "path": "vehicle/src/main/aidl/com/cockpitbench/thermo/vehicle/ILegacyClimateService.aidl"
+          }
+        ],
+        "replaceable_components": [
+          ":vehicle"
+        ],
+        "reusable_components": [
+          ":vehicle"
+        ],
+        "shared_capability_owners": []
       },
       "contract": "app_architecture_v3_fact_candidates",
       "cycles": [],
+      "decoupling_metrics": {
+        "concrete_implementation_edges": [],
+        "cross_module_source_intrusions": [],
+        "dependency_cycles": [],
+        "platform_change_propagation_modules": [
+          ":app",
+          ":vehicle"
+        ],
+        "reverse_dependency_edges": []
+      },
       "evidence_gaps": [],
       "excluded_test_or_build_modules": [],
       "facts": {
-        "business_boundary_isolation": false,
-        "code_not_in_root_package": false,
+        "api_dependency_edge_count": 0,
+        "business_boundary_isolation": true,
+        "code_not_in_root_package": true,
+        "cohesive_module_count": 2,
         "common_capability_in_base_core": false,
-        "component_friendly_check_count": 2,
+        "component_friendly_check_count": 3,
         "component_friendly_checks": {
-          "business_boundary_isolation": false,
+          "business_boundary_isolation": true,
           "common_capability_in_base_core": false,
           "modules_have_independent_build_entry": true,
           "no_cross_module_hardcoded_dependency": null,
           "no_module_cycle": true
         },
+        "concrete_implementation_edge_count": 0,
+        "cross_module_source_intrusion_count": 0,
+        "dependency_cycle_count": 0,
+        "dependency_scc_count": 2,
+        "explicit_public_contract_count": 1,
         "has_base_layered_architecture": false,
         "has_business_packages": true,
         "has_circular_dependency": false,
         "has_file_type_packages": false,
         "has_layered_directory": false,
-        "is_component_friendly": false,
+        "implementation_dependency_edge_count": 1,
+        "is_component_friendly": true,
         "layered_business_module_count": 0,
         "module_count": 2,
+        "module_test_entry_count": 1,
         "modules_have_independent_build_entry": true,
+        "platform_change_propagation_module_count": 2,
+        "real_build_module_count": 2,
+        "replaceable_component_count": 1,
+        "reusable_component_count": 1,
+        "reverse_dependency_edge_count": 0,
+        "shared_capability_owner_count": 0,
         "standard_named_module_count": 1
       },
       "internal_dependency_evidence": [
         {
+          "configuration": "implementation",
           "excerpt": "implementation(project(\":vehicle\"))",
           "from_module": ":app",
           "git_blob_oid": "f5d1e143f0756f05b5664710bacd086cd0a38184",
@@ -171,6 +215,33 @@
           ":vehicle"
         ],
         ":vehicle": []
+      },
+      "modularization_metrics": {
+        "api_dependency_edges": [],
+        "cohesive_modules": [
+          ":app",
+          ":vehicle"
+        ],
+        "dependency_scc_count": 2,
+        "implementation_dependency_edges": [
+          {
+            "configuration": "implementation",
+            "excerpt": "implementation(project(\":vehicle\"))",
+            "from_module": ":app",
+            "git_blob_oid": "f5d1e143f0756f05b5664710bacd086cd0a38184",
+            "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/build.gradle.kts",
+            "line": 18,
+            "path": "app/build.gradle.kts",
+            "to_module": ":vehicle"
+          }
+        ],
+        "module_test_entries": [
+          ":app"
+        ],
+        "real_build_modules": [
+          ":app",
+          ":vehicle"
+        ]
       },
       "modules": [
         {
@@ -346,8 +417,10 @@
         ],
         "excluded_parts": [
           "androidtest",
+          "androidtests",
           "build",
           "generated",
+          "robotests",
           "test",
           "tests",
           "third-party",
@@ -510,20 +583,6 @@
                 "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/VendorClimateManager.kt"
               },
               {
-                "excerpt": "val car = create.invoke(null, context)",
-                "git_blob_oid": "82c87944a8e950d4a7f0365b33de42d5e1e9e95f",
-                "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt",
-                "line": 33,
-                "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt"
-              },
-              {
-                "excerpt": "manager = getManager.invoke(car, \"property\")",
-                "git_blob_oid": "82c87944a8e950d4a7f0365b33de42d5e1e9e95f",
-                "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt",
-                "line": 35,
-                "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt"
-              },
-              {
                 "excerpt": "method.invoke(target, propertyId + propertyOffset, area) as Int",
                 "git_blob_oid": "82c87944a8e950d4a7f0365b33de42d5e1e9e95f",
                 "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt",
@@ -538,20 +597,6 @@
                 "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt"
               },
               {
-                "excerpt": "val car = create.invoke(null, context)",
-                "git_blob_oid": "0cb7fd4a3a60b7b2930480cb2442a2d71c743c25",
-                "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt",
-                "line": 33,
-                "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt"
-              },
-              {
-                "excerpt": "manager = getManager.invoke(car, \"property\")",
-                "git_blob_oid": "0cb7fd4a3a60b7b2930480cb2442a2d71c743c25",
-                "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt",
-                "line": 35,
-                "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt"
-              },
-              {
                 "excerpt": "method.invoke(target, propertyId + propertyOffset, area) as Int",
                 "git_blob_oid": "0cb7fd4a3a60b7b2930480cb2442a2d71c743c25",
                 "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt",
@@ -564,20 +609,6 @@
                 "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt",
                 "line": 59,
                 "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt"
-              },
-              {
-                "excerpt": "val car = create.invoke(null, context)",
-                "git_blob_oid": "2472755acda23942a28b82d7fab32a3a64b6635b",
-                "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/XinqingClimateBridge.kt",
-                "line": 33,
-                "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/XinqingClimateBridge.kt"
-              },
-              {
-                "excerpt": "manager = getManager.invoke(car, \"property\")",
-                "git_blob_oid": "2472755acda23942a28b82d7fab32a3a64b6635b",
-                "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/XinqingClimateBridge.kt",
-                "line": 35,
-                "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/XinqingClimateBridge.kt"
               },
               {
                 "excerpt": "method.invoke(target, propertyId + propertyOffset, area) as Int",
@@ -949,6 +980,365 @@
             "vendor_private_namespace": []
           },
           "value": true
+        },
+        "non_compatible_api_covered_by_abstraction": {
+          "evidence": [],
+          "value": false
+        },
+        "uncovered_non_compatible_api_count": {
+          "evidence": [
+            {
+              "excerpt": "try { return Class.forName(\"android.car.hardware.property.CarPropertyManager\"); }",
+              "git_blob_oid": "7cad18a9402f7323a12ee0f665a1457b055d3e5e",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/ThermalPlatformRuntime.java",
+              "line": 9,
+              "path": "app/src/main/java/com/cockpitbench/thermo/ThermalPlatformRuntime.java"
+            },
+            {
+              "excerpt": "val managerClass = Class.forName(\"android.car.hardware.property.CarPropertyManager\")",
+              "git_blob_oid": "82c87944a8e950d4a7f0365b33de42d5e1e9e95f",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt",
+              "line": 29,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt"
+            },
+            {
+              "excerpt": "val carClass = Class.forName(\"android.car.Car\")",
+              "git_blob_oid": "82c87944a8e950d4a7f0365b33de42d5e1e9e95f",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt",
+              "line": 30,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt"
+            },
+            {
+              "excerpt": "val managerClass = Class.forName(\"android.car.hardware.property.CarPropertyManager\")",
+              "git_blob_oid": "0cb7fd4a3a60b7b2930480cb2442a2d71c743c25",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt",
+              "line": 29,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt"
+            },
+            {
+              "excerpt": "val carClass = Class.forName(\"android.car.Car\")",
+              "git_blob_oid": "0cb7fd4a3a60b7b2930480cb2442a2d71c743c25",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt",
+              "line": 30,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt"
+            },
+            {
+              "excerpt": "val managerClass = Class.forName(\"android.car.hardware.property.CarPropertyManager\")",
+              "git_blob_oid": "2472755acda23942a28b82d7fab32a3a64b6635b",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/XinqingClimateBridge.kt",
+              "line": 29,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/XinqingClimateBridge.kt"
+            },
+            {
+              "excerpt": "val carClass = Class.forName(\"android.car.Car\")",
+              "git_blob_oid": "2472755acda23942a28b82d7fab32a3a64b6635b",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/XinqingClimateBridge.kt",
+              "line": 30,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/XinqingClimateBridge.kt"
+            },
+            {
+              "excerpt": "method.invoke(platform) as Boolean",
+              "git_blob_oid": "46aed0d2f9b3b25c60d076ffc5eadcd6247a704e",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/VendorClimateManager.kt",
+              "line": 41,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/VendorClimateManager.kt"
+            },
+            {
+              "excerpt": "method.invoke(platform, propertyId, area) as Int",
+              "git_blob_oid": "46aed0d2f9b3b25c60d076ffc5eadcd6247a704e",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/VendorClimateManager.kt",
+              "line": 49,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/VendorClimateManager.kt"
+            },
+            {
+              "excerpt": "method.invoke(platform, propertyId, area, value)",
+              "git_blob_oid": "46aed0d2f9b3b25c60d076ffc5eadcd6247a704e",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/VendorClimateManager.kt",
+              "line": 59,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/VendorClimateManager.kt"
+            },
+            {
+              "excerpt": "method.invoke(target, propertyId + propertyOffset, area) as Int",
+              "git_blob_oid": "82c87944a8e950d4a7f0365b33de42d5e1e9e95f",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt",
+              "line": 48,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt"
+            },
+            {
+              "excerpt": "method.invoke(target, propertyId + propertyOffset, area, value)",
+              "git_blob_oid": "82c87944a8e950d4a7f0365b33de42d5e1e9e95f",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt",
+              "line": 59,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt"
+            },
+            {
+              "excerpt": "method.invoke(target, propertyId + propertyOffset, area) as Int",
+              "git_blob_oid": "0cb7fd4a3a60b7b2930480cb2442a2d71c743c25",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt",
+              "line": 48,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt"
+            },
+            {
+              "excerpt": "method.invoke(target, propertyId + propertyOffset, area, value)",
+              "git_blob_oid": "0cb7fd4a3a60b7b2930480cb2442a2d71c743c25",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt",
+              "line": 59,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8295ClimateBridge.kt"
+            },
+            {
+              "excerpt": "method.invoke(target, propertyId + propertyOffset, area) as Int",
+              "git_blob_oid": "2472755acda23942a28b82d7fab32a3a64b6635b",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/XinqingClimateBridge.kt",
+              "line": 48,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/XinqingClimateBridge.kt"
+            },
+            {
+              "excerpt": "method.invoke(target, propertyId + propertyOffset, area, value)",
+              "git_blob_oid": "2472755acda23942a28b82d7fab32a3a64b6635b",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/XinqingClimateBridge.kt",
+              "line": 59,
+              "path": "vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/XinqingClimateBridge.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "4bf4330cc20a08d6acbd7059292597be2075045e",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/AutoDemistCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/AutoDemistCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "4bf4330cc20a08d6acbd7059292597be2075045e",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/AutoDemistCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/AutoDemistCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "96419017d67f75b1aabefe2e38186a907bb78dd3",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/CabinDryingCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/CabinDryingCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "96419017d67f75b1aabefe2e38186a907bb78dd3",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/CabinDryingCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/CabinDryingCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "df9ddd7be509e5a92b8f2c837b778249ea4e6595",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/CabinPrecoolCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/CabinPrecoolCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "df9ddd7be509e5a92b8f2c837b778249ea4e6595",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/CabinPrecoolCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/CabinPrecoolCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "8744f852e41bf7accedc2b5c905a49db0c9e0413",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/CabinPreheatCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/CabinPreheatCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "8744f852e41bf7accedc2b5c905a49db0c9e0413",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/CabinPreheatCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/CabinPreheatCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "60cd53effa0d62ff7c24c4eb30bda52bdf10953a",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/CompressorProtectionCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/CompressorProtectionCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "60cd53effa0d62ff7c24c4eb30bda52bdf10953a",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/CompressorProtectionCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/CompressorProtectionCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "5e450f07ad5c847161dd26d69a60f1cf43564b32",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/DefrostBoostCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/DefrostBoostCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "5e450f07ad5c847161dd26d69a60f1cf43564b32",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/DefrostBoostCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/DefrostBoostCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "737d9aea2f95f04e1db10894293bbc3f66818f8d",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/DriverOnlyCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/DriverOnlyCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "737d9aea2f95f04e1db10894293bbc3f66818f8d",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/DriverOnlyCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/DriverOnlyCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "0d98f5e9ddb447c34e635f6dfd90efc29a10c878",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/EcoClimateCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/EcoClimateCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "0d98f5e9ddb447c34e635f6dfd90efc29a10c878",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/EcoClimateCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/EcoClimateCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "3cfd184ed0b7f6e4e9e7808b49c0bc64c77d6757",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/EnergyPredictionCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/EnergyPredictionCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "3cfd184ed0b7f6e4e9e7808b49c0bc64c77d6757",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/EnergyPredictionCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/EnergyPredictionCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "8325375d5c5bee680a38928d0632b74a4b9a75fb",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/FootwellBalanceCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/FootwellBalanceCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "8325375d5c5bee680a38928d0632b74a4b9a75fb",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/FootwellBalanceCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/FootwellBalanceCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "1dd3eacdb311f2f237982657c7d04ae6e17388ca",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/FragranceScheduleCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/FragranceScheduleCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "1dd3eacdb311f2f237982657c7d04ae6e17388ca",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/FragranceScheduleCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/FragranceScheduleCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "2938c91c7f1b1f0e2ef991aefe6636ce981c89cd",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/FrontComfortCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/FrontComfortCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "2938c91c7f1b1f0e2ef991aefe6636ce981c89cd",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/FrontComfortCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/FrontComfortCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "5750ce6b3a59342b41c8fa3704dd990017d3f580",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/HumidityControlCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/HumidityControlCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "5750ce6b3a59342b41c8fa3704dd990017d3f580",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/HumidityControlCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/HumidityControlCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "c686c9e407ab11753116e37c34fbd82c1d13b221",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/ParkingVentilationCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/ParkingVentilationCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "c686c9e407ab11753116e37c34fbd82c1d13b221",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/ParkingVentilationCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/ParkingVentilationCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "bd5fca3cdb2dc160fa448fc07ab90508e133587c",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/PassengerComfortCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/PassengerComfortCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "bd5fca3cdb2dc160fa448fc07ab90508e133587c",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/PassengerComfortCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/PassengerComfortCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "04203b340b61acf0d2b434114a44324389a66586",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/PurifierScheduleCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/PurifierScheduleCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "04203b340b61acf0d2b434114a44324389a66586",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/PurifierScheduleCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/PurifierScheduleCoordinator.kt"
+            },
+            {
+              "excerpt": "import android.os.SystemProperties",
+              "git_blob_oid": "7a9142392eb2cf6bea6bbecb9bc0f816240812e0",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/RearComfortCoordinator.kt",
+              "line": 20,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/RearComfortCoordinator.kt"
+            },
+            {
+              "excerpt": "private val platform = SystemProperties.get(\"ro.board.platform\", \"sa8155\")",
+              "git_blob_oid": "7a9142392eb2cf6bea6bbecb9bc0f816240812e0",
+              "head_blob": "ef1114ba61b39cf20eb5e66e160608bf8c4d8b9e:app/src/main/java/com/cockpitbench/thermo/legacy/RearComfortCoordinator.kt",
+              "line": 26,
+              "path": "app/src/main/java/com/cockpitbench/thermo/legacy/RearComfortCoordinator.kt"
+            }
+          ],
+          "value": 66
         },
         "version_bound_status": {
           "business_modules": [

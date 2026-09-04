@@ -14,13 +14,6 @@
           "path": "app/build.gradle"
         },
         {
-          "excerpt": "def versionTask = tasks.register(\"verifyApiCompatibility\") {",
-          "git_blob_oid": "99bdba0051e745c15e57a4563cbfe5a39dc2fcac",
-          "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/build.gradle",
-          "line": 31,
-          "path": "app/build.gradle"
-        },
-        {
           "excerpt": "preBuild.dependsOn(versionTask)",
           "git_blob_oid": "99bdba0051e745c15e57a4563cbfe5a39dc2fcac",
           "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/build.gradle",
@@ -50,15 +43,7 @@
           "path": "settings-security/build.gradle"
         }
       ],
-      "compatibility_evidence": [
-        {
-          "excerpt": "def versionTask = tasks.register(\"verifyApiCompatibility\") {",
-          "git_blob_oid": "99bdba0051e745c15e57a4563cbfe5a39dc2fcac",
-          "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/build.gradle",
-          "line": 31,
-          "path": "app/build.gradle"
-        }
-      ],
+      "compatibility_evidence": [],
       "contract": "app_api_version_v3_facts",
       "dedicated_version_control_files": [
         {
@@ -234,13 +219,244 @@
         "unowned_code_path_count": 0,
         "unowned_code_samples": []
       },
+      "componentization_metrics": {
+        "explicit_public_contracts": [
+          {
+            "declaration_kind": "abstract_class",
+            "declaration_name": "AppListFragment",
+            "excerpt": "public abstract class AppListFragment extends SettingsFragment {",
+            "git_blob_oid": "3bd137ad6cc81bcc1f3cc7b211be65bf79d8d839",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/AppListFragment.java",
+            "line": 29,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/applications/AppListFragment.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "AppListItemListener",
+            "excerpt": "public interface AppListItemListener {",
+            "git_blob_oid": "e3b9b62fbd80a97a1e9c92c2d8db9838dbc808a2",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/ApplicationListItemManager.java",
+            "line": 40,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/applications/ApplicationListItemManager.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "HibernatedAppsCountListener",
+            "excerpt": "public interface HibernatedAppsCountListener {",
+            "git_blob_oid": "c4ee12d98ec7d0d052bbf39ada8b3e299093b633",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/HibernatedAppsItemManager.java",
+            "line": 126,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/applications/HibernatedAppsItemManager.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "InstalledAppCountListener",
+            "excerpt": "public interface InstalledAppCountListener {",
+            "git_blob_oid": "bcde68e235733959162cf9f47b0e59f5531c4072",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/InstalledAppCountItemManager.java",
+            "line": 102,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/applications/InstalledAppCountItemManager.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "RecentAppStatsListener",
+            "excerpt": "public interface RecentAppStatsListener {",
+            "git_blob_oid": "37181fbb2337b10b23f42f5666200e979b882659",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/RecentAppsItemManager.java",
+            "line": 193,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/applications/RecentAppsItemManager.java"
+          },
+          {
+            "declaration_kind": "abstract_class",
+            "declaration_name": "AssistConfigBasePreferenceController",
+            "excerpt": "public abstract class AssistConfigBasePreferenceController extends",
+            "git_blob_oid": "e198fdc594e2593ba6119f3c1414f872d2d81007",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/assist/AssistConfigBasePreferenceController.java",
+            "line": 39,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/applications/assist/AssistConfigBasePreferenceController.java"
+          },
+          {
+            "declaration_kind": "abstract_class",
+            "declaration_name": "DefaultAppEntryBasePreferenceController",
+            "excerpt": "public abstract class DefaultAppEntryBasePreferenceController<V extends Preference> extends",
+            "git_blob_oid": "82a72d00a5dba9e8614e35c76e353b094cd6504e",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAppEntryBasePreferenceController.java",
+            "line": 41,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAppEntryBasePreferenceController.java"
+          },
+          {
+            "declaration_kind": "abstract_class",
+            "declaration_name": "DefaultAppsPickerBasePreferenceController",
+            "excerpt": "public abstract class DefaultAppsPickerBasePreferenceController extends",
+            "git_blob_oid": "4cc06a8e742ef89c329b38ca72c766a3bd25167a",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAppsPickerBasePreferenceController.java",
+            "line": 41,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAppsPickerBasePreferenceController.java"
+          },
+          {
+            "declaration_kind": "abstract_class",
+            "declaration_name": "DefaultAppsPickerEntryBasePreferenceController",
+            "excerpt": "public abstract class DefaultAppsPickerEntryBasePreferenceController extends",
+            "git_blob_oid": "fda215f6ab65adaba58a85d9954d8189b7bdecfd",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAppsPickerEntryBasePreferenceController.java",
+            "line": 33,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAppsPickerEntryBasePreferenceController.java"
+          },
+          {
+            "declaration_kind": "abstract_class",
+            "declaration_name": "AppLaunchSettingsBasePreferenceController",
+            "excerpt": "public abstract class AppLaunchSettingsBasePreferenceController<V extends Preference> extends",
+            "git_blob_oid": "2cedc08e6820a545c4f46938922aeda78339db22",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/managedomainurls/AppLaunchSettingsBasePreferenceController.java",
+            "line": 42,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/applications/managedomainurls/AppLaunchSettingsBasePreferenceController.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Callback",
+            "excerpt": "public interface Callback {",
+            "git_blob_oid": "368f1e582dce052856e71e190d009633f9f0d989",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/specialaccess/AppEntryListManager.java",
+            "line": 49,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/applications/specialaccess/AppEntryListManager.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "AppFilterProvider",
+            "excerpt": "public interface AppFilterProvider {",
+            "git_blob_oid": "368f1e582dce052856e71e190d009633f9f0d989",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/specialaccess/AppEntryListManager.java",
+            "line": 60,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/applications/specialaccess/AppEntryListManager.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "ExtraInfoBridge",
+            "excerpt": "public interface ExtraInfoBridge {",
+            "git_blob_oid": "368f1e582dce052856e71e190d009633f9f0d989",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/specialaccess/AppEntryListManager.java",
+            "line": 68,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/applications/specialaccess/AppEntryListManager.java"
+          },
+          {
+            "declaration_kind": "abstract_class",
+            "declaration_name": "LanguageBasePreferenceController",
+            "excerpt": "public abstract class LanguageBasePreferenceController extends",
+            "git_blob_oid": "30eecd1602164b294add5d0b547ac8629482d349",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/language/LanguageBasePreferenceController.java",
+            "line": 36,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/language/LanguageBasePreferenceController.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "LocaleSelectedListener",
+            "excerpt": "public interface LocaleSelectedListener {",
+            "git_blob_oid": "30eecd1602164b294add5d0b547ac8629482d349",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/language/LanguageBasePreferenceController.java",
+            "line": 40,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/language/LanguageBasePreferenceController.java"
+          },
+          {
+            "declaration_kind": "abstract_class",
+            "declaration_name": "BaseNotificationsPreferenceController",
+            "excerpt": "public abstract class BaseNotificationsPreferenceController<T extends Preference> extends",
+            "git_blob_oid": "9b389f0f5c93c245d0eb0be1af9443d2b09d7176",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/notifications/BaseNotificationsPreferenceController.java",
+            "line": 41,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/notifications/BaseNotificationsPreferenceController.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "NotificationSwitchListener",
+            "excerpt": "public interface NotificationSwitchListener {",
+            "git_blob_oid": "02229f1b0ce0578051e060f4499f3ac9a54ef278",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/notifications/NotificationsFragment.java",
+            "line": 108,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/notifications/NotificationsFragment.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Tile",
+            "excerpt": "interface Tile extends View.OnClickListener {",
+            "git_blob_oid": "0f45c84bdfc72954f2c92e7f20441f0578307ae0",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/quicksettings/QuickSettingGridAdapter.java",
+            "line": 73,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/quicksettings/QuickSettingGridAdapter.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "SeekbarTile",
+            "excerpt": "interface SeekbarTile extends SeekBar.OnSeekBarChangeListener {",
+            "git_blob_oid": "0f45c84bdfc72954f2c92e7f20441f0578307ae0",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/quicksettings/QuickSettingGridAdapter.java",
+            "line": 113,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/quicksettings/QuickSettingGridAdapter.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "StateChangedListener",
+            "excerpt": "public interface StateChangedListener {",
+            "git_blob_oid": "463d4ae8f44cb4b31105d4a8c06b7cbb4f3493ed",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/quicksettings/StateChangedListener.java",
+            "line": 21,
+            "module": ":app",
+            "path": "app/src/main/java/com/android/car/settings/quicksettings/StateChangedListener.java"
+          }
+        ],
+        "replaceable_components": [
+          ":settings-common",
+          ":settings-connectivity",
+          ":settings-security"
+        ],
+        "reusable_components": [
+          ":settings-common",
+          ":settings-connectivity",
+          ":settings-security"
+        ],
+        "shared_capability_owners": [
+          ":settings-common"
+        ]
+      },
       "contract": "app_architecture_v3_fact_candidates",
       "cycles": [],
+      "decoupling_metrics": {
+        "concrete_implementation_edges": [],
+        "cross_module_source_intrusions": [],
+        "dependency_cycles": [],
+        "platform_change_propagation_modules": [
+          ":app",
+          ":settings-common",
+          ":settings-connectivity",
+          ":settings-security"
+        ],
+        "reverse_dependency_edges": []
+      },
       "evidence_gaps": [],
       "excluded_test_or_build_modules": [],
       "facts": {
+        "api_dependency_edge_count": 0,
         "business_boundary_isolation": true,
         "code_not_in_root_package": true,
+        "cohesive_module_count": 4,
         "common_capability_in_base_core": true,
         "component_friendly_check_count": 4,
         "component_friendly_checks": {
@@ -250,19 +466,33 @@
           "no_cross_module_hardcoded_dependency": null,
           "no_module_cycle": true
         },
+        "concrete_implementation_edge_count": 0,
+        "cross_module_source_intrusion_count": 0,
+        "dependency_cycle_count": 0,
+        "dependency_scc_count": 4,
+        "explicit_public_contract_count": 126,
         "has_base_layered_architecture": false,
         "has_business_packages": true,
         "has_circular_dependency": false,
         "has_file_type_packages": false,
         "has_layered_directory": true,
+        "implementation_dependency_edge_count": 3,
         "is_component_friendly": true,
         "layered_business_module_count": 1,
         "module_count": 4,
+        "module_test_entry_count": 1,
         "modules_have_independent_build_entry": true,
+        "platform_change_propagation_module_count": 4,
+        "real_build_module_count": 4,
+        "replaceable_component_count": 3,
+        "reusable_component_count": 3,
+        "reverse_dependency_edge_count": 0,
+        "shared_capability_owner_count": 1,
         "standard_named_module_count": 2
       },
       "internal_dependency_evidence": [
         {
+          "configuration": "implementation",
           "excerpt": "implementation project(\":settings-common\")",
           "from_module": ":app",
           "git_blob_oid": "99bdba0051e745c15e57a4563cbfe5a39dc2fcac",
@@ -272,6 +502,7 @@
           "to_module": ":settings-common"
         },
         {
+          "configuration": "implementation",
           "excerpt": "implementation project(\":settings-connectivity\")",
           "from_module": ":app",
           "git_blob_oid": "99bdba0051e745c15e57a4563cbfe5a39dc2fcac",
@@ -281,6 +512,7 @@
           "to_module": ":settings-connectivity"
         },
         {
+          "configuration": "implementation",
           "excerpt": "implementation project(\":settings-security\")",
           "from_module": ":app",
           "git_blob_oid": "99bdba0051e745c15e57a4563cbfe5a39dc2fcac",
@@ -299,6 +531,57 @@
         ":settings-common": [],
         ":settings-connectivity": [],
         ":settings-security": []
+      },
+      "modularization_metrics": {
+        "api_dependency_edges": [],
+        "cohesive_modules": [
+          ":app",
+          ":settings-common",
+          ":settings-connectivity",
+          ":settings-security"
+        ],
+        "dependency_scc_count": 4,
+        "implementation_dependency_edges": [
+          {
+            "configuration": "implementation",
+            "excerpt": "implementation project(\":settings-common\")",
+            "from_module": ":app",
+            "git_blob_oid": "99bdba0051e745c15e57a4563cbfe5a39dc2fcac",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/build.gradle",
+            "line": 50,
+            "path": "app/build.gradle",
+            "to_module": ":settings-common"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "implementation project(\":settings-connectivity\")",
+            "from_module": ":app",
+            "git_blob_oid": "99bdba0051e745c15e57a4563cbfe5a39dc2fcac",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/build.gradle",
+            "line": 51,
+            "path": "app/build.gradle",
+            "to_module": ":settings-connectivity"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "implementation project(\":settings-security\")",
+            "from_module": ":app",
+            "git_blob_oid": "99bdba0051e745c15e57a4563cbfe5a39dc2fcac",
+            "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/build.gradle",
+            "line": 52,
+            "path": "app/build.gradle",
+            "to_module": ":settings-security"
+          }
+        ],
+        "module_test_entries": [
+          ":app"
+        ],
+        "real_build_modules": [
+          ":app",
+          ":settings-common",
+          ":settings-connectivity",
+          ":settings-security"
+        ]
       },
       "modules": [
         {
@@ -539,8 +822,10 @@
         ],
         "excluded_parts": [
           "androidtest",
+          "androidtests",
           "build",
           "generated",
+          "robotests",
           "test",
           "tests",
           "third-party",
@@ -599,11 +884,13 @@
             "scoped_storage": [],
             "versioned_permission": []
           },
-          "value": true
+          "value": false
         },
         "has_interface_abstraction": {
           "classification_policy": "Requires an explicitly platform/version/architecture-named adapter or strategy declaration, a current-head implementation, and an actual platform, SDK/version, ABI, or non-compatible API call inside that implementation. Only a status actually covered by such a call receives the abstraction cap; UI callbacks, providers, names alone, and arbitrary abstract classes do not qualify.",
-          "covered_statuses": [],
+          "covered_statuses": [
+            "non_compatible_api"
+          ],
           "evidence": [
             {
               "classification": "platform_logic_abstraction",
@@ -1477,7 +1764,7 @@
             "android.permission.BLUETOOTH_PRIVILEGED",
             "android.permission.READ_EXTERNAL_STORAGE"
           ],
-          "value": false
+          "value": true
         },
         "has_non_compatible_api": {
           "evidence": {
@@ -1890,6 +2177,393 @@
             "vendor_private_namespace": []
           },
           "value": true
+        },
+        "non_compatible_api_covered_by_abstraction": {
+          "evidence": [
+            {
+              "call_kind": "system_properties_api",
+              "covered_fact": "non_compatible_api",
+              "excerpt": "return SystemProperties.get(key);",
+              "git_blob_oid": "1072a16d652f46f0836b776eef1f465a5be302bd",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/common/platform/AndroidPlatformPropertyAdapter.java",
+              "line": 35,
+              "path": "settings-common/src/main/java/com/android/car/settings/common/platform/AndroidPlatformPropertyAdapter.java"
+            },
+            {
+              "call_kind": "system_properties_api",
+              "covered_fact": "non_compatible_api",
+              "excerpt": "return SystemProperties.get(key, defaultValue);",
+              "git_blob_oid": "1072a16d652f46f0836b776eef1f465a5be302bd",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/common/platform/AndroidPlatformPropertyAdapter.java",
+              "line": 40,
+              "path": "settings-common/src/main/java/com/android/car/settings/common/platform/AndroidPlatformPropertyAdapter.java"
+            },
+            {
+              "call_kind": "system_properties_api",
+              "covered_fact": "non_compatible_api",
+              "excerpt": "return SystemProperties.getBoolean(key, defaultValue);",
+              "git_blob_oid": "1072a16d652f46f0836b776eef1f465a5be302bd",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/common/platform/AndroidPlatformPropertyAdapter.java",
+              "line": 45,
+              "path": "settings-common/src/main/java/com/android/car/settings/common/platform/AndroidPlatformPropertyAdapter.java"
+            }
+          ],
+          "value": false
+        },
+        "uncovered_non_compatible_api_count": {
+          "evidence": [
+            {
+              "excerpt": "Class<?> clazz = Class.forName(controllerName);",
+              "git_blob_oid": "2c1360b5a42dea88e84983af3074b93227094e28",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/common/PreferenceControllerListHelper.java",
+              "line": 93,
+              "path": "settings-common/src/main/java/com/android/car/settings/common/PreferenceControllerListHelper.java"
+            },
+            {
+              "excerpt": "import com.android.internal.accessibility.util.AccessibilityUtils;",
+              "git_blob_oid": "a136e068ada6afde815f12f9aaf2cfb9af24f546",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/accessibility/ScreenReaderUtils.java",
+              "line": 29,
+              "path": "app/src/main/java/com/android/car/settings/accessibility/ScreenReaderUtils.java"
+            },
+            {
+              "excerpt": "import com.android.internal.telephony.SmsApplication;",
+              "git_blob_oid": "b4c29e863a69f597427691e682c4c04d07fa709b",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/ApplicationsUtils.java",
+              "line": 31,
+              "path": "app/src/main/java/com/android/car/settings/applications/ApplicationsUtils.java"
+            },
+            {
+              "excerpt": "import com.android.internal.annotations.GuardedBy;",
+              "git_blob_oid": "fc5943660bd8018f0618b596d18cb91c157dfe68",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/PrioritizeAppPerformancePreferenceController.java",
+              "line": 35,
+              "path": "app/src/main/java/com/android/car/settings/applications/PrioritizeAppPerformancePreferenceController.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.AssistUtils;",
+              "git_blob_oid": "e198fdc594e2593ba6119f3c1414f872d2d81007",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/assist/AssistConfigBasePreferenceController.java",
+              "line": 34,
+              "path": "app/src/main/java/com/android/car/settings/applications/assist/AssistConfigBasePreferenceController.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.AssistUtils;",
+              "git_blob_oid": "faa0ccadbd14adcecc3f1faaac60ba39591e4ca9",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/assist/AssistantAndVoiceEntryPreferenceController.java",
+              "line": 28,
+              "path": "app/src/main/java/com/android/car/settings/applications/assist/AssistantAndVoiceEntryPreferenceController.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.AssistUtils;",
+              "git_blob_oid": "89da80eb2b7bd2bfb4be814c7629150a0c082528",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/assist/DefaultVoiceInputPickerEntryPreferenceController.java",
+              "line": 34,
+              "path": "app/src/main/java/com/android/car/settings/applications/assist/DefaultVoiceInputPickerEntryPreferenceController.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.AssistUtils;",
+              "git_blob_oid": "6b1b9326ad39e2f64dc323e6fbdfeb1d08e31d7a",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/assist/DefaultVoiceInputPickerPreferenceController.java",
+              "line": 30,
+              "path": "app/src/main/java/com/android/car/settings/applications/assist/DefaultVoiceInputPickerPreferenceController.java"
+            },
+            {
+              "excerpt": "com.android.internal.R.styleable.RecognitionService);",
+              "git_blob_oid": "1fd02231a859cc3c9cb4aec9b032be2eb9af72ca",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/assist/VoiceInputInfoProvider.java",
+              "line": 293,
+              "path": "app/src/main/java/com/android/car/settings/applications/assist/VoiceInputInfoProvider.java"
+            },
+            {
+              "excerpt": "com.android.internal.R.styleable.RecognitionService_settingsActivity);",
+              "git_blob_oid": "1fd02231a859cc3c9cb4aec9b032be2eb9af72ca",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/assist/VoiceInputInfoProvider.java",
+              "line": 295,
+              "path": "app/src/main/java/com/android/car/settings/applications/assist/VoiceInputInfoProvider.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.AssistUtils;",
+              "git_blob_oid": "f227b20a474690f6f902ec5bf926358a9fdeeb8c",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAssistantPickerEntryPreferenceController.java",
+              "line": 34,
+              "path": "app/src/main/java/com/android/car/settings/applications/defaultapps/DefaultAssistantPickerEntryPreferenceController.java"
+            },
+            {
+              "excerpt": "import com.android.internal.util.ArrayUtils;",
+              "git_blob_oid": "9fcd94ee5cbbf15e91fc30aad178c41dc4b20860",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/specialaccess/AppStateAppOpsBridge.java",
+              "line": 34,
+              "path": "app/src/main/java/com/android/car/settings/applications/specialaccess/AppStateAppOpsBridge.java"
+            },
+            {
+              "excerpt": "import com.android.internal.util.ArrayUtils;",
+              "git_blob_oid": "8780f1f14505053372df23a530c52d2128ae48ab",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/applications/specialaccess/WifiControlPreferenceController.java",
+              "line": 26,
+              "path": "app/src/main/java/com/android/car/settings/applications/specialaccess/WifiControlPreferenceController.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.LocaleStore;",
+              "git_blob_oid": "17d6c4c6eb6d1180b7be9600214b502b9f469656",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/language/ChildLocalePickerFragment.java",
+              "line": 28,
+              "path": "app/src/main/java/com/android/car/settings/language/ChildLocalePickerFragment.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.LocaleStore;",
+              "git_blob_oid": "55fcfef8977fd0d877aff8246a9509194ae68f13",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/language/ChildLocalePickerPreferenceController.java",
+              "line": 23,
+              "path": "app/src/main/java/com/android/car/settings/language/ChildLocalePickerPreferenceController.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.LocalePicker;",
+              "git_blob_oid": "30eecd1602164b294add5d0b547ac8629482d349",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/language/LanguageBasePreferenceController.java",
+              "line": 27,
+              "path": "app/src/main/java/com/android/car/settings/language/LanguageBasePreferenceController.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.LocaleStore;",
+              "git_blob_oid": "30eecd1602164b294add5d0b547ac8629482d349",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/language/LanguageBasePreferenceController.java",
+              "line": 28,
+              "path": "app/src/main/java/com/android/car/settings/language/LanguageBasePreferenceController.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.LocaleStore;",
+              "git_blob_oid": "fd6d9d428c5fda42bf3617f1c71c923809116de7",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/language/LanguagePickerPreferenceController.java",
+              "line": 24,
+              "path": "app/src/main/java/com/android/car/settings/language/LanguagePickerPreferenceController.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.LocaleHelper;",
+              "git_blob_oid": "0aa0a8ecf0f021b9f32ad4711dd102040b9e36e6",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/language/LanguageSettingsEntryPreferenceController.java",
+              "line": 28,
+              "path": "app/src/main/java/com/android/car/settings/language/LanguageSettingsEntryPreferenceController.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.LocaleHelper;",
+              "git_blob_oid": "789169f7c7f6792182d5937fd34810c23d05eac1",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/language/LocalePreferenceProvider.java",
+              "line": 31,
+              "path": "app/src/main/java/com/android/car/settings/language/LocalePreferenceProvider.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.LocaleStore;",
+              "git_blob_oid": "789169f7c7f6792182d5937fd34810c23d05eac1",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/language/LocalePreferenceProvider.java",
+              "line": 32,
+              "path": "app/src/main/java/com/android/car/settings/language/LocalePreferenceProvider.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.SuggestedLocaleAdapter;",
+              "git_blob_oid": "789169f7c7f6792182d5937fd34810c23d05eac1",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/language/LocalePreferenceProvider.java",
+              "line": 33,
+              "path": "app/src/main/java/com/android/car/settings/language/LocalePreferenceProvider.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.LocaleStore;",
+              "git_blob_oid": "dc29b54390806e4851c31633dfc2309cb301bab4",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/language/LocaleUtil.java",
+              "line": 22,
+              "path": "app/src/main/java/com/android/car/settings/language/LocaleUtil.java"
+            },
+            {
+              "excerpt": "import static com.android.internal.notification.NotificationAccessConfirmationActivityContract.EXTRA_COMPONENT_NAME;",
+              "git_blob_oid": "69f173db524bb95924831a7f81ee188052d4e7f2",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/notifications/NotificationAccessConfirmationActivity.java",
+              "line": 21,
+              "path": "app/src/main/java/com/android/car/settings/notifications/NotificationAccessConfirmationActivity.java"
+            },
+            {
+              "excerpt": "import static com.android.internal.notification.NotificationAccessConfirmationActivityContract.EXTRA_PACKAGE_TITLE;",
+              "git_blob_oid": "69f173db524bb95924831a7f81ee188052d4e7f2",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/notifications/NotificationAccessConfirmationActivity.java",
+              "line": 22,
+              "path": "app/src/main/java/com/android/car/settings/notifications/NotificationAccessConfirmationActivity.java"
+            },
+            {
+              "excerpt": "import com.android.internal.app.AlertActivity;",
+              "git_blob_oid": "69f173db524bb95924831a7f81ee188052d4e7f2",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/notifications/NotificationAccessConfirmationActivity.java",
+              "line": 40,
+              "path": "app/src/main/java/com/android/car/settings/notifications/NotificationAccessConfirmationActivity.java"
+            },
+            {
+              "excerpt": "import com.android.internal.widget.LockPatternUtils;",
+              "git_blob_oid": "84eb797bf370eab26bb5913995a8508df70bbe97",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/setupservice/InitialLockSetupService.java",
+              "line": 36,
+              "path": "app/src/main/java/com/android/car/settings/setupservice/InitialLockSetupService.java"
+            },
+            {
+              "excerpt": "import com.android.internal.widget.LockPatternView;",
+              "git_blob_oid": "84eb797bf370eab26bb5913995a8508df70bbe97",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/setupservice/InitialLockSetupService.java",
+              "line": 37,
+              "path": "app/src/main/java/com/android/car/settings/setupservice/InitialLockSetupService.java"
+            },
+            {
+              "excerpt": "import com.android.internal.widget.LockscreenCredential;",
+              "git_blob_oid": "84eb797bf370eab26bb5913995a8508df70bbe97",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/setupservice/InitialLockSetupService.java",
+              "line": 38,
+              "path": "app/src/main/java/com/android/car/settings/setupservice/InitialLockSetupService.java"
+            },
+            {
+              "excerpt": "com.android.internal.R.string.ringtone_silent);",
+              "git_blob_oid": "27caff53061ce82650bbf4d798660a531b05e881",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/sound/RingtonePickerPreferenceController.java",
+              "line": 154,
+              "path": "app/src/main/java/com/android/car/settings/sound/RingtonePickerPreferenceController.java"
+            },
+            {
+              "excerpt": "com.android.internal.R.styleable.RingtonePreference, 0, 0);",
+              "git_blob_oid": "5338734f982afb90bb38a155e28be45749feabba",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/sound/RingtonePreference.java",
+              "line": 45,
+              "path": "app/src/main/java/com/android/car/settings/sound/RingtonePreference.java"
+            },
+            {
+              "excerpt": "mRingtoneType = a.getInt(com.android.internal.R.styleable.RingtonePreference_ringtoneType,",
+              "git_blob_oid": "5338734f982afb90bb38a155e28be45749feabba",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/sound/RingtonePreference.java",
+              "line": 46,
+              "path": "app/src/main/java/com/android/car/settings/sound/RingtonePreference.java"
+            },
+            {
+              "excerpt": "mShowSilent = a.getBoolean(com.android.internal.R.styleable.RingtonePreference_showSilent,",
+              "git_blob_oid": "5338734f982afb90bb38a155e28be45749feabba",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/sound/RingtonePreference.java",
+              "line": 48,
+              "path": "app/src/main/java/com/android/car/settings/sound/RingtonePreference.java"
+            },
+            {
+              "excerpt": "import com.android.internal.util.Preconditions;",
+              "git_blob_oid": "5af58144bf476cef6b6244c536a5824f63da0105",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/storage/FetchPackageStorageAsyncLoader.java",
+              "line": 27,
+              "path": "app/src/main/java/com/android/car/settings/storage/FetchPackageStorageAsyncLoader.java"
+            },
+            {
+              "excerpt": "import com.android.internal.annotations.VisibleForTesting;",
+              "git_blob_oid": "18223264ddd7b9c6cd9507bd310ea77da634e539",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settings/units/UnitsBasePreferenceController.java",
+              "line": 34,
+              "path": "app/src/main/java/com/android/car/settings/units/UnitsBasePreferenceController.java"
+            },
+            {
+              "excerpt": "import com.android.internal.telephony.SmsApplication;",
+              "git_blob_oid": "2ff51a33157929672ef6d0ca0dcb9b507baa93f1",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:app/src/main/java/com/android/car/settingslib/applications/ApplicationFeatureProviderImpl.java",
+              "line": 43,
+              "path": "app/src/main/java/com/android/car/settingslib/applications/ApplicationFeatureProviderImpl.java"
+            },
+            {
+              "excerpt": "return styledAttributes.getString(com.android.internal.R.styleable.Preference_key);",
+              "git_blob_oid": "93125080f5a8766e7fce1184222eaf71ed175043",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/common/PreferenceXmlParser.java",
+              "line": 141,
+              "path": "settings-common/src/main/java/com/android/car/settings/common/PreferenceXmlParser.java"
+            },
+            {
+              "excerpt": "import com.android.internal.graphics.ColorUtils;",
+              "git_blob_oid": "689a2915593b03cfc4f4f29ac0ae101c1735b0e7",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/common/TopLevelIcon.java",
+              "line": 33,
+              "path": "settings-common/src/main/java/com/android/car/settings/common/TopLevelIcon.java"
+            },
+            {
+              "excerpt": "import com.android.internal.util.ConcurrentUtils;",
+              "git_blob_oid": "ac4cf5bb62805e9734d30fcc6984887a61b57247",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/qc/HotspotQCUtils.java",
+              "line": 25,
+              "path": "settings-common/src/main/java/com/android/car/settings/qc/HotspotQCUtils.java"
+            },
+            {
+              "excerpt": "return com.android.internal.R.drawable.ic_bt_laptop;",
+              "git_blob_oid": "c92c864af79d158331a5a4f87092d137c9f23bae",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/qc/PairedBluetoothDevices.java",
+              "line": 227,
+              "path": "settings-common/src/main/java/com/android/car/settings/qc/PairedBluetoothDevices.java"
+            },
+            {
+              "excerpt": "return com.android.internal.R.drawable.ic_phone;",
+              "git_blob_oid": "c92c864af79d158331a5a4f87092d137c9f23bae",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/qc/PairedBluetoothDevices.java",
+              "line": 229,
+              "path": "settings-common/src/main/java/com/android/car/settings/qc/PairedBluetoothDevices.java"
+            },
+            {
+              "excerpt": "return com.android.internal.R.drawable.ic_settings_print;",
+              "git_blob_oid": "c92c864af79d158331a5a4f87092d137c9f23bae",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/qc/PairedBluetoothDevices.java",
+              "line": 233,
+              "path": "settings-common/src/main/java/com/android/car/settings/qc/PairedBluetoothDevices.java"
+            },
+            {
+              "excerpt": "return com.android.internal.R.drawable.ic_bt_headset_hfp;",
+              "git_blob_oid": "c92c864af79d158331a5a4f87092d137c9f23bae",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/qc/PairedBluetoothDevices.java",
+              "line": 248,
+              "path": "settings-common/src/main/java/com/android/car/settings/qc/PairedBluetoothDevices.java"
+            },
+            {
+              "excerpt": "return com.android.internal.R.drawable.ic_bt_headphones_a2dp;",
+              "git_blob_oid": "c92c864af79d158331a5a4f87092d137c9f23bae",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/qc/PairedBluetoothDevices.java",
+              "line": 251,
+              "path": "settings-common/src/main/java/com/android/car/settings/qc/PairedBluetoothDevices.java"
+            },
+            {
+              "excerpt": "return com.android.internal.R.drawable.ic_settings_bluetooth;",
+              "git_blob_oid": "c92c864af79d158331a5a4f87092d137c9f23bae",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/qc/PairedBluetoothDevices.java",
+              "line": 254,
+              "path": "settings-common/src/main/java/com/android/car/settings/qc/PairedBluetoothDevices.java"
+            },
+            {
+              "excerpt": "import com.android.internal.annotations.VisibleForTesting;",
+              "git_blob_oid": "5a63d7a3742eb0f23ed07c5ac627a5e96469674a",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-common/src/main/java/com/android/car/settings/search/CarSettingsSearchIndexablesProvider.java",
+              "line": 49,
+              "path": "settings-common/src/main/java/com/android/car/settings/search/CarSettingsSearchIndexablesProvider.java"
+            },
+            {
+              "excerpt": "import com.android.internal.annotations.VisibleForTesting;",
+              "git_blob_oid": "5dd32f175ccbca39423570f41d1aa9a61dbf8d3d",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-connectivity/src/main/java/com/android/car/settings/bluetooth/BluetoothPairingDialogFragment.java",
+              "line": 41,
+              "path": "settings-connectivity/src/main/java/com/android/car/settings/bluetooth/BluetoothPairingDialogFragment.java"
+            },
+            {
+              "excerpt": ".setColor(getColor(com.android.internal.R.color.system_notification_accent_color))",
+              "git_blob_oid": "e883a32f10f2584adb09288340afef7c0ed08670",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-connectivity/src/main/java/com/android/car/settings/bluetooth/BluetoothPairingService.java",
+              "line": 160,
+              "path": "settings-connectivity/src/main/java/com/android/car/settings/bluetooth/BluetoothPairingService.java"
+            },
+            {
+              "excerpt": "import com.android.internal.util.ArrayUtils;",
+              "git_blob_oid": "3cc6a1dcc3750b81a91c3128ddd229b94113c77e",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-connectivity/src/main/java/com/android/car/settings/bluetooth/BluetoothUnbondedDevicesPreferenceController.java",
+              "line": 28,
+              "path": "settings-connectivity/src/main/java/com/android/car/settings/bluetooth/BluetoothUnbondedDevicesPreferenceController.java"
+            },
+            {
+              "excerpt": "com.android.internal.R.string.config_packagedKeyboardName);",
+              "git_blob_oid": "e2ac1510379b92db76a1255bba64c08295193ec1",
+              "head_blob": "150289b5e0d67acf395aa5418e43347207e9c1b4:settings-connectivity/src/main/java/com/android/car/settings/bluetooth/BluetoothUtils.java",
+              "line": 165,
+              "path": "settings-connectivity/src/main/java/com/android/car/settings/bluetooth/BluetoothUtils.java"
+            }
+          ],
+          "value": 54
         },
         "version_bound_status": {
           "business_modules": [],

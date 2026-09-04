@@ -13,7 +13,7 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "b52d8dcc270cd3cc2bb8ecf942c59adbb1128038d9256ff7ad0835599f096764"
+    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
   },
   "canonical_total": {
     "score": 13,
@@ -25,8 +25,8 @@
       "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置。",
-      "analysis": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置。",
+      "score_reasoning": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置；锁定 1。",
+      "analysis": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置；锁定 1。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -162,8 +162,8 @@
       "score": 2,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "测试目标和断言有效，关键模块交互覆盖代理达到 50%；没有绑定 100% 执行结果，不能给 3。",
-      "analysis": "测试目标和断言有效，关键模块交互覆盖代理达到 50%；没有绑定 100% 执行结果，不能给 3。",
+      "score_reasoning": "测试目标和断言有效，关键模块交互覆盖代理达到 50%；没有绑定 100% 执行结果，不能给 3；锁定 2。",
+      "analysis": "测试目标和断言有效，关键模块交互覆盖代理达到 50%；没有绑定 100% 执行结果，不能给 3；锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -432,8 +432,8 @@
       "score": 0,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。",
-      "analysis": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。",
+      "score_reasoning": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。",
+      "analysis": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -482,9 +482,26 @@
       "score": 3,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "真实 refs 同时存在平台分支和车型/SOP release 分支，车型拆分更细，锁定 3。",
-      "analysis": "真实 refs 同时存在平台分支和车型/SOP release 分支，车型拆分更细，锁定 3。",
+      "score_reasoning": "存在决定 3 分档的真实分支 refs=['refs/heads/release/sop-2025']，锁定 3。",
+      "analysis": "存在决定 3 分档的真实分支 refs=['refs/heads/release/sop-2025']，锁定 3。",
       "evidence": [
+        {
+          "source": "git_ref",
+          "path": "refs/heads/release/sop-2025",
+          "ref": "refs/heads/release/sop-2025",
+          "commit": "2234a82e84b34d2d36c5a4bc220313238e5daf13",
+          "commit_oid": "2234a82e84b34d2d36c5a4bc220313238e5daf13",
+          "tree_oid": "7f83142f90b924762091fcc85cf030f9f93f66b5",
+          "merge_base": "471ee8a6438a6982dc5e433b51858b25e9632464",
+          "ahead": 1,
+          "behind": 5,
+          "changed_files": 1,
+          "symbol": "refs/heads/release/sop-2025",
+          "claim": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
+          "observation": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_0"
+        },
         {
           "source": "git_ref",
           "path": "refs/heads/platform/8155",
@@ -497,10 +514,10 @@
           "behind": 5,
           "changed_files": 1,
           "symbol": "refs/heads/platform/8155",
-          "claim": "分支真实 tip/tree 与 main 差异。",
-          "observation": "分支真实 tip/tree 与 main 差异。",
+          "claim": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
+          "observation": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
           "evidence_type": "git_ref",
-          "independent_group": "branch_0"
+          "independent_group": "branch_1"
         },
         {
           "source": "git_ref",
@@ -514,10 +531,10 @@
           "behind": 5,
           "changed_files": 1,
           "symbol": "refs/heads/platform/8295",
-          "claim": "分支真实 tip/tree 与 main 差异。",
-          "observation": "分支真实 tip/tree 与 main 差异。",
+          "claim": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
+          "observation": "车型/SOP ref 的真实 tip/tree 与 main 差异决定 3 分档。",
           "evidence_type": "git_ref",
-          "independent_group": "branch_1"
+          "independent_group": "branch_2"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent band check agree.",

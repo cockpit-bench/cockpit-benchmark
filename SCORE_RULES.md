@@ -1,6 +1,6 @@
 # APP / Android Framework 现行评分合同（Benchmark 版）
 
-版本：2026-09-04-v3  
+版本：2026-09-04-v3.1  
 用途：为座舱 Android APP 与 Android Framework benchmark 生成逐叶标准分。  
 纪律：本文件是唯一评分事实源；allowlist 之外的维度必须丢弃，不得从旧 rubric 换算或补零。
 
@@ -76,6 +76,14 @@ FW 在评估引擎侧为 7 个 Agent；SOLID 一次调用产出 /20，但 benchm
 
 三个架构叶必须使用同一组上述事实，但分别衡量不同构念，不能把同一“任意 N 条”结果换量程重复三次：组件化看可复用/可替换组件，解耦看依赖方向与修改传播，模块化看构建模块边界与内聚。
 
+为避免只换术语不换测量，Gold 必须另外物化三组互不替代的决定性事实：
+
+- componentization：`reusable_component_count`、`replaceable_component_count`、`shared_capability_owner_count`、`explicit_public_contract_count`；
+- decoupling：`reverse_dependency_edge_count`、`cross_module_source_intrusion_count`、`concrete_implementation_edge_count`、`dependency_cycle_count`、`platform_change_propagation_module_count`；
+- modularization：`real_build_module_count`、`cohesive_module_count`、`module_test_entry_count`、`api_dependency_edge_count`、`implementation_dependency_edge_count`、`dependency_scc_count`。
+
+Gradle Kotlin 构建脚本（`build.gradle.kts`、`settings.gradle.kts`）不是生产 Kotlin 源码，不得据此制造未归属源码或边界失败事实。
+
 ### 2.2 `architecture.componentization`（0/1/3/5）
 
 - 5：存在至少两个有独立构建入口、职责边界明确的业务/公共组件，并且公共能力已下沉 base/core 或由显式接口边界复用；仅目录命名或模块数量不够。
@@ -128,6 +136,8 @@ FW 在评估引擎侧为 7 个 Agent；SOLID 一次调用产出 /20，但 benchm
 
 下列内容不得计为 API 兼容性证据：`sourceCompatibility`、`targetCompatibility`、`compileSdk`、`minSdk`、普通版本号文件、只检查 baseline 文件存在/包含固定字符串的任务。3 分必须能从当前公开 API 提取结果与已发布 baseline 做真实 diff，识别删除、签名或可见性变化，或使用等价的 metalava/checkapi/ABI 检查。
 
+只把当前 descriptor 与一个固定哈希做全等比较、运行时版本协商或 `MIN_COMPATIBLE_MAJOR` 策略声明，也不能替代公开 API/ABI 的兼容性 diff。
+
 ### 2.8 `platform_reuse.platform_upgrade`（10/8/3/0）
 
 只扫描生产 `src/main/java|kotlin|cpp|res`、生产 Manifest、模块 build.gradle/CMake；排除 test/androidTest/build/generated/third_party。先提取唯一七事实：
@@ -136,11 +146,11 @@ FW 在评估引擎侧为 7 个 Agent；SOLID 一次调用产出 /20，但 benchm
 2. `has_arch_specific_deps`：只支持单一 ABI 的闭源 SO，且无 fallback/多 ABI。
 3. `version_bound_status`：0 无业务绑定或仅标准注解；1 统一兼容层；2 两至三个业务模块硬编码 SDK 分支；3 核心链路深度绑定。
 4. `arch_bound_status`：0 无绑定/多 ABI；1 单模块加载且有 fallback；2 两至三个模块无统一抽象；3 单架构闭源 SO 或核心强绑定。
-5. `has_interface_abstraction`：平台差异由接口/抽象类/策略隔离。
+5. `has_interface_abstraction`：平台差异由接口/抽象类/策略隔离；同时记录非兼容 API 是否全部被该抽象覆盖以及未覆盖数量。
 6. `has_light_permission_adaptation`：只需 Manifest 轻量权限适配。
 7. `has_complex_permission_adaptation`：高版本需修改蓝牙/存储/位置/通知等运行时逻辑。
 
-兼容层/接口抽象只有在证据证明覆盖相应风险时，才能把对应 version/arch 绑定状态计为≤1。令 `total=version_bound_status+arch_bound_status`，采用风险单调的硬门槛：
+兼容层/接口抽象只有在证据证明覆盖相应风险时，才能把对应 version/arch 绑定状态计为≤1；仓库里“存在某个 Adapter”不能抵消其他未封装风险。单纯创建或读取 `NotificationChannel` 不构成复杂权限适配，除非同时存在运行时请求/检查、版本化权限分支或等价行为变更。令 `total=version_bound_status+arch_bound_status`，采用风险单调的硬门槛：
 
 - 10：无未封装非兼容 API、无单架构专属依赖、total≤1，并且存在明确接口隔离或至少两个 Android 平台版本的自动兼容验证。
 - 8：风险集中在可定位 adapter/compat 层并有 fallback，或虽无非兼容/架构风险但缺少 10 分所需的接口隔离/跨版本自动验证；total≤3。

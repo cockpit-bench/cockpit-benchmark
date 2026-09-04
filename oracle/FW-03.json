@@ -13,10 +13,10 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "b52d8dcc270cd3cc2bb8ecf942c59adbb1128038d9256ff7ad0835599f096764"
+    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
   },
   "canonical_total": {
-    "score": 43,
+    "score": 42,
     "max": 52
   },
   "canonical_leaves": [
@@ -25,8 +25,8 @@
       "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "独立 GitHub Actions 包含真实构建、测试、覆盖率门禁和报告上传，且 final HEAD 运行成功。",
-      "analysis": "独立 GitHub Actions 包含真实构建、测试、覆盖率门禁和报告上传，且 final HEAD 运行成功。",
+      "score_reasoning": "独立 GitHub Actions 包含真实构建、测试、覆盖率门禁和报告上传，且 final HEAD 运行成功；锁定 3。",
+      "analysis": "独立 GitHub Actions 包含真实构建、测试、覆盖率门禁和报告上传，且 final HEAD 运行成功；锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -96,11 +96,11 @@
     },
     {
       "name": "compilation.api_version_management",
-      "score": 3,
+      "score": 2,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "专用语义版本证据=2、有效 API 检查=3；锁定 3。",
-      "analysis": "专用语义版本证据=2、有效 API 检查=3；锁定 3。",
+      "score_reasoning": "专用语义版本证据=2、有效 API 检查=0；锁定 2。",
+      "analysis": "专用语义版本证据=2、有效 API 检查=0；锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -139,19 +139,6 @@
           "observation": "语义版本或 API baseline 检查。",
           "evidence_type": "source",
           "independent_group": "api_control_1"
-        },
-        {
-          "source": "current_head",
-          "path": "native/contract/include/fw03/api/vehicle_hal_api_version.h",
-          "commit": "7cb9206c8a8af76c7800cc6cda70255240e937e0",
-          "ref": "HEAD",
-          "start_line": 11,
-          "end_line": 11,
-          "symbol": "#define FW03_VEHICLE_HAL_API_MIN_COMPATIBLE_MAJOR 1",
-          "claim": "语义版本或 API baseline 检查。",
-          "observation": "语义版本或 API baseline 检查。",
-          "evidence_type": "source",
-          "independent_group": "api_control_2"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent band check agree.",
@@ -162,8 +149,8 @@
       "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "真实断言覆盖关键模块交互，覆盖代理达到 50%，且 final HEAD 独立流水线测试 100% 通过。",
-      "analysis": "真实断言覆盖关键模块交互，覆盖代理达到 50%，且 final HEAD 独立流水线测试 100% 通过。",
+      "score_reasoning": "真实断言覆盖关键模块交互，覆盖代理达到 50%，且 final HEAD 独立流水线测试 100% 通过；锁定 3。",
+      "analysis": "真实断言覆盖关键模块交互，覆盖代理达到 50%，且 final HEAD 独立流水线测试 100% 通过；锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -424,8 +411,8 @@
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 1, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 8。",
-      "analysis": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 1, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 8。",
+      "score_reasoning": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 1, 'has_interface_abstraction': True, 'non_compatible_api_covered_by_abstraction': True, 'uncovered_non_compatible_api_count': 0, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 8。",
+      "analysis": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 1, 'has_interface_abstraction': True, 'non_compatible_api_covered_by_abstraction': True, 'uncovered_non_compatible_api_count': 0, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 8。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -474,8 +461,8 @@
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "真实 refs 显示按平台共用分支，锁定 8。",
-      "analysis": "真实 refs 显示按平台共用分支，锁定 8。",
+      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
+      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']，锁定 8。",
       "evidence": [
         {
           "source": "git_ref",
@@ -489,8 +476,8 @@
           "behind": 3,
           "changed_files": 1,
           "symbol": "refs/heads/platform/8155",
-          "claim": "分支真实 tip/tree 与 main 差异。",
-          "observation": "分支真实 tip/tree 与 main 差异。",
+          "claim": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+          "observation": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
           "evidence_type": "git_ref",
           "independent_group": "branch_0"
         },
@@ -506,8 +493,8 @@
           "behind": 3,
           "changed_files": 1,
           "symbol": "refs/heads/platform/8295",
-          "claim": "分支真实 tip/tree 与 main 差异。",
-          "observation": "分支真实 tip/tree 与 main 差异。",
+          "claim": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
+          "observation": "平台 ref 的真实 tip/tree 与 main 差异决定 8 分档。",
           "evidence_type": "git_ref",
           "independent_group": "branch_1"
         }

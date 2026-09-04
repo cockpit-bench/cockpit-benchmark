@@ -18,15 +18,17 @@ cd cockpit-benchmark
 .\restore.ps1 -Destination D:\cockpit-validation18
 ```
 
-评测时一次只把一个源码仓交给 Agent；不要把 wrapper、oracle、facts、SCORECARD 或质量标签作为 Agent 输入。Agent 输出后，按 `STANDARD_SCORES.json` 同名叶比较。
+评测时一次只把一个源码仓复制到独立临时目录交给 Agent；其工作目录及父目录不得包含 wrapper、oracle、facts、SCORECARD 或质量标签。Agent 输出后，按 `STANDARD_SCORES.json` 同名叶比较。
+
+Evaluator 必须拒绝缺叶、重复叶、合同外叶、非法分值和伪造证据；`failed` 叶保持 null，不补零；仓总分必须等于合法 scored 叶求和。Release 3 分必须引用车型/SOP ref，理由中的“锁定 X”必须与机器分相同。
 
 本集合是公开 Dev/Regression Set，适合 Prompt 开发、规则回归与正式核心验证；公开答案和共享上游谱系意味着它不能替代私有、谱系隔离的最终 Holdout。
 
 ## 版本与边界
 
-- 推荐版本：`v0.7.1`
-- APP：72 叶，223/360；Android FW：99 叶，263/468；合计 486/828。
-- v0.7.0/v0.7.1 修复 Git ref tip 绑定、统一 3.0 Oracle/合同 hash、物化全部 APP facts，并采用外部构建闭包及风险单调平台升级口径；v0.7.1 修正 README 的 PowerShell 恢复命令显示。
+- 推荐版本：`v0.7.2`
+- APP：72 叶，213/360；Android FW：99 叶，262/468；合计 475/828。
+- v0.7.2 修正 APP-01/FW-03 API 兼容错分、APP-01 平台风险封顶、Release 决定性 ref，并把 APP 三个架构叶拆成独立事实、理由和证据；v0.7.0/v0.7.1 保留为历史。
 - 22 个 pending 仓不运输；`can-middleware` 仅为 v0.4 历史补充样例。
 - 旧 archive：https://github.com/cockpit-bench/cockpit-benchmark-v031-archive
 - 每个源码仓保留自己的许可证、来源和全部 heads/tags；源码仓不含答案。

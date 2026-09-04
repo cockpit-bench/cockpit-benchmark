@@ -222,16 +222,183 @@
         "unowned_code_path_count": 0,
         "unowned_code_samples": []
       },
+      "componentization_metrics": {
+        "explicit_public_contracts": [
+          {
+            "declaration_kind": "aidl_interface",
+            "declaration_name": "ICockpitEventListener",
+            "excerpt": "oneway interface ICockpitEventListener { void onEvent(String domain, String event, in android.os.Bundle payload); }",
+            "git_blob_oid": "4b04ed5c9b62bb9c591c0abe7f6f149fa6fe0b47",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-api/src/main/aidl/com/cockpitbench/foundation/api/ICockpitEventListener.aidl",
+            "line": 2,
+            "module": ":foundation-api",
+            "path": "foundation-api/src/main/aidl/com/cockpitbench/foundation/api/ICockpitEventListener.aidl"
+          },
+          {
+            "declaration_kind": "aidl_interface",
+            "declaration_name": "ICockpitGateway",
+            "excerpt": "interface ICockpitGateway { android.os.Bundle execute(String domain, String operation, in android.os.Bundle arguments); void registerListener(String domain, ICockpitEventListener l",
+            "git_blob_oid": "a9f460f43d09bb61172cd749ae82fbdbb569976d",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-api/src/main/aidl/com/cockpitbench/foundation/api/ICockpitGateway.aidl",
+            "line": 3,
+            "module": ":foundation-api",
+            "path": "foundation-api/src/main/aidl/com/cockpitbench/foundation/api/ICockpitGateway.aidl"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "CockpitClock",
+            "excerpt": "package com.cockpitbench.foundation.core; public interface CockpitClock { long now(); }",
+            "git_blob_oid": "263a0387eab4cd3dba30b815330f3d936096678f",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-core/src/main/java/com/cockpitbench/foundation/core/CockpitClock.java",
+            "line": 16,
+            "module": ":foundation-core",
+            "path": "foundation-core/src/main/java/com/cockpitbench/foundation/core/CockpitClock.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Repository",
+            "excerpt": "public interface Repository<T> { T find(String id); List<T> snapshot(); void save(String id,T value); void remove(String id); }",
+            "git_blob_oid": "958048dd76e462d76e57975d84035c8819cd1034",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-core/src/main/java/com/cockpitbench/foundation/core/Repository.java",
+            "line": 3,
+            "module": ":foundation-core",
+            "path": "foundation-core/src/main/java/com/cockpitbench/foundation/core/Repository.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Observer",
+            "excerpt": "public interface Observer {",
+            "git_blob_oid": "a5cbdc828cd1a4e1626707ea0233ac8a4a174c6b",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-core/src/main/java/com/cockpitbench/foundation/core/SessionSupervisor.java",
+            "line": 50,
+            "module": ":foundation-core",
+            "path": "foundation-core/src/main/java/com/cockpitbench/foundation/core/SessionSupervisor.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Action",
+            "excerpt": "public interface Action {",
+            "git_blob_oid": "82fb096dc12ac8a5fa49c826573fb78dd4f41d0b",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-core/src/main/java/com/cockpitbench/foundation/core/WorkflowEngine.java",
+            "line": 50,
+            "module": ":foundation-core",
+            "path": "foundation-core/src/main/java/com/cockpitbench/foundation/core/WorkflowEngine.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Observer",
+            "excerpt": "public interface Observer {",
+            "git_blob_oid": "82fb096dc12ac8a5fa49c826573fb78dd4f41d0b",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-core/src/main/java/com/cockpitbench/foundation/core/WorkflowEngine.java",
+            "line": 57,
+            "module": ":foundation-core",
+            "path": "foundation-core/src/main/java/com/cockpitbench/foundation/core/WorkflowEngine.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Observer",
+            "excerpt": "public final class BinderConnectionSupervisor implements IBinder.DeathRecipient,AutoCloseable { public interface Observer{void onConnected(IBinder binder);void onDisconnected();}",
+            "git_blob_oid": "228551c4b9461c9c5330ef142930cbb5e6412a76",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-platform/src/main/java/com/cockpitbench/foundation/platform/BinderConnectionSupervisor.java",
+            "line": 3,
+            "module": ":foundation-platform",
+            "path": "foundation-platform/src/main/java/com/cockpitbench/foundation/platform/BinderConnectionSupervisor.java"
+          },
+          {
+            "declaration_kind": "aidl_interface",
+            "declaration_name": "IMarketCallback",
+            "excerpt": "oneway interface IMarketCallback { void onDownloadProgress(String packageName, long downloaded, long total); void onInstallState(in InstallState state); }",
+            "git_blob_oid": "e16e7304bfe886d1a96ab39e07ebbc1f6b15d769",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-api/src/main/aidl/com/cockpitbench/market/IMarketCallback.aidl",
+            "line": 3,
+            "module": ":market-api",
+            "path": "market-api/src/main/aidl/com/cockpitbench/market/IMarketCallback.aidl"
+          },
+          {
+            "declaration_kind": "aidl_interface",
+            "declaration_name": "IMarketService",
+            "excerpt": "interface IMarketService { List<CatalogItem> catalog(String channel, int zoneId); void download(in DownloadRequest request); InstallState state(String packageName); void cancel(Str",
+            "git_blob_oid": "4650db539d03df2138f038ab1c10f57594e9ce61",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-api/src/main/aidl/com/cockpitbench/market/IMarketService.aidl",
+            "line": 3,
+            "module": ":market-api",
+            "path": "market-api/src/main/aidl/com/cockpitbench/market/IMarketService.aidl"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Client",
+            "excerpt": "package com.cockpitbench.market.core;import com.cockpitbench.market.*;import java.util.*;import java.util.concurrent.*;public final class DownloadCoordinator implements AutoCloseab",
+            "git_blob_oid": "f05053264ef819106be98d1aa0422e9b4fa0becd",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-core/src/main/java/com/cockpitbench/market/core/DownloadCoordinator.java",
+            "line": 16,
+            "module": ":market-core",
+            "path": "market-core/src/main/java/com/cockpitbench/market/core/DownloadCoordinator.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Listener",
+            "excerpt": "package com.cockpitbench.market.core;import com.cockpitbench.market.*;import java.util.*;import java.util.concurrent.*;public final class DownloadCoordinator implements AutoCloseab",
+            "git_blob_oid": "f05053264ef819106be98d1aa0422e9b4fa0becd",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-core/src/main/java/com/cockpitbench/market/core/DownloadCoordinator.java",
+            "line": 16,
+            "module": ":market-core",
+            "path": "market-core/src/main/java/com/cockpitbench/market/core/DownloadCoordinator.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Installer",
+            "excerpt": "package com.cockpitbench.market.core;import com.cockpitbench.market.*;import java.util.*;public final class InstallerSessionCoordinator{public interface Installer{int create(String",
+            "git_blob_oid": "cc94a7e0b1ed3514e00a21a68d6e17bd88597a85",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-core/src/main/java/com/cockpitbench/market/core/InstallerSessionCoordinator.java",
+            "line": 16,
+            "module": ":market-core",
+            "path": "market-core/src/main/java/com/cockpitbench/market/core/InstallerSessionCoordinator.java"
+          },
+          {
+            "declaration_kind": "interface",
+            "declaration_name": "Gate",
+            "excerpt": "package com.cockpitbench.market.platform;import android.os.*;import com.cockpitbench.market.*;import com.cockpitbench.market.core.*;import java.util.*;public final class MarketBind",
+            "git_blob_oid": "665273b1769d8aa35dff1aa73c3b133a647b7d0f",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-platform/src/main/java/com/cockpitbench/market/platform/MarketBinderService.java",
+            "line": 16,
+            "module": ":market-platform",
+            "path": "market-platform/src/main/java/com/cockpitbench/market/platform/MarketBinderService.java"
+          }
+        ],
+        "replaceable_components": [
+          ":foundation-core",
+          ":market-api",
+          ":market-core"
+        ],
+        "reusable_components": [
+          ":foundation-core",
+          ":market-api",
+          ":market-core"
+        ],
+        "shared_capability_owners": [
+          ":foundation-core",
+          ":market-core"
+        ]
+      },
       "contract": "app_architecture_v3_fact_candidates",
       "cycles": [],
+      "decoupling_metrics": {
+        "concrete_implementation_edges": [],
+        "cross_module_source_intrusions": [],
+        "dependency_cycles": [],
+        "platform_change_propagation_modules": [],
+        "reverse_dependency_edges": []
+      },
       "evidence_gaps": [],
       "excluded_test_or_build_modules": [
         ":foundation-testkit",
         ":market-tests"
       ],
       "facts": {
+        "api_dependency_edge_count": 0,
         "business_boundary_isolation": true,
         "code_not_in_root_package": true,
+        "cohesive_module_count": 8,
         "common_capability_in_base_core": true,
         "component_friendly_check_count": 4,
         "component_friendly_checks": {
@@ -241,19 +408,33 @@
           "no_cross_module_hardcoded_dependency": null,
           "no_module_cycle": true
         },
+        "concrete_implementation_edge_count": 0,
+        "cross_module_source_intrusion_count": 0,
+        "dependency_cycle_count": 0,
+        "dependency_scc_count": 9,
+        "explicit_public_contract_count": 14,
         "has_base_layered_architecture": false,
         "has_business_packages": true,
         "has_circular_dependency": false,
         "has_file_type_packages": false,
         "has_layered_directory": false,
+        "implementation_dependency_edge_count": 15,
         "is_component_friendly": true,
         "layered_business_module_count": 0,
         "module_count": 9,
+        "module_test_entry_count": 0,
         "modules_have_independent_build_entry": true,
+        "platform_change_propagation_module_count": 0,
+        "real_build_module_count": 9,
+        "replaceable_component_count": 3,
+        "reusable_component_count": 3,
+        "reverse_dependency_edge_count": 0,
+        "shared_capability_owner_count": 2,
         "standard_named_module_count": 3
       },
       "internal_dependency_evidence": [
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':foundation-api') }",
           "from_module": ":foundation-core",
           "git_blob_oid": "76933b38ec5656d45fab078384a2da93d25c4df3",
@@ -263,6 +444,7 @@
           "to_module": ":foundation-api"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':foundation-api'); implementation project(':foundation-core') }",
           "from_module": ":foundation-platform",
           "git_blob_oid": "f1eef20a70bb66c313a938eaa448d0a56fea1a4e",
@@ -272,6 +454,7 @@
           "to_module": ":foundation-api"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':foundation-api'); implementation project(':foundation-core') }",
           "from_module": ":foundation-platform",
           "git_blob_oid": "f1eef20a70bb66c313a938eaa448d0a56fea1a4e",
@@ -281,6 +464,7 @@
           "to_module": ":foundation-core"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':foundation-api'); implementation project(':foundation-core') }",
           "from_module": ":foundation-storage",
           "git_blob_oid": "7fdd7e4f60353f8d369c5bcd17b922998041a049",
@@ -290,6 +474,7 @@
           "to_module": ":foundation-api"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':foundation-api'); implementation project(':foundation-core') }",
           "from_module": ":foundation-storage",
           "git_blob_oid": "7fdd7e4f60353f8d369c5bcd17b922998041a049",
@@ -299,6 +484,7 @@
           "to_module": ":foundation-core"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':foundation-api'); implementation project(':foundation-core') }",
           "from_module": ":foundation-observability",
           "git_blob_oid": "c2a06c9a593f860ac3557c45e725484a61b16154",
@@ -308,6 +494,7 @@
           "to_module": ":foundation-api"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':foundation-api'); implementation project(':foundation-core') }",
           "from_module": ":foundation-observability",
           "git_blob_oid": "c2a06c9a593f860ac3557c45e725484a61b16154",
@@ -317,6 +504,7 @@
           "to_module": ":foundation-core"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core') }",
           "from_module": ":market-core",
           "git_blob_oid": "90193f195a51d845f4045879f4d0b5481136ea57",
@@ -326,6 +514,7 @@
           "to_module": ":market-api"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core') }",
           "from_module": ":market-core",
           "git_blob_oid": "90193f195a51d845f4045879f4d0b5481136ea57",
@@ -335,6 +524,7 @@
           "to_module": ":foundation-core"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core'); implementation project(':market-core') }",
           "from_module": ":market-platform",
           "git_blob_oid": "567ad61266c4f63400a36f34f618d4e00bbcf886",
@@ -344,6 +534,7 @@
           "to_module": ":market-api"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core'); implementation project(':market-core') }",
           "from_module": ":market-platform",
           "git_blob_oid": "567ad61266c4f63400a36f34f618d4e00bbcf886",
@@ -353,6 +544,7 @@
           "to_module": ":foundation-core"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core'); implementation project(':market-core') }",
           "from_module": ":market-platform",
           "git_blob_oid": "567ad61266c4f63400a36f34f618d4e00bbcf886",
@@ -362,6 +554,7 @@
           "to_module": ":market-core"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core'); implementation project(':market-core') }",
           "from_module": ":market-app",
           "git_blob_oid": "a8852c8f259dc59670f911fa3c8888e544808a96",
@@ -371,6 +564,7 @@
           "to_module": ":market-api"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core'); implementation project(':market-core') }",
           "from_module": ":market-app",
           "git_blob_oid": "a8852c8f259dc59670f911fa3c8888e544808a96",
@@ -380,6 +574,7 @@
           "to_module": ":foundation-core"
         },
         {
+          "configuration": "implementation",
           "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core'); implementation project(':market-core') }",
           "from_module": ":market-app",
           "git_blob_oid": "a8852c8f259dc59670f911fa3c8888e544808a96",
@@ -420,6 +615,184 @@
           ":foundation-core",
           ":market-api",
           ":market-core"
+        ]
+      },
+      "modularization_metrics": {
+        "api_dependency_edges": [],
+        "cohesive_modules": [
+          ":foundation-core",
+          ":foundation-observability",
+          ":foundation-platform",
+          ":foundation-storage",
+          ":market-api",
+          ":market-app",
+          ":market-core",
+          ":market-platform"
+        ],
+        "dependency_scc_count": 9,
+        "implementation_dependency_edges": [
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':foundation-api') }",
+            "from_module": ":foundation-core",
+            "git_blob_oid": "76933b38ec5656d45fab078384a2da93d25c4df3",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-core/build.gradle",
+            "line": 5,
+            "path": "foundation-core/build.gradle",
+            "to_module": ":foundation-api"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':foundation-api'); implementation project(':foundation-core') }",
+            "from_module": ":foundation-platform",
+            "git_blob_oid": "f1eef20a70bb66c313a938eaa448d0a56fea1a4e",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-platform/build.gradle",
+            "line": 5,
+            "path": "foundation-platform/build.gradle",
+            "to_module": ":foundation-api"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':foundation-api'); implementation project(':foundation-core') }",
+            "from_module": ":foundation-platform",
+            "git_blob_oid": "f1eef20a70bb66c313a938eaa448d0a56fea1a4e",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-platform/build.gradle",
+            "line": 5,
+            "path": "foundation-platform/build.gradle",
+            "to_module": ":foundation-core"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':foundation-api'); implementation project(':foundation-core') }",
+            "from_module": ":foundation-storage",
+            "git_blob_oid": "7fdd7e4f60353f8d369c5bcd17b922998041a049",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-storage/build.gradle",
+            "line": 5,
+            "path": "foundation-storage/build.gradle",
+            "to_module": ":foundation-api"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':foundation-api'); implementation project(':foundation-core') }",
+            "from_module": ":foundation-storage",
+            "git_blob_oid": "7fdd7e4f60353f8d369c5bcd17b922998041a049",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-storage/build.gradle",
+            "line": 5,
+            "path": "foundation-storage/build.gradle",
+            "to_module": ":foundation-core"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':foundation-api'); implementation project(':foundation-core') }",
+            "from_module": ":foundation-observability",
+            "git_blob_oid": "c2a06c9a593f860ac3557c45e725484a61b16154",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-observability/build.gradle",
+            "line": 5,
+            "path": "foundation-observability/build.gradle",
+            "to_module": ":foundation-api"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':foundation-api'); implementation project(':foundation-core') }",
+            "from_module": ":foundation-observability",
+            "git_blob_oid": "c2a06c9a593f860ac3557c45e725484a61b16154",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:foundation-observability/build.gradle",
+            "line": 5,
+            "path": "foundation-observability/build.gradle",
+            "to_module": ":foundation-core"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core') }",
+            "from_module": ":market-core",
+            "git_blob_oid": "90193f195a51d845f4045879f4d0b5481136ea57",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-core/build.gradle",
+            "line": 5,
+            "path": "market-core/build.gradle",
+            "to_module": ":market-api"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core') }",
+            "from_module": ":market-core",
+            "git_blob_oid": "90193f195a51d845f4045879f4d0b5481136ea57",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-core/build.gradle",
+            "line": 5,
+            "path": "market-core/build.gradle",
+            "to_module": ":foundation-core"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core'); implementation project(':market-core') }",
+            "from_module": ":market-platform",
+            "git_blob_oid": "567ad61266c4f63400a36f34f618d4e00bbcf886",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-platform/build.gradle",
+            "line": 5,
+            "path": "market-platform/build.gradle",
+            "to_module": ":market-api"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core'); implementation project(':market-core') }",
+            "from_module": ":market-platform",
+            "git_blob_oid": "567ad61266c4f63400a36f34f618d4e00bbcf886",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-platform/build.gradle",
+            "line": 5,
+            "path": "market-platform/build.gradle",
+            "to_module": ":foundation-core"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core'); implementation project(':market-core') }",
+            "from_module": ":market-platform",
+            "git_blob_oid": "567ad61266c4f63400a36f34f618d4e00bbcf886",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-platform/build.gradle",
+            "line": 5,
+            "path": "market-platform/build.gradle",
+            "to_module": ":market-core"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core'); implementation project(':market-core') }",
+            "from_module": ":market-app",
+            "git_blob_oid": "a8852c8f259dc59670f911fa3c8888e544808a96",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-app/build.gradle",
+            "line": 5,
+            "path": "market-app/build.gradle",
+            "to_module": ":market-api"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core'); implementation project(':market-core') }",
+            "from_module": ":market-app",
+            "git_blob_oid": "a8852c8f259dc59670f911fa3c8888e544808a96",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-app/build.gradle",
+            "line": 5,
+            "path": "market-app/build.gradle",
+            "to_module": ":foundation-core"
+          },
+          {
+            "configuration": "implementation",
+            "excerpt": "dependencies { implementation project(':market-api'); implementation project(':foundation-core'); implementation project(':market-core') }",
+            "from_module": ":market-app",
+            "git_blob_oid": "a8852c8f259dc59670f911fa3c8888e544808a96",
+            "head_blob": "3f421d00c591dc47b7de81f77292aa512eb34992:market-app/build.gradle",
+            "line": 5,
+            "path": "market-app/build.gradle",
+            "to_module": ":market-core"
+          }
+        ],
+        "module_test_entries": [],
+        "real_build_modules": [
+          ":foundation-api",
+          ":foundation-core",
+          ":foundation-observability",
+          ":foundation-platform",
+          ":foundation-storage",
+          ":market-api",
+          ":market-app",
+          ":market-core",
+          ":market-platform"
         ]
       },
       "modules": [
@@ -953,8 +1326,10 @@
         ],
         "excluded_parts": [
           "androidtest",
+          "androidtests",
           "build",
           "generated",
+          "robotests",
           "test",
           "tests",
           "third-party",
@@ -1140,6 +1515,14 @@
             "vendor_private_namespace": []
           },
           "value": false
+        },
+        "non_compatible_api_covered_by_abstraction": {
+          "evidence": [],
+          "value": false
+        },
+        "uncovered_non_compatible_api_count": {
+          "evidence": [],
+          "value": 0
         },
         "version_bound_status": {
           "business_modules": [],

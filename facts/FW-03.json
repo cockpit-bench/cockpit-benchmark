@@ -210,23 +210,7 @@
         "match": "1.0.1"
       }
     ],
-    "compatibility_anchors": [
-      {
-        "path": "native/contract/include/fw03/api/vehicle_hal_api_version.h",
-        "line": 11,
-        "match": "MIN_COMPATIBLE"
-      },
-      {
-        "path": "native/contract/include/fw03/api/vehicle_hal_api_version.h",
-        "line": 19,
-        "match": "min_compatible"
-      },
-      {
-        "path": "native/contract/include/fw03/api/vehicle_hal_api_version.h",
-        "line": 19,
-        "match": "MIN_COMPATIBLE"
-      }
-    ]
+    "compatibility_anchors": []
   },
   "integration_test": {
     "test_source_count": 304,
@@ -392,6 +376,8 @@
     "version_bound_status": 1,
     "arch_bound_status": 1,
     "has_interface_abstraction": true,
+    "non_compatible_api_covered_by_abstraction": true,
+    "uncovered_non_compatible_api_count": 0,
     "has_light_permission_adaptation": false,
     "has_complex_permission_adaptation": false
   },

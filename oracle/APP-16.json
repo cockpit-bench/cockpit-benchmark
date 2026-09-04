@@ -13,7 +13,7 @@
   },
   "rubric": {
     "path": "SCORE_RULES.md",
-    "sha256": "b52d8dcc270cd3cc2bb8ecf942c59adbb1128038d9256ff7ad0835599f096764"
+    "sha256": "617c6d8772466f51aa31142eaf4d87198ee70c78a42dbaa52b6821401a5e57d7"
   },
   "canonical_total": {
     "score": 20,
@@ -25,46 +25,46 @@
       "score": 3,
       "max_score": 5,
       "status": "scored",
-      "score_reasoning": "共享事实 module_count=4、standard=1、boundary=False、common=False、cycle=False；按 componentization 独立构念锁定 3。",
-      "analysis": "共享事实 module_count=4、standard=1、boundary=False、common=False、cycle=False；按 componentization 独立构念锁定 3。",
+      "score_reasoning": "真实构建模块=4、可复用组件=3、可替换组件=0、显式公开契约=87、源码归属边界=False；按组件复用/替换构念锁定 3。",
+      "analysis": "真实构建模块=4、可复用组件=3、可替换组件=0、显式公开契约=87、源码归属边界=False；按组件复用/替换构念锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/APP-16.json",
           "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
           "ref": "HEAD",
-          "json_pointer": "/facts/architecture/facts",
-          "symbol": "facts",
-          "claim": "共享架构事实。",
-          "observation": "共享架构事实。",
+          "json_pointer": "/facts/architecture/componentization_metrics",
+          "symbol": "componentization_metrics",
+          "claim": "可复用、可替换组件及显式公开契约事实。",
+          "observation": "可复用、可替换组件及显式公开契约事实。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "settings.gradle",
+          "path": "app/src/com/android/car/carlauncher/calmmode/CalmModeStatsLogHelper.java",
           "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
           "ref": "HEAD",
-          "start_line": 4,
-          "end_line": 4,
-          "symbol": "include ':launcher-app', ':legacy-platform', ':product-shell', ':vendor-runtime'",
-          "claim": "真实模块清单与构建边界。",
-          "observation": "真实模块清单与构建边界。",
+          "start_line": 43,
+          "end_line": 43,
+          "symbol": "values",
+          "claim": "组件显式接口/抽象契约。",
+          "observation": "组件显式接口/抽象契约。",
           "evidence_type": "source",
-          "independent_group": "module_graph"
+          "independent_group": "component_contract"
         },
         {
           "source": "current_head",
-          "path": "launcher-app/build.gradle",
+          "path": "legacy-platform/build.gradle",
           "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
           "ref": "HEAD",
           "start_line": 1,
           "end_line": 1,
-          "symbol": "plugins { id 'com.android.application' }",
-          "claim": "模块插件和依赖声明。",
-          "observation": "模块插件和依赖声明。",
+          "symbol": "plugins { id 'com.android.library' }",
+          "claim": "被其他模块复用的独立构建组件。",
+          "observation": "被其他模块复用的独立构建组件。",
           "evidence_type": "source",
-          "independent_group": "module_build"
+          "independent_group": "reusable_component"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
@@ -75,46 +75,33 @@
       "score": 2,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "共享事实 module_count=4、standard=1、boundary=False、common=False、cycle=False；按 decoupling 独立构念锁定 2。",
-      "analysis": "共享事实 module_count=4、standard=1、boundary=False、common=False、cycle=False；按 decoupling 独立构念锁定 2。",
+      "score_reasoning": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=3、平台变更传播模块=4；按依赖方向/传播构念锁定 2。",
+      "analysis": "环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=3、平台变更传播模块=4；按依赖方向/传播构念锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/APP-16.json",
           "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
           "ref": "HEAD",
-          "json_pointer": "/facts/architecture/facts",
-          "symbol": "facts",
-          "claim": "共享架构事实。",
-          "observation": "共享架构事实。",
+          "json_pointer": "/facts/architecture/decoupling_metrics",
+          "symbol": "decoupling_metrics",
+          "claim": "依赖方向、源码侵入、具体实现边和修改传播事实。",
+          "observation": "依赖方向、源码侵入、具体实现边和修改传播事实。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
-        },
-        {
-          "source": "current_head",
-          "path": "settings.gradle",
-          "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
-          "ref": "HEAD",
-          "start_line": 4,
-          "end_line": 4,
-          "symbol": "include ':launcher-app', ':legacy-platform', ':product-shell', ':vendor-runtime'",
-          "claim": "真实模块清单与构建边界。",
-          "observation": "真实模块清单与构建边界。",
-          "evidence_type": "source",
-          "independent_group": "module_graph"
         },
         {
           "source": "current_head",
           "path": "launcher-app/build.gradle",
           "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
           "ref": "HEAD",
-          "start_line": 1,
-          "end_line": 1,
-          "symbol": "plugins { id 'com.android.application' }",
-          "claim": "模块插件和依赖声明。",
-          "observation": "模块插件和依赖声明。",
+          "start_line": 16,
+          "end_line": 16,
+          "symbol": "implementation project(':legacy-platform')",
+          "claim": "决定依赖方向或具体实现耦合的模块边。",
+          "observation": "决定依赖方向或具体实现耦合的模块边。",
           "evidence_type": "source",
-          "independent_group": "module_build"
+          "independent_group": "dependency_direction"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
@@ -125,18 +112,18 @@
       "score": 2,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "共享事实 module_count=4、standard=1、boundary=False、common=False、cycle=False；按 modularization 独立构念锁定 2。",
-      "analysis": "共享事实 module_count=4、standard=1、boundary=False、common=False、cycle=False；按 modularization 独立构念锁定 2。",
+      "score_reasoning": "真实构建模块=4、内聚模块=4、规范命名模块=1、模块测试入口=0、API/implementation 依赖边=0/3；按构建模块边界构念锁定 2。",
+      "analysis": "真实构建模块=4、内聚模块=4、规范命名模块=1、模块测试入口=0、API/implementation 依赖边=0/3；按构建模块边界构念锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/APP-16.json",
           "commit": "730463f93a9bcdfdcdda176f62dbde5f47eeec9a",
           "ref": "HEAD",
-          "json_pointer": "/facts/architecture/facts",
-          "symbol": "facts",
-          "claim": "共享架构事实。",
-          "observation": "共享架构事实。",
+          "json_pointer": "/facts/architecture/modularization_metrics",
+          "symbol": "modularization_metrics",
+          "claim": "真实构建模块、内聚、模块测试及 API/implementation 边事实。",
+          "observation": "真实构建模块、内聚、模块测试及 API/implementation 边事实。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
         },
@@ -148,10 +135,10 @@
           "start_line": 4,
           "end_line": 4,
           "symbol": "include ':launcher-app', ':legacy-platform', ':product-shell', ':vendor-runtime'",
-          "claim": "真实模块清单与构建边界。",
-          "observation": "真实模块清单与构建边界。",
+          "claim": "真实构建模块清单。",
+          "observation": "真实构建模块清单。",
           "evidence_type": "source",
-          "independent_group": "module_graph"
+          "independent_group": "module_inventory"
         },
         {
           "source": "current_head",
@@ -161,10 +148,10 @@
           "start_line": 1,
           "end_line": 1,
           "symbol": "plugins { id 'com.android.application' }",
-          "claim": "模块插件和依赖声明。",
-          "observation": "模块插件和依赖声明。",
+          "claim": "模块级构建/测试入口。",
+          "observation": "模块级构建/测试入口。",
           "evidence_type": "source",
-          "independent_group": "module_build"
+          "independent_group": "module_entry"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
@@ -299,8 +286,8 @@
       "score": 3,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "Android 七事实={'arch_bound_status': 1, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': True, 'has_non_compatible_api': True, 'version_bound_status': 3}；按风险单调硬门槛锁定 3。",
-      "analysis": "Android 七事实={'arch_bound_status': 1, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': True, 'has_non_compatible_api': True, 'version_bound_status': 3}；按风险单调硬门槛锁定 3。",
+      "score_reasoning": "Android 七事实={'arch_bound_status': 1, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': True, 'has_non_compatible_api': True, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 2, 'version_bound_status': 3}；按风险单调硬门槛锁定 3。",
+      "analysis": "Android 七事实={'arch_bound_status': 1, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': True, 'has_non_compatible_api': True, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 2, 'version_bound_status': 3}；按风险单调硬门槛锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -349,8 +336,8 @@
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "真实 refs 同时存在 main 与平台分支、无车型级一车一 SOP，锁定 8。",
-      "analysis": "真实 refs 同时存在 main 与平台分支、无车型级一车一 SOP，锁定 8。",
+      "score_reasoning": "存在平台级分支 ['platform/8155', 'platform/8295', 'platform/xinqing', 'release/sop-2025']，且没有车型级一车一 SOP，锁定 8。",
+      "analysis": "存在平台级分支 ['platform/8155', 'platform/8295', 'platform/xinqing', 'release/sop-2025']，且没有车型级一车一 SOP，锁定 8。",
       "evidence": [
         {
           "source": "git_ref",
@@ -364,8 +351,8 @@
           "behind": 4,
           "changed_files": 3,
           "symbol": "refs/heads/platform/8155",
-          "claim": "平台分支的真实 tip/tree 和差异。",
-          "observation": "平台分支的真实 tip/tree 和差异。",
+          "claim": "平台级 release 分支的真实 tip/tree 和差异决定 8 分档。",
+          "observation": "平台级 release 分支的真实 tip/tree 和差异决定 8 分档。",
           "evidence_type": "git_ref",
           "independent_group": "branch_0"
         },
@@ -381,10 +368,27 @@
           "behind": 4,
           "changed_files": 3,
           "symbol": "refs/heads/platform/8295",
-          "claim": "平台分支的真实 tip/tree 和差异。",
-          "observation": "平台分支的真实 tip/tree 和差异。",
+          "claim": "平台级 release 分支的真实 tip/tree 和差异决定 8 分档。",
+          "observation": "平台级 release 分支的真实 tip/tree 和差异决定 8 分档。",
           "evidence_type": "git_ref",
           "independent_group": "branch_1"
+        },
+        {
+          "source": "git_ref",
+          "path": "refs/heads/platform/xinqing",
+          "ref": "refs/heads/platform/xinqing",
+          "commit": "6c1af62ba51904f824be85a7b7409e3c5dafe657",
+          "commit_oid": "6c1af62ba51904f824be85a7b7409e3c5dafe657",
+          "tree_oid": "e770c82f595ac2c223b023c5bef675976ece514b",
+          "merge_base": "01641500f96c84fcb271e61918ad9450a96a1bc9",
+          "ahead": 2,
+          "behind": 4,
+          "changed_files": 3,
+          "symbol": "refs/heads/platform/xinqing",
+          "claim": "平台级 release 分支的真实 tip/tree 和差异决定 8 分档。",
+          "observation": "平台级 release 分支的真实 tip/tree 和差异决定 8 分档。",
+          "evidence_type": "git_ref",
+          "independent_group": "branch_2"
         }
       ],
       "adjudication": "v3 final-HEAD source review and independent formula recomputation agree.",
