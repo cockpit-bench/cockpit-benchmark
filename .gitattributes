@@ -7,3 +7,8 @@ SCORECARD.md -text
 SCORECARD.csv -text
 SCORE_RULES.md -text
 manifest.json -text
+manifest.md -text
+ACTIVE_EIGHTEEN.md -text
+delivery-scope.json -text
+facts/*.json -text
+oracle/*.json -text

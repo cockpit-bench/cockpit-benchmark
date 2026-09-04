@@ -26,9 +26,9 @@ Evaluator 必须拒绝缺叶、重复叶、合同外叶、非法分值和伪造�
 
 ## 版本与边界
 
-- 推荐版本：`v0.7.2`
+- 推荐版本：`v0.7.3`
 - APP：72 叶，213/360；Android FW：99 叶，262/468；合计 475/828。
-- v0.7.2 修正 APP-01/FW-03 API 兼容错分、APP-01 平台风险封顶、Release 决定性 ref，并把 APP 三个架构叶拆成独立事实、理由和证据；v0.7.0/v0.7.1 保留为历史。
+- v0.7.3 包含 v0.7.2 的 Gold 修正，并冻结全部 Oracle/facts 的跨平台字节以保证恢复校验；v0.7.0–v0.7.2 保留为历史。
 - 22 个 pending 仓不运输；`can-middleware` 仅为 v0.4 历史补充样例。
 - 旧 archive：https://github.com/cockpit-bench/cockpit-benchmark-v031-archive
 - 每个源码仓保留自己的许可证、来源和全部 heads/tags；源码仓不含答案。
