@@ -1,8 +1,10 @@
+> 本地修正草稿，未发布：63 个 FW 叶待独立复核；484/828 是暂存合计，不是新审定标准分。
+
 # Validation-18 标准评分总表
 
 - APP：9 仓 / 72 叶 / 216/360
-- Android Framework：9 仓 / 99 叶 / 269/468
-- 合计：18 仓 / 171 叶 / 485/828
+- Android Framework：9 仓 / 99 叶 / 268/468
+- 合计：18 仓 / 171 叶 / 484/828
 
 > 分数只由绑定 HEAD 的代码与 refs 证据推导；质量/规模标签是矩阵角色，不是打分输入。
 > APP 的三个 architecture 叶属于同一 Architecture Macro，但按组件复用、依赖传播、构建模块边界分别评分，不把命中数当作统计独立样本。
@@ -29,7 +31,7 @@
 | FW-03 | vehicle-hal-adapter | high | medium | 3 | 1 | 2 | 3 | 3 | 4 | 3 | 3 | 4 | 8 | 8 | 42/52 |
 | FW-07 | vehicle-diagnostics | high | large | 3 | 1 | 3 | 3 | 2 | 3 | 3 | 3 | 3 | 10 | 8 | 42/52 |
 | FW-10 | cockpit-manager-kit | medium | small | 2 | 1 | 2 | 1 | 2 | 2 | 2 | 2 | 1 | 8 | 8 | 31/52 |
-| FW-08 | soa-gateway | medium | medium | 2 | 1 | 2 | 1 | 2 | 3 | 3 | 3 | 3 | 10 | 8 | 38/52 |
+| FW-08 | soa-gateway | medium | medium | 2 | 1 | 2 | 1 | 2 | 3 | 2 | 3 | 3 | 10 | 8 | 37/52 |
 | FW-14 | update-manager-service | medium | large | 2 | 1 | 3 | 1 | 2 | 2 | 3 | 2 | 2 | 3 | 8 | 29/52 |
 | FW-15 | car-runtime-service | low | small | 1 | 0 | 0 | 0 | 0 | 1 | 2 | 0 | 0 | 0 | 8 | 12/52 |
 | FW-18 | vehicle-platform-service | low | medium | 1 | 0 | 1 | 1 | 1 | 1 | 2 | 2 | 1 | 0 | 8 | 18/52 |
@@ -78,7 +80,7 @@
 ### APP-01 `aurora-settings` — 24/40
 
 - `architecture.componentization`：**5/5** — 真实构建模块=4、可复用组件=3、可替换组件=3、显式公开契约=94、源码归属边界=True；按组件复用/替换构念锁定 5。
-  - 证据：`facts/APP-01.json#/facts/architecture/componentization_metrics`; `settings-common/src/main/java/com/android/car/settings/common/ActionButtonInfo.java:52`; `settings-common/build.gradle:1`
+  - 证据：`facts/APP-01.json#/facts/architecture/componentization_metrics`; `settings-common/src/main/java/com/android/car/settings/common/ActionButtonInfo.java:245`; `settings-common/build.gradle:1`
 - `architecture.decoupling`：**2/3** — 环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=4、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 2。
   - 证据：`facts/APP-01.json#/facts/architecture/decoupling_metrics`; `app/build.gradle:16`
 - `architecture.modularization`：**3/3** — 真实构建模块=4、内聚模块=4、规范命名模块=2、模块测试入口=1、API/implementation 依赖边=0/3；按构建模块边界构念锁定 3。
@@ -229,7 +231,7 @@
 - `solid_principle.dependency_inversion`：**3/4** — 服务主要依赖 VehicleStub/HalClient 抽象，平台反射被收敛在边界内。 按独立 0–4 档位锁定 3。
   - 证据：`runtime/src/com/android/car/VehicleStub.java:39`; `api/src/android/car/hardware/property/ICarProperty.aidl:26`
 - `platform_reuse.platform_upgrade`：**8/10** — 区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'non_compatible_api_covered_by_abstraction': True, 'uncovered_non_compatible_api_count': 0, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 8。
-  - 证据：`facts/FW-02.json#/platform_upgrade_review`; `platform/src/com/cockpitbench/vehicleproperty/VehiclePropertyPolicy.java:22`; `runtime/src/com/android/car/VehicleStub.java:39`
+  - 证据：`facts/FW-02.json#/platform_upgrade_review`
 - `platform_reuse.release_branch_strategy`：**8/10** — 存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。
   - 证据：`refs/heads/platform/8155`@`fab2b54427e9`; `refs/heads/platform/8295`@`1c687eb3c852`
 
@@ -254,7 +256,7 @@
 - `solid_principle.dependency_inversion`：**4/4** — 高层 gateway 依赖 port/transport/clock 抽象。 按独立 0–4 档位锁定 4。
   - 证据：`service/src/com/android/car/AidlVehicleStub.java:64`; `native/application/include/fw03/application/vehicle_service.h:18`
 - `platform_reuse.platform_upgrade`：**8/10** — 区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 1, 'has_interface_abstraction': True, 'non_compatible_api_covered_by_abstraction': True, 'uncovered_non_compatible_api_count': 0, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 8。
-  - 证据：`facts/FW-03.json#/platform_upgrade_review`; `service/src/com/android/car/VehicleStub.java:38`; `service/src/com/android/car/AidlVehicleStub.java:64`
+  - 证据：`facts/FW-03.json#/platform_upgrade_review`
 - `platform_reuse.release_branch_strategy`：**8/10** — 存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。
   - 证据：`refs/heads/platform/8155`@`270b396861b0`; `refs/heads/platform/8295`@`4449839764f7`
 
@@ -279,7 +281,7 @@
 - `solid_principle.dependency_inversion`：**3/4** — 服务通过 AIDL、HalServiceBase 与 listener 抽象协作。 按独立 0–4 档位锁定 3。
   - 证据：`car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl:23`; `cpp/telemetry/cartelemetryd/src/TelemetryServer.h:46`
 - `platform_reuse.platform_upgrade`：**10/10** — 区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': False, 'has_arch_specific_deps': False, 'version_bound_status': 0, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 0, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 10。
-  - 证据：`facts/FW-07.json#/platform_upgrade_review`; `service/src/com/android/car/watchdog/WatchdogPerfHandler.java:164`; `car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl:23`
+  - 证据：`facts/FW-07.json#/platform_upgrade_review`
 - `platform_reuse.release_branch_strategy`：**8/10** — 存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。
   - 证据：`refs/heads/platform/8155`@`85f0ccfb542a`; `refs/heads/platform/8295`@`87130476985f`
 
@@ -304,11 +306,11 @@
 - `solid_principle.dependency_inversion`：**1/4** — Gateway 直接构造 Registry/Fallback/Backend，高层注入不完整。 按独立 0–4 档位锁定 1。
   - 证据：`manager-runtime/src/com/cockpitbench/managerkit/ManagerRegistry.java:17`; `manager-runtime/src/com/cockpitbench/managerkit/PlatformManagerFallback.java:20`
 - `platform_reuse.platform_upgrade`：**8/10** — 区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'non_compatible_api_covered_by_abstraction': True, 'uncovered_non_compatible_api_count': 0, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 8。
-  - 证据：`facts/FW-10.json#/platform_upgrade_review`; `manager-runtime/src/com/cockpitbench/managerkit/ManagerGatewayService.java:20`; `manager-runtime/src/com/cockpitbench/managerkit/ManagerRegistry.java:17`
+  - 证据：`facts/FW-10.json#/platform_upgrade_review`
 - `platform_reuse.release_branch_strategy`：**8/10** — 存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。
   - 证据：`refs/heads/platform/8155`@`fcd9448a5bad`; `refs/heads/platform/8295`@`75655639921a`
 
-### FW-08 `soa-gateway` — 38/52
+### FW-08 `soa-gateway` — 37/52
 
 - `compilation.ci_independence`：**2/3** — 存在可执行 APP_BUILD 独立构建/测试入口，但没有完整标准化流水线；锁定 2。
   - 证据：`facts/FW-08.json#/ci`; `APP_BUILD:7`
@@ -322,14 +324,14 @@
   - 证据：`native/application/include/fw08/application/soa_gateway_service.h:22`; `native/broker/include/fw08/broker/soa_broker.h:20`
 - `solid_principle.open_closed`：**3/4** — ProviderRegistry、SubscriptionGraph 与 IpcTransport 支持扩展。 按独立 0–4 档位锁定 3。
   - 证据：`native/broker/include/fw08/broker/soa_broker.h:20`; `native/transport/include/fw08/transport/ipc_transport.h:17`
-- `solid_principle.liskov_substitution`：**3/4** — fake/Unix transport 与 callback 保持同一生命周期契约。 按独立 0–4 档位锁定 3。
+- `solid_principle.liskov_substitution`：**2/4** — 只有一个生产 UnixSocketTransport；Fake 构造不属于生产实现通过可复用契约测试的证明。 按独立 0–4 档位锁定 2。
   - 证据：`facts/FW-08.json#/lsp_review`; `native/transport/include/fw08/transport/ipc_transport.h:25`; `native/transport/include/fw08/transport/unix_socket_transport.h:11`; `native/tests/support/fake_ipc_transport.h:11`
 - `solid_principle.interface_segregation`：**3/4** — provider、subscription、packet 与 transport 接口按角色拆分。 按独立 0–4 档位锁定 3。
   - 证据：`native/application/include/fw08/application/soa_gateway_service.h:22`; `native/broker/include/fw08/broker/soa_broker.h:20`
 - `solid_principle.dependency_inversion`：**3/4** — Service/Broker 依赖 transport 与 store 抽象并通过构造装配。 按独立 0–4 档位锁定 3。
   - 证据：`native/broker/include/fw08/broker/soa_broker.h:20`; `native/transport/include/fw08/transport/ipc_transport.h:17`
 - `platform_reuse.platform_upgrade`：**10/10** — 区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': False, 'has_arch_specific_deps': False, 'version_bound_status': 0, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 0, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 10。
-  - 证据：`facts/FW-08.json#/platform_upgrade_review`; `native/application/include/fw08/application/soa_gateway_service.h:22`; `native/broker/include/fw08/broker/soa_broker.h:20`
+  - 证据：`facts/FW-08.json#/platform_upgrade_review`
 - `platform_reuse.release_branch_strategy`：**8/10** — 存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。
   - 证据：`refs/heads/platform/8155`@`c79cded97d4f`; `refs/heads/platform/8295`@`df09b062ef96`
 
@@ -352,9 +354,9 @@
 - `solid_principle.interface_segregation`：**2/4** — 控制与状态回调虽拆分，service 仍暴露完整生命周期。 按独立 0–4 档位锁定 2。
   - 证据：`update-manager/src/com/cockpitbench/update/UpdateManagerService.java:9`; `update-manager/src/com/cockpitbench/update/IUpdateManager.aidl:3`
 - `solid_principle.dependency_inversion`：**2/4** — 权限依赖可注入，UpdateEngine 具体构造仍留在服务内。 按独立 0–4 档位锁定 2。
-  - 证据：`update-manager/src/com/cockpitbench/update/IUpdateManager.aidl:3`; `update-manager/src/com/cockpitbench/update/IUpdateStatusListener.aidl:2`
+  - 证据：`update-manager/src/com/cockpitbench/update/UpdateManagerService.java:18`; `update-manager/src/com/cockpitbench/update/UpdateManagerService.java:52`
 - `platform_reuse.platform_upgrade`：**3/10** — 区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 2, 'arch_bound_status': 0, 'has_interface_abstraction': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 3。
-  - 证据：`facts/FW-14.json#/platform_upgrade_review`; `update-manager/src/com/cockpitbench/update/UpdateManagerService.java:9`; `update-manager/src/com/cockpitbench/update/IUpdateManager.aidl:3`
+  - 证据：`facts/FW-14.json#/platform_upgrade_review`
 - `platform_reuse.release_branch_strategy`：**8/10** — 存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。
   - 证据：`refs/heads/platform/8155`@`a7bea930370a`; `refs/heads/platform/8295`@`f4b18929661f`
 
@@ -379,7 +381,7 @@
 - `solid_principle.dependency_inversion`：**0/4** — 中心服务直接构造 facade 并保存全局实例。 按独立 0–4 档位锁定 0。
   - 证据：`runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl:3`; `platform/src/com/cockpitbench/carruntime/product/AuroraBaseRuntimeProfile.java:24`
 - `platform_reuse.platform_upgrade`：**0/10** — 区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。
-  - 证据：`facts/FW-15.json#/platform_upgrade_review`; `runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java:48`; `runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl:3`
+  - 证据：`facts/FW-15.json#/platform_upgrade_review`
 - `platform_reuse.release_branch_strategy`：**8/10** — 存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。
   - 证据：`refs/heads/platform/8155`@`d2c21ebaf740`; `refs/heads/platform/8295`@`8ef2b0f2a5fb`
 
@@ -404,7 +406,7 @@
 - `solid_principle.dependency_inversion`：**1/4** — Service 依赖全局 Coordinator，后者依赖具体 LegacyPlatformRouter。 按独立 0–4 档位锁定 1。
   - 证据：`platform/src/com/cockpitbench/vehicleplatform/LegacyPlatformRouter.java:26`; `platform/aidl/com/cockpitbench/vehicleplatform/IVehiclePlatform.aidl:3`
 - `platform_reuse.platform_upgrade`：**0/10** — 区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。
-  - 证据：`facts/FW-18.json#/platform_upgrade_review`; `platform/src/com/cockpitbench/vehicleplatform/PlatformSignalCoordinator.java:26`; `platform/src/com/cockpitbench/vehicleplatform/LegacyPlatformRouter.java:26`
+  - 证据：`facts/FW-18.json#/platform_upgrade_review`
 - `platform_reuse.release_branch_strategy`：**8/10** — 存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing']；年份型通用 SOP ref 不等于单车型通道，锁定 8。
   - 证据：`refs/heads/platform/8155`@`1cd1c6a43839`; `refs/heads/platform/8295`@`bce6dc6fca9e`; `refs/heads/platform/xinqing`@`e4e968216af4`
 
@@ -429,6 +431,6 @@
 - `solid_principle.dependency_inversion`：**1/4** — 运行时依赖静态 registry、具体 fallback 和反射 vendor 实现。 按独立 0–4 档位锁定 1。
   - 证据：`compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java:19`; `compat/aidl/com/cockpitbench/platformcompat/IPlatformCompat.aidl:3`
 - `platform_reuse.platform_upgrade`：**0/10** — 区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。
-  - 证据：`facts/FW-16.json#/platform_upgrade_review`; `compat/src/com/cockpitbench/platformcompat/PlatformCompatRuntime.java:19`; `compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java:19`
+  - 证据：`facts/FW-16.json#/platform_upgrade_review`
 - `platform_reuse.release_branch_strategy`：**8/10** — 存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing']；年份型通用 SOP ref 不等于单车型通道，锁定 8。
   - 证据：`refs/heads/platform/8155`@`93ccc6f80839`; `refs/heads/platform/8295`@`068b6972dc4b`; `refs/heads/platform/xinqing`@`a79b428ffc3e`

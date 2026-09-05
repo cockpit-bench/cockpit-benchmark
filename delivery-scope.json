@@ -1,6 +1,6 @@
 {
   "schema_version": "3.0.0",
-  "version": "v0.7.6",
+  "version": "evidence-fix-draft-20260905",
   "active_ids": [
     "APP-03",
     "APP-02",
@@ -52,5 +52,6 @@
     "framework": 9,
     "leaves": 171,
     "max_score": 828
-  }
+  },
+  "release_status": "draft_pending_independent_review"
 }

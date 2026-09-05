@@ -4,7 +4,7 @@
   "quality_tier": "low",
   "size_band": "small",
   "delivery_status": "active",
-  "review_status": "v3_current_head_reviewed",
+  "review_status": "pending_independent_review",
   "repository": {
     "head": "29be0c67ef8380e66b2782a7403163ab84e9c821",
     "tree": "d35af723ccc53a9dbf3c909241d3cfd8951df7bc",
@@ -54,8 +54,9 @@
           "independent_group": "ci_pipeline"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
+      "review_status": "pending_independent_review"
     },
     {
       "name": "compilation.compilation_independence",
@@ -104,8 +105,8 @@
           "independent_group": "declared_dependency"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Fact-derived band check; source semantics require review.",
+      "confidence": "medium"
     },
     {
       "name": "compilation.api_version_management",
@@ -128,8 +129,8 @@
           "independent_group": "derived_fact"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Fact-derived band check; source semantics require review.",
+      "confidence": "medium"
     },
     {
       "name": "quality.integration_test",
@@ -165,8 +166,8 @@
           "independent_group": "test_config"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Fact-derived band check; source semantics require review.",
+      "confidence": "medium"
     },
     {
       "name": "solid_principle.single_responsibility",
@@ -184,8 +185,8 @@
           "start_line": 48,
           "end_line": 48,
           "symbol": "CarRuntimeService",
-          "claim": "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。",
-          "observation": "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。",
+          "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+          "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
           "evidence_type": "source",
           "independent_group": "solid_primary"
         },
@@ -197,20 +198,21 @@
           "start_line": 3,
           "end_line": 3,
           "symbol": "ICarRuntime",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+          "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
           "evidence_type": "source",
           "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
       "issues": [
         "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。"
       ],
       "recommendations": [
         "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
+      ],
+      "review_status": "pending_independent_review"
     },
     {
       "name": "solid_principle.open_closed",
@@ -228,8 +230,8 @@
           "start_line": 3,
           "end_line": 3,
           "symbol": "ICarRuntime",
-          "claim": "新增业务域需修改中心服务，核心对扩展不封闭。",
-          "observation": "新增业务域需修改中心服务，核心对扩展不封闭。",
+          "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+          "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
           "evidence_type": "source",
           "independent_group": "solid_primary"
         },
@@ -241,20 +243,21 @@
           "start_line": 24,
           "end_line": 24,
           "symbol": "AuroraBaseRuntimeProfile",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+          "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
           "evidence_type": "source",
           "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
       "issues": [
         "新增业务域需修改中心服务，核心对扩展不封闭。"
       ],
       "recommendations": [
         "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
+      ],
+      "review_status": "pending_independent_review"
     },
     {
       "name": "solid_principle.liskov_substitution",
@@ -296,15 +299,15 @@
           "ref": "HEAD",
           "start_line": 48,
           "end_line": 48,
-          "symbol": "CarRuntimeService",
+          "symbol": "public final class CarRuntimeService extends ICarRuntime.Stub {",
           "claim": "CarRuntimeService 实现生成 Stub；替换证据限于单一实现。",
           "observation": "CarRuntimeService 实现生成 Stub；替换证据限于单一实现。",
           "evidence_type": "source",
           "independent_group": "lsp_contract_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Fact-derived band check; source semantics require review.",
+      "confidence": "medium",
       "issues": [
         "CarRuntimeService 实现生成的 ICarRuntime.Stub 合同，未发现收紧前置条件或拒绝父契约，但缺少第二个生产实现和替换测试。"
       ],
@@ -328,8 +331,8 @@
           "start_line": 48,
           "end_line": 48,
           "symbol": "CarRuntimeService",
-          "claim": "ICarRuntime 强制所有客户端依赖多业务域能力。",
-          "observation": "ICarRuntime 强制所有客户端依赖多业务域能力。",
+          "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+          "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
           "evidence_type": "source",
           "independent_group": "solid_primary"
         },
@@ -341,20 +344,21 @@
           "start_line": 3,
           "end_line": 3,
           "symbol": "ICarRuntime",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+          "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
           "evidence_type": "source",
           "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
       "issues": [
         "ICarRuntime 强制所有客户端依赖多业务域能力。"
       ],
       "recommendations": [
         "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
+      ],
+      "review_status": "pending_independent_review"
     },
     {
       "name": "solid_principle.dependency_inversion",
@@ -372,8 +376,8 @@
           "start_line": 3,
           "end_line": 3,
           "symbol": "ICarRuntime",
-          "claim": "中心服务直接构造 facade 并保存全局实例。",
-          "observation": "中心服务直接构造 facade 并保存全局实例。",
+          "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+          "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
           "evidence_type": "source",
           "independent_group": "solid_primary"
         },
@@ -385,20 +389,21 @@
           "start_line": 24,
           "end_line": 24,
           "symbol": "AuroraBaseRuntimeProfile",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+          "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
           "evidence_type": "source",
           "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
       "issues": [
         "中心服务直接构造 facade 并保存全局实例。"
       ],
       "recommendations": [
         "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
+      ],
+      "review_status": "pending_independent_review"
     },
     {
       "name": "platform_reuse.platform_upgrade",
@@ -419,36 +424,11 @@
           "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
-        },
-        {
-          "source": "current_head",
-          "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
-          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD",
-          "start_line": 48,
-          "end_line": 48,
-          "symbol": "CarRuntimeService",
-          "claim": "平台访问风险或隔离边界。",
-          "observation": "平台访问风险或隔离边界。",
-          "evidence_type": "source",
-          "independent_group": "platform_primary"
-        },
-        {
-          "source": "current_head",
-          "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
-          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD",
-          "start_line": 3,
-          "end_line": 3,
-          "symbol": "ICarRuntime",
-          "claim": "独立适配/服务边界。",
-          "observation": "独立适配/服务边界。",
-          "evidence_type": "source",
-          "independent_group": "platform_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
+      "review_status": "pending_independent_review"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
@@ -493,8 +473,9 @@
           "independent_group": "branch_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
+      "review_status": "pending_independent_review"
     }
   ]
 }

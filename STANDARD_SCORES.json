@@ -1,7 +1,8 @@
 {
   "schema_version": "3.0.0",
   "document_type": "validation18_benchmark_standard_scores",
-  "generated_at": "2026-09-04T16:07:31.857884+00:00",
+  "release_status": "draft_pending_independent_review",
+  "generated_at": "2026-09-05T11:24:03.160375+00:00",
   "contract": {
     "path": "SCORE_RULES.md",
     "sha256": "c367412668bf3f96231462bad501cec04c0c2bce44a9dbc0206acdaf31ed9465",
@@ -16,7 +17,7 @@
     "repository_count": 18,
     "pending_repository_count": 22,
     "leaf_count": 171,
-    "score": 485,
+    "score": 484,
     "max_score": 828
   },
   "repositories": [
@@ -337,7 +338,7 @@
               "ref": "HEAD",
               "start_line": 29,
               "end_line": 29,
-              "symbol": "find",
+              "symbol": "val serviceManager = Class.forName(\"android.os.ServiceManager\")",
               "claim": "平台风险或隔离边界。",
               "observation": "平台风险或隔离边界。",
               "evidence_type": "source",
@@ -828,9 +829,9 @@
               "path": "settings-common/src/main/java/com/android/car/settings/common/ActionButtonInfo.java",
               "commit": "150289b5e0d67acf395aa5418e43347207e9c1b4",
               "ref": "HEAD",
-              "start_line": 52,
-              "end_line": 52,
-              "symbol": "ActionButtonInfo",
+              "start_line": 245,
+              "end_line": 245,
+              "symbol": "ButtonInfoChangeListener",
               "claim": "组件显式接口/抽象契约。",
               "observation": "组件显式接口/抽象契约。",
               "evidence_type": "source",
@@ -1117,7 +1118,7 @@
               "ref": "HEAD",
               "start_line": 93,
               "end_line": 93,
-              "symbol": "PreferenceControllerListHelper",
+              "symbol": "Class<?> clazz = Class.forName(controllerName);",
               "claim": "平台风险或隔离边界。",
               "observation": "平台风险或隔离边界。",
               "evidence_type": "source",
@@ -2237,7 +2238,7 @@
               "ref": "HEAD",
               "start_line": 12,
               "end_line": 12,
-              "symbol": "CockpitShellController",
+              "symbol": "try { Class.forName(\"android.window.WindowContainerTransaction\"); }",
               "claim": "平台风险或隔离边界。",
               "observation": "平台风险或隔离边界。",
               "evidence_type": "source",
@@ -2603,7 +2604,7 @@
               "ref": "HEAD",
               "start_line": 9,
               "end_line": 9,
-              "symbol": "ThermalPlatformRuntime",
+              "symbol": "try { return Class.forName(\"android.car.hardware.property.CarPropertyManager\"); }",
               "claim": "平台风险或隔离边界。",
               "observation": "平台风险或隔离边界。",
               "evidence_type": "source",
@@ -2616,7 +2617,7 @@
               "ref": "HEAD",
               "start_line": 29,
               "end_line": 29,
-              "symbol": "connect",
+              "symbol": "val managerClass = Class.forName(\"android.car.hardware.property.CarPropertyManager\")",
               "claim": "平台风险或隔离边界。",
               "observation": "平台风险或隔离边界。",
               "evidence_type": "source",
@@ -2991,7 +2992,7 @@
               "ref": "HEAD",
               "start_line": 13,
               "end_line": 13,
-              "symbol": "LauncherRuntime",
+              "symbol": "try { Class.forName(\"android.window.TaskView\"); }",
               "claim": "平台风险或隔离边界。",
               "observation": "平台风险或隔离边界。",
               "evidence_type": "source",
@@ -3004,7 +3005,7 @@
               "ref": "HEAD",
               "start_line": 9,
               "end_line": 9,
-              "symbol": "LegacyPlatformRuntime",
+              "symbol": "try { Class.forName(\"android.app.ActivityTaskManager\"); }",
               "claim": "平台风险或隔离边界。",
               "observation": "平台风险或隔离边界。",
               "evidence_type": "source",
@@ -3370,7 +3371,7 @@
               "ref": "HEAD",
               "start_line": 93,
               "end_line": 93,
-              "symbol": "PreferenceControllerListHelper",
+              "symbol": "Class<?> clazz = Class.forName(controllerName);",
               "claim": "平台风险或隔离边界。",
               "observation": "平台风险或隔离边界。",
               "evidence_type": "source",
@@ -3383,7 +3384,7 @@
               "ref": "HEAD",
               "start_line": 93,
               "end_line": 93,
-              "symbol": "PreferenceControllerListHelper",
+              "symbol": "Class<?> clazz = Class.forName(controllerName);",
               "claim": "平台风险或隔离边界。",
               "observation": "平台风险或隔离边界。",
               "evidence_type": "source",
@@ -3491,8 +3492,9 @@
               "independent_group": "ci_pipeline"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "compilation.compilation_independence",
@@ -3541,8 +3543,8 @@
               "independent_group": "build_boundary_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "compilation.api_version_management",
@@ -3591,8 +3593,8 @@
               "independent_group": "api_control_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "quality.integration_test",
@@ -3641,8 +3643,8 @@
               "independent_group": "test_config"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "solid_principle.single_responsibility",
@@ -3660,8 +3662,8 @@
               "start_line": 22,
               "end_line": 22,
               "symbol": "VehiclePropertyPolicy",
-              "claim": "策略、平台访问、HAL 与 Binder 职责有边界；仍保留较大的命令处理类。",
-              "observation": "策略、平台访问、HAL 与 Binder 职责有边界；仍保留较大的命令处理类。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -3673,20 +3675,21 @@
               "start_line": 39,
               "end_line": 39,
               "symbol": "VehicleStub",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "策略、平台访问、HAL 与 Binder 职责有边界；仍保留较大的命令处理类。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.open_closed",
@@ -3704,8 +3707,8 @@
               "start_line": 39,
               "end_line": 39,
               "symbol": "VehicleStub",
-              "claim": "VehicleStub 与策略对象提供扩展点。",
-              "observation": "VehicleStub 与策略对象提供扩展点。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -3717,20 +3720,21 @@
               "start_line": 26,
               "end_line": 26,
               "symbol": "ICarProperty",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "VehicleStub 与策略对象提供扩展点。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.liskov_substitution",
@@ -3792,8 +3796,8 @@
               "independent_group": "lsp_contract_2"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium",
           "issues": [
             "AIDL/HIDL VehicleStub 实现遵守共同读写和订阅契约。"
           ],
@@ -3817,8 +3821,8 @@
               "start_line": 22,
               "end_line": 22,
               "symbol": "VehiclePropertyPolicy",
-              "claim": "属性、回调和策略接口按客户端职责拆分。",
-              "observation": "属性、回调和策略接口按客户端职责拆分。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -3830,20 +3834,21 @@
               "start_line": 39,
               "end_line": 39,
               "symbol": "VehicleStub",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "属性、回调和策略接口按客户端职责拆分。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.dependency_inversion",
@@ -3861,8 +3866,8 @@
               "start_line": 39,
               "end_line": 39,
               "symbol": "VehicleStub",
-              "claim": "服务主要依赖 VehicleStub/HalClient 抽象，平台反射被收敛在边界内。",
-              "observation": "服务主要依赖 VehicleStub/HalClient 抽象，平台反射被收敛在边界内。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -3874,20 +3879,21 @@
               "start_line": 26,
               "end_line": 26,
               "symbol": "ICarProperty",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "服务主要依赖 VehicleStub/HalClient 抽象，平台反射被收敛在边界内。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.platform_upgrade",
@@ -3908,36 +3914,11 @@
               "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
               "evidence_type": "structured_fact",
               "independent_group": "derived_fact"
-            },
-            {
-              "source": "current_head",
-              "path": "platform/src/com/cockpitbench/vehicleproperty/VehiclePropertyPolicy.java",
-              "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-              "ref": "HEAD",
-              "start_line": 22,
-              "end_line": 22,
-              "symbol": "VehiclePropertyPolicy",
-              "claim": "平台访问风险或隔离边界。",
-              "observation": "平台访问风险或隔离边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_primary"
-            },
-            {
-              "source": "current_head",
-              "path": "runtime/src/com/android/car/VehicleStub.java",
-              "commit": "8421f37236e92270ff98b620ef45e9b0becc96a0",
-              "ref": "HEAD",
-              "start_line": 39,
-              "end_line": 39,
-              "symbol": "VehicleStub",
-              "claim": "独立适配/服务边界。",
-              "observation": "独立适配/服务边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.release_branch_strategy",
@@ -3982,8 +3963,9 @@
               "independent_group": "branch_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         }
       ],
       "platform_upgrade_facts": {
@@ -4048,8 +4030,9 @@
               "independent_group": "ci_pipeline"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "compilation.compilation_independence",
@@ -4085,8 +4068,8 @@
               "independent_group": "build_boundary_0"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "compilation.api_version_management",
@@ -4135,8 +4118,8 @@
               "independent_group": "api_control_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "quality.integration_test",
@@ -4185,8 +4168,8 @@
               "independent_group": "test_config"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "solid_principle.single_responsibility",
@@ -4204,8 +4187,8 @@
               "start_line": 38,
               "end_line": 38,
               "symbol": "VehicleStub",
-              "claim": "Vehicle HAL、传输、契约与生命周期分层清楚，但仍有若干大类。",
-              "observation": "Vehicle HAL、传输、契约与生命周期分层清楚，但仍有若干大类。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -4217,20 +4200,21 @@
               "start_line": 64,
               "end_line": 64,
               "symbol": "AidlVehicleStub",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "Vehicle HAL、传输、契约与生命周期分层清楚，但仍有若干大类。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.open_closed",
@@ -4248,8 +4232,8 @@
               "start_line": 64,
               "end_line": 64,
               "symbol": "AidlVehicleStub",
-              "claim": "AIDL/HIDL 适配及 native transport 可替换。",
-              "observation": "AIDL/HIDL 适配及 native transport 可替换。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -4261,16 +4245,17 @@
               "start_line": 18,
               "end_line": 18,
               "symbol": "CallerContext",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [],
-          "recommendations": []
+          "recommendations": [],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.liskov_substitution",
@@ -4332,8 +4317,8 @@
               "independent_group": "lsp_contract_2"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium",
           "issues": [
             "AidlVehicleStub/HidlVehicleStub 保持 VehicleStub 合同。"
           ],
@@ -4357,8 +4342,8 @@
               "start_line": 38,
               "end_line": 38,
               "symbol": "VehicleStub",
-              "claim": "VehicleStub 子接口和细分 AIDL 隔离客户端职责。",
-              "observation": "VehicleStub 子接口和细分 AIDL 隔离客户端职责。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -4370,20 +4355,21 @@
               "start_line": 64,
               "end_line": 64,
               "symbol": "AidlVehicleStub",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "VehicleStub 子接口和细分 AIDL 隔离客户端职责。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.dependency_inversion",
@@ -4401,8 +4387,8 @@
               "start_line": 64,
               "end_line": 64,
               "symbol": "AidlVehicleStub",
-              "claim": "高层 gateway 依赖 port/transport/clock 抽象。",
-              "observation": "高层 gateway 依赖 port/transport/clock 抽象。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -4414,16 +4400,17 @@
               "start_line": 18,
               "end_line": 18,
               "symbol": "CallerContext",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [],
-          "recommendations": []
+          "recommendations": [],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.platform_upgrade",
@@ -4444,36 +4431,11 @@
               "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
               "evidence_type": "structured_fact",
               "independent_group": "derived_fact"
-            },
-            {
-              "source": "current_head",
-              "path": "service/src/com/android/car/VehicleStub.java",
-              "commit": "7cb9206c8a8af76c7800cc6cda70255240e937e0",
-              "ref": "HEAD",
-              "start_line": 38,
-              "end_line": 38,
-              "symbol": "VehicleStub",
-              "claim": "平台访问风险或隔离边界。",
-              "observation": "平台访问风险或隔离边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_primary"
-            },
-            {
-              "source": "current_head",
-              "path": "service/src/com/android/car/AidlVehicleStub.java",
-              "commit": "7cb9206c8a8af76c7800cc6cda70255240e937e0",
-              "ref": "HEAD",
-              "start_line": 64,
-              "end_line": 64,
-              "symbol": "AidlVehicleStub",
-              "claim": "独立适配/服务边界。",
-              "observation": "独立适配/服务边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.release_branch_strategy",
@@ -4518,8 +4480,9 @@
               "independent_group": "branch_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         }
       ],
       "platform_upgrade_facts": {
@@ -4584,8 +4547,9 @@
               "independent_group": "ci_pipeline"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "compilation.compilation_independence",
@@ -4634,8 +4598,8 @@
               "independent_group": "build_boundary_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "compilation.api_version_management",
@@ -4697,8 +4661,8 @@
               "independent_group": "api_control_2"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "quality.integration_test",
@@ -4747,8 +4711,8 @@
               "independent_group": "test_config"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "solid_principle.single_responsibility",
@@ -4766,8 +4730,8 @@
               "start_line": 164,
               "end_line": 164,
               "symbol": "WatchdogPerfHandler",
-              "claim": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 体量过大。",
-              "observation": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 体量过大。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -4779,20 +4743,21 @@
               "start_line": 23,
               "end_line": 23,
               "symbol": "ICarDiagnostic",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 体量过大。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.open_closed",
@@ -4810,8 +4775,8 @@
               "start_line": 23,
               "end_line": 23,
               "symbol": "ICarDiagnostic",
-              "claim": "listener、watchdog AIDL 与 HAL service 提供扩展点。",
-              "observation": "listener、watchdog AIDL 与 HAL service 提供扩展点。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -4823,20 +4788,21 @@
               "start_line": 46,
               "end_line": 46,
               "symbol": "TelemetryServer",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "listener、watchdog AIDL 与 HAL service 提供扩展点。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.liskov_substitution",
@@ -4898,8 +4864,8 @@
               "independent_group": "lsp_contract_2"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium",
           "issues": [
             "Manager/Service 与 Binder callback 保持父契约。"
           ],
@@ -4923,8 +4889,8 @@
               "start_line": 164,
               "end_line": 164,
               "symbol": "WatchdogPerfHandler",
-              "claim": "诊断、遥测、资源过载接口按领域拆分。",
-              "observation": "诊断、遥测、资源过载接口按领域拆分。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -4936,20 +4902,21 @@
               "start_line": 23,
               "end_line": 23,
               "symbol": "ICarDiagnostic",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "诊断、遥测、资源过载接口按领域拆分。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.dependency_inversion",
@@ -4967,8 +4934,8 @@
               "start_line": 23,
               "end_line": 23,
               "symbol": "ICarDiagnostic",
-              "claim": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作。",
-              "observation": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -4980,20 +4947,21 @@
               "start_line": 46,
               "end_line": 46,
               "symbol": "TelemetryServer",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "服务通过 AIDL、HalServiceBase 与 listener 抽象协作。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.platform_upgrade",
@@ -5014,36 +4982,11 @@
               "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
               "evidence_type": "structured_fact",
               "independent_group": "derived_fact"
-            },
-            {
-              "source": "current_head",
-              "path": "service/src/com/android/car/watchdog/WatchdogPerfHandler.java",
-              "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-              "ref": "HEAD",
-              "start_line": 164,
-              "end_line": 164,
-              "symbol": "WatchdogPerfHandler",
-              "claim": "平台访问风险或隔离边界。",
-              "observation": "平台访问风险或隔离边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_primary"
-            },
-            {
-              "source": "current_head",
-              "path": "car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl",
-              "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-              "ref": "HEAD",
-              "start_line": 23,
-              "end_line": 23,
-              "symbol": "ICarDiagnostic",
-              "claim": "独立适配/服务边界。",
-              "observation": "独立适配/服务边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.release_branch_strategy",
@@ -5088,8 +5031,9 @@
               "independent_group": "branch_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         }
       ],
       "platform_upgrade_facts": {
@@ -5154,8 +5098,9 @@
               "independent_group": "ci_pipeline"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "compilation.compilation_independence",
@@ -5204,8 +5149,8 @@
               "independent_group": "build_boundary_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "compilation.api_version_management",
@@ -5241,8 +5186,8 @@
               "independent_group": "api_control_0"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "quality.integration_test",
@@ -5291,8 +5236,8 @@
               "independent_group": "test_config"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "solid_principle.single_responsibility",
@@ -5310,8 +5255,8 @@
               "start_line": 20,
               "end_line": 20,
               "symbol": "ManagerGatewayService",
-              "claim": "ManagerGatewayService 混合权限、路由、fallback 与广播职责。",
-              "observation": "ManagerGatewayService 混合权限、路由、fallback 与广播职责。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -5323,20 +5268,21 @@
               "start_line": 17,
               "end_line": 17,
               "symbol": "ManagerRegistry",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "ManagerGatewayService 混合权限、路由、fallback 与广播职责。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.open_closed",
@@ -5354,8 +5300,8 @@
               "start_line": 17,
               "end_line": 17,
               "symbol": "ManagerRegistry",
-              "claim": "Backend 可注册，但平台 fallback 仍依赖字符串和反射表。",
-              "observation": "Backend 可注册，但平台 fallback 仍依赖字符串和反射表。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -5367,20 +5313,21 @@
               "start_line": 20,
               "end_line": 20,
               "symbol": "PlatformManagerFallback",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "Backend 可注册，但平台 fallback 仍依赖字符串和反射表。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.liskov_substitution",
@@ -5409,7 +5356,7 @@
               "ref": "HEAD",
               "start_line": 17,
               "end_line": 17,
-              "symbol": "ManagerRegistry",
+              "symbol": "Backend",
               "claim": "Backend 声明统一调用合同。",
               "observation": "Backend 声明统一调用合同。",
               "evidence_type": "source",
@@ -5422,15 +5369,15 @@
               "ref": "HEAD",
               "start_line": 21,
               "end_line": 21,
-              "symbol": "VehiclePropertyBackend",
+              "symbol": "public final class VehiclePropertyBackend implements ManagerRegistry.Backend {",
               "claim": "VehiclePropertyBackend 实现该合同；尚无第二个生产实现或替换测试。",
               "observation": "VehiclePropertyBackend 实现该合同；尚无第二个生产实现或替换测试。",
               "evidence_type": "source",
               "independent_group": "lsp_contract_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium",
           "issues": [
             "VehiclePropertyBackend 遵守 Backend 调用合同。"
           ],
@@ -5454,8 +5401,8 @@
               "start_line": 20,
               "end_line": 20,
               "symbol": "ManagerGatewayService",
-              "claim": "IManagerGateway 粒度尚可，但 Bundle 通用入口弱化类型隔离。",
-              "observation": "IManagerGateway 粒度尚可，但 Bundle 通用入口弱化类型隔离。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -5467,20 +5414,21 @@
               "start_line": 17,
               "end_line": 17,
               "symbol": "ManagerRegistry",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "IManagerGateway 粒度尚可，但 Bundle 通用入口弱化类型隔离。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.dependency_inversion",
@@ -5498,8 +5446,8 @@
               "start_line": 17,
               "end_line": 17,
               "symbol": "ManagerRegistry",
-              "claim": "Gateway 直接构造 Registry/Fallback/Backend，高层注入不完整。",
-              "observation": "Gateway 直接构造 Registry/Fallback/Backend，高层注入不完整。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -5511,20 +5459,21 @@
               "start_line": 20,
               "end_line": 20,
               "symbol": "PlatformManagerFallback",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "Gateway 直接构造 Registry/Fallback/Backend，高层注入不完整。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.platform_upgrade",
@@ -5545,36 +5494,11 @@
               "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
               "evidence_type": "structured_fact",
               "independent_group": "derived_fact"
-            },
-            {
-              "source": "current_head",
-              "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerGatewayService.java",
-              "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
-              "ref": "HEAD",
-              "start_line": 20,
-              "end_line": 20,
-              "symbol": "ManagerGatewayService",
-              "claim": "平台访问风险或隔离边界。",
-              "observation": "平台访问风险或隔离边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_primary"
-            },
-            {
-              "source": "current_head",
-              "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerRegistry.java",
-              "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
-              "ref": "HEAD",
-              "start_line": 17,
-              "end_line": 17,
-              "symbol": "ManagerRegistry",
-              "claim": "独立适配/服务边界。",
-              "observation": "独立适配/服务边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.release_branch_strategy",
@@ -5619,8 +5543,9 @@
               "independent_group": "branch_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         }
       ],
       "platform_upgrade_facts": {
@@ -5647,7 +5572,7 @@
       "branch": "main",
       "worktree_clean": true,
       "total": {
-        "score": 38,
+        "score": 37,
         "max": 52
       },
       "leaves": [
@@ -5685,8 +5610,9 @@
               "independent_group": "ci_pipeline"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "compilation.compilation_independence",
@@ -5735,8 +5661,8 @@
               "independent_group": "build_boundary_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "compilation.api_version_management",
@@ -5798,8 +5724,8 @@
               "independent_group": "api_control_2"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "quality.integration_test",
@@ -5848,8 +5774,8 @@
               "independent_group": "test_config"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "solid_principle.single_responsibility",
@@ -5867,8 +5793,8 @@
               "start_line": 22,
               "end_line": 22,
               "symbol": "SoaGatewayService",
-              "claim": "SOA service、broker、transport、contract 已分层，但完整闭包仍含大类。",
-              "observation": "SOA service、broker、transport、contract 已分层，但完整闭包仍含大类。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -5880,20 +5806,21 @@
               "start_line": 20,
               "end_line": 20,
               "symbol": "SoaBroker",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "SOA service、broker、transport、contract 已分层，但完整闭包仍含大类。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.open_closed",
@@ -5911,8 +5838,8 @@
               "start_line": 20,
               "end_line": 20,
               "symbol": "SoaBroker",
-              "claim": "ProviderRegistry、SubscriptionGraph 与 IpcTransport 支持扩展。",
-              "observation": "ProviderRegistry、SubscriptionGraph 与 IpcTransport 支持扩展。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -5924,28 +5851,29 @@
               "start_line": 17,
               "end_line": 17,
               "symbol": "TransportHealth",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "ProviderRegistry、SubscriptionGraph 与 IpcTransport 支持扩展。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.liskov_substitution",
-          "score": 3,
+          "score": 2,
           "max_score": 4,
           "status": "scored",
-          "score_reasoning": "fake/Unix transport 与 callback 保持同一生命周期契约。 按独立 0–4 档位锁定 3。",
-          "analysis": "fake/Unix transport 与 callback 保持同一生命周期契约。 按独立 0–4 档位锁定 3。",
+          "score_reasoning": "只有一个生产 UnixSocketTransport；Fake 构造不属于生产实现通过可复用契约测试的证明。 按独立 0–4 档位锁定 2。",
+          "analysis": "只有一个生产 UnixSocketTransport；Fake 构造不属于生产实现通过可复用契约测试的证明。 按独立 0–4 档位锁定 2。",
           "evidence": [
             {
               "source": "current_head_fact_snapshot",
@@ -5999,10 +5927,10 @@
               "independent_group": "lsp_contract_2"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium",
           "issues": [
-            "fake/Unix transport 与 callback 保持同一生命周期契约。"
+            "只有一个生产 UnixSocketTransport；Fake 构造不属于生产实现通过可复用契约测试的证明。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
@@ -6024,8 +5952,8 @@
               "start_line": 22,
               "end_line": 22,
               "symbol": "SoaGatewayService",
-              "claim": "provider、subscription、packet 与 transport 接口按角色拆分。",
-              "observation": "provider、subscription、packet 与 transport 接口按角色拆分。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -6037,20 +5965,21 @@
               "start_line": 20,
               "end_line": 20,
               "symbol": "SoaBroker",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "provider、subscription、packet 与 transport 接口按角色拆分。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.dependency_inversion",
@@ -6068,8 +5997,8 @@
               "start_line": 20,
               "end_line": 20,
               "symbol": "SoaBroker",
-              "claim": "Service/Broker 依赖 transport 与 store 抽象并通过构造装配。",
-              "observation": "Service/Broker 依赖 transport 与 store 抽象并通过构造装配。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -6081,20 +6010,21 @@
               "start_line": 17,
               "end_line": 17,
               "symbol": "TransportHealth",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "Service/Broker 依赖 transport 与 store 抽象并通过构造装配。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.platform_upgrade",
@@ -6115,36 +6045,11 @@
               "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
               "evidence_type": "structured_fact",
               "independent_group": "derived_fact"
-            },
-            {
-              "source": "current_head",
-              "path": "native/application/include/fw08/application/soa_gateway_service.h",
-              "commit": "69e60531c7a3474c288a6702c84f5758a3950139",
-              "ref": "HEAD",
-              "start_line": 22,
-              "end_line": 22,
-              "symbol": "SoaGatewayService",
-              "claim": "平台访问风险或隔离边界。",
-              "observation": "平台访问风险或隔离边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_primary"
-            },
-            {
-              "source": "current_head",
-              "path": "native/broker/include/fw08/broker/soa_broker.h",
-              "commit": "69e60531c7a3474c288a6702c84f5758a3950139",
-              "ref": "HEAD",
-              "start_line": 20,
-              "end_line": 20,
-              "symbol": "SoaBroker",
-              "claim": "独立适配/服务边界。",
-              "observation": "独立适配/服务边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.release_branch_strategy",
@@ -6189,8 +6094,9 @@
               "independent_group": "branch_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         }
       ],
       "platform_upgrade_facts": {
@@ -6255,8 +6161,9 @@
               "independent_group": "ci_pipeline"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "compilation.compilation_independence",
@@ -6305,8 +6212,8 @@
               "independent_group": "build_boundary_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "compilation.api_version_management",
@@ -6368,8 +6275,8 @@
               "independent_group": "api_control_2"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "quality.integration_test",
@@ -6418,8 +6325,8 @@
               "independent_group": "test_config"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "solid_principle.single_responsibility",
@@ -6437,8 +6344,8 @@
               "start_line": 9,
               "end_line": 9,
               "symbol": "UpdateManagerService",
-              "claim": "UpdateManagerService 混合权限、反射引擎、状态和 listener。",
-              "observation": "UpdateManagerService 混合权限、反射引擎、状态和 listener。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -6450,20 +6357,21 @@
               "start_line": 3,
               "end_line": 3,
               "symbol": "IUpdateManager",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "UpdateManagerService 混合权限、反射引擎、状态和 listener。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.open_closed",
@@ -6481,8 +6389,8 @@
               "start_line": 3,
               "end_line": 3,
               "symbol": "IUpdateManager",
-              "claim": "PermissionGate 可替换，但 UpdateEngine 扩展仍修改核心反射逻辑。",
-              "observation": "PermissionGate 可替换，但 UpdateEngine 扩展仍修改核心反射逻辑。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -6494,20 +6402,21 @@
               "start_line": 2,
               "end_line": 2,
               "symbol": "IUpdateStatusListener",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "PermissionGate 可替换，但 UpdateEngine 扩展仍修改核心反射逻辑。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.liskov_substitution",
@@ -6569,8 +6478,8 @@
               "independent_group": "lsp_contract_2"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium",
           "issues": [
             "AidlVehicleStub/HidlVehicleStub 两个生产实现保持 VehicleStub 共同契约。"
           ],
@@ -6594,8 +6503,8 @@
               "start_line": 9,
               "end_line": 9,
               "symbol": "UpdateManagerService",
-              "claim": "控制与状态回调虽拆分，service 仍暴露完整生命周期。",
-              "observation": "控制与状态回调虽拆分，service 仍暴露完整生命周期。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -6607,20 +6516,21 @@
               "start_line": 3,
               "end_line": 3,
               "symbol": "IUpdateManager",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "控制与状态回调虽拆分，service 仍暴露完整生命周期。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.dependency_inversion",
@@ -6632,39 +6542,40 @@
           "evidence": [
             {
               "source": "current_head",
-              "path": "update-manager/src/com/cockpitbench/update/IUpdateManager.aidl",
+              "path": "update-manager/src/com/cockpitbench/update/UpdateManagerService.java",
               "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
               "ref": "HEAD",
-              "start_line": 3,
-              "end_line": 3,
-              "symbol": "IUpdateManager",
-              "claim": "权限依赖可注入，UpdateEngine 具体构造仍留在服务内。",
-              "observation": "权限依赖可注入，UpdateEngine 具体构造仍留在服务内。",
+              "start_line": 18,
+              "end_line": 18,
+              "symbol": "public UpdateManagerService(PermissionGate permissions) { this.permissions = Objects.requireNonNull(permissions); }",
+              "claim": "构造函数接收 PermissionGate 并保存依赖。",
+              "observation": "构造函数接收 PermissionGate 并保存依赖。",
               "evidence_type": "source",
-              "independent_group": "solid_primary"
+              "independent_group": "permission_injection"
             },
             {
               "source": "current_head",
-              "path": "update-manager/src/com/cockpitbench/update/IUpdateStatusListener.aidl",
+              "path": "update-manager/src/com/cockpitbench/update/UpdateManagerService.java",
               "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
               "ref": "HEAD",
-              "start_line": 2,
-              "end_line": 2,
-              "symbol": "IUpdateStatusListener",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "start_line": 52,
+              "end_line": 52,
+              "symbol": "if(updateEngine==null){Class<?> type=Class.forName(\"android.os.UpdateEngine\");Constructor<?> ctor=type.getDeclaredConstr",
+              "claim": "服务内部反射获取 UpdateEngine 构造器并创建具体实例。",
+              "observation": "服务内部反射获取 UpdateEngine 构造器并创建具体实例。",
               "evidence_type": "source",
-              "independent_group": "solid_secondary"
+              "independent_group": "engine_construction"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "权限依赖可注入，UpdateEngine 具体构造仍留在服务内。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.platform_upgrade",
@@ -6685,36 +6596,11 @@
               "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
               "evidence_type": "structured_fact",
               "independent_group": "derived_fact"
-            },
-            {
-              "source": "current_head",
-              "path": "update-manager/src/com/cockpitbench/update/UpdateManagerService.java",
-              "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
-              "ref": "HEAD",
-              "start_line": 9,
-              "end_line": 9,
-              "symbol": "UpdateManagerService",
-              "claim": "平台访问风险或隔离边界。",
-              "observation": "平台访问风险或隔离边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_primary"
-            },
-            {
-              "source": "current_head",
-              "path": "update-manager/src/com/cockpitbench/update/IUpdateManager.aidl",
-              "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
-              "ref": "HEAD",
-              "start_line": 3,
-              "end_line": 3,
-              "symbol": "IUpdateManager",
-              "claim": "独立适配/服务边界。",
-              "observation": "独立适配/服务边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.release_branch_strategy",
@@ -6759,8 +6645,9 @@
               "independent_group": "branch_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         }
       ],
       "platform_upgrade_facts": {
@@ -6825,8 +6712,9 @@
               "independent_group": "ci_pipeline"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "compilation.compilation_independence",
@@ -6875,8 +6763,8 @@
               "independent_group": "declared_dependency"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "compilation.api_version_management",
@@ -6899,8 +6787,8 @@
               "independent_group": "derived_fact"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "quality.integration_test",
@@ -6936,8 +6824,8 @@
               "independent_group": "test_config"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "solid_principle.single_responsibility",
@@ -6955,8 +6843,8 @@
               "start_line": 48,
               "end_line": 48,
               "symbol": "CarRuntimeService",
-              "claim": "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。",
-              "observation": "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -6968,20 +6856,21 @@
               "start_line": 3,
               "end_line": 3,
               "symbol": "ICarRuntime",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.open_closed",
@@ -6999,8 +6888,8 @@
               "start_line": 3,
               "end_line": 3,
               "symbol": "ICarRuntime",
-              "claim": "新增业务域需修改中心服务，核心对扩展不封闭。",
-              "observation": "新增业务域需修改中心服务，核心对扩展不封闭。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -7012,20 +6901,21 @@
               "start_line": 24,
               "end_line": 24,
               "symbol": "AuroraBaseRuntimeProfile",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "新增业务域需修改中心服务，核心对扩展不封闭。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.liskov_substitution",
@@ -7067,15 +6957,15 @@
               "ref": "HEAD",
               "start_line": 48,
               "end_line": 48,
-              "symbol": "CarRuntimeService",
+              "symbol": "public final class CarRuntimeService extends ICarRuntime.Stub {",
               "claim": "CarRuntimeService 实现生成 Stub；替换证据限于单一实现。",
               "observation": "CarRuntimeService 实现生成 Stub；替换证据限于单一实现。",
               "evidence_type": "source",
               "independent_group": "lsp_contract_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium",
           "issues": [
             "CarRuntimeService 实现生成的 ICarRuntime.Stub 合同，未发现收紧前置条件或拒绝父契约，但缺少第二个生产实现和替换测试。"
           ],
@@ -7099,8 +6989,8 @@
               "start_line": 48,
               "end_line": 48,
               "symbol": "CarRuntimeService",
-              "claim": "ICarRuntime 强制所有客户端依赖多业务域能力。",
-              "observation": "ICarRuntime 强制所有客户端依赖多业务域能力。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -7112,20 +7002,21 @@
               "start_line": 3,
               "end_line": 3,
               "symbol": "ICarRuntime",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "ICarRuntime 强制所有客户端依赖多业务域能力。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.dependency_inversion",
@@ -7143,8 +7034,8 @@
               "start_line": 3,
               "end_line": 3,
               "symbol": "ICarRuntime",
-              "claim": "中心服务直接构造 facade 并保存全局实例。",
-              "observation": "中心服务直接构造 facade 并保存全局实例。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -7156,20 +7047,21 @@
               "start_line": 24,
               "end_line": 24,
               "symbol": "AuroraBaseRuntimeProfile",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "中心服务直接构造 facade 并保存全局实例。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.platform_upgrade",
@@ -7190,36 +7082,11 @@
               "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
               "evidence_type": "structured_fact",
               "independent_group": "derived_fact"
-            },
-            {
-              "source": "current_head",
-              "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
-              "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-              "ref": "HEAD",
-              "start_line": 48,
-              "end_line": 48,
-              "symbol": "CarRuntimeService",
-              "claim": "平台访问风险或隔离边界。",
-              "observation": "平台访问风险或隔离边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_primary"
-            },
-            {
-              "source": "current_head",
-              "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
-              "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-              "ref": "HEAD",
-              "start_line": 3,
-              "end_line": 3,
-              "symbol": "ICarRuntime",
-              "claim": "独立适配/服务边界。",
-              "observation": "独立适配/服务边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.release_branch_strategy",
@@ -7264,8 +7131,9 @@
               "independent_group": "branch_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         }
       ],
       "platform_upgrade_facts": {
@@ -7330,8 +7198,9 @@
               "independent_group": "ci_pipeline"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "compilation.compilation_independence",
@@ -7367,8 +7236,8 @@
               "independent_group": "declared_dependency"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "compilation.api_version_management",
@@ -7417,8 +7286,8 @@
               "independent_group": "api_control_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "quality.integration_test",
@@ -7454,8 +7323,8 @@
               "independent_group": "test_case"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "solid_principle.single_responsibility",
@@ -7473,8 +7342,8 @@
               "start_line": 26,
               "end_line": 26,
               "symbol": "PlatformSignalCoordinator",
-              "claim": "PlatformSignalCoordinator 汇集连接、缓存、回调、profile 与 fallback。",
-              "observation": "PlatformSignalCoordinator 汇集连接、缓存、回调、profile 与 fallback。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -7486,20 +7355,21 @@
               "start_line": 26,
               "end_line": 26,
               "symbol": "LegacyPlatformRouter",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "PlatformSignalCoordinator 汇集连接、缓存、回调、profile 与 fallback。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.open_closed",
@@ -7517,8 +7387,8 @@
               "start_line": 26,
               "end_line": 26,
               "symbol": "LegacyPlatformRouter",
-              "claim": "新增平台需要修改 router/profile 与 fallback 分支。",
-              "observation": "新增平台需要修改 router/profile 与 fallback 分支。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -7530,20 +7400,21 @@
               "start_line": 3,
               "end_line": 3,
               "symbol": "IVehiclePlatform",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "新增平台需要修改 router/profile 与 fallback 分支。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.liskov_substitution",
@@ -7585,15 +7456,15 @@
               "ref": "HEAD",
               "start_line": 19,
               "end_line": 19,
-              "symbol": "VehiclePlatformService",
+              "symbol": "public final class VehiclePlatformService extends IVehiclePlatform.Stub {",
               "claim": "VehiclePlatformService 实现生成 Stub；无第二实现替换测试。",
               "observation": "VehiclePlatformService 实现生成 Stub；无第二实现替换测试。",
               "evidence_type": "source",
               "independent_group": "lsp_contract_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium",
           "issues": [
             "VehiclePlatformService 实现生成的 IVehiclePlatform.Stub 合同，未发现空实现/异常式拒绝，但只有单一生产实现且无替换测试。"
           ],
@@ -7617,8 +7488,8 @@
               "start_line": 26,
               "end_line": 26,
               "symbol": "PlatformSignalCoordinator",
-              "claim": "IVehiclePlatform 同时暴露信号和连接生命周期。",
-              "observation": "IVehiclePlatform 同时暴露信号和连接生命周期。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -7630,20 +7501,21 @@
               "start_line": 26,
               "end_line": 26,
               "symbol": "LegacyPlatformRouter",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "IVehiclePlatform 同时暴露信号和连接生命周期。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.dependency_inversion",
@@ -7661,8 +7533,8 @@
               "start_line": 26,
               "end_line": 26,
               "symbol": "LegacyPlatformRouter",
-              "claim": "Service 依赖全局 Coordinator，后者依赖具体 LegacyPlatformRouter。",
-              "observation": "Service 依赖全局 Coordinator，后者依赖具体 LegacyPlatformRouter。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -7674,20 +7546,21 @@
               "start_line": 3,
               "end_line": 3,
               "symbol": "IVehiclePlatform",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "Service 依赖全局 Coordinator，后者依赖具体 LegacyPlatformRouter。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.platform_upgrade",
@@ -7708,36 +7581,11 @@
               "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
               "evidence_type": "structured_fact",
               "independent_group": "derived_fact"
-            },
-            {
-              "source": "current_head",
-              "path": "platform/src/com/cockpitbench/vehicleplatform/PlatformSignalCoordinator.java",
-              "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-              "ref": "HEAD",
-              "start_line": 26,
-              "end_line": 26,
-              "symbol": "PlatformSignalCoordinator",
-              "claim": "平台访问风险或隔离边界。",
-              "observation": "平台访问风险或隔离边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_primary"
-            },
-            {
-              "source": "current_head",
-              "path": "platform/src/com/cockpitbench/vehicleplatform/LegacyPlatformRouter.java",
-              "commit": "79309909fa50b5ebcf3857fc3a4d6e8809dedcb7",
-              "ref": "HEAD",
-              "start_line": 26,
-              "end_line": 26,
-              "symbol": "LegacyPlatformRouter",
-              "claim": "独立适配/服务边界。",
-              "observation": "独立适配/服务边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.release_branch_strategy",
@@ -7799,8 +7647,9 @@
               "independent_group": "branch_2"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         }
       ],
       "platform_upgrade_facts": {
@@ -7865,8 +7714,9 @@
               "independent_group": "ci_pipeline"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "compilation.compilation_independence",
@@ -7915,8 +7765,8 @@
               "independent_group": "declared_dependency"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "compilation.api_version_management",
@@ -7965,8 +7815,8 @@
               "independent_group": "api_control_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "quality.integration_test",
@@ -8015,8 +7865,8 @@
               "independent_group": "test_config"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium"
         },
         {
           "name": "solid_principle.single_responsibility",
@@ -8034,8 +7884,8 @@
               "start_line": 19,
               "end_line": 19,
               "symbol": "PlatformCompatRuntime",
-              "claim": "PlatformCompatRuntime/Service 混合 registry、cache、polling 和兼容职责。",
-              "observation": "PlatformCompatRuntime/Service 混合 registry、cache、polling 和兼容职责。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -8047,20 +7897,21 @@
               "start_line": 19,
               "end_line": 19,
               "symbol": "HiddenApiRegistry",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "PlatformCompatRuntime/Service 混合 registry、cache、polling 和兼容职责。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.open_closed",
@@ -8078,8 +7929,8 @@
               "start_line": 19,
               "end_line": 19,
               "symbol": "HiddenApiRegistry",
-              "claim": "平台规则与 vendor bridge 扩展需要修改多个核心类。",
-              "observation": "平台规则与 vendor bridge 扩展需要修改多个核心类。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -8091,20 +7942,21 @@
               "start_line": 3,
               "end_line": 3,
               "symbol": "IPlatformCompat",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "平台规则与 vendor bridge 扩展需要修改多个核心类。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.liskov_substitution",
@@ -8146,15 +7998,15 @@
               "ref": "HEAD",
               "start_line": 19,
               "end_line": 19,
-              "symbol": "PlatformCompatService",
+              "symbol": "public final class PlatformCompatService extends IPlatformCompat.Stub {",
               "claim": "PlatformCompatService 实现生成 Stub；无跨版本替换测试。",
               "observation": "PlatformCompatService 实现生成 Stub；无跨版本替换测试。",
               "evidence_type": "source",
               "independent_group": "lsp_contract_1"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Fact-derived band check; source semantics require review.",
+          "confidence": "medium",
           "issues": [
             "PlatformCompatService 实现生成的 IPlatformCompat.Stub 合同，未发现收紧前置条件，但只有单一生产实现且缺少跨版本替换测试。"
           ],
@@ -8178,8 +8030,8 @@
               "start_line": 19,
               "end_line": 19,
               "symbol": "PlatformCompatRuntime",
-              "claim": "IPlatformCompat 聚合命令、状态和 callback 多类能力。",
-              "observation": "IPlatformCompat 聚合命令、状态和 callback 多类能力。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -8191,20 +8043,21 @@
               "start_line": 19,
               "end_line": 19,
               "symbol": "HiddenApiRegistry",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "IPlatformCompat 聚合命令、状态和 callback 多类能力。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "solid_principle.dependency_inversion",
@@ -8222,8 +8075,8 @@
               "start_line": 19,
               "end_line": 19,
               "symbol": "HiddenApiRegistry",
-              "claim": "运行时依赖静态 registry、具体 fallback 和反射 vendor 实现。",
-              "observation": "运行时依赖静态 registry、具体 fallback 和反射 vendor 实现。",
+              "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+              "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
               "evidence_type": "source",
               "independent_group": "solid_primary"
             },
@@ -8235,20 +8088,21 @@
               "start_line": 3,
               "end_line": 3,
               "symbol": "IPlatformCompat",
-              "claim": "第二个独立类型边界用于核对同一原则。",
-              "observation": "第二个独立类型边界用于核对同一原则。",
+              "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+              "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
               "evidence_type": "source",
               "independent_group": "solid_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high",
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
           "issues": [
             "运行时依赖静态 registry、具体 fallback 和反射 vendor 实现。"
           ],
           "recommendations": [
             "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-          ]
+          ],
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.platform_upgrade",
@@ -8269,36 +8123,11 @@
               "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
               "evidence_type": "structured_fact",
               "independent_group": "derived_fact"
-            },
-            {
-              "source": "current_head",
-              "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatRuntime.java",
-              "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
-              "ref": "HEAD",
-              "start_line": 19,
-              "end_line": 19,
-              "symbol": "PlatformCompatRuntime",
-              "claim": "平台访问风险或隔离边界。",
-              "observation": "平台访问风险或隔离边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_primary"
-            },
-            {
-              "source": "current_head",
-              "path": "compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java",
-              "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
-              "ref": "HEAD",
-              "start_line": 19,
-              "end_line": 19,
-              "symbol": "HiddenApiRegistry",
-              "claim": "独立适配/服务边界。",
-              "observation": "独立适配/服务边界。",
-              "evidence_type": "source",
-              "independent_group": "platform_secondary"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         },
         {
           "name": "platform_reuse.release_branch_strategy",
@@ -8360,8 +8189,9 @@
               "independent_group": "branch_2"
             }
           ],
-          "adjudication": "v3 final-HEAD source review and independent band check agree.",
-          "confidence": "high"
+          "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+          "confidence": "medium",
+          "review_status": "pending_independent_review"
         }
       ],
       "platform_upgrade_facts": {

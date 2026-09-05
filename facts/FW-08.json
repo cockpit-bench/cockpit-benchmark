@@ -433,15 +433,8 @@
     "weakened_postcondition_count": 0,
     "confirmed_contract_violations": [],
     "production_implementation_count": 1,
-    "substitution_tests": [
-      {
-        "path": "native/tests/soa_broker_integration_test.cpp",
-        "line": 19,
-        "symbol": "FakeIpcTransport",
-        "match": "make_shared<FakeIpcTransport>"
-      }
-    ],
-    "substitution_test_count": 1,
+    "substitution_tests": [],
+    "substitution_test_count": 0,
     "systematic_contract_test": false
   },
   "solid_signals": {

@@ -4,7 +4,7 @@
   "quality_tier": "high",
   "size_band": "medium",
   "delivery_status": "active",
-  "review_status": "v3_current_head_reviewed",
+  "review_status": "pending_independent_review",
   "repository": {
     "head": "7cb9206c8a8af76c7800cc6cda70255240e937e0",
     "tree": "39c733b0bc0cd6516200c2efe655c1649aaa6e36",
@@ -54,8 +54,9 @@
           "independent_group": "ci_pipeline"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
+      "review_status": "pending_independent_review"
     },
     {
       "name": "compilation.compilation_independence",
@@ -91,8 +92,8 @@
           "independent_group": "build_boundary_0"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Fact-derived band check; source semantics require review.",
+      "confidence": "medium"
     },
     {
       "name": "compilation.api_version_management",
@@ -141,8 +142,8 @@
           "independent_group": "api_control_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Fact-derived band check; source semantics require review.",
+      "confidence": "medium"
     },
     {
       "name": "quality.integration_test",
@@ -191,8 +192,8 @@
           "independent_group": "test_config"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Fact-derived band check; source semantics require review.",
+      "confidence": "medium"
     },
     {
       "name": "solid_principle.single_responsibility",
@@ -210,8 +211,8 @@
           "start_line": 38,
           "end_line": 38,
           "symbol": "VehicleStub",
-          "claim": "Vehicle HAL、传输、契约与生命周期分层清楚，但仍有若干大类。",
-          "observation": "Vehicle HAL、传输、契约与生命周期分层清楚，但仍有若干大类。",
+          "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+          "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
           "evidence_type": "source",
           "independent_group": "solid_primary"
         },
@@ -223,20 +224,21 @@
           "start_line": 64,
           "end_line": 64,
           "symbol": "AidlVehicleStub",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+          "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
           "evidence_type": "source",
           "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
       "issues": [
         "Vehicle HAL、传输、契约与生命周期分层清楚，但仍有若干大类。"
       ],
       "recommendations": [
         "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
+      ],
+      "review_status": "pending_independent_review"
     },
     {
       "name": "solid_principle.open_closed",
@@ -254,8 +256,8 @@
           "start_line": 64,
           "end_line": 64,
           "symbol": "AidlVehicleStub",
-          "claim": "AIDL/HIDL 适配及 native transport 可替换。",
-          "observation": "AIDL/HIDL 适配及 native transport 可替换。",
+          "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+          "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
           "evidence_type": "source",
           "independent_group": "solid_primary"
         },
@@ -267,16 +269,17 @@
           "start_line": 18,
           "end_line": 18,
           "symbol": "CallerContext",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+          "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
           "evidence_type": "source",
           "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
       "issues": [],
-      "recommendations": []
+      "recommendations": [],
+      "review_status": "pending_independent_review"
     },
     {
       "name": "solid_principle.liskov_substitution",
@@ -338,8 +341,8 @@
           "independent_group": "lsp_contract_2"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Fact-derived band check; source semantics require review.",
+      "confidence": "medium",
       "issues": [
         "AidlVehicleStub/HidlVehicleStub 保持 VehicleStub 合同。"
       ],
@@ -363,8 +366,8 @@
           "start_line": 38,
           "end_line": 38,
           "symbol": "VehicleStub",
-          "claim": "VehicleStub 子接口和细分 AIDL 隔离客户端职责。",
-          "observation": "VehicleStub 子接口和细分 AIDL 隔离客户端职责。",
+          "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+          "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
           "evidence_type": "source",
           "independent_group": "solid_primary"
         },
@@ -376,20 +379,21 @@
           "start_line": 64,
           "end_line": 64,
           "symbol": "AidlVehicleStub",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+          "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
           "evidence_type": "source",
           "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
       "issues": [
         "VehicleStub 子接口和细分 AIDL 隔离客户端职责。"
       ],
       "recommendations": [
         "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
+      ],
+      "review_status": "pending_independent_review"
     },
     {
       "name": "solid_principle.dependency_inversion",
@@ -407,8 +411,8 @@
           "start_line": 64,
           "end_line": 64,
           "symbol": "AidlVehicleStub",
-          "claim": "高层 gateway 依赖 port/transport/clock 抽象。",
-          "observation": "高层 gateway 依赖 port/transport/clock 抽象。",
+          "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+          "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
           "evidence_type": "source",
           "independent_group": "solid_primary"
         },
@@ -420,16 +424,17 @@
           "start_line": 18,
           "end_line": 18,
           "symbol": "CallerContext",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+          "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
           "evidence_type": "source",
           "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
       "issues": [],
-      "recommendations": []
+      "recommendations": [],
+      "review_status": "pending_independent_review"
     },
     {
       "name": "platform_reuse.platform_upgrade",
@@ -450,36 +455,11 @@
           "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
-        },
-        {
-          "source": "current_head",
-          "path": "service/src/com/android/car/VehicleStub.java",
-          "commit": "7cb9206c8a8af76c7800cc6cda70255240e937e0",
-          "ref": "HEAD",
-          "start_line": 38,
-          "end_line": 38,
-          "symbol": "VehicleStub",
-          "claim": "平台访问风险或隔离边界。",
-          "observation": "平台访问风险或隔离边界。",
-          "evidence_type": "source",
-          "independent_group": "platform_primary"
-        },
-        {
-          "source": "current_head",
-          "path": "service/src/com/android/car/AidlVehicleStub.java",
-          "commit": "7cb9206c8a8af76c7800cc6cda70255240e937e0",
-          "ref": "HEAD",
-          "start_line": 64,
-          "end_line": 64,
-          "symbol": "AidlVehicleStub",
-          "claim": "独立适配/服务边界。",
-          "observation": "独立适配/服务边界。",
-          "evidence_type": "source",
-          "independent_group": "platform_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
+      "review_status": "pending_independent_review"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
@@ -524,8 +504,9 @@
           "independent_group": "branch_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
+      "review_status": "pending_independent_review"
     }
   ]
 }

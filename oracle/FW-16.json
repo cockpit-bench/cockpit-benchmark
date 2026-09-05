@@ -4,7 +4,7 @@
   "quality_tier": "low",
   "size_band": "large",
   "delivery_status": "active",
-  "review_status": "v3_current_head_reviewed",
+  "review_status": "pending_independent_review",
   "repository": {
     "head": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
     "tree": "07334b47df55459396df48bc2fa576aff0ea0442",
@@ -54,8 +54,9 @@
           "independent_group": "ci_pipeline"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
+      "review_status": "pending_independent_review"
     },
     {
       "name": "compilation.compilation_independence",
@@ -104,8 +105,8 @@
           "independent_group": "declared_dependency"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Fact-derived band check; source semantics require review.",
+      "confidence": "medium"
     },
     {
       "name": "compilation.api_version_management",
@@ -154,8 +155,8 @@
           "independent_group": "api_control_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Fact-derived band check; source semantics require review.",
+      "confidence": "medium"
     },
     {
       "name": "quality.integration_test",
@@ -204,8 +205,8 @@
           "independent_group": "test_config"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Fact-derived band check; source semantics require review.",
+      "confidence": "medium"
     },
     {
       "name": "solid_principle.single_responsibility",
@@ -223,8 +224,8 @@
           "start_line": 19,
           "end_line": 19,
           "symbol": "PlatformCompatRuntime",
-          "claim": "PlatformCompatRuntime/Service 混合 registry、cache、polling 和兼容职责。",
-          "observation": "PlatformCompatRuntime/Service 混合 registry、cache、polling 和兼容职责。",
+          "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+          "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
           "evidence_type": "source",
           "independent_group": "solid_primary"
         },
@@ -236,20 +237,21 @@
           "start_line": 19,
           "end_line": 19,
           "symbol": "HiddenApiRegistry",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+          "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
           "evidence_type": "source",
           "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
       "issues": [
         "PlatformCompatRuntime/Service 混合 registry、cache、polling 和兼容职责。"
       ],
       "recommendations": [
         "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
+      ],
+      "review_status": "pending_independent_review"
     },
     {
       "name": "solid_principle.open_closed",
@@ -267,8 +269,8 @@
           "start_line": 19,
           "end_line": 19,
           "symbol": "HiddenApiRegistry",
-          "claim": "平台规则与 vendor bridge 扩展需要修改多个核心类。",
-          "observation": "平台规则与 vendor bridge 扩展需要修改多个核心类。",
+          "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+          "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
           "evidence_type": "source",
           "independent_group": "solid_primary"
         },
@@ -280,20 +282,21 @@
           "start_line": 3,
           "end_line": 3,
           "symbol": "IPlatformCompat",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+          "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
           "evidence_type": "source",
           "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
       "issues": [
         "平台规则与 vendor bridge 扩展需要修改多个核心类。"
       ],
       "recommendations": [
         "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
+      ],
+      "review_status": "pending_independent_review"
     },
     {
       "name": "solid_principle.liskov_substitution",
@@ -335,15 +338,15 @@
           "ref": "HEAD",
           "start_line": 19,
           "end_line": 19,
-          "symbol": "PlatformCompatService",
+          "symbol": "public final class PlatformCompatService extends IPlatformCompat.Stub {",
           "claim": "PlatformCompatService 实现生成 Stub；无跨版本替换测试。",
           "observation": "PlatformCompatService 实现生成 Stub；无跨版本替换测试。",
           "evidence_type": "source",
           "independent_group": "lsp_contract_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Fact-derived band check; source semantics require review.",
+      "confidence": "medium",
       "issues": [
         "PlatformCompatService 实现生成的 IPlatformCompat.Stub 合同，未发现收紧前置条件，但只有单一生产实现且缺少跨版本替换测试。"
       ],
@@ -367,8 +370,8 @@
           "start_line": 19,
           "end_line": 19,
           "symbol": "PlatformCompatRuntime",
-          "claim": "IPlatformCompat 聚合命令、状态和 callback 多类能力。",
-          "observation": "IPlatformCompat 聚合命令、状态和 callback 多类能力。",
+          "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+          "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
           "evidence_type": "source",
           "independent_group": "solid_primary"
         },
@@ -380,20 +383,21 @@
           "start_line": 19,
           "end_line": 19,
           "symbol": "HiddenApiRegistry",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+          "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
           "evidence_type": "source",
           "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
       "issues": [
         "IPlatformCompat 聚合命令、状态和 callback 多类能力。"
       ],
       "recommendations": [
         "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
+      ],
+      "review_status": "pending_independent_review"
     },
     {
       "name": "solid_principle.dependency_inversion",
@@ -411,8 +415,8 @@
           "start_line": 19,
           "end_line": 19,
           "symbol": "HiddenApiRegistry",
-          "claim": "运行时依赖静态 registry、具体 fallback 和反射 vendor 实现。",
-          "observation": "运行时依赖静态 registry、具体 fallback 和反射 vendor 实现。",
+          "claim": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
+          "observation": "类型声明定位；该原则的行为证据和档位仍待独立复核。",
           "evidence_type": "source",
           "independent_group": "solid_primary"
         },
@@ -424,20 +428,21 @@
           "start_line": 3,
           "end_line": 3,
           "symbol": "IPlatformCompat",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "claim": "补充类型声明定位；不代表已验证该原则的行为语义。",
+          "observation": "补充类型声明定位；不代表已验证该原则的行为语义。",
           "evidence_type": "source",
           "independent_group": "solid_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
       "issues": [
         "运行时依赖静态 registry、具体 fallback 和反射 vendor 实现。"
       ],
       "recommendations": [
         "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
+      ],
+      "review_status": "pending_independent_review"
     },
     {
       "name": "platform_reuse.platform_upgrade",
@@ -458,36 +463,11 @@
           "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
-        },
-        {
-          "source": "current_head",
-          "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatRuntime.java",
-          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
-          "ref": "HEAD",
-          "start_line": 19,
-          "end_line": 19,
-          "symbol": "PlatformCompatRuntime",
-          "claim": "平台访问风险或隔离边界。",
-          "observation": "平台访问风险或隔离边界。",
-          "evidence_type": "source",
-          "independent_group": "platform_primary"
-        },
-        {
-          "source": "current_head",
-          "path": "compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java",
-          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
-          "ref": "HEAD",
-          "start_line": 19,
-          "end_line": 19,
-          "symbol": "HiddenApiRegistry",
-          "claim": "独立适配/服务边界。",
-          "observation": "独立适配/服务边界。",
-          "evidence_type": "source",
-          "independent_group": "platform_secondary"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
+      "review_status": "pending_independent_review"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
@@ -549,8 +529,9 @@
           "independent_group": "branch_2"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Historical adjudication retained as draft; not independently recomputed.",
+      "confidence": "medium",
+      "review_status": "pending_independent_review"
     }
   ]
 }

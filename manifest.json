@@ -1,6 +1,6 @@
 {
   "schema_version": "4.0.0",
-  "version": "v0.7.6",
+  "version": "evidence-fix-draft-20260905",
   "wrapper_url": "https://github.com/cockpit-bench/cockpit-benchmark",
   "active_repository_count": 18,
   "pending_repository_count": 22,
@@ -1429,5 +1429,6 @@
         "system-facade-2026.1"
       ]
     }
-  ]
+  ],
+  "release_status": "draft_pending_independent_review"
 }
