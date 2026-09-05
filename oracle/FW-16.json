@@ -4,7 +4,7 @@
   "quality_tier": "low",
   "size_band": "large",
   "delivery_status": "active",
-  "review_status": "v3_current_head_reviewed",
+  "review_status": "current_head_semantic_observations_reviewed",
   "repository": {
     "head": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
     "tree": "07334b47df55459396df48bc2fa576aff0ea0442",
@@ -16,7 +16,7 @@
     "sha256": "c367412668bf3f96231462bad501cec04c0c2bce44a9dbc0206acdaf31ed9465"
   },
   "canonical_total": {
-    "score": 17,
+    "score": 22,
     "max": 52
   },
   "canonical_leaves": [
@@ -25,37 +25,24 @@
       "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置；锁定 1。",
-      "analysis": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置；锁定 1。",
+      "score_reasoning": "实际构建/测试/质量命令数=[0, 0, 0]，系统 CI 文件数=4；阶段覆盖范围以实际构建目标为准，锁定 1。",
+      "analysis": "实际构建/测试/质量命令数=[0, 0, 0]，系统 CI 文件数=4；阶段覆盖范围以实际构建目标为准，锁定 1。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-16.json",
           "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
           "ref": "HEAD",
-          "json_pointer": "/ci",
+          "json_pointer": "/current_review/ci",
           "symbol": "ci",
-          "claim": "CI 文件及真实阶段计数。",
-          "observation": "CI 文件及真实阶段计数。",
+          "claim": "只识别实际 run/APP_BUILD 命令与系统 CI 入口。",
+          "observation": "只识别实际 run/APP_BUILD 命令与系统 CI 入口。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
-        },
-        {
-          "source": "current_head",
-          "path": "PREUPLOAD.cfg",
-          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
-          "ref": "HEAD",
-          "start_line": 1,
-          "end_line": 1,
-          "symbol": "[Hook Scripts]",
-          "claim": "CI 构建/测试/报告入口。",
-          "observation": "CI 构建/测试/报告入口。",
-          "evidence_type": "source",
-          "independent_group": "ci_pipeline"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "compilation.compilation_independence",
@@ -104,16 +91,16 @@
           "independent_group": "declared_dependency"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "compilation.api_version_management",
       "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "专用语义版本证据=0、有效 API 检查=7；锁定 1。",
-      "analysis": "专用语义版本证据=0、有效 API 检查=7；锁定 1。",
+      "score_reasoning": "专用语义版本证据=0，有效 API 检查=7；锁定 1。",
+      "analysis": "专用语义版本证据=0，有效 API 检查=7；锁定 1。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -154,16 +141,16 @@
           "independent_group": "api_control_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "quality.integration_test",
       "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "有 304 个含真实用例与断言的测试源，但无 final HEAD 执行和可复算覆盖代理；锁定 1。",
-      "analysis": "有 304 个含真实用例与断言的测试源，但无 final HEAD 执行和可复算覆盖代理；锁定 1。",
+      "score_reasoning": "有效测试源=304；无执行证明不推断通过率，锁定 1。",
+      "analysis": "有效测试源=304；无执行证明不推断通过率，锁定 1。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -204,51 +191,63 @@
           "independent_group": "test_config"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "solid_principle.single_responsibility",
-      "score": 1,
+      "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "PlatformCompatRuntime/Service 混合 registry、cache、polling 和兼容职责。 按独立 0–4 档位锁定 1。",
-      "analysis": "PlatformCompatRuntime/Service 混合 registry、cache、polling 和兼容职责。 按独立 0–4 档位锁定 1。",
+      "score_reasoning": "同一方法硬编码多个业务分派、写缓存和广播。 Binder 服务主要转发给 router/registry/callback 组件，已有职责拆分。 根据明确标注的语义裁决按合同锁定 2。",
+      "analysis": "同一方法硬编码多个业务分派、写缓存和广播。 Binder 服务主要转发给 router/registry/callback 组件，已有职责拆分。 根据明确标注的语义裁决按合同锁定 2。",
       "evidence": [
         {
-          "source": "current_head",
-          "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatRuntime.java",
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
           "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
           "ref": "HEAD",
-          "start_line": 19,
-          "end_line": 19,
-          "symbol": "PlatformCompatRuntime",
-          "claim": "PlatformCompatRuntime/Service 混合 registry、cache、polling 和兼容职责。",
-          "observation": "PlatformCompatRuntime/Service 混合 registry、cache、polling 和兼容职责。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "json_pointer": "/current_review/solid/single_responsibility",
+          "symbol": "single_responsibility",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java",
+          "path": "compat/src/com/cockpitbench/platformcompat/CompatibilityCommandRouter.java",
           "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
           "ref": "HEAD",
-          "start_line": 19,
-          "end_line": 19,
-          "symbol": "HiddenApiRegistry",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 22,
+          "end_line": 22,
+          "symbol": "public Bundle invoke",
+          "claim": "同一方法硬编码多个业务分派、写缓存和广播。",
+          "observation": "同一方法硬编码多个业务分派、写缓存和广播。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_0"
+        },
+        {
+          "source": "current_head",
+          "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatService.java",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD",
+          "start_line": 23,
+          "end_line": 28,
+          "symbol": "@Override public Bundle invoke",
+          "claim": "Binder 服务主要转发给 router/registry/callback 组件，已有职责拆分。",
+          "observation": "Binder 服务主要转发给 router/registry/callback 组件，已有职责拆分。",
+          "evidence_type": "source",
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "PlatformCompatRuntime/Service 混合 registry、cache、polling 和兼容职责。"
+        "同一方法硬编码多个业务分派、写缓存和广播。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -256,43 +255,56 @@
       "score": 1,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "平台规则与 vendor bridge 扩展需要修改多个核心类。 按独立 0–4 档位锁定 1。",
-      "analysis": "平台规则与 vendor bridge 扩展需要修改多个核心类。 按独立 0–4 档位锁定 1。",
+      "score_reasoning": "新增业务域需修改 switch。 还需同步修改域枚举列表。 根据明确标注的语义裁决按合同锁定 1。",
+      "analysis": "新增业务域需修改 switch。 还需同步修改域枚举列表。 根据明确标注的语义裁决按合同锁定 1。",
       "evidence": [
         {
-          "source": "current_head",
-          "path": "compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java",
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
           "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
           "ref": "HEAD",
-          "start_line": 19,
-          "end_line": 19,
-          "symbol": "HiddenApiRegistry",
-          "claim": "平台规则与 vendor bridge 扩展需要修改多个核心类。",
-          "observation": "平台规则与 vendor bridge 扩展需要修改多个核心类。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "json_pointer": "/current_review/solid/open_closed",
+          "symbol": "open_closed",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "compat/aidl/com/cockpitbench/platformcompat/IPlatformCompat.aidl",
+          "path": "compat/src/com/cockpitbench/platformcompat/CompatibilityCommandRouter.java",
           "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
           "ref": "HEAD",
-          "start_line": 3,
-          "end_line": 3,
-          "symbol": "IPlatformCompat",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 22,
+          "end_line": 22,
+          "symbol": "public Bundle invoke",
+          "claim": "新增业务域需修改 switch。",
+          "observation": "新增业务域需修改 switch。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_0"
+        },
+        {
+          "source": "current_head",
+          "path": "compat/src/com/cockpitbench/platformcompat/CompatibilityCommandRouter.java",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD",
+          "start_line": 23,
+          "end_line": 23,
+          "symbol": "public String[] domains",
+          "claim": "还需同步修改域枚举列表。",
+          "observation": "还需同步修改域枚举列表。",
+          "evidence_type": "source",
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "平台规则与 vendor bridge 扩展需要修改多个核心类。"
+        "新增业务域需修改 switch。",
+        "还需同步修改域枚举列表。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -300,8 +312,8 @@
       "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "PlatformCompatService 实现生成的 IPlatformCompat.Stub 合同，未发现收紧前置条件，但只有单一生产实现且缺少跨版本替换测试。 按独立 0–4 档位锁定 2。",
-      "analysis": "PlatformCompatService 实现生成的 IPlatformCompat.Stub 合同，未发现收紧前置条件，但只有单一生产实现且缺少跨版本替换测试。 按独立 0–4 档位锁定 2。",
+      "score_reasoning": "生产实现=1，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 2。",
+      "analysis": "生产实现=1，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -335,64 +347,76 @@
           "ref": "HEAD",
           "start_line": 19,
           "end_line": 19,
-          "symbol": "PlatformCompatService",
+          "symbol": "public final class PlatformCompatService extends IPlatformCompat.Stub {",
           "claim": "PlatformCompatService 实现生成 Stub；无跨版本替换测试。",
           "observation": "PlatformCompatService 实现生成 Stub；无跨版本替换测试。",
           "evidence_type": "source",
           "independent_group": "lsp_contract_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "PlatformCompatService 实现生成的 IPlatformCompat.Stub 合同，未发现收紧前置条件，但只有单一生产实现且缺少跨版本替换测试。"
+        "缺少系统化多实现契约测试。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
       "name": "solid_principle.interface_segregation",
-      "score": 1,
+      "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "IPlatformCompat 聚合命令、状态和 callback 多类能力。 按独立 0–4 档位锁定 1。",
-      "analysis": "IPlatformCompat 聚合命令、状态和 callback 多类能力。 按独立 0–4 档位锁定 1。",
+      "score_reasoning": "通用调用、裸 Binder 查找和平台切换共享一接口。 裸服务查询和业务回调实现使用不同组件，说明可拆出窄接口。 根据明确标注的语义裁决按合同锁定 2。",
+      "analysis": "通用调用、裸 Binder 查找和平台切换共享一接口。 裸服务查询和业务回调实现使用不同组件，说明可拆出窄接口。 根据明确标注的语义裁决按合同锁定 2。",
       "evidence": [
         {
-          "source": "current_head",
-          "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatRuntime.java",
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
           "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
           "ref": "HEAD",
-          "start_line": 19,
-          "end_line": 19,
-          "symbol": "PlatformCompatRuntime",
-          "claim": "IPlatformCompat 聚合命令、状态和 callback 多类能力。",
-          "observation": "IPlatformCompat 聚合命令、状态和 callback 多类能力。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "json_pointer": "/current_review/solid/interface_segregation",
+          "symbol": "interface_segregation",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java",
+          "path": "compat/aidl/com/cockpitbench/platformcompat/IPlatformCompat.aidl",
           "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
           "ref": "HEAD",
-          "start_line": 19,
-          "end_line": 19,
-          "symbol": "HiddenApiRegistry",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 4,
+          "end_line": 9,
+          "symbol": "Bundle invoke",
+          "claim": "通用调用、裸 Binder 查找和平台切换共享一接口。",
+          "observation": "通用调用、裸 Binder 查找和平台切换共享一接口。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_0"
+        },
+        {
+          "source": "current_head",
+          "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatService.java",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD",
+          "start_line": 24,
+          "end_line": 27,
+          "symbol": "@Override public IBinder rawService",
+          "claim": "裸服务查询和业务回调实现使用不同组件，说明可拆出窄接口。",
+          "observation": "裸服务查询和业务回调实现使用不同组件，说明可拆出窄接口。",
+          "evidence_type": "source",
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "IPlatformCompat 聚合命令、状态和 callback 多类能力。"
+        "通用调用、裸 Binder 查找和平台切换共享一接口。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -400,102 +424,115 @@
       "score": 1,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "运行时依赖静态 registry、具体 fallback 和反射 vendor 实现。 按独立 0–4 档位锁定 1。",
-      "analysis": "运行时依赖静态 registry、具体 fallback 和反射 vendor 实现。 按独立 0–4 档位锁定 1。",
-      "evidence": [
-        {
-          "source": "current_head",
-          "path": "compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java",
-          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
-          "ref": "HEAD",
-          "start_line": 19,
-          "end_line": 19,
-          "symbol": "HiddenApiRegistry",
-          "claim": "运行时依赖静态 registry、具体 fallback 和反射 vendor 实现。",
-          "observation": "运行时依赖静态 registry、具体 fallback 和反射 vendor 实现。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
-        },
-        {
-          "source": "current_head",
-          "path": "compat/aidl/com/cockpitbench/platformcompat/IPlatformCompat.aidl",
-          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
-          "ref": "HEAD",
-          "start_line": 3,
-          "end_line": 3,
-          "symbol": "IPlatformCompat",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
-          "evidence_type": "source",
-          "independent_group": "solid_secondary"
-        }
-      ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
-      "issues": [
-        "运行时依赖静态 registry、具体 fallback 和反射 vendor 实现。"
-      ],
-      "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
-    },
-    {
-      "name": "platform_reuse.platform_upgrade",
-      "score": 0,
-      "max_score": 10,
-      "status": "scored",
-      "score_reasoning": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。",
-      "analysis": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。",
+      "score_reasoning": "高层集中获取全局 Registry 并创建具体 router/bridge/cache。 全局对象表加任意反射调用形成第二处不稳定依赖。 根据明确标注的语义裁决按合同锁定 1。",
+      "analysis": "高层集中获取全局 Registry 并创建具体 router/bridge/cache。 全局对象表加任意反射调用形成第二处不稳定依赖。 根据明确标注的语义裁决按合同锁定 1。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-16.json",
           "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
           "ref": "HEAD",
-          "json_pointer": "/platform_upgrade_review",
-          "symbol": "platform_upgrade_review",
-          "claim": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
-          "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
+          "json_pointer": "/current_review/solid/dependency_inversion",
+          "symbol": "dependency_inversion",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatRuntime.java",
+          "path": "compat/src/com/cockpitbench/platformcompat/PlatformCompatService.java",
           "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
           "ref": "HEAD",
-          "start_line": 19,
-          "end_line": 19,
-          "symbol": "PlatformCompatRuntime",
-          "claim": "平台访问风险或隔离边界。",
-          "observation": "平台访问风险或隔离边界。",
+          "start_line": 20,
+          "end_line": 20,
+          "symbol": "private static final String TAG",
+          "claim": "高层集中获取全局 Registry 并创建具体 router/bridge/cache。",
+          "observation": "高层集中获取全局 Registry 并创建具体 router/bridge/cache。",
           "evidence_type": "source",
-          "independent_group": "platform_primary"
+          "independent_group": "semantic_observation_0"
         },
         {
           "source": "current_head",
           "path": "compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java",
           "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
           "ref": "HEAD",
-          "start_line": 19,
-          "end_line": 19,
-          "symbol": "HiddenApiRegistry",
-          "claim": "独立适配/服务边界。",
-          "observation": "独立适配/服务边界。",
+          "start_line": 20,
+          "end_line": 24,
+          "symbol": "private static final String TAG",
+          "claim": "全局对象表加任意反射调用形成第二处不稳定依赖。",
+          "observation": "全局对象表加任意反射调用形成第二处不稳定依赖。",
           "evidence_type": "source",
-          "independent_group": "platform_secondary"
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
+      "issues": [
+        "高层集中获取全局 Registry 并创建具体 router/bridge/cache。",
+        "全局对象表加任意反射调用形成第二处不稳定依赖。"
+      ],
+      "recommendations": [
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
+      ]
+    },
+    {
+      "name": "platform_reuse.platform_upgrade",
+      "score": 3,
+      "max_score": 10,
+      "status": "scored",
+      "score_reasoning": "未隔离私有运行时导入=78；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。",
+      "analysis": "未隔离私有运行时导入=78；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-16.json",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD",
+          "json_pointer": "/current_review/platform",
+          "symbol": "platform",
+          "claim": "全生产树私有依赖与 SDK/权限/ABI 观察；不以芯片名称推定 ABI 绑定。",
+          "observation": "全生产树私有依赖与 SDK/权限/ABI 观察；不以芯片名称推定 ABI 绑定。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
+        {
+          "source": "current_head",
+          "path": "car-builtin-lib/src/android/car/builtin/CarBuiltin.java",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD",
+          "start_line": 20,
+          "end_line": 20,
+          "symbol": "import android.os.SystemProperties;",
+          "claim": "生产代码直接依赖未隔离的私有运行时接口。",
+          "observation": "生产代码直接依赖未隔离的私有运行时接口。",
+          "evidence_type": "source",
+          "independent_group": "private_dependency_0"
+        },
+        {
+          "source": "current_head",
+          "path": "car-builtin-lib/src/android/car/builtin/app/VoiceInteractionHelper.java",
+          "commit": "4d8f10b452aa3797649b87d5df0bb851ae75cbae",
+          "ref": "HEAD",
+          "start_line": 24,
+          "end_line": 24,
+          "symbol": "import com.android.internal.app.IVoiceInteractionManagerService;",
+          "claim": "生产代码直接依赖未隔离的私有运行时接口。",
+          "observation": "生产代码直接依赖未隔离的私有运行时接口。",
+          "evidence_type": "source",
+          "independent_group": "private_dependency_1"
+        }
+      ],
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
-      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+      "score_reasoning": "实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing', 'refs/heads/release/sop-2025']；按车型/平台复用粒度锁定 8。",
+      "analysis": "实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing', 'refs/heads/release/sop-2025']；按车型/平台复用粒度锁定 8。",
       "evidence": [
         {
           "source": "git_ref",
@@ -549,8 +586,8 @@
           "independent_group": "branch_2"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     }
   ]
 }

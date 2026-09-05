@@ -4,7 +4,7 @@
   "quality_tier": "medium",
   "size_band": "large",
   "delivery_status": "active",
-  "review_status": "v3_current_head_reviewed",
+  "review_status": "current_head_semantic_observations_reviewed",
   "repository": {
     "head": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
     "tree": "915c1c750ff5a19ae14068c8211d0096bb325b2c",
@@ -25,18 +25,18 @@
       "score": 2,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "存在可执行 APP_BUILD 独立构建/测试入口，但没有完整标准化流水线；锁定 2。",
-      "analysis": "存在可执行 APP_BUILD 独立构建/测试入口，但没有完整标准化流水线；锁定 2。",
+      "score_reasoning": "实际构建/测试/质量命令数=[1, 1, 0]，系统 CI 文件数=5；阶段覆盖范围以实际构建目标为准，锁定 2。",
+      "analysis": "实际构建/测试/质量命令数=[1, 1, 0]，系统 CI 文件数=5；阶段覆盖范围以实际构建目标为准，锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-14.json",
           "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
           "ref": "HEAD",
-          "json_pointer": "/ci",
+          "json_pointer": "/current_review/ci",
           "symbol": "ci",
-          "claim": "CI 文件及真实阶段计数。",
-          "observation": "CI 文件及真实阶段计数。",
+          "claim": "只识别实际 run/APP_BUILD 命令与系统 CI 入口。",
+          "observation": "只识别实际 run/APP_BUILD 命令与系统 CI 入口。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
         },
@@ -45,17 +45,30 @@
           "path": "APP_BUILD",
           "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
           "ref": "HEAD",
-          "start_line": 1,
-          "end_line": 1,
-          "symbol": "configure=cmake -S native -B out/native",
-          "claim": "CI 构建/测试/报告入口。",
-          "observation": "CI 构建/测试/报告入口。",
+          "start_line": 2,
+          "end_line": 2,
+          "symbol": "build=cmake --build out/native",
+          "claim": "可执行 build 阶段命令。",
+          "observation": "可执行 build 阶段命令。",
           "evidence_type": "source",
-          "independent_group": "ci_pipeline"
+          "independent_group": "ci_build"
+        },
+        {
+          "source": "current_head",
+          "path": "APP_BUILD",
+          "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "test=ctest --test-dir out/native --output-on-failure",
+          "claim": "可执行 test 阶段命令。",
+          "observation": "可执行 test 阶段命令。",
+          "evidence_type": "source",
+          "independent_group": "ci_test"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "compilation.compilation_independence",
@@ -104,16 +117,16 @@
           "independent_group": "build_boundary_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "compilation.api_version_management",
       "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "专用语义版本证据=1、有效 API 检查=4；锁定 3。",
-      "analysis": "专用语义版本证据=1、有效 API 检查=4；锁定 3。",
+      "score_reasoning": "专用语义版本证据=1，有效 API 检查=4；锁定 3。",
+      "analysis": "专用语义版本证据=1，有效 API 检查=4；锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -167,16 +180,16 @@
           "independent_group": "api_control_2"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "quality.integration_test",
       "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "有 303 个含真实用例与断言的测试源，但无 final HEAD 执行和可复算覆盖代理；锁定 1。",
-      "analysis": "有 303 个含真实用例与断言的测试源，但无 final HEAD 执行和可复算覆盖代理；锁定 1。",
+      "score_reasoning": "有效测试源=303；无执行证明不推断通过率，锁定 1。",
+      "analysis": "有效测试源=303；无执行证明不推断通过率，锁定 1。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -217,51 +230,63 @@
           "independent_group": "test_config"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "solid_principle.single_responsibility",
       "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "UpdateManagerService 混合权限、反射引擎、状态和 listener。 按独立 0–4 档位锁定 2。",
-      "analysis": "UpdateManagerService 混合权限、反射引擎、状态和 listener。 按独立 0–4 档位锁定 2。",
+      "score_reasoning": "启动方法混合权限、参数验证、反射引擎、状态与通知。 监听者广播仍为同一服务内的独立方法。 根据明确标注的语义裁决按合同锁定 2。",
+      "analysis": "启动方法混合权限、参数验证、反射引擎、状态与通知。 监听者广播仍为同一服务内的独立方法。 根据明确标注的语义裁决按合同锁定 2。",
       "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-14.json",
+          "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
+          "ref": "HEAD",
+          "json_pointer": "/current_review/solid/single_responsibility",
+          "symbol": "single_responsibility",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
         {
           "source": "current_head",
           "path": "update-manager/src/com/cockpitbench/update/UpdateManagerService.java",
           "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
           "ref": "HEAD",
-          "start_line": 9,
-          "end_line": 9,
-          "symbol": "UpdateManagerService",
-          "claim": "UpdateManagerService 混合权限、反射引擎、状态和 listener。",
-          "observation": "UpdateManagerService 混合权限、反射引擎、状态和 listener。",
+          "start_line": 19,
+          "end_line": 34,
+          "symbol": "@Override public void startUpdate",
+          "claim": "启动方法混合权限、参数验证、反射引擎、状态与通知。",
+          "observation": "启动方法混合权限、参数验证、反射引擎、状态与通知。",
           "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "semantic_observation_0"
         },
         {
           "source": "current_head",
-          "path": "update-manager/src/com/cockpitbench/update/IUpdateManager.aidl",
+          "path": "update-manager/src/com/cockpitbench/update/UpdateManagerService.java",
           "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
           "ref": "HEAD",
-          "start_line": 3,
-          "end_line": 3,
-          "symbol": "IUpdateManager",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 55,
+          "end_line": 55,
+          "symbol": "private void notifyListeners",
+          "claim": "监听者广播仍为同一服务内的独立方法。",
+          "observation": "监听者广播仍为同一服务内的独立方法。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "UpdateManagerService 混合权限、反射引擎、状态和 listener。"
+        "启动方法混合权限、参数验证、反射引擎、状态与通知。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -269,43 +294,55 @@
       "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "PermissionGate 可替换，但 UpdateEngine 扩展仍修改核心反射逻辑。 按独立 0–4 档位锁定 2。",
-      "analysis": "PermissionGate 可替换，但 UpdateEngine 扩展仍修改核心反射逻辑。 按独立 0–4 档位锁定 2。",
+      "score_reasoning": "权限策略允许通过构造扩展。 引擎类和无参构造在核心方法中硬编码。 根据明确标注的语义裁决按合同锁定 2。",
+      "analysis": "权限策略允许通过构造扩展。 引擎类和无参构造在核心方法中硬编码。 根据明确标注的语义裁决按合同锁定 2。",
       "evidence": [
         {
-          "source": "current_head",
-          "path": "update-manager/src/com/cockpitbench/update/IUpdateManager.aidl",
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-14.json",
           "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
           "ref": "HEAD",
-          "start_line": 3,
-          "end_line": 3,
-          "symbol": "IUpdateManager",
-          "claim": "PermissionGate 可替换，但 UpdateEngine 扩展仍修改核心反射逻辑。",
-          "observation": "PermissionGate 可替换，但 UpdateEngine 扩展仍修改核心反射逻辑。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "json_pointer": "/current_review/solid/open_closed",
+          "symbol": "open_closed",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "update-manager/src/com/cockpitbench/update/IUpdateStatusListener.aidl",
+          "path": "update-manager/src/com/cockpitbench/update/UpdateManagerService.java",
           "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
           "ref": "HEAD",
-          "start_line": 2,
-          "end_line": 2,
-          "symbol": "IUpdateStatusListener",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 18,
+          "end_line": 18,
+          "symbol": "public UpdateManagerService(",
+          "claim": "权限策略允许通过构造扩展。",
+          "observation": "权限策略允许通过构造扩展。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_0"
+        },
+        {
+          "source": "current_head",
+          "path": "update-manager/src/com/cockpitbench/update/UpdateManagerService.java",
+          "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
+          "ref": "HEAD",
+          "start_line": 51,
+          "end_line": 54,
+          "symbol": "private Object requireEngine",
+          "claim": "引擎类和无参构造在核心方法中硬编码。",
+          "observation": "引擎类和无参构造在核心方法中硬编码。",
+          "evidence_type": "source",
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "PermissionGate 可替换，但 UpdateEngine 扩展仍修改核心反射逻辑。"
+        "引擎类和无参构造在核心方法中硬编码。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -313,8 +350,8 @@
       "score": 3,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "AidlVehicleStub/HidlVehicleStub 两个生产实现保持 VehicleStub 共同契约。 按独立 0–4 档位锁定 3。",
-      "analysis": "AidlVehicleStub/HidlVehicleStub 两个生产实现保持 VehicleStub 共同契约。 按独立 0–4 档位锁定 3。",
+      "score_reasoning": "生产实现=2，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 3。",
+      "analysis": "生产实现=2，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -368,13 +405,13 @@
           "independent_group": "lsp_contract_2"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "AidlVehicleStub/HidlVehicleStub 两个生产实现保持 VehicleStub 共同契约。"
+        "缺少系统化多实现契约测试。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -382,21 +419,20 @@
       "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "控制与状态回调虽拆分，service 仍暴露完整生命周期。 按独立 0–4 档位锁定 2。",
-      "analysis": "控制与状态回调虽拆分，service 仍暴露完整生命周期。 按独立 0–4 档位锁定 2。",
+      "score_reasoning": "更新控制、状态读取和监听注册仍汇聚于一个管理接口。 状态推送有独立 oneway 监听接口。 根据明确标注的语义裁决按合同锁定 2。",
+      "analysis": "更新控制、状态读取和监听注册仍汇聚于一个管理接口。 状态推送有独立 oneway 监听接口。 根据明确标注的语义裁决按合同锁定 2。",
       "evidence": [
         {
-          "source": "current_head",
-          "path": "update-manager/src/com/cockpitbench/update/UpdateManagerService.java",
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-14.json",
           "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
           "ref": "HEAD",
-          "start_line": 9,
-          "end_line": 9,
-          "symbol": "UpdateManagerService",
-          "claim": "控制与状态回调虽拆分，service 仍暴露完整生命周期。",
-          "observation": "控制与状态回调虽拆分，service 仍暴露完整生命周期。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "json_pointer": "/current_review/solid/interface_segregation",
+          "symbol": "interface_segregation",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
@@ -405,42 +441,11 @@
           "ref": "HEAD",
           "start_line": 3,
           "end_line": 3,
-          "symbol": "IUpdateManager",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "symbol": "interface IUpdateManager",
+          "claim": "更新控制、状态读取和监听注册仍汇聚于一个管理接口。",
+          "observation": "更新控制、状态读取和监听注册仍汇聚于一个管理接口。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
-        }
-      ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
-      "issues": [
-        "控制与状态回调虽拆分，service 仍暴露完整生命周期。"
-      ],
-      "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
-    },
-    {
-      "name": "solid_principle.dependency_inversion",
-      "score": 2,
-      "max_score": 4,
-      "status": "scored",
-      "score_reasoning": "权限依赖可注入，UpdateEngine 具体构造仍留在服务内。 按独立 0–4 档位锁定 2。",
-      "analysis": "权限依赖可注入，UpdateEngine 具体构造仍留在服务内。 按独立 0–4 档位锁定 2。",
-      "evidence": [
-        {
-          "source": "current_head",
-          "path": "update-manager/src/com/cockpitbench/update/IUpdateManager.aidl",
-          "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
-          "ref": "HEAD",
-          "start_line": 3,
-          "end_line": 3,
-          "symbol": "IUpdateManager",
-          "claim": "权限依赖可注入，UpdateEngine 具体构造仍留在服务内。",
-          "observation": "权限依赖可注入，UpdateEngine 具体构造仍留在服务内。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "semantic_observation_0"
         },
         {
           "source": "current_head",
@@ -449,39 +454,39 @@
           "ref": "HEAD",
           "start_line": 2,
           "end_line": 2,
-          "symbol": "IUpdateStatusListener",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "symbol": "oneway interface",
+          "claim": "状态推送有独立 oneway 监听接口。",
+          "observation": "状态推送有独立 oneway 监听接口。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "权限依赖可注入，UpdateEngine 具体构造仍留在服务内。"
+        "更新控制、状态读取和监听注册仍汇聚于一个管理接口。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
-      "name": "platform_reuse.platform_upgrade",
-      "score": 3,
-      "max_score": 10,
+      "name": "solid_principle.dependency_inversion",
+      "score": 2,
+      "max_score": 4,
       "status": "scored",
-      "score_reasoning": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 2, 'arch_bound_status': 0, 'has_interface_abstraction': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 3。",
-      "analysis": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 2, 'arch_bound_status': 0, 'has_interface_abstraction': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 3。",
+      "score_reasoning": "PermissionGate 在构造函数注入。 服务自行反射构造具体 UpdateEngine。 根据明确标注的语义裁决按合同锁定 2。",
+      "analysis": "PermissionGate 在构造函数注入。 服务自行反射构造具体 UpdateEngine。 根据明确标注的语义裁决按合同锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-14.json",
           "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
           "ref": "HEAD",
-          "json_pointer": "/platform_upgrade_review",
-          "symbol": "platform_upgrade_review",
-          "claim": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
-          "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
+          "json_pointer": "/current_review/solid/dependency_inversion",
+          "symbol": "dependency_inversion",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
         },
@@ -490,38 +495,94 @@
           "path": "update-manager/src/com/cockpitbench/update/UpdateManagerService.java",
           "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
           "ref": "HEAD",
-          "start_line": 9,
-          "end_line": 9,
-          "symbol": "UpdateManagerService",
-          "claim": "平台访问风险或隔离边界。",
-          "observation": "平台访问风险或隔离边界。",
+          "start_line": 18,
+          "end_line": 18,
+          "symbol": "public UpdateManagerService(",
+          "claim": "PermissionGate 在构造函数注入。",
+          "observation": "PermissionGate 在构造函数注入。",
           "evidence_type": "source",
-          "independent_group": "platform_primary"
+          "independent_group": "semantic_observation_0"
         },
         {
           "source": "current_head",
-          "path": "update-manager/src/com/cockpitbench/update/IUpdateManager.aidl",
+          "path": "update-manager/src/com/cockpitbench/update/UpdateManagerService.java",
           "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
           "ref": "HEAD",
-          "start_line": 3,
-          "end_line": 3,
-          "symbol": "IUpdateManager",
-          "claim": "独立适配/服务边界。",
-          "observation": "独立适配/服务边界。",
+          "start_line": 51,
+          "end_line": 54,
+          "symbol": "private Object requireEngine",
+          "claim": "服务自行反射构造具体 UpdateEngine。",
+          "observation": "服务自行反射构造具体 UpdateEngine。",
           "evidence_type": "source",
-          "independent_group": "platform_secondary"
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
+      "issues": [
+        "服务自行反射构造具体 UpdateEngine。"
+      ],
+      "recommendations": [
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
+      ]
+    },
+    {
+      "name": "platform_reuse.platform_upgrade",
+      "score": 3,
+      "max_score": 10,
+      "status": "scored",
+      "score_reasoning": "未隔离私有运行时导入=69；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。",
+      "analysis": "未隔离私有运行时导入=69；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-14.json",
+          "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
+          "ref": "HEAD",
+          "json_pointer": "/current_review/platform",
+          "symbol": "platform",
+          "claim": "全生产树私有依赖与 SDK/权限/ABI 观察；不以芯片名称推定 ABI 绑定。",
+          "observation": "全生产树私有依赖与 SDK/权限/ABI 观察；不以芯片名称推定 ABI 绑定。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
+        {
+          "source": "current_head",
+          "path": "car-builtin-lib/src/android/car/builtin/CarBuiltin.java",
+          "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
+          "ref": "HEAD",
+          "start_line": 20,
+          "end_line": 20,
+          "symbol": "import android.os.SystemProperties;",
+          "claim": "生产代码直接依赖未隔离的私有运行时接口。",
+          "observation": "生产代码直接依赖未隔离的私有运行时接口。",
+          "evidence_type": "source",
+          "independent_group": "private_dependency_0"
+        },
+        {
+          "source": "current_head",
+          "path": "car-builtin-lib/src/android/car/builtin/app/VoiceInteractionHelper.java",
+          "commit": "b39043e3a15a0bdbd2b6df6978ddac4d9429e69e",
+          "ref": "HEAD",
+          "start_line": 24,
+          "end_line": 24,
+          "symbol": "import com.android.internal.app.IVoiceInteractionManagerService;",
+          "claim": "生产代码直接依赖未隔离的私有运行时接口。",
+          "observation": "生产代码直接依赖未隔离的私有运行时接口。",
+          "evidence_type": "source",
+          "independent_group": "private_dependency_1"
+        }
+      ],
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
-      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+      "score_reasoning": "实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/2026.1']；按车型/平台复用粒度锁定 8。",
+      "analysis": "实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/2026.1']；按车型/平台复用粒度锁定 8。",
       "evidence": [
         {
           "source": "git_ref",
@@ -558,8 +619,8 @@
           "independent_group": "branch_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     }
   ]
 }

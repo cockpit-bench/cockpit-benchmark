@@ -4,7 +4,7 @@
   "quality_tier": "medium",
   "size_band": "medium",
   "delivery_status": "active",
-  "review_status": "v3_current_head_reviewed",
+  "review_status": "current_head_semantic_observations_reviewed",
   "repository": {
     "head": "0ecc89a31ed4f6cecad8c6690f56862a07e78d57",
     "tree": "7d47a20ea200c647133dc62b8e45128f660c94b2",

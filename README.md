@@ -13,7 +13,7 @@
 ## 使用
 
 ```powershell
-git clone --branch v0.7.6 --depth 1 https://github.com/cockpit-bench/cockpit-benchmark.git
+git clone --branch v0.7.7 --depth 1 https://github.com/cockpit-bench/cockpit-benchmark.git
 cd cockpit-benchmark
 .\restore.ps1 -Destination D:\cockpit-validation18
 ```
@@ -26,9 +26,10 @@ Evaluator 必须拒绝缺叶、重复叶、合同外叶、非法分值和伪造�
 
 ## 版本与边界
 
-- 推荐版本：`v0.7.6`
-- APP：72 叶，216/360；Android FW：99 叶，269/468；合计 485/828。
-- v0.7.6 将 final-HEAD CI 执行证明绑入 Gold，取消无执行闭环的集成测试 2 分，并用可验证的测试/LSP symbol 行段替换伪锚点；v0.7.5 仅保留为 artifact 名称未逐字匹配的历史前向版。
+- 推荐版本：`v0.7.7`
+- APP：72 叶，216/360；Android FW：99 叶，239/468；合计 455/828。
+- v0.7.7 完成 63 个 FW 叶的源码证据复核与事实驱动重算，修正 FW-08 LSP、SOLID 行为证据和私有 API/ABI 风险事实；旧 v0.7.6 及草稿分支仅供追溯。
+- SOLID 为明确记录的语义裁决：严重违反、多处跨边界违反、局部改进项与正向隔离证据分别支持合同档位。机械程序验证源码绑定并独立映射档位，不声称能自动证明软件设计质量。
 - 22 个 pending 仓不运输；`can-middleware` 仅为 v0.4 历史补充样例。
 - 旧 archive：https://github.com/cockpit-bench/cockpit-benchmark-v031-archive
 - 每个源码仓保留自己的许可证、来源和全部 heads/tags；源码仓不含答案。

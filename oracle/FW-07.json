@@ -4,7 +4,7 @@
   "quality_tier": "high",
   "size_band": "large",
   "delivery_status": "active",
-  "review_status": "v3_current_head_reviewed",
+  "review_status": "current_head_semantic_observations_reviewed",
   "repository": {
     "head": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
     "tree": "da76d960bed2ad387d05551a228b3e9e0ffaae3b",
@@ -16,7 +16,7 @@
     "sha256": "c367412668bf3f96231462bad501cec04c0c2bce44a9dbc0206acdaf31ed9465"
   },
   "canonical_total": {
-    "score": 42,
+    "score": 34,
     "max": 52
   },
   "canonical_leaves": [
@@ -25,18 +25,18 @@
       "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "独立 GitHub Actions 包含真实构建、测试、覆盖率门禁和报告上传，且 final HEAD 运行成功；锁定 3。",
-      "analysis": "独立 GitHub Actions 包含真实构建、测试、覆盖率门禁和报告上传，且 final HEAD 运行成功；锁定 3。",
+      "score_reasoning": "实际构建/测试/质量命令数=[1, 1, 3]，系统 CI 文件数=5；阶段覆盖范围以实际构建目标为准，锁定 3。",
+      "analysis": "实际构建/测试/质量命令数=[1, 1, 3]，系统 CI 文件数=5；阶段覆盖范围以实际构建目标为准，锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-07.json",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
           "ref": "HEAD",
-          "json_pointer": "/ci",
+          "json_pointer": "/current_review/ci",
           "symbol": "ci",
-          "claim": "CI 文件及真实阶段计数。",
-          "observation": "CI 文件及真实阶段计数。",
+          "claim": "只识别实际 run/APP_BUILD 命令与系统 CI 入口。",
+          "observation": "只识别实际 run/APP_BUILD 命令与系统 CI 入口。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
         },
@@ -45,17 +45,43 @@
           "path": ".github/workflows/native.yml",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
           "ref": "HEAD",
-          "start_line": 2,
-          "end_line": 2,
-          "symbol": "name: Native build test and coverage",
-          "claim": "CI 构建/测试/报告入口。",
-          "observation": "CI 构建/测试/报告入口。",
+          "start_line": 13,
+          "end_line": 13,
+          "symbol": "- run: cmake --build build --parallel",
+          "claim": "可执行 build 阶段命令。",
+          "observation": "可执行 build 阶段命令。",
           "evidence_type": "source",
-          "independent_group": "ci_pipeline"
+          "independent_group": "ci_build"
+        },
+        {
+          "source": "current_head",
+          "path": ".github/workflows/native.yml",
+          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
+          "ref": "HEAD",
+          "start_line": 14,
+          "end_line": 14,
+          "symbol": "- run: ctest --test-dir build --output-on-failure",
+          "claim": "可执行 test 阶段命令。",
+          "observation": "可执行 test 阶段命令。",
+          "evidence_type": "source",
+          "independent_group": "ci_test"
+        },
+        {
+          "source": "current_head",
+          "path": ".github/workflows/native.yml",
+          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
+          "ref": "HEAD",
+          "start_line": 11,
+          "end_line": 11,
+          "symbol": "- run: python -m pip install gcovr==7.2",
+          "claim": "可执行 quality 阶段命令。",
+          "observation": "可执行 quality 阶段命令。",
+          "evidence_type": "source",
+          "independent_group": "ci_quality"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "compilation.compilation_independence",
@@ -104,16 +130,16 @@
           "independent_group": "build_boundary_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "compilation.api_version_management",
       "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "专用语义版本证据=2、有效 API 检查=3；锁定 3。",
-      "analysis": "专用语义版本证据=2、有效 API 检查=3；锁定 3。",
+      "score_reasoning": "专用语义版本证据=2，有效 API 检查=3；锁定 3。",
+      "analysis": "专用语义版本证据=2，有效 API 检查=3；锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -167,16 +193,16 @@
           "independent_group": "api_control_2"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "quality.integration_test",
       "score": 3,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "final HEAD Actions run=33758464550 成功，测试 5/5 通过，native/ only line coverage=0.8667≥0.60；锁定 3。",
-      "analysis": "final HEAD Actions run=33758464550 成功，测试 5/5 通过，native/ only line coverage=0.8667≥0.60；锁定 3。",
+      "score_reasoning": "final HEAD Actions run=33758464550，测试 5/5 通过，native/ only line coverage=0.8666667≥0.6；锁定 3。",
+      "analysis": "final HEAD Actions run=33758464550，测试 5/5 通过，native/ only line coverage=0.8666667≥0.6；锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -217,51 +243,64 @@
           "independent_group": "test_config"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "solid_principle.single_responsibility",
       "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 体量过大。 按独立 0–4 档位锁定 2。",
-      "analysis": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 体量过大。 按独立 0–4 档位锁定 2。",
+      "score_reasoning": "性能处理类还负责组织持久化状态，存在职责集中。 同一性能处理类遍历并通知监听者；职责集中在 watchdog 域内。 根据明确标注的语义裁决按合同锁定 2。",
+      "analysis": "性能处理类还负责组织持久化状态，存在职责集中。 同一性能处理类遍历并通知监听者；职责集中在 watchdog 域内。 根据明确标注的语义裁决按合同锁定 2。",
       "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-07.json",
+          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
+          "ref": "HEAD",
+          "json_pointer": "/current_review/solid/single_responsibility",
+          "symbol": "single_responsibility",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
         {
           "source": "current_head",
           "path": "service/src/com/android/car/watchdog/WatchdogPerfHandler.java",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
           "ref": "HEAD",
-          "start_line": 164,
-          "end_line": 164,
-          "symbol": "WatchdogPerfHandler",
-          "claim": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 体量过大。",
-          "observation": "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 体量过大。",
+          "start_line": 1215,
+          "end_line": 1228,
+          "symbol": "public void writeToDatabase(",
+          "claim": "性能处理类还负责组织持久化状态，存在职责集中。",
+          "observation": "性能处理类还负责组织持久化状态，存在职责集中。",
           "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "semantic_observation_0"
         },
         {
           "source": "current_head",
-          "path": "car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl",
+          "path": "service/src/com/android/car/watchdog/WatchdogPerfHandler.java",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
           "ref": "HEAD",
-          "start_line": 23,
-          "end_line": 23,
-          "symbol": "ICarDiagnostic",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 1326,
+          "end_line": 1341,
+          "symbol": "private void notifyResourceOveruseStatsLocked",
+          "claim": "同一性能处理类遍历并通知监听者；职责集中在 watchdog 域内。",
+          "observation": "同一性能处理类遍历并通知监听者；职责集中在 watchdog 域内。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "诊断、遥测、watchdog 边界明确，但 WatchdogPerfHandler 体量过大。"
+        "性能处理类还负责组织持久化状态，存在职责集中。",
+        "同一性能处理类遍历并通知监听者；职责集中在 watchdog 域内。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -269,52 +308,60 @@
       "score": 3,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "listener、watchdog AIDL 与 HAL service 提供扩展点。 按独立 0–4 档位锁定 3。",
-      "analysis": "listener、watchdog AIDL 与 HAL service 提供扩展点。 按独立 0–4 档位锁定 3。",
+      "score_reasoning": "资源通知经监听者集合分派，不依赖客户端类型分支。 遥测服务接收 ICarDataListener 接口扩展接收者。 根据明确标注的语义裁决按合同锁定 3。",
+      "analysis": "资源通知经监听者集合分派，不依赖客户端类型分支。 遥测服务接收 ICarDataListener 接口扩展接收者。 根据明确标注的语义裁决按合同锁定 3。",
       "evidence": [
         {
-          "source": "current_head",
-          "path": "car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl",
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-07.json",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
           "ref": "HEAD",
-          "start_line": 23,
-          "end_line": 23,
-          "symbol": "ICarDiagnostic",
-          "claim": "listener、watchdog AIDL 与 HAL service 提供扩展点。",
-          "observation": "listener、watchdog AIDL 与 HAL service 提供扩展点。",
+          "json_pointer": "/current_review/solid/open_closed",
+          "symbol": "open_closed",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
+        {
+          "source": "current_head",
+          "path": "service/src/com/android/car/watchdog/WatchdogPerfHandler.java",
+          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
+          "ref": "HEAD",
+          "start_line": 1326,
+          "end_line": 1341,
+          "symbol": "private void notifyResourceOveruseStatsLocked",
+          "claim": "资源通知经监听者集合分派，不依赖客户端类型分支。",
+          "observation": "资源通知经监听者集合分派，不依赖客户端类型分支。",
           "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "semantic_observation_0"
         },
         {
           "source": "current_head",
           "path": "cpp/telemetry/cartelemetryd/src/TelemetryServer.h",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
           "ref": "HEAD",
-          "start_line": 46,
-          "end_line": 46,
-          "symbol": "TelemetryServer",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 63,
+          "end_line": 66,
+          "symbol": "android::base::Result<void> setListener",
+          "claim": "遥测服务接收 ICarDataListener 接口扩展接收者。",
+          "observation": "遥测服务接收 ICarDataListener 接口扩展接收者。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
-      "issues": [
-        "listener、watchdog AIDL 与 HAL service 提供扩展点。"
-      ],
-      "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
+      "issues": [],
+      "recommendations": []
     },
     {
       "name": "solid_principle.liskov_substitution",
       "score": 3,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "Manager/Service 与 Binder callback 保持父契约。 按独立 0–4 档位锁定 3。",
-      "analysis": "Manager/Service 与 Binder callback 保持父契约。 按独立 0–4 档位锁定 3。",
+      "score_reasoning": "生产实现=2，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 3。",
+      "analysis": "生产实现=2，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -368,13 +415,13 @@
           "independent_group": "lsp_contract_2"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "Manager/Service 与 Binder callback 保持父契约。"
+        "缺少系统化多实现契约测试。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -382,106 +429,70 @@
       "score": 3,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "诊断、遥测、资源过载接口按领域拆分。 按独立 0–4 档位锁定 3。",
-      "analysis": "诊断、遥测、资源过载接口按领域拆分。 按独立 0–4 档位锁定 3。",
-      "evidence": [
-        {
-          "source": "current_head",
-          "path": "service/src/com/android/car/watchdog/WatchdogPerfHandler.java",
-          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD",
-          "start_line": 164,
-          "end_line": 164,
-          "symbol": "WatchdogPerfHandler",
-          "claim": "诊断、遥测、资源过载接口按领域拆分。",
-          "observation": "诊断、遥测、资源过载接口按领域拆分。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
-        },
-        {
-          "source": "current_head",
-          "path": "car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl",
-          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD",
-          "start_line": 23,
-          "end_line": 23,
-          "symbol": "ICarDiagnostic",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
-          "evidence_type": "source",
-          "independent_group": "solid_secondary"
-        }
-      ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
-      "issues": [
-        "诊断、遥测、资源过载接口按领域拆分。"
-      ],
-      "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
-    },
-    {
-      "name": "solid_principle.dependency_inversion",
-      "score": 3,
-      "max_score": 4,
-      "status": "scored",
-      "score_reasoning": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作。 按独立 0–4 档位锁定 3。",
-      "analysis": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作。 按独立 0–4 档位锁定 3。",
-      "evidence": [
-        {
-          "source": "current_head",
-          "path": "car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl",
-          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD",
-          "start_line": 23,
-          "end_line": 23,
-          "symbol": "ICarDiagnostic",
-          "claim": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作。",
-          "observation": "服务通过 AIDL、HalServiceBase 与 listener 抽象协作。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
-        },
-        {
-          "source": "current_head",
-          "path": "cpp/telemetry/cartelemetryd/src/TelemetryServer.h",
-          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
-          "ref": "HEAD",
-          "start_line": 46,
-          "end_line": 46,
-          "symbol": "TelemetryServer",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
-          "evidence_type": "source",
-          "independent_group": "solid_secondary"
-        }
-      ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
-      "issues": [
-        "服务通过 AIDL、HalServiceBase 与 listener 抽象协作。"
-      ],
-      "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
-    },
-    {
-      "name": "platform_reuse.platform_upgrade",
-      "score": 10,
-      "max_score": 10,
-      "status": "scored",
-      "score_reasoning": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': False, 'has_arch_specific_deps': False, 'version_bound_status': 0, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 0, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 10。",
-      "analysis": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': False, 'has_arch_specific_deps': False, 'version_bound_status': 0, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 0, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 10。",
+      "score_reasoning": "诊断客户端通过独立诊断监听者订阅。 遥测监听契约与诊断接口分离。 根据明确标注的语义裁决按合同锁定 3。",
+      "analysis": "诊断客户端通过独立诊断监听者订阅。 遥测监听契约与诊断接口分离。 根据明确标注的语义裁决按合同锁定 3。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-07.json",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
           "ref": "HEAD",
-          "json_pointer": "/platform_upgrade_review",
-          "symbol": "platform_upgrade_review",
-          "claim": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
-          "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
+          "json_pointer": "/current_review/solid/interface_segregation",
+          "symbol": "interface_segregation",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
+        {
+          "source": "current_head",
+          "path": "car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl",
+          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
+          "ref": "HEAD",
+          "start_line": 27,
+          "end_line": 29,
+          "symbol": "boolean registerOrUpdateDiagnosticListener",
+          "claim": "诊断客户端通过独立诊断监听者订阅。",
+          "observation": "诊断客户端通过独立诊断监听者订阅。",
+          "evidence_type": "source",
+          "independent_group": "semantic_observation_0"
+        },
+        {
+          "source": "current_head",
+          "path": "cpp/telemetry/cartelemetryd/src/TelemetryServer.h",
+          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
+          "ref": "HEAD",
+          "start_line": 63,
+          "end_line": 66,
+          "symbol": "android::base::Result<void> setListener",
+          "claim": "遥测监听契约与诊断接口分离。",
+          "observation": "遥测监听契约与诊断接口分离。",
+          "evidence_type": "source",
+          "independent_group": "semantic_observation_1"
+        }
+      ],
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
+      "issues": [],
+      "recommendations": []
+    },
+    {
+      "name": "solid_principle.dependency_inversion",
+      "score": 2,
+      "max_score": 4,
+      "status": "scored",
+      "score_reasoning": "时钟、存储和 daemon helper 从构造注入，但存储/helper 为具体类型。 遥测输出依赖 AIDL 监听抽象。 根据明确标注的语义裁决按合同锁定 2。",
+      "analysis": "时钟、存储和 daemon helper 从构造注入，但存储/helper 为具体类型。 遥测输出依赖 AIDL 监听抽象。 根据明确标注的语义裁决按合同锁定 2。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-07.json",
+          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
+          "ref": "HEAD",
+          "json_pointer": "/current_review/solid/dependency_inversion",
+          "symbol": "dependency_inversion",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
         },
@@ -490,38 +501,94 @@
           "path": "service/src/com/android/car/watchdog/WatchdogPerfHandler.java",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
           "ref": "HEAD",
-          "start_line": 164,
-          "end_line": 164,
-          "symbol": "WatchdogPerfHandler",
-          "claim": "平台访问风险或隔离边界。",
-          "observation": "平台访问风险或隔离边界。",
+          "start_line": 303,
+          "end_line": 315,
+          "symbol": "public WatchdogPerfHandler(",
+          "claim": "时钟、存储和 daemon helper 从构造注入，但存储/helper 为具体类型。",
+          "observation": "时钟、存储和 daemon helper 从构造注入，但存储/helper 为具体类型。",
           "evidence_type": "source",
-          "independent_group": "platform_primary"
+          "independent_group": "semantic_observation_0"
         },
         {
           "source": "current_head",
-          "path": "car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl",
+          "path": "cpp/telemetry/cartelemetryd/src/TelemetryServer.h",
           "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
           "ref": "HEAD",
-          "start_line": 23,
-          "end_line": 23,
-          "symbol": "ICarDiagnostic",
-          "claim": "独立适配/服务边界。",
-          "observation": "独立适配/服务边界。",
+          "start_line": 63,
+          "end_line": 66,
+          "symbol": "android::base::Result<void> setListener",
+          "claim": "遥测输出依赖 AIDL 监听抽象。",
+          "observation": "遥测输出依赖 AIDL 监听抽象。",
           "evidence_type": "source",
-          "independent_group": "platform_secondary"
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
+      "issues": [
+        "时钟、存储和 daemon helper 从构造注入，但存储/helper 为具体类型。"
+      ],
+      "recommendations": [
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
+      ]
+    },
+    {
+      "name": "platform_reuse.platform_upgrade",
+      "score": 3,
+      "max_score": 10,
+      "status": "scored",
+      "score_reasoning": "未隔离私有运行时导入=32；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。",
+      "analysis": "未隔离私有运行时导入=32；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-07.json",
+          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
+          "ref": "HEAD",
+          "json_pointer": "/current_review/platform",
+          "symbol": "platform",
+          "claim": "全生产树私有依赖与 SDK/权限/ABI 观察；不以芯片名称推定 ABI 绑定。",
+          "observation": "全生产树私有依赖与 SDK/权限/ABI 观察；不以芯片名称推定 ABI 绑定。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
+        {
+          "source": "current_head",
+          "path": "car-lib/src/android/car/CarProjectionManager.java",
+          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
+          "ref": "HEAD",
+          "start_line": 50,
+          "end_line": 50,
+          "symbol": "import com.android.internal.util.Preconditions;",
+          "claim": "生产代码直接依赖未隔离的私有运行时接口。",
+          "observation": "生产代码直接依赖未隔离的私有运行时接口。",
+          "evidence_type": "source",
+          "independent_group": "private_dependency_0"
+        },
+        {
+          "source": "current_head",
+          "path": "car-lib/src/android/car/media/CarAudioPatchHandle.java",
+          "commit": "2c8b686a34552e48a647c4b8ab734a214775b0e0",
+          "ref": "HEAD",
+          "start_line": 28,
+          "end_line": 28,
+          "symbol": "import com.android.internal.util.Preconditions;",
+          "claim": "生产代码直接依赖未隔离的私有运行时接口。",
+          "observation": "生产代码直接依赖未隔离的私有运行时接口。",
+          "evidence_type": "source",
+          "independent_group": "private_dependency_1"
+        }
+      ],
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
-      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+      "score_reasoning": "实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/2026.1']；按车型/平台复用粒度锁定 8。",
+      "analysis": "实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/2026.1']；按车型/平台复用粒度锁定 8。",
       "evidence": [
         {
           "source": "git_ref",
@@ -558,8 +625,8 @@
           "independent_group": "branch_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     }
   ]
 }

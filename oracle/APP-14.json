@@ -4,7 +4,7 @@
   "quality_tier": "medium",
   "size_band": "large",
   "delivery_status": "active",
-  "review_status": "v3_current_head_reviewed",
+  "review_status": "current_head_semantic_observations_reviewed",
   "repository": {
     "head": "83cc55774e720bc761e90e62ffb94bc61a33973b",
     "tree": "2c44d2bacc7e0d368a15f2c1c0ef11e76f4e58bf",
@@ -334,7 +334,7 @@
           "ref": "HEAD",
           "start_line": 12,
           "end_line": 12,
-          "symbol": "CockpitShellController",
+          "symbol": "try { Class.forName(\"android.window.WindowContainerTransaction\"); }",
           "claim": "平台风险或隔离边界。",
           "observation": "平台风险或隔离边界。",
           "evidence_type": "source",

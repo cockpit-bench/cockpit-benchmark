@@ -4,7 +4,7 @@
   "quality_tier": "medium",
   "size_band": "small",
   "delivery_status": "active",
-  "review_status": "v3_current_head_reviewed",
+  "review_status": "current_head_semantic_observations_reviewed",
   "repository": {
     "head": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
     "tree": "5d6786c677a6f9c4768923e0e2df2a974dc06c39",
@@ -16,7 +16,7 @@
     "sha256": "c367412668bf3f96231462bad501cec04c0c2bce44a9dbc0206acdaf31ed9465"
   },
   "canonical_total": {
-    "score": 31,
+    "score": 26,
     "max": 52
   },
   "canonical_leaves": [
@@ -25,18 +25,18 @@
       "score": 2,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "存在可执行 APP_BUILD 独立构建/测试入口，但没有完整标准化流水线；锁定 2。",
-      "analysis": "存在可执行 APP_BUILD 独立构建/测试入口，但没有完整标准化流水线；锁定 2。",
+      "score_reasoning": "实际构建/测试/质量命令数=[1, 1, 0]，系统 CI 文件数=1；阶段覆盖范围以实际构建目标为准，锁定 2。",
+      "analysis": "实际构建/测试/质量命令数=[1, 1, 0]，系统 CI 文件数=1；阶段覆盖范围以实际构建目标为准，锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-10.json",
           "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
           "ref": "HEAD",
-          "json_pointer": "/ci",
+          "json_pointer": "/current_review/ci",
           "symbol": "ci",
-          "claim": "CI 文件及真实阶段计数。",
-          "observation": "CI 文件及真实阶段计数。",
+          "claim": "只识别实际 run/APP_BUILD 命令与系统 CI 入口。",
+          "observation": "只识别实际 run/APP_BUILD 命令与系统 CI 入口。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
         },
@@ -45,17 +45,30 @@
           "path": "APP_BUILD",
           "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
           "ref": "HEAD",
-          "start_line": 1,
-          "end_line": 1,
-          "symbol": "configure=cmake -S native -B out/native",
-          "claim": "CI 构建/测试/报告入口。",
-          "observation": "CI 构建/测试/报告入口。",
+          "start_line": 2,
+          "end_line": 2,
+          "symbol": "build=cmake --build out/native",
+          "claim": "可执行 build 阶段命令。",
+          "observation": "可执行 build 阶段命令。",
           "evidence_type": "source",
-          "independent_group": "ci_pipeline"
+          "independent_group": "ci_build"
+        },
+        {
+          "source": "current_head",
+          "path": "APP_BUILD",
+          "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
+          "ref": "HEAD",
+          "start_line": 3,
+          "end_line": 3,
+          "symbol": "test=ctest --test-dir out/native --output-on-failure",
+          "claim": "可执行 test 阶段命令。",
+          "observation": "可执行 test 阶段命令。",
+          "evidence_type": "source",
+          "independent_group": "ci_test"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "compilation.compilation_independence",
@@ -104,16 +117,16 @@
           "independent_group": "build_boundary_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "compilation.api_version_management",
       "score": 2,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "专用语义版本证据=1、有效 API 检查=0；锁定 2。",
-      "analysis": "专用语义版本证据=1、有效 API 检查=0；锁定 2。",
+      "score_reasoning": "专用语义版本证据=1，有效 API 检查=0；锁定 2。",
+      "analysis": "专用语义版本证据=1，有效 API 检查=0；锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -141,16 +154,16 @@
           "independent_group": "api_control_0"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "quality.integration_test",
       "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "有 46 个含真实用例与断言的测试源，但无 final HEAD 执行和可复算覆盖代理；锁定 1。",
-      "analysis": "有 46 个含真实用例与断言的测试源，但无 final HEAD 执行和可复算覆盖代理；锁定 1。",
+      "score_reasoning": "有效测试源=46；无执行证明不推断通过率，锁定 1。",
+      "analysis": "有效测试源=46；无执行证明不推断通过率，锁定 1。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -191,29 +204,41 @@
           "independent_group": "test_config"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "solid_principle.single_responsibility",
       "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "ManagerGatewayService 混合权限、路由、fallback 与广播职责。 按独立 0–4 档位锁定 2。",
-      "analysis": "ManagerGatewayService 混合权限、路由、fallback 与广播职责。 按独立 0–4 档位锁定 2。",
+      "score_reasoning": "权限检查、路由、fallback 与输出转换集中于网关方法。 后端查找与调用仍被分离到 Registry。 根据明确标注的语义裁决按合同锁定 2。",
+      "analysis": "权限检查、路由、fallback 与输出转换集中于网关方法。 后端查找与调用仍被分离到 Registry。 根据明确标注的语义裁决按合同锁定 2。",
       "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-10.json",
+          "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
+          "ref": "HEAD",
+          "json_pointer": "/current_review/solid/single_responsibility",
+          "symbol": "single_responsibility",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
         {
           "source": "current_head",
           "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerGatewayService.java",
           "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
           "ref": "HEAD",
-          "start_line": 20,
-          "end_line": 20,
-          "symbol": "ManagerGatewayService",
-          "claim": "ManagerGatewayService 混合权限、路由、fallback 与广播职责。",
-          "observation": "ManagerGatewayService 混合权限、路由、fallback 与广播职责。",
+          "start_line": 29,
+          "end_line": 34,
+          "symbol": "@Override public Bundle invoke",
+          "claim": "权限检查、路由、fallback 与输出转换集中于网关方法。",
+          "observation": "权限检查、路由、fallback 与输出转换集中于网关方法。",
           "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "semantic_observation_0"
         },
         {
           "source": "current_head",
@@ -222,20 +247,20 @@
           "ref": "HEAD",
           "start_line": 17,
           "end_line": 17,
-          "symbol": "ManagerRegistry",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "symbol": "import java.util",
+          "claim": "后端查找与调用仍被分离到 Registry。",
+          "observation": "后端查找与调用仍被分离到 Registry。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "ManagerGatewayService 混合权限、路由、fallback 与广播职责。"
+        "权限检查、路由、fallback 与输出转换集中于网关方法。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -243,9 +268,21 @@
       "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "Backend 可注册，但平台 fallback 仍依赖字符串和反射表。 按独立 0–4 档位锁定 2。",
-      "analysis": "Backend 可注册，但平台 fallback 仍依赖字符串和反射表。 按独立 0–4 档位锁定 2。",
+      "score_reasoning": "Backend 通过注册表扩展。 扩展芯片后端需修改具体类名映射。 根据明确标注的语义裁决按合同锁定 2。",
+      "analysis": "Backend 通过注册表扩展。 扩展芯片后端需修改具体类名映射。 根据明确标注的语义裁决按合同锁定 2。",
       "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-10.json",
+          "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
+          "ref": "HEAD",
+          "json_pointer": "/current_review/solid/open_closed",
+          "symbol": "open_closed",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
         {
           "source": "current_head",
           "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerRegistry.java",
@@ -253,33 +290,33 @@
           "ref": "HEAD",
           "start_line": 17,
           "end_line": 17,
-          "symbol": "ManagerRegistry",
-          "claim": "Backend 可注册，但平台 fallback 仍依赖字符串和反射表。",
-          "observation": "Backend 可注册，但平台 fallback 仍依赖字符串和反射表。",
+          "symbol": "import java.util",
+          "claim": "Backend 通过注册表扩展。",
+          "observation": "Backend 通过注册表扩展。",
           "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "semantic_observation_0"
         },
         {
           "source": "current_head",
           "path": "manager-runtime/src/com/cockpitbench/managerkit/PlatformManagerFallback.java",
           "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
           "ref": "HEAD",
-          "start_line": 20,
-          "end_line": 20,
-          "symbol": "PlatformManagerFallback",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 22,
+          "end_line": 26,
+          "symbol": "public PlatformManagerFallback(",
+          "claim": "扩展芯片后端需修改具体类名映射。",
+          "observation": "扩展芯片后端需修改具体类名映射。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "Backend 可注册，但平台 fallback 仍依赖字符串和反射表。"
+        "扩展芯片后端需修改具体类名映射。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -287,8 +324,8 @@
       "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "VehiclePropertyBackend 遵守 Backend 调用合同。 按独立 0–4 档位锁定 2。",
-      "analysis": "VehiclePropertyBackend 遵守 Backend 调用合同。 按独立 0–4 档位锁定 2。",
+      "score_reasoning": "生产实现=1，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 2。",
+      "analysis": "生产实现=1，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -309,7 +346,7 @@
           "ref": "HEAD",
           "start_line": 17,
           "end_line": 17,
-          "symbol": "ManagerRegistry",
+          "symbol": "Backend",
           "claim": "Backend 声明统一调用合同。",
           "observation": "Backend 声明统一调用合同。",
           "evidence_type": "source",
@@ -322,20 +359,20 @@
           "ref": "HEAD",
           "start_line": 21,
           "end_line": 21,
-          "symbol": "VehiclePropertyBackend",
+          "symbol": "public final class VehiclePropertyBackend implements ManagerRegistry.Backend {",
           "claim": "VehiclePropertyBackend 实现该合同；尚无第二个生产实现或替换测试。",
           "observation": "VehiclePropertyBackend 实现该合同；尚无第二个生产实现或替换测试。",
           "evidence_type": "source",
           "independent_group": "lsp_contract_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "VehiclePropertyBackend 遵守 Backend 调用合同。"
+        "缺少系统化多实现契约测试。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -343,43 +380,55 @@
       "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "IManagerGateway 粒度尚可，但 Bundle 通用入口弱化类型隔离。 按独立 0–4 档位锁定 2。",
-      "analysis": "IManagerGateway 粒度尚可，但 Bundle 通用入口弱化类型隔离。 按独立 0–4 档位锁定 2。",
+      "score_reasoning": "通用字符串/Bundle 网关让不同 manager 共享无类型入口。 事件回调独立于调用接口。 根据明确标注的语义裁决按合同锁定 2。",
+      "analysis": "通用字符串/Bundle 网关让不同 manager 共享无类型入口。 事件回调独立于调用接口。 根据明确标注的语义裁决按合同锁定 2。",
       "evidence": [
         {
-          "source": "current_head",
-          "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerGatewayService.java",
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-10.json",
           "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
           "ref": "HEAD",
-          "start_line": 20,
-          "end_line": 20,
-          "symbol": "ManagerGatewayService",
-          "claim": "IManagerGateway 粒度尚可，但 Bundle 通用入口弱化类型隔离。",
-          "observation": "IManagerGateway 粒度尚可，但 Bundle 通用入口弱化类型隔离。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "json_pointer": "/current_review/solid/interface_segregation",
+          "symbol": "interface_segregation",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerRegistry.java",
+          "path": "manager-runtime/src/com/cockpitbench/managerkit/IManagerGateway.aidl",
           "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
           "ref": "HEAD",
-          "start_line": 17,
-          "end_line": 17,
-          "symbol": "ManagerRegistry",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 5,
+          "end_line": 7,
+          "symbol": "Bundle invoke",
+          "claim": "通用字符串/Bundle 网关让不同 manager 共享无类型入口。",
+          "observation": "通用字符串/Bundle 网关让不同 manager 共享无类型入口。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_0"
+        },
+        {
+          "source": "current_head",
+          "path": "manager-runtime/src/com/cockpitbench/managerkit/IManagerGatewayListener.aidl",
+          "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
+          "ref": "HEAD",
+          "start_line": 4,
+          "end_line": 4,
+          "symbol": "void onManagerEvent",
+          "claim": "事件回调独立于调用接口。",
+          "observation": "事件回调独立于调用接口。",
+          "evidence_type": "source",
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "IManagerGateway 粒度尚可，但 Bundle 通用入口弱化类型隔离。"
+        "通用字符串/Bundle 网关让不同 manager 共享无类型入口。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -387,62 +436,18 @@
       "score": 1,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "Gateway 直接构造 Registry/Fallback/Backend，高层注入不完整。 按独立 0–4 档位锁定 1。",
-      "analysis": "Gateway 直接构造 Registry/Fallback/Backend，高层注入不完整。 按独立 0–4 档位锁定 1。",
-      "evidence": [
-        {
-          "source": "current_head",
-          "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerRegistry.java",
-          "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
-          "ref": "HEAD",
-          "start_line": 17,
-          "end_line": 17,
-          "symbol": "ManagerRegistry",
-          "claim": "Gateway 直接构造 Registry/Fallback/Backend，高层注入不完整。",
-          "observation": "Gateway 直接构造 Registry/Fallback/Backend，高层注入不完整。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
-        },
-        {
-          "source": "current_head",
-          "path": "manager-runtime/src/com/cockpitbench/managerkit/PlatformManagerFallback.java",
-          "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
-          "ref": "HEAD",
-          "start_line": 20,
-          "end_line": 20,
-          "symbol": "PlatformManagerFallback",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
-          "evidence_type": "source",
-          "independent_group": "solid_secondary"
-        }
-      ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
-      "issues": [
-        "Gateway 直接构造 Registry/Fallback/Backend，高层注入不完整。"
-      ],
-      "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
-    },
-    {
-      "name": "platform_reuse.platform_upgrade",
-      "score": 8,
-      "max_score": 10,
-      "status": "scored",
-      "score_reasoning": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'non_compatible_api_covered_by_abstraction': True, 'uncovered_non_compatible_api_count': 0, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 8。",
-      "analysis": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 1, 'arch_bound_status': 0, 'has_interface_abstraction': True, 'non_compatible_api_covered_by_abstraction': True, 'uncovered_non_compatible_api_count': 0, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 8。",
+      "score_reasoning": "高层直接创建 Registry 和 Fallback。 高层还直接创建 VehiclePropertyBackend，多个依赖不可替换。 根据明确标注的语义裁决按合同锁定 1。",
+      "analysis": "高层直接创建 Registry 和 Fallback。 高层还直接创建 VehiclePropertyBackend，多个依赖不可替换。 根据明确标注的语义裁决按合同锁定 1。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-10.json",
           "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
           "ref": "HEAD",
-          "json_pointer": "/platform_upgrade_review",
-          "symbol": "platform_upgrade_review",
-          "claim": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
-          "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
+          "json_pointer": "/current_review/solid/dependency_inversion",
+          "symbol": "dependency_inversion",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
         },
@@ -451,38 +456,95 @@
           "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerGatewayService.java",
           "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
           "ref": "HEAD",
-          "start_line": 20,
-          "end_line": 20,
-          "symbol": "ManagerGatewayService",
-          "claim": "平台访问风险或隔离边界。",
-          "observation": "平台访问风险或隔离边界。",
+          "start_line": 23,
+          "end_line": 25,
+          "symbol": "private final Context context",
+          "claim": "高层直接创建 Registry 和 Fallback。",
+          "observation": "高层直接创建 Registry 和 Fallback。",
           "evidence_type": "source",
-          "independent_group": "platform_primary"
+          "independent_group": "semantic_observation_0"
         },
         {
           "source": "current_head",
-          "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerRegistry.java",
+          "path": "manager-runtime/src/com/cockpitbench/managerkit/ManagerGatewayService.java",
           "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
           "ref": "HEAD",
-          "start_line": 17,
-          "end_line": 17,
-          "symbol": "ManagerRegistry",
-          "claim": "独立适配/服务边界。",
-          "observation": "独立适配/服务边界。",
+          "start_line": 26,
+          "end_line": 28,
+          "symbol": "public ManagerGatewayService(",
+          "claim": "高层还直接创建 VehiclePropertyBackend，多个依赖不可替换。",
+          "observation": "高层还直接创建 VehiclePropertyBackend，多个依赖不可替换。",
           "evidence_type": "source",
-          "independent_group": "platform_secondary"
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
+      "issues": [
+        "高层直接创建 Registry 和 Fallback。",
+        "高层还直接创建 VehiclePropertyBackend，多个依赖不可替换。"
+      ],
+      "recommendations": [
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
+      ]
+    },
+    {
+      "name": "platform_reuse.platform_upgrade",
+      "score": 3,
+      "max_score": 10,
+      "status": "scored",
+      "score_reasoning": "未隔离私有运行时导入=10；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。",
+      "analysis": "未隔离私有运行时导入=10；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-10.json",
+          "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
+          "ref": "HEAD",
+          "json_pointer": "/current_review/platform",
+          "symbol": "platform",
+          "claim": "全生产树私有依赖与 SDK/权限/ABI 观察；不以芯片名称推定 ABI 绑定。",
+          "observation": "全生产树私有依赖与 SDK/权限/ABI 观察；不以芯片名称推定 ABI 绑定。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
+        {
+          "source": "current_head",
+          "path": "api/src/android/car/CarProjectionManager.java",
+          "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
+          "ref": "HEAD",
+          "start_line": 50,
+          "end_line": 50,
+          "symbol": "import com.android.internal.util.Preconditions;",
+          "claim": "生产代码直接依赖未隔离的私有运行时接口。",
+          "observation": "生产代码直接依赖未隔离的私有运行时接口。",
+          "evidence_type": "source",
+          "independent_group": "private_dependency_0"
+        },
+        {
+          "source": "current_head",
+          "path": "runtime/src/com/android/car/CarProjectionService.java",
+          "commit": "330e8d662e4f855d2552aebc5e127ba3cbe62c2b",
+          "ref": "HEAD",
+          "start_line": 79,
+          "end_line": 79,
+          "symbol": "import com.android.internal.util.Preconditions;",
+          "claim": "生产代码直接依赖未隔离的私有运行时接口。",
+          "observation": "生产代码直接依赖未隔离的私有运行时接口。",
+          "evidence_type": "source",
+          "independent_group": "private_dependency_1"
+        }
+      ],
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
-      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+      "score_reasoning": "实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/2026.1']；按车型/平台复用粒度锁定 8。",
+      "analysis": "实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/2026.1']；按车型/平台复用粒度锁定 8。",
       "evidence": [
         {
           "source": "git_ref",
@@ -519,8 +581,8 @@
           "independent_group": "branch_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     }
   ]
 }

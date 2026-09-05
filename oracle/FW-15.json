@@ -4,7 +4,7 @@
   "quality_tier": "low",
   "size_band": "small",
   "delivery_status": "active",
-  "review_status": "v3_current_head_reviewed",
+  "review_status": "current_head_semantic_observations_reviewed",
   "repository": {
     "head": "29be0c67ef8380e66b2782a7403163ab84e9c821",
     "tree": "d35af723ccc53a9dbf3c909241d3cfd8951df7bc",
@@ -25,37 +25,24 @@
       "score": 1,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置；锁定 1。",
-      "analysis": "仅有 PREUPLOAD.cfg/TEST_MAPPING 等 Android 系统层 CI 配置；锁定 1。",
+      "score_reasoning": "实际构建/测试/质量命令数=[0, 0, 0]，系统 CI 文件数=1；阶段覆盖范围以实际构建目标为准，锁定 1。",
+      "analysis": "实际构建/测试/质量命令数=[0, 0, 0]，系统 CI 文件数=1；阶段覆盖范围以实际构建目标为准，锁定 1。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-15.json",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
           "ref": "HEAD",
-          "json_pointer": "/ci",
+          "json_pointer": "/current_review/ci",
           "symbol": "ci",
-          "claim": "CI 文件及真实阶段计数。",
-          "observation": "CI 文件及真实阶段计数。",
+          "claim": "只识别实际 run/APP_BUILD 命令与系统 CI 入口。",
+          "observation": "只识别实际 run/APP_BUILD 命令与系统 CI 入口。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
-        },
-        {
-          "source": "current_head",
-          "path": "TEST_MAPPING",
-          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD",
-          "start_line": 1,
-          "end_line": 1,
-          "symbol": "{",
-          "claim": "CI 构建/测试/报告入口。",
-          "observation": "CI 构建/测试/报告入口。",
-          "evidence_type": "source",
-          "independent_group": "ci_pipeline"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "compilation.compilation_independence",
@@ -104,16 +91,16 @@
           "independent_group": "declared_dependency"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "compilation.api_version_management",
       "score": 0,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "专用语义版本证据=0、有效 API 检查=0；锁定 0。",
-      "analysis": "专用语义版本证据=0、有效 API 检查=0；锁定 0。",
+      "score_reasoning": "专用语义版本证据=0，有效 API 检查=0；锁定 0。",
+      "analysis": "专用语义版本证据=0，有效 API 检查=0；锁定 0。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -128,16 +115,16 @@
           "independent_group": "derived_fact"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "quality.integration_test",
       "score": 0,
       "max_score": 3,
       "status": "scored",
-      "score_reasoning": "没有能验证真实接口行为的有效测试用例；锁定 0。",
-      "analysis": "没有能验证真实接口行为的有效测试用例；锁定 0。",
+      "score_reasoning": "有效测试源=0；无执行证明不推断通过率，锁定 0。",
+      "analysis": "有效测试源=0；无执行证明不推断通过率，锁定 0。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -165,51 +152,64 @@
           "independent_group": "test_config"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "solid_principle.single_responsibility",
       "score": 0,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。 按独立 0–4 档位锁定 0。",
-      "analysis": "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。 按独立 0–4 档位锁定 0。",
+      "score_reasoning": "中央服务直接持有十八个互不相同业务域的 facade。 中央服务还混合系统属性权限判断和审计广播。 根据明确标注的语义裁决按合同锁定 0。",
+      "analysis": "中央服务直接持有十八个互不相同业务域的 facade。 中央服务还混合系统属性权限判断和审计广播。 根据明确标注的语义裁决按合同锁定 0。",
       "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-15.json",
+          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
+          "ref": "HEAD",
+          "json_pointer": "/current_review/solid/single_responsibility",
+          "symbol": "single_responsibility",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
         {
           "source": "current_head",
           "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
           "ref": "HEAD",
-          "start_line": 48,
-          "end_line": 48,
-          "symbol": "CarRuntimeService",
-          "claim": "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。",
-          "observation": "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。",
+          "start_line": 53,
+          "end_line": 70,
+          "symbol": "private final ClimateFacade",
+          "claim": "中央服务直接持有十八个互不相同业务域的 facade。",
+          "observation": "中央服务直接持有十八个互不相同业务域的 facade。",
           "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "independent_group": "semantic_observation_0"
         },
         {
           "source": "current_head",
-          "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
+          "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
           "ref": "HEAD",
-          "start_line": 3,
-          "end_line": 3,
-          "symbol": "ICarRuntime",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 85,
+          "end_line": 94,
+          "symbol": "private void checkCaller",
+          "claim": "中央服务还混合系统属性权限判断和审计广播。",
+          "observation": "中央服务还混合系统属性权限判断和审计广播。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "CarRuntimeService 集中多业务域、权限、反射和大量 Binder 方法。"
+        "中央服务直接持有十八个互不相同业务域的 facade。",
+        "中央服务还混合系统属性权限判断和审计广播。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -217,43 +217,56 @@
       "score": 1,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "新增业务域需修改中心服务，核心对扩展不封闭。 按独立 0–4 档位锁定 1。",
-      "analysis": "新增业务域需修改中心服务，核心对扩展不封闭。 按独立 0–4 档位锁定 1。",
+      "score_reasoning": "每增加业务域都需修改中央成员与具体构造。 业务调用按域逐个硬编码转发，不经通用注册/策略。 根据明确标注的语义裁决按合同锁定 1。",
+      "analysis": "每增加业务域都需修改中央成员与具体构造。 业务调用按域逐个硬编码转发，不经通用注册/策略。 根据明确标注的语义裁决按合同锁定 1。",
       "evidence": [
         {
-          "source": "current_head",
-          "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-15.json",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
           "ref": "HEAD",
-          "start_line": 3,
-          "end_line": 3,
-          "symbol": "ICarRuntime",
-          "claim": "新增业务域需修改中心服务，核心对扩展不封闭。",
-          "observation": "新增业务域需修改中心服务，核心对扩展不封闭。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "json_pointer": "/current_review/solid/open_closed",
+          "symbol": "open_closed",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
-          "path": "platform/src/com/cockpitbench/carruntime/product/AuroraBaseRuntimeProfile.java",
+          "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
           "ref": "HEAD",
-          "start_line": 24,
-          "end_line": 24,
-          "symbol": "AuroraBaseRuntimeProfile",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 53,
+          "end_line": 70,
+          "symbol": "private final ClimateFacade",
+          "claim": "每增加业务域都需修改中央成员与具体构造。",
+          "observation": "每增加业务域都需修改中央成员与具体构造。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_0"
+        },
+        {
+          "source": "current_head",
+          "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
+          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
+          "ref": "HEAD",
+          "start_line": 96,
+          "end_line": 104,
+          "symbol": "@Override public String readClimate",
+          "claim": "业务调用按域逐个硬编码转发，不经通用注册/策略。",
+          "observation": "业务调用按域逐个硬编码转发，不经通用注册/策略。",
+          "evidence_type": "source",
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "新增业务域需修改中心服务，核心对扩展不封闭。"
+        "每增加业务域都需修改中央成员与具体构造。",
+        "业务调用按域逐个硬编码转发，不经通用注册/策略。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -261,8 +274,8 @@
       "score": 2,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "CarRuntimeService 实现生成的 ICarRuntime.Stub 合同，未发现收紧前置条件或拒绝父契约，但缺少第二个生产实现和替换测试。 按独立 0–4 档位锁定 2。",
-      "analysis": "CarRuntimeService 实现生成的 ICarRuntime.Stub 合同，未发现收紧前置条件或拒绝父契约，但缺少第二个生产实现和替换测试。 按独立 0–4 档位锁定 2。",
+      "score_reasoning": "生产实现=1，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 2。",
+      "analysis": "生产实现=1，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 2。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
@@ -296,20 +309,20 @@
           "ref": "HEAD",
           "start_line": 48,
           "end_line": 48,
-          "symbol": "CarRuntimeService",
+          "symbol": "public final class CarRuntimeService extends ICarRuntime.Stub {",
           "claim": "CarRuntimeService 实现生成 Stub；替换证据限于单一实现。",
           "observation": "CarRuntimeService 实现生成 Stub；替换证据限于单一实现。",
           "evidence_type": "source",
           "independent_group": "lsp_contract_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "CarRuntimeService 实现生成的 ICarRuntime.Stub 合同，未发现收紧前置条件或拒绝父契约，但缺少第二个生产实现和替换测试。"
+        "缺少系统化多实现契约测试。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -317,43 +330,56 @@
       "score": 0,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "ICarRuntime 强制所有客户端依赖多业务域能力。 按独立 0–4 档位锁定 0。",
-      "analysis": "ICarRuntime 强制所有客户端依赖多业务域能力。 按独立 0–4 档位锁定 0。",
+      "score_reasoning": "单一 Binder 强迫气候和门窗等客户端依赖多个领域方法。 同一 Binder 又纳入车辆设置，客户端无窄接口选择。 根据明确标注的语义裁决按合同锁定 0。",
+      "analysis": "单一 Binder 强迫气候和门窗等客户端依赖多个领域方法。 同一 Binder 又纳入车辆设置，客户端无窄接口选择。 根据明确标注的语义裁决按合同锁定 0。",
       "evidence": [
         {
-          "source": "current_head",
-          "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-15.json",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
           "ref": "HEAD",
-          "start_line": 48,
-          "end_line": 48,
-          "symbol": "CarRuntimeService",
-          "claim": "ICarRuntime 强制所有客户端依赖多业务域能力。",
-          "observation": "ICarRuntime 强制所有客户端依赖多业务域能力。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
+          "json_pointer": "/current_review/solid/interface_segregation",
+          "symbol": "interface_segregation",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
         },
         {
           "source": "current_head",
           "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
           "ref": "HEAD",
-          "start_line": 3,
-          "end_line": 3,
-          "symbol": "ICarRuntime",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
+          "start_line": 4,
+          "end_line": 12,
+          "symbol": "String readClimate",
+          "claim": "单一 Binder 强迫气候和门窗等客户端依赖多个领域方法。",
+          "observation": "单一 Binder 强迫气候和门窗等客户端依赖多个领域方法。",
           "evidence_type": "source",
-          "independent_group": "solid_secondary"
+          "independent_group": "semantic_observation_0"
+        },
+        {
+          "source": "current_head",
+          "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
+          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
+          "ref": "HEAD",
+          "start_line": 55,
+          "end_line": 57,
+          "symbol": "String readVehicleSettings",
+          "claim": "同一 Binder 又纳入车辆设置，客户端无窄接口选择。",
+          "observation": "同一 Binder 又纳入车辆设置，客户端无窄接口选择。",
+          "evidence_type": "source",
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
       "issues": [
-        "ICarRuntime 强制所有客户端依赖多业务域能力。"
+        "单一 Binder 强迫气候和门窗等客户端依赖多个领域方法。",
+        "同一 Binder 又纳入车辆设置，客户端无窄接口选择。"
       ],
       "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
       ]
     },
     {
@@ -361,62 +387,18 @@
       "score": 0,
       "max_score": 4,
       "status": "scored",
-      "score_reasoning": "中心服务直接构造 facade 并保存全局实例。 按独立 0–4 档位锁定 0。",
-      "analysis": "中心服务直接构造 facade 并保存全局实例。 按独立 0–4 档位锁定 0。",
-      "evidence": [
-        {
-          "source": "current_head",
-          "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
-          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD",
-          "start_line": 3,
-          "end_line": 3,
-          "symbol": "ICarRuntime",
-          "claim": "中心服务直接构造 facade 并保存全局实例。",
-          "observation": "中心服务直接构造 facade 并保存全局实例。",
-          "evidence_type": "source",
-          "independent_group": "solid_primary"
-        },
-        {
-          "source": "current_head",
-          "path": "platform/src/com/cockpitbench/carruntime/product/AuroraBaseRuntimeProfile.java",
-          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
-          "ref": "HEAD",
-          "start_line": 24,
-          "end_line": 24,
-          "symbol": "AuroraBaseRuntimeProfile",
-          "claim": "第二个独立类型边界用于核对同一原则。",
-          "observation": "第二个独立类型边界用于核对同一原则。",
-          "evidence_type": "source",
-          "independent_group": "solid_secondary"
-        }
-      ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high",
-      "issues": [
-        "中心服务直接构造 facade 并保存全局实例。"
-      ],
-      "recommendations": [
-        "针对证据中的职责或依赖边界做最小重构，并保持现有行为契约。"
-      ]
-    },
-    {
-      "name": "platform_reuse.platform_upgrade",
-      "score": 0,
-      "max_score": 10,
-      "status": "scored",
-      "score_reasoning": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。",
-      "analysis": "区分正常 Framework API 后的 Android 七事实={'has_non_compatible_api': True, 'has_arch_specific_deps': False, 'version_bound_status': 3, 'arch_bound_status': 2, 'has_interface_abstraction': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'has_light_permission_adaptation': False, 'has_complex_permission_adaptation': False}；风险硬门槛锁定 0。",
+      "score_reasoning": "高层直接构造十八个具体业务依赖。 全局实例把使用者绑定到具体中央服务。 根据明确标注的语义裁决按合同锁定 0。",
+      "analysis": "高层直接构造十八个具体业务依赖。 全局实例把使用者绑定到具体中央服务。 根据明确标注的语义裁决按合同锁定 0。",
       "evidence": [
         {
           "source": "current_head_fact_snapshot",
           "path": "facts/FW-15.json",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
           "ref": "HEAD",
-          "json_pointer": "/platform_upgrade_review",
-          "symbol": "platform_upgrade_review",
-          "claim": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
-          "observation": "按正常 Framework API 与 vendor/private 风险分离后的七事实。",
+          "json_pointer": "/current_review/solid/dependency_inversion",
+          "symbol": "dependency_inversion",
+          "claim": "源码行为观察及明确标注的语义裁决。",
+          "observation": "源码行为观察及明确标注的语义裁决。",
           "evidence_type": "structured_fact",
           "independent_group": "derived_fact"
         },
@@ -425,38 +407,95 @@
           "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
           "ref": "HEAD",
-          "start_line": 48,
-          "end_line": 48,
-          "symbol": "CarRuntimeService",
-          "claim": "平台访问风险或隔离边界。",
-          "observation": "平台访问风险或隔离边界。",
+          "start_line": 53,
+          "end_line": 70,
+          "symbol": "private final ClimateFacade",
+          "claim": "高层直接构造十八个具体业务依赖。",
+          "observation": "高层直接构造十八个具体业务依赖。",
           "evidence_type": "source",
-          "independent_group": "platform_primary"
+          "independent_group": "semantic_observation_0"
         },
         {
           "source": "current_head",
-          "path": "runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl",
+          "path": "runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java",
           "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
           "ref": "HEAD",
-          "start_line": 3,
-          "end_line": 3,
-          "symbol": "ICarRuntime",
-          "claim": "独立适配/服务边界。",
-          "observation": "独立适配/服务边界。",
+          "start_line": 151,
+          "end_line": 151,
+          "symbol": "public static CarRuntimeService get",
+          "claim": "全局实例把使用者绑定到具体中央服务。",
+          "observation": "全局实例把使用者绑定到具体中央服务。",
           "evidence_type": "source",
-          "independent_group": "platform_secondary"
+          "independent_group": "semantic_observation_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium",
+      "issues": [
+        "高层直接构造十八个具体业务依赖。",
+        "全局实例把使用者绑定到具体中央服务。"
+      ],
+      "recommendations": [
+        "围绕列出的行为边界补齐隔离或可替换契约，并保持现有功能。"
+      ]
+    },
+    {
+      "name": "platform_reuse.platform_upgrade",
+      "score": 0,
+      "max_score": 10,
+      "status": "scored",
+      "score_reasoning": "未隔离私有运行时导入=137；多处产品侧直接私有依赖=True；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 0。",
+      "analysis": "未隔离私有运行时导入=137；多处产品侧直接私有依赖=True；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 0。",
+      "evidence": [
+        {
+          "source": "current_head_fact_snapshot",
+          "path": "facts/FW-15.json",
+          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
+          "ref": "HEAD",
+          "json_pointer": "/current_review/platform",
+          "symbol": "platform",
+          "claim": "全生产树私有依赖与 SDK/权限/ABI 观察；不以芯片名称推定 ABI 绑定。",
+          "observation": "全生产树私有依赖与 SDK/权限/ABI 观察；不以芯片名称推定 ABI 绑定。",
+          "evidence_type": "structured_fact",
+          "independent_group": "derived_fact"
+        },
+        {
+          "source": "current_head",
+          "path": "platform/src/com/cockpitbench/carruntime/platform/Sa8155VehicleBridge.java",
+          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
+          "ref": "HEAD",
+          "start_line": 19,
+          "end_line": 19,
+          "symbol": "import android.os.SystemProperties;",
+          "claim": "生产代码直接依赖未隔离的私有运行时接口。",
+          "observation": "生产代码直接依赖未隔离的私有运行时接口。",
+          "evidence_type": "source",
+          "independent_group": "private_dependency_0"
+        },
+        {
+          "source": "current_head",
+          "path": "platform/src/com/cockpitbench/carruntime/platform/Sa8295VehicleBridge.java",
+          "commit": "29be0c67ef8380e66b2782a7403163ab84e9c821",
+          "ref": "HEAD",
+          "start_line": 19,
+          "end_line": 19,
+          "symbol": "import android.os.SystemProperties;",
+          "claim": "生产代码直接依赖未隔离的私有运行时接口。",
+          "observation": "生产代码直接依赖未隔离的私有运行时接口。",
+          "evidence_type": "source",
+          "independent_group": "private_dependency_1"
+        }
+      ],
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     },
     {
       "name": "platform_reuse.release_branch_strategy",
       "score": 8,
       "max_score": 10,
       "status": "scored",
-      "score_reasoning": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
-      "analysis": "存在决定 8 分档的真实分支 refs=['refs/heads/platform/8155', 'refs/heads/platform/8295']；年份型通用 SOP ref 不等于单车型通道，锁定 8。",
+      "score_reasoning": "实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/0.8']；按车型/平台复用粒度锁定 8。",
+      "analysis": "实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/0.8']；按车型/平台复用粒度锁定 8。",
       "evidence": [
         {
           "source": "git_ref",
@@ -493,8 +532,8 @@
           "independent_group": "branch_1"
         }
       ],
-      "adjudication": "v3 final-HEAD source review and independent band check agree.",
-      "confidence": "high"
+      "adjudication": "Current-source observations reviewed; deterministic mapping independently checked. SOLID dispositions are semantic judgments.",
+      "confidence": "medium"
     }
   ]
 }
