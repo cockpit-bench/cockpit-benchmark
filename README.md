@@ -1,13 +1,15 @@
-# Cockpit Benchmark v0.8.0
+# Cockpit Benchmark v0.8.1
 
-Public Dev/Regression benchmark with 18 independently browsable source repositories. It is not a lineage-isolated final holdout. Source provenance is recorded in manifest.json.
+Public Dev/Regression benchmark with 18 independently browsable source repositories. It is not a lineage-isolated final holdout. Source provenance and exact HEADs/heads/tags are recorded in [manifest.json](manifest.json).
 
-Scores bind the exact HEADs and full heads/tags in manifest.json. Production LOC excludes tests, resources, build tooling, generated code and vendored dependencies; file counts are descriptive.
+See [SCORECARD.md](SCORECARD.md), [SCORE_RULES.md](SCORE_RULES.md), and [manifest.md](manifest.md). Facts are under facts/ and canonical answers under oracle/. Give an evaluator one source repository only.
 
-See [SCORECARD.md](SCORECARD.md), [SCORE_RULES.md](SCORE_RULES.md), and [manifest.md](manifest.md). Full score facts are under facts/ and canonical answers under oracle/. Give an evaluator one source repository only.
+This release preserves all 18 v0.8.0 source HEADs and 171 scores (278/828). Contract v3.4.1 clarifies production scanning paths without changing score bands. Production LOC excludes tests, resources, build tooling, generated code and vendored dependencies; file counts are descriptive.
 
-Restore with PowerShell: `./restore.ps1 -Destination C:/bench/source-cases`. The destination must be empty and outside this wrapper. The script verifies frozen hashes, 18 exact HEADs and all heads/tags, and removes remotes. 22 pending entries are never cloned.
+Restore with PowerShell: `./restore.ps1 -Destination C:/bench/source-cases`. The destination must be empty and outside this wrapper. Use `-Resume` to revalidate an existing restoration. Add `-IncludeSubmodules` to fetch recursively pinned HTTPS gitlinks; it never tracks branch latest. Main source remotes are removed; `-IncludeSubmodules` also removes submodule remotes after successful pinned restoration. 22 pending entries are never cloned.
 
-Publication and anonymous restore results are recorded in the release notes. Full Android platform builds and integration execution must be read per leaf; a targeted JVM check is not Android integration coverage.
+`restore-state.json` separately reports main source-review readiness and pinned submodule readiness. Neither implies complete SDK/Maven/platform dependencies or a successful build. Full Android builds and integration execution must be read per leaf; targeted host checks are not Android integration coverage.
 
-For web review: [review instructions and current decisions](docs/WEB_REVIEW.md) · [original real-repository guidance](docs/REAL_REPOSITORY_GUIDANCE.md). These documents were added after v0.8.0 on main; the v0.8.0 tag remains unchanged.
+Maintainer review: [coverage and modal baseline](docs/COVERAGE.md) · [downloadable reproduction inputs](docs/VERIFICATION_INPUTS.md) · [runnable verifier](verification/README.md) · [accepted execution specification](docs/EXECUTION_SPEC.md) · [web review instructions](docs/WEB_REVIEW.md) · [original guidance archive](docs/REAL_REPOSITORY_GUIDANCE.md).
+
+Public replay validates counts, hashes, evidence coordinates and rule mappings from disclosed reviewed inputs. It does not independently establish the completeness or truth of semantic judgments. Old tags, including v0.8.0, remain unchanged.

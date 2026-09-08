@@ -6,8 +6,8 @@
 
 ## 当前审阅基线
 
-- 源码与标准答案：v0.8.0，wrapper commit 659cbc20229981597379b3c16c06fd55294fbc07。本次只补审阅资料，不修改这一标签或源码版本。
-- 唯一评分合同：[SCORE_RULES.md](../SCORE_RULES.md) v3.4。APP 8 叶/40；Android FW 11 叶/52；18 仓共 171 叶/828。
+- 源码与标准答案：v0.8.0，wrapper commit 659cbc20229981597379b3c16c06fd55294fbc07。v0.8.1 保留这些源码 HEAD 和分数，新增公开复算、覆盖表与依赖状态；旧标签不变。
+- 唯一评分合同：[SCORE_RULES.md](../SCORE_RULES.md) v3.4.1（仅澄清生产路径）。APP 8 叶/40；Android FW 11 叶/52；18 仓共 171 叶/828。
 - 用户确认体量按真实生产代码行分档，文件数仅作画像：APP 分界 30K/80K，FW 分界 80K/200K；排除资源、测试、构建脚本、生成代码、vendored 依赖及无业务意义填充。
 - 当前源码入口与精确 final HEAD/refs：[manifest.md](../manifest.md)、[manifest.json](../manifest.json)。必须按 manifest 绑定的 HEAD 审阅，不以源码仓后来变化的 main 替代。
 - 对照答案：[SCORECARD.md](../SCORECARD.md)、[STANDARD_SCORES.json](../STANDARD_SCORES.json)、[facts](../facts)、[oracle](../oracle)。答案是待核查对象，不能作为源码事实的独立证据。
@@ -50,3 +50,5 @@
 本轮已有 171 叶零差异重算和 18/18 匿名完整恢复记录，见 [v0.8.0 Release](https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.8.0)；这些是已有验证声明，不能替代 reviewer 的独立源码核查。全部仓完整 Android 平台编译/设备集成测试尚未执行。质量角色为类型/体量组内相对覆盖，套件用于 Dev/Regression，不宣称独立谱系的最终 holdout。
 
 本页包含标准答案入口，只用于维护者 review；盲评输入应仅提供单个源码仓，不附带 wrapper、指导或答案。
+
+后续验证入口：[接受的执行规范](EXECUTION_SPEC.md)、[完整覆盖表](COVERAGE.md)、[可下载的逐文件/观察输入](VERIFICATION_INPUTS.md)、[复算工具](../verification/README.md)。众数基线仅为样本内统计，语义判断仍须独立源码核查。

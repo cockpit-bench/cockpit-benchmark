@@ -1,6 +1,6 @@
 # APP / Android Framework 现行评分合同（Benchmark 版）
 
-版本：2026-09-07-v3.4  
+版本：2026-09-08-v3.4.1  
 用途：为座舱 Android APP 与 Android Framework benchmark 生成逐叶标准分。  
 纪律：本文件是唯一评分事实源；allowlist 之外的维度必须丢弃，不得从旧 rubric 换算或补零。
 
@@ -25,6 +25,17 @@
 - `source_loc` 为生产源码中去除注释及空白后的代码行数；同时保存原始物理行数、源码文件数、语言构成和计数路径集合，供复现与画像使用。
 - 生产源码必须有明确业务职责与构建归属；模块生成代码、不可达填充文件、样例数据或重复切片不得用来填档。无法确定有效生产源码集合时标记 `size_band=unresolved`，不得按目标矩阵强贴标签。
 - 本次 v3.4 仅调整体量分层；下列评分维度、子维度、档位、满分及执行证据要求保持 v3.3 不变。v0.7.7 wrapper 冻结合同仍为 v3.3，不改写历史发布。
+
+### 0.2 生产范围与扫描布局（v3.4.1 澄清）
+
+生产范围由 final HEAD 的真实构建归属确定，不由固定目录名白名单决定。Gradle 的默认及自定义 `sourceSets`、受支持的产品变体，以及 Soong 的 `srcs`、`exclude_srcs`、`filegroup`、`defaults` 和实际消费者链均属于归属证据；Android Make/CMake 的真实目标、引用源码与必要本地头文件也按同一原则处理。外部生成规则可作为构建证据，但生成输出不得计入自有生产代码行。
+
+- 保存完整纳入路径、逐文件计数、构建目标/消费者或归属依据，以及排除路径和理由；共享路径只计一次，互斥变体标明后取受支持生产变体的并集。
+- 未能解析或证明的候选生产路径记录为 `unresolved`；不得静默排除，也不得把未知状态解释为风险不存在。受其影响的规模/叶判断应标明不可判定，不能据此给高档。
+- 体量统计使用 §0.1 的生产代码子集；平台风险分析还需要读取相关生产 Manifest、权限/资源配置、构建与依赖声明。这些材料可证明风险及构建关系，但资源和构建脚本不计生产代码行。
+- 目录、类名含 `Test`、`Mock` 等字样本身不构成排除理由；需核对其真实目标和行为。第三方 gitlink/子模块属于声明的依赖，不并入自有生产代码体量。
+
+v3.4.1 只澄清 APP/FW 共用扫描范围，不修改任何评分维度、子叶、档位、满分、命名门槛或执行证明要求。v0.8.0 保留原 v3.4 合同与标准分；新版本应重放已披露生产范围和规则输入，单独记录是否产生差异，不冒充重新执行全部构建或语义审查。
 
 ## 1. 维度总表
 
@@ -142,7 +153,7 @@ Gradle Kotlin 构建脚本（`build.gradle.kts`、`settings.gradle.kts`）不是
 
 ### 2.8 `platform_reuse.platform_upgrade`（10/8/3/0）
 
-只扫描生产 `src/main/java|kotlin|cpp|res`、生产 Manifest、模块 build.gradle/CMake；排除 test/androidTest/build/generated/third_party。先提取唯一七事实：
+按 §0.2 扫描构建系统确认的生产范围及关联的 Manifest、权限/资源、构建和依赖声明。`src/main/java|kotlin|cpp|res` 只是 Gradle 常见示例，不是唯一路径；Soong/Make 的 `service/src`、`framework/java` 等真实生产路径及自定义 sourceSets 同样适用。排除已确认的测试、构建产物、生成实现和 vendored 依赖实现；外部依赖的接口、ABI 与声明仍可作为风险证据。先提取唯一七事实：
 
 1. `has_non_compatible_api`：@hide、系统类反射、移除/废弃 API、厂商私有 API。
 2. `has_arch_specific_deps`：只支持单一 ABI 的闭源 SO，且无 fallback/多 ABI。
