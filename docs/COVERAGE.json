@@ -326,23 +326,6 @@
       "source_anchored_count": 2
     },
     {
-      "count": 1,
-      "evidence_states": {
-        "execution_not_classified_for_this_leaf": 1
-      },
-      "input_methods": {
-        "contract_rule_mapping": 1
-      },
-      "inventory_anchored_count": 1,
-      "kind": "APP",
-      "name": "compilation.ci_independence",
-      "repository_ids": [
-        "APP-11"
-      ],
-      "score": 2,
-      "source_anchored_count": 1
-    },
-    {
       "count": 2,
       "evidence_states": {
         "execution_not_classified_for_this_leaf": 2
@@ -354,11 +337,28 @@
       "kind": "APP",
       "name": "compilation.ci_independence",
       "repository_ids": [
-        "APP-01",
-        "APP-02"
+        "APP-02",
+        "APP-11"
+      ],
+      "score": 2,
+      "source_anchored_count": 2
+    },
+    {
+      "count": 1,
+      "evidence_states": {
+        "execution_not_classified_for_this_leaf": 1
+      },
+      "input_methods": {
+        "contract_rule_mapping": 1
+      },
+      "inventory_anchored_count": 1,
+      "kind": "APP",
+      "name": "compilation.ci_independence",
+      "repository_ids": [
+        "APP-01"
       ],
       "score": 3,
-      "source_anchored_count": 2
+      "source_anchored_count": 1
     },
     {
       "count": 2,
@@ -1360,8 +1360,8 @@
       "counts": {
         "0": 4,
         "1": 2,
-        "2": 1,
-        "3": 2
+        "2": 2,
+        "3": 1
       },
       "denominator": 9,
       "kind": "APP",
@@ -1623,7 +1623,7 @@
   ],
   "observations": [
     {
-      "code_anchor_count": 6,
+      "code_anchor_count": 4,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-01",
       "inventory_anchor_count": 0,
@@ -1634,7 +1634,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 6,
+      "code_anchor_count": 3,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-01",
       "inventory_anchor_count": 0,
@@ -1645,7 +1645,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 6,
+      "code_anchor_count": 3,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-01",
       "inventory_anchor_count": 0,
@@ -1689,7 +1689,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 3,
+      "code_anchor_count": 4,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-01",
       "inventory_anchor_count": 1,
@@ -1711,7 +1711,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 6,
+      "code_anchor_count": 4,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-02",
       "inventory_anchor_count": 0,
@@ -1722,24 +1722,13 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 6,
+      "code_anchor_count": 4,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-02",
       "inventory_anchor_count": 0,
       "kind": "APP",
       "method": "contract_rule_mapping",
       "name": "architecture.decoupling",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 6,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-02",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.modularization",
       "score": 3,
       "status": "scored"
     },
@@ -1747,11 +1736,11 @@
       "code_anchor_count": 4,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-02",
-      "inventory_anchor_count": 1,
+      "inventory_anchor_count": 0,
       "kind": "APP",
       "method": "contract_rule_mapping",
-      "name": "compilation.api_version_management",
-      "score": 1,
+      "name": "architecture.modularization",
+      "score": 3,
       "status": "scored"
     },
     {
@@ -1761,8 +1750,19 @@
       "inventory_anchor_count": 1,
       "kind": "APP",
       "method": "contract_rule_mapping",
+      "name": "compilation.api_version_management",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 3,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-02",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
       "name": "compilation.ci_independence",
-      "score": 3,
+      "score": 2,
       "status": "scored"
     },
     {
@@ -1777,7 +1777,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 2,
+      "code_anchor_count": 3,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-02",
       "inventory_anchor_count": 1,
@@ -1799,7 +1799,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 5,
+      "code_anchor_count": 4,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-03",
       "inventory_anchor_count": 0,
@@ -1810,7 +1810,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 5,
+      "code_anchor_count": 4,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-03",
       "inventory_anchor_count": 0,
@@ -1821,7 +1821,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 5,
+      "code_anchor_count": 4,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-03",
       "inventory_anchor_count": 0,
@@ -1887,7 +1887,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 4,
+      "code_anchor_count": 5,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-11",
       "inventory_anchor_count": 0,
@@ -1898,7 +1898,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 4,
+      "code_anchor_count": 2,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-11",
       "inventory_anchor_count": 0,
@@ -1909,7 +1909,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 4,
+      "code_anchor_count": 2,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-11",
       "inventory_anchor_count": 0,
@@ -1953,7 +1953,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 2,
+      "code_anchor_count": 3,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "APP-11",
       "inventory_anchor_count": 1,
@@ -1972,529 +1972,771 @@
       "method": "contract_rule_mapping",
       "name": "platform_reuse.release_branch_strategy",
       "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 6,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-13",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.componentization",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 6,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-13",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.decoupling",
+      "score": 2,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 6,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-13",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.modularization",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 1,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-13",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.api_version_management",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 0,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-13",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.ci_independence",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-13",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.compilation_independence",
+      "score": 2,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 3,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-13",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.platform_upgrade",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 0,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-13",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.release_branch_strategy",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 4,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-14",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.componentization",
+      "score": 5,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-14",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.decoupling",
+      "score": 2,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 3,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-14",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.modularization",
+      "score": 2,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-14",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.api_version_management",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 3,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-14",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.ci_independence",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-14",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.compilation_independence",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 3,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-14",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.platform_upgrade",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 0,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-14",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.release_branch_strategy",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 4,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-15",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.componentization",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 4,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-15",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.decoupling",
+      "score": 2,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 4,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-15",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.modularization",
+      "score": 2,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 1,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-15",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.api_version_management",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-15",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.ci_independence",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-15",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.compilation_independence",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 3,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-15",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.platform_upgrade",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 0,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-15",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.release_branch_strategy",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 6,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-16",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.componentization",
+      "score": 5,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 6,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-16",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.decoupling",
+      "score": 2,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 6,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-16",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.modularization",
+      "score": 2,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-16",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.api_version_management",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 0,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-16",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.ci_independence",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-16",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.compilation_independence",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-16",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.platform_upgrade",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 0,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-16",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.release_branch_strategy",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 9,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-17",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.componentization",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 9,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-17",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.decoupling",
+      "score": 2,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 9,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-17",
+      "inventory_anchor_count": 0,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "architecture.modularization",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 1,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-17",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.api_version_management",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 0,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-17",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.ci_independence",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-17",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "compilation.compilation_independence",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 3,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-17",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.platform_upgrade",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 0,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "APP-17",
+      "inventory_anchor_count": 1,
+      "kind": "APP",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.release_branch_strategy",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 4,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-02",
+      "inventory_anchor_count": 1,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "compilation.api_version_management",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-02",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "compilation.ci_independence",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-02",
+      "inventory_anchor_count": 1,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "compilation.compilation_independence",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 3,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-02",
+      "inventory_anchor_count": 1,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.platform_upgrade",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 0,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-02",
+      "inventory_anchor_count": 1,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.release_branch_strategy",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "android_execution_absent",
+      "id": "FW-02",
+      "inventory_anchor_count": 1,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "quality.integration_test",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 3,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-02",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "semantic_observation_mapping",
+      "name": "solid_principle.dependency_inversion",
+      "score": 2,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-02",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "semantic_observation_mapping",
+      "name": "solid_principle.interface_segregation",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 4,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-02",
+      "inventory_anchor_count": 1,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "solid_principle.liskov_substitution",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 5,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-02",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "semantic_observation_mapping",
+      "name": "solid_principle.open_closed",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 3,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-02",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "semantic_observation_mapping",
+      "name": "solid_principle.single_responsibility",
+      "score": 2,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 7,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-03",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "compilation.api_version_management",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-03",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "compilation.ci_independence",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-03",
+      "inventory_anchor_count": 1,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "compilation.compilation_independence",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 3,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-03",
+      "inventory_anchor_count": 1,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.platform_upgrade",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 0,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-03",
+      "inventory_anchor_count": 1,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.release_branch_strategy",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "android_execution_absent",
+      "id": "FW-03",
+      "inventory_anchor_count": 1,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "quality.integration_test",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-03",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "semantic_observation_mapping",
+      "name": "solid_principle.dependency_inversion",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 7,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-03",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "semantic_observation_mapping",
+      "name": "solid_principle.interface_segregation",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 4,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-03",
+      "inventory_anchor_count": 1,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "solid_principle.liskov_substitution",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 3,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-03",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "semantic_observation_mapping",
+      "name": "solid_principle.open_closed",
+      "score": 2,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 3,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-03",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "semantic_observation_mapping",
+      "name": "solid_principle.single_responsibility",
+      "score": 2,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-07",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "compilation.api_version_management",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-07",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "compilation.ci_independence",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-07",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "compilation.compilation_independence",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 6,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-07",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.platform_upgrade",
+      "score": 3,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-07",
+      "inventory_anchor_count": 1,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "platform_reuse.release_branch_strategy",
+      "score": 0,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 2,
+      "evidence_state": "android_execution_absent",
+      "id": "FW-07",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "contract_rule_mapping",
+      "name": "quality.integration_test",
+      "score": 1,
+      "status": "scored"
+    },
+    {
+      "code_anchor_count": 5,
+      "evidence_state": "execution_not_classified_for_this_leaf",
+      "id": "FW-07",
+      "inventory_anchor_count": 0,
+      "kind": "FRAMEWORK",
+      "method": "semantic_observation_mapping",
+      "name": "solid_principle.dependency_inversion",
+      "score": 2,
       "status": "scored"
     },
     {
       "code_anchor_count": 8,
       "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-13",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.componentization",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 8,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-13",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.decoupling",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 8,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-13",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.modularization",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 1,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-13",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.api_version_management",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 0,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-13",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.ci_independence",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-13",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.compilation_independence",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 3,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-13",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.platform_upgrade",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 0,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-13",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.release_branch_strategy",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 4,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-14",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.componentization",
-      "score": 5,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 4,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-14",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.decoupling",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 4,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-14",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.modularization",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-14",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.api_version_management",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-14",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.ci_independence",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-14",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.compilation_independence",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 3,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-14",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.platform_upgrade",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 0,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-14",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.release_branch_strategy",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 5,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-15",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.componentization",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 5,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-15",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.decoupling",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 5,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-15",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.modularization",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 1,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-15",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.api_version_management",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-15",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.ci_independence",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-15",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.compilation_independence",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 3,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-15",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.platform_upgrade",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 0,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-15",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.release_branch_strategy",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 7,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-16",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.componentization",
-      "score": 5,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 7,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-16",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.decoupling",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 7,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-16",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.modularization",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-16",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.api_version_management",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 0,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-16",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.ci_independence",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-16",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.compilation_independence",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-16",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.platform_upgrade",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 0,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-16",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.release_branch_strategy",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 10,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-17",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.componentization",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 10,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-17",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.decoupling",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 10,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-17",
-      "inventory_anchor_count": 0,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "architecture.modularization",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 1,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-17",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.api_version_management",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 0,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-17",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.ci_independence",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-17",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "compilation.compilation_independence",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 3,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-17",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.platform_upgrade",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 0,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "APP-17",
-      "inventory_anchor_count": 1,
-      "kind": "APP",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.release_branch_strategy",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 4,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-02",
-      "inventory_anchor_count": 1,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "compilation.api_version_management",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-02",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "compilation.ci_independence",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-02",
-      "inventory_anchor_count": 1,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "compilation.compilation_independence",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 3,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-02",
-      "inventory_anchor_count": 1,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.platform_upgrade",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 0,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-02",
-      "inventory_anchor_count": 1,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.release_branch_strategy",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "android_execution_absent",
-      "id": "FW-02",
-      "inventory_anchor_count": 1,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "quality.integration_test",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 3,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-02",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "semantic_observation_mapping",
-      "name": "solid_principle.dependency_inversion",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-02",
+      "id": "FW-07",
       "inventory_anchor_count": 0,
       "kind": "FRAMEWORK",
       "method": "semantic_observation_mapping",
@@ -2503,10 +2745,10 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 4,
+      "code_anchor_count": 5,
       "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-02",
-      "inventory_anchor_count": 1,
+      "id": "FW-07",
+      "inventory_anchor_count": 0,
       "kind": "FRAMEWORK",
       "method": "contract_rule_mapping",
       "name": "solid_principle.liskov_substitution",
@@ -2514,9 +2756,9 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 2,
+      "code_anchor_count": 5,
       "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-02",
+      "id": "FW-07",
       "inventory_anchor_count": 0,
       "kind": "FRAMEWORK",
       "method": "semantic_observation_mapping",
@@ -2527,7 +2769,7 @@
     {
       "code_anchor_count": 3,
       "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-02",
+      "id": "FW-07",
       "inventory_anchor_count": 0,
       "kind": "FRAMEWORK",
       "method": "semantic_observation_mapping",
@@ -2536,10 +2778,10 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 7,
+      "code_anchor_count": 2,
       "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-03",
-      "inventory_anchor_count": 0,
+      "id": "FW-08",
+      "inventory_anchor_count": 1,
       "kind": "FRAMEWORK",
       "method": "contract_rule_mapping",
       "name": "compilation.api_version_management",
@@ -2549,7 +2791,7 @@
     {
       "code_anchor_count": 2,
       "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-03",
+      "id": "FW-08",
       "inventory_anchor_count": 0,
       "kind": "FRAMEWORK",
       "method": "contract_rule_mapping",
@@ -2560,7 +2802,7 @@
     {
       "code_anchor_count": 2,
       "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-03",
+      "id": "FW-08",
       "inventory_anchor_count": 1,
       "kind": "FRAMEWORK",
       "method": "contract_rule_mapping",
@@ -2569,9 +2811,9 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 3,
+      "code_anchor_count": 2,
       "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-03",
+      "id": "FW-08",
       "inventory_anchor_count": 1,
       "kind": "FRAMEWORK",
       "method": "contract_rule_mapping",
@@ -2582,7 +2824,7 @@
     {
       "code_anchor_count": 0,
       "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-03",
+      "id": "FW-08",
       "inventory_anchor_count": 1,
       "kind": "FRAMEWORK",
       "method": "contract_rule_mapping",
@@ -2593,7 +2835,7 @@
     {
       "code_anchor_count": 2,
       "evidence_state": "android_execution_absent",
-      "id": "FW-03",
+      "id": "FW-08",
       "inventory_anchor_count": 1,
       "kind": "FRAMEWORK",
       "method": "contract_rule_mapping",
@@ -2602,272 +2844,30 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 2,
+      "code_anchor_count": 3,
       "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-03",
+      "id": "FW-08",
       "inventory_anchor_count": 0,
       "kind": "FRAMEWORK",
       "method": "semantic_observation_mapping",
       "name": "solid_principle.dependency_inversion",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 7,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-03",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "semantic_observation_mapping",
-      "name": "solid_principle.interface_segregation",
-      "score": 3,
+      "score": 2,
       "status": "scored"
     },
     {
       "code_anchor_count": 4,
       "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-03",
-      "inventory_anchor_count": 1,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "solid_principle.liskov_substitution",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 3,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-03",
+      "id": "FW-08",
       "inventory_anchor_count": 0,
       "kind": "FRAMEWORK",
       "method": "semantic_observation_mapping",
-      "name": "solid_principle.open_closed",
+      "name": "solid_principle.interface_segregation",
       "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 3,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-03",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "semantic_observation_mapping",
-      "name": "solid_principle.single_responsibility",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-07",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "compilation.api_version_management",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-07",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "compilation.ci_independence",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-07",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "compilation.compilation_independence",
-      "score": 0,
       "status": "scored"
     },
     {
       "code_anchor_count": 6,
       "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-07",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.platform_upgrade",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-07",
-      "inventory_anchor_count": 1,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.release_branch_strategy",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "android_execution_absent",
-      "id": "FW-07",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "quality.integration_test",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 5,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-07",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "semantic_observation_mapping",
-      "name": "solid_principle.dependency_inversion",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 8,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-07",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "semantic_observation_mapping",
-      "name": "solid_principle.interface_segregation",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 5,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-07",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "solid_principle.liskov_substitution",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 5,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-07",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "semantic_observation_mapping",
-      "name": "solid_principle.open_closed",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 3,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-07",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "semantic_observation_mapping",
-      "name": "solid_principle.single_responsibility",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-08",
-      "inventory_anchor_count": 1,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "compilation.api_version_management",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-08",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "compilation.ci_independence",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-08",
-      "inventory_anchor_count": 1,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "compilation.compilation_independence",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-08",
-      "inventory_anchor_count": 1,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.platform_upgrade",
-      "score": 3,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 0,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-08",
-      "inventory_anchor_count": 1,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "platform_reuse.release_branch_strategy",
-      "score": 0,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 2,
-      "evidence_state": "android_execution_absent",
-      "id": "FW-08",
-      "inventory_anchor_count": 1,
-      "kind": "FRAMEWORK",
-      "method": "contract_rule_mapping",
-      "name": "quality.integration_test",
-      "score": 1,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 3,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-08",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "semantic_observation_mapping",
-      "name": "solid_principle.dependency_inversion",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 4,
-      "evidence_state": "execution_not_classified_for_this_leaf",
-      "id": "FW-08",
-      "inventory_anchor_count": 0,
-      "kind": "FRAMEWORK",
-      "method": "semantic_observation_mapping",
-      "name": "solid_principle.interface_segregation",
-      "score": 2,
-      "status": "scored"
-    },
-    {
-      "code_anchor_count": 10,
-      "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "FW-08",
       "inventory_anchor_count": 1,
       "kind": "FRAMEWORK",
@@ -2932,7 +2932,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 3,
+      "code_anchor_count": 7,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "FW-10",
       "inventory_anchor_count": 1,
@@ -3009,7 +3009,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 2,
+      "code_anchor_count": 6,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "FW-10",
       "inventory_anchor_count": 0,
@@ -3471,7 +3471,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 11,
+      "code_anchor_count": 6,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "FW-18",
       "inventory_anchor_count": 1,
@@ -3507,5 +3507,5 @@
   "observed_band_cells": 42,
   "possible_band_cells": 81,
   "schema_version": "leaf-band-evidence-coverage-1",
-  "source_version": "v0.8.2"
+  "source_version": "v0.8.3"
 }

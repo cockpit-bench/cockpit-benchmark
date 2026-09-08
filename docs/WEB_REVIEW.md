@@ -54,3 +54,5 @@
 后续验证入口：[接受的执行规范](EXECUTION_SPEC.md)、[完整覆盖表](COVERAGE.md)、[可下载的逐文件/观察输入](VERIFICATION_INPUTS.md)、[复算工具](../verification/README.md)。众数基线仅为样本内统计，语义判断仍须独立源码核查。
 
 v0.8.2 定向修复：[映射与执行字段](RULE_FIXES.md)、[公开边界生成器及实际运行结果](BOUNDARY_CANDIDATES.md)。单 main 统一发布正例包含在 channel-e；候选不计入原 18 仓覆盖率。
+
+v0.8.3 已完成全 171 叶复核，修复 22 叶证据/事实，其中 APP-02 CI 3→2，总分 277/828。请同时读取 [本轮修正](REVIEW_FIXES.md)；同源划分须遵守 manifest 的 family_id。

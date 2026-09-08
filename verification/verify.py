@@ -6,6 +6,7 @@ Requires Python 3.11+ and Git. Inputs must be the published maintainer data pack
 from __future__ import annotations
 import argparse
 import collections
+import csv
 import hashlib
 import json
 import re
@@ -98,6 +99,13 @@ def check_anchor(snap, e):
     body = snap.body(e['path'])
     if 'source_sha256' in e:
         require(sha(body) == e['source_sha256'], 'Evidence SHA mismatch: ' + e['path'])
+    if e.get('evidence_type') == 'structured_facts':
+        require(bool(e.get('source_sha256')), 'Structured repository evidence needs a source hash')
+        require(bool(e.get('json_pointer')), 'Structured repository evidence needs a JSON Pointer')
+        value = json_pointer(json.loads(body), e['json_pointer'])
+        require(value is not None and not (isinstance(value, (str, list, dict)) and not value),
+                'Structured repository evidence points to an empty value')
+        return
     lines = body.decode('utf-8').splitlines()
     a, b = e['start_line'], e['end_line']
     require(1 <= a <= b <= len(lines), 'Evidence line range invalid')
@@ -122,10 +130,10 @@ def check_scope(snap, scope, output):
         require(sha(body) == row['source_sha256'], 'Production SHA differs: ' + path)
         text = body.decode('utf-8', 'replace')
         if row['count_method'] == 'generated_regions_then_c_like_comments':
-            loc, regions = count_production_lines(text)
+            loc, regions = count_production_lines(text, language=row['language'])
             require(regions == row['excluded_generated_regions'], 'Generated region difference: ' + path)
         elif row['count_method'] == 'c_like_comments':
-            loc = sum(bool(x.strip()) for x in strip_c_like_comments(text).splitlines())
+            loc = sum(bool(x.strip()) for x in strip_c_like_comments(text, language=row['language']).splitlines())
         else:
             raise ValueError('Unknown counting method')
         require(loc == row['source_loc'] and len(text.splitlines()) == row['physical_lines'], 'Count mismatch: ' + path)
@@ -192,6 +200,146 @@ def check_substitution_execution(facts, head, data, package):
         require(report.get(key) == execution.get(key), 'Substitution report binding differs: ' + key)
 
 
+def indexed(rows, key, label):
+    result = {row[key]: row for row in rows}
+    require(len(result) == len(rows), 'Duplicate ' + label)
+    return result
+
+
+def json_pointer(document, pointer):
+    require(isinstance(pointer, str) and pointer.startswith('/'), 'Invalid JSON Pointer')
+    value = document
+    try:
+        for token in pointer[1:].split('/'):
+            require(not re.search(r'~(?![01])', token), 'Invalid JSON Pointer escape')
+            key = token.replace('~1', '/').replace('~0', '~')
+            if isinstance(value, list):
+                require(bool(re.fullmatch(r'0|[1-9][0-9]*', key)), 'Invalid JSON Pointer array index')
+                value = value[int(key)]
+            else:
+                value = value[key]
+    except (KeyError, IndexError, TypeError) as exc:
+        raise ValueError('JSON Pointer does not resolve: ' + pointer) from exc
+    return value
+
+
+def check_delivery_consistency(wrapper, standard, manifest):
+    """Compare the complete canonical answers, facts and human score tables.
+
+    This is a synchronization check, not a second semantic judgment. Comparing
+    only numeric predictions misses stale reasons and evidence at the same score.
+    """
+    entries = indexed([e for e in manifest['repositories'] if e['delivery_status'] == 'active'], 'id', 'manifest repository')
+    repos = indexed(standard['repositories'], 'id', 'standard repository')
+    require(set(repos) == set(entries), 'Standard/manifest repositories differ')
+    contract_hash = sha((wrapper / 'SCORE_RULES.md').read_bytes())
+    require(standard['contract']['sha256'] == contract_hash, 'Standard contract differs')
+    expected_csv, facts_by_id, schemas = {}, {}, set()
+    md = ['# Validation-18 ' + standard['version'], '',
+          '| ID | Repository | Size | Quality | Score |', '|---|---|---|---|---|']
+    for rid, repo in repos.items():
+        entry = entries[rid]
+        for field in ['name', 'kind', 'quality_tier', 'size_band']:
+            require(repo[field] == entry[field], 'Standard/manifest ' + field + ' differs: ' + rid)
+        require(repo['head'] == entry['delivery']['expected_head'], 'Standard/manifest HEAD differs: ' + rid)
+        oracle = read(wrapper / safe_path(entry['oracle_path']))
+        facts = read(wrapper / safe_path(oracle['facts_path']))
+        facts_by_id[rid] = facts
+        schemas.add(oracle['schema_version'])
+        require(oracle['repo_id'] == facts['repo_id'] == rid, 'Oracle/facts repository differs: ' + rid)
+        require(oracle['repository']['head'] == facts['head'] == repo['head'], 'Oracle/facts HEAD differs: ' + rid)
+        require(oracle['repository']['tree'] == facts['tree'] == repo['tree'], 'Oracle/facts tree differs: ' + rid)
+        require(oracle['rubric']['sha256'] == facts['contract_sha256'] == contract_hash, 'Oracle/facts contract differs: ' + rid)
+        for field in ['quality_tier', 'size_band']:
+            require(oracle[field] == repo[field], 'Oracle ' + field + ' differs: ' + rid)
+        leaves = indexed(repo['leaves'], 'name', 'standard leaf: ' + rid)
+        adopted = indexed(oracle['canonical_leaves'], 'name', 'oracle leaf: ' + rid)
+        require(leaves == adopted, 'Standard/oracle canonical leaf content differs: ' + rid)
+        require(set(facts['leaf_facts']) == set(leaves), 'Facts leaf set differs: ' + rid)
+        if 'platform_seven' in facts:
+            name = 'platform_reuse.platform_upgrade'
+            require(name in leaves, 'Platform summary has no canonical leaf: ' + rid)
+            decisive = facts['leaf_facts'][name]['decisive_facts']
+            for key, value in facts['platform_seven'].items():
+                fact_key = 'non_compatible_api_all_covered' if key == 'all_noncompatible_covered' else key
+                if fact_key in decisive:
+                    require(value == decisive[fact_key], 'Platform summary fact differs: ' + rid + '/' + key)
+                if key in {'coverage_explanation', 'binding_explanation'}:
+                    require(value == leaves[name]['analysis'], 'Platform summary explanation differs: ' + rid + '/' + key)
+        total = sum(l['score'] for l in leaves.values())
+        maximum = sum(l['max_score'] for l in leaves.values())
+        require(repo['total'] == oracle['canonical_total'] == {'score': total, 'max': maximum}, 'Repository total differs: ' + rid)
+        ps = facts['production_scope']
+        require(ps['source_loc'] == entry['source_loc'] and ps['source_file_count'] == entry['source_files']
+                and ps['size_band'] == entry['size_band'], 'Manifest/facts production counts differ: ' + rid)
+        for ref_summary in [facts['refs'], facts['release_branch_facts']['complete_refs']]:
+            refs = json_pointer(manifest, ref_summary['json_pointer'])
+            require(ref_summary['path'] == 'manifest.json' and refs == entry['delivery']['refs']
+                    and ref_summary['count'] == len(refs) and ref_summary['sha256'] == sha(encoded(refs)),
+                    'Facts/manifest refs differ: ' + rid)
+        for leaf in leaves.values():
+            name = leaf['name']
+            indices = facts['leaf_facts'][name]['evidence_indices']
+            require(all(type(i) is int and 0 <= i < len(facts['source_evidence']) for i in indices),
+                    'Invalid facts evidence index: ' + rid + '/' + name)
+            materialized = [facts['source_evidence'][i] for i in indices]
+            require(materialized == leaf['evidence'], 'Canonical/facts evidence differs: ' + rid + '/' + name)
+            for anchor in leaf['evidence']:
+                require(anchor['commit'] == repo['head'], 'Canonical evidence HEAD differs: ' + rid)
+                if anchor['source'] == 'repository':
+                    continue  # Source hashes/coordinates checked with the actual Git snapshot below.
+                path = safe_path(anchor['path'])
+                require(path in {oracle['facts_path'], 'manifest.json'}, 'Unexpected canonical structured source')
+                document = facts if path == oracle['facts_path'] else manifest
+                json_pointer(document, anchor['json_pointer'])
+            expected_csv[(rid, name)] = {
+                'id': rid, 'name': repo['name'], 'kind': repo['kind'], 'quality_tier': repo['quality_tier'],
+                'size_band': repo['size_band'], 'head': repo['head'], 'leaf': name,
+                'score': str(leaf['score']), 'max_score': str(leaf['max_score']),
+                'status': leaf['status'], 'score_reasoning': leaf['score_reasoning']}
+        md.append(f"| {rid} | {repo['name']} | {repo['size_band']} | {repo['quality_tier']} | {total}/{maximum} |")
+    require(len(schemas) == 1, 'Oracle schema versions differ')
+    summary = standard['summary']
+    require(summary['repository_count'] == len(repos) and summary['leaf_count'] == len(expected_csv)
+            and summary['score'] == sum(r['total']['score'] for r in repos.values())
+            and summary['max_score'] == sum(int(r['max_score']) for r in expected_csv.values())
+            and summary['pending_repository_count'] == sum(e['delivery_status'] == 'pending' for e in manifest['repositories']),
+            'Standard summary differs')
+    with (wrapper / 'SCORECARD.csv').open(encoding='utf-8-sig', newline='') as stream:
+        rows = list(csv.DictReader(stream))
+    actual_csv = {(r['id'], r['leaf']): r for r in rows}
+    require(len(actual_csv) == len(rows) and actual_csv == expected_csv, 'SCORECARD.csv content differs')
+    for repo in repos.values():
+        md += ['', '## ' + repo['id'] + ' ' + repo['name'], '', '| Leaf | Score | Reason |', '|---|---|---|']
+        for leaf in repo['leaves']:
+            reason = leaf['score_reasoning'].replace('|', '\\|').replace('\n', ' ')
+            md.append(f"| {leaf['name']} | {leaf['score']}/{leaf['max_score']} | {reason} |")
+    require((wrapper / 'SCORECARD.md').read_text(encoding='utf-8').strip() == '\n'.join(md),
+            'SCORECARD.md content differs')
+    return facts_by_id
+
+
+def check_disclosed_inputs(facts, scope, inputs):
+    """The published compact facts must agree with the inputs actually replayed."""
+    rid = facts['repo_id']
+    require(scope['id'] == rid and scope['head'] == inputs['head'] == facts['head'], 'Disclosed input identity differs: ' + rid)
+    for key in ['source_loc', 'source_file_count', 'size_band', 'path_set_sha256']:
+        require(scope[key] == facts['production_scope'][key], 'Disclosed scope differs: ' + rid + '/' + key)
+    leaves = indexed(inputs['leaves'], 'name', 'disclosed input leaf: ' + rid)
+    require(set(leaves) == set(facts['leaf_facts']), 'Disclosed input leaf set differs: ' + rid)
+    for name, record in facts['leaf_facts'].items():
+        leaf = leaves[name]
+        for key, value in record['decisive_facts'].items():
+            require(key in leaf['facts'] and leaf['facts'][key] == value, 'Disclosed decisive fact differs: ' + rid + '/' + name + '/' + key)
+        # Extra source anchors in the full pack are supplemental; every canonical
+        # source anchor must still be present and verified against the same HEAD.
+        supplied = {encoded(e) for e in leaf['evidence']}
+        for index in record['evidence_indices']:
+            e = facts['source_evidence'][index]
+            if e['source'] == 'repository':
+                require(encoded(e) in supplied, 'Disclosed canonical evidence missing: ' + rid + '/' + name)
+
+
 def verify(args):
     package = read(args.data / 'package.json')
     for name, digest in package['tool_source_sha256'].items():
@@ -203,6 +351,7 @@ def verify(args):
     require(sha((args.wrapper / 'SCORE_RULES.md').read_bytes()) in package['compatible_contract_sha256'], 'Unsupported contract')
     standard = read(args.wrapper / 'STANDARD_SCORES.json')
     manifest = read(args.wrapper / 'manifest.json')
+    facts_by_id = check_delivery_consistency(args.wrapper, standard, manifest)
     entries = {e['id']: e for e in manifest['repositories'] if e['delivery_status'] == 'active'}
     expected = {(r['id'], l['name']): l['score'] for r in standard['repositories'] for l in r['leaves']}
     require(len(entries) == 18 and len(expected) == 171, 'Wrong canonical denominator')
@@ -226,6 +375,7 @@ def verify(args):
         summaries.append(check_scope(snap, scope, args.output / 'counts'))
         inputs = read(args.data / record['rule_inputs'])
         require(inputs['head'] == snap.head, 'Rule inputs stale')
+        check_disclosed_inputs(facts_by_id[rid], scope, inputs)
         for leaf in inputs['leaves']:
             require('score' not in leaf and 'quality_tier' not in leaf, 'Expected answer in rule input')
             require(leaf['evidence'], 'No evidence anchors')

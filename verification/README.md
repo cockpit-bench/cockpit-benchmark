@@ -22,3 +22,11 @@ Reviewed ownership and semantic observations are **inputs**, not conclusions inf
 This is reproducible counting and rule mapping. It is not a new independent semantic review, Android build, device test or proof of complete dependency closure. No current build execution is implied by a previously published score.
 
 For test-dependent LSP promotion, the verifier also checks a hashed execution report against the evaluated revision, contract and covered production implementations. See [the execution input schema](../docs/RULE_FIXES.md).
+
+## v0.8.3 consistency and family checks
+
+The same replay also compares complete canonical leaf objects, facts and scorecards. It detects stale reasons/evidence even when scores agree.
+
+Run the portable regressions with `python -m unittest discover -s verification -p "test_*.py" -v`.
+
+Provide an explicit JSON object such as `{"APP-14":"development","FW-16":"development","APP-03":"validation"}` to `python verification/check_split.py --wrapper . --assignments /path/to/split.json`. Add `--require-complete` for all 18. Recorded same-family repositories cannot cross sets; this is not an independent holdout certificate.
