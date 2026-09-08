@@ -1,23 +1,49 @@
-# Cockpit Benchmark v0.8.6
+# Cockpit Benchmark — suite integration preparation
 
-Public Dev/Regression benchmark with 18 independently browsable source repositories. It is not a lineage-isolated final holdout. Source provenance and exact HEADs/heads/tags are recorded in [manifest.json](manifest.json).
+This local v0.9.0 preparation connects two independent suites. It is not a new
+published benchmark release. [suites.json](suites.json) is the unified index;
+the root manifest and canonical score files remain the Android compatibility entry.
 
-See [SCORECARD.md](SCORECARD.md), [SCORE_RULES.md](SCORE_RULES.md), and [manifest.md](manifest.md). Facts are under facts/ and canonical answers under oracle/. Give an evaluator one source repository only.
+| Suite | Current state | Repositories / leaves | Score |
+|---|---|---|---|
+| [Android APP / Framework](SCORECARD.md) | Published v0.8.6 | 18 / 171 | 271 / 828 |
+| [MATLAB / Simulink](suites/matlab-simulink/README.md) | Reviewed; execution incomplete; unpublished | 9 / 117 | Reviewed 338 / 549; canonical pending |
 
-Contract v3.5 applies API governance scope B to all 18 repositories, yielding 271/828. The other 153 complete leaf objects, all 18 source HEADs/refs and production counts remain unchanged. Read [API review and scope](docs/API_GOVERNANCE.md).
+Report each suite with its own contract, denominator and evidence mode. Do not add
+raw suite totals or interpret the two scales as one health score. Android's 22
+pending repositories remain excluded. Both datasets are Dev/Regression; their
+source families must stay intact across evaluation splits.
 
-Restore with PowerShell: `./restore.ps1 -Destination C:/bench/source-cases`. The destination must be empty and outside this wrapper. Use `-Resume` to revalidate an existing restoration. Add `-IncludeSubmodules` to fetch recursively pinned HTTPS gitlinks; new dependency clones use shallow history while still checking out the exact gitlink commit, never branch latest. Main source repositories retain full history. Main source remotes are removed; `-IncludeSubmodules` also removes submodule remotes after successful pinned restoration. 22 pending entries are never cloned.
+## Restore
 
-`restore-state.json` separately reports main source-review readiness and pinned submodule readiness. Neither implies complete SDK/Maven/platform dependencies or a successful build. Full Android builds and integration execution must be read per leaf; targeted host checks are not Android integration coverage.
+The existing command remains the default Android restoration:
 
-Maintainer review: [coverage and modal baseline](docs/COVERAGE.md) · [downloadable reproduction inputs](docs/VERIFICATION_INPUTS.md) · [runnable verifier](verification/README.md) · [accepted execution specification](docs/EXECUTION_SPEC.md) · [web review instructions](docs/WEB_REVIEW.md) · [original guidance archive](docs/REAL_REPOSITORY_GUIDANCE.md).
+```powershell
+./restore.ps1 -Destination C:/bench/android
+./restore.ps1 -Suite matlab-simulink -Destination C:/bench/matlab
+./restore.ps1 -Suite all -Destination C:/bench/all
+```
 
-Public replay validates counts, hashes, evidence coordinates and rule mappings from disclosed reviewed inputs. It does not independently establish the completeness or truth of semantic judgments. Old tags, including v0.8.0, remain unchanged.
+The MATLAB and all-suite commands currently **reject before creating directories
+or downloading sources**, because MATLAB has not passed its final gate or been
+published. They do not silently restore an older suite. `-Resume` and
+`-IncludeSubmodules` retain the Android meanings; MATLAB has no declared submodules.
+The additional suite dispatcher requires Python 3.11+ and Git. The default Android
+path retains its existing PowerShell/Git requirements.
 
-Rule corrections: [release/LSP boundaries and execution inputs](docs/RULE_FIXES.md). [Reproducible small candidates](docs/BOUNDARY_CANDIDATES.md) remain separate from Validation-18.
+```sh
+python verification/suites.py validate --wrapper .
+python verification/suites.py validate --wrapper . --require-publishable
+```
 
-Evidence corrections: [complete leaf review repairs](docs/REVIEW_FIXES.md). The 18 sources have 17 recorded families; APP-14 and FW-16 share the same SystemUI production files. Validate grouping with `verification/check_split.py`.
+The first command validates the honest preparation state; the second currently
+fails on MATLAB's unresolved execution/promotion requirements. Successful metadata
+validation is not model execution or final suite validation.
+This preparation deliberately disables the MATLAB published state. A complete
+portable raw-evidence export protocol must be implemented and verified after the
+existing finalizer passes; changing a status flag or summary cannot enable it.
 
-v0.8.4 preserves quoted multiline CSV reasons exactly. v0.8.3 is superseded because a final global line-ending conversion made one CSV reason differ from its canonical text; scores and source evidence did not change.
-
-Additional entry points: [eight-case boundary regression](docs/BOUNDARY_REGRESSION.md), [evidence-equivalent evaluation protocol](docs/EVIDENCE_PROTOCOL.md), and [v0.8.5 fixes](docs/DISCRIMINATION_FIXES.md). The two datasets are reported separately.
+Android reference documentation: [API governance](docs/API_GOVERNANCE.md),
+[replay inputs](docs/VERIFICATION_INPUTS.md), [verifier](verification/README.md),
+[evidence protocol](docs/EVIDENCE_PROTOCOL.md). Its source HEADs, refs, contract,
+scores, production counts and evidence remain the v0.8.6 artifacts.

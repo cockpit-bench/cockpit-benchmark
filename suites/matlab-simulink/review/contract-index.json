@@ -1,0 +1,208 @@
+{
+  "version": "1.0.0",
+  "suite_id": "matlab-simulink",
+  "status": "confirmed_with_user_overrides",
+  "original": {
+    "path": "E:/Project/202608AINP/Matlab_Simulink\u8bc4\u5206\u5408\u540c_Scoring_Contract_\u539f\u6587.md",
+    "sha256": "5c3783521aae11d8d00c45c81abb9029aa0d863f61a89660bab29b28ae231845"
+  },
+  "guide": {
+    "path": "E:/Project/202608AINP/Matlab_Simulink\u865a\u62df\u4ed3\u751f\u6210\u6307\u5bfc_\u6700\u65b0\u7248_\u539f\u6587.md",
+    "sha256": "718e8a19c37465510cdf94d74d291a0209273ca8d4561e2cc4852ef30058a8a5"
+  },
+  "overrides": {
+    "path": "E:/Project/202608AINP/matlab-benchmark/SCORING_OVERRIDES.md",
+    "sha256": "690436ce76d3d352c6f44394b923b3be2e0c09ed5c62b875904e412aa7fac4c2"
+  },
+  "precedence": [
+    "user_overrides",
+    "original_contract",
+    "generation_guide"
+  ],
+  "leaves": [
+    {
+      "id": "hierarchy",
+      "name": "\u5c42\u6b21\u5206\u89e3",
+      "section": "2.1",
+      "max_score": 3,
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "reuse",
+      "name": "\u590d\u7528\u4e0e\u6807\u51c6\u5316",
+      "section": "2.2",
+      "max_score": 3,
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "interface",
+      "name": "\u63a5\u53e3\u8bbe\u8ba1",
+      "section": "2.3",
+      "max_score": 3,
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "dataflow",
+      "name": "\u6570\u636e\u6d41\u4e0e\u4fe1\u53f7\u8def\u7531",
+      "section": "2.4",
+      "max_score": 3,
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "unit_test",
+      "name": "\u5355\u5143\u6d4b\u8bd5",
+      "section": "2.5",
+      "max_score": 5,
+      "allowed_scores": [
+        0,
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "id": "naming",
+      "name": "\u547d\u540d\u89c4\u8303",
+      "section": "2.6",
+      "max_score": 5,
+      "allowed_scores": [
+        0,
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "id": "directory",
+      "name": "\u76ee\u5f55\u7ed3\u6784",
+      "section": "2.7",
+      "max_score": 5,
+      "allowed_scores": [
+        0,
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "id": "build_independence",
+      "name": "\u6784\u5efa\u72ec\u7acb\u6027",
+      "section": "2.8",
+      "max_score": 3,
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "model_version",
+      "name": "\u6a21\u578b\u7248\u672c\u7ba1\u7406",
+      "section": "2.9",
+      "max_score": 3,
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "version_independence",
+      "name": "\u7248\u672c\u72ec\u7acb\u6027",
+      "section": "2.10",
+      "max_score": 3,
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": "release_branches",
+      "name": "release\u4ee3\u7801\u5206\u652f\u7b56\u7565",
+      "section": "2.11",
+      "max_score": 10,
+      "allowed_scores": [
+        0,
+        3,
+        8,
+        10
+      ]
+    },
+    {
+      "id": "device_specificity",
+      "name": "\u8bbe\u5907\u7279\u6709",
+      "section": "2.12",
+      "max_score": 10,
+      "allowed_scores": [
+        0,
+        3,
+        8,
+        10
+      ]
+    },
+    {
+      "id": "parameter_management",
+      "name": "\u53c2\u6570\u7ba1\u7406",
+      "section": "2.13",
+      "max_score": 5,
+      "allowed_scores": [
+        0,
+        1,
+        3,
+        5
+      ]
+    }
+  ],
+  "repo_max_score": 61,
+  "target_repo_count": 9,
+  "target_leaf_count": 117,
+  "nominal_max_score": 549,
+  "interpolation": false,
+  "size": {
+    "metric": "unique_effective_production_logic_blocks",
+    "small": {
+      "min": 1,
+      "max_exclusive": 200
+    },
+    "medium": {
+      "min": 200,
+      "max_exclusive": 800
+    },
+    "large": {
+      "min": 800
+    },
+    "basis": "engineering bands informed by guide section 5.2; not measured quantiles"
+  },
+  "excluded_dimensions": [
+    "CI\u72ec\u7acb\u6027",
+    "\u7248\u672c\u7b56\u7565",
+    "\u53d1\u5e03\u4e0e\u56de\u6eda",
+    "\u5e73\u53f0\u5347\u7ea7\u5f71\u54cd",
+    "\u5355\u5e73\u53f0\u4ee3\u7801\u590d\u7528",
+    "\u8de8\u5e73\u53f0\u4ee3\u7801\u590d\u7528"
+  ]
+}

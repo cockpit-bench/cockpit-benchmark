@@ -1,26 +1,23 @@
 [CmdletBinding()]
 # After a network interruption: ./restore.ps1 -Destination <same-directory> -Resume
-param([Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()][string]$Destination, [switch]$Resume, [switch]$IncludeSubmodules)
+param([Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()][string]$Destination, [switch]$Resume, [switch]$IncludeSubmodules, [ValidateSet("android-validation18","matlab-simulink","all")][string]$Suite = "android-validation18")
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 $expectedHashes = [ordered]@{
     ".gitattributes" = "5550472b34249d85a794952825db528251956dd8bfff9dd17589ea767446f588"
     ".gitignore" = "6feaded4e28ea86e001a6751b4e3d960e8b7c31b9616ff9936b79297086e809b"
     "ACTIVE_EIGHTEEN.md" = "f64d70be58fea89e65d152c839f8e47a386f5e5db8c43ec81cda6008ad35881b"
-    "LICENSE" = "950f20ff178debfcf2526200837304a7512f39c022dc1f9105a6e0af62788df0"
-    "NOTICE" = "ff71f002bf010747ebc6a65858605d93e07bdbf19e2514ea0bab67f6e8bb1420"
-    "README.md" = "190a9d024b3970a1a57999474c4d00da4f66a088f5d0c47ced08bce30e1beb59"
-    "SCORECARD.csv" = "6770ff2c2d6f889a9f5aa0f04756b9eec5ac468c0ebc4546cf7d45fb1eded242"
-    "SCORECARD.md" = "22af3d29dbce400819e4748904804da73de92a658976dbef970e4f81634a8edd"
-    "SCORE_RULES.md" = "bcbbe577dd3b62862d48efb18bfcd17a86d749631ac6c282b73a1f2215b5689a"
-    "STANDARD_SCORES.json" = "e9cd19b528cfdf06a4a6f095de8910c3ff3a0a6bf3a028656ba9fd844293c807"
     "delivery-scope.json" = "81154b9ffac9871ee948e7eb50ea19e0b18dce2ff33e15abd4fbb00dd48c964f"
     "docs/API_GOVERNANCE.md" = "e5532fe6eb54ad3c39bfda450b0900ef6fbad51320fee428c5c42a169f8db37d"
+    "docs/boundary-candidates.json" = "373a07b7fe67e5f76e023b088399f3dddb83c4e701aeae1661b31e40121ae228"
+    "docs/boundary-reference.json" = "599559ca960174566fc54995c44f268077008a1b43f1773b78f589c69ff99947"
     "docs/BOUNDARY_CANDIDATES.md" = "833cb1786bdba58e3586d92805c4a7f0494d5d846002b8e1ce7a6f36ddbdc265"
     "docs/BOUNDARY_REGRESSION.md" = "4895a639ed08bc349888b7a5394e1fc7a03aa943a7a8dfb73021dd0e77c93f2c"
     "docs/COVERAGE.json" = "1a8f00b0283169a4e24b5f814146c8bbab247e3df04661a24bd9176369138a18"
     "docs/COVERAGE.md" = "2f4cdc1d1a37cc7cf094a1f06a2d154d097d81ee8a48ee949c6eb4942bed0f84"
     "docs/DISCRIMINATION_FIXES.md" = "8b2e528e8ab652140344513c690a7f15100b08abcfd34e31363e92ab40048cc1"
+    "docs/evaluation-context.json" = "311226166483ec7ce279e7ef990085e361b52298e993202318e62ecf947d767c"
+    "docs/evidence-availability.json" = "c210767480ac7ef134fbdf965e2b23a27108019bd86b3adc8fec17b8317bed6c"
     "docs/EVIDENCE_AVAILABILITY.md" = "436e76d41513901d7801827e84c63f88c792828e0bd6085fcd85ca8e3e6d06f4"
     "docs/EVIDENCE_PROTOCOL.md" = "d16e11265a3af1a3fff29469121fb161cdaf7f93258f5010ea2d9bd66e7c526c"
     "docs/EXECUTION_SPEC.md" = "ce9211163bab73116efdeed7c2913517d11c8f02e0fbea5c6f0c1942d8d0f0a0"
@@ -30,10 +27,6 @@ $expectedHashes = [ordered]@{
     "docs/RULE_FIXES.md" = "2eac51b7ddc3877d9cf309e948af300a089e3ed416ba41a1919818fbb4abc154"
     "docs/VERIFICATION_INPUTS.md" = "c45759c030f664282452c2df9a9388c0e9a6a99543a88563d37e0c6cbe9dca5b"
     "docs/WEB_REVIEW.md" = "d6f07e22a0bf46497276d77c04465727db9e5b8fa481e35be9aa06aaf12e5e2c"
-    "docs/boundary-candidates.json" = "373a07b7fe67e5f76e023b088399f3dddb83c4e701aeae1661b31e40121ae228"
-    "docs/boundary-reference.json" = "599559ca960174566fc54995c44f268077008a1b43f1773b78f589c69ff99947"
-    "docs/evaluation-context.json" = "311226166483ec7ce279e7ef990085e361b52298e993202318e62ecf947d767c"
-    "docs/evidence-availability.json" = "c210767480ac7ef134fbdf965e2b23a27108019bd86b3adc8fec17b8317bed6c"
     "facts/APP-01.json" = "e15368ef1550afcb4d7769b0fff71af47ed6cffde0f018ca47489dab7e904068"
     "facts/APP-02.json" = "9ec9e7693df03328dca349b1029958b93330e51cec77f700c0882751dd7193f7"
     "facts/APP-03.json" = "3ad910b27da35f71a4330d71de368ca0a74825ee9e02a208da1f265576d38213"
@@ -52,8 +45,10 @@ $expectedHashes = [ordered]@{
     "facts/FW-15.json" = "5d3b306378c759ebb1c0c401a910546cfb83389ff0cbdc75c206160a53af0dfb"
     "facts/FW-16.json" = "2cf1126c7375603e33d05ddf0dbe0fa7b912a25aef4e43f1cc083222c613be23"
     "facts/FW-18.json" = "70fda85503b4038bac4b9326e110119c94446a26beeb027afa1761e0fd92b975"
+    "LICENSE" = "950f20ff178debfcf2526200837304a7512f39c022dc1f9105a6e0af62788df0"
     "manifest.json" = "35ec4573fa8706e8c71bec1b56eb57af37573d55db6998d5ad2c62bec804c68d"
     "manifest.md" = "a8130ed19f05673eb00fa8f8e6ede623513fa95c9210c964bd09d9b92f55ad87"
+    "NOTICE" = "ff71f002bf010747ebc6a65858605d93e07bdbf19e2514ea0bab67f6e8bb1420"
     "oracle/APP-01.json" = "4e514360640531bde203a04ea69a3cb1c9819b90317b69096037e851564206e6"
     "oracle/APP-02.json" = "b78c10ea86d0dc6a6a18ca43c40744166c6b044b14e254376e02bc87e085f3bd"
     "oracle/APP-03.json" = "b15a6c290ff081018df6f4b2e211f244776380518ff8dd30b3ae94d44309288f"
@@ -72,14 +67,33 @@ $expectedHashes = [ordered]@{
     "oracle/FW-15.json" = "99c17a8b219f8d0d642e8f4d2097f74f66c78d43aaa37ffa281e95fa4a7d0972"
     "oracle/FW-16.json" = "fce44396270a4ffd68e8b9179be151df06405eb978af1c52ab5d72c607d39477"
     "oracle/FW-18.json" = "2ee67a53fa306f11fac2938a2a45d0518716b32a04016e016d5ff8b31c58135a"
-    "verification/README.md" = "40ac940090266ff289234accc8ef180c1623a4bff395355f6ad7aa1c490439e1"
+    "README.md" = "e19af39a25ce973b3cd37f3b1c9d440c8c37f010f791b5755bdacebb86838e28"
+    "SCORE_RULES.md" = "bcbbe577dd3b62862d48efb18bfcd17a86d749631ac6c282b73a1f2215b5689a"
+    "SCORECARD.csv" = "6770ff2c2d6f889a9f5aa0f04756b9eec5ac468c0ebc4546cf7d45fb1eded242"
+    "SCORECARD.md" = "22af3d29dbce400819e4748904804da73de92a658976dbef970e4f81634a8edd"
+    "STANDARD_SCORES.json" = "e9cd19b528cfdf06a4a6f095de8910c3ff3a0a6bf3a028656ba9fd844293c807"
+    "suites/matlab-simulink/contract-index.json" = "d63e2da4840178571af2ced5ce89f53c42fcf48ddc4c38a37d78aec93ef1ce1f"
+    "suites/matlab-simulink/manifest.json" = "7b7ca359c156c9b86d60db75dd1367ef36ae2a8383ad81bda582a4794a7471b0"
+    "suites/matlab-simulink/README.md" = "41e6b58b0fedf4df865a62872fce761af4ce652cd4503a87dbbd10dee9f66439"
+    "suites/matlab-simulink/review/contract-index.json" = "48b2aa11527ee01f12ea107d1b16738c63cc401bc05e12071a034e422490bc25"
+    "suites/matlab-simulink/review/DATASET_LIMITS.json" = "4f79e031726252c837711a5b3058381417b5c8b3a31460be7879228d726039a8"
+    "suites/matlab-simulink/review/DATASET_LIMITS.md" = "599bb0ea2937539961faa1ef8e961fd63920f672d7225d901939efee940fd40b"
+    "suites/matlab-simulink/review/manifest.json" = "261267b797f4ca6343b511d9230ecf6d464e12bb20010dd1619ce4cedd26cea0"
+    "suites/matlab-simulink/review/STANDARD_SCORES.json" = "780a1aa909674ef819233bf736e153af31ac56120596b9142f8ddbd0eb8954db"
+    "suites/matlab-simulink/SCORING_CONTRACT.md" = "5c3783521aae11d8d00c45c81abb9029aa0d863f61a89660bab29b28ae231845"
+    "suites/matlab-simulink/SCORING_OVERRIDES.md" = "690436ce76d3d352c6f44394b923b3be2e0c09ed5c62b875904e412aa7fac4c2"
+    "suites/matlab-simulink/VALIDATION_STATUS.json" = "080ea47b67f26308544f5b4eadf6a089a7aa871c9f531d850296198b4d5fdeab"
+    "suites.json" = "6640ce70a94fde3819383c9bf50de22fda1e27bbc1dd1e16feac3a9915bde867"
     "verification/boundary.py" = "9b9888b7e33b26ef4b65033d982099c413540074408ff81df0f6cbd34a59f384"
     "verification/check_split.py" = "7a85129e20da6e5d52b07bf35ee244fd68305f9b122c9cb6478b07b1c37d1c8e"
     "verification/counting.py" = "01535dfe4097e289681ec0ab9f8d774cdfe11811c4d249c0050cbbee686ab9da"
     "verification/coverage.py" = "74876337d45bea4260ed60c94a00c6105464c05adff3e0df951d0d02a35a9392"
     "verification/evaluation_profile.py" = "8ab808d05a4106d913d127ff2e9f67210ff3d6d53acacd18f6aa33cc233b7ad5"
     "verification/examples/build_boundary_prototypes.py" = "5c802e00142f1815b67271210f51b3dc824e3598e84027667b64f02a81794394"
+    "verification/README.md" = "40ac940090266ff289234accc8ef180c1623a4bff395355f6ad7aa1c490439e1"
     "verification/rules.py" = "f0936ed0d1bb7400f4f44985abdb23c41330e5593fe7ea08643dfd652b334c4d"
+    "verification/suites.py" = "1c148169f9da57b7b1d767dadd7cbc9380d5fac6a4942dc4b6842ec056801fad"
+    "verification/suites.schema.json" = "124d15c2329e0c20e4e7ff73cb593feefabcca8df066529dad4934a511656ac4"
     "verification/test_api_governance.py" = "b6dff09ba8cd6f0074e5faa9664f97604b78e8b8de90f1a2729288fa63f9c315"
     "verification/test_boundary_regression.py" = "a4237e27c9f627f2a5f807fe02e97149903e9db1c17c27a5992c84889cde83a2"
     "verification/test_cpp_counting.py" = "79c6f3d34c6a8d20904f3f1747b440e56f728cf54820d93b9df06680000370a5"
@@ -89,6 +103,7 @@ $expectedHashes = [ordered]@{
     "verification/test_public_verification.py" = "5ef960a5004a3228aa73356ae67746737d14970f048ff02bc81e8d516f11c6f4"
     "verification/test_public_verification_consistency.py" = "8100627a20dd4d5b51724209069bf5b5f3cdb719e55536fe99938aa2ebde83a8"
     "verification/test_rule_boundaries.py" = "9d61d0c5ce9a5fc20e8e38c63c8998fe136084b8d72855383792814484b12517"
+    "verification/test_suites.py" = "57f7e2cb371f419c2d14e164bf3f0506e5908ea5b9ed203c0cf4b3c4d6f93b94"
     "verification/verify.py" = "ee47327357e008a659750b7bc42a10796973650987a7e9989f1e29092f322d4c"
 }
 function Invoke-CheckedGit {
@@ -147,6 +162,16 @@ foreach ($entry in $expectedHashes.GetEnumerator()) {
     if ((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant() -ne $entry.Value) {
         throw "SHA-256 mismatch: $($entry.Key)"
     }
+}
+if ($Suite -ne 'android-validation18') {
+    $python = Get-Command python -ErrorAction SilentlyContinue
+    if (-not $python) { throw 'Python 3.11+ is required for the additional suite dispatcher.' }
+    $arguments = @((Join-Path $PSScriptRoot 'verification/suites.py'), 'restore', '--wrapper', $PSScriptRoot, '--suite', $Suite, '--destination', $Destination)
+    if ($Resume) { $arguments += '--resume' }
+    if ($IncludeSubmodules) { $arguments += '--include-submodules' }
+    & $python.Source @arguments
+    if ($LASTEXITCODE -ne 0) { throw "Suite restoration rejected or failed ($LASTEXITCODE)." }
+    return
 }
 $manifest = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'manifest.json') -Raw | ConvertFrom-Json
 $standard = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'STANDARD_SCORES.json') -Raw | ConvertFrom-Json

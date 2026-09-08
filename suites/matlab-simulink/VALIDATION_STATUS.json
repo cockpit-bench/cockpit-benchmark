@@ -1,0 +1,70 @@
+{
+  "blocked_native_ids": [
+    "ML-05",
+    "ML-05-B"
+  ],
+  "canonical_ready": false,
+  "canonical_scores": null,
+  "completed_extraction_ids": [
+    "ML-01",
+    "ML-02",
+    "ML-03",
+    "ML-04",
+    "ML-06",
+    "ML-07",
+    "ML-08",
+    "ML-09"
+  ],
+  "evidence_note": "Existing same-HEAD restoration/MIL is distinct from incomplete fresh native execution.",
+  "execution_limit": "WinError 5 followed by missing executable; exact cause unconfirmed. Do not retry by renaming, ACL changes or disabling protection.",
+  "final_verification": null,
+  "handoff_sha256": "a8c67fcb62fa52da02f63613e21674b5cf6a666a9d6fb55f7db4bfa4d6c41a9c",
+  "missing_items": [
+    "ML-05 and ML-05-B current native execution artifacts and validation",
+    "Complete nine-repository final verification and canonical promotion"
+  ],
+  "native_passed_ids": [
+    "ML-01",
+    "ML-02",
+    "ML-03",
+    "ML-04",
+    "ML-06",
+    "ML-07",
+    "ML-08",
+    "ML-09",
+    "ML-02-B",
+    "ML-08-B"
+  ],
+  "native_required_ids": [
+    "ML-01",
+    "ML-02",
+    "ML-03",
+    "ML-04",
+    "ML-05",
+    "ML-06",
+    "ML-07",
+    "ML-08",
+    "ML-09",
+    "ML-02-B",
+    "ML-05-B",
+    "ML-08-B"
+  ],
+  "publication_ready": false,
+  "published_repositories": 0,
+  "required_extraction_ids": [
+    "ML-01",
+    "ML-02",
+    "ML-03",
+    "ML-04",
+    "ML-05",
+    "ML-06",
+    "ML-07",
+    "ML-08",
+    "ML-09"
+  ],
+  "reviewed_total": 338,
+  "schema_version": "suite-readiness-1",
+  "score_state": "reviewed_scores_not_final_verified_suite",
+  "status": "reviewed_unverified",
+  "suite_id": "matlab-simulink"
+}

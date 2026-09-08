@@ -1,0 +1,68 @@
+{
+  "aggregation": "separate_suite_scores_no_raw_sum",
+  "benchmark_id": "cockpit-benchmark",
+  "default_suite": "android-validation18",
+  "integration_status": "prepared_not_published",
+  "planned_release": "v0.9.0",
+  "schema_version": "benchmark-suites-1",
+  "suites": [
+    {
+      "canonical_scores": {
+        "path": "STANDARD_SCORES.json",
+        "sha256": "e9cd19b528cfdf06a4a6f095de8910c3ff3a0a6bf3a028656ba9fd844293c807"
+      },
+      "contract": {
+        "path": "SCORE_RULES.md",
+        "sha256": "bcbbe577dd3b62862d48efb18bfcd17a86d749631ac6c282b73a1f2215b5689a"
+      },
+      "id": "android-validation18",
+      "leaf_count": 171,
+      "manifest": {
+        "path": "manifest.json",
+        "sha256": "35ec4573fa8706e8c71bec1b56eb57af37573d55db6998d5ad2c62bec804c68d"
+      },
+      "max_score": 828,
+      "name": "Android APP / Framework Validation-18",
+      "published_repositories": 18,
+      "readiness": null,
+      "release_url": "https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.8.6",
+      "repository_count": 18,
+      "restore": "android",
+      "reviewed_scores": null,
+      "score": 271,
+      "status": "published",
+      "version": "v0.8.6"
+    },
+    {
+      "canonical_scores": null,
+      "contract": {
+        "path": "suites/matlab-simulink/contract-index.json",
+        "sha256": "d63e2da4840178571af2ced5ce89f53c42fcf48ddc4c38a37d78aec93ef1ce1f"
+      },
+      "id": "matlab-simulink",
+      "leaf_count": 117,
+      "manifest": {
+        "path": "suites/matlab-simulink/manifest.json",
+        "sha256": "7b7ca359c156c9b86d60db75dd1367ef36ae2a8383ad81bda582a4794a7471b0"
+      },
+      "max_score": 549,
+      "name": "MATLAB / Simulink",
+      "published_repositories": 0,
+      "readiness": {
+        "path": "suites/matlab-simulink/VALIDATION_STATUS.json",
+        "sha256": "080ea47b67f26308544f5b4eadf6a089a7aa871c9f531d850296198b4d5fdeab"
+      },
+      "release_url": null,
+      "repository_count": 9,
+      "restore": "matlab",
+      "reviewed_score": 338,
+      "reviewed_scores": {
+        "path": "suites/matlab-simulink/review/STANDARD_SCORES.json",
+        "sha256": "780a1aa909674ef819233bf736e153af31ac56120596b9142f8ddbd0eb8954db"
+      },
+      "score": null,
+      "status": "reviewed_unverified",
+      "version": null
+    }
+  ]
+}
