@@ -1,5 +1,5 @@
-# v0.8.5 maintainer replay inputs
+# v0.8.6 maintainer replay inputs
 
-[validation18-verification-data-v0.8.5.zip](https://github.com/cockpit-bench/cockpit-benchmark/releases/download/v0.8.5/validation18-verification-data-v0.8.5.zip) (4880976 bytes). SHA-256: `4c3f2b20a90b66d17e5acc88498782623e04350241ede9ad44b303d22b1a1257`.
+[validation18-verification-data-v0.8.6.zip](https://github.com/cockpit-bench/cockpit-benchmark/releases/download/v0.8.6/validation18-verification-data-v0.8.6.zip) (5009634 bytes). SHA-256: `9a19284d29f55b9e922e3ee2c7ca5dba37598bd553dc2cf8ca9c7d9cba46f36c`.
 
-Use the matching verifier and extract outside wrapper/source inputs. This pack contains disclosed scope partitions, counts and reviewed observations, not candidate input. Recounted C++ files and execution checks leave all 171 scores unchanged (277/828). Source refs and contract remain frozen. Replay is not a new semantic review or Android execution.
+Use matching v0.8.6 tools and contract v3.5; extract outside wrapper/source inputs. Contains disclosed source partitions/counts and reviewed rule observations including full API governance inventories. No source repositories, Git objects or dependencies. Replay reproduces 171 leaves, 271/828; it is not a new semantic review or Android execution.

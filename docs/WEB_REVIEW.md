@@ -1,3 +1,5 @@
+Current v0.8.6: API scope B under SCORE_RULES.md v3.5 supersedes earlier API-scope statements below; see API_GOVERNANCE.md. Other leaf contracts remain unchanged.
+
 # 网页版 Review 入口：真实仓库形态与标准答案
 
 本页用于审阅已发布的 Android Validation-18 重建结果。指导原文见 [REAL_REPOSITORY_GUIDANCE.md](REAL_REPOSITORY_GUIDANCE.md)，按本地用户提供文件逐字节保留；它是生产扫描的 Markdown 整理材料，不是原始逐仓扫描包。

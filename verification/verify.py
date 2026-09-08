@@ -13,7 +13,7 @@ import re
 import subprocess
 from pathlib import Path, PurePosixPath
 from counting import strip_c_like_comments, count_production_lines
-from rules import RULES, semantic_rule, integration_execution_metrics
+from rules import RULES, semantic_rule, integration_execution_metrics, api_governance_boundaries
 
 
 def encoded(value):
@@ -181,6 +181,37 @@ def compute_leaf(record):
     score = RULES[record['name']](record['facts'])
     require(isinstance(score, int), 'Failed or unresolved rule')
     return score
+
+
+def check_api_governance(facts, snap, data=None, package=None):
+    require(facts.get('evaluation_revision') == snap.head, 'API evaluation revision differs')
+    if data is not None:
+        inventory=facts['api_governance'].get('source_inventory')
+        require(isinstance(inventory,dict),'API source inventory missing')
+        path=safe_path(inventory['path'])
+        require(path in package['files_sha256'],'API source inventory not hashed')
+        body=(data/path).read_bytes()
+        require(sha(body)==inventory['sha256']==package['files_sha256'][path],'API source inventory hash differs')
+        record=json.loads(body)
+        require(record.get('head')==snap.head,'API source inventory stale')
+        require(record.get('tracked_paths_sha256')==sha(encoded(sorted(snap.entries))),'API source inventory tree differs')
+    for boundary in api_governance_boundaries(facts):
+        bindings=boundary.get('binding_files',[])
+        require(isinstance(bindings,list),'API binding files must be listed')
+        paths=[]
+        for artifact in bindings:
+            path=safe_path(artifact['path']);paths.append(path)
+            require(artifact.get('commit')==snap.head,'API artifact revision differs')
+            body=snap.body(path)
+            require(sha(body)==artifact['source_sha256'],'API artifact SHA differs: '+path)
+            require(snap.entries[path]['oid']==artifact['git_blob'],'API artifact blob differs: '+path)
+        require(len(paths)==len(set(paths)),'Duplicate API binding artifact')
+        anchors=boundary['evidence']
+        require(len({(e.get('path'), e.get('start_line'), e.get('end_line'), e.get('json_pointer')) for e in anchors})>=2,
+                'API boundary needs independent source anchors')
+        for anchor in anchors:
+            require(anchor.get('source') == 'repository' and bool(anchor.get('source_sha256')), 'API evidence needs frozen source bytes')
+            check_anchor(snap, anchor)
 
 
 def check_substitution_execution(facts, head, data, package):
@@ -416,6 +447,8 @@ def verify(args):
                 check_substitution_execution(leaf['facts'], snap.head, args.data, package)
             if leaf['name'] == 'quality.integration_test':
                 check_integration_execution(leaf['facts'], snap, args.data, package)
+            if leaf['name'] == 'compilation.api_version_management':
+                check_api_governance(leaf['facts'], snap, args.data, package)
             prediction = compute_leaf(leaf)
             key = (rid, leaf['name'])
             require(key in expected, 'Unexpected leaf')

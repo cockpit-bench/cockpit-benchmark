@@ -1,3 +1,5 @@
+Current v0.8.6: API scope B under SCORE_RULES.md v3.5 supersedes earlier API-scope statements below; see [API governance schema and limits](../docs/API_GOVERNANCE.md). Other leaf contracts remain unchanged.
+
 # Public verification
 
 Python 3.11+ and Git are required. This tool reads frozen Git blobs and does not run source build scripts.

@@ -1,6 +1,6 @@
 # 叶 × 档位 × 证据状态覆盖
 
-基线：v0.8.5 的 18 仓标准答案；不读取 Agent 预测。
+基线：v0.8.6 的 18 仓标准答案；不读取 Agent 预测。
 
 样本内类型×叶众数基线：**130/171 = 76.0%**。这不是独立测试准确率，也不检查理由或证据质量。
 
@@ -16,7 +16,7 @@
 | APP | compilation.compilation_independence | 0:2, 1:2, 2:5 | 3 |
 | APP | platform_reuse.platform_upgrade | 0:2, 3:7 | 8, 10 |
 | APP | platform_reuse.release_branch_strategy | 0:9 | 3, 8, 10 |
-| FRAMEWORK | compilation.api_version_management | 0:2, 1:1, 3:6 | 2 |
+| FRAMEWORK | compilation.api_version_management | 0:2, 1:1, 2:6 | 3 |
 | FRAMEWORK | compilation.ci_independence | 1:9 | 0, 2, 3 |
 | FRAMEWORK | compilation.compilation_independence | 0:7, 1:2 | 2, 3 |
 | FRAMEWORK | platform_reuse.platform_upgrade | 0:1, 3:8 | 8, 10 |

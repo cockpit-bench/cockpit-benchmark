@@ -101,11 +101,58 @@ def compilation(f):
     return 3 if gate(*(positive(f,k) for k in ['critical_cross_repo_api_versions_locked','real_compatibility_check_or_commitment','repeatable_or_hermetic_environment'])) else 2
 
 def api(f):
-    if gate(positive(f,'api_version_controlled'),positive(f,'real_public_api_or_abi_compatibility_diff')):return 3
+    boundaries = api_governance_boundaries(f)
+    critical = [b for b in boundaries if b['critical']]
+    if critical and all(b['covered'] for b in critical):return 3
     semver,=need(f,'semantic_api_versioning')
-    if semver:return 2
+    if type(semver) is not bool:raise Missing(['semantic_api_versioning must be boolean'])
+    if semver or any(b['real_compatibility_check'] or b['fixed_external_responsibility_verified'] for b in critical):return 2
     version,=need(f,'manual_api_version_exists')
+    if type(version) is not bool:raise Missing(['manual_api_version_exists must be boolean'])
     return 1 if version else 0
+
+
+def api_governance_boundaries(f):
+    """Validate reviewed scope and responsibility; never infer completeness.
+
+    Source evidence is separately checked by verify.py. A valid record describes
+    a mechanism, not a successful execution or independently proved semantics.
+    """
+    def require(value,message):
+        if not value:raise Missing(['API governance: '+message])
+    def string(value):return isinstance(value,str) and bool(value.strip())
+    revision,governance=need(f,'evaluation_revision','api_governance')
+    require(isinstance(revision,str) and re.fullmatch('[0-9a-f]{40}',revision),'invalid revision')
+    require(isinstance(governance,dict),'inventory required')
+    require(governance.get('revision')==revision,'stale inventory')
+    require(governance.get('inventory_complete') is True and governance.get('unresolved')==[], 'scope or responsibility unresolved')
+    require(string(governance.get('scope_basis')),'scope basis absent')
+    boundaries=governance.get('boundaries')
+    require(isinstance(boundaries,list) and bool(boundaries),'nonempty reviewed inventory required')
+    ids=[]
+    for b in boundaries:
+        require(isinstance(b,dict),'invalid boundary')
+        for key in ['id','type','owner','consumer','scope_basis','version_baseline','mechanism','coverage_reason']:
+            require(string(b.get(key)),'empty '+key)
+        ids.append(b['id'])
+        require(b.get('role') in {'provided','consumed','internal'},'invalid role')
+        for key in ['critical','owns_contract','covered','version_controlled','real_compatibility_check','fixed_external_responsibility_verified']:
+            require(type(b.get(key)) is bool,'invalid '+key)
+        require(isinstance(b.get('evidence'),list) and len(b['evidence'])>=2,'two source anchors required')
+        if not b['critical']:
+            require(not b['covered'] and not b['real_compatibility_check'] and not b['fixed_external_responsibility_verified'], 'excluded boundary claims coverage')
+        if b['real_compatibility_check']:
+            require(b['critical'] and b['version_controlled'],'compatibility check lacks version/criticality')
+            require(string(b.get('current_binding')) and string(b.get('released_binding')),'current/released binding absent')
+        if b['fixed_external_responsibility_verified']:
+            require(not b['owns_contract'] and b['critical'] and b['version_controlled'],'invalid external responsibility')
+            require(string(b.get('current_binding')) and string(b.get('released_binding')),'external version/commitment binding absent')
+        if b['covered']:
+            require(b['critical'] and b['version_controlled'] and
+                    (b['real_compatibility_check'] or b['fixed_external_responsibility_verified']), 'unsupported full coverage')
+            if b['owns_contract']:require(b['real_compatibility_check'],'owned contract needs actual extraction/diff')
+    require(len(ids)==len(set(ids)),'duplicate boundaries')
+    return boundaries
 
 def integration(f):
     metrics = integration_execution_metrics(f)
@@ -285,7 +332,7 @@ INPUT_KEYS={
  'architecture.modularization':['has_circular_dependency','real_build_module_count','standard_named_module_count','cohesive_module_count','module_build_test_entry_or_clear_api_implementation_boundary','module_responsibilities_identifiable','has_layered_directory','has_business_packages'],
  'compilation.ci_independence':['valid_independent_ci_exists','valid_platform_ci_exists','ci_has_real_build','ci_has_real_test','ci_has_quality_or_report','ci_steps_executable'],
  'compilation.compilation_independence':['requires_platform_tree_or_undeclared_external_source','meaningful_independent_production_unit_exists','full_build_requires_unversioned_platform_injection','repository_source_module_closure_complete','external_dependencies_declared_interfaces','repeatable_module_build_entry','critical_cross_repo_api_versions_locked','real_compatibility_check_or_commitment','repeatable_or_hermetic_environment'],
- 'compilation.api_version_management':['api_version_controlled','real_public_api_or_abi_compatibility_diff','semantic_api_versioning','manual_api_version_exists'],
+ 'compilation.api_version_management':['evaluation_revision','api_governance','semantic_api_versioning','manual_api_version_exists'],
  'quality.integration_test':['valid_integration_assertions_and_interface_behavior','final_head_integration_execution_exists','final_head_android_integration_execution_exists','evaluation_revision','integration_execution','majority_tests_pass','defined_key_interaction_coverage_ratio','executed_test_pass_ratio'],
  'solid_principle.liskov_substitution':['parent_symbol','child_symbols','overridden_methods','empty_override_violation_count','unconditional_throw_violation_count','precondition_risk_count','postcondition_risk_count','multiple_unexplained_override_or_exception_risks','production_implementation_count','substitution_test_count','systematic_contract_tests_cover_exception_boundary_pre_post','evaluation_revision','substitution_execution'],
  'platform_reuse.platform_upgrade':['version_bound_status','arch_bound_status','single_abi_closed_dependency_without_fallback','multiple_unstable_core_paths_without_isolation','permission_or_platform_hardcoding_blocks_core_migration','has_non_compatible_api','non_compatible_api_all_covered','has_complex_permission_adaptation','has_arch_specific_deps','has_interface_abstraction','automated_compatibility_validation_at_least_two_android_versions','risks_all_localized_in_compat_layer','risk_fallback_available'],
