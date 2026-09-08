@@ -30,12 +30,14 @@ class RegistryTests(unittest.TestCase):
         entry=registry['suites'][1][field];p=self.root/entry['path'];value=suites.read(p)
         edit(value);p.write_bytes(suites.encoded(value));entry['sha256']=suites.sha(p.read_bytes())
 
-    def test_prepared_state_is_valid_but_not_publishable(self):
+    def test_finalized_local_state_is_valid(self):
         result=suites.validate(self.root)
-        self.assertEqual([s['score'] for s in result['suites']],[271,None])
-        with self.assertRaises(suites.InvalidSuite):suites.validate(self.root,True)
+        self.assertEqual([s['score'] for s in result['suites']],[271,338])
+        if result['integration_status']!='published':
+            with self.assertRaises(suites.InvalidSuite):suites.validate(self.root,True)
 
     def test_unready_matlab_and_all_fail_before_mutation_or_network(self):
+        r=self.registry();r['integration_status']='prepared_not_published';r['suites'][1]['status']='verified_local';self.save(r)
         for choice in ['matlab-simulink','all']:
             destination=Path(self.temp.name)/choice
             with patch.object(suites,'git',side_effect=AssertionError('Network must not run')):
@@ -44,27 +46,28 @@ class RegistryTests(unittest.TestCase):
 
     def test_source_score_head_mismatch_is_rejected_after_rehash(self):
         r=self.registry()
-        self.change_artifact(r,'reviewed_scores',lambda s:s['repos'][0].update(head='1'*40))
+        self.change_artifact(r,'canonical_scores',lambda s:s['repos'][0].update(head='1'*40))
         self.save(r)
         with self.assertRaises(suites.InvalidSuite):suites.validate(self.root)
 
     def test_missing_native_cannot_be_hidden(self):
         r=self.registry()
-        self.change_artifact(r,'readiness',lambda s:s.update(blocked_native_ids=[]))
+        self.change_artifact(r,'readiness',lambda s:s['native_passed_ids'].remove('ML-05-B'))
         self.save(r)
         with self.assertRaises(suites.InvalidSuite):suites.validate(self.root)
 
     def test_status_flag_cannot_promote_review(self):
-        r=self.registry();r['suites'][1]['status']='published'
+        r=self.registry();r['suites'][1]['status']='published';r['suites'][1]['canonical_scores']=None
         self.change_artifact(r,'readiness',lambda s:s.update(status='published',canonical_ready=True,publication_ready=True))
         self.save(r)
         with self.assertRaises(suites.InvalidSuite):suites.validate(self.root)
-        # There is deliberately no published-MATLAB export format in preparation.
-        # Even a rehashed completion summary cannot activate it.
+        # A rehashed completion summary cannot replace the complete evidence graph.
         r['suites'][1].update(published_repositories=9,score=338,version='v0.9.0',
                              release_url='https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.9.0')
         self.save(r)
-        with self.assertRaisesRegex(suites.InvalidSuite,'publication disabled'):suites.validate(self.root,True)
+        self.change_artifact(r,'readiness',lambda s:s.update(evidence_index={'path':'missing-raw-evidence.json','sha256':'0'*64}))
+        self.save(r)
+        with self.assertRaises((suites.InvalidSuite,KeyError)):suites.validate(self.root,True)
 
     def test_unknown_totals_and_cross_suite_ids_are_rejected(self):
         r=self.registry();r['total']=609;self.save(r)
@@ -86,8 +89,20 @@ class RegistryTests(unittest.TestCase):
         def mutate(s):
             row=s['repos'][0];row['scores']['unit_test']=4
             row['total']=sum(row['scores'].values());s['total']=sum(x['total'] for x in s['repos'])
-        self.change_artifact(r,'reviewed_scores',mutate);self.save(r)
+        self.change_artifact(r,'canonical_scores',mutate);self.save(r)
         with self.assertRaises(suites.InvalidSuite):suites.validate(self.root)
+
+    def test_all_dispatches_separate_destinations_and_preserves_options(self):
+        registry=self.registry()
+        destination=Path(self.temp.name)/'all-target'
+        with patch.object(suites,'validate',return_value=registry), patch.object(suites.shutil,'which',return_value='powershell'), \
+             patch.object(suites.subprocess,'run') as powershell, patch.object(suites,'restore_matlab') as matlab:
+            suites.restore(self.root,'all',destination,resume=True,include_submodules=True)
+        command=powershell.call_args.args[0]
+        self.assertIn(str(destination/'android-validation18'),command)
+        self.assertIn('-Resume',command);self.assertIn('-IncludeSubmodules',command)
+        self.assertEqual(matlab.call_args.args[1],destination/'matlab-simulink')
+        self.assertTrue(matlab.call_args.args[2])
 
 class RestoreTests(unittest.TestCase):
     def test_git_restore_and_resume_validate_full_inventory_and_refs(self):

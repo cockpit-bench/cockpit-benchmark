@@ -1,0 +1,643 @@
+{
+  "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+  "id": "ML-08",
+  "leaves": [
+    {
+      "contract_section": "2.1",
+      "evidence": [
+        {
+          "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "json_pointer": "/leaves/hierarchy",
+          "kind": "artifact",
+          "model_sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "path": "attachment/sha256/63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef",
+          "sha256": "63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:1",
+          "symbol": "ThermalNetworkController/Processing"
+        },
+        {
+          "line": 824,
+          "matched_text": "\"id\": \"Processing/DriverTemperatureLowValidThreshold\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:2",
+          "symbol": "ThermalNetworkController/Utility"
+        },
+        {
+          "line": 11016,
+          "matched_text": "\"id\": \"Utility/HeatingTotal\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        }
+      ],
+      "id": "hierarchy",
+      "max_score": 3,
+      "reason": "Processing contains 1194 direct blocks covering all 16 zones; Utility 135 holds reference/allocation. Responsibilities and granularity are coarse.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.2",
+      "evidence": [
+        {
+          "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "json_pointer": "/leaves/reuse",
+          "kind": "artifact",
+          "model_sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "path": "attachment/sha256/63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef",
+          "sha256": "63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:588",
+          "symbol": "ThermalNetworkController/Processing/BatteryBayValveBias"
+        },
+        {
+          "line": 5842,
+          "matched_text": "\"id\": \"Processing/BatteryBayValveBias\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:768",
+          "symbol": "ThermalNetworkController/Processing/ChargeInletValveBias"
+        },
+        {
+          "line": 7714,
+          "matched_text": "\"id\": \"Processing/ChargeInletValveBias\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:521",
+          "symbol": "ThermalNetworkController/Processing/RearGlassBlowerNext"
+        },
+        {
+          "line": 5149,
+          "matched_text": "\"id\": \"Processing/RearGlassBlowerNext\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:391",
+          "symbol": "ThermalNetworkController/Processing/WindshieldBlowerNext"
+        },
+        {
+          "line": 3802,
+          "matched_text": "\"id\": \"Processing/WindshieldBlowerNext\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        }
+      ],
+      "id": "reuse",
+      "max_score": 3,
+      "reason": "16 qualified-temperature/PI/blower/control paths use separate block copies; differing physical zone ratings do not remove algorithm duplication.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.3",
+      "evidence": [
+        {
+          "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "json_pointer": "/leaves/interface",
+          "kind": "artifact",
+          "model_sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "path": "attachment/sha256/63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef",
+          "sha256": "63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:5",
+          "symbol": "ThermalNetworkController/AvailableElectricalW"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:1383",
+          "symbol": "ThermalNetworkController/WindshieldValveDemand"
+        },
+        {
+          "line": 9,
+          "matched_text": "| AvailableElectricalW | W | 0 to 60000 | 18000 |",
+          "path": "Documentation/interfaces.md",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "174bfa3568b7cad832869971a5967aa43672ed7f585ab4f9bea8f4a0623671a1"
+        },
+        {
+          "line": 129,
+          "matched_text": "| WindshieldValveDemand | 1 |",
+          "path": "Documentation/interfaces.md",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "174bfa3568b7cad832869971a5967aa43672ed7f585ab4f9bea8f4a0623671a1"
+        }
+      ],
+      "id": "interface",
+      "max_score": 3,
+      "reason": "Root inputs/outputs are semantic explicit scalar ports. Controlled variants additionally document every type/unit/domain and require interface/test/change-log updates; other variants lack full output range/change-control record.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 2
+    },
+    {
+      "contract_section": "2.4",
+      "evidence": [
+        {
+          "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "json_pointer": "/leaves/dataflow",
+          "kind": "artifact",
+          "model_sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "path": "attachment/sha256/63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef",
+          "sha256": "63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:578",
+          "symbol": "ThermalNetworkController/Processing/BatteryBayBlowerPrevious"
+        },
+        {
+          "line": 5740,
+          "matched_text": "\"id\": \"Processing/BatteryBayBlowerPrevious\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:581",
+          "symbol": "ThermalNetworkController/Processing/BatteryBayBlowerNext"
+        },
+        {
+          "line": 5773,
+          "matched_text": "\"id\": \"Processing/BatteryBayBlowerNext\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:583",
+          "symbol": "ThermalNetworkController/Processing/BatteryBayBlowerPermission"
+        },
+        {
+          "line": 5792,
+          "matched_text": "\"id\": \"Processing/BatteryBayBlowerPermission\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:553",
+          "symbol": "ThermalNetworkController/Processing/BatteryBayTemperaturePrevious"
+        },
+        {
+          "line": 5470,
+          "matched_text": "\"id\": \"Processing/BatteryBayTemperaturePrevious\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:555",
+          "symbol": "ThermalNetworkController/Processing/BatteryBayTemperatureOldWeight"
+        },
+        {
+          "line": 5491,
+          "matched_text": "\"id\": \"Processing/BatteryBayTemperatureOldWeight\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:556",
+          "symbol": "ThermalNetworkController/Processing/BatteryBayTemperatureFiltered"
+        },
+        {
+          "line": 5501,
+          "matched_text": "\"id\": \"Processing/BatteryBayTemperatureFiltered\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        }
+      ],
+      "id": "dataflow",
+      "max_score": 3,
+      "reason": "Explicit public ports and mostly semantic signals, but enormous two-container diagram and generic intermediate labels impede tracing; no implicit storage/jumps.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.5",
+      "evidence": [
+        {
+          "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "json_pointer": "/leaves/unit_test",
+          "kind": "artifact",
+          "model_sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "path": "attachment/sha256/63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef",
+          "sha256": "63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef"
+        },
+        {
+          "line": 29,
+          "matched_text": "assert(numel(data)==n,'Sample count mismatch');actual(:,k)=data(:);",
+          "path": "run_tests.m",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "b829a3eae552247648b8823b02f40f9cc0ea438172cb9ebf6806ae3d77842f7c"
+        },
+        {
+          "line": 42,
+          "matched_text": "result.coverage=struct('filter',out.covData.filter,'decision',decisioninfo(out.covData,m), ...",
+          "path": "run_tests.m",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "b829a3eae552247648b8823b02f40f9cc0ea438172cb9ebf6806ae3d77842f7c"
+        }
+      ],
+      "id": "unit_test",
+      "max_score": 5,
+      "reason": "Valid per-sample assertions against numerical expectations; current-model decision coverage [661, 738]. The coverage evidence records included datasets, matching model checksums and excluded stale results; no fixed report filename is used as a scoring gate.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 5
+    },
+    {
+      "contract_section": "2.6",
+      "evidence": [
+        {
+          "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "json_pointer": "/leaves/naming",
+          "kind": "artifact",
+          "model_sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "path": "attachment/sha256/63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef",
+          "sha256": "63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:114",
+          "symbol": "ThermalNetworkController/Processing/Block10"
+        },
+        {
+          "line": 915,
+          "matched_text": "\"id\": \"Processing/Block10\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:204",
+          "symbol": "ThermalNetworkController/Processing/Block100"
+        },
+        {
+          "line": 1862,
+          "matched_text": "\"id\": \"Processing/Block100\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:608",
+          "symbol": "ThermalNetworkController/Processing/FrontElectronicsTemperatureHighValidThreshold"
+        },
+        {
+          "line": 6043,
+          "matched_text": "\"id\": \"Processing/FrontElectronicsTemperatureHighValidThreshold\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:606",
+          "symbol": "ThermalNetworkController/Processing/FrontElectronicsTemperatureLowValidThreshold"
+        },
+        {
+          "line": 6024,
+          "matched_text": "\"id\": \"Processing/FrontElectronicsTemperatureLowValidThreshold\",",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        }
+      ],
+      "id": "naming",
+      "max_score": 5,
+      "reason": "Semantic review: mostly_meaningful; generic blocks 209/1518, named line records 2067/2067. Ratios support, not replace, the source naming judgment.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.7",
+      "evidence": [
+        {
+          "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "json_pointer": "/leaves/directory",
+          "kind": "artifact",
+          "model_sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "path": "attachment/sha256/63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef",
+          "sha256": "63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef"
+        },
+        {
+          "kind": "complete Git tree",
+          "path": ".",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "tree": "82d42c93352d10093a05a18ec4500a9839afb1ab"
+        }
+      ],
+      "id": "directory",
+      "max_score": 5,
+      "reason": "Model, UnitTest, Documentation and generated Src separate responsibilities; root launchers are entry points.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 5
+    },
+    {
+      "contract_section": "2.8",
+      "evidence": [
+        {
+          "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "json_pointer": "/leaves/build_independence",
+          "kind": "artifact",
+          "model_sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "path": "attachment/sha256/63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef",
+          "sha256": "63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef"
+        },
+        {
+          "line": 16,
+          "matched_text": "load_system('simulink'); new_system(m);",
+          "path": "build_model.m",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        }
+      ],
+      "id": "build_independence",
+      "max_score": 3,
+      "reason": "External business dependencies: []. Actual model callbacks, reference blocks and build source inventory are linked. MATLAB tool environment is separate under the user override; execution status is reported independently.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.9",
+      "evidence": [
+        {
+          "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "json_pointer": "/leaves/model_version",
+          "kind": "artifact",
+          "model_sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "path": "attachment/sha256/63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef",
+          "sha256": "63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef"
+        },
+        {
+          "line": 20,
+          "matched_text": "'StopTime','1','ModelVersionFormat',g.version,'SystemTargetFile','ert.tlc');",
+          "path": "build_model.m",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        },
+        {
+          "line": 3,
+          "matched_text": "## 2026-09-08 — hard budget correction",
+          "path": "Documentation/CHANGELOG.md",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "528ff78d803f193c83eae3d3060035bbe003220268914d31ff9bb605816c3de0"
+        }
+      ],
+      "id": "model_version",
+      "max_score": 3,
+      "reason": "README identifies internal R1; a dated hard-budget correction ledger now exists but lacks a corresponding release identifier and complete version-linked signal history.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.10",
+      "evidence": [
+        {
+          "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "json_pointer": "/leaves/version_independence",
+          "kind": "artifact",
+          "model_sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "path": "attachment/sha256/63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef",
+          "sha256": "63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef"
+        },
+        {
+          "line": 20,
+          "matched_text": "'StopTime','1','ModelVersionFormat',g.version,'SystemTargetFile','ert.tlc');",
+          "path": "build_model.m",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+              "object_oid": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-A",
+              "tree_oid": "82d42c93352d10093a05a18ec4500a9839afb1ab"
+            },
+            {
+              "commit_oid": "02db46ea92b440e473deec12f45d0e148567bd89",
+              "object_oid": "02db46ea92b440e473deec12f45d0e148567bd89",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-B",
+              "tree_oid": "25b9308a1cfe041f6506f030d75f7924a3451a1d"
+            }
+          ]
+        }
+      ],
+      "id": "version_independence",
+      "max_score": 3,
+      "reason": "Actual model version R1 and full refs inspected; no version inferred from Git commit existence.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.11",
+      "evidence": [
+        {
+          "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "json_pointer": "/leaves/release_branches",
+          "kind": "artifact",
+          "model_sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "path": "attachment/sha256/63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef",
+          "sha256": "63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+              "object_oid": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-A",
+              "tree_oid": "82d42c93352d10093a05a18ec4500a9839afb1ab"
+            },
+            {
+              "commit_oid": "02db46ea92b440e473deec12f45d0e148567bd89",
+              "object_oid": "02db46ea92b440e473deec12f45d0e148567bd89",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-B",
+              "tree_oid": "25b9308a1cfe041f6506f030d75f7924a3451a1d"
+            }
+          ]
+        },
+        {
+          "line": 9,
+          "matched_text": "Internal model release R1. Integration branches separate platform releases.",
+          "path": "README.md",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "a70e212195b41005c9a04132b929ff0d55ee90b60c04e8efd27d4cde1b156905"
+        },
+        {
+          "line": 11,
+          "matched_text": "Platform integration uses platform/VCU-A and platform/VCU-B release lines. VCU-A is the default delivery. VCU-B adapts the cooling or torque ratings for a different hardware package.",
+          "path": "README.md",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "a70e212195b41005c9a04132b929ff0d55ee90b60c04e8efd27d4cde1b156905"
+        }
+      ],
+      "id": "release_branches",
+      "max_score": 10,
+      "reason": "VCU-A and VCU-B have different calibration trees; actual MIL and generated C replay passed on both.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 8
+    },
+    {
+      "contract_section": "2.12",
+      "evidence": [
+        {
+          "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "json_pointer": "/leaves/device_specificity",
+          "kind": "artifact",
+          "model_sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "path": "attachment/sha256/63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef",
+          "sha256": "63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+              "object_oid": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-A",
+              "tree_oid": "82d42c93352d10093a05a18ec4500a9839afb1ab"
+            },
+            {
+              "commit_oid": "02db46ea92b440e473deec12f45d0e148567bd89",
+              "object_oid": "02db46ea92b440e473deec12f45d0e148567bd89",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-B",
+              "tree_oid": "25b9308a1cfe041f6506f030d75f7924a3451a1d"
+            }
+          ]
+        },
+        {
+          "line": 9,
+          "matched_text": "Internal model release R1. Integration branches separate platform releases.",
+          "path": "README.md",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "a70e212195b41005c9a04132b929ff0d55ee90b60c04e8efd27d4cde1b156905"
+        },
+        {
+          "line": 11,
+          "matched_text": "Platform integration uses platform/VCU-A and platform/VCU-B release lines. VCU-A is the default delivery. VCU-B adapts the cooling or torque ratings for a different hardware package.",
+          "path": "README.md",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "a70e212195b41005c9a04132b929ff0d55ee90b60c04e8efd27d4cde1b156905"
+        }
+      ],
+      "id": "device_specificity",
+      "max_score": 10,
+      "reason": "VCU-A/B identify platforms; branch-held calibration changes implement hardware differences.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 8
+    },
+    {
+      "contract_section": "2.13",
+      "evidence": [
+        {
+          "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "json_pointer": "/leaves/parameter_management",
+          "kind": "artifact",
+          "model_sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "path": "attachment/sha256/63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef",
+          "sha256": "63ae38f2c0aa2b3d41d8df0621f2bacb8915d7e734563fcc2ad7adb5f9e75eef"
+        },
+        {
+          "line": 12176,
+          "matched_text": "\"BatteryBayThermalControl_BatteryBayCoolerRated\": 2250.0,",
+          "path": "Model/model.json",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "da82bf9ff177a9f73093cd8081d4ff29f22fc9f115954e06460d1310f26bf8e0"
+        },
+        {
+          "path": "Model/ThermalNetworkController.slx",
+          "ref": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+          "sha256": "6a01530e6af2ecb408d25b936bfaea49922da6db1c0e8be9ad88733ef5fba3ae",
+          "sid": "ThermalNetworkController:585",
+          "symbol": "ThermalNetworkController/Processing/BatteryBayCoolerRated"
+        }
+      ],
+      "id": "parameter_management",
+      "max_score": 5,
+      "reason": "32 heater/cooler ratings centralized and consumed; filter, PI, validity and actuator thresholds remain scattered literals. Parameter audit: {'parameters': 32, 'consumer_fields': 32, 'unique_consumer_fields': 32, 'pass': 32, 'unresolved': 0, 'conflicts': 0}. Each definition and actual SID/field consumer has a separate value/type/unit verdict.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    }
+  ],
+  "schema_version": "1.0.0",
+  "status": "local_reference_scores",
+  "suite_id": "matlab-simulink",
+  "tree": "82d42c93352d10093a05a18ec4500a9839afb1ab"
+}

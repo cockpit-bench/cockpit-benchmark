@@ -1,0 +1,567 @@
+{
+  "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+  "id": "ML-03",
+  "leaves": [
+    {
+      "contract_section": "2.1",
+      "evidence": [
+        {
+          "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "json_pointer": "/leaves/hierarchy",
+          "kind": "artifact",
+          "model_sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "path": "attachment/sha256/7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25",
+          "sha256": "7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25"
+        },
+        {
+          "kind": "complete_flat_model",
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "symbol": "ChargeInterlockController",
+          "tree": "36f4ccff3169a9f28d5a47ce34f49dbf0bfe97a9"
+        }
+      ],
+      "id": "hierarchy",
+      "max_score": 3,
+      "reason": "No subsystem containers; one flat interlock and ramp graph.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 0
+    },
+    {
+      "contract_section": "2.2",
+      "evidence": [
+        {
+          "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "json_pointer": "/leaves/reuse",
+          "kind": "artifact",
+          "model_sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "path": "attachment/sha256/7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25",
+          "sha256": "7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:27",
+          "symbol": "ChargeInterlockController/Block18"
+        },
+        {
+          "line": 252,
+          "matched_text": "\"id\": \"Block18\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:47",
+          "symbol": "ChargeInterlockController/Block38"
+        },
+        {
+          "line": 456,
+          "matched_text": "\"id\": \"Block38\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        }
+      ],
+      "id": "reuse",
+      "max_score": 3,
+      "reason": "Two complete current-derating modules are separate copies: SLX SIDs 35->36->37->38->44 and 39->40->41->42->45 both implement I = 300 * clip((stop - x) * gain, 0, 1). The first uses SOC with (stop, gain) = (1, 5); the second uses temperature with (50, 0.1). Both outputs are in A and feed SID46 / Block37 inputs 2 and 3 for the common minimum-current limit. model.json lines 332-369, 372-409, 423-441 and 443-453 describe the same chains. No SubSystem, Library Link or Model Reference encapsulates them; unique permission-debounce and current-ramp logic does not remove this duplicated reusable algorithm.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.3",
+      "evidence": [
+        {
+          "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "json_pointer": "/leaves/interface",
+          "kind": "artifact",
+          "model_sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "path": "attachment/sha256/7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25",
+          "sha256": "7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:62",
+          "symbol": "ChargeInterlockController/Allowed"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:4",
+          "symbol": "ChargeInterlockController/VehicleSpeed"
+        }
+      ],
+      "id": "interface",
+      "max_score": 3,
+      "reason": "Root inputs/outputs are semantic explicit scalar ports. Controlled variants additionally document every type/unit/domain and require interface/test/change-log updates; other variants lack full output range/change-control record.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 2
+    },
+    {
+      "contract_section": "2.4",
+      "evidence": [
+        {
+          "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "json_pointer": "/leaves/dataflow",
+          "kind": "artifact",
+          "model_sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "path": "attachment/sha256/7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25",
+          "sha256": "7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:27",
+          "symbol": "ChargeInterlockController/Block18"
+        },
+        {
+          "line": 252,
+          "matched_text": "\"id\": \"Block18\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:29",
+          "symbol": "ChargeInterlockController/Block20"
+        },
+        {
+          "line": 271,
+          "matched_text": "\"id\": \"Block20\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:30",
+          "symbol": "ChargeInterlockController/Block21"
+        },
+        {
+          "line": 282,
+          "matched_text": "\"id\": \"Block21\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:32",
+          "symbol": "ChargeInterlockController/Block23"
+        },
+        {
+          "line": 301,
+          "matched_text": "\"id\": \"Block23\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:47",
+          "symbol": "ChargeInterlockController/Block38"
+        },
+        {
+          "line": 456,
+          "matched_text": "\"id\": \"Block38\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:50",
+          "symbol": "ChargeInterlockController/Block41"
+        },
+        {
+          "line": 489,
+          "matched_text": "\"id\": \"Block41\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        }
+      ],
+      "id": "dataflow",
+      "max_score": 3,
+      "reason": "Public port names identify major signals, but every internal line is anonymous and the flat graph has crossing branches. No Goto/From: do not infer implicit communication.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.5",
+      "evidence": [
+        {
+          "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "json_pointer": "/leaves/unit_test",
+          "kind": "artifact",
+          "model_sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "path": "attachment/sha256/7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25",
+          "sha256": "7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25"
+        },
+        {
+          "line": 29,
+          "matched_text": "assert(numel(data)==n,'Sample count mismatch');actual(:,k)=data(:);",
+          "path": "run_tests.m",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e2c4577d6c84f350264ff39f8a91b859434af633ad659734e1759f596eee52a8"
+        },
+        {
+          "line": 41,
+          "matched_text": "result.coverage=struct('filter',out.covData.filter,'decision',decisioninfo(out.covData,m), ...",
+          "path": "run_tests.m",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e2c4577d6c84f350264ff39f8a91b859434af633ad659734e1759f596eee52a8"
+        }
+      ],
+      "id": "unit_test",
+      "max_score": 5,
+      "reason": "Valid per-sample assertions against numerical expectations; current-model decision coverage [18, 29]. The coverage evidence records included datasets, matching model checksums and excluded stale results; no fixed report filename is used as a scoring gate.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.6",
+      "evidence": [
+        {
+          "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "json_pointer": "/leaves/naming",
+          "kind": "artifact",
+          "model_sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "path": "attachment/sha256/7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25",
+          "sha256": "7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:10",
+          "symbol": "ChargeInterlockController/Block1"
+        },
+        {
+          "line": 80,
+          "matched_text": "\"id\": \"Block1\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:19",
+          "symbol": "ChargeInterlockController/Block10"
+        },
+        {
+          "line": 164,
+          "matched_text": "\"id\": \"Block10\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:63",
+          "symbol": "ChargeInterlockController/CurrentLimitAmps"
+        },
+        {
+          "line": 620,
+          "matched_text": "\"name\": \"CurrentLimitAmps\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:2",
+          "symbol": "ChargeInterlockController/ConnectorLocked"
+        },
+        {
+          "line": 15,
+          "matched_text": "\"name\": \"ConnectorLocked\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        }
+      ],
+      "id": "naming",
+      "max_score": 5,
+      "reason": "Semantic review: opaque; generic blocks 52/65, named line records 0/80. Ratios support, not replace, the source naming judgment.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 0
+    },
+    {
+      "contract_section": "2.7",
+      "evidence": [
+        {
+          "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "json_pointer": "/leaves/directory",
+          "kind": "artifact",
+          "model_sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "path": "attachment/sha256/7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25",
+          "sha256": "7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25"
+        },
+        {
+          "kind": "complete Git tree",
+          "path": ".",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "tree": "36f4ccff3169a9f28d5a47ce34f49dbf0bfe97a9"
+        }
+      ],
+      "id": "directory",
+      "max_score": 5,
+      "reason": "Production model, model definition, test inputs and reference/test scripts share the root; tracked native coverage results are separated under slcov_output by model, so classification is partial.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.8",
+      "evidence": [
+        {
+          "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "json_pointer": "/leaves/build_independence",
+          "kind": "artifact",
+          "model_sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "path": "attachment/sha256/7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25",
+          "sha256": "7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25"
+        },
+        {
+          "line": 16,
+          "matched_text": "load_system('simulink'); new_system(m);",
+          "path": "build_model.m",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        }
+      ],
+      "id": "build_independence",
+      "max_score": 3,
+      "reason": "External business dependencies: []. Actual model callbacks, reference blocks and build source inventory are linked. MATLAB tool environment is separate under the user override; execution status is reported independently.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.9",
+      "evidence": [
+        {
+          "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "json_pointer": "/leaves/model_version",
+          "kind": "artifact",
+          "model_sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "path": "attachment/sha256/7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25",
+          "sha256": "7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25"
+        },
+        {
+          "line": 20,
+          "matched_text": "'StopTime','1','ModelVersionFormat',g.version,'SystemTargetFile','ert.tlc');",
+          "path": "build_model.m",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        }
+      ],
+      "id": "model_version",
+      "max_score": 3,
+      "reason": "No functional release number or change ledger; raw Git initialization is not a model release record.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 0
+    },
+    {
+      "contract_section": "2.10",
+      "evidence": [
+        {
+          "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "json_pointer": "/leaves/version_independence",
+          "kind": "artifact",
+          "model_sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "path": "attachment/sha256/7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25",
+          "sha256": "7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25"
+        },
+        {
+          "line": 20,
+          "matched_text": "'StopTime','1','ModelVersionFormat',g.version,'SystemTargetFile','ert.tlc');",
+          "path": "build_model.m",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+              "object_oid": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+              "object_type": "commit",
+              "ref": "refs/heads/C101-SOP",
+              "tree_oid": "36f4ccff3169a9f28d5a47ce34f49dbf0bfe97a9"
+            }
+          ]
+        }
+      ],
+      "id": "version_independence",
+      "max_score": 3,
+      "reason": "Actual model version unversioned and full refs inspected; no version inferred from Git commit existence.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 0
+    },
+    {
+      "contract_section": "2.11",
+      "evidence": [
+        {
+          "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "json_pointer": "/leaves/release_branches",
+          "kind": "artifact",
+          "model_sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "path": "attachment/sha256/7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25",
+          "sha256": "7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+              "object_oid": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+              "object_type": "commit",
+              "ref": "refs/heads/C101-SOP",
+              "tree_oid": "36f4ccff3169a9f28d5a47ce34f49dbf0bfe97a9"
+            }
+          ]
+        },
+        {
+          "line": 9,
+          "matched_text": "Integration target: C101-SOP. This repository keeps the vehicle-specific calibration in its model blocks and uses one SOP line.",
+          "path": "README.md",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "0fbb8e6bc3afd15f34d01eab7b7e7bf8431d34253b5ee4756dab8e5e4b7e161d"
+        }
+      ],
+      "id": "release_branches",
+      "max_score": 10,
+      "reason": "Single explicitly identified vehicle SOP branch and README integration target.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.12",
+      "evidence": [
+        {
+          "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "json_pointer": "/leaves/device_specificity",
+          "kind": "artifact",
+          "model_sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "path": "attachment/sha256/7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25",
+          "sha256": "7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+              "object_oid": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+              "object_type": "commit",
+              "ref": "refs/heads/C101-SOP",
+              "tree_oid": "36f4ccff3169a9f28d5a47ce34f49dbf0bfe97a9"
+            }
+          ]
+        },
+        {
+          "line": 9,
+          "matched_text": "Integration target: C101-SOP. This repository keeps the vehicle-specific calibration in its model blocks and uses one SOP line.",
+          "path": "README.md",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "0fbb8e6bc3afd15f34d01eab7b7e7bf8431d34253b5ee4756dab8e5e4b7e161d"
+        }
+      ],
+      "id": "device_specificity",
+      "max_score": 10,
+      "reason": "C101/C202/C303 explicitly identify single vehicle integration targets.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 0
+    },
+    {
+      "contract_section": "2.13",
+      "evidence": [
+        {
+          "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "json_pointer": "/leaves/parameter_management",
+          "kind": "artifact",
+          "model_sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "path": "attachment/sha256/7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25",
+          "sha256": "7e61819cdf0efb6df6c4e5355360a0cb5ae3eb8e83bf1f92a44a9318b3028a25"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:37",
+          "symbol": "ChargeInterlockController/Block28"
+        },
+        {
+          "line": 351,
+          "matched_text": "\"id\": \"Block28\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:41",
+          "symbol": "ChargeInterlockController/Block32"
+        },
+        {
+          "line": 391,
+          "matched_text": "\"id\": \"Block32\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        },
+        {
+          "path": "ChargeInterlockController.slx",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "e6c89cb9cd1f93533e1478142dde5540a453b6290e373ea83c6e899887560b2a",
+          "sid": "ChargeInterlockController:27",
+          "symbol": "ChargeInterlockController/Block18"
+        },
+        {
+          "line": 252,
+          "matched_text": "\"id\": \"Block18\",",
+          "path": "model.json",
+          "ref": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+          "sha256": "a48c2645260e095b528cdd6f16e3829f26e6409026f6c28cf0e1b2380b3f3539"
+        }
+      ],
+      "id": "parameter_management",
+      "max_score": 5,
+      "reason": "Timing count, temperature/SOC thresholds, slew increments and current cap are scattered literals. Parameter audit: {'parameters': 0, 'consumer_fields': 0, 'unique_consumer_fields': 0, 'pass': 0, 'unresolved': 0, 'conflicts': 0}. Each definition and actual SID/field consumer has a separate value/type/unit verdict.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 0
+    }
+  ],
+  "schema_version": "1.0.0",
+  "status": "local_reference_scores",
+  "suite_id": "matlab-simulink",
+  "tree": "36f4ccff3169a9f28d5a47ce34f49dbf0bfe97a9"
+}

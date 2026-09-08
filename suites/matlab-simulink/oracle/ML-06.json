@@ -1,0 +1,602 @@
+{
+  "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+  "id": "ML-06",
+  "leaves": [
+    {
+      "contract_section": "2.1",
+      "evidence": [
+        {
+          "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "json_pointer": "/leaves/hierarchy",
+          "kind": "artifact",
+          "model_sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "path": "attachment/sha256/74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a",
+          "sha256": "74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a"
+        },
+        {
+          "kind": "complete_flat_model",
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "symbol": "CabinThermalCoordinator",
+          "tree": "ad657e224ef7d2bec46b1936066c31250739c927"
+        }
+      ],
+      "id": "hierarchy",
+      "max_score": 3,
+      "reason": "Eight zone controllers and shared power allocation are all root-level blocks.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 0
+    },
+    {
+      "contract_section": "2.2",
+      "evidence": [
+        {
+          "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "json_pointer": "/leaves/reuse",
+          "kind": "artifact",
+          "model_sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "path": "attachment/sha256/74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a",
+          "sha256": "74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:158",
+          "symbol": "CabinThermalCoordinator/Block104"
+        },
+        {
+          "line": 1516,
+          "matched_text": "\"id\": \"Block104\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:218",
+          "symbol": "CabinThermalCoordinator/Block164"
+        },
+        {
+          "line": 2140,
+          "matched_text": "\"id\": \"Block164\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:341",
+          "symbol": "CabinThermalCoordinator/Block287"
+        },
+        {
+          "line": 3418,
+          "matched_text": "\"id\": \"Block287\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:471",
+          "symbol": "CabinThermalCoordinator/Block417"
+        },
+        {
+          "line": 4765,
+          "matched_text": "\"id\": \"Block417\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        }
+      ],
+      "id": "reuse",
+      "max_score": 3,
+      "reason": "Eight temperature qualification, PI demand, blower ramp and fault chains are separate copies; physical ratings differ but shared algorithm is not encapsulated.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.3",
+      "evidence": [
+        {
+          "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "json_pointer": "/leaves/interface",
+          "kind": "artifact",
+          "model_sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "path": "attachment/sha256/74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a",
+          "sha256": "74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:3",
+          "symbol": "CabinThermalCoordinator/AvailableElectricalW"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:621",
+          "symbol": "CabinThermalCoordinator/WindshieldValveDemand"
+        }
+      ],
+      "id": "interface",
+      "max_score": 3,
+      "reason": "Root inputs/outputs are semantic explicit scalar ports. Controlled variants additionally document every type/unit/domain and require interface/test/change-log updates; other variants lack full output range/change-control record.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 2
+    },
+    {
+      "contract_section": "2.4",
+      "evidence": [
+        {
+          "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "json_pointer": "/leaves/dataflow",
+          "kind": "artifact",
+          "model_sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "path": "attachment/sha256/74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a",
+          "sha256": "74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:183",
+          "symbol": "CabinThermalCoordinator/Block129"
+        },
+        {
+          "line": 1768,
+          "matched_text": "\"id\": \"Block129\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:185",
+          "symbol": "CabinThermalCoordinator/Block131"
+        },
+        {
+          "line": 1789,
+          "matched_text": "\"id\": \"Block131\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:186",
+          "symbol": "CabinThermalCoordinator/Block132"
+        },
+        {
+          "line": 1799,
+          "matched_text": "\"id\": \"Block132\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:189",
+          "symbol": "CabinThermalCoordinator/Block135"
+        },
+        {
+          "line": 1832,
+          "matched_text": "\"id\": \"Block135\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:191",
+          "symbol": "CabinThermalCoordinator/Block137"
+        },
+        {
+          "line": 1853,
+          "matched_text": "\"id\": \"Block137\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:192",
+          "symbol": "CabinThermalCoordinator/Block138"
+        },
+        {
+          "line": 1864,
+          "matched_text": "\"id\": \"Block138\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        }
+      ],
+      "id": "dataflow",
+      "max_score": 3,
+      "reason": "Semantic public ports are the only named boundary; 933 internal/branch line records anonymous and flat inter-zone paths cross.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.5",
+      "evidence": [
+        {
+          "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "json_pointer": "/leaves/unit_test",
+          "kind": "artifact",
+          "model_sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "path": "attachment/sha256/74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a",
+          "sha256": "74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a"
+        },
+        {
+          "line": 29,
+          "matched_text": "assert(numel(data)==n,'Sample count mismatch');actual(:,k)=data(:);",
+          "path": "run_tests.m",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "b829a3eae552247648b8823b02f40f9cc0ea438172cb9ebf6806ae3d77842f7c"
+        },
+        {
+          "line": 42,
+          "matched_text": "result.coverage=struct('filter',out.covData.filter,'decision',decisioninfo(out.covData,m), ...",
+          "path": "run_tests.m",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "b829a3eae552247648b8823b02f40f9cc0ea438172cb9ebf6806ae3d77842f7c"
+        }
+      ],
+      "id": "unit_test",
+      "max_score": 5,
+      "reason": "Valid per-sample assertions against numerical expectations; current-model decision coverage [344, 386]. The coverage evidence records included datasets, matching model checksums and excluded stale results; no fixed report filename is used as a scoring gate.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 5
+    },
+    {
+      "contract_section": "2.6",
+      "evidence": [
+        {
+          "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "json_pointer": "/leaves/naming",
+          "kind": "artifact",
+          "model_sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "path": "attachment/sha256/74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a",
+          "sha256": "74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:55",
+          "symbol": "CabinThermalCoordinator/Block1"
+        },
+        {
+          "line": 440,
+          "matched_text": "\"id\": \"Block1\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:64",
+          "symbol": "CabinThermalCoordinator/Block10"
+        },
+        {
+          "line": 531,
+          "matched_text": "\"id\": \"Block10\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:634",
+          "symbol": "CabinThermalCoordinator/BatteryBayActuatorFault"
+        },
+        {
+          "line": 6317,
+          "matched_text": "\"name\": \"BatteryBayActuatorFault\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:635",
+          "symbol": "CabinThermalCoordinator/BatteryBayHeatTransferW"
+        },
+        {
+          "line": 6322,
+          "matched_text": "\"name\": \"BatteryBayHeatTransferW\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        }
+      ],
+      "id": "naming",
+      "max_score": 5,
+      "reason": "Semantic review: opaque; generic blocks 549/648, named line records 0/933. Ratios support, not replace, the source naming judgment.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 0
+    },
+    {
+      "contract_section": "2.7",
+      "evidence": [
+        {
+          "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "json_pointer": "/leaves/directory",
+          "kind": "artifact",
+          "model_sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "path": "attachment/sha256/74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a",
+          "sha256": "74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a"
+        },
+        {
+          "kind": "complete Git tree",
+          "path": ".",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "tree": "ad657e224ef7d2bec46b1936066c31250739c927"
+        }
+      ],
+      "id": "directory",
+      "max_score": 5,
+      "reason": "Production model, model definition, test inputs and reference/test scripts share the root; tracked native coverage results are separated under slcov_output by model, so classification is partial.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.8",
+      "evidence": [
+        {
+          "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "json_pointer": "/leaves/build_independence",
+          "kind": "artifact",
+          "model_sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "path": "attachment/sha256/74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a",
+          "sha256": "74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a"
+        },
+        {
+          "line": 16,
+          "matched_text": "load_system('simulink'); new_system(m);",
+          "path": "build_model.m",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        }
+      ],
+      "id": "build_independence",
+      "max_score": 3,
+      "reason": "External business dependencies: []. Actual model callbacks, reference blocks and build source inventory are linked. MATLAB tool environment is separate under the user override; execution status is reported independently.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.9",
+      "evidence": [
+        {
+          "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "json_pointer": "/leaves/model_version",
+          "kind": "artifact",
+          "model_sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "path": "attachment/sha256/74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a",
+          "sha256": "74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a"
+        },
+        {
+          "line": 20,
+          "matched_text": "'StopTime','1','ModelVersionFormat',g.version,'SystemTargetFile','ert.tlc');",
+          "path": "build_model.m",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        },
+        {
+          "line": 3,
+          "matched_text": "## 2026-09-08 — hard budget correction",
+          "path": "CHANGELOG.md",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "528ff78d803f193c83eae3d3060035bbe003220268914d31ff9bb605816c3de0"
+        }
+      ],
+      "id": "model_version",
+      "max_score": 3,
+      "reason": "Dated CHANGELOG.md records the hard-budget correction, preserved public ports and added regression cases, but has no functional version identifier or continuous release ledger.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.10",
+      "evidence": [
+        {
+          "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "json_pointer": "/leaves/version_independence",
+          "kind": "artifact",
+          "model_sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "path": "attachment/sha256/74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a",
+          "sha256": "74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a"
+        },
+        {
+          "line": 20,
+          "matched_text": "'StopTime','1','ModelVersionFormat',g.version,'SystemTargetFile','ert.tlc');",
+          "path": "build_model.m",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+              "object_oid": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+              "object_type": "commit",
+              "ref": "refs/heads/C202-SOP",
+              "tree_oid": "ad657e224ef7d2bec46b1936066c31250739c927"
+            }
+          ]
+        }
+      ],
+      "id": "version_independence",
+      "max_score": 3,
+      "reason": "Actual model version unversioned and full refs inspected; no version inferred from Git commit existence.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 0
+    },
+    {
+      "contract_section": "2.11",
+      "evidence": [
+        {
+          "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "json_pointer": "/leaves/release_branches",
+          "kind": "artifact",
+          "model_sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "path": "attachment/sha256/74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a",
+          "sha256": "74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+              "object_oid": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+              "object_type": "commit",
+              "ref": "refs/heads/C202-SOP",
+              "tree_oid": "ad657e224ef7d2bec46b1936066c31250739c927"
+            }
+          ]
+        },
+        {
+          "line": 9,
+          "matched_text": "Integration target: C202-SOP. This repository keeps the vehicle-specific calibration in its model blocks and uses one SOP line.",
+          "path": "README.md",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "052ea40c2edce4e969d6236bcb0b8b6db4cc3373686a35979a030a3e76423eff"
+        }
+      ],
+      "id": "release_branches",
+      "max_score": 10,
+      "reason": "Single explicitly identified vehicle SOP branch and README integration target.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.12",
+      "evidence": [
+        {
+          "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "json_pointer": "/leaves/device_specificity",
+          "kind": "artifact",
+          "model_sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "path": "attachment/sha256/74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a",
+          "sha256": "74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+              "object_oid": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+              "object_type": "commit",
+              "ref": "refs/heads/C202-SOP",
+              "tree_oid": "ad657e224ef7d2bec46b1936066c31250739c927"
+            }
+          ]
+        },
+        {
+          "line": 9,
+          "matched_text": "Integration target: C202-SOP. This repository keeps the vehicle-specific calibration in its model blocks and uses one SOP line.",
+          "path": "README.md",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "052ea40c2edce4e969d6236bcb0b8b6db4cc3373686a35979a030a3e76423eff"
+        }
+      ],
+      "id": "device_specificity",
+      "max_score": 10,
+      "reason": "C101/C202/C303 explicitly identify single vehicle integration targets.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 0
+    },
+    {
+      "contract_section": "2.13",
+      "evidence": [
+        {
+          "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "json_pointer": "/leaves/parameter_management",
+          "kind": "artifact",
+          "model_sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "path": "attachment/sha256/74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a",
+          "sha256": "74a293acfadfc514f451190ed91669a1e22c1ba857c3d7dbaf0ab18074d8602a"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:64",
+          "symbol": "CabinThermalCoordinator/Block10"
+        },
+        {
+          "line": 531,
+          "matched_text": "\"id\": \"Block10\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:154",
+          "symbol": "CabinThermalCoordinator/Block100"
+        },
+        {
+          "line": 1478,
+          "matched_text": "\"id\": \"Block100\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        },
+        {
+          "path": "CabinThermalCoordinator.slx",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "482efb840ffcee489864d137b167d7d5d3fd2c173e0e6a4a02256fdf7f087f18",
+          "sid": "CabinThermalCoordinator:183",
+          "symbol": "CabinThermalCoordinator/Block129"
+        },
+        {
+          "line": 1768,
+          "matched_text": "\"id\": \"Block129\",",
+          "path": "model.json",
+          "ref": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+          "sha256": "c50a3fcae68e8b7ecab1df29b81af274a3f27adef3b1e504e5c2be66f043477f"
+        }
+      ],
+      "id": "parameter_management",
+      "max_score": 5,
+      "reason": "Zone ratings, PI gains and filter/limit values are literals at their consumers. Parameter audit: {'parameters': 0, 'consumer_fields': 0, 'unique_consumer_fields': 0, 'pass': 0, 'unresolved': 0, 'conflicts': 0}. Each definition and actual SID/field consumer has a separate value/type/unit verdict.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 0
+    }
+  ],
+  "schema_version": "1.0.0",
+  "status": "local_reference_scores",
+  "suite_id": "matlab-simulink",
+  "tree": "ad657e224ef7d2bec46b1936066c31250739c927"
+}

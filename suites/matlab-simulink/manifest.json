@@ -1,5 +1,5 @@
 {
-  "published_repositories": 0,
+  "published_repositories": 9,
   "repositories": [
     {
       "files_sha256": "7e65dc030c3272f1b0c02ef39cc1849539d3e82831ad0ef4081074811fc82909",
@@ -7,7 +7,7 @@
       "id": "ML-01",
       "model_path": "Model/TorqueRequestController.slx",
       "name": "torque-request-controller",
-      "publication_status": "unpublished",
+      "publication_status": "published",
       "refs": [
         {
           "commit_oid": "010ef955a27cdf36789585e025d2e3a29f781070",
@@ -34,7 +34,7 @@
       "id": "ML-02",
       "model_path": "Model/CoolantFanController.slx",
       "name": "coolant-fan-controller",
-      "publication_status": "unpublished",
+      "publication_status": "published",
       "refs": [
         {
           "commit_oid": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
@@ -61,7 +61,7 @@
       "id": "ML-03",
       "model_path": "ChargeInterlockController.slx",
       "name": "charge-interlock-controller",
-      "publication_status": "unpublished",
+      "publication_status": "published",
       "refs": [
         {
           "commit_oid": "60a0da05e866d4a0091f936ebff29c43d78b247a",
@@ -81,7 +81,7 @@
       "id": "ML-04",
       "model_path": "Model/BatteryPowerManager.slx",
       "name": "battery-power-manager",
-      "publication_status": "unpublished",
+      "publication_status": "published",
       "refs": [
         {
           "commit_oid": "3b5330155a62517135b578809002eade5638ba4f",
@@ -108,7 +108,7 @@
       "id": "ML-05",
       "model_path": "Model/AxleTractionCoordinator.slx",
       "name": "axle-traction-coordinator",
-      "publication_status": "unpublished",
+      "publication_status": "published",
       "refs": [
         {
           "commit_oid": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
@@ -135,7 +135,7 @@
       "id": "ML-06",
       "model_path": "CabinThermalCoordinator.slx",
       "name": "cabin-thermal-coordinator",
-      "publication_status": "unpublished",
+      "publication_status": "published",
       "refs": [
         {
           "commit_oid": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
@@ -155,7 +155,7 @@
       "id": "ML-07",
       "model_path": "Model/EnergyDomainSupervisor.slx",
       "name": "energy-domain-supervisor",
-      "publication_status": "unpublished",
+      "publication_status": "published",
       "refs": [
         {
           "commit_oid": "30090f8ec3b797990a77cee35be0f3c713cea189",
@@ -182,7 +182,7 @@
       "id": "ML-08",
       "model_path": "Model/ThermalNetworkController.slx",
       "name": "thermal-network-controller",
-      "publication_status": "unpublished",
+      "publication_status": "published",
       "refs": [
         {
           "commit_oid": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
@@ -209,7 +209,7 @@
       "id": "ML-09",
       "model_path": "VehicleActuatorSupervisor.slx",
       "name": "vehicle-actuator-supervisor",
-      "publication_status": "unpublished",
+      "publication_status": "published",
       "refs": [
         {
           "commit_oid": "97e8582c9bda384528dd9215811e6fc00740892c",
@@ -225,6 +225,6 @@
     }
   ],
   "schema_version": "matlab-source-manifest-1",
-  "status": "reviewed_unverified",
+  "status": "published",
   "suite_id": "matlab-simulink"
 }

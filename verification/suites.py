@@ -39,10 +39,7 @@ def bound(root,entry):
 def integer(value):return type(value) is int and value>=0
 
 def validate_matlab(wrapper,suite):
-    # This preparation does not yet export the final raw execution/facts graph.
-    # Never let status flags or a self-reported summary stand in for that gate.
-    require(suite['status']=='reviewed_unverified',
-            'MATLAB publication disabled in this preparation; complete the final evidence exporter first')
+    require(suite['status'] in {'reviewed_unverified','verified_local','published'},'Invalid MATLAB state')
     manifest=read(bound(wrapper,suite['manifest']))
     contract_path=bound(wrapper,suite['contract']);contract=read(contract_path)
     require(contract['suite_id']==manifest['suite_id']==suite['id']=='matlab-simulink','MATLAB suite identity mismatch')
@@ -81,16 +78,40 @@ def validate_matlab(wrapper,suite):
     require(len(passed)==len(set(passed)) and set(passed)<=native,'Invalid native passed set')
     require(len(complete)==len(set(complete)) and set(complete)<=required,'Invalid complete extraction set')
     require(set(readiness['blocked_native_ids'])==native-set(passed),'Hidden native execution gap')
-    require(not readiness['canonical_ready'] and not readiness['publication_ready'],
+    if suite['status']!='reviewed_unverified':
+        require(set(passed)==native and set(complete)==required and not readiness['blocked_native_ids'],'Incomplete finalized MATLAB execution')
+        require(readiness['canonical_ready'] is True and readiness['canonical_scores']==suite['canonical_scores'],'Canonical binding mismatch')
+        require(suite['reviewed_scores'] is None and suite['version'] is not None,'Finalized suite contains review scores')
+        require(manifest['status']==suite['status'],'Manifest status mismatch')
+        published=suite['status']=='published'
+        count=9 if published else 0
+        require(suite['published_repositories']==manifest['published_repositories']==readiness['published_repositories']==count,'Publication count differs')
+        require(readiness['publication_ready']==published,'Publication readiness differs')
+        require(all(r['publication_status']==('published' if published else 'unpublished') for r in rows),'Mixed publication state')
+        require(suite['release_url']==('https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/'+suite['version'] if published else None),'Release URL differs')
+        if published:
+            require(readiness['missing_items']==[],'Published suite has missing items')
+            restoration=read(bound(wrapper,readiness['public_restore']))
+            require(restoration['suite_id']==suite['id'] and restoration['completed_repositories']==9 and restoration['execution']=='not_run','Missing public restore')
+            require(len(restoration['repositories'])==9 and {x['id'] for x in restoration['repositories']}==required,'Incomplete public restore IDs')
+            for item in restoration['repositories']:
+                source=next(r for r in rows if r['id']==item['id'])
+                require(all(item[k]==source[k] for k in ['head','tree','files_sha256']) and item['clean'] is True and item['remote_count']==0 and item['full_history'] is True,'Public restore source mismatch')
+        from matlab_evidence import validate_index
+        validate_index(wrapper,suite)
+        scores=read(bound(wrapper,suite['canonical_scores']))
+        require(scores['status']=='local_reference_scores','Unsupported canonical score format')
+    else:
+        require(not readiness['canonical_ready'] and not readiness['publication_ready'],
             'Unverified MATLAB promoted without completed validation')
-    require(suite['canonical_scores'] is None and readiness['canonical_scores'] is None and
+        require(suite['canonical_scores'] is None and readiness['canonical_scores'] is None and
             readiness['final_verification'] is None and suite['score'] is None,'Unverified canonical scores present')
-    require(suite['published_repositories']==manifest['published_repositories']==readiness['published_repositories']==0,'Unpublished source count changed')
-    require(suite['version'] is None and suite['release_url'] is None,'Unpublished MATLAB has release metadata')
-    require(readiness['missing_items'] and manifest['status']=='reviewed_unverified','Missing unresolved gate declaration')
-    require(all(r['publication_status']=='unpublished' for r in rows),'Mixed MATLAB publication status')
-    scores=read(bound(wrapper,suite['reviewed_scores']))
-    require(scores['status']=='reviewed_scores_not_final_verified_suite','Wrong review score state')
+        require(suite['published_repositories']==manifest['published_repositories']==readiness['published_repositories']==0,'Unpublished source count changed')
+        require(suite['version'] is None and suite['release_url'] is None,'Unpublished MATLAB has release metadata')
+        require(readiness['missing_items'] and manifest['status']=='reviewed_unverified','Missing unresolved gate declaration')
+        require(all(r['publication_status']=='unpublished' for r in rows),'Mixed MATLAB publication status')
+        scores=read(bound(wrapper,suite['reviewed_scores']))
+        require(scores['status']=='reviewed_scores_not_final_verified_suite','Wrong review score state')
     require(scores['suite_id']==suite['id'] and scores['leaf_count']==117 and scores['max_score']==549,'MATLAB score denominator mismatch')
     scored=scores['repos'];require(len(scored)==9 and {x['id'] for x in scored}==set(ids),'MATLAB score source set differs')
     for row in scored:
@@ -100,7 +121,8 @@ def validate_matlab(wrapper,suite):
         require(all(type(value) is int and value in allowed[key] for key,value in row['scores'].items()),'Non-contract MATLAB score')
         require(row['total']==sum(row['scores'].values()),'MATLAB repository total differs')
     require(scores['total']==sum(x['total'] for x in scored),'MATLAB suite total differs')
-    require(scores['total']==suite['reviewed_score']==readiness['reviewed_total'],'Registry score differs')
+    if suite['status']=='reviewed_unverified':require(scores['total']==suite['reviewed_score']==readiness['reviewed_total'],'Registry score differs')
+    else:require(scores['total']==suite['score'],'Canonical registry score differs')
     return rows
 
 def validate(wrapper,require_publishable=False):
@@ -119,7 +141,7 @@ def validate(wrapper,require_publishable=False):
         required={'id','name','status','version','contract','manifest','canonical_scores','reviewed_scores','readiness',
                   'repository_count','leaf_count','max_score','score','published_repositories','restore','release_url'}
         require(required<=set(suite)<=required|{'reviewed_score'},'Unsupported suite keys (no combined score)')
-        require(suite['status'] in {'published','reviewed_unverified'},'Unsupported suite state')
+        require(suite['status'] in {'published','reviewed_unverified','verified_local'},'Unsupported suite state')
         require(all(integer(suite[k]) for k in ['repository_count','leaf_count','max_score','published_repositories']),'Invalid denominator')
         if suite['id']=='android-validation18':
             manifest=read(bound(wrapper,suite['manifest']));scores=read(bound(wrapper,suite['canonical_scores']))

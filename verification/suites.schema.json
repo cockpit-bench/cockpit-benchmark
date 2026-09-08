@@ -3,52 +3,206 @@
   "title": "Cockpit Benchmark independent suite registry",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "benchmark_id", "planned_release", "integration_status", "default_suite", "aggregation", "suites"],
+  "required": [
+    "schema_version",
+    "benchmark_id",
+    "planned_release",
+    "integration_status",
+    "default_suite",
+    "aggregation",
+    "suites"
+  ],
   "properties": {
-    "schema_version": {"const": "benchmark-suites-1"},
-    "benchmark_id": {"const": "cockpit-benchmark"},
-    "planned_release": {"type": "string", "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$"},
-    "integration_status": {"enum": ["prepared_not_published", "published"]},
-    "default_suite": {"const": "android-validation18"},
-    "aggregation": {"const": "separate_suite_scores_no_raw_sum"},
-    "suites": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/suite"}}
+    "schema_version": {
+      "const": "benchmark-suites-1"
+    },
+    "benchmark_id": {
+      "const": "cockpit-benchmark"
+    },
+    "planned_release": {
+      "type": "string",
+      "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "integration_status": {
+      "enum": [
+        "prepared_not_published",
+        "published"
+      ]
+    },
+    "default_suite": {
+      "const": "android-validation18"
+    },
+    "aggregation": {
+      "const": "separate_suite_scores_no_raw_sum"
+    },
+    "suites": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "$ref": "#/$defs/suite"
+      }
+    }
   },
   "$defs": {
     "binding": {
-      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
-      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}
-    },
-    "nullableBinding": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/binding"}]},
-    "suite": {
-      "type": "object", "additionalProperties": false,
-      "required": ["id", "name", "status", "version", "contract", "manifest", "canonical_scores", "reviewed_scores", "readiness", "repository_count", "leaf_count", "max_score", "score", "published_repositories", "restore", "release_url"],
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
       "properties": {
-        "id": {"enum": ["android-validation18", "matlab-simulink"]},
-        "name": {"type": "string", "minLength": 1},
-        "status": {"enum": ["published", "reviewed_unverified"]},
-        "version": {"type": ["string", "null"]},
-        "contract": {"$ref": "#/$defs/binding"},
-        "manifest": {"$ref": "#/$defs/binding"},
-        "canonical_scores": {"$ref": "#/$defs/nullableBinding"},
-        "reviewed_scores": {"$ref": "#/$defs/nullableBinding"},
-        "readiness": {"$ref": "#/$defs/nullableBinding"},
-        "repository_count": {"type": "integer", "minimum": 1},
-        "leaf_count": {"type": "integer", "minimum": 1},
-        "max_score": {"type": "integer", "minimum": 1},
-        "score": {"type": ["integer", "null"], "minimum": 0},
-        "reviewed_score": {"type": "integer", "minimum": 0},
-        "published_repositories": {"type": "integer", "minimum": 0},
-        "restore": {"enum": ["android", "matlab"]},
-        "release_url": {"type": ["string", "null"]}
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "nullableBinding": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/binding"
+        }
+      ]
+    },
+    "suite": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "status",
+        "version",
+        "contract",
+        "manifest",
+        "canonical_scores",
+        "reviewed_scores",
+        "readiness",
+        "repository_count",
+        "leaf_count",
+        "max_score",
+        "score",
+        "published_repositories",
+        "restore",
+        "release_url"
+      ],
+      "properties": {
+        "id": {
+          "enum": [
+            "android-validation18",
+            "matlab-simulink"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "published",
+            "reviewed_unverified",
+            "verified_local"
+          ]
+        },
+        "version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "contract": {
+          "$ref": "#/$defs/binding"
+        },
+        "manifest": {
+          "$ref": "#/$defs/binding"
+        },
+        "canonical_scores": {
+          "$ref": "#/$defs/nullableBinding"
+        },
+        "reviewed_scores": {
+          "$ref": "#/$defs/nullableBinding"
+        },
+        "readiness": {
+          "$ref": "#/$defs/nullableBinding"
+        },
+        "repository_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "leaf_count": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_score": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "score": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "reviewed_score": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "published_repositories": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "restore": {
+          "enum": [
+            "android",
+            "matlab"
+          ]
+        },
+        "release_url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       },
-      "allOf": [{
-        "if": {"properties": {"status": {"const": "reviewed_unverified"}}},
-        "then": {"required": ["reviewed_score"], "properties": {"canonical_scores": {"type": "null"}, "score": {"type": "null"}, "published_repositories": {"const": 0}, "release_url": {"type": "null"}}}
-      }, {
-        "if": {"properties": {"id": {"const": "matlab-simulink"}}},
-        "then": {"properties": {"status": {"const": "reviewed_unverified"}, "version": {"type": "null"}}},
-        "description": "Preparation only. A final raw-evidence export protocol is required before MATLAB publication can be enabled."
-      }]
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "reviewed_unverified"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "reviewed_score"
+            ],
+            "properties": {
+              "canonical_scores": {
+                "type": "null"
+              },
+              "score": {
+                "type": "null"
+              },
+              "published_repositories": {
+                "const": 0
+              },
+              "release_url": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }

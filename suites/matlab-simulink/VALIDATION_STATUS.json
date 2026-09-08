@@ -1,56 +1,60 @@
 {
-  "blocked_native_ids": [
-    "ML-05",
-    "ML-05-B"
-  ],
-  "canonical_ready": false,
-  "canonical_scores": null,
+  "blocked_native_ids": [],
+  "canonical_ready": true,
+  "canonical_scores": {
+    "path": "suites/matlab-simulink/STANDARD_SCORES.json",
+    "sha256": "aed0534cf42f06ed15d9e4ae1863547cc5f9bcc8af9c72081c4dda432e104848"
+  },
   "completed_extraction_ids": [
     "ML-01",
     "ML-02",
     "ML-03",
     "ML-04",
+    "ML-05",
     "ML-06",
     "ML-07",
     "ML-08",
     "ML-09"
   ],
-  "evidence_note": "Existing same-HEAD restoration/MIL is distinct from incomplete fresh native execution.",
-  "execution_limit": "WinError 5 followed by missing executable; exact cause unconfirmed. Do not retry by renaming, ACL changes or disabling protection.",
-  "final_verification": null,
-  "handoff_sha256": "a8c67fcb62fa52da02f63613e21674b5cf6a666a9d6fb55f7db4bfa4d6c41a9c",
-  "missing_items": [
-    "ML-05 and ML-05-B current native execution artifacts and validation",
-    "Complete nine-repository final verification and canonical promotion"
-  ],
+  "evidence_index": {
+    "path": "suites/matlab-simulink/EVIDENCE_INDEX.json",
+    "sha256": "9f3815129808034b9eb7905bba7fde443b23805cbc4559331066711fead036f6"
+  },
+  "missing_items": [],
   "native_passed_ids": [
     "ML-01",
     "ML-02",
+    "ML-02-B",
     "ML-03",
     "ML-04",
+    "ML-05",
+    "ML-05-B",
     "ML-06",
     "ML-07",
     "ML-08",
-    "ML-09",
-    "ML-02-B",
-    "ML-08-B"
+    "ML-08-B",
+    "ML-09"
   ],
   "native_required_ids": [
     "ML-01",
     "ML-02",
+    "ML-02-B",
     "ML-03",
     "ML-04",
     "ML-05",
+    "ML-05-B",
     "ML-06",
     "ML-07",
     "ML-08",
-    "ML-09",
-    "ML-02-B",
-    "ML-05-B",
-    "ML-08-B"
+    "ML-08-B",
+    "ML-09"
   ],
-  "publication_ready": false,
-  "published_repositories": 0,
+  "public_restore": {
+    "path": "suites/matlab-simulink/PUBLIC_RESTORE.json",
+    "sha256": "d8b62c284e5147e200ef555249d7e855c52d3a1113f43a3848dc55c09690d9b9"
+  },
+  "publication_ready": true,
+  "published_repositories": 9,
   "required_extraction_ids": [
     "ML-01",
     "ML-02",
@@ -62,9 +66,7 @@
     "ML-08",
     "ML-09"
   ],
-  "reviewed_total": 338,
   "schema_version": "suite-readiness-1",
-  "score_state": "reviewed_scores_not_final_verified_suite",
-  "status": "reviewed_unverified",
+  "status": "published",
   "suite_id": "matlab-simulink"
 }

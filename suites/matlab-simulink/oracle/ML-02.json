@@ -1,0 +1,664 @@
+{
+  "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+  "id": "ML-02",
+  "leaves": [
+    {
+      "contract_section": "2.1",
+      "evidence": [
+        {
+          "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "json_pointer": "/leaves/hierarchy",
+          "kind": "artifact",
+          "model_sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "path": "attachment/sha256/1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3",
+          "sha256": "1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:1",
+          "symbol": "CoolantFanController/Processing"
+        },
+        {
+          "line": 48,
+          "matched_text": "\"id\": \"Processing/CoolantLowValidThreshold\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:2",
+          "symbol": "CoolantFanController/Utility"
+        },
+        {
+          "line": 449,
+          "matched_text": "\"id\": \"Utility/Block40\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        }
+      ],
+      "id": "hierarchy",
+      "max_score": 3,
+      "reason": "Processing mixes qualification, filtering and demand; Utility mixes slew and tracking diagnostics. Generic names hide boundaries.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.2",
+      "evidence": [
+        {
+          "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "json_pointer": "/leaves/reuse",
+          "kind": "artifact",
+          "model_sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "path": "attachment/sha256/1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3",
+          "sha256": "1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:18",
+          "symbol": "CoolantFanController/Processing/CoolantFiltered"
+        },
+        {
+          "line": 149,
+          "matched_text": "\"id\": \"Processing/CoolantFiltered\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:29",
+          "symbol": "CoolantFanController/Processing/PressureFiltered"
+        },
+        {
+          "line": 261,
+          "matched_text": "\"id\": \"Processing/PressureFiltered\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:35",
+          "symbol": "CoolantFanController/Processing/PressureExcess"
+        },
+        {
+          "line": 320,
+          "matched_text": "\"id\": \"Processing/PressureExcess\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:31",
+          "symbol": "CoolantFanController/Processing/ThermalExcess"
+        },
+        {
+          "line": 280,
+          "matched_text": "\"id\": \"Processing/ThermalExcess\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        }
+      ],
+      "id": "reuse",
+      "max_score": 3,
+      "reason": "Coolant and pressure each repeat range checks, substitution and first-order filtering instead of using one linked component.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.3",
+      "evidence": [
+        {
+          "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "json_pointer": "/leaves/interface",
+          "kind": "artifact",
+          "model_sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "path": "attachment/sha256/1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3",
+          "sha256": "1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:4",
+          "symbol": "CoolantFanController/AcPressureBar"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:81",
+          "symbol": "CoolantFanController/TrackingFault"
+        },
+        {
+          "line": 8,
+          "matched_text": "| AcPressureBar | bar | 0 to 35 | 8 |",
+          "path": "Documentation/interfaces.md",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "ada3ef0afe30fc5e316ab15b91ede91d2bd51ae5943e03848bf6456cf9f953b8"
+        },
+        {
+          "line": 17,
+          "matched_text": "| TrackingFault | 1 |",
+          "path": "Documentation/interfaces.md",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "ada3ef0afe30fc5e316ab15b91ede91d2bd51ae5943e03848bf6456cf9f953b8"
+        }
+      ],
+      "id": "interface",
+      "max_score": 3,
+      "reason": "Root inputs/outputs are semantic explicit scalar ports. Controlled variants additionally document every type/unit/domain and require interface/test/change-log updates; other variants lack full output range/change-control record.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 2
+    },
+    {
+      "contract_section": "2.4",
+      "evidence": [
+        {
+          "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "json_pointer": "/leaves/dataflow",
+          "kind": "artifact",
+          "model_sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "path": "attachment/sha256/1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3",
+          "sha256": "1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:15",
+          "symbol": "CoolantFanController/Processing/CoolantPrevious"
+        },
+        {
+          "line": 118,
+          "matched_text": "\"id\": \"Processing/CoolantPrevious\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:17",
+          "symbol": "CoolantFanController/Processing/Block10"
+        },
+        {
+          "line": 139,
+          "matched_text": "\"id\": \"Processing/Block10\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:18",
+          "symbol": "CoolantFanController/Processing/CoolantFiltered"
+        },
+        {
+          "line": 149,
+          "matched_text": "\"id\": \"Processing/CoolantFiltered\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:26",
+          "symbol": "CoolantFanController/Processing/PressurePrevious"
+        },
+        {
+          "line": 230,
+          "matched_text": "\"id\": \"Processing/PressurePrevious\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:28",
+          "symbol": "CoolantFanController/Processing/PressureOldWeight"
+        },
+        {
+          "line": 251,
+          "matched_text": "\"id\": \"Processing/PressureOldWeight\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:29",
+          "symbol": "CoolantFanController/Processing/PressureFiltered"
+        },
+        {
+          "line": 261,
+          "matched_text": "\"id\": \"Processing/PressureFiltered\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        }
+      ],
+      "id": "dataflow",
+      "max_score": 3,
+      "reason": "All line records named and no implicit storage/jumps; some BlockN intermediate labels, compact explicit root topology.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 2
+    },
+    {
+      "contract_section": "2.5",
+      "evidence": [
+        {
+          "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "json_pointer": "/leaves/unit_test",
+          "kind": "artifact",
+          "model_sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "path": "attachment/sha256/1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3",
+          "sha256": "1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3"
+        },
+        {
+          "line": 29,
+          "matched_text": "assert(numel(data)==n,'Sample count mismatch');actual(:,k)=data(:);",
+          "path": "run_tests.m",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e2c4577d6c84f350264ff39f8a91b859434af633ad659734e1759f596eee52a8"
+        },
+        {
+          "line": 41,
+          "matched_text": "result.coverage=struct('filter',out.covData.filter,'decision',decisioninfo(out.covData,m), ...",
+          "path": "run_tests.m",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e2c4577d6c84f350264ff39f8a91b859434af633ad659734e1759f596eee52a8"
+        }
+      ],
+      "id": "unit_test",
+      "max_score": 5,
+      "reason": "Valid per-sample assertions against numerical expectations; current-model decision coverage [35, 38]. The coverage evidence records included datasets, matching model checksums and excluded stale results; no fixed report filename is used as a scoring gate.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 5
+    },
+    {
+      "contract_section": "2.6",
+      "evidence": [
+        {
+          "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "json_pointer": "/leaves/naming",
+          "kind": "artifact",
+          "model_sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "path": "attachment/sha256/1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3",
+          "sha256": "1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:17",
+          "symbol": "CoolantFanController/Processing/Block10"
+        },
+        {
+          "line": 139,
+          "matched_text": "\"id\": \"Processing/Block10\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:22",
+          "symbol": "CoolantFanController/Processing/Block15"
+        },
+        {
+          "line": 187,
+          "matched_text": "\"id\": \"Processing/Block15\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:21",
+          "symbol": "CoolantFanController/Processing/PressureHighValidThreshold"
+        },
+        {
+          "line": 179,
+          "matched_text": "\"id\": \"Processing/PressureHighValidThreshold\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:10",
+          "symbol": "CoolantFanController/Processing/CoolantHighValidThreshold"
+        },
+        {
+          "line": 67,
+          "matched_text": "\"id\": \"Processing/CoolantHighValidThreshold\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        }
+      ],
+      "id": "naming",
+      "max_score": 5,
+      "reason": "Semantic review: mostly_meaningful; generic blocks 12/82, named line records 100/100. Ratios support, not replace, the source naming judgment.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.7",
+      "evidence": [
+        {
+          "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "json_pointer": "/leaves/directory",
+          "kind": "artifact",
+          "model_sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "path": "attachment/sha256/1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3",
+          "sha256": "1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3"
+        },
+        {
+          "kind": "complete Git tree",
+          "path": ".",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "tree": "4f189e4955070d07dff285eccc8b148f508b9180"
+        }
+      ],
+      "id": "directory",
+      "max_score": 5,
+      "reason": "Model, UnitTest, Documentation and generated Src separate responsibilities; root launchers are entry points.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 5
+    },
+    {
+      "contract_section": "2.8",
+      "evidence": [
+        {
+          "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "json_pointer": "/leaves/build_independence",
+          "kind": "artifact",
+          "model_sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "path": "attachment/sha256/1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3",
+          "sha256": "1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3"
+        },
+        {
+          "line": 16,
+          "matched_text": "load_system('simulink'); new_system(m);",
+          "path": "build_model.m",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        }
+      ],
+      "id": "build_independence",
+      "max_score": 3,
+      "reason": "External business dependencies: []. Actual model callbacks, reference blocks and build source inventory are linked. MATLAB tool environment is separate under the user override; execution status is reported independently.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.9",
+      "evidence": [
+        {
+          "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "json_pointer": "/leaves/model_version",
+          "kind": "artifact",
+          "model_sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "path": "attachment/sha256/1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3",
+          "sha256": "1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3"
+        },
+        {
+          "line": 20,
+          "matched_text": "'StopTime','1','ModelVersionFormat',g.version,'SystemTargetFile','ert.tlc');",
+          "path": "build_model.m",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        }
+      ],
+      "id": "model_version",
+      "max_score": 3,
+      "reason": "README internal R1 and Git commits exist, without complete dated signal change ledger.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.10",
+      "evidence": [
+        {
+          "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "json_pointer": "/leaves/version_independence",
+          "kind": "artifact",
+          "model_sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "path": "attachment/sha256/1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3",
+          "sha256": "1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3"
+        },
+        {
+          "line": 20,
+          "matched_text": "'StopTime','1','ModelVersionFormat',g.version,'SystemTargetFile','ert.tlc');",
+          "path": "build_model.m",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+              "object_oid": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-A",
+              "tree_oid": "4f189e4955070d07dff285eccc8b148f508b9180"
+            },
+            {
+              "commit_oid": "04d9c4d498d9297bc2317f22e160f621d9bb813a",
+              "object_oid": "04d9c4d498d9297bc2317f22e160f621d9bb813a",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-B",
+              "tree_oid": "fe96e1b74e931f83d3c18a79de9e759ececb2d98"
+            }
+          ]
+        }
+      ],
+      "id": "version_independence",
+      "max_score": 3,
+      "reason": "Actual model version R1 and full refs inspected; no version inferred from Git commit existence.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.11",
+      "evidence": [
+        {
+          "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "json_pointer": "/leaves/release_branches",
+          "kind": "artifact",
+          "model_sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "path": "attachment/sha256/1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3",
+          "sha256": "1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+              "object_oid": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-A",
+              "tree_oid": "4f189e4955070d07dff285eccc8b148f508b9180"
+            },
+            {
+              "commit_oid": "04d9c4d498d9297bc2317f22e160f621d9bb813a",
+              "object_oid": "04d9c4d498d9297bc2317f22e160f621d9bb813a",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-B",
+              "tree_oid": "fe96e1b74e931f83d3c18a79de9e759ececb2d98"
+            }
+          ]
+        },
+        {
+          "line": 9,
+          "matched_text": "Internal model release R1. Integration branches separate platform releases.",
+          "path": "README.md",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "248f6fbbdf96cb0df9e22210aea3a4673163c1697bb2dcf3c60331bcb5e09ec0"
+        },
+        {
+          "line": 11,
+          "matched_text": "Platform integration uses platform/VCU-A and platform/VCU-B release lines. VCU-A is the default delivery. VCU-B adapts the cooling or torque ratings for a different hardware package.",
+          "path": "README.md",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "248f6fbbdf96cb0df9e22210aea3a4673163c1697bb2dcf3c60331bcb5e09ec0"
+        }
+      ],
+      "id": "release_branches",
+      "max_score": 10,
+      "reason": "VCU-A and VCU-B have different calibration trees; actual MIL and generated C replay passed on both.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 8
+    },
+    {
+      "contract_section": "2.12",
+      "evidence": [
+        {
+          "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "json_pointer": "/leaves/device_specificity",
+          "kind": "artifact",
+          "model_sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "path": "attachment/sha256/1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3",
+          "sha256": "1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+              "object_oid": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-A",
+              "tree_oid": "4f189e4955070d07dff285eccc8b148f508b9180"
+            },
+            {
+              "commit_oid": "04d9c4d498d9297bc2317f22e160f621d9bb813a",
+              "object_oid": "04d9c4d498d9297bc2317f22e160f621d9bb813a",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-B",
+              "tree_oid": "fe96e1b74e931f83d3c18a79de9e759ececb2d98"
+            }
+          ]
+        },
+        {
+          "line": 9,
+          "matched_text": "Internal model release R1. Integration branches separate platform releases.",
+          "path": "README.md",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "248f6fbbdf96cb0df9e22210aea3a4673163c1697bb2dcf3c60331bcb5e09ec0"
+        },
+        {
+          "line": 11,
+          "matched_text": "Platform integration uses platform/VCU-A and platform/VCU-B release lines. VCU-A is the default delivery. VCU-B adapts the cooling or torque ratings for a different hardware package.",
+          "path": "README.md",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "248f6fbbdf96cb0df9e22210aea3a4673163c1697bb2dcf3c60331bcb5e09ec0"
+        }
+      ],
+      "id": "device_specificity",
+      "max_score": 10,
+      "reason": "VCU-A/B identify platforms; branch-held calibration changes implement hardware differences.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 8
+    },
+    {
+      "contract_section": "2.13",
+      "evidence": [
+        {
+          "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "json_pointer": "/leaves/parameter_management",
+          "kind": "artifact",
+          "model_sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "path": "attachment/sha256/1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3",
+          "sha256": "1045693b946628d048763828d20993b7b48e89de7743b266cf97b73b13130ad3"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:17",
+          "symbol": "CoolantFanController/Processing/Block10"
+        },
+        {
+          "line": 139,
+          "matched_text": "\"id\": \"Processing/Block10\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:27",
+          "symbol": "CoolantFanController/Processing/Block20"
+        },
+        {
+          "line": 241,
+          "matched_text": "\"id\": \"Processing/Block20\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        },
+        {
+          "path": "Model/CoolantFanController.slx",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "235bf543acad2779c39b4bfc26cdcef0d871b6c82bc31499b1292a1944d54eb0",
+          "sid": "CoolantFanController:15",
+          "symbol": "CoolantFanController/Processing/CoolantPrevious"
+        },
+        {
+          "line": 118,
+          "matched_text": "\"id\": \"Processing/CoolantPrevious\",",
+          "path": "Model/model.json",
+          "ref": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+          "sha256": "e9e24055fd5101e276aa07fb63f0fd25769b866d8bf72fabc1d73fe1a4db1172"
+        }
+      ],
+      "id": "parameter_management",
+      "max_score": 5,
+      "reason": "Calibration thresholds and gains are literal values spread among graph nodes; model workspace empty. Parameter audit: {'parameters': 0, 'consumer_fields': 0, 'unique_consumer_fields': 0, 'pass': 0, 'unresolved': 0, 'conflicts': 0}. Each definition and actual SID/field consumer has a separate value/type/unit verdict.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 0
+    }
+  ],
+  "schema_version": "1.0.0",
+  "status": "local_reference_scores",
+  "suite_id": "matlab-simulink",
+  "tree": "4f189e4955070d07dff285eccc8b148f508b9180"
+}

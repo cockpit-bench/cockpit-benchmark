@@ -1,0 +1,730 @@
+{
+  "distribution": {
+    "dimensions": [
+      {
+        "allowed_scores": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "counts": {
+          "0": 3,
+          "1": 3,
+          "2": 2,
+          "3": 1
+        },
+        "id": "hierarchy",
+        "missing_tiers": [],
+        "modal_n": 3,
+        "name": "层次分解",
+        "observed_tiers": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "allowed_scores": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "counts": {
+          "0": 0,
+          "1": 8,
+          "2": 1,
+          "3": 0
+        },
+        "id": "reuse",
+        "missing_tiers": [
+          0,
+          3
+        ],
+        "modal_n": 8,
+        "name": "复用与标准化",
+        "observed_tiers": [
+          1,
+          2
+        ]
+      },
+      {
+        "allowed_scores": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 6,
+          "3": 3
+        },
+        "id": "interface",
+        "missing_tiers": [
+          0,
+          1
+        ],
+        "modal_n": 6,
+        "name": "接口设计",
+        "observed_tiers": [
+          2,
+          3
+        ]
+      },
+      {
+        "allowed_scores": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "counts": {
+          "0": 0,
+          "1": 5,
+          "2": 3,
+          "3": 1
+        },
+        "id": "dataflow",
+        "missing_tiers": [
+          0
+        ],
+        "modal_n": 5,
+        "name": "数据流与信号路由",
+        "observed_tiers": [
+          1,
+          2,
+          3
+        ]
+      },
+      {
+        "allowed_scores": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "3": 2,
+          "5": 7
+        },
+        "id": "unit_test",
+        "missing_tiers": [
+          0,
+          1
+        ],
+        "modal_n": 7,
+        "name": "单元测试",
+        "observed_tiers": [
+          3,
+          5
+        ]
+      },
+      {
+        "allowed_scores": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "counts": {
+          "0": 3,
+          "1": 0,
+          "3": 3,
+          "5": 3
+        },
+        "id": "naming",
+        "missing_tiers": [
+          1
+        ],
+        "modal_n": 3,
+        "name": "命名规范",
+        "observed_tiers": [
+          0,
+          3,
+          5
+        ]
+      },
+      {
+        "allowed_scores": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "counts": {
+          "0": 0,
+          "1": 3,
+          "3": 0,
+          "5": 6
+        },
+        "id": "directory",
+        "missing_tiers": [
+          0,
+          3
+        ],
+        "modal_n": 6,
+        "name": "目录结构",
+        "observed_tiers": [
+          1,
+          5
+        ]
+      },
+      {
+        "allowed_scores": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "counts": {
+          "0": 0,
+          "1": 0,
+          "2": 0,
+          "3": 9
+        },
+        "id": "build_independence",
+        "missing_tiers": [
+          0,
+          1,
+          2
+        ],
+        "modal_n": 9,
+        "name": "构建独立性",
+        "observed_tiers": [
+          3
+        ]
+      },
+      {
+        "allowed_scores": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "counts": {
+          "0": 2,
+          "1": 4,
+          "2": 0,
+          "3": 3
+        },
+        "id": "model_version",
+        "missing_tiers": [
+          2
+        ],
+        "modal_n": 4,
+        "name": "模型版本管理",
+        "observed_tiers": [
+          0,
+          1,
+          3
+        ]
+      },
+      {
+        "allowed_scores": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "counts": {
+          "0": 3,
+          "1": 3,
+          "2": 0,
+          "3": 3
+        },
+        "id": "version_independence",
+        "missing_tiers": [
+          2
+        ],
+        "modal_n": 3,
+        "name": "版本独立性",
+        "observed_tiers": [
+          0,
+          1,
+          3
+        ]
+      },
+      {
+        "allowed_scores": [
+          0,
+          3,
+          8,
+          10
+        ],
+        "counts": {
+          "0": 0,
+          "10": 3,
+          "3": 3,
+          "8": 3
+        },
+        "id": "release_branches",
+        "missing_tiers": [
+          0
+        ],
+        "modal_n": 3,
+        "name": "release代码分支策略",
+        "observed_tiers": [
+          3,
+          8,
+          10
+        ]
+      },
+      {
+        "allowed_scores": [
+          0,
+          3,
+          8,
+          10
+        ],
+        "counts": {
+          "0": 3,
+          "10": 3,
+          "3": 0,
+          "8": 3
+        },
+        "id": "device_specificity",
+        "missing_tiers": [
+          3
+        ],
+        "modal_n": 3,
+        "name": "设备特有",
+        "observed_tiers": [
+          0,
+          8,
+          10
+        ]
+      },
+      {
+        "allowed_scores": [
+          0,
+          1,
+          3,
+          5
+        ],
+        "counts": {
+          "0": 5,
+          "1": 1,
+          "3": 0,
+          "5": 3
+        },
+        "id": "parameter_management",
+        "missing_tiers": [
+          3
+        ],
+        "modal_n": 5,
+        "name": "参数管理",
+        "observed_tiers": [
+          0,
+          1,
+          5
+        ]
+      }
+    ],
+    "in_sample_per_leaf_modal_n": 65,
+    "interpretation": "Same-sample score distribution only; neither measured prediction accuracy nor held-out performance.",
+    "leaf_count": 117,
+    "max_score": 549,
+    "observed_tier_cells": 34,
+    "possible_tier_cells": 52,
+    "repository_count": 9,
+    "total": 338
+  },
+  "independent_holdout": false,
+  "input_status": "local_reference_scores",
+  "inputs": [
+    {
+      "path": "STANDARD_SCORES.json",
+      "sha256": "aed0534cf42f06ed15d9e4ae1863547cc5f9bcc8af9c72081c4dda432e104848"
+    },
+    {
+      "path": "contract-index.json",
+      "sha256": "d63e2da4840178571af2ced5ce89f53c42fcf48ddc4c38a37d78aec93ef1ce1f"
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "f1695c0a3544071d9319ad4e06e2e0fabf3ce4aacca788dbfff41895754de71a"
+    }
+  ],
+  "interface_scope": {
+    "change_policy": "Version the scope and consistently re-review all nine interface leaves before changing this boundary.",
+    "contract_section": "2.3",
+    "id": "public_production_model_root",
+    "internal_interfaces_reviewed_under": [
+      "hierarchy",
+      "dataflow",
+      "naming"
+    ]
+  },
+  "limits": [
+    "Nine repositories from a related construction/test family do not constitute nine independent holdout sources.",
+    "Coverage means observed contract leaf/tier combinations; unobserved tiers remain untested as benchmark distinctions.",
+    "Deterministic counting and score replay do not replace independent semantic evidence review.",
+    "Source tests and generated-C host replay share construction/reference lineage; passing runs do not by themselves establish independent real-device or cross-platform validity.",
+    "Device generality retains the user-approved branch-name approximation. Size bands 200/800 remain an engineering choice, not empirical distribution quantiles.",
+    "This disclosure changes no score, source, sample count, contract tier or acceptance requirement."
+  ],
+  "schema_version": "1.0.0",
+  "source_bindings": [
+    {
+      "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+      "id": "ML-01",
+      "tree": "795960b11fa9f0d6653ebe4ddad94332270068ab"
+    },
+    {
+      "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+      "id": "ML-02",
+      "tree": "4f189e4955070d07dff285eccc8b148f508b9180"
+    },
+    {
+      "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+      "id": "ML-03",
+      "tree": "36f4ccff3169a9f28d5a47ce34f49dbf0bfe97a9"
+    },
+    {
+      "head": "3b5330155a62517135b578809002eade5638ba4f",
+      "id": "ML-04",
+      "tree": "3cccee0cd0404879aacb8b66d5c0673e7de3e20c"
+    },
+    {
+      "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+      "id": "ML-05",
+      "tree": "7ea3b14ce3bb8ae481d45c78cdf4560f2949bd97"
+    },
+    {
+      "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+      "id": "ML-06",
+      "tree": "ad657e224ef7d2bec46b1936066c31250739c927"
+    },
+    {
+      "head": "30090f8ec3b797990a77cee35be0f3c713cea189",
+      "id": "ML-07",
+      "tree": "6edc2b9f7e0cb4438af91a877be13cd4448009f6"
+    },
+    {
+      "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+      "id": "ML-08",
+      "tree": "82d42c93352d10093a05a18ec4500a9839afb1ab"
+    },
+    {
+      "head": "97e8582c9bda384528dd9215811e6fc00740892c",
+      "id": "ML-09",
+      "tree": "73f96117693f560ccfc69529f6133848f9c6ddb8"
+    }
+  ],
+  "source_families": {
+    "business_reference_components": [
+      [
+        "ML-03",
+        "ML-04",
+        "ML-07"
+      ],
+      [
+        "ML-06",
+        "ML-08"
+      ]
+    ],
+    "conservative_generation_family": {
+      "id": "local-simulink-construction-20260908",
+      "members": [
+        "ML-01",
+        "ML-02",
+        "ML-03",
+        "ML-04",
+        "ML-05",
+        "ML-06",
+        "ML-07",
+        "ML-08",
+        "ML-09"
+      ]
+    },
+    "construction_and_test_components": [
+      [
+        "ML-01",
+        "ML-02",
+        "ML-03",
+        "ML-04",
+        "ML-05",
+        "ML-06",
+        "ML-07",
+        "ML-08",
+        "ML-09"
+      ]
+    ],
+    "matching_method": {
+      "files": "Exact Git blob bytes of tracked .m/.py files at each score-bound HEAD; SHA-256.",
+      "reference_functions": "reference.py functions spanning at least eight source lines; ast.dump(include_attributes=False), then SHA-256. Function names and constants are retained.",
+      "scope_limit": "Shared helper files are construction/test lineage, not proof of identical business behavior. No matching fingerprint is not proof of independent origin."
+    },
+    "origin": "One locally authored synthetic Simulink benchmark construction run; shared model builders, test scaffolding and reference algorithms.",
+    "shared_file_groups": [
+      {
+        "members": [
+          {
+            "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+            "id": "ML-06",
+            "path": "run_tests.m"
+          },
+          {
+            "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+            "id": "ML-08",
+            "path": "run_tests.m"
+          }
+        ],
+        "sha256": "b829a3eae552247648b8823b02f40f9cc0ea438172cb9ebf6806ae3d77842f7c"
+      },
+      {
+        "members": [
+          {
+            "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+            "id": "ML-02",
+            "path": "build_model.m"
+          },
+          {
+            "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+            "id": "ML-03",
+            "path": "build_model.m"
+          },
+          {
+            "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+            "id": "ML-05",
+            "path": "build_model.m"
+          },
+          {
+            "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+            "id": "ML-06",
+            "path": "build_model.m"
+          },
+          {
+            "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+            "id": "ML-08",
+            "path": "build_model.m"
+          },
+          {
+            "head": "97e8582c9bda384528dd9215811e6fc00740892c",
+            "id": "ML-09",
+            "path": "build_model.m"
+          }
+        ],
+        "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+      },
+      {
+        "members": [
+          {
+            "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+            "id": "ML-01",
+            "path": "generate_code.m"
+          },
+          {
+            "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+            "id": "ML-02",
+            "path": "generate_code.m"
+          },
+          {
+            "head": "3b5330155a62517135b578809002eade5638ba4f",
+            "id": "ML-04",
+            "path": "generate_code.m"
+          },
+          {
+            "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+            "id": "ML-05",
+            "path": "generate_code.m"
+          },
+          {
+            "head": "30090f8ec3b797990a77cee35be0f3c713cea189",
+            "id": "ML-07",
+            "path": "generate_code.m"
+          },
+          {
+            "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+            "id": "ML-08",
+            "path": "generate_code.m"
+          }
+        ],
+        "sha256": "dfe1ac89950b92adac944742106f5d917dc1718abae0ad196444e52013b95e35"
+      },
+      {
+        "members": [
+          {
+            "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+            "id": "ML-02",
+            "path": "run_tests.m"
+          },
+          {
+            "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+            "id": "ML-03",
+            "path": "run_tests.m"
+          },
+          {
+            "head": "3b5330155a62517135b578809002eade5638ba4f",
+            "id": "ML-04",
+            "path": "run_tests.m"
+          },
+          {
+            "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+            "id": "ML-05",
+            "path": "run_tests.m"
+          },
+          {
+            "head": "97e8582c9bda384528dd9215811e6fc00740892c",
+            "id": "ML-09",
+            "path": "run_tests.m"
+          }
+        ],
+        "sha256": "e2c4577d6c84f350264ff39f8a91b859434af633ad659734e1759f596eee52a8"
+      }
+    ],
+    "shared_reference_function_groups": [
+      {
+        "ast_sha256": "16f6d7f7f6812906f6dbb0f06dc57b806f4c070465fb82872e36704300a82515",
+        "members": [
+          {
+            "end_line": 61,
+            "file_sha256": "6b4d8d00b523ee271811fd77b2c00582a8c64b5719c23de1464a7a59a56d6c09",
+            "function": "battery",
+            "head": "3b5330155a62517135b578809002eade5638ba4f",
+            "id": "ML-04",
+            "line": 22,
+            "path": "UnitTest/reference.py"
+          },
+          {
+            "end_line": 71,
+            "file_sha256": "e2af45316dab6b7b31a1b30dfe27652b96ed67ab4fd3c846bd6ea9c074a84d8c",
+            "function": "battery",
+            "head": "30090f8ec3b797990a77cee35be0f3c713cea189",
+            "id": "ML-07",
+            "line": 32,
+            "path": "UnitTest/reference.py"
+          }
+        ]
+      },
+      {
+        "ast_sha256": "4cba8a5bbeccfac4b3600402c32363e72ab0197a68b14f2fadb76d985740c540",
+        "members": [
+          {
+            "end_line": 30,
+            "file_sha256": "c37d2f2663e4aaa7dda3b23033e8a3ab7e9a1da842a66676a02e818b72ec639b",
+            "function": "charge",
+            "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+            "id": "ML-03",
+            "line": 22,
+            "path": "reference.py"
+          },
+          {
+            "end_line": 30,
+            "file_sha256": "e2af45316dab6b7b31a1b30dfe27652b96ed67ab4fd3c846bd6ea9c074a84d8c",
+            "function": "charge",
+            "head": "30090f8ec3b797990a77cee35be0f3c713cea189",
+            "id": "ML-07",
+            "line": 22,
+            "path": "UnitTest/reference.py"
+          }
+        ]
+      },
+      {
+        "ast_sha256": "85b9f9938d3563cef8448e5cb36d976689bcf2a8fb3e3547b60d4167f97fa519",
+        "members": [
+          {
+            "end_line": 142,
+            "file_sha256": "ed35d0ded63fb8aa6d55414f1ec42de6ca4930a638ee611b5aedf82d2b79a8b7",
+            "function": "vectors",
+            "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+            "id": "ML-06",
+            "line": 66,
+            "path": "reference.py"
+          },
+          {
+            "end_line": 142,
+            "file_sha256": "f4d5c25d4b19b1e08145430c3fdf5f9dea5f2ed5891bde554ffa525f90cd895e",
+            "function": "vectors",
+            "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+            "id": "ML-08",
+            "line": 66,
+            "path": "UnitTest/reference.py"
+          }
+        ]
+      },
+      {
+        "ast_sha256": "9121c0f7cbebef8b062d1adc5613f1710eeb330f0989a9c93c8aefb2cddf0a28",
+        "members": [
+          {
+            "end_line": 80,
+            "file_sha256": "b88c12b943e2ef652e24d70031fb053f24d82012f3f37c76de9dd685b076ca11",
+            "function": "vectors",
+            "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
+            "id": "ML-02",
+            "line": 34,
+            "path": "UnitTest/reference.py"
+          },
+          {
+            "end_line": 80,
+            "file_sha256": "c37d2f2663e4aaa7dda3b23033e8a3ab7e9a1da842a66676a02e818b72ec639b",
+            "function": "vectors",
+            "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
+            "id": "ML-03",
+            "line": 34,
+            "path": "reference.py"
+          },
+          {
+            "end_line": 111,
+            "file_sha256": "6b4d8d00b523ee271811fd77b2c00582a8c64b5719c23de1464a7a59a56d6c09",
+            "function": "vectors",
+            "head": "3b5330155a62517135b578809002eade5638ba4f",
+            "id": "ML-04",
+            "line": 65,
+            "path": "UnitTest/reference.py"
+          },
+          {
+            "end_line": 106,
+            "file_sha256": "035c05cbb8ffc7d267e119664b1d4d834708f27e579cd035f476495c3ebfc16d",
+            "function": "vectors",
+            "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+            "id": "ML-05",
+            "line": 60,
+            "path": "UnitTest/reference.py"
+          },
+          {
+            "end_line": 103,
+            "file_sha256": "38bc1f216f14e4a6e4149716a86f26714eb2ae21dcd4e78e6d8e0f74bf627563",
+            "function": "vectors",
+            "head": "97e8582c9bda384528dd9215811e6fc00740892c",
+            "id": "ML-09",
+            "line": 57,
+            "path": "reference.py"
+          }
+        ]
+      },
+      {
+        "ast_sha256": "b738878c32ab61cefcbe0165300a6b1e660d015085771b6e295506eac65ed529",
+        "members": [
+          {
+            "end_line": 62,
+            "file_sha256": "ed35d0ded63fb8aa6d55414f1ec42de6ca4930a638ee611b5aedf82d2b79a8b7",
+            "function": "thermal",
+            "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
+            "id": "ML-06",
+            "line": 22,
+            "path": "reference.py"
+          },
+          {
+            "end_line": 62,
+            "file_sha256": "f4d5c25d4b19b1e08145430c3fdf5f9dea5f2ed5891bde554ffa525f90cd895e",
+            "function": "thermal",
+            "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
+            "id": "ML-08",
+            "line": 22,
+            "path": "UnitTest/reference.py"
+          }
+        ]
+      }
+    ],
+    "split_guidance": "Use the conservative generation family as one group for independent holdout separation. Explicit business/reference relatives must stay together; repository-level random splitting does not create independent sources."
+  },
+  "suite_id": "matlab-simulink",
+  "usage": "Dev/Regression"
+}

@@ -1,31 +1,57 @@
-# MATLAB / Simulink — reviewed, not finalized
+# MATLAB / Simulink
 
-The independent contract contains 13 leaves / 61 points per repository: nine
-repositories, 117 leaves / 549 points. The six non-LLM dimensions are excluded.
+Nine original control-model repositories, 13 leaves / 61 points each:
+**117 leaves, 338 / 549**. [Scores](SCORECARD.md), [CSV](SCORECARD.csv),
+[manifest](manifest.json), [standard answers](STANDARD_SCORES.json),
+[leaf evidence](oracle/), [readiness](VALIDATION_STATUS.json).
+
 Read [SCORING_OVERRIDES.md](SCORING_OVERRIDES.md) before the unchanged
-[original contract](SCORING_CONTRACT.md); user overrides have precedence.
+[original contract](SCORING_CONTRACT.md). The six excluded non-LLM dimensions are
+not part of this suite. Android scores are independent and must not be added.
 
-[Current reviewed scores](review/STANDARD_SCORES.json) total 338 / 549. They are
-**not canonical final scores**. The old 339-point suite is not an input here.
-[Source manifest](manifest.json) records the current exact HEADs/trees/refs and
-proposed public target names; those repositories are not yet published.
+## Evidence and validation
 
-Eight of nine default repositories have complete repeated facts. Ten of twelve
-default/VCU-B configurations have fresh native replay. ML-05 and ML-05-B lack
-valid fresh execution. ML-05's executable returned WinError 5 and disappeared;
-the exact reason is unconfirmed. No rename, ACL change, protection disabling or
-repeated compilation is an approved workaround.
+Local finalization verified nine complete source snapshots and repeated facts,
+117 independently recomputed leaves with zero differences, and 12 native
+configurations / 26,493 samples. Host generated-C replay is distinct from
+MATLAB MIL, Simulink SIL/PIL/HIL, ECU compilation or vehicle validation.
+Existing same-HEAD MATLAB runs and restored SLX execution were revalidated by
+binding; this integration does not claim new MATLAB execution.
 
-The coordinator must resolve that environmental cause, run both configurations
-and resource checks, and pass the existing strict finalizer before exporting a
-canonical suite. Current readiness is bound in [VALIDATION_STATUS.json](VALIDATION_STATUS.json).
-This preparation's validator rejects the MATLAB published state unconditionally;
-the final evidence export and its validation must be implemented before enabling it.
-Local review snapshots retain original evidence paths for traceability; they
-are not a portable public evidence pack or candidate input. Portable evidence
-export and final public restoration remain required before release.
+The [evidence index](EVIDENCE_INDEX.json) freezes the
+[release attachment](https://github.com/cockpit-bench/cockpit-benchmark/releases/download/v0.9.0/matlab-verification-data-v0.9.0.zip).
+The attachment retains original JSON and measured binary traces in a
+content-addressed layout. Original paths inside historical JSON are lookup keys;
+the verifier never reads those paths from the current host. It does not contain
+full source repositories, Git objects, MATLAB, compiler or native executables.
+Omitted artifacts are explicitly marked as hash-only provenance, not byte-verified
+by the portable replay. The 9 source repositories are restored separately.
 
-[Dataset limitations](review/DATASET_LIMITS.md): 34 / 52 tier cells, in-sample modal
-count 65 / 117, a common generation family. These are not prediction accuracies.
-Prior same-HEAD local restoration and MATLAB MIL do not replace the missing native
-replays. Host generated-C replay is not SIL/PIL/HIL or real-vehicle validation.
+The portable verifier checks 117 scores, all 12 native vector/result bindings,
+and recomputes numerical errors and 1,351,118 property assertions from retained
+MIL/native output streams for 11 configurations (25,878 native samples).
+ML-01 retained measured case summaries and vectors but no native stdout; its
+615 native samples are checked at the recorded-case level. Passing metadata
+cannot establish independent semantic truth or reproduce missing execution.
+
+```sh
+python verification/matlab_evidence.py --wrapper . --archive matlab-verification-data-v0.9.0.zip --sources C:/bench/matlab
+```
+
+Run from the wrapper root. `--sources` additionally resolves source-line anchors
+and the executed model bytes against restored Git refs. It never runs model
+callbacks, build scripts or executables. The index does not authorize candidate
+access to standard answers or maintainer facts.
+
+## Sources and limits
+
+[PUBLIC_RESTORE.json](PUBLIC_RESTORE.json) records a fresh anonymous full-history
+restore of all nine public source repositories, including exact HEAD/tree,
+all heads/tags and file inventory checks. Restored repositories are clean and
+remote-free; this is source restoration, not execution validation.
+
+[Dataset limitations](DATASET_LIMITS.md): 34 / 52 tier cells, in-sample modal count
+65 / 117, one common generation family. These are not prediction accuracies.
+All samples remain Dev/Regression; keep the source family in one evaluation
+split. Independent agent review does not imply external gold or human expert
+certification. Source repositories contain no standard answers.

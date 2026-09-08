@@ -1,0 +1,664 @@
+{
+  "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+  "id": "ML-05",
+  "leaves": [
+    {
+      "contract_section": "2.1",
+      "evidence": [
+        {
+          "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "json_pointer": "/leaves/hierarchy",
+          "kind": "artifact",
+          "model_sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "path": "attachment/sha256/9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38",
+          "sha256": "9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:2",
+          "symbol": "AxleTractionCoordinator/Processing"
+        },
+        {
+          "line": 391,
+          "matched_text": "\"id\": \"Processing/FrontLeftSpeedLowValidThreshold\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:1",
+          "symbol": "AxleTractionCoordinator/Utility"
+        },
+        {
+          "line": 224,
+          "matched_text": "\"id\": \"Utility/RoadSpeedAbs\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        }
+      ],
+      "id": "hierarchy",
+      "max_score": 3,
+      "reason": "Processing combines all wheel filters, slip control and torque shaping; Utility combines motion reference and global allocation.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.2",
+      "evidence": [
+        {
+          "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "json_pointer": "/leaves/reuse",
+          "kind": "artifact",
+          "model_sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "path": "attachment/sha256/9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38",
+          "sha256": "9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:259",
+          "symbol": "AxleTractionCoordinator/Processing/Block230"
+        },
+        {
+          "line": 2598,
+          "matched_text": "\"id\": \"Processing/Block230\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:60",
+          "symbol": "AxleTractionCoordinator/Processing/FrontLeftSlipAboveTarget"
+        },
+        {
+          "line": 533,
+          "matched_text": "\"id\": \"Processing/FrontLeftSlipAboveTarget\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:159",
+          "symbol": "AxleTractionCoordinator/Processing/Block130"
+        },
+        {
+          "line": 1559,
+          "matched_text": "\"id\": \"Processing/Block130\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:92",
+          "symbol": "AxleTractionCoordinator/Processing/FrontLeftProtection"
+        },
+        {
+          "line": 864,
+          "matched_text": "\"id\": \"Processing/FrontLeftProtection\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        }
+      ],
+      "id": "reuse",
+      "max_score": 3,
+      "reason": "Four wheel qualification, integral slip correction, thermal/tyre/load limits and slew chains repeat without links.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.3",
+      "evidence": [
+        {
+          "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "json_pointer": "/leaves/interface",
+          "kind": "artifact",
+          "model_sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "path": "attachment/sha256/9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38",
+          "sha256": "9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:4",
+          "symbol": "AxleTractionCoordinator/Accelerator"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:454",
+          "symbol": "AxleTractionCoordinator/YawTarget"
+        },
+        {
+          "line": 8,
+          "matched_text": "| Accelerator | 1 | 0 to 1 | 0.4 |",
+          "path": "Documentation/interfaces.md",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "6b369b911da7bcd0a415c69fb689f29fb042e6bca899ce245b07ae1b273b0604"
+        },
+        {
+          "line": 51,
+          "matched_text": "| YawTarget | rad/s |",
+          "path": "Documentation/interfaces.md",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "6b369b911da7bcd0a415c69fb689f29fb042e6bca899ce245b07ae1b273b0604"
+        }
+      ],
+      "id": "interface",
+      "max_score": 3,
+      "reason": "Root inputs/outputs are semantic explicit scalar ports. Controlled variants additionally document every type/unit/domain and require interface/test/change-log updates; other variants lack full output range/change-control record.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 2
+    },
+    {
+      "contract_section": "2.4",
+      "evidence": [
+        {
+          "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "json_pointer": "/leaves/dataflow",
+          "kind": "artifact",
+          "model_sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "path": "attachment/sha256/9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38",
+          "sha256": "9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:129",
+          "symbol": "AxleTractionCoordinator/Processing/Block100"
+        },
+        {
+          "line": 1250,
+          "matched_text": "\"id\": \"Processing/Block100\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:136",
+          "symbol": "AxleTractionCoordinator/Processing/FrontRightIntegralDecayStep"
+        },
+        {
+          "line": 1320,
+          "matched_text": "\"id\": \"Processing/FrontRightIntegralDecayStep\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:137",
+          "symbol": "AxleTractionCoordinator/Processing/FrontRightIntegralDecay"
+        },
+        {
+          "line": 1331,
+          "matched_text": "\"id\": \"Processing/FrontRightIntegralDecay\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:138",
+          "symbol": "AxleTractionCoordinator/Processing/FrontRightIntegralRecovery"
+        },
+        {
+          "line": 1342,
+          "matched_text": "\"id\": \"Processing/FrontRightIntegralRecovery\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:62",
+          "symbol": "AxleTractionCoordinator/Processing/FrontLeftSlipIntegral"
+        },
+        {
+          "line": 555,
+          "matched_text": "\"id\": \"Processing/FrontLeftSlipIntegral\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:64",
+          "symbol": "AxleTractionCoordinator/Processing/Block35"
+        },
+        {
+          "line": 576,
+          "matched_text": "\"id\": \"Processing/Block35\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        }
+      ],
+      "id": "dataflow",
+      "max_score": 3,
+      "reason": "Public outputs and most calculation signals named; generic every-fifth block labels and dense flat wheel logic create many crossing branches inside Processing.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.5",
+      "evidence": [
+        {
+          "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "json_pointer": "/leaves/unit_test",
+          "kind": "artifact",
+          "model_sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "path": "attachment/sha256/9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38",
+          "sha256": "9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38"
+        },
+        {
+          "line": 29,
+          "matched_text": "assert(numel(data)==n,'Sample count mismatch');actual(:,k)=data(:);",
+          "path": "run_tests.m",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "e2c4577d6c84f350264ff39f8a91b859434af633ad659734e1759f596eee52a8"
+        },
+        {
+          "line": 41,
+          "matched_text": "result.coverage=struct('filter',out.covData.filter,'decision',decisioninfo(out.covData,m), ...",
+          "path": "run_tests.m",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "e2c4577d6c84f350264ff39f8a91b859434af633ad659734e1759f596eee52a8"
+        }
+      ],
+      "id": "unit_test",
+      "max_score": 5,
+      "reason": "Valid per-sample assertions against numerical expectations; current-model decision coverage [234, 268]. The coverage evidence records included datasets, matching model checksums and excluded stale results; no fixed report filename is used as a scoring gate.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 5
+    },
+    {
+      "contract_section": "2.6",
+      "evidence": [
+        {
+          "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "json_pointer": "/leaves/naming",
+          "kind": "artifact",
+          "model_sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "path": "attachment/sha256/9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38",
+          "sha256": "9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:129",
+          "symbol": "AxleTractionCoordinator/Processing/Block100"
+        },
+        {
+          "line": 1250,
+          "matched_text": "\"id\": \"Processing/Block100\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:134",
+          "symbol": "AxleTractionCoordinator/Processing/Block105"
+        },
+        {
+          "line": 1301,
+          "matched_text": "\"id\": \"Processing/Block105\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:115",
+          "symbol": "AxleTractionCoordinator/Processing/FrontRightSpeedHighValidThreshold"
+        },
+        {
+          "line": 1105,
+          "matched_text": "\"id\": \"Processing/FrontRightSpeedHighValidThreshold\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:48",
+          "symbol": "AxleTractionCoordinator/Processing/FrontLeftSpeedHighValidThreshold"
+        },
+        {
+          "line": 410,
+          "matched_text": "\"id\": \"Processing/FrontLeftSpeedHighValidThreshold\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        }
+      ],
+      "id": "naming",
+      "max_score": 5,
+      "reason": "Semantic review: mostly_meaningful; generic blocks 67/455, named line records 594/594. Ratios support, not replace, the source naming judgment.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.7",
+      "evidence": [
+        {
+          "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "json_pointer": "/leaves/directory",
+          "kind": "artifact",
+          "model_sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "path": "attachment/sha256/9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38",
+          "sha256": "9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38"
+        },
+        {
+          "kind": "complete Git tree",
+          "path": ".",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "tree": "7ea3b14ce3bb8ae481d45c78cdf4560f2949bd97"
+        }
+      ],
+      "id": "directory",
+      "max_score": 5,
+      "reason": "Model, UnitTest, Documentation and generated Src separate responsibilities; root launchers are entry points.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 5
+    },
+    {
+      "contract_section": "2.8",
+      "evidence": [
+        {
+          "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "json_pointer": "/leaves/build_independence",
+          "kind": "artifact",
+          "model_sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "path": "attachment/sha256/9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38",
+          "sha256": "9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38"
+        },
+        {
+          "line": 16,
+          "matched_text": "load_system('simulink'); new_system(m);",
+          "path": "build_model.m",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        }
+      ],
+      "id": "build_independence",
+      "max_score": 3,
+      "reason": "External business dependencies: []. Actual model callbacks, reference blocks and build source inventory are linked. MATLAB tool environment is separate under the user override; execution status is reported independently.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.9",
+      "evidence": [
+        {
+          "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "json_pointer": "/leaves/model_version",
+          "kind": "artifact",
+          "model_sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "path": "attachment/sha256/9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38",
+          "sha256": "9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38"
+        },
+        {
+          "line": 20,
+          "matched_text": "'StopTime','1','ModelVersionFormat',g.version,'SystemTargetFile','ert.tlc');",
+          "path": "build_model.m",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        }
+      ],
+      "id": "model_version",
+      "max_score": 3,
+      "reason": "README internal R1 and Git commits exist, without complete dated signal change ledger.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.10",
+      "evidence": [
+        {
+          "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "json_pointer": "/leaves/version_independence",
+          "kind": "artifact",
+          "model_sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "path": "attachment/sha256/9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38",
+          "sha256": "9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38"
+        },
+        {
+          "line": 20,
+          "matched_text": "'StopTime','1','ModelVersionFormat',g.version,'SystemTargetFile','ert.tlc');",
+          "path": "build_model.m",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "c84ce4e0b193bebd6079c87f8a42fc9bc4f715a966e9d21c8ee9a884761546f0"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+              "object_oid": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-A",
+              "tree_oid": "7ea3b14ce3bb8ae481d45c78cdf4560f2949bd97"
+            },
+            {
+              "commit_oid": "5f824d87f3b502db16bfff7c0f2f12869ad1d563",
+              "object_oid": "5f824d87f3b502db16bfff7c0f2f12869ad1d563",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-B",
+              "tree_oid": "7cee2c1544dd3c76062d3397444fd33000988522"
+            }
+          ]
+        }
+      ],
+      "id": "version_independence",
+      "max_score": 3,
+      "reason": "Actual model version R1 and full refs inspected; no version inferred from Git commit existence.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 1
+    },
+    {
+      "contract_section": "2.11",
+      "evidence": [
+        {
+          "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "json_pointer": "/leaves/release_branches",
+          "kind": "artifact",
+          "model_sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "path": "attachment/sha256/9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38",
+          "sha256": "9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+              "object_oid": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-A",
+              "tree_oid": "7ea3b14ce3bb8ae481d45c78cdf4560f2949bd97"
+            },
+            {
+              "commit_oid": "5f824d87f3b502db16bfff7c0f2f12869ad1d563",
+              "object_oid": "5f824d87f3b502db16bfff7c0f2f12869ad1d563",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-B",
+              "tree_oid": "7cee2c1544dd3c76062d3397444fd33000988522"
+            }
+          ]
+        },
+        {
+          "line": 9,
+          "matched_text": "Internal model release R1. Integration branches separate platform releases.",
+          "path": "README.md",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "7a6101a8438c2a88e1e2d642364fc193928f838945419733386feffa0babac59"
+        },
+        {
+          "line": 11,
+          "matched_text": "Platform integration uses platform/VCU-A and platform/VCU-B release lines. VCU-A is the default delivery. VCU-B adapts the cooling or torque ratings for a different hardware package.",
+          "path": "README.md",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "7a6101a8438c2a88e1e2d642364fc193928f838945419733386feffa0babac59"
+        }
+      ],
+      "id": "release_branches",
+      "max_score": 10,
+      "reason": "VCU-A and VCU-B have different calibration trees; actual MIL and generated C replay passed on both.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 8
+    },
+    {
+      "contract_section": "2.12",
+      "evidence": [
+        {
+          "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "json_pointer": "/leaves/device_specificity",
+          "kind": "artifact",
+          "model_sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "path": "attachment/sha256/9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38",
+          "sha256": "9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+              "object_oid": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-A",
+              "tree_oid": "7ea3b14ce3bb8ae481d45c78cdf4560f2949bd97"
+            },
+            {
+              "commit_oid": "5f824d87f3b502db16bfff7c0f2f12869ad1d563",
+              "object_oid": "5f824d87f3b502db16bfff7c0f2f12869ad1d563",
+              "object_type": "commit",
+              "ref": "refs/heads/platform/VCU-B",
+              "tree_oid": "7cee2c1544dd3c76062d3397444fd33000988522"
+            }
+          ]
+        },
+        {
+          "line": 9,
+          "matched_text": "Internal model release R1. Integration branches separate platform releases.",
+          "path": "README.md",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "7a6101a8438c2a88e1e2d642364fc193928f838945419733386feffa0babac59"
+        },
+        {
+          "line": 11,
+          "matched_text": "Platform integration uses platform/VCU-A and platform/VCU-B release lines. VCU-A is the default delivery. VCU-B adapts the cooling or torque ratings for a different hardware package.",
+          "path": "README.md",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "7a6101a8438c2a88e1e2d642364fc193928f838945419733386feffa0babac59"
+        }
+      ],
+      "id": "device_specificity",
+      "max_score": 10,
+      "reason": "VCU-A/B identify platforms; branch-held calibration changes implement hardware differences.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 8
+    },
+    {
+      "contract_section": "2.13",
+      "evidence": [
+        {
+          "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "json_pointer": "/leaves/parameter_management",
+          "kind": "artifact",
+          "model_sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "path": "attachment/sha256/9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38",
+          "sha256": "9ef9244eacf02722c92b5fe6770c8c3d0c869bbd4733160891cf21e843b5aa38"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:154",
+          "symbol": "AxleTractionCoordinator/Processing/Block125"
+        },
+        {
+          "line": 1506,
+          "matched_text": "\"id\": \"Processing/Block125\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:254",
+          "symbol": "AxleTractionCoordinator/Processing/Block225"
+        },
+        {
+          "line": 2547,
+          "matched_text": "\"id\": \"Processing/Block225\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        },
+        {
+          "path": "Model/AxleTractionCoordinator.slx",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "a356c4c8c1d5ef2ecbef91a3a4e870095a949e3d8aad4b2a5b6f57ead4cbbe94",
+          "sid": "AxleTractionCoordinator:129",
+          "symbol": "AxleTractionCoordinator/Processing/Block100"
+        },
+        {
+          "line": 1250,
+          "matched_text": "\"id\": \"Processing/Block100\",",
+          "path": "Model/model.json",
+          "ref": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
+          "sha256": "5f39a53a7a9235421be6dc556b2a29c3c660434cf68ae492ae908ae354e35ffb"
+        }
+      ],
+      "id": "parameter_management",
+      "max_score": 5,
+      "reason": "Torque and wheel-loop ratings/thresholds are literal graph fields; workspace empty. Parameter audit: {'parameters': 0, 'consumer_fields': 0, 'unique_consumer_fields': 0, 'pass': 0, 'unresolved': 0, 'conflicts': 0}. Each definition and actual SID/field consumer has a separate value/type/unit verdict.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 0
+    }
+  ],
+  "schema_version": "1.0.0",
+  "status": "local_reference_scores",
+  "suite_id": "matlab-simulink",
+  "tree": "7ea3b14ce3bb8ae481d45c78cdf4560f2949bd97"
+}

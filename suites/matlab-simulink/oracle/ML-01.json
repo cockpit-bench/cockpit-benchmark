@@ -1,0 +1,580 @@
+{
+  "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+  "id": "ML-01",
+  "leaves": [
+    {
+      "contract_section": "2.1",
+      "evidence": [
+        {
+          "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "json_pointer": "/leaves/hierarchy",
+          "kind": "artifact",
+          "model_sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "path": "attachment/sha256/9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20",
+          "sha256": "9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:17",
+          "symbol": "TorqueRequestController/SafetyPermission"
+        },
+        {
+          "line": 41,
+          "matched_text": "sub(model,'SafetyPermission',[230 245 430 450],names,{'Allowed'});",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:6",
+          "symbol": "TorqueRequestController/TorqueDemand"
+        },
+        {
+          "line": 27,
+          "matched_text": "sub(model,'TorqueDemand',[230 55 430 170],{'Pedal','MotorTempC'},{'DemandNm'});",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:34",
+          "symbol": "TorqueRequestController/TorqueShaping"
+        },
+        {
+          "line": 65,
+          "matched_text": "sub(model,'TorqueShaping',[530 100 735 260],{'DemandNm','Allowed'},{'TorqueNm'});",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        }
+      ],
+      "id": "hierarchy",
+      "max_score": 3,
+      "reason": "SafetyPermission, TorqueDemand and TorqueShaping isolate gating, static demand and stateful shaping; direct sizes 16/10/9.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.2",
+      "evidence": [
+        {
+          "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "json_pointer": "/leaves/reuse",
+          "kind": "artifact",
+          "model_sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "path": "attachment/sha256/9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20",
+          "sha256": "9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:17",
+          "symbol": "TorqueRequestController/SafetyPermission"
+        },
+        {
+          "line": 41,
+          "matched_text": "sub(model,'SafetyPermission',[230 245 430 450],names,{'Allowed'});",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:6",
+          "symbol": "TorqueRequestController/TorqueDemand"
+        },
+        {
+          "line": 27,
+          "matched_text": "sub(model,'TorqueDemand',[230 55 430 170],{'Pedal','MotorTempC'},{'DemandNm'});",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:34",
+          "symbol": "TorqueRequestController/TorqueShaping"
+        },
+        {
+          "line": 65,
+          "matched_text": "sub(model,'TorqueShaping',[530 100 735 260],{'DemandNm','Allowed'},{'TorqueNm'});",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        }
+      ],
+      "id": "reuse",
+      "max_score": 3,
+      "reason": "One demand calculation and one applied-torque slew state; no duplicated reusable processing module. No custom library/model link.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 2
+    },
+    {
+      "contract_section": "2.3",
+      "evidence": [
+        {
+          "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "json_pointer": "/leaves/interface",
+          "kind": "artifact",
+          "model_sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "path": "attachment/sha256/9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20",
+          "sha256": "9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:45",
+          "symbol": "TorqueRequestController/Allowed"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:44",
+          "symbol": "TorqueRequestController/TorqueNm"
+        },
+        {
+          "line": 14,
+          "matched_text": "| Allowed | OUT 2 | boolean | 1 | false/true | Safety permission, not thermal availability |",
+          "path": "Documentation/INTERFACE.md",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "c1938e4de68ace7836199f8cc0ab4b80f83e718d48dbdb51b026614e8389555a"
+        },
+        {
+          "line": 13,
+          "matched_text": "| TorqueNm | OUT 1 | double | Nm | [0,300] | Applied positive torque request |",
+          "path": "Documentation/INTERFACE.md",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "c1938e4de68ace7836199f8cc0ab4b80f83e718d48dbdb51b026614e8389555a"
+        }
+      ],
+      "id": "interface",
+      "max_score": 3,
+      "reason": "Root inputs/outputs are semantic explicit scalar ports. Controlled variants additionally document every type/unit/domain and require interface/test/change-log updates; other variants lack full output range/change-control record.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.4",
+      "evidence": [
+        {
+          "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "json_pointer": "/leaves/dataflow",
+          "kind": "artifact",
+          "model_sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "path": "attachment/sha256/9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20",
+          "sha256": "9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:38",
+          "symbol": "TorqueRequestController/TorqueShaping/PreviousAppliedTorque"
+        },
+        {
+          "line": 67,
+          "matched_text": "block(s,'UnitDelay','PreviousAppliedTorque',[155 200 210 235],'InitialCondition','0','SampleTime','0.01');",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:41",
+          "symbol": "TorqueRequestController/TorqueShaping/NextTorque"
+        },
+        {
+          "line": 70,
+          "matched_text": "block(s,'Sum','NextTorque',[355 40 385 85],'Inputs','++');",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:42",
+          "symbol": "TorqueRequestController/TorqueShaping/SafetyCutoff"
+        },
+        {
+          "line": 71,
+          "matched_text": "block(s,'Switch','SafetyCutoff',[450 50 495 130],'Criteria','u2 ~= 0');",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        }
+      ],
+      "id": "dataflow",
+      "max_score": 3,
+      "reason": "All 54 signals named; three stages with one necessary applied-torque feedback path.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.5",
+      "evidence": [
+        {
+          "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "json_pointer": "/leaves/unit_test",
+          "kind": "artifact",
+          "model_sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "path": "attachment/sha256/9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20",
+          "sha256": "9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20"
+        },
+        {
+          "line": 13,
+          "matched_text": "assert(isnumeric(cap) && isscalar(cap) && isfinite(cap) && isnumeric(rise) && isscalar(rise) && isfinite(rise) && ...",
+          "path": "UnitTest/run_tests.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "8a56314bb6258bd7f7f1d0dfc0619a976beab717b695a0120cc440870b2e1417"
+        },
+        {
+          "line": 82,
+          "matched_text": "'decision',decisioninfo(aggregate,m),'condition',conditioninfo(aggregate,m), ...",
+          "path": "UnitTest/run_tests.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "8a56314bb6258bd7f7f1d0dfc0619a976beab717b695a0120cc440870b2e1417"
+        }
+      ],
+      "id": "unit_test",
+      "max_score": 5,
+      "reason": "Valid per-sample assertions against numerical expectations; current-model decision coverage [11, 14]. The coverage evidence records included datasets, matching model checksums and excluded stale results; no fixed report filename is used as a scoring gate.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.6",
+      "evidence": [
+        {
+          "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "json_pointer": "/leaves/naming",
+          "kind": "artifact",
+          "model_sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "path": "attachment/sha256/9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20",
+          "sha256": "9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:38",
+          "symbol": "TorqueRequestController/TorqueShaping/PreviousAppliedTorque"
+        },
+        {
+          "line": 67,
+          "matched_text": "block(s,'UnitDelay','PreviousAppliedTorque',[155 200 210 235],'InitialCondition','0','SampleTime','0.01');",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:30",
+          "symbol": "TorqueRequestController/SafetyPermission/PedalHighValid"
+        },
+        {
+          "line": 49,
+          "matched_text": "block(s,'RelationalOperator','PedalHighValid',[235 285 270 320],'Operator','<=');",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        }
+      ],
+      "id": "naming",
+      "max_score": 5,
+      "reason": "Semantic review: accurate; generic blocks 0/45, named line records 54/54. Ratios support, not replace, the source naming judgment.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 5
+    },
+    {
+      "contract_section": "2.7",
+      "evidence": [
+        {
+          "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "json_pointer": "/leaves/directory",
+          "kind": "artifact",
+          "model_sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "path": "attachment/sha256/9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20",
+          "sha256": "9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20"
+        },
+        {
+          "kind": "complete Git tree",
+          "path": ".",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "tree": "795960b11fa9f0d6653ebe4ddad94332270068ab"
+        }
+      ],
+      "id": "directory",
+      "max_score": 5,
+      "reason": "Model, UnitTest, Documentation and generated Src separate responsibilities; root launchers are entry points.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 5
+    },
+    {
+      "contract_section": "2.8",
+      "evidence": [
+        {
+          "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "json_pointer": "/leaves/build_independence",
+          "kind": "artifact",
+          "model_sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "path": "attachment/sha256/9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20",
+          "sha256": "9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20"
+        },
+        {
+          "line": 6,
+          "matched_text": "load_system('simulink'); new_system(model);",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        }
+      ],
+      "id": "build_independence",
+      "max_score": 3,
+      "reason": "External business dependencies: []. Actual model callbacks, reference blocks and build source inventory are linked. MATLAB tool environment is separate under the user override; execution status is reported independently.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.9",
+      "evidence": [
+        {
+          "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "json_pointer": "/leaves/model_version",
+          "kind": "artifact",
+          "model_sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "path": "attachment/sha256/9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20",
+          "sha256": "9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20"
+        },
+        {
+          "line": 9,
+          "matched_text": "'SaveFormat','Dataset','SignalLogging','off','ModelVersionFormat','0.2.0');",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        },
+        {
+          "line": 3,
+          "matched_text": "## 0.2.0 — 2026-09-08",
+          "path": "Documentation/CHANGELOG.md",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "e4c4daf6162984e102f735a3eef3139cf28d8a412e96c98edb7489d56a1e6f42"
+        }
+      ],
+      "id": "model_version",
+      "max_score": 3,
+      "reason": "Dated release/change record states signal additions or later unchanged signals; model version and Git history corroborate.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.10",
+      "evidence": [
+        {
+          "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "json_pointer": "/leaves/version_independence",
+          "kind": "artifact",
+          "model_sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "path": "attachment/sha256/9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20",
+          "sha256": "9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20"
+        },
+        {
+          "line": 9,
+          "matched_text": "'SaveFormat','Dataset','SignalLogging','off','ModelVersionFormat','0.2.0');",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "010ef955a27cdf36789585e025d2e3a29f781070",
+              "object_oid": "010ef955a27cdf36789585e025d2e3a29f781070",
+              "object_type": "commit",
+              "ref": "refs/heads/main",
+              "tree_oid": "795960b11fa9f0d6653ebe4ddad94332270068ab"
+            },
+            {
+              "commit_oid": "f7a740bcb0665e0a997033193cf955aab51800f7",
+              "object_oid": "82e6d97ebae5f3df0e553aba4d6d9eec182697d5",
+              "object_type": "tag",
+              "ref": "refs/tags/v0.2.0",
+              "tree_oid": "bf140e8e2dba38b53f21bb53492a421ac52bfd08"
+            }
+          ]
+        }
+      ],
+      "id": "version_independence",
+      "max_score": 3,
+      "reason": "Actual model version 0.2.0 and full refs inspected; no version inferred from Git commit existence.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 3
+    },
+    {
+      "contract_section": "2.11",
+      "evidence": [
+        {
+          "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "json_pointer": "/leaves/release_branches",
+          "kind": "artifact",
+          "model_sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "path": "attachment/sha256/9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20",
+          "sha256": "9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "010ef955a27cdf36789585e025d2e3a29f781070",
+              "object_oid": "010ef955a27cdf36789585e025d2e3a29f781070",
+              "object_type": "commit",
+              "ref": "refs/heads/main",
+              "tree_oid": "795960b11fa9f0d6653ebe4ddad94332270068ab"
+            }
+          ]
+        },
+        {
+          "line": 33,
+          "matched_text": "Release 0.2.0 uses one mainline for standard and city configurations. To select the city configuration, run `build_model('city')`, then `run_tests`; `build_model('standard')` restores the standard model.",
+          "path": "README.md",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "702666955172f0ce16608a8332cdde6387038a5a797762a18afa3f1895ad73c4"
+        }
+      ],
+      "id": "release_branches",
+      "max_score": 10,
+      "reason": "main owns releases; named parameters carry variation. Torque standard/city profiles executed on main.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 10
+    },
+    {
+      "contract_section": "2.12",
+      "evidence": [
+        {
+          "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "json_pointer": "/leaves/device_specificity",
+          "kind": "artifact",
+          "model_sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "path": "attachment/sha256/9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20",
+          "sha256": "9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20"
+        },
+        {
+          "kind": "git_refs",
+          "refs": [
+            {
+              "commit_oid": "010ef955a27cdf36789585e025d2e3a29f781070",
+              "object_oid": "010ef955a27cdf36789585e025d2e3a29f781070",
+              "object_type": "commit",
+              "ref": "refs/heads/main",
+              "tree_oid": "795960b11fa9f0d6653ebe4ddad94332270068ab"
+            }
+          ]
+        },
+        {
+          "line": 33,
+          "matched_text": "Release 0.2.0 uses one mainline for standard and city configurations. To select the city configuration, run `build_model('city')`, then `run_tests`; `build_model('standard')` restores the standard model.",
+          "path": "README.md",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "702666955172f0ce16608a8332cdde6387038a5a797762a18afa3f1895ad73c4"
+        }
+      ],
+      "id": "device_specificity",
+      "max_score": 10,
+      "reason": "main has no platform/vehicle token; user-authorized approximation, not all-hardware validation.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 10
+    },
+    {
+      "contract_section": "2.13",
+      "evidence": [
+        {
+          "head": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "json_pointer": "/leaves/parameter_management",
+          "kind": "artifact",
+          "model_sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "path": "attachment/sha256/9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20",
+          "sha256": "9d1f3db9f6fc4c854338fb5c8dcc969954abd950e445b3c06b72cca33c7ece20"
+        },
+        {
+          "line": 13,
+          "matched_text": "assignin(w,'DerateSpanC',40);",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:14",
+          "symbol": "TorqueRequestController/TorqueDemand/DerateFraction"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:12",
+          "symbol": "TorqueRequestController/TorqueDemand/ShutdownTemp"
+        },
+        {
+          "line": 12,
+          "matched_text": "assignin(w,'FallStepNm',20); assignin(w,'DerateStartC',80);",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:40",
+          "symbol": "TorqueRequestController/TorqueShaping/ChangeLimit"
+        },
+        {
+          "line": 14,
+          "matched_text": "assignin(w,'MinPedal',0); assignin(w,'MaxPedal',1);",
+          "path": "Model/build_model.m",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "9c65338df1558edf93511dd9e0edd2c4cf438b20892f5e84e8215baf88be0883"
+        },
+        {
+          "path": "Model/TorqueRequestController.slx",
+          "ref": "010ef955a27cdf36789585e025d2e3a29f781070",
+          "sha256": "df72ed2d973f819a299eb0671e3d620affbe3d83eee2541d23bd74894d8b7bbb",
+          "sid": "TorqueRequestController:10",
+          "symbol": "TorqueRequestController/TorqueDemand/PedalBound"
+        }
+      ],
+      "id": "parameter_management",
+      "max_score": 5,
+      "reason": "Nine workspace calibrations match builder defaults plus the standard profile override and all expression consumers; 0/1 gating and zero initial state are algorithm identities. City profile independently executed. Parameter audit: {'parameters': 9, 'consumer_fields': 12, 'unique_consumer_fields': 11, 'pass': 9, 'unresolved': 0, 'conflicts': 0}. Each definition and actual SID/field consumer has a separate value/type/unit verdict.",
+      "review": "source_bound_inventory_and_explicit_semantic_review",
+      "score": 5
+    }
+  ],
+  "schema_version": "1.0.0",
+  "status": "local_reference_scores",
+  "suite_id": "matlab-simulink",
+  "tree": "795960b11fa9f0d6653ebe4ddad94332270068ab"
+}

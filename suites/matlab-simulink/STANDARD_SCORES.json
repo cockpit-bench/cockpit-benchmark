@@ -1,13 +1,9 @@
 {
+  "contract_version": "1.0.0",
   "leaf_count": 117,
   "max_score": 549,
   "repos": [
     {
-      "execution_status": "fresh_complete_extraction_passed",
-      "factual_input": {
-        "path": "E:\\Project\\202608AINP\\matlab-benchmark\\evidence\\final-fix3\\ML-01\\facts.json",
-        "sha256": "cf77a8e940f19b7f61055e4982aff39e7ae36ab4f1772f5dcd50459a522fdac4"
-      },
       "head": "010ef955a27cdf36789585e025d2e3a29f781070",
       "id": "ML-01",
       "max_score": 61,
@@ -30,11 +26,6 @@
       "total": 58
     },
     {
-      "execution_status": "fresh_complete_extraction_passed",
-      "factual_input": {
-        "path": "E:\\Project\\202608AINP\\matlab-benchmark\\evidence\\final-fix3\\ML-02\\facts.json",
-        "sha256": "e5c4ede29e783a3095887da04b4a2e568e957f61a2a17c2cf8562a6227b2c525"
-      },
       "head": "36f7037ac3be698df9a6ad9b5cb2095afb8babf8",
       "id": "ML-02",
       "max_score": 61,
@@ -57,11 +48,6 @@
       "total": 40
     },
     {
-      "execution_status": "fresh_complete_extraction_passed",
-      "factual_input": {
-        "path": "E:\\Project\\202608AINP\\matlab-benchmark\\evidence\\final-fix3\\ML-03\\facts.json",
-        "sha256": "9cd096a6c2e5233c3c1003b9c6dc3701ef9d9dc937fb7b6130f69e1b4dd38edc"
-      },
       "head": "60a0da05e866d4a0091f936ebff29c43d78b247a",
       "id": "ML-03",
       "max_score": 61,
@@ -84,11 +70,6 @@
       "total": 14
     },
     {
-      "execution_status": "fresh_complete_extraction_passed",
-      "factual_input": {
-        "path": "E:\\Project\\202608AINP\\matlab-benchmark\\evidence\\final-fix3\\ML-04\\facts.json",
-        "sha256": "ec558053212a29c19cc5b77fc7c5f0b310214438edfbe34737d634bb2628c9a3"
-      },
       "head": "3b5330155a62517135b578809002eade5638ba4f",
       "id": "ML-04",
       "max_score": 61,
@@ -111,11 +92,6 @@
       "total": 57
     },
     {
-      "execution_status": "blocked_native_artifact",
-      "factual_input": {
-        "path": "E:\\Project\\202608AINP\\matlab-benchmark\\review3-20260908\\root\\final\\ML-05\\facts.json",
-        "sha256": "6dab311cb47ce706d2d3c382f1358356302c8d2af22073f0dddee7735bb93bd8"
-      },
       "head": "f84d2769d09a703bef6eabaac4b47f1e3932c5db",
       "id": "ML-05",
       "max_score": 61,
@@ -138,11 +114,6 @@
       "total": 39
     },
     {
-      "execution_status": "fresh_complete_extraction_passed",
-      "factual_input": {
-        "path": "E:\\Project\\202608AINP\\matlab-benchmark\\evidence\\final-fix3\\ML-06\\facts.json",
-        "sha256": "c70059b14f78b76ce32b35d4a8a40864b962b4f443595387227c3fd191bc1ebb"
-      },
       "head": "62f03d0fd3d75d91b8107fb521f3cc734e75bf1c",
       "id": "ML-06",
       "max_score": 61,
@@ -165,11 +136,6 @@
       "total": 17
     },
     {
-      "execution_status": "fresh_complete_extraction_passed",
-      "factual_input": {
-        "path": "E:\\Project\\202608AINP\\matlab-benchmark\\evidence\\final-fix3\\ML-07\\facts.json",
-        "sha256": "4d21fe5062b127e56065f27fdbc70316c885ae700bcb3e0de23ee07b8578377e"
-      },
       "head": "30090f8ec3b797990a77cee35be0f3c713cea189",
       "id": "ML-07",
       "max_score": 61,
@@ -192,11 +158,6 @@
       "total": 57
     },
     {
-      "execution_status": "fresh_complete_extraction_passed",
-      "factual_input": {
-        "path": "E:\\Project\\202608AINP\\matlab-benchmark\\evidence\\final-fix3\\ML-08\\facts.json",
-        "sha256": "139231bb339a040597254da981ddf4f2b8b01c9a7f7d09c87e563d4aeb74ee92"
-      },
       "head": "6efeb9476dded6e53b7fbc287673752ad71c31c3",
       "id": "ML-08",
       "max_score": 61,
@@ -219,11 +180,6 @@
       "total": 40
     },
     {
-      "execution_status": "fresh_complete_extraction_passed",
-      "factual_input": {
-        "path": "E:\\Project\\202608AINP\\matlab-benchmark\\evidence\\final-fix3\\ML-09\\facts.json",
-        "sha256": "b18409cb700c57d178af3410a6038a8989b8320f81b5d690e0605cd95aaf98c3"
-      },
       "head": "97e8582c9bda384528dd9215811e6fc00740892c",
       "id": "ML-09",
       "max_score": 61,
@@ -247,7 +203,7 @@
     }
   ],
   "schema_version": "1.0.0",
-  "status": "reviewed_scores_not_final_verified_suite",
+  "status": "local_reference_scores",
   "suite_id": "matlab-simulink",
   "total": 338
 }
