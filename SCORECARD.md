@@ -1,434 +1,283 @@
-# Validation-18 标准评分总表
+# Validation-18 v0.8.0
 
-- APP：9 仓 / 72 叶 / 216/360
-- Android Framework：9 仓 / 99 叶 / 239/468
-- 合计：18 仓 / 171 叶 / 455/828
+| ID | Repository | Size | Quality | Score |
+|---|---|---|---|---|
+| APP-01 | navigation-map | large | high | 19/40 |
+| APP-02 | market-distribution | medium | high | 20/40 |
+| APP-03 | owner-handbook | small | high | 10/40 |
+| APP-11 | podcast-player | medium | medium | 18/40 |
+| APP-13 | camera-inspector | small | medium | 8/40 |
+| APP-14 | system-ui-shell | large | medium | 12/40 |
+| APP-15 | system-settings | large | low | 8/40 |
+| APP-16 | launcher-workspace | medium | low | 14/40 |
+| APP-17 | climate-panel | small | low | 7/40 |
+| FW-02 | network-stack-service | small | high | 21/52 |
+| FW-03 | bluetooth-service | medium | high | 19/52 |
+| FW-07 | wifi-service | large | high | 21/52 |
+| FW-08 | connectivity-service | medium | medium | 16/52 |
+| FW-10 | cell-broadcast-service | small | medium | 19/52 |
+| FW-14 | car-services | large | medium | 19/52 |
+| FW-15 | telecom-service | small | low | 18/52 |
+| FW-16 | platform-framework | large | low | 18/52 |
+| FW-18 | telephony-service | medium | low | 11/52 |
 
-> 分数只由绑定 HEAD 的代码与 refs 证据推导；质量/规模标签是矩阵角色，不是打分输入。
-> APP 的三个 architecture 叶属于同一 Architecture Macro，但按组件复用、依赖传播、构建模块边界分别评分，不把命中数当作统计独立样本。
+## APP-01 navigation-map
 
-## APP 9 仓
+| Leaf | Score | Reason |
+|---|---|---|
+| architecture.componentization | 5/5 | sdk与location:core等独立Gradle入口存在；GmsLocationProviderFactory有isProviderAvailable/getProvider行为方法，定位具体提供者通过工厂隔离，5。 |
+| architecture.decoupling | 2/3 | 21模块49配置依赖无环；foss构建显式纳入google模块src/main/java，已确认源码侵入反例；app还直接调用Framework门面，因此维持2，不能沿用旧侵入0。 |
+| architecture.modularization | 3/3 | 至少sdk/location:core/libs:utils等三个内聚构建模块和两个规范名称；7条api、42条implementation配置声明且5模块有测试源码，满足3。多ABI/native归属不被额外算作Gradle模块。 |
+| compilation.api_version_management | 1/3 | SDK发布坐标使用日期型version.sh版本；有真实生产发布消费者，非语义化API策略，也无公开API兼容diff。 |
+| compilation.ci_independence | 3/3 | 独立CI有真实Gradle编译、JUnit/设备测试和lint报告阶段。 |
+| compilation.compilation_independence | 2/3 | Gradle仓内模块、NDK/CMake及已声明git子模块形成可复现入口，依赖SDK/Maven而非整棵Android树；无关键跨仓API兼容基线与hermetic证据，不到3。 |
+| platform_reuse.platform_upgrade | 3/10 | ROMUtils与定位工厂仅覆盖局部差异；app通知权限及app/sdk的SDK分支未统一隔离。存在可行迁移路径，复杂权限规则封顶3；多ABI源码不构成架构独占。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 
-| ID | 仓库 | 角色 | 规模 | architecture.componentization | architecture.decoupling | architecture.modularization | compilation.ci_independence | compilation.compilation_independence | compilation.api_version_management | platform_reuse.platform_upgrade | platform_reuse.release_branch_strategy | 总分 |
-|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| APP-03 | climatix-hvac | high | small | 5 | 3 | 3 | 3 | 1 | 2 | 8 | 8 | 33/40 |
-| APP-02 | horizon-launcher | high | medium | 5 | 3 | 3 | 2 | 1 | 2 | 8 | 8 | 32/40 |
-| APP-01 | aurora-settings | high | large | 5 | 2 | 3 | 1 | 0 | 2 | 3 | 8 | 24/40 |
-| APP-13 | market-hub | medium | small | 5 | 3 | 3 | 1 | 2 | 1 | 8 | 8 | 31/40 |
-| APP-11 | motion-control | medium | medium | 5 | 3 | 3 | 1 | 2 | 1 | 3 | 3 | 21/40 |
-| APP-14 | cockpit-shell | medium | large | 3 | 2 | 2 | 1 | 0 | 2 | 3 | 8 | 21/40 |
-| APP-17 | thermo-control | low | small | 3 | 2 | 2 | 0 | 0 | 1 | 3 | 8 | 19/40 |
-| APP-16 | nova-launcher | low | medium | 3 | 2 | 2 | 1 | 0 | 1 | 3 | 8 | 20/40 |
-| APP-15 | atlas-settings | low | large | 3 | 2 | 2 | 1 | 0 | 1 | 3 | 3 | 15/40 |
+## APP-02 market-distribution
 
-## Android Framework 9 仓
+| Leaf | Score | Reason |
+|---|---|---|
+| architecture.componentization | 5/5 | download/index/database至少两个有独立Gradle入口的内聚公共组件；HttpManager经MirrorChooser和HttpClientEngineFactory构造参数承载可替换网络策略，满足5。 |
+| architecture.decoupling | 3/3 | 完整生产声明图4模块6边无环；database向index/download下层依赖。RepoV2Fetcher通过构造参数接收TempFileProvider/DownloaderFactory/HttpManager，网络引擎在HttpManager内替换；没有因仅引用具体公共门面类型就虚构硬编码实现边。结合边界审阅，维持3。 |
+| architecture.modularization | 3/3 | 改为3。4个真实内聚模块及4个含测试源码的模块成立；合同要求含关键词，database字面包含base，因此规范模块名为app、database共2。原人工裁决误漏database，与已提取事实2不一致，应修正而不是改变事实。 |
+| compilation.api_version_management | 1/3 | 有 Git 派生版本名和手工 Android versionCode，但没有语义化策略或兼容基线保证。 |
+| compilation.ci_independence | 3/3 | GitLab默认分支/MR触发，真实assemble/test、lint/pmd/checkstyle和报告任务齐备；非远程执行成功声明。 |
+| compilation.compilation_independence | 2/3 | Gradle/KMP生产闭包完整，外部公开SDK/Maven接口；本地日志成功作为旁证，但无跨仓API兼容基线及hermetic保证。 |
+| platform_reuse.platform_upgrade | 3/10 | 有compat封装及公共SDK迁移路径，但应用通知/安装运行时权限、业务SDK分支未统一；复杂权限风险封顶3，无单ABI闭源证据。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 
-| ID | 仓库 | 角色 | 规模 | compilation.ci_independence | compilation.compilation_independence | compilation.api_version_management | quality.integration_test | solid_principle.single_responsibility | solid_principle.open_closed | solid_principle.liskov_substitution | solid_principle.interface_segregation | solid_principle.dependency_inversion | platform_reuse.platform_upgrade | platform_reuse.release_branch_strategy | 总分 |
-|---|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| FW-02 | vehicle-property-service | high | small | 3 | 1 | 2 | 3 | 3 | 2 | 3 | 3 | 2 | 3 | 8 | 33/52 |
-| FW-03 | vehicle-hal-adapter | high | medium | 3 | 1 | 2 | 3 | 3 | 2 | 3 | 3 | 2 | 3 | 8 | 33/52 |
-| FW-07 | vehicle-diagnostics | high | large | 3 | 1 | 3 | 3 | 2 | 3 | 3 | 3 | 2 | 3 | 8 | 34/52 |
-| FW-10 | cockpit-manager-kit | medium | small | 2 | 1 | 2 | 1 | 2 | 2 | 2 | 2 | 1 | 3 | 8 | 26/52 |
-| FW-08 | soa-gateway | medium | medium | 2 | 1 | 2 | 1 | 2 | 3 | 2 | 3 | 2 | 3 | 8 | 29/52 |
-| FW-14 | update-manager-service | medium | large | 2 | 1 | 3 | 1 | 2 | 2 | 3 | 2 | 2 | 3 | 8 | 29/52 |
-| FW-15 | car-runtime-service | low | small | 1 | 0 | 0 | 0 | 0 | 1 | 2 | 0 | 0 | 0 | 8 | 12/52 |
-| FW-18 | vehicle-platform-service | low | medium | 1 | 0 | 1 | 1 | 1 | 1 | 2 | 2 | 1 | 3 | 8 | 21/52 |
-| FW-16 | platform-compat-service | low | large | 1 | 0 | 1 | 1 | 2 | 1 | 2 | 2 | 1 | 3 | 8 | 22/52 |
+## APP-03 owner-handbook
 
-## 逐叶理由与证据
+| Leaf | Score | Reason |
+|---|---|---|
+| architecture.componentization | 1/5 | ui/domain/data真实职责包存在；全部由同一app构建，包级分层满足1，不满足两个真实组件的3/5。 |
+| architecture.decoupling | 2/3 | Catalog/Article领域与UI职责可辨且无模块环；HandbookActivity直接构造ReadingStore并调用AssetCatalog.load，具体数据实现未接口隔离，2。 |
+| architecture.modularization | 1/3 | 职责包存在但只有单app构建边界，1。 |
+| compilation.api_version_management | 1/3 | versionName 1.0.0 是手写发布号，没有 SemVer 变更策略或机制证据。 |
+| compilation.ci_independence | 0/3 | 完整跟踪文件清单无有效 CI 入口。 |
+| compilation.compilation_independence | 2/3 | 公开 SDK/AGP，生产闭包全在 app，无平台源码或 sibling 注入。 |
+| platform_reuse.platform_upgrade | 3/10 | UI 直接调用废弃的 WindowInsets.getSystemWindowInset*；按合同属于未封装非兼容 API 风险，仍可直接迁移 Insets API。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 
-### APP-03 `climatix-hvac` — 33/40
+## APP-11 podcast-player
 
-- `architecture.componentization`：**5/5** — 真实构建模块=7、可复用组件=6、可替换组件=6、显式公开契约=15、源码归属边界=True；按组件复用/替换构念锁定 5。
-  - 证据：`facts/APP-03.json#/facts/architecture/componentization_metrics`; `comfort/src/main/java/com/cockpitbench/climatix/comfort/ComfortPolicy.kt:19`; `comfort/build.gradle.kts:1`
-- `architecture.decoupling`：**3/3** — 环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 3。
-  - 证据：`facts/APP-03.json#/facts/architecture/decoupling_metrics`; `vehicle-api/build.gradle.kts:1`
-- `architecture.modularization`：**3/3** — 真实构建模块=7、内聚模块=7、规范命名模块=3、模块测试入口=6、API/implementation 依赖边=0/12；按构建模块边界构念锁定 3。
-  - 证据：`facts/APP-03.json#/facts/architecture/modularization_metrics`; `settings.gradle.kts:4`; `app/build.gradle.kts:3`
-- `compilation.ci_independence`：**3/3** — CI 分类=independent_ci，锁定 3。
-  - 证据：`facts/APP-03.json#/facts/ci`; `.github/workflows/android.yml:15`
-- `compilation.compilation_independence`：**1/3** — 仓外构建闭包={'critical_dependencies_version_pinned': True, 'external_dependencies_declared': True, 'has_framework_jar_dependency': False, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_meaningful_standalone_target': True, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': True, 'requires_full_platform_source': True}；同仓模块依赖不扣分，锁定 1。
-  - 证据：`facts/APP-03.json#/facts/compilation/dependency_type_candidates`; `README.md:4`; `.github/workflows/android.yml:15`
-- `compilation.api_version_management`：**2/3** — 语义版本=True、有效兼容检查=0、自动绑定=0；已排除 Java/SDK 级别和固定字符串检查，锁定 2。
-  - 证据：`facts/APP-03.json#/facts/api_version`; `version.properties:1`; `version.properties:2`
-- `platform_reuse.platform_upgrade`：**8/10** — Android 七事实={'arch_bound_status': 0, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': True, 'has_light_permission_adaptation': False, 'has_non_compatible_api': True, 'non_compatible_api_covered_by_abstraction': True, 'uncovered_non_compatible_api_count': 0, 'version_bound_status': 0}；按风险单调硬门槛锁定 8。
-  - 证据：`facts/APP-03.json#/facts/platform_upgrade/seven_fact_candidates`; `vehicle-api/src/main/java/com/cockpitbench/climatix/vehicle/ClimateServiceLocator.kt:29`
-- `platform_reuse.release_branch_strategy`：**8/10** — 存在平台级分支 ['platform/8155', 'platform/8295']，且没有车型级一车一 SOP，锁定 8。
-  - 证据：`refs/heads/platform/8155`@`b313db00f552`; `refs/heads/platform/8295`@`f6df3cc885c4`
+| Leaf | Score | Reason |
+|---|---|---|
+| architecture.componentization | 5/5 | model、parser:feed、playback:base等是独立Gradle组件；PlaybackServiceMediaPlayer提供实际播放状态/回调方法边界并支持本地与cast实现，公共能力下沉，5。 |
+| architecture.decoupling | 2/3 | 14模块31生产依赖无环；ClientConfig虽然接收上层回调，却硬编码PodDBAdapter/UserPreferences等初始化，core还依赖cast实现；明确局部具体绑定足以封顶2，未证实循环或多处无稳定方向的1/0。 |
+| architecture.modularization | 3/3 | 至少model/parser:feed/playback:base三个职责内聚真实模块，规范名app/core/base/common等至少2个，Gradle模块入口和implementation边界成立；实际含测试源码模块6个而非旧14，不改变3。 |
+| compilation.api_version_management | 1/3 | versionName 2.5.2只是手工常量；makeRelease接受独立VERSION_NAME而不校验与APK版本匹配，缺少语义化控制策略/API基线。 |
+| compilation.ci_independence | 2/3 | 独立CI有真实构建测试质量命令，但push只覆盖master/develop，code-style先fetch origin develop而当前候选无该ref；不满足当前仓完整可执行标准流水线。 |
+| compilation.compilation_independence | 2/3 | 模块源码闭包在仓，SDK/Maven/JitPack明确；已有本地Java17 assembleFreeDebug成功日志旁证，无API兼容diff或完全锁定环境。 |
+| platform_reuse.platform_upgrade | 3/10 | app与core两个业务模块有未统一的SDK分支；播放器抽象不覆盖通知、存储与UI差异，按两业务模块硬编码封顶3。未把单纯NotificationChannel当复杂权限，未发现单ABI闭源依赖。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 
-### APP-02 `horizon-launcher` — 32/40
+## APP-13 camera-inspector
 
-- `architecture.componentization`：**5/5** — 真实构建模块=3、可复用组件=2、可替换组件=2、显式公开契约=41、源码归属边界=True；按组件复用/替换构念锁定 5。
-  - 证据：`facts/APP-02.json#/facts/architecture/componentization_metrics`; `launcher-common/src/main/java/com/android/car/launcher/domain/LauncherCatalog.java:5`; `launcher-common/build.gradle:1`
-- `architecture.decoupling`：**3/3** — 环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1、Soong 已归属/仍未归属源码=66/0；按依赖方向/传播构念锁定 3。
-  - 证据：`facts/APP-02.json#/facts/architecture/decoupling_metrics`; `launcher-app/build.gradle:1`; `app/Android.bp:34`
-- `architecture.modularization`：**3/3** — 真实构建模块=3、内聚模块=3、规范命名模块=2、模块测试入口=0、API/implementation 依赖边=0/3；按构建模块边界构念锁定 3。
-  - 证据：`facts/APP-02.json#/facts/architecture/modularization_metrics`; `settings.gradle:5`; `launcher-app/build.gradle:1`
-- `compilation.ci_independence`：**2/3** — CI 分类=mixed，锁定 2。
-  - 证据：`facts/APP-02.json#/facts/ci`; `.github/workflows/android.yml:2`
-- `compilation.compilation_independence`：**1/3** — 仓外构建闭包={'critical_dependencies_version_pinned': False, 'external_dependencies_declared': False, 'has_framework_jar_dependency': True, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_meaningful_standalone_target': True, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': False, 'requires_full_platform_source': True}；同仓模块依赖不扣分，锁定 1。
-  - 证据：`facts/APP-02.json#/facts/compilation/dependency_type_candidates`; `README.md:5`; `.github/workflows/android.yml:2`
-- `compilation.api_version_management`：**2/3** — 语义版本=True、有效兼容检查=0、自动绑定=0；已排除 Java/SDK 级别和固定字符串检查，锁定 2。
-  - 证据：`facts/APP-02.json#/facts/api_version`; `version.properties:1`; `version.properties:2`
-- `platform_reuse.platform_upgrade`：**8/10** — Android 七事实={'arch_bound_status': 0, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': True, 'has_non_compatible_api': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 0, 'version_bound_status': 0}；按风险单调硬门槛锁定 8。
-  - 证据：`facts/APP-02.json#/facts/platform_upgrade/seven_fact_candidates`
-- `platform_reuse.release_branch_strategy`：**8/10** — 存在平台级分支 ['platform/8155', 'platform/8295', 'release/2026.1']，且没有车型级一车一 SOP，锁定 8。
-  - 证据：`refs/heads/platform/8155`@`29ce9d750e0b`; `refs/heads/platform/8295`@`30709ae25c06`; `refs/heads/release/2026.1`@`af0cf348d8f9`
+| Leaf | Score | Reason |
+|---|---|---|
+| architecture.componentization | 0/5 | 单一app且生产代码位于com.android.devcamera根包。CameraInterface/MyCameraCallback/GyroListener是行为契约，但没有形成可独立构建组件或包级职责组织；组件化0。 |
+| architecture.decoupling | 2/3 | CameraInterface提供相机调用边界且单模块图无环；DevCameraActivity直接new Api2Camera，存在可定位具体实现绑定，满足2而非完全隔离3。不能把该一处包内引用冒充跨模块引用数。 |
+| architecture.modularization | 0/3 | 单app生产模块、根包集中；无包级职责模块结构，0。 |
+| compilation.api_version_management | 1/3 | 版本仅为手写 versionCode 1 / versionName 1.0，无 API 基线控制。 |
+| compilation.ci_independence | 0/3 | 完整跟踪文件清单无有效 CI 入口。 |
+| compilation.compilation_independence | 2/3 | Gradle 生产源码闭包完整，仅需公开 SDK 和声明 AGP，存在可重复 app 构建入口。 |
+| platform_reuse.platform_upgrade | 3/10 | 旧存储权限和直接 /sdcard 写入需要运行时行为迁移，未由相机接口覆盖，封顶 3。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 
-### APP-01 `aurora-settings` — 24/40
+## APP-14 system-ui-shell
 
-- `architecture.componentization`：**5/5** — 真实构建模块=4、可复用组件=3、可替换组件=3、显式公开契约=94、源码归属边界=True；按组件复用/替换构念锁定 5。
-  - 证据：`facts/APP-01.json#/facts/architecture/componentization_metrics`; `settings-common/src/main/java/com/android/car/settings/common/ActionButtonInfo.java:245`; `settings-common/build.gradle:1`
-- `architecture.decoupling`：**2/3** — 环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=4、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 2。
-  - 证据：`facts/APP-01.json#/facts/architecture/decoupling_metrics`; `app/build.gradle:16`
-- `architecture.modularization`：**3/3** — 真实构建模块=4、内聚模块=4、规范命名模块=2、模块测试入口=1、API/implementation 依赖边=0/3；按构建模块边界构念锁定 3。
-  - 证据：`facts/APP-01.json#/facts/architecture/modularization_metrics`; `settings.gradle:4`; `app/build.gradle:16`
-- `compilation.ci_independence`：**1/3** — CI 分类=android_system_ci，锁定 1。
-  - 证据：`facts/APP-01.json#/facts/ci`; `PREUPLOAD.cfg:1`
-- `compilation.compilation_independence`：**0/3** — 仓外构建闭包={'critical_dependencies_version_pinned': False, 'external_dependencies_declared': False, 'has_framework_jar_dependency': False, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_meaningful_standalone_target': False, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': False, 'requires_full_platform_source': True}；同仓模块依赖不扣分，锁定 0。
-  - 证据：`facts/APP-01.json#/facts/compilation/dependency_type_candidates`; `README.md:5`; `app/build.gradle:16`
-- `compilation.api_version_management`：**2/3** — 语义版本=True、有效兼容检查=0、自动绑定=2；已排除 Java/SDK 级别和固定字符串检查，锁定 2。
-  - 证据：`facts/APP-01.json#/facts/api_version`; `version.properties:1`; `version.properties:2`; `app/build.gradle:31`
-- `platform_reuse.platform_upgrade`：**3/10** — Android 七事实={'arch_bound_status': 0, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': True, 'has_light_permission_adaptation': True, 'has_non_compatible_api': True, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 54, 'version_bound_status': 0}；按风险单调硬门槛锁定 3。
-  - 证据：`facts/APP-01.json#/facts/platform_upgrade/seven_fact_candidates`; `settings-common/src/main/java/com/android/car/settings/common/PreferenceControllerListHelper.java:93`; `app/src/main/java/com/android/car/settings/accessibility/ScreenReaderUtils.java:29`
-- `platform_reuse.release_branch_strategy`：**8/10** — 存在平台级分支 ['platform/8155', 'platform/8295', 'release/2026.1']，且没有车型级一车一 SOP，锁定 8。
-  - 证据：`refs/heads/platform/8155`@`769d29b8ea64`; `refs/heads/platform/8295`@`33e548d7b2fd`; `refs/heads/release/2026.1`@`c4801bf2d3c4`
+| Leaf | Score | Reason |
+|---|---|---|
+| architecture.componentization | 5/5 | 完整生产图扩展为21个目标，SystemUIPluginLib、SystemUICommon、SystemUIAnimationLib等独立职责明确；ActivityStarter声明真实活动启动方法，公共能力下沉并由插件契约复用，5。 |
+| architecture.decoupling | 2/3 | 21目标31内部依赖无环；SystemUI-core通过Compose defaults直接纳入compose/features源文件，存在明确条件源码侵入。局部DI/插件无法消除此边界事实，2。 |
+| architecture.modularization | 2/3 | plugin/common/animation等至少三个内聚真实构建模块成立；包括Java库后仍没有两个小写加关键字模块名，21不能替代命名门槛，维持2。 |
+| compilation.api_version_management | 1/3 | 插件使用手动整数版本并运行时精确匹配；不是语义化版本，也不是当前API对发布baseline兼容性diff。 |
+| compilation.ci_independence | 1/3 | 真实PREUPLOAD/TEST_MAPPING受Android平台预提交系统调度；无仓库独立完整流水线。 |
+| compilation.compilation_independence | 1/3 | animation/surfaceeffects有实际Gradle公共SDK局部单元；完整SystemUI需平台私有API和仓外SettingsLib/WindowManager-Shell，按1而非Soong自动0。 |
+| platform_reuse.platform_upgrade | 0/10 | 插件/DI是局部扩展机制，不能覆盖状态栏、窗口/壁纸等核心平台内部接口依赖；多个核心通路绕过稳定接口且无迁移fallback，锁0。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 
-### APP-13 `market-hub` — 31/40
+## APP-15 system-settings
 
-- `architecture.componentization`：**5/5** — 真实构建模块=9、可复用组件=3、可替换组件=3、显式公开契约=14、源码归属边界=True；按组件复用/替换构念锁定 5。
-  - 证据：`facts/APP-13.json#/facts/architecture/componentization_metrics`; `foundation-core/src/main/java/com/cockpitbench/foundation/core/CockpitClock.java:16`; `foundation-core/build.gradle:1`
-- `architecture.decoupling`：**3/3** — 环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=0、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 3。
-  - 证据：`facts/APP-13.json#/facts/architecture/decoupling_metrics`; `settings.gradle:2`
-- `architecture.modularization`：**3/3** — 真实构建模块=9、内聚模块=8、规范命名模块=3、模块测试入口=0、API/implementation 依赖边=0/15；按构建模块边界构念锁定 3。
-  - 证据：`facts/APP-13.json#/facts/architecture/modularization_metrics`; `settings.gradle:2`; `foundation-core/build.gradle:1`
-- `compilation.ci_independence`：**1/3** — CI 分类=android_system_ci，锁定 1。
-  - 证据：`facts/APP-13.json#/facts/ci`; `TEST_MAPPING:1`
-- `compilation.compilation_independence`：**2/3** — 仓外构建闭包={'critical_dependencies_version_pinned': True, 'external_dependencies_declared': True, 'has_framework_jar_dependency': False, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_meaningful_standalone_target': True, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': True, 'requires_full_platform_source': False}；同仓模块依赖不扣分，锁定 2。
-  - 证据：`facts/APP-13.json#/facts/compilation/dependency_type_candidates`; `build.gradle:1`
-- `compilation.api_version_management`：**1/3** — 语义版本=False、有效兼容检查=0、自动绑定=0；已排除 Java/SDK 级别和固定字符串检查，锁定 1。
-  - 证据：`facts/APP-13.json#/facts/api_version`; `market-app/build.gradle:3`
-- `platform_reuse.platform_upgrade`：**8/10** — Android 七事实={'arch_bound_status': 0, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_non_compatible_api': False, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 0, 'version_bound_status': 0}；按风险单调硬门槛锁定 8。
-  - 证据：`facts/APP-13.json#/facts/platform_upgrade/seven_fact_candidates`
-- `platform_reuse.release_branch_strategy`：**8/10** — 存在平台级分支 ['platform/8155', 'platform/8295', 'release/2026.1']，且没有车型级一车一 SOP，锁定 8。
-  - 证据：`refs/heads/platform/8155`@`f8623eec7728`; `refs/heads/platform/8295`@`fad482ad315d`; `refs/heads/release/2026.1`@`7a3bcd1ea112`
+| Leaf | Score | Reason |
+|---|---|---|
+| architecture.componentization | 3/5 | 12个生产构建目标包括Settings/Settings-core及协议/logtags/统计/ChangeIds库。业务实现仍集中Settings-core；BasePreferenceController是同核心包内可扩展契约。协议与常量生成辅助目标并不自动证明两个独立可替换业务/公共组件，维持3，不凭12抬至5。 |
+| architecture.decoupling | 2/3 | 全仓生产声明图12模块11边无环，APK到core方向明确；BasePreferenceController直接关联SettingsSliceProvider/Utils等具体核心业务类，多个平台具体调用仍无统一隔离，2。Settings_srcs只有导出声明，不再作为已证明消费者侵入边扣分。 |
+| architecture.modularization | 2/3 | 协议/日志/核心打包职责可辨，至少两个真实构建模块；完整清单仅app-usage-event-protos-lite一个名称符合小写含关键字，少于2，无法到3；维持2。 |
+| compilation.api_version_management | 0/3 | 没有生产API版本控制机制；平台API选择、Android SDK与生成proto不算版本管理。 |
+| compilation.ci_independence | 1/3 | 真实PREUPLOAD/TEST_MAPPING受Android平台预提交系统调度；无仓库独立完整流水线。 |
+| compilation.compilation_independence | 0/3 | 全部有意义业务构建依赖SettingsLibDefaults、平台私有API和仓外telephony/ims源码模块；未找到自包含生产构建入口。 |
+| platform_reuse.platform_upgrade | 0/10 | Settings核心在多个业务包直接访问平台隐藏Binder和系统API，Settings-core以platform_apis构建；不存在覆盖这些核心通路的统一兼容/降级边界，满足多处绕过稳定接口且无隔离的0档。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 
-### APP-11 `motion-control` — 21/40
+## APP-16 launcher-workspace
 
-- `architecture.componentization`：**5/5** — 真实构建模块=9、可复用组件=3、可替换组件=3、显式公开契约=13、源码归属边界=True；按组件复用/替换构念锁定 5。
-  - 证据：`facts/APP-11.json#/facts/architecture/componentization_metrics`; `foundation-core/src/main/java/com/cockpitbench/foundation/core/CockpitClock.java:16`; `foundation-core/build.gradle:1`
-- `architecture.decoupling`：**3/3** — 环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=1、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 3。
-  - 证据：`facts/APP-11.json#/facts/architecture/decoupling_metrics`; `motion-platform/build.gradle:1`
-- `architecture.modularization`：**3/3** — 真实构建模块=9、内聚模块=8、规范命名模块=3、模块测试入口=0、API/implementation 依赖边=0/15；按构建模块边界构念锁定 3。
-  - 证据：`facts/APP-11.json#/facts/architecture/modularization_metrics`; `settings.gradle:2`; `foundation-core/build.gradle:1`
-- `compilation.ci_independence`：**1/3** — CI 分类=android_system_ci，锁定 1。
-  - 证据：`facts/APP-11.json#/facts/ci`; `TEST_MAPPING:1`
-- `compilation.compilation_independence`：**2/3** — 仓外构建闭包={'critical_dependencies_version_pinned': True, 'external_dependencies_declared': True, 'has_framework_jar_dependency': False, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_meaningful_standalone_target': True, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': True, 'requires_full_platform_source': False}；同仓模块依赖不扣分，锁定 2。
-  - 证据：`facts/APP-11.json#/facts/compilation/dependency_type_candidates`; `build.gradle:1`
-- `compilation.api_version_management`：**1/3** — 语义版本=False、有效兼容检查=0、自动绑定=0；已排除 Java/SDK 级别和固定字符串检查，锁定 1。
-  - 证据：`facts/APP-11.json#/facts/api_version`; `motion-app/build.gradle:3`
-- `platform_reuse.platform_upgrade`：**3/10** — Android 七事实={'arch_bound_status': 0, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_non_compatible_api': True, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'version_bound_status': 0}；按风险单调硬门槛锁定 3。
-  - 证据：`facts/APP-11.json#/facts/platform_upgrade/seven_fact_candidates`; `motion-platform/src/main/java/com/cockpitbench/motion/platform/PlatformMotionAdapter.java:16`
-- `platform_reuse.release_branch_strategy`：**3/10** — 存在含车型身份且有真实差异的单车型 SOP 分支 ['sop/2026.1-model-a1', 'sop/2026.1-model-b2']，按最细车型级策略锁定 3。
-  - 证据：`refs/heads/sop/2026.1-model-a1`@`418aba900972`; `refs/heads/sop/2026.1-model-b2`@`dc7ac0a5e97e`
+| Leaf | Score | Reason |
+|---|---|---|
+| architecture.componentization | 5/5 | iconloader、LauncherPluginLib和SecondaryDisplayLauncherLib等有真实独立构建入口。BitmapRenderer声明draw行为并由图标组件复用；公共图标/插件边界满足至少两个组件，5。 |
+| architecture.decoupling | 2/3 | Make/Soong归一化构建族加Gradle替代包装图无环；QuickStep直接使用ActivityManagerWrapper等具体SystemUI平台入口，主要边界存在但实现隔离不完全，2。 |
+| architecture.modularization | 2/3 | 补入SecondaryDisplayLauncherLib后6个组件族，app/iconloader变体不重复计数；实际声明名没有两个合规名称，归一化临时标签launcher-app不能制造规范命名，仍2。 |
+| compilation.api_version_management | 1/3 | versionName 1.0与versionCode为手工常量；无语义策略或API兼容diff。 |
+| compilation.ci_independence | 0/3 | 当前tracked tree无有效CI配置；构建脚本及测试目录本身不等于流水线。 |
+| compilation.compilation_independence | 1/3 | iconloader_base有SDK28局部生产边界；完整Launcher依赖仓外未版本化launcher_protos/plugin_core/sysui_shared平台预构建。 |
+| platform_reuse.platform_upgrade | 3/10 | QuickStep核心任务/手势链依赖SystemUI私有平台接口且无统一独立契约，但withoutQuickstep变体及公开SDK图标单元保留迁移路径；无单ABI闭源依赖，total=3，裁3。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 
-### APP-14 `cockpit-shell` — 21/40
+## APP-17 climate-panel
 
-- `architecture.componentization`：**3/5** — 真实构建模块=2、可复用组件=1、可替换组件=1、显式公开契约=55、源码归属边界=True；按组件复用/替换构念锁定 3。
-  - 证据：`facts/APP-14.json#/facts/architecture/componentization_metrics`; `shell-core/build.gradle:1`; `Android.bp:20`
-- `architecture.decoupling`：**2/3** — 环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=2、Soong 已归属/仍未归属源码=304/0；按依赖方向/传播构念锁定 2。
-  - 证据：`facts/APP-14.json#/facts/architecture/decoupling_metrics`; `shell-app/build.gradle:1`; `Android.bp:20`
-- `architecture.modularization`：**2/3** — 真实构建模块=2、内聚模块=2、规范命名模块=2、模块测试入口=0、API/implementation 依赖边=0/1；按构建模块边界构念锁定 2。
-  - 证据：`facts/APP-14.json#/facts/architecture/modularization_metrics`; `settings.gradle:5`; `shell-app/build.gradle:1`
-- `compilation.ci_independence`：**1/3** — CI 分类=android_system_ci，锁定 1。
-  - 证据：`facts/APP-14.json#/facts/ci`; `PREUPLOAD.cfg:1`
-- `compilation.compilation_independence`：**0/3** — 仓外构建闭包={'critical_dependencies_version_pinned': False, 'external_dependencies_declared': False, 'has_framework_jar_dependency': True, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_meaningful_standalone_target': False, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': False, 'requires_full_platform_source': True}；同仓模块依赖不扣分，锁定 0。
-  - 证据：`facts/APP-14.json#/facts/compilation/dependency_type_candidates`; `README.md:4`; `build.gradle:1`
-- `compilation.api_version_management`：**2/3** — 语义版本=True、有效兼容检查=0、自动绑定=0；已排除 Java/SDK 级别和固定字符串检查，锁定 2。
-  - 证据：`facts/APP-14.json#/facts/api_version`; `version.properties:1`; `version.properties:2`
-- `platform_reuse.platform_upgrade`：**3/10** — Android 七事实={'arch_bound_status': 1, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': True, 'has_non_compatible_api': True, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 1, 'version_bound_status': 1}；按风险单调硬门槛锁定 3。
-  - 证据：`facts/APP-14.json#/facts/platform_upgrade/seven_fact_candidates`; `shell-app/src/main/java/com/android/systemui/cockpit/presentation/CockpitShellController.java:12`
-- `platform_reuse.release_branch_strategy`：**8/10** — 存在平台级分支 ['platform/8155', 'platform/8295', 'release/2026.1']，且没有车型级一车一 SOP，锁定 8。
-  - 证据：`refs/heads/platform/8155`@`e78cfb993351`; `refs/heads/platform/8295`@`d4afa6cac8e9`; `refs/heads/release/2026.1`@`2883836c2dd7`
+| Leaf | Score | Reason |
+|---|---|---|
+| architecture.componentization | 1/5 | CarHvacApp仅一个构建模块；ui/controllers业务控制与控件分包属于包级结构，1。6个行为回调不等于6个独立组件。 |
+| architecture.decoupling | 2/3 | 控制服务与控件边界可辨、模块无环；HvacUiService绑定HvacController.class并向具体LocalBinder强转，控制器传播平台具体类型，2。 |
+| architecture.modularization | 1/3 | ui/controllers分包可辨，仍是单一Soong app边界，1。 |
+| compilation.api_version_management | 0/3 | 没有产品/API 版本文件、语义策略或兼容基线。 |
+| compilation.ci_independence | 0/3 | 完整跟踪文件清单无有效 CI 入口。 |
+| compilation.compilation_independence | 0/3 | 完整目标依赖平台 APIs、android.car、平台签名和仓外 privapp 模块；仓内无有意义独立构建单元。 |
+| platform_reuse.platform_upgrade | 3/10 | 平台专属覆盖窗、privateFlags 反射和旧 AsyncTask/CarHvacManager 未完全隔离，封顶 3。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 
-### APP-17 `thermo-control` — 19/40
+## FW-02 network-stack-service
 
-- `architecture.componentization`：**3/5** — 真实构建模块=2、可复用组件=1、可替换组件=1、显式公开契约=1、源码归属边界=True；按组件复用/替换构念锁定 3。
-  - 证据：`facts/APP-17.json#/facts/architecture/componentization_metrics`; `vehicle/build.gradle.kts:1`
-- `architecture.decoupling`：**2/3** — 环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=0、平台变更传播模块=2、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 2。
-  - 证据：`facts/APP-17.json#/facts/architecture/decoupling_metrics`; `app/build.gradle.kts:1`
-- `architecture.modularization`：**2/3** — 真实构建模块=2、内聚模块=2、规范命名模块=1、模块测试入口=1、API/implementation 依赖边=0/1；按构建模块边界构念锁定 2。
-  - 证据：`facts/APP-17.json#/facts/architecture/modularization_metrics`; `settings.gradle.kts:4`; `app/build.gradle.kts:1`
-- `compilation.ci_independence`：**0/3** — CI 分类=no_ci，锁定 0。
-  - 证据：`facts/APP-17.json#/facts/ci`
-- `compilation.compilation_independence`：**0/3** — 仓外构建闭包={'critical_dependencies_version_pinned': True, 'external_dependencies_declared': True, 'has_framework_jar_dependency': False, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_meaningful_standalone_target': False, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': True, 'requires_full_platform_source': True}；同仓模块依赖不扣分，锁定 0。
-  - 证据：`facts/APP-17.json#/facts/compilation/dependency_type_candidates`; `README.md:6`; `app/build.gradle.kts:1`
-- `compilation.api_version_management`：**1/3** — 语义版本=False、有效兼容检查=0、自动绑定=0；已排除 Java/SDK 级别和固定字符串检查，锁定 1。
-  - 证据：`facts/APP-17.json#/facts/api_version`; `app/build.gradle.kts:10`; `app/build.gradle.kts:9`
-- `platform_reuse.platform_upgrade`：**3/10** — Android 七事实={'arch_bound_status': 1, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': False, 'has_non_compatible_api': True, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 66, 'version_bound_status': 1}；按风险单调硬门槛锁定 3。
-  - 证据：`facts/APP-17.json#/facts/platform_upgrade/seven_fact_candidates`; `app/src/main/java/com/cockpitbench/thermo/ThermalPlatformRuntime.java:9`; `vehicle/src/main/java/com/cockpitbench/thermo/vehicle/platform/Sa8155ClimateBridge.kt:29`
-- `platform_reuse.release_branch_strategy`：**8/10** — 存在平台级分支 ['platform/8155', 'platform/8295']，且没有车型级一车一 SOP，锁定 8。
-  - 证据：`refs/heads/platform/8155`@`483e416e1a9e`; `refs/heads/platform/8295`@`dc027394cbc9`
+| Leaf | Score | Reason |
+|---|---|---|
+| compilation.api_version_management | 3/3 | 仓内stable aidl_interface声明版本1–10、真实冻结签名/current和固定V10/V18生产链接，构成等价API/ABI兼容基线机制。 |
+| compilation.ci_independence | 1/3 | 仅 Android 系统 TEST_MAPPING/平台构建 CI，未提供独立标准流水线。 |
+| compilation.compilation_independence | 0/3 | 有声明 SDK 版本但依赖仓外 Connectivity/net-utils/AIDL/Soong 注入，未形成有意义独立生产构建闭包。 |
+| platform_reuse.platform_upgrade | 3/10 | 兼容shim不能覆盖业务层SystemProperties及多业务版本分支，未封装风险上限3。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
+| quality.integration_test | 1/3 | 有 Android JUnit 真实 DHCP 解码断言；无绑定 HEAD 的 Android 执行结果，最高1。 |
+| solid_principle.dependency_inversion | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.interface_segregation | 3/4 | 良好遵循。 |
+| solid_principle.liskov_substitution | 3/4 | 至少两个生产 DHCP 实现保持序列化父合同；没有系统化 substitution 执行证明，不给4。 |
+| solid_principle.open_closed | 3/4 | 良好遵循。 |
+| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
 
-### APP-16 `nova-launcher` — 20/40
+## FW-03 bluetooth-service
 
-- `architecture.componentization`：**3/5** — 真实构建模块=4、可复用组件=3、可替换组件=0、显式公开契约=66、源码归属边界=True；按组件复用/替换构念锁定 3。
-  - 证据：`facts/APP-16.json#/facts/architecture/componentization_metrics`; `legacy-platform/build.gradle:1`; `app/Android.bp:34`
-- `architecture.decoupling`：**2/3** — 环=0、反向依赖=0、跨模块源码侵入=0、具体实现依赖边=3、平台变更传播模块=4、Soong 已归属/仍未归属源码=73/0；按依赖方向/传播构念锁定 2。
-  - 证据：`facts/APP-16.json#/facts/architecture/decoupling_metrics`; `launcher-app/build.gradle:16`; `app/Android.bp:34`
-- `architecture.modularization`：**2/3** — 真实构建模块=4、内聚模块=4、规范命名模块=1、模块测试入口=0、API/implementation 依赖边=0/3；按构建模块边界构念锁定 2。
-  - 证据：`facts/APP-16.json#/facts/architecture/modularization_metrics`; `settings.gradle:5`; `launcher-app/build.gradle:1`
-- `compilation.ci_independence`：**1/3** — CI 分类=android_system_ci，锁定 1。
-  - 证据：`facts/APP-16.json#/facts/ci`; `PREUPLOAD.cfg:1`
-- `compilation.compilation_independence`：**0/3** — 仓外构建闭包={'critical_dependencies_version_pinned': False, 'external_dependencies_declared': False, 'has_framework_jar_dependency': True, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_meaningful_standalone_target': False, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': False, 'requires_full_platform_source': True}；同仓模块依赖不扣分，锁定 0。
-  - 证据：`facts/APP-16.json#/facts/compilation/dependency_type_candidates`; `README.md:5`; `build.gradle:1`
-- `compilation.api_version_management`：**1/3** — 语义版本=False、有效兼容检查=0、自动绑定=0；已排除 Java/SDK 级别和固定字符串检查，锁定 1。
-  - 证据：`facts/APP-16.json#/facts/api_version`; `launcher-app/build.gradle:5`
-- `platform_reuse.platform_upgrade`：**3/10** — Android 七事实={'arch_bound_status': 1, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': True, 'has_non_compatible_api': True, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 2, 'version_bound_status': 3}；按风险单调硬门槛锁定 3。
-  - 证据：`facts/APP-16.json#/facts/platform_upgrade/seven_fact_candidates`; `launcher-app/src/main/java/com/android/car/launcher/LauncherRuntime.java:13`; `legacy-platform/src/main/java/com/android/car/launcher/legacy/LegacyPlatformRuntime.java:9`
-- `platform_reuse.release_branch_strategy`：**8/10** — 存在平台级分支 ['platform/8155', 'platform/8295', 'platform/xinqing', 'release/sop-2025']，且没有车型级一车一 SOP，锁定 8。
-  - 证据：`refs/heads/platform/8155`@`12018f5c8629`; `refs/heads/platform/8295`@`8d942866a727`; `refs/heads/platform/xinqing`@`6c1af62ba519`
+| Leaf | Score | Reason |
+|---|---|---|
+| compilation.api_version_management | 3/3 | 版本由真实已发布API基线及来源提交控制，当前源码经过实际兼容性diff；按合同3.4满足版本控制与API baseline验证条件。范围仅本仓MAP库，不声称平台AIDL/JNI或全仓行为兼容。 |
+| compilation.ci_independence | 1/3 | 只有平台PREUPLOAD checkstyle/clang-format/aosp hook；无仓库独立流水线。 |
+| compilation.compilation_independence | 0/3 | 完整Bluetooth需平台签名/API、JNI system/bt和services.net；独立小型mapsapi实测公开SDK31编译仍因隐藏BLUETOOTH_MAP失败4处，无已证明独立生产目标。 |
+| platform_reuse.platform_upgrade | 3/10 | 蓝牙系统权限、隐藏Binder、native平台链深度绑定；profile隔离不覆盖全部风险，但源码JNI和profile边界保留移植路径，total=3无单ABI闭源；3分。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
+| quality.integration_test | 1/3 | A2DP服务测试通过真实服务生命周期、native协作者调用与断言验证行为；无绑定HEAD执行证明，最高1。 |
+| solid_principle.dependency_inversion | 1/4 | 多处违反，设计不合理。 |
+| solid_principle.interface_segregation | 3/4 | 良好遵循。 |
+| solid_principle.liskov_substitution | 3/4 | 两个真实profile对合法生命周期均初始化/释放资源并返回成功；cleanup本来是可选钩子，重复start是生命周期防御条件而非任意收紧输入。调用者检查adapter与expected profile，不能将条件异常机械记为0；未证明系统化跨实现契约测试，裁3。 |
+| solid_principle.open_closed | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
 
-### APP-15 `atlas-settings` — 15/40
+## FW-07 wifi-service
 
-- `architecture.componentization`：**3/5** — 真实构建模块=3、可复用组件=1、可替换组件=1、显式公开契约=121、源码归属边界=False；按组件复用/替换构念锁定 3。
-  - 证据：`facts/APP-15.json#/facts/architecture/componentization_metrics`; `modern-settings/build.gradle:1`
-- `architecture.decoupling`：**2/3** — 环=0、反向依赖=0、跨模块源码侵入=1、具体实现依赖边=0、平台变更传播模块=3、Soong 已归属/仍未归属源码=0/0；按依赖方向/传播构念锁定 2。
-  - 证据：`facts/APP-15.json#/facts/architecture/decoupling_metrics`; `app/build.gradle:1`
-- `architecture.modularization`：**2/3** — 真实构建模块=3、内聚模块=2、规范命名模块=1、模块测试入口=1、API/implementation 依赖边=0/1；按构建模块边界构念锁定 2。
-  - 证据：`facts/APP-15.json#/facts/architecture/modularization_metrics`; `settings.gradle:4`; `app/build.gradle:1`
-- `compilation.ci_independence`：**1/3** — CI 分类=android_system_ci，锁定 1。
-  - 证据：`facts/APP-15.json#/facts/ci`; `PREUPLOAD.cfg:1`
-- `compilation.compilation_independence`：**0/3** — 仓外构建闭包={'critical_dependencies_version_pinned': False, 'external_dependencies_declared': False, 'has_framework_jar_dependency': False, 'has_internal_project_source_dependency': True, 'has_local_aar_dependency': False, 'has_meaningful_standalone_target': False, 'has_unversioned_external_artifact': False, 'has_versioned_external_artifact': False, 'requires_full_platform_source': True}；同仓模块依赖不扣分，锁定 0。
-  - 证据：`facts/APP-15.json#/facts/compilation/dependency_type_candidates`; `README.md:5`; `app/build.gradle:1`
-- `compilation.api_version_management`：**1/3** — 语义版本=False、有效兼容检查=0、自动绑定=0；已排除 Java/SDK 级别和固定字符串检查，锁定 1。
-  - 证据：`facts/APP-15.json#/facts/api_version`; `app/src/main/AndroidManifest.xml:1`
-- `platform_reuse.platform_upgrade`：**3/10** — Android 七事实={'arch_bound_status': 0, 'has_arch_specific_deps': False, 'has_complex_permission_adaptation': False, 'has_interface_abstraction': False, 'has_light_permission_adaptation': True, 'has_non_compatible_api': True, 'non_compatible_api_covered_by_abstraction': False, 'uncovered_non_compatible_api_count': 66, 'version_bound_status': 0}；按风险单调硬门槛锁定 3。
-  - 证据：`facts/APP-15.json#/facts/platform_upgrade/seven_fact_candidates`; `app/src/main/java/com/android/car/settings/common/PreferenceControllerListHelper.java:93`; `modern-settings/src/main/java/com/android/car/settings/common/PreferenceControllerListHelper.java:93`
-- `platform_reuse.release_branch_strategy`：**3/10** — 存在含车型身份且有真实差异的单车型 SOP 分支 ['sop/2024-model-a1', 'sop/2024-model-b2']，按最细车型级策略锁定 3。
-  - 证据：`refs/heads/sop/2024-model-a1`@`29e98aef4200`; `refs/heads/sop/2024-model-b2`@`676c405af0f6`
+| Leaf | Score | Reason |
+|---|---|---|
+| compilation.api_version_management | 3/3 | framework-wifi 的 java_sdk_library 与受版本管理的 API 签名基线提供实际 API 差异检查机制。 |
+| compilation.ci_independence | 1/3 | PREUPLOAD 和 TEST_MAPPING 构成真实平台 CI 声明；没有独立 CI。 |
+| compilation.compilation_independence | 0/3 | 实际生产 Soong 模块依赖仓外平台 defaults、framework 和 connectivity 源码/生成工具，无独立闭合生产构建单元。 |
+| platform_reuse.platform_upgrade | 3/10 | Android 版本分支和复杂权限适配未统一隔离；存在 HAL/模式迁移路径，封顶 3。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
+| quality.integration_test | 1/3 | 存在真实组件交互测试与断言；缺少 final-HEAD Android 集成执行和覆盖证据，封顶 1。 |
+| solid_principle.dependency_inversion | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.interface_segregation | 3/4 | 良好遵循。 |
+| solid_principle.liskov_substitution | 3/4 | 两个真实生产实现的连接 reset 契约已恢复，并通过可复用替换测试；未达到系统化异常/边界全覆盖的 4 档。 |
+| solid_principle.open_closed | 3/4 | 良好遵循。 |
+| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
 
-### FW-02 `vehicle-property-service` — 33/52
+## FW-08 connectivity-service
 
-- `compilation.ci_independence`：**3/3** — 实际构建/测试/质量命令数=[1, 1, 3]，系统 CI 文件数=1；阶段覆盖范围以实际构建目标为准，锁定 3。
-  - 证据：`facts/FW-02.json#/current_review/ci`; `.github/workflows/native.yml:13`; `.github/workflows/native.yml:14`; `.github/workflows/native.yml:11`
-- `compilation.compilation_independence`：**1/3** — 仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': True, 'external_dependencies_declared': False, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [{'path': 'README.md', 'line': 4, 'match': 'requires an AOSP'}], 'standalone_target_anchors': [{'path': '.github/workflows/native.yml', 'line': 2, 'match': 'build'}, {'path': '.github/workflows/native.yml', 'line': 5, 'match': 'build'}, {'path': '.github/workflows/native.yml', 'line': 12, 'match': 'cmake'}, {'path': 'native/CMakeLists.txt', 'line': 2, 'match': 'project('}, {'path': 'native/application/CMakeLists.txt', 'line': 1, 'match': 'add_executable('}, {'path': 'native/common/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/contract/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/hal/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/middleware/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/platform/CMakeLists.txt', 'line': 1, 'match': 'add_library('}]}；锁定 1。
-  - 证据：`facts/FW-02.json#/compilation/external_build_closure`; `README.md:4`; `.github/workflows/native.yml:2`
-- `compilation.api_version_management`：**2/3** — 专用语义版本证据=2，有效 API 检查=0；锁定 2。
-  - 证据：`facts/FW-02.json#/api_version`; `native/CMakeLists.txt:2`; `native/VERSION:1`
-- `quality.integration_test`：**3/3** — final HEAD Actions run=33758455763，测试 5/5 通过，native/ only line coverage=0.8666667≥0.6；锁定 3。
-  - 证据：`facts/FW-02.json#/integration_test/ci_execution_evidence`; `native/tests/vehicle_property_integration_test.cpp:7`; `TEST_MAPPING:2`
-- `solid_principle.single_responsibility`：**3/4** — HAL 契约将属性写入职责集中在可替换接口。 写入白名单策略独立于 HAL 传输和 Binder 生命周期。 根据明确标注的语义裁决按合同锁定 3。
-  - 证据：`facts/FW-02.json#/current_review/solid/single_responsibility`; `runtime/src/com/android/car/VehicleStub.java:193`; `platform/src/com/cockpitbench/vehicleproperty/VehiclePropertyPolicy.java:29`
-- `solid_principle.open_closed`：**2/4** — AIDL/HIDL 的工厂选择集中在一个创建入口；增加后端需修改此入口。 订阅客户端通过抽象工厂返回，可扩展实现。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-02.json#/current_review/solid/open_closed`; `runtime/src/com/android/car/VehicleStub.java:79`; `runtime/src/com/android/car/VehicleStub.java:172`
-- `solid_principle.liskov_substitution`：**3/4** — 生产实现=2，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 3。
-  - 证据：`facts/FW-02.json#/lsp_review`; `runtime/src/com/android/car/VehicleStub.java:39`; `runtime/src/com/android/car/AidlVehicleStub.java:64`; `runtime/src/com/android/car/HidlVehicleStub.java:44`
-- `solid_principle.interface_segregation`：**3/4** — 属性请求接口按读写与配置组织。 异步事件客户端只实现单独 oneway 回调。 根据明确标注的语义裁决按合同锁定 3。
-  - 证据：`facts/FW-02.json#/current_review/solid/interface_segregation`; `api/src/android/car/hardware/property/ICarProperty.aidl:34`; `api/src/android/car/hardware/property/ICarPropertyEventListener.aidl:31`
-- `solid_principle.dependency_inversion`：**2/4** — Binder 服务构造依赖具体 PropertyHalService，而非服务端口。 下层 HAL 保留 VehicleStub 抽象依赖。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-02.json#/current_review/solid/dependency_inversion`; `runtime/src/com/android/car/CarPropertyService.java:80`; `runtime/src/com/android/car/hal/VehicleHal.java:96`
-- `platform_reuse.platform_upgrade`：**3/10** — 未隔离私有运行时导入=10；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。
-  - 证据：`facts/FW-02.json#/current_review/platform`; `api/src/android/car/CarProjectionManager.java:50`; `runtime/src/com/android/car/CarProjectionService.java:79`
-- `platform_reuse.release_branch_strategy`：**8/10** — 实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/2.0']；按车型/平台复用粒度锁定 8。
-  - 证据：`refs/heads/platform/8155`@`fab2b54427e9`; `refs/heads/platform/8295`@`1c687eb3c852`
+| Leaf | Score | Reason |
+|---|---|---|
+| compilation.api_version_management | 3/3 | framework-connectivity通过java_sdk_library与current/system/module API文本集成Soong标准API提取/兼容检查；不是仅普通版本字符串。当前仓不独立构建不抹掉真实平台API机制。 |
+| compilation.ci_independence | 1/3 | 仅平台PREUPLOAD/TEST_MAPPING，工具与集成测试在Android树CI运行，无仓库独立流水线。 |
+| compilation.compilation_independence | 0/3 | Java服务及库均依赖平台defaults、跨仓AIDL和modules-utils；无独立Gradle/CMake生产入口。Cronet/netd子目录仍由平台Soong组织，不能把同仓模块数量当外部闭包。 |
+| platform_reuse.platform_upgrade | 3/10 | 平台SDK shim和mainline模块保留迁移路径；ConnectivityService仍有未封装SystemProperties及多个API层条件，局部抽象不能抹掉未覆盖风险，封顶3；JNI源码不是单ABI闭源SO。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
+| quality.integration_test | 1/3 | Android测试有真实Manager到Service交互及断言，缺少绑定HEAD的Android执行结果与覆盖代理，最高1。 |
+| solid_principle.dependency_inversion | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.interface_segregation | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.liskov_substitution | 0/4 | IPv6 no-op由父契约明确允许；但API30 IPv4删除无条件返回true，违反父契约true当且仅当map改变的后置条件，触发明确替换违反0档。 |
+| solid_principle.open_closed | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
 
-### FW-03 `vehicle-hal-adapter` — 33/52
+## FW-10 cell-broadcast-service
 
-- `compilation.ci_independence`：**3/3** — 实际构建/测试/质量命令数=[4, 3, 4]，系统 CI 文件数=2；阶段覆盖范围以实际构建目标为准，锁定 3。
-  - 证据：`facts/FW-03.json#/current_review/ci`; `.github/workflows/native-ci.yml:36`; `.github/workflows/native-ci.yml:43`; `.github/workflows/native-ci.yml:46`
-- `compilation.compilation_independence`：**1/3** — 仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': True, 'external_dependencies_declared': True, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [], 'standalone_target_anchors': [{'path': '.github/workflows/native-ci.yml', 'line': 17, 'match': 'build'}, {'path': '.github/workflows/native-ci.yml', 'line': 31, 'match': 'build'}, {'path': '.github/workflows/native-ci.yml', 'line': 32, 'match': 'cmake'}, {'path': 'native/CMakeLists.txt', 'line': 3, 'match': 'project('}, {'path': 'native/CMakeLists.txt', 'line': 25, 'match': 'cmake'}, {'path': 'native/application/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/application/CMakeLists.txt', 'line': 15, 'match': 'add_executable('}, {'path': 'native/common/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/contract/CMakeLists.txt', 'line': 24, 'match': 'build'}, {'path': 'native/contract/CMakeLists.txt', 'line': 25, 'match': 'CMake'}]}；锁定 1。
-  - 证据：`facts/FW-03.json#/compilation/external_build_closure`; `.github/workflows/native-ci.yml:17`
-- `compilation.api_version_management`：**2/3** — 专用语义版本证据=2，有效 API 检查=0；锁定 2。
-  - 证据：`facts/FW-03.json#/api_version`; `native/CMakeLists.txt:5`; `native/VERSION:1`
-- `quality.integration_test`：**3/3** — final HEAD Actions run=33757391217，测试 84/84 通过，native/ excluding native/tests/ line coverage=0.8318070818≥0.8；锁定 3。
-  - 证据：`facts/FW-03.json#/integration_test/ci_execution_evidence`; `native/tests/client_ipc_vertical_integration_test.cpp:168`; `TEST_MAPPING:2`
-- `solid_principle.single_responsibility`：**3/4** — HAL 契约将属性写入职责集中在可替换接口。 属性 Binder 的注册和读写均围绕同一属性领域。 根据明确标注的语义裁决按合同锁定 3。
-  - 证据：`facts/FW-03.json#/current_review/solid/single_responsibility`; `service/src/com/android/car/VehicleStub.java:167`; `car-lib/src/android/car/hardware/property/ICarProperty.aidl:28`
-- `solid_principle.open_closed`：**2/4** — AIDL/HIDL 的工厂选择集中在一个创建入口；增加后端需修改此入口。 订阅客户端通过抽象工厂返回，可扩展实现。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-03.json#/current_review/solid/open_closed`; `service/src/com/android/car/VehicleStub.java:76`; `service/src/com/android/car/VehicleStub.java:146`
-- `solid_principle.liskov_substitution`：**3/4** — 生产实现=2，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 3。
-  - 证据：`facts/FW-03.json#/lsp_review`; `service/src/com/android/car/VehicleStub.java:38`; `service/src/com/android/car/AidlVehicleStub.java:64`; `service/src/com/android/car/HidlVehicleStub.java:44`
-- `solid_principle.interface_segregation`：**3/4** — 属性请求接口按读写与配置组织。 异步事件客户端只实现单独 oneway 回调。 根据明确标注的语义裁决按合同锁定 3。
-  - 证据：`facts/FW-03.json#/current_review/solid/interface_segregation`; `car-lib/src/android/car/hardware/property/ICarProperty.aidl:34`; `car-lib/src/android/car/hardware/property/ICarPropertyEventListener.aidl:31`
-- `solid_principle.dependency_inversion`：**2/4** — 应用服务构造依赖具体 VehiclePropertyGateway，而非独立应用端口。 Java HAL 保留 VehicleStub 抽象依赖。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-03.json#/current_review/solid/dependency_inversion`; `native/application/include/fw03/application/vehicle_service.h:31`; `service/src/com/android/car/hal/VehicleHal.java:96`
-- `platform_reuse.platform_upgrade`：**3/10** — 未隔离私有运行时导入=14；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。
-  - 证据：`facts/FW-03.json#/current_review/platform`; `car-lib/src/android/car/media/CarAudioPatchHandle.java:28`; `car-lib/src/android/car/user/CarUserManager.java:60`
-- `platform_reuse.release_branch_strategy`：**8/10** — 实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/2026.1']；按车型/平台复用粒度锁定 8。
-  - 证据：`refs/heads/platform/8155`@`270b396861b0`; `refs/heads/platform/8295`@`4449839764f7`
+| Leaf | Score | Reason |
+|---|---|---|
+| compilation.api_version_management | 1/3 | versionCode300000000/versionName R-initial为手工平台发布号，无API基线。 |
+| compilation.ci_independence | 1/3 | 仅 Android 系统 TEST_MAPPING/平台构建 CI，未提供独立标准流水线。 |
+| compilation.compilation_independence | 0/3 | 完整生产目标依赖平台外部源码/工具；临时抽出的单类javac成功不构成仓内独立生产构建入口。 |
+| platform_reuse.platform_upgrade | 3/10 | 定位权限处理与未覆盖的系统属性/旧电话监听风险存在，封顶3，有明确迁移路径。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
+| quality.integration_test | 1/3 | JUnit真实广播去重行为断言，但没有绑定HEAD的Android运行记录。 |
+| solid_principle.dependency_inversion | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.interface_segregation | 3/4 | 良好遵循。 |
+| solid_principle.liskov_substitution | 3/4 | 两个生产处理器返回值符合父等待/空闲合同，未见明确收紧或无条件抛错。 |
+| solid_principle.open_closed | 3/4 | 良好遵循。 |
+| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
 
-### FW-07 `vehicle-diagnostics` — 34/52
+## FW-14 car-services
 
-- `compilation.ci_independence`：**3/3** — 实际构建/测试/质量命令数=[1, 1, 3]，系统 CI 文件数=5；阶段覆盖范围以实际构建目标为准，锁定 3。
-  - 证据：`facts/FW-07.json#/current_review/ci`; `.github/workflows/native.yml:13`; `.github/workflows/native.yml:14`; `.github/workflows/native.yml:11`
-- `compilation.compilation_independence`：**1/3** — 仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': True, 'external_dependencies_declared': True, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [{'path': 'README.md', 'line': 5, 'match': 'complete build requires an AAOS'}], 'standalone_target_anchors': [{'path': '.github/workflows/native.yml', 'line': 2, 'match': 'build'}, {'path': '.github/workflows/native.yml', 'line': 5, 'match': 'build'}, {'path': '.github/workflows/native.yml', 'line': 12, 'match': 'cmake'}, {'path': 'native/CMakeLists.txt', 'line': 2, 'match': 'project('}, {'path': 'native/application/CMakeLists.txt', 'line': 1, 'match': 'add_executable('}, {'path': 'native/common/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/contract/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/hal/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/middleware/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/platform/CMakeLists.txt', 'line': 1, 'match': 'add_library('}]}；锁定 1。
-  - 证据：`facts/FW-07.json#/compilation/external_build_closure`; `README.md:5`; `.github/workflows/native.yml:2`
-- `compilation.api_version_management`：**3/3** — 专用语义版本证据=2，有效 API 检查=3；锁定 3。
-  - 证据：`facts/FW-07.json#/api_version`; `native/CMakeLists.txt:2`; `native/VERSION:1`; `car-lib/Android.bp:105`
-- `quality.integration_test`：**3/3** — final HEAD Actions run=33758464550，测试 5/5 通过，native/ only line coverage=0.8666667≥0.6；锁定 3。
-  - 证据：`facts/FW-07.json#/integration_test/ci_execution_evidence`; `cpp/car_binder_lib/largeParcelable/tests/LargeParcelableTest.cpp:63`; `TEST_MAPPING:2`
-- `solid_principle.single_responsibility`：**2/4** — 性能处理类还负责组织持久化状态，存在职责集中。 同一性能处理类遍历并通知监听者；职责集中在 watchdog 域内。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-07.json#/current_review/solid/single_responsibility`; `service/src/com/android/car/watchdog/WatchdogPerfHandler.java:1215`; `service/src/com/android/car/watchdog/WatchdogPerfHandler.java:1326`
-- `solid_principle.open_closed`：**3/4** — 资源通知经监听者集合分派，不依赖客户端类型分支。 遥测服务接收 ICarDataListener 接口扩展接收者。 根据明确标注的语义裁决按合同锁定 3。
-  - 证据：`facts/FW-07.json#/current_review/solid/open_closed`; `service/src/com/android/car/watchdog/WatchdogPerfHandler.java:1326`; `cpp/telemetry/cartelemetryd/src/TelemetryServer.h:63`
-- `solid_principle.liskov_substitution`：**3/4** — 生产实现=2，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 3。
-  - 证据：`facts/FW-07.json#/lsp_review`; `service/src/com/android/car/CarDiagnosticService.java:556`; `service/src/com/android/car/CarDiagnosticService.java:571`; `service/src/com/android/car/CarDiagnosticService.java:596`
-- `solid_principle.interface_segregation`：**3/4** — 诊断客户端通过独立诊断监听者订阅。 遥测监听契约与诊断接口分离。 根据明确标注的语义裁决按合同锁定 3。
-  - 证据：`facts/FW-07.json#/current_review/solid/interface_segregation`; `car-lib/src/android/car/diagnostic/ICarDiagnostic.aidl:27`; `cpp/telemetry/cartelemetryd/src/TelemetryServer.h:63`
-- `solid_principle.dependency_inversion`：**2/4** — 时钟、存储和 daemon helper 从构造注入，但存储/helper 为具体类型。 遥测输出依赖 AIDL 监听抽象。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-07.json#/current_review/solid/dependency_inversion`; `service/src/com/android/car/watchdog/WatchdogPerfHandler.java:303`; `cpp/telemetry/cartelemetryd/src/TelemetryServer.h:63`
-- `platform_reuse.platform_upgrade`：**3/10** — 未隔离私有运行时导入=32；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。
-  - 证据：`facts/FW-07.json#/current_review/platform`; `car-lib/src/android/car/CarProjectionManager.java:50`; `car-lib/src/android/car/media/CarAudioPatchHandle.java:28`
-- `platform_reuse.release_branch_strategy`：**8/10** — 实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/2026.1']；按车型/平台复用粒度锁定 8。
-  - 证据：`refs/heads/platform/8155`@`85f0ccfb542a`; `refs/heads/platform/8295`@`87130476985f`
+| Leaf | Score | Reason |
+|---|---|---|
+| compilation.api_version_management | 3/3 | droidstubs同时检查current与last_released public/system API真实签名/removed baseline，符合3档。 |
+| compilation.ci_independence | 1/3 | 真实PREUPLOAD/TEST_MAPPING受Android平台预提交系统调度；无仓库独立完整流水线。 |
+| compilation.compilation_independence | 1/3 | 3 分：完整源码闭包尚未成立，host依赖锁定不支持整仓3档。 2 分：完整Car平台依赖未通过独立版本化SDK/JAR接口封闭，2档不满足。 1 分：可局部构建具有真实消费者的生产单元；完整构建仍需平台环境/私有stub注入。 0 分：新入口与实际成功执行否定没有任何有意义独立生产单元的条件。 |
+| platform_reuse.platform_upgrade | 3/10 | VehicleHal/Manager分层提供实际硬件迁移边界，但ICarImpl与Audio内部属性、系统服务耦合不由该边界完整覆盖；未发现单ABI闭源独占，按未封装内部API封顶3。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
+| quality.integration_test | 1/3 | 旋钮输入与capture/occupant组件有真实交互断言，尚无当前HEAD执行结果和覆盖代理，最高1。 |
+| solid_principle.dependency_inversion | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.interface_segregation | 3/4 | 良好遵循。 |
+| solid_principle.liskov_substitution | 0/4 | CarAudioService异步init允许返回时初始化未完成，弱化CarSystemService明示的functional后置。getCarService专门wait只能补偿该入口，通用生命周期调用者仍在init返回后调用onInitComplete。 |
+| solid_principle.open_closed | 3/4 | 良好遵循。 |
+| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
 
-### FW-10 `cockpit-manager-kit` — 26/52
+## FW-15 telecom-service
 
-- `compilation.ci_independence`：**2/3** — 实际构建/测试/质量命令数=[1, 1, 0]，系统 CI 文件数=1；阶段覆盖范围以实际构建目标为准，锁定 2。
-  - 证据：`facts/FW-10.json#/current_review/ci`; `APP_BUILD:2`; `APP_BUILD:3`
-- `compilation.compilation_independence`：**1/3** — 仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': True, 'external_dependencies_declared': True, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [{'path': 'README.md', 'line': 4, 'match': 'requires an AOSP'}], 'standalone_target_anchors': [{'path': 'APP_BUILD', 'line': 1, 'match': 'cmake'}, {'path': 'APP_BUILD', 'line': 2, 'match': 'build'}, {'path': 'APP_BUILD', 'line': 2, 'match': 'cmake'}, {'path': 'native/CMakeLists.txt', 'line': 2, 'match': 'project('}, {'path': 'native/middleware/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/service/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/tests/CMakeLists.txt', 'line': 6, 'match': 'add_executable('}]}；锁定 1。
-  - 证据：`facts/FW-10.json#/compilation/external_build_closure`; `README.md:4`; `APP_BUILD:1`
-- `compilation.api_version_management`：**2/3** — 专用语义版本证据=1，有效 API 检查=0；锁定 2。
-  - 证据：`facts/FW-10.json#/api_version`; `native/CMakeLists.txt:2`
-- `quality.integration_test`：**1/3** — 有效测试源=46；无执行证明不推断通过率，锁定 1。
-  - 证据：`facts/FW-10.json#/integration_test/executable_test_sources`; `native/tests/cockpit_manager_integration_test.cpp:5`; `TEST_MAPPING:2`
-- `solid_principle.single_responsibility`：**2/4** — 权限检查、路由、fallback 与输出转换集中于网关方法。 后端查找与调用仍被分离到 Registry。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-10.json#/current_review/solid/single_responsibility`; `manager-runtime/src/com/cockpitbench/managerkit/ManagerGatewayService.java:29`; `manager-runtime/src/com/cockpitbench/managerkit/ManagerRegistry.java:17`
-- `solid_principle.open_closed`：**2/4** — Backend 通过注册表扩展。 扩展芯片后端需修改具体类名映射。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-10.json#/current_review/solid/open_closed`; `manager-runtime/src/com/cockpitbench/managerkit/ManagerRegistry.java:17`; `manager-runtime/src/com/cockpitbench/managerkit/PlatformManagerFallback.java:22`
-- `solid_principle.liskov_substitution`：**2/4** — 生产实现=1，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 2。
-  - 证据：`facts/FW-10.json#/lsp_review`; `manager-runtime/src/com/cockpitbench/managerkit/ManagerRegistry.java:17`; `manager-runtime/src/com/cockpitbench/managerkit/VehiclePropertyBackend.java:21`
-- `solid_principle.interface_segregation`：**2/4** — 通用字符串/Bundle 网关让不同 manager 共享无类型入口。 事件回调独立于调用接口。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-10.json#/current_review/solid/interface_segregation`; `manager-runtime/src/com/cockpitbench/managerkit/IManagerGateway.aidl:5`; `manager-runtime/src/com/cockpitbench/managerkit/IManagerGatewayListener.aidl:4`
-- `solid_principle.dependency_inversion`：**1/4** — 高层直接创建 Registry 和 Fallback。 高层还直接创建 VehiclePropertyBackend，多个依赖不可替换。 根据明确标注的语义裁决按合同锁定 1。
-  - 证据：`facts/FW-10.json#/current_review/solid/dependency_inversion`; `manager-runtime/src/com/cockpitbench/managerkit/ManagerGatewayService.java:23`; `manager-runtime/src/com/cockpitbench/managerkit/ManagerGatewayService.java:26`
-- `platform_reuse.platform_upgrade`：**3/10** — 未隔离私有运行时导入=10；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。
-  - 证据：`facts/FW-10.json#/current_review/platform`; `api/src/android/car/CarProjectionManager.java:50`; `runtime/src/com/android/car/CarProjectionService.java:79`
-- `platform_reuse.release_branch_strategy`：**8/10** — 实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/2026.1']；按车型/平台复用粒度锁定 8。
-  - 证据：`refs/heads/platform/8155`@`fcd9448a5bad`; `refs/heads/platform/8295`@`75655639921a`
+| Leaf | Score | Reason |
+|---|---|---|
+| compilation.api_version_management | 0/3 | 仓内无版本治理或API baseline，平台源码服务未声明本仓版本。 |
+| compilation.ci_independence | 1/3 | 仅 Android 系统 TEST_MAPPING/平台构建 CI，未提供独立标准流水线。 |
+| compilation.compilation_independence | 0/3 | 完整生产目标依赖平台外部源码/工具；临时抽出的单类javac成功不构成仓内独立生产构建入口。 |
+| platform_reuse.platform_upgrade | 3/10 | 平台服务启动与分析直接引用hidden系统入口，存在迁移路径，按未封装风险3。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
+| quality.integration_test | 1/3 | 图执行测试有真实先后关系与结果断言，但无final-HEAD Android执行证明。 |
+| solid_principle.dependency_inversion | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.interface_segregation | 3/4 | 良好遵循。 |
+| solid_principle.liskov_substitution | 3/4 | 两个生产过滤器均保持CompletionStage结果契约；没有系统化多实现契约执行记录，不能4。 |
+| solid_principle.open_closed | 3/4 | 良好遵循。 |
+| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
 
-### FW-08 `soa-gateway` — 29/52
+## FW-16 platform-framework
 
-- `compilation.ci_independence`：**2/3** — 实际构建/测试/质量命令数=[2, 1, 0]，系统 CI 文件数=4；阶段覆盖范围以实际构建目标为准，锁定 2。
-  - 证据：`facts/FW-08.json#/current_review/ci`; `APP_BUILD:9`; `APP_BUILD:16`
-- `compilation.compilation_independence`：**1/3** — 仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': True, 'external_dependencies_declared': True, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [{'path': 'README.md', 'line': 4, 'match': 'complete build still requires AOSP'}], 'standalone_target_anchors': [{'path': 'APP_BUILD', 'line': 7, 'match': 'build'}, {'path': 'APP_BUILD', 'line': 9, 'match': 'cmake'}, {'path': 'APP_BUILD', 'line': 15, 'match': 'cmake'}, {'path': 'native/CMakeLists.txt', 'line': 3, 'match': 'project('}, {'path': 'native/CMakeLists.txt', 'line': 28, 'match': 'cmake'}, {'path': 'native/application/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/application/CMakeLists.txt', 'line': 7, 'match': 'add_library('}, {'path': 'native/application/CMakeLists.txt', 'line': 13, 'match': 'add_executable('}, {'path': 'native/broker/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/broker/CMakeLists.txt', 'line': 7, 'match': 'add_library('}]}；锁定 1。
-  - 证据：`facts/FW-08.json#/compilation/external_build_closure`; `README.md:4`; `APP_BUILD:7`
-- `compilation.api_version_management`：**2/3** — 专用语义版本证据=3，有效 API 检查=0；锁定 2。
-  - 证据：`facts/FW-08.json#/api_version`; `native/CMakeLists.txt:5`; `native/CMakeLists.txt:23`; `native/VERSION:1`
-- `quality.integration_test`：**1/3** — 有效测试源=13；无执行证明不推断通过率，锁定 1。
-  - 证据：`facts/FW-08.json#/integration_test/executable_test_sources`; `native/tests/gateway_codec_test.cpp:11`; `TEST_MAPPING:2`
-- `solid_principle.single_responsibility`：**2/4** — 服务同时承担会话生命周期、路由策略重载和传输健康查询。 Provider、依赖图与包路由在 broker 中分为具体组件。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-08.json#/current_review/solid/single_responsibility`; `native/application/include/fw08/application/soa_gateway_service.h:72`; `native/broker/include/fw08/broker/soa_broker.h:60`
-- `solid_principle.open_closed`：**3/4** — 通过 ProviderInfo/Offering 注册提供者，不以产品类分支新增业务。 传输接口可由构造注入替换。 根据明确标注的语义裁决按合同锁定 3。
-  - 证据：`facts/FW-08.json#/current_review/solid/open_closed`; `native/broker/include/fw08/broker/soa_broker.h:33`; `native/broker/include/fw08/broker/soa_broker.h:23`
-- `solid_principle.liskov_substitution`：**2/4** — 生产实现=1，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 2。
-  - 证据：`facts/FW-08.json#/lsp_review`; `native/transport/include/fw08/transport/ipc_transport.h:25`; `native/transport/include/fw08/transport/unix_socket_transport.h:11`; `native/tests/support/fake_ipc_transport.h:11`
-- `solid_principle.interface_segregation`：**3/4** — Broker 暴露消息订阅和发布契约。 传输合同与业务 provider/订阅接口分离。 根据明确标注的语义裁决按合同锁定 3。
-  - 证据：`facts/FW-08.json#/current_review/solid/interface_segregation`; `native/broker/include/fw08/broker/soa_broker.h:42`; `native/transport/include/fw08/transport/ipc_transport.h:30`
-- `solid_principle.dependency_inversion`：**2/4** — 顶层服务依赖具体 UnixSocketTransport，限制替换。 Broker 的主要传输依赖 IpcTransport 抽象。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-08.json#/current_review/solid/dependency_inversion`; `native/application/include/fw08/application/soa_gateway_service.h:42`; `native/broker/include/fw08/broker/soa_broker.h:23`
-- `platform_reuse.platform_upgrade`：**3/10** — 未隔离私有运行时导入=57；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。
-  - 证据：`facts/FW-08.json#/current_review/platform`; `car-lib/src/android/car/CarProjectionManager.java:50`; `car-lib/src/android/car/media/CarAudioPatchHandle.java:28`
-- `platform_reuse.release_branch_strategy`：**8/10** — 实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/2026.1']；按车型/平台复用粒度锁定 8。
-  - 证据：`refs/heads/platform/8155`@`c79cded97d4f`; `refs/heads/platform/8295`@`df09b062ef96`
+| Leaf | Score | Reason |
+|---|---|---|
+| compilation.api_version_management | 3/3 | api/StubLibraries.bp对当前公开API和last_released签名执行metalava兼容检查，含removed与兼容baseline。 |
+| compilation.ci_independence | 1/3 | 真实PREUPLOAD/TEST_MAPPING受Android平台预提交系统调度；无仓库独立完整流水线。 |
+| compilation.compilation_independence | 1/3 | SettingsLib/Spa真实生产AAR已在当前HEAD本机构建成功；完整framework依赖平台树。局部生产单元足以排除0，不代表整仓独立构建。 |
+| platform_reuse.platform_upgrade | 0/10 | 这是平台框架本身，SystemServer启动、内部资源和Binder运行时为多个核心链路直接依赖；SystemService抽象仅隔离服务生命周期，不提供跨平台替换/fallback。按多核心非稳定接口依赖且缺乏覆盖隔离锁0，不按普通公开API使用扣分。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
+| quality.integration_test | 1/3 | UiMode服务夜间模式等行为有真实测试断言；Spa构建没有运行测试，其他当前HEAD执行/覆盖证明缺失，最高1。 |
+| solid_principle.dependency_inversion | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.interface_segregation | 3/4 | 良好遵循。 |
+| solid_principle.liskov_substitution | 3/4 | 两个真实SystemService子类均初始化并发布Binder，调用者不要求额外前置；boot hook父类允许默认空，不能机械扣分。未证明跨实现异常边界契约测试，不能4。 |
+| solid_principle.open_closed | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
 
-### FW-14 `update-manager-service` — 29/52
+## FW-18 telephony-service
 
-- `compilation.ci_independence`：**2/3** — 实际构建/测试/质量命令数=[1, 1, 0]，系统 CI 文件数=5；阶段覆盖范围以实际构建目标为准，锁定 2。
-  - 证据：`facts/FW-14.json#/current_review/ci`; `APP_BUILD:2`; `APP_BUILD:3`
-- `compilation.compilation_independence`：**1/3** — 仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': True, 'external_dependencies_declared': True, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [{'path': 'README.md', 'line': 3, 'match': 'Complete build requires an AOSP'}], 'standalone_target_anchors': [{'path': 'APP_BUILD', 'line': 1, 'match': 'cmake'}, {'path': 'APP_BUILD', 'line': 2, 'match': 'build'}, {'path': 'APP_BUILD', 'line': 2, 'match': 'cmake'}, {'path': 'native/CMakeLists.txt', 'line': 2, 'match': 'project('}, {'path': 'native/middleware/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/service/CMakeLists.txt', 'line': 1, 'match': 'add_library('}, {'path': 'native/tests/CMakeLists.txt', 'line': 6, 'match': 'add_executable('}]}；锁定 1。
-  - 证据：`facts/FW-14.json#/compilation/external_build_closure`; `README.md:3`; `APP_BUILD:1`
-- `compilation.api_version_management`：**3/3** — 专用语义版本证据=1，有效 API 检查=4；锁定 3。
-  - 证据：`facts/FW-14.json#/api_version`; `native/CMakeLists.txt:2`; `car-builtin-lib/Android.bp:32`; `car-lib/Android.bp:105`
-- `quality.integration_test`：**1/3** — 有效测试源=303；无执行证明不推断通过率，锁定 1。
-  - 证据：`facts/FW-14.json#/integration_test/executable_test_sources`; `native/tests/update_manager_integration_test.cpp:5`; `TEST_MAPPING:2`
-- `solid_principle.single_responsibility`：**2/4** — 启动方法混合权限、参数验证、反射引擎、状态与通知。 监听者广播仍为同一服务内的独立方法。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-14.json#/current_review/solid/single_responsibility`; `update-manager/src/com/cockpitbench/update/UpdateManagerService.java:19`; `update-manager/src/com/cockpitbench/update/UpdateManagerService.java:55`
-- `solid_principle.open_closed`：**2/4** — 权限策略允许通过构造扩展。 引擎类和无参构造在核心方法中硬编码。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-14.json#/current_review/solid/open_closed`; `update-manager/src/com/cockpitbench/update/UpdateManagerService.java:18`; `update-manager/src/com/cockpitbench/update/UpdateManagerService.java:51`
-- `solid_principle.liskov_substitution`：**3/4** — 生产实现=2，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 3。
-  - 证据：`facts/FW-14.json#/lsp_review`; `service/src/com/android/car/VehicleStub.java:38`; `service/src/com/android/car/AidlVehicleStub.java:64`; `service/src/com/android/car/HidlVehicleStub.java:44`
-- `solid_principle.interface_segregation`：**2/4** — 更新控制、状态读取和监听注册仍汇聚于一个管理接口。 状态推送有独立 oneway 监听接口。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-14.json#/current_review/solid/interface_segregation`; `update-manager/src/com/cockpitbench/update/IUpdateManager.aidl:3`; `update-manager/src/com/cockpitbench/update/IUpdateStatusListener.aidl:2`
-- `solid_principle.dependency_inversion`：**2/4** — PermissionGate 在构造函数注入。 服务自行反射构造具体 UpdateEngine。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-14.json#/current_review/solid/dependency_inversion`; `update-manager/src/com/cockpitbench/update/UpdateManagerService.java:18`; `update-manager/src/com/cockpitbench/update/UpdateManagerService.java:51`
-- `platform_reuse.platform_upgrade`：**3/10** — 未隔离私有运行时导入=69；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。
-  - 证据：`facts/FW-14.json#/current_review/platform`; `car-builtin-lib/src/android/car/builtin/CarBuiltin.java:20`; `car-builtin-lib/src/android/car/builtin/app/VoiceInteractionHelper.java:24`
-- `platform_reuse.release_branch_strategy`：**8/10** — 实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/2026.1']；按车型/平台复用粒度锁定 8。
-  - 证据：`refs/heads/platform/8155`@`a7bea930370a`; `refs/heads/platform/8295`@`f4b18929661f`
-
-### FW-15 `car-runtime-service` — 12/52
-
-- `compilation.ci_independence`：**1/3** — 实际构建/测试/质量命令数=[0, 0, 0]，系统 CI 文件数=1；阶段覆盖范围以实际构建目标为准，锁定 1。
-  - 证据：`facts/FW-15.json#/current_review/ci`
-- `compilation.compilation_independence`：**0/3** — 仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': False, 'external_dependencies_declared': False, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [{'path': 'README.md', 'line': 4, 'match': 'Requires AAOS'}], 'standalone_target_anchors': []}；锁定 0。
-  - 证据：`facts/FW-15.json#/compilation/external_build_closure`; `README.md:4`; `Android.bp:13`
-- `compilation.api_version_management`：**0/3** — 专用语义版本证据=0，有效 API 检查=0；锁定 0。
-  - 证据：`facts/FW-15.json#/api_version`
-- `quality.integration_test`：**0/3** — 有效测试源=0；无执行证明不推断通过率，锁定 0。
-  - 证据：`facts/FW-15.json#/integration_test/executable_test_sources`; `TEST_MAPPING:2`
-- `solid_principle.single_responsibility`：**0/4** — 中央服务直接持有十八个互不相同业务域的 facade。 中央服务还混合系统属性权限判断和审计广播。 根据明确标注的语义裁决按合同锁定 0。
-  - 证据：`facts/FW-15.json#/current_review/solid/single_responsibility`; `runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java:53`; `runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java:85`
-- `solid_principle.open_closed`：**1/4** — 每增加业务域都需修改中央成员与具体构造。 业务调用按域逐个硬编码转发，不经通用注册/策略。 根据明确标注的语义裁决按合同锁定 1。
-  - 证据：`facts/FW-15.json#/current_review/solid/open_closed`; `runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java:53`; `runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java:96`
-- `solid_principle.liskov_substitution`：**2/4** — 生产实现=1，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 2。
-  - 证据：`facts/FW-15.json#/lsp_review`; `runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl:3`; `runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java:48`
-- `solid_principle.interface_segregation`：**0/4** — 单一 Binder 强迫气候和门窗等客户端依赖多个领域方法。 同一 Binder 又纳入车辆设置，客户端无窄接口选择。 根据明确标注的语义裁决按合同锁定 0。
-  - 证据：`facts/FW-15.json#/current_review/solid/interface_segregation`; `runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl:4`; `runtime/src/com/cockpitbench/carruntime/ICarRuntime.aidl:55`
-- `solid_principle.dependency_inversion`：**0/4** — 高层直接构造十八个具体业务依赖。 全局实例把使用者绑定到具体中央服务。 根据明确标注的语义裁决按合同锁定 0。
-  - 证据：`facts/FW-15.json#/current_review/solid/dependency_inversion`; `runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java:53`; `runtime/src/com/cockpitbench/carruntime/CarRuntimeService.java:151`
-- `platform_reuse.platform_upgrade`：**0/10** — 未隔离私有运行时导入=137；多处产品侧直接私有依赖=True；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 0。
-  - 证据：`facts/FW-15.json#/current_review/platform`; `platform/src/com/cockpitbench/carruntime/platform/Sa8155VehicleBridge.java:19`; `platform/src/com/cockpitbench/carruntime/platform/Sa8295VehicleBridge.java:19`
-- `platform_reuse.release_branch_strategy`：**8/10** — 实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/release/0.8']；按车型/平台复用粒度锁定 8。
-  - 证据：`refs/heads/platform/8155`@`d2c21ebaf740`; `refs/heads/platform/8295`@`8ef2b0f2a5fb`
-
-### FW-18 `vehicle-platform-service` — 21/52
-
-- `compilation.ci_independence`：**1/3** — 实际构建/测试/质量命令数=[0, 0, 0]，系统 CI 文件数=1；阶段覆盖范围以实际构建目标为准，锁定 1。
-  - 证据：`facts/FW-18.json#/current_review/ci`
-- `compilation.compilation_independence`：**0/3** — 仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': False, 'external_dependencies_declared': False, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [], 'standalone_target_anchors': []}；锁定 0。
-  - 证据：`facts/FW-18.json#/compilation/external_build_closure`; `Android.bp:12`
-- `compilation.api_version_management`：**1/3** — 专用语义版本证据=0，有效 API 检查=3；锁定 1。
-  - 证据：`facts/FW-18.json#/api_version`; `apicheck.mk:147`; `apicheck.mk:155`
-- `quality.integration_test`：**1/3** — 有效测试源=98；无执行证明不推断通过率，锁定 1。
-  - 证据：`facts/FW-18.json#/integration_test/executable_test_sources`; `migration/aidl/tests/CarPropertyServiceUnitTest.java:96`
-- `solid_principle.single_responsibility`：**1/4** — 协调器同时管理回调和审计集合。 同一协调器承担平台类型识别、创建和信号映射。 根据明确标注的语义裁决按合同锁定 1。
-  - 证据：`facts/FW-18.json#/current_review/solid/single_responsibility`; `platform/src/com/cockpitbench/vehicleplatform/PlatformSignalCoordinator.java:66`; `platform/src/com/cockpitbench/vehicleplatform/PlatformSignalCoordinator.java:90`
-- `solid_principle.open_closed`：**1/4** — 增加平台需修改 instanceof 分派。 还需同步修改 profile 创建分支。 根据明确标注的语义裁决按合同锁定 1。
-  - 证据：`facts/FW-18.json#/current_review/solid/open_closed`; `platform/src/com/cockpitbench/vehicleplatform/PlatformSignalCoordinator.java:90`; `platform/src/com/cockpitbench/vehicleplatform/PlatformSignalCoordinator.java:96`
-- `solid_principle.liskov_substitution`：**2/4** — 生产实现=1，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 2。
-  - 证据：`facts/FW-18.json#/lsp_review`; `platform/aidl/com/cockpitbench/vehicleplatform/IVehiclePlatform.aidl:3`; `platform/src/com/cockpitbench/vehicleplatform/VehiclePlatformService.java:19`
-- `solid_principle.interface_segregation`：**2/4** — 读取信号客户端同时依赖全局重连和清空等管理操作。 业务读取实现仅需要协调器读取能力。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-18.json#/current_review/solid/interface_segregation`; `platform/aidl/com/cockpitbench/vehicleplatform/IVehiclePlatform.aidl:4`; `platform/src/com/cockpitbench/vehicleplatform/VehiclePlatformService.java:22`
-- `solid_principle.dependency_inversion`：**1/4** — Binder 服务取全局具体协调器。 协调器再取全局具体 Router 并创建 journal/fallback。 根据明确标注的语义裁决按合同锁定 1。
-  - 证据：`facts/FW-18.json#/current_review/solid/dependency_inversion`; `platform/src/com/cockpitbench/vehicleplatform/VehiclePlatformService.java:20`; `platform/src/com/cockpitbench/vehicleplatform/PlatformSignalCoordinator.java:30`
-- `platform_reuse.platform_upgrade`：**3/10** — 未隔离私有运行时导入=22；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。
-  - 证据：`facts/FW-18.json#/current_review/platform`; `car-lib/src/android/car/media/CarAudioPatchHandle.java:24`; `car-lib/src/android/car/user/CarUserManagerHelper.java:29`
-- `platform_reuse.release_branch_strategy`：**8/10** — 实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing', 'refs/heads/release/sop-2019']；按车型/平台复用粒度锁定 8。
-  - 证据：`refs/heads/platform/8155`@`1cd1c6a43839`; `refs/heads/platform/8295`@`bce6dc6fca9e`; `refs/heads/platform/xinqing`@`e4e968216af4`
-
-### FW-16 `platform-compat-service` — 22/52
-
-- `compilation.ci_independence`：**1/3** — 实际构建/测试/质量命令数=[0, 0, 0]，系统 CI 文件数=4；阶段覆盖范围以实际构建目标为准，锁定 1。
-  - 证据：`facts/FW-16.json#/current_review/ci`
-- `compilation.compilation_independence`：**0/3** — 仓外构建闭包={'requires_full_platform_source': True, 'has_meaningful_standalone_target': False, 'external_dependencies_declared': True, 'critical_dependencies_version_pinned': False, 'platform_requirement_anchors': [{'path': 'README.md', 'line': 5, 'match': 'requires an AAOS'}], 'standalone_target_anchors': []}；锁定 0。
-  - 证据：`facts/FW-16.json#/compilation/external_build_closure`; `README.md:5`; `Android.bp:3`
-- `compilation.api_version_management`：**1/3** — 专用语义版本证据=0，有效 API 检查=7；锁定 1。
-  - 证据：`facts/FW-16.json#/api_version`; `car-builtin-lib/Android.bp:32`; `car-lib/Android.bp:105`
-- `quality.integration_test`：**1/3** — 有效测试源=304；无执行证明不推断通过率，锁定 1。
-  - 证据：`facts/FW-16.json#/integration_test/executable_test_sources`; `tests/BugReportApp/tests/src/com/android/car/bugreport/BugStorageUtilsTest.java:76`; `TEST_MAPPING:2`
-- `solid_principle.single_responsibility`：**2/4** — 同一方法硬编码多个业务分派、写缓存和广播。 Binder 服务主要转发给 router/registry/callback 组件，已有职责拆分。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-16.json#/current_review/solid/single_responsibility`; `compat/src/com/cockpitbench/platformcompat/CompatibilityCommandRouter.java:22`; `compat/src/com/cockpitbench/platformcompat/PlatformCompatService.java:23`
-- `solid_principle.open_closed`：**1/4** — 新增业务域需修改 switch。 还需同步修改域枚举列表。 根据明确标注的语义裁决按合同锁定 1。
-  - 证据：`facts/FW-16.json#/current_review/solid/open_closed`; `compat/src/com/cockpitbench/platformcompat/CompatibilityCommandRouter.java:22`; `compat/src/com/cockpitbench/platformcompat/CompatibilityCommandRouter.java:23`
-- `solid_principle.liskov_substitution`：**2/4** — 生产实现=1，有效可复用替换测试=0；按父契约、实现关系和已核对的覆盖方法锁定 2。
-  - 证据：`facts/FW-16.json#/lsp_review`; `compat/aidl/com/cockpitbench/platformcompat/IPlatformCompat.aidl:3`; `compat/src/com/cockpitbench/platformcompat/PlatformCompatService.java:19`
-- `solid_principle.interface_segregation`：**2/4** — 通用调用、裸 Binder 查找和平台切换共享一接口。 裸服务查询和业务回调实现使用不同组件，说明可拆出窄接口。 根据明确标注的语义裁决按合同锁定 2。
-  - 证据：`facts/FW-16.json#/current_review/solid/interface_segregation`; `compat/aidl/com/cockpitbench/platformcompat/IPlatformCompat.aidl:4`; `compat/src/com/cockpitbench/platformcompat/PlatformCompatService.java:24`
-- `solid_principle.dependency_inversion`：**1/4** — 高层集中获取全局 Registry 并创建具体 router/bridge/cache。 全局对象表加任意反射调用形成第二处不稳定依赖。 根据明确标注的语义裁决按合同锁定 1。
-  - 证据：`facts/FW-16.json#/current_review/solid/dependency_inversion`; `compat/src/com/cockpitbench/platformcompat/PlatformCompatService.java:20`; `compat/src/com/cockpitbench/platformcompat/HiddenApiRegistry.java:20`
-- `platform_reuse.platform_upgrade`：**3/10** — 未隔离私有运行时导入=78；多处产品侧直接私有依赖=False；SDK 分支集中于 API 兼容层，未发现闭源单 ABI 二进制，锁定 3。
-  - 证据：`facts/FW-16.json#/current_review/platform`; `car-builtin-lib/src/android/car/builtin/CarBuiltin.java:20`; `car-builtin-lib/src/android/car/builtin/app/VoiceInteractionHelper.java:24`
-- `platform_reuse.release_branch_strategy`：**8/10** — 实际配置/代码差异支持的分支=['refs/heads/platform/8155', 'refs/heads/platform/8295', 'refs/heads/platform/xinqing', 'refs/heads/release/sop-2025']；按车型/平台复用粒度锁定 8。
-  - 证据：`refs/heads/platform/8155`@`93ccc6f80839`; `refs/heads/platform/8295`@`068b6972dc4b`; `refs/heads/platform/xinqing`@`a79b428ffc3e`
+| Leaf | Score | Reason |
+|---|---|---|
+| compilation.api_version_management | 0/3 | 未找到构建集成的API版本或兼容性基线；平台tag不替代API控制。 |
+| compilation.ci_independence | 1/3 | 仅PREUPLOAD调用Android仓外checkstyle；无独立构建测试流水线。 |
+| compilation.compilation_independence | 0/3 | telephony-common依赖services、ims/voip及多版本radio HAL生成库和framework-jarjar-rules，源码没有独立SDK模块入口。 |
+| platform_reuse.platform_upgrade | 3/10 | 核心电话流程与平台内部服务/HAL绑定，CommandsInterface/RIL提供部分迁移边界但不覆盖全局服务访问；无单架构闭源SO证据，total=3且有迁移路径，3分。 |
+| platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
+| quality.integration_test | 1/3 | 真实GsmCdmaPhone交互测试有断言和Android配置；未有final HEAD设备执行证明，最高1。 |
+| solid_principle.dependency_inversion | 1/4 | 多处违反，设计不合理。 |
+| solid_principle.interface_segregation | 1/4 | 多处违反，设计不合理。 |
+| solid_principle.liskov_substitution | 0/4 | SIP 生产实现破坏查询结果和异步完成合同：成功回调结果类型不符合父接口，另有请求不完成，触发明确替换违反档。 |
+| solid_principle.open_closed | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |

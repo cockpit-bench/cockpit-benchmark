@@ -1,11 +1,4 @@
-Cockpit Code Health Benchmark transport wrapper
+Cockpit Code Health Benchmark wrapper
 Copyright 2026 Cockpit Benchmark Project
 
-The root Apache-2.0 license applies only to original wrapper-level transport scripts,
-documentation, manifests, reports, and project-authored metadata unless a file states
-otherwise. It does not relicense the 40 child repositories or their upstream content.
-
-Each child repository preserves its own LICENSE/NOTICE/copyright files. Exact upstream
-source, commit, license evidence, and modifications are recorded in manifest.json and the
-repository-level provenance files. Restore the children before redistributing or evaluating
-them, and retain those repository-specific notices.
+The root Apache-2.0 license covers original wrapper scripts, documentation, and project-authored metadata only. It does not relicense source repositories or upstream material. Each of the 18 active sources retains its own licenses, notices, and copyright statements; provenance and license evidence are in manifest.json. The remaining 22 slots are metadata only. Retain source-specific notices when redistributing.

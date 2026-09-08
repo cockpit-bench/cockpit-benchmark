@@ -1,6 +1,6 @@
 # APP / Android Framework 现行评分合同（Benchmark 版）
 
-版本：2026-09-04-v3.3  
+版本：2026-09-07-v3.4  
 用途：为座舱 Android APP 与 Android Framework benchmark 生成逐叶标准分。  
 纪律：本文件是唯一评分事实源；allowlist 之外的维度必须丢弃，不得从旧 rubric 换算或补零。
 
@@ -18,11 +18,13 @@
 
 ### 0.1 可复现体量分层
 
-只统计 final HEAD 中的生产源码；排除 `.git`、构建产物、生成代码、vendored/third_party 依赖、二进制、测试和资源文件。`source_files` 与 `source_loc` 必须同时落入同一档：
+只统计 final HEAD 中的生产源码；排除 `.git`、构建产物、生成代码、vendored/third_party 依赖、二进制、测试、资源和构建脚本。2026-09-07 用户确认：按真实生产代码行数分档，文件数仅作画像，不再作为分档门槛。
 
-- APP small：`source_files < 300` 且 `source_loc < 30,000`；medium：`300–999` 且 `30,000–79,999`；large：`source_files >= 1,000` 且 `source_loc >= 80,000`。
-- FW small：`250–599` 且 `30,000–79,999`；medium：`600–1,499` 且 `80,000–199,999`；large：`source_files >= 1,500` 且 `source_loc >= 200,000`。
-- 两个指标跨档或未达到 FW small 下限时标记 `size_band=unresolved`，不得按目标矩阵强贴标签。
+- APP small：`0 < source_loc < 30,000`；medium：`30,000 <= source_loc < 80,000`；large：`source_loc >= 80,000`。
+- FW small：`0 < source_loc < 80,000`；medium：`80,000 <= source_loc < 200,000`；large：`source_loc >= 200,000`。
+- `source_loc` 为生产源码中去除注释及空白后的代码行数；同时保存原始物理行数、源码文件数、语言构成和计数路径集合，供复现与画像使用。
+- 生产源码必须有明确业务职责与构建归属；模块生成代码、不可达填充文件、样例数据或重复切片不得用来填档。无法确定有效生产源码集合时标记 `size_band=unresolved`，不得按目标矩阵强贴标签。
+- 本次 v3.4 仅调整体量分层；下列评分维度、子维度、档位、满分及执行证据要求保持 v3.3 不变。v0.7.7 wrapper 冻结合同仍为 v3.3，不改写历史发布。
 
 ## 1. 维度总表
 
