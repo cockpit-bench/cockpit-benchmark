@@ -1,5 +1,6 @@
 [CmdletBinding()]
-param([Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()][string]$Destination)
+# After a network interruption: ./restore.ps1 -Destination <same-directory> -Resume
+param([Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()][string]$Destination, [switch]$Resume)
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 $expectedHashes = [ordered]@{
@@ -85,7 +86,7 @@ if ($destinationPath -eq $wrapperPath -or $destinationPath.StartsWith($wrapperPa
     throw 'Destination must be outside the wrapper so source cases cannot inherit answers.'
 }
 if (Test-Path -LiteralPath $destinationPath) {
-    if (@(Get-ChildItem -LiteralPath $destinationPath -Force).Count -ne 0) { throw 'Destination must be empty.' }
+    if (-not $Resume -and @(Get-ChildItem -LiteralPath $destinationPath -Force).Count -ne 0) { throw 'Destination must be empty; use -Resume to revalidate completed repositories after interruption.' }
 } else { New-Item -ItemType Directory -Path $destinationPath | Out-Null }
 $savedPrompt = $env:GIT_TERMINAL_PROMPT
 $env:GIT_TERMINAL_PROMPT = '0'
@@ -111,15 +112,22 @@ try {
         $parentPath = Join-Path $destinationPath $kindDir
         New-Item -ItemType Directory -Path $parentPath -Force | Out-Null
         $repoPath = Join-Path $parentPath $entry.name
-        Invoke-CheckedGit clone --quiet --no-checkout $entry.delivery.repository_url $repoPath | Out-Null
-        Invoke-CheckedGit -C $repoPath fetch --quiet --tags origin | Out-Null
-        foreach ($property in $refProperties) {
-            if ($property.Name.StartsWith('refs/heads/')) {
-                Invoke-CheckedGit -C $repoPath update-ref $property.Name ([string]$property.Value) | Out-Null
+        if (Test-Path -LiteralPath $repoPath) {
+            if (-not $Resume -or -not (Test-Path -LiteralPath (Join-Path $repoPath '.git') -PathType Container)) {
+                throw "Existing destination is not a completed repository: $($entry.id)"
             }
+            # Do not modify existing repositories. The checks below must all pass.
+        } else {
+            Invoke-CheckedGit clone --quiet --no-checkout $entry.delivery.repository_url $repoPath | Out-Null
+            Invoke-CheckedGit -C $repoPath fetch --quiet --tags origin | Out-Null
+            foreach ($property in $refProperties) {
+                if ($property.Name.StartsWith('refs/heads/')) {
+                    Invoke-CheckedGit -C $repoPath update-ref $property.Name ([string]$property.Value) | Out-Null
+                }
+            }
+            Invoke-CheckedGit -C $repoPath checkout --quiet $entry.default_branch | Out-Null
+            Invoke-CheckedGit -C $repoPath remote remove origin | Out-Null
         }
-        Invoke-CheckedGit -C $repoPath checkout --quiet $entry.default_branch | Out-Null
-        Invoke-CheckedGit -C $repoPath remote remove origin | Out-Null
         $actual = @{}
         foreach ($line in (Invoke-CheckedGit -C $repoPath for-each-ref '--format=%(refname) %(objectname)' refs/heads refs/tags)) {
             if ($line -match '^(refs/(?:heads|tags)/\S+) ([0-9a-f]{40,64})$') { $actual[$Matches[1]]=$Matches[2] }
@@ -132,6 +140,9 @@ try {
         if ($head -ne $entry.delivery.expected_head) { throw "HEAD differs: $($entry.id)" }
         if (@(Invoke-CheckedGit -C $repoPath remote).Count -ne 0) { throw "Remote remains: $($entry.id)" }
         if (@(Invoke-CheckedGit -C $repoPath status --porcelain).Count -ne 0) { throw "Dirty restored worktree: $($entry.id)" }
+        if ((@(Invoke-CheckedGit -C $repoPath rev-parse --is-shallow-repository))[0].Trim() -ne 'false') { throw "Shallow history: $($entry.id)" }
+        if (Test-Path -LiteralPath (Join-Path $repoPath '.git/objects/info/alternates')) { throw "External object store: $($entry.id)" }
+        if (@(Get-ChildItem -LiteralPath (Join-Path $repoPath '.git/objects/pack') -Filter '*.promisor').Count -ne 0) { throw "Partial clone: $($entry.id)" }
         Write-Host "PASS $($entry.id) $head refs=$($actual.Count)"
     }
 } finally { $env:GIT_TERMINAL_PROMPT = $savedPrompt }
