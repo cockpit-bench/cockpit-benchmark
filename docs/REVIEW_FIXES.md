@@ -1,4 +1,8 @@
-# v0.8.3 evidence and accuracy corrections
+# v0.8.4 CSV integrity correction
+
+v0.8.4 fixes one serialization defect found during public-clone QA: global CRLF normalization altered LF characters inside the quoted multiline FW-14 compilation reason. CSV is now written by csv.writer without rewriting embedded field newlines. The strict equality check correctly rejected v0.8.3. Scores, source refs, reviewed observations, helper sources and archive contents are unchanged. The complete 171-leaf consistency check is rerun on the final local and public files.
+
+## v0.8.3 evidence and accuracy corrections
 
 All 171 canonical leaves were re-reviewed against their frozen source contracts, actual behavior and counterevidence. 149 conclusions were supported; 22 needed facts, reasons or evidence repairs. This is complete leaf coverage, not exhaustive inspection of every source path or a new Android execution.
 
