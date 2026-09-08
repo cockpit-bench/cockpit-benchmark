@@ -3507,5 +3507,5 @@
   "observed_band_cells": 42,
   "possible_band_cells": 81,
   "schema_version": "leaf-band-evidence-coverage-1",
-  "source_version": "v0.8.4"
+  "source_version": "v0.8.5"
 }

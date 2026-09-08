@@ -30,3 +30,7 @@ The same replay also compares complete canonical leaf objects, facts and scoreca
 Run the portable regressions with `python -m unittest discover -s verification -p "test_*.py" -v`.
 
 Provide an explicit JSON object such as `{"APP-14":"development","FW-16":"development","APP-03":"validation"}` to `python verification/check_split.py --wrapper . --assignments /path/to/split.json`. Add `--require-complete` for all 18. Recorded same-family repositories cannot cross sets; this is not an independent holdout certificate.
+
+v0.8.5 adds the separate eight-case boundary regression, evidence mode gating and execution/C++ checks. Read docs/DISCRIMINATION_FIXES.md, docs/BOUNDARY_REGRESSION.md and docs/EVIDENCE_PROTOCOL.md from the wrapper root. Portable tests include synthetic records only; no Android execution is implied.
+
+Integration execution schema: [INTEGRATION_EXECUTION.md](../docs/INTEGRATION_EXECUTION.md). For source-binding regression tests, set BOUNDARY_SOURCE_ROOT to the generated examples source directory; otherwise these checks are explicitly skipped while metric tests still run.

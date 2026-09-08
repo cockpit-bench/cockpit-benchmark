@@ -1,5 +1,13 @@
 """Count hand-authored lines, preserving physical line coordinates in mixed generated files."""
 import re
+
+# C++ [lex.string] and [lex.ppnumber]. Raw contents are kept byte-for-byte;
+# apostrophes belong to a pp-number only while scanning that numeric token.
+_CPP_RAW_START = re.compile(r'(?:u8|u|U|L)?R"([^\s()\\]{0,16})\(')
+_CPP_NUMBER = re.compile(r'(?:[0-9]|\.[0-9])(?:[eEpP][+-]|[A-Za-z0-9_.]|\'[A-Za-z0-9_])*')
+_CPP_LANGUAGES = {'c++', 'cpp', '.cpp', 'cc', '.cc', 'cxx', '.cxx',
+                  'hpp', '.hpp', 'hh', '.hh', 'hxx', '.hxx', 'h', '.h', 'c++ header', 'c/c++ header'}
+
 def strip_c_like_comments(text: str, *, language: str | None = None) -> str:
     """Blank // and /* */ comments while preserving offsets and line numbers.
 
@@ -18,6 +26,7 @@ def strip_c_like_comments(text: str, *, language: str | None = None) -> str:
     escaped = False
     block = 0
     nested_comments = str(language).lower() in {'kotlin', 'kt', '.kt', 'kts', '.kts'}
+    cpp = str(language).lower() in _CPP_LANGUAGES
     line = False
     while index < len(text):
         char = text[index]
@@ -60,6 +69,25 @@ def strip_c_like_comments(text: str, *, language: str | None = None) -> str:
                 quote = None
             index += 1
             continue
+        if cpp:
+            raw = _CPP_RAW_START.match(text, index) if char in 'RuUL' else None
+            if raw is not None:
+                terminator = ')' + raw.group(1) + '"'
+                end = text.find(terminator, raw.end())
+                if end < 0:
+                    raise ValueError('Unterminated C++ raw string literal')
+                index = end + len(terminator)
+                continue
+            if char in '0123456789' or (char == '.' and following in '0123456789' and following):
+                number = _CPP_NUMBER.match(text, index)
+                index = number.end()
+                continue
+            if char.isalpha() or char == '_':
+                # Do not recognize numeric/raw tokens in the middle of identifiers.
+                index += 1
+                while index < len(text) and (text[index].isalnum() or text[index] == '_'):
+                    index += 1
+                continue
         if char == "/" and following == "/":
             output[index] = output[index + 1] = " "
             line = True
@@ -72,7 +100,7 @@ def strip_c_like_comments(text: str, *, language: str | None = None) -> str:
             continue
         if char in {"'", '"'}:
             quote = char
-            triple = text.startswith(char * 3, index)
+            triple = not cpp and text.startswith(char * 3, index)
             index += 3 if triple else 1
             continue
         index += 1

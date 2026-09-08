@@ -1,6 +1,6 @@
 # 叶 × 档位 × 证据状态覆盖
 
-基线：v0.8.4 的 18 仓标准答案；不读取 Agent 预测。
+基线：v0.8.5 的 18 仓标准答案；不读取 Agent 预测。
 
 样本内类型×叶众数基线：**130/171 = 76.0%**。这不是独立测试准确率，也不检查理由或证据质量。
 
@@ -29,7 +29,7 @@
 | FRAMEWORK | solid_principle.single_responsibility | 2:9 | 0, 1, 3, 4 |
 
 完整 JSON 的 cells 列出每个档位的仓 ID、源码/库存锚点数量、输入方法和 Android 集成执行证据状态。
-9 个 FW 集成测试叶的 final-HEAD Android 执行证据：recorded 0，absent 9，未分类 0；其他叶不凭此字段缺失推断未执行。
+9 个 FW 集成测试叶的 final-HEAD Android 执行证据：recorded 0，absent 9，未分类 0；另有 host recorded 0，不计作设备执行。其他叶不凭此字段缺失推断未执行。
 评分规则映射与人工语义观察映射分别记录；代码锚点存在不能证明判断正确或抽样完备。
 
 ## 优先对照

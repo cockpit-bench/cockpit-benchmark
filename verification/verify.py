@@ -13,7 +13,7 @@ import re
 import subprocess
 from pathlib import Path, PurePosixPath
 from counting import strip_c_like_comments, count_production_lines
-from rules import RULES, semantic_rule
+from rules import RULES, semantic_rule, integration_execution_metrics
 
 
 def encoded(value):
@@ -200,6 +200,37 @@ def check_substitution_execution(facts, head, data, package):
         require(report.get(key) == execution.get(key), 'Substitution report binding differs: ' + key)
 
 
+def check_integration_execution(facts, snap, data, package):
+    """Check retained report/artifact bytes and remote workflow against the source.
+
+    This binds disclosed observations. It neither runs Android tests nor proves
+    that a supplied runner report is authentic or its interaction scope complete.
+    """
+    if integration_execution_metrics(facts) is None:
+        return
+    execution=facts['integration_execution']
+    require(facts['evaluation_revision']==execution['revision']==snap.head,
+            'Integration execution HEAD differs')
+    def checked_file(path, digest):
+        path=safe_path(path)
+        require(path in package['files_sha256'], 'Unhashed integration report/artifact: '+path)
+        body=(data/path).read_bytes()
+        require(sha(body)==digest==package['files_sha256'][path], 'Integration report/artifact hash differs: '+path)
+        return body
+    body=checked_file(execution['report_path'],execution['report_sha256'])
+    report=json.loads(body)
+    expected={k:v for k,v in execution.items() if k not in {'report_path','report_sha256'}}
+    require(report==expected,'Integration report binding differs')
+    for artifact in execution['artifacts']:
+        checked_file(artifact['path'],artifact['sha256'])
+    if execution['mode']=='remote_ci':
+        ci=execution['ci'];path=safe_path(ci['workflow_path'])
+        require(ci['revision']==snap.head,'Integration CI HEAD differs')
+        require(path in snap.entries and snap.entries[path]['kind']=='blob'
+                and snap.entries[path]['oid']==ci['workflow_blob'],'Integration workflow blob differs')
+        require(sha(snap.body(path))==ci['workflow_sha256'],'Integration workflow SHA differs')
+
+
 def indexed(rows, key, label):
     result = {row[key]: row for row in rows}
     require(len(result) == len(rows), 'Duplicate ' + label)
@@ -383,6 +414,8 @@ def verify(args):
                 check_anchor(snap, anchor)
             if leaf['name'] == 'solid_principle.liskov_substitution':
                 check_substitution_execution(leaf['facts'], snap.head, args.data, package)
+            if leaf['name'] == 'quality.integration_test':
+                check_integration_execution(leaf['facts'], snap, args.data, package)
             prediction = compute_leaf(leaf)
             key = (rid, leaf['name'])
             require(key in expected, 'Unexpected leaf')

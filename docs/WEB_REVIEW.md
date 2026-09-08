@@ -58,3 +58,5 @@ v0.8.2 定向修复：[映射与执行字段](RULE_FIXES.md)、[公开边界生�
 v0.8.3 已完成全 171 叶复核，修复 22 叶证据/事实，其中 APP-02 CI 3→2，总分 277/828。请同时读取 [本轮修正](REVIEW_FIXES.md)；同源划分须遵守 manifest 的 family_id。
 
 v0.8.4 修复公开克隆核验发现的 CSV 多行理由换行差异，推荐使用 v0.8.4；分数、观察输入和源码没有变化。
+
+v0.8.5 adds the separate eight-case boundary regression, evidence mode gating and execution/C++ checks. Read docs/DISCRIMINATION_FIXES.md, docs/BOUNDARY_REGRESSION.md and docs/EVIDENCE_PROTOCOL.md from the wrapper root. Portable tests include synthetic records only; no Android execution is implied.

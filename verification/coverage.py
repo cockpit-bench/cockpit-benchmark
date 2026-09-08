@@ -29,9 +29,17 @@ def analyze(standard, observations):
             if leaf['status'] != 'scored' or score not in TIERS[leaf['name']]:
                 raise ValueError('Unsupported/unscored leaf; do not impute a score')
             evidence = record['evidence']
-            executed = record['facts'].get('final_head_android_integration_execution_exists')
-            state = ('android_execution_recorded' if executed is True else 'android_execution_absent'
-                     if executed is False else 'execution_not_classified_for_this_leaf')
+            facts = record['facts']
+            executed = facts.get('final_head_integration_execution_exists',
+                                 facts.get('final_head_android_integration_execution_exists'))
+            runtime = (facts.get('integration_execution') or {}).get('runtime')
+            if executed is True:
+                state = ('android_execution_recorded' if runtime in {'android_device', 'android_emulator'}
+                         else 'host_execution_recorded' if runtime in {'host_jvm', 'host_native'}
+                         else 'execution_runtime_unclassified')
+            else:
+                state = ('android_execution_absent' if executed is False
+                         else 'execution_not_classified_for_this_leaf')
             row = {'id': repo['id'], 'kind': repo['kind'], 'name': leaf['name'], 'score': score,
                    'status': leaf['status'], 'evidence_state': state, 'method': record['method'],
                    'code_anchor_count': sum(e.get('source') == 'repository' for e in evidence),
@@ -76,7 +84,8 @@ def render(result):
     execution_summary = (f"{len(fw_tests)} 个 FW 集成测试叶的 final-HEAD Android 执行证据："
                          f"recorded {execution_counts['android_execution_recorded']}，"
                          f"absent {execution_counts['android_execution_absent']}，"
-                         f"未分类 {execution_counts['execution_not_classified_for_this_leaf']}；其他叶不凭此字段缺失推断未执行。")
+                         f"未分类 {execution_counts['execution_not_classified_for_this_leaf'] + execution_counts['execution_runtime_unclassified']}；"
+                         f"另有 host recorded {execution_counts['host_execution_recorded']}，不计作设备执行。其他叶不凭此字段缺失推断未执行。")
     lines = ['# 叶 × 档位 × 证据状态覆盖', '',
              '基线：' + result['source_version'] + ' 的 18 仓标准答案；不读取 Agent 预测。', '',
              f"样本内类型×叶众数基线：**{total['hits']}/{total['denominator']} = {100*total['hits']/total['denominator']:.1f}%**。这不是独立测试准确率，也不检查理由或证据质量。", '',

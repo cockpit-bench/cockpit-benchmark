@@ -1,4 +1,4 @@
-# Cockpit Benchmark v0.8.4
+# Cockpit Benchmark v0.8.5
 
 Public Dev/Regression benchmark with 18 independently browsable source repositories. It is not a lineage-isolated final holdout. Source provenance and exact HEADs/heads/tags are recorded in [manifest.json](manifest.json).
 
@@ -19,3 +19,5 @@ Rule corrections: [release/LSP boundaries and execution inputs](docs/RULE_FIXES.
 Evidence corrections: [complete leaf review repairs](docs/REVIEW_FIXES.md). The 18 sources have 17 recorded families; APP-14 and FW-16 share the same SystemUI production files. Validate grouping with `verification/check_split.py`.
 
 v0.8.4 preserves quoted multiline CSV reasons exactly. v0.8.3 is superseded because a final global line-ending conversion made one CSV reason differ from its canonical text; scores and source evidence did not change.
+
+Current entry points: [eight-case boundary regression](docs/BOUNDARY_REGRESSION.md), [evidence-equivalent evaluation protocol](docs/EVIDENCE_PROTOCOL.md), and [v0.8.5 fixes](docs/DISCRIMINATION_FIXES.md). The two datasets are reported separately.

@@ -32,6 +32,15 @@ def execution(facts, passed=None):
 
 
 class RuleBoundaryTests(unittest.TestCase):
+    def test_same_tree_release_evidence_has_an_explicit_gate(self):
+        f = dict(release_policy_evidence_verified=True,
+                 ref_tree_differences_verify_release_policy=False,
+                 vehicle_specific_sop_channel=False, platform_shared_release_channel=False,
+                 cross_platform_unified_release_policy=True)
+        self.assertEqual(release(f), 10)
+        with self.assertRaises(Missing):
+            release(dict(f, release_policy_evidence_verified='true'))
+
     def test_trunk_name_and_unrelated_branch_do_not_change_verified_policy(self):
         f=dict(ref_tree_differences_verify_release_policy=True, vehicle_specific_sop_channel=False,
                platform_shared_release_channel=False, cross_platform_unified_release_policy=True)
@@ -87,9 +96,22 @@ class RuleBoundaryTests(unittest.TestCase):
         for i,state in enumerate([True,False,None]):
             rid='FW-'+str(i);standard['repositories'].append({'id':rid,'kind':'FRAMEWORK','leaves':[{'name':leaf,'score':1,'status':'scored'}]})
             observations[(rid,leaf)]={'facts':{'final_head_android_integration_execution_exists':state},'evidence':[],'method':'fixture'}
+            if state is True:
+                observations[(rid,leaf)]['facts']['integration_execution']={'runtime':'android_emulator'}
         text=render(analyze(standard,observations))
         self.assertIn('recorded 1，absent 1，未分类 1',text)
         self.assertNotIn('均为 absent',text)
+
+    def test_host_coverage_record_is_not_device_execution(self):
+        leaf='quality.integration_test'
+        standard={'version':'fixture','repositories':[{'id':'FW-X','kind':'FRAMEWORK',
+                   'leaves':[{'name':leaf,'score':3,'status':'scored'}]}]}
+        observations={('FW-X',leaf):{'facts':{'final_head_integration_execution_exists':True,
+            'integration_execution':{'runtime':'host_jvm'}},'evidence':[],'method':'fixture'}}
+        result=analyze(standard,observations)
+        self.assertEqual(result['observations'][0]['evidence_state'],'host_execution_recorded')
+        self.assertIn('recorded 0，absent 0',render(result))
+        self.assertIn('host recorded 1',render(result))
 
 
 if __name__ == '__main__': unittest.main()
