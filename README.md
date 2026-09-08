@@ -9,3 +9,5 @@ See [SCORECARD.md](SCORECARD.md), [SCORE_RULES.md](SCORE_RULES.md), and [manifes
 Restore with PowerShell: `./restore.ps1 -Destination C:/bench/source-cases`. The destination must be empty and outside this wrapper. The script verifies frozen hashes, 18 exact HEADs and all heads/tags, and removes remotes. 22 pending entries are never cloned.
 
 Publication and anonymous restore results are recorded in the release notes. Full Android platform builds and integration execution must be read per leaf; a targeted JVM check is not Android integration coverage.
+
+For web review: [review instructions and current decisions](docs/WEB_REVIEW.md) · [original real-repository guidance](docs/REAL_REPOSITORY_GUIDANCE.md). These documents were added after v0.8.0 on main; the v0.8.0 tag remains unchanged.
