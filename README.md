@@ -6,7 +6,7 @@ See [SCORECARD.md](SCORECARD.md), [SCORE_RULES.md](SCORE_RULES.md), and [manifes
 
 This release preserves all 18 v0.8.0 source HEADs and 171 scores (278/828). Contract v3.4.1 clarifies production scanning paths without changing score bands. Production LOC excludes tests, resources, build tooling, generated code and vendored dependencies; file counts are descriptive.
 
-Restore with PowerShell: `./restore.ps1 -Destination C:/bench/source-cases`. The destination must be empty and outside this wrapper. Use `-Resume` to revalidate an existing restoration. Add `-IncludeSubmodules` to fetch recursively pinned HTTPS gitlinks; it never tracks branch latest. Main source remotes are removed; `-IncludeSubmodules` also removes submodule remotes after successful pinned restoration. 22 pending entries are never cloned.
+Restore with PowerShell: `./restore.ps1 -Destination C:/bench/source-cases`. The destination must be empty and outside this wrapper. Use `-Resume` to revalidate an existing restoration. Add `-IncludeSubmodules` to fetch recursively pinned HTTPS gitlinks; new dependency clones use shallow history while still checking out the exact gitlink commit, never branch latest. Main source repositories retain full history. Main source remotes are removed; `-IncludeSubmodules` also removes submodule remotes after successful pinned restoration. 22 pending entries are never cloned.
 
 `restore-state.json` separately reports main source-review readiness and pinned submodule readiness. Neither implies complete SDK/Maven/platform dependencies or a successful build. Full Android builds and integration execution must be read per leaf; targeted host checks are not Android integration coverage.
 

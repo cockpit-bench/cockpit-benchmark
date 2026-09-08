@@ -54,7 +54,7 @@ $expectedHashes = [ordered]@{
     "oracle/FW-15.json" = "bc927a5561cee5a1fdee3c51a22f9145b969db1251017bec189c56a47180012d"
     "oracle/FW-16.json" = "8b71fdd370388b4e7233bc27f85a9ffb019a36efabdbb2e6236c337dfc24bd40"
     "oracle/FW-18.json" = "9ce4d16ef7f4e61cb8ab26188bb92be0814ca96b876a10b07c98c69884843b65"
-    "README.md" = "ab924d0f10e73b730b68642418112859160f7a1ded5325120c4c07a24698e61c"
+    "README.md" = "247043cf4f4d8cdbd2df972967d2ca0bde1c3e4e76573fb614698cc56893977e"
     "SCORE_RULES.md" = "fc488cf70619a1f72e7e9ca808c228a0a45e0a9dd8cda5a540438cb0602212d4"
     "SCORECARD.csv" = "d3e52f7445f3ca0a454f9c705a270603544da594746c0af6286d2894a20e227e"
     "SCORECARD.md" = "f0b5adb8b64c9267ae2b0f16bf57fc413841a8e40c2f25378371995ccdfb1092"
@@ -102,7 +102,8 @@ function Get-PinnedSubmoduleState {
 function Restore-PinnedSubmodules {
     param([string]$Repository, [string]$RepositoryUrl)
     # HTTPS only, pinned gitlink checkout; never --remote or an arbitrary update command.
-    Invoke-CheckedGit -c protocol.allow=never -c protocol.https.allow=always -c protocol.file.allow=never -c "remote.origin.url=$RepositoryUrl" -C $Repository submodule update --init --recursive --checkout --jobs 4 | Out-Null
+    # Only dependency history may be shallow; exact gitlinks, not branch tips, remain required.
+    Invoke-CheckedGit -c protocol.allow=never -c protocol.https.allow=always -c protocol.file.allow=never -c "remote.origin.url=$RepositoryUrl" -C $Repository submodule update --init --recursive --checkout --depth 1 --jobs 4 | Out-Null
     $states = @(Get-PinnedSubmoduleState -Repository $Repository)
     foreach ($state in $states) {
         if (-not $state.initialized -or -not $state.exact_commit -or -not $state.clean) { throw "Submodule not ready: $($state.path)" }
