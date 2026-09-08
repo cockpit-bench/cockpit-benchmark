@@ -52,3 +52,5 @@
 本页包含标准答案入口，只用于维护者 review；盲评输入应仅提供单个源码仓，不附带 wrapper、指导或答案。
 
 后续验证入口：[接受的执行规范](EXECUTION_SPEC.md)、[完整覆盖表](COVERAGE.md)、[可下载的逐文件/观察输入](VERIFICATION_INPUTS.md)、[复算工具](../verification/README.md)。众数基线仅为样本内统计，语义判断仍须独立源码核查。
+
+v0.8.2 定向修复：[映射与执行字段](RULE_FIXES.md)、[公开边界生成器及实际运行结果](BOUNDARY_CANDIDATES.md)。单 main 统一发布正例包含在 channel-e；候选不计入原 18 仓覆盖率。

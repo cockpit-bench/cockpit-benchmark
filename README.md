@@ -1,4 +1,4 @@
-# Cockpit Benchmark v0.8.1
+# Cockpit Benchmark v0.8.2
 
 Public Dev/Regression benchmark with 18 independently browsable source repositories. It is not a lineage-isolated final holdout. Source provenance and exact HEADs/heads/tags are recorded in [manifest.json](manifest.json).
 
@@ -13,3 +13,5 @@ Restore with PowerShell: `./restore.ps1 -Destination C:/bench/source-cases`. The
 Maintainer review: [coverage and modal baseline](docs/COVERAGE.md) · [downloadable reproduction inputs](docs/VERIFICATION_INPUTS.md) · [runnable verifier](verification/README.md) · [accepted execution specification](docs/EXECUTION_SPEC.md) · [web review instructions](docs/WEB_REVIEW.md) · [original guidance archive](docs/REAL_REPOSITORY_GUIDANCE.md).
 
 Public replay validates counts, hashes, evidence coordinates and rule mappings from disclosed reviewed inputs. It does not independently establish the completeness or truth of semantic judgments. Old tags, including v0.8.0, remain unchanged.
+
+Rule corrections: [release/LSP boundaries and execution inputs](docs/RULE_FIXES.md). [Reproducible small candidates](docs/BOUNDARY_CANDIDATES.md) remain separate from Validation-18.

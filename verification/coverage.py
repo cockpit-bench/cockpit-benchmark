@@ -70,6 +70,13 @@ def analyze(standard, observations):
 
 def render(result):
     total = result['baseline_total']
+    fw_tests = [r for r in result['observations'] if r['kind'] in {'FW', 'FRAMEWORK'}
+                and r['name'] == 'quality.integration_test']
+    execution_counts = collections.Counter(r['evidence_state'] for r in fw_tests)
+    execution_summary = (f"{len(fw_tests)} 个 FW 集成测试叶的 final-HEAD Android 执行证据："
+                         f"recorded {execution_counts['android_execution_recorded']}，"
+                         f"absent {execution_counts['android_execution_absent']}，"
+                         f"未分类 {execution_counts['execution_not_classified_for_this_leaf']}；其他叶不凭此字段缺失推断未执行。")
     lines = ['# 叶 × 档位 × 证据状态覆盖', '',
              '基线：' + result['source_version'] + ' 的 18 仓标准答案；不读取 Agent 预测。', '',
              f"样本内类型×叶众数基线：**{total['hits']}/{total['denominator']} = {100*total['hits']/total['denominator']:.1f}%**。这不是独立测试准确率，也不检查理由或证据质量。", '',
@@ -80,7 +87,7 @@ def render(result):
                      ', '.join(f'{k}:{v}' for k, v in row['counts'].items()) + ' | ' +
                      ', '.join(map(str, row['missing_bands'])) + ' |')
     lines += ['', '完整 JSON 的 cells 列出每个档位的仓 ID、源码/库存锚点数量、输入方法和 Android 集成执行证据状态。',
-              '9 个 FW 集成测试叶的 final-HEAD Android 执行证据均为 absent；其他叶不凭此字段缺失推断未执行。',
+              execution_summary,
               '评分规则映射与人工语义观察映射分别记录；代码锚点存在不能证明判断正确或抽样完备。', '',
               '## 优先对照', '',
               '1. 发布策略 3/8/10：真实车型配置、平台共用和跨平台统一发布，必须有生效行为和 refs 证据。',

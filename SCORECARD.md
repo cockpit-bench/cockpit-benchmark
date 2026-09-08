@@ -1,4 +1,4 @@
-# Validation-18 v0.8.1
+# Validation-18 v0.8.2
 
 | ID | Repository | Size | Quality | Score |
 |---|---|---|---|---|

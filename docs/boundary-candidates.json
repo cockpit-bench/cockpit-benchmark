@@ -1,0 +1,755 @@
+{
+  "canonical_member": false,
+  "cases": [
+    {
+      "case": "channel-a",
+      "family_id": "cabin-manual-shared-origin-1",
+      "head": "ee2863937601e8fe66af100d52191d1123d530b5",
+      "leaf": "platform_reuse.release_branch_strategy",
+      "main_source_evidence": [
+        {
+          "lines": 1,
+          "path": "app/src/main/AndroidManifest.xml",
+          "sha256": "37374755e98eed8f7a4e4a3921df08c371c644b0c03270614e151eb08e8e9c46"
+        },
+        {
+          "lines": 5,
+          "path": "app/src/main/assets/fleet.properties",
+          "sha256": "6521a5f07969bbaac7e09acaf503753819487bed0a008cc282cb020dae53ff34"
+        },
+        {
+          "lines": 16,
+          "path": "app/src/main/java/cabin/domain/Fleet.java",
+          "sha256": "0e3c647a7c54135cd8f0291f4940630047852752a88050d46846431d4206c549"
+        },
+        {
+          "lines": 9,
+          "path": "app/src/main/java/cabin/domain/Handbook.java",
+          "sha256": "95bad325ec84c5bca77f1702e3f4177c29c29c750cd64424ba8be7bdb009eecd"
+        },
+        {
+          "lines": 4,
+          "path": "app/src/main/java/cabin/platform/AndroidDeviceInfo.java",
+          "sha256": "11de399299c8ff09f81f072c7c969a06804ac7d72d36b7f1a1e39cd2af4ac6ee"
+        },
+        {
+          "lines": 2,
+          "path": "app/src/main/java/cabin/platform/DeviceInfo.java",
+          "sha256": "d10af478f1b8b60bb9924645f9fc748b243462cb8f3b01a671ab22f2cfca6b5c"
+        },
+        {
+          "lines": 21,
+          "path": "app/src/main/java/cabin/ui/MainActivity.java",
+          "sha256": "639ff3b34f32cb3dfc2f4099ed2bfa7cbfd8da7ceb6182ed7318b058f93af788"
+        }
+      ],
+      "ref_behavior": [
+        {
+          "accepted_models": [
+            "a1",
+            "a2",
+            "b1",
+            "b2"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "ee2863937601e8fe66af100d52191d1123d530b5",
+          "host_checks": 7,
+          "production_jar_sha256": "b4e0f71d8489e413b97bd142b9d1f6c13d84dd79a81b965384d955f6d1b5bf5c",
+          "ref": "refs/heads/main",
+          "tree": "e6f746b2a38e2c498ef7e47435d5f1d40d44ce0c"
+        }
+      ],
+      "reviewed_facts": {
+        "cross_platform_unified_release_policy": false,
+        "current_head_refs": [
+          "refs/heads/main"
+        ],
+        "platform_shared_release_channel": false,
+        "ref_tree_differences_verify_release_policy": false,
+        "vehicle_specific_sop_channel": false
+      },
+      "rule_prediction": 0,
+      "status": "candidate_not_independently_adjudicated",
+      "tags": []
+    },
+    {
+      "case": "channel-b",
+      "family_id": "cabin-manual-shared-origin-1",
+      "head": "ee2863937601e8fe66af100d52191d1123d530b5",
+      "leaf": "platform_reuse.release_branch_strategy",
+      "main_source_evidence": [
+        {
+          "lines": 1,
+          "path": "app/src/main/AndroidManifest.xml",
+          "sha256": "37374755e98eed8f7a4e4a3921df08c371c644b0c03270614e151eb08e8e9c46"
+        },
+        {
+          "lines": 5,
+          "path": "app/src/main/assets/fleet.properties",
+          "sha256": "6521a5f07969bbaac7e09acaf503753819487bed0a008cc282cb020dae53ff34"
+        },
+        {
+          "lines": 16,
+          "path": "app/src/main/java/cabin/domain/Fleet.java",
+          "sha256": "0e3c647a7c54135cd8f0291f4940630047852752a88050d46846431d4206c549"
+        },
+        {
+          "lines": 9,
+          "path": "app/src/main/java/cabin/domain/Handbook.java",
+          "sha256": "95bad325ec84c5bca77f1702e3f4177c29c29c750cd64424ba8be7bdb009eecd"
+        },
+        {
+          "lines": 4,
+          "path": "app/src/main/java/cabin/platform/AndroidDeviceInfo.java",
+          "sha256": "11de399299c8ff09f81f072c7c969a06804ac7d72d36b7f1a1e39cd2af4ac6ee"
+        },
+        {
+          "lines": 2,
+          "path": "app/src/main/java/cabin/platform/DeviceInfo.java",
+          "sha256": "d10af478f1b8b60bb9924645f9fc748b243462cb8f3b01a671ab22f2cfca6b5c"
+        },
+        {
+          "lines": 21,
+          "path": "app/src/main/java/cabin/ui/MainActivity.java",
+          "sha256": "639ff3b34f32cb3dfc2f4099ed2bfa7cbfd8da7ceb6182ed7318b058f93af788"
+        }
+      ],
+      "ref_behavior": [
+        {
+          "accepted_models": [
+            "a1",
+            "a2",
+            "b1",
+            "b2"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "ee2863937601e8fe66af100d52191d1123d530b5",
+          "host_checks": 7,
+          "production_jar_sha256": "b4e0f71d8489e413b97bd142b9d1f6c13d84dd79a81b965384d955f6d1b5bf5c",
+          "ref": "refs/heads/main",
+          "tree": "e6f746b2a38e2c498ef7e47435d5f1d40d44ce0c"
+        },
+        {
+          "accepted_models": [
+            "a1"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "5060e3a27f2d33da62b10c575cd91c7cd0c92841",
+          "host_checks": 7,
+          "production_jar_sha256": "b3ed4a719bc83c6192dcc21dd73e0824d70c572fcf7846a1f81a521d6c80a461",
+          "ref": "refs/heads/release/model-a1-sop-2026",
+          "tree": "85b62390d9b45ab9a91c5e0cd1d1d167db0129b7"
+        },
+        {
+          "accepted_models": [
+            "a2"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "8a774a595cff4b923bcd162a28f0ba616f2c260e",
+          "host_checks": 7,
+          "production_jar_sha256": "bceb5424b3d4cb4393de71f2ea1e7793d3afc5dee9ccad02fd2c15e1b3e7c50f",
+          "ref": "refs/heads/release/model-a2-sop-2026",
+          "tree": "b6220d7427487a2755e44d7be1260c9ee5d49a61"
+        },
+        {
+          "accepted_models": [
+            "b1"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "90c689c81bdbcfe0008bdc28e0e99e57d0293c47",
+          "host_checks": 7,
+          "production_jar_sha256": "844c4b0ed9dec7227949fc6a19462d147a4ac5a41c3d34c8908278c11e0d9e9f",
+          "ref": "refs/heads/release/model-b1-sop-2026",
+          "tree": "7eed1d1b55d5550e89b35585dbbecaeeda008415"
+        },
+        {
+          "accepted_models": [
+            "b2"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "9d2a4e2212723497f4fb3945eb86d635881311ad",
+          "host_checks": 7,
+          "production_jar_sha256": "67e0f4ec714641f9bddad15af83209d8cee465a0a5b5f8d9766f6482bc85cda4",
+          "ref": "refs/heads/release/model-b2-sop-2026",
+          "tree": "b9b9aae994893b746096e6253ac0212e901d4ff8"
+        }
+      ],
+      "reviewed_facts": {
+        "cross_platform_unified_release_policy": false,
+        "current_head_refs": [
+          "refs/heads/main",
+          "refs/heads/release/model-a1-sop-2026",
+          "refs/heads/release/model-a2-sop-2026",
+          "refs/heads/release/model-b1-sop-2026",
+          "refs/heads/release/model-b2-sop-2026"
+        ],
+        "platform_shared_release_channel": false,
+        "ref_tree_differences_verify_release_policy": true,
+        "vehicle_specific_sop_channel": true
+      },
+      "rule_prediction": 3,
+      "status": "candidate_not_independently_adjudicated",
+      "tags": []
+    },
+    {
+      "case": "channel-c",
+      "family_id": "cabin-manual-shared-origin-1",
+      "head": "ee2863937601e8fe66af100d52191d1123d530b5",
+      "leaf": "platform_reuse.release_branch_strategy",
+      "main_source_evidence": [
+        {
+          "lines": 1,
+          "path": "app/src/main/AndroidManifest.xml",
+          "sha256": "37374755e98eed8f7a4e4a3921df08c371c644b0c03270614e151eb08e8e9c46"
+        },
+        {
+          "lines": 5,
+          "path": "app/src/main/assets/fleet.properties",
+          "sha256": "6521a5f07969bbaac7e09acaf503753819487bed0a008cc282cb020dae53ff34"
+        },
+        {
+          "lines": 16,
+          "path": "app/src/main/java/cabin/domain/Fleet.java",
+          "sha256": "0e3c647a7c54135cd8f0291f4940630047852752a88050d46846431d4206c549"
+        },
+        {
+          "lines": 9,
+          "path": "app/src/main/java/cabin/domain/Handbook.java",
+          "sha256": "95bad325ec84c5bca77f1702e3f4177c29c29c750cd64424ba8be7bdb009eecd"
+        },
+        {
+          "lines": 4,
+          "path": "app/src/main/java/cabin/platform/AndroidDeviceInfo.java",
+          "sha256": "11de399299c8ff09f81f072c7c969a06804ac7d72d36b7f1a1e39cd2af4ac6ee"
+        },
+        {
+          "lines": 2,
+          "path": "app/src/main/java/cabin/platform/DeviceInfo.java",
+          "sha256": "d10af478f1b8b60bb9924645f9fc748b243462cb8f3b01a671ab22f2cfca6b5c"
+        },
+        {
+          "lines": 21,
+          "path": "app/src/main/java/cabin/ui/MainActivity.java",
+          "sha256": "639ff3b34f32cb3dfc2f4099ed2bfa7cbfd8da7ceb6182ed7318b058f93af788"
+        }
+      ],
+      "ref_behavior": [
+        {
+          "accepted_models": [
+            "a1",
+            "a2",
+            "b1",
+            "b2"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "ee2863937601e8fe66af100d52191d1123d530b5",
+          "host_checks": 7,
+          "production_jar_sha256": "b4e0f71d8489e413b97bd142b9d1f6c13d84dd79a81b965384d955f6d1b5bf5c",
+          "ref": "refs/heads/main",
+          "tree": "e6f746b2a38e2c498ef7e47435d5f1d40d44ce0c"
+        },
+        {
+          "accepted_models": [
+            "a1",
+            "a2"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "931b1ddbe9ad231c744d06617df64b0fc60ed40c",
+          "host_checks": 7,
+          "production_jar_sha256": "2e0d17634a4d7e4d29c2fae0583da8a20143e577b78c2b3b36ce5b199e243ad3",
+          "ref": "refs/heads/platform/8155",
+          "tree": "6b394a42a28d6d66b353877f34958f89198e2516"
+        },
+        {
+          "accepted_models": [
+            "b1",
+            "b2"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "d848b276dfd48f31e21fd5b7f838ec688cd10f41",
+          "host_checks": 7,
+          "production_jar_sha256": "e9f65af54d8ee48af5c91825bdc59519fb835a0b6c1b2446153012d90d7e3ea7",
+          "ref": "refs/heads/platform/8295",
+          "tree": "1ccc1d395d4c3d771bda52023cc4367159d356b2"
+        }
+      ],
+      "reviewed_facts": {
+        "cross_platform_unified_release_policy": false,
+        "current_head_refs": [
+          "refs/heads/main",
+          "refs/heads/platform/8155",
+          "refs/heads/platform/8295"
+        ],
+        "platform_shared_release_channel": true,
+        "ref_tree_differences_verify_release_policy": true,
+        "vehicle_specific_sop_channel": false
+      },
+      "rule_prediction": 8,
+      "status": "candidate_not_independently_adjudicated",
+      "tags": []
+    },
+    {
+      "case": "channel-d",
+      "family_id": "cabin-manual-shared-origin-1",
+      "head": "ee2863937601e8fe66af100d52191d1123d530b5",
+      "leaf": "platform_reuse.release_branch_strategy",
+      "main_source_evidence": [
+        {
+          "lines": 1,
+          "path": "app/src/main/AndroidManifest.xml",
+          "sha256": "37374755e98eed8f7a4e4a3921df08c371c644b0c03270614e151eb08e8e9c46"
+        },
+        {
+          "lines": 5,
+          "path": "app/src/main/assets/fleet.properties",
+          "sha256": "6521a5f07969bbaac7e09acaf503753819487bed0a008cc282cb020dae53ff34"
+        },
+        {
+          "lines": 16,
+          "path": "app/src/main/java/cabin/domain/Fleet.java",
+          "sha256": "0e3c647a7c54135cd8f0291f4940630047852752a88050d46846431d4206c549"
+        },
+        {
+          "lines": 9,
+          "path": "app/src/main/java/cabin/domain/Handbook.java",
+          "sha256": "95bad325ec84c5bca77f1702e3f4177c29c29c750cd64424ba8be7bdb009eecd"
+        },
+        {
+          "lines": 4,
+          "path": "app/src/main/java/cabin/platform/AndroidDeviceInfo.java",
+          "sha256": "11de399299c8ff09f81f072c7c969a06804ac7d72d36b7f1a1e39cd2af4ac6ee"
+        },
+        {
+          "lines": 2,
+          "path": "app/src/main/java/cabin/platform/DeviceInfo.java",
+          "sha256": "d10af478f1b8b60bb9924645f9fc748b243462cb8f3b01a671ab22f2cfca6b5c"
+        },
+        {
+          "lines": 21,
+          "path": "app/src/main/java/cabin/ui/MainActivity.java",
+          "sha256": "639ff3b34f32cb3dfc2f4099ed2bfa7cbfd8da7ceb6182ed7318b058f93af788"
+        }
+      ],
+      "ref_behavior": [
+        {
+          "accepted_models": [
+            "a1",
+            "a2",
+            "b1",
+            "b2"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "ee2863937601e8fe66af100d52191d1123d530b5",
+          "host_checks": 7,
+          "production_jar_sha256": "b4e0f71d8489e413b97bd142b9d1f6c13d84dd79a81b965384d955f6d1b5bf5c",
+          "ref": "refs/heads/main",
+          "tree": "e6f746b2a38e2c498ef7e47435d5f1d40d44ce0c"
+        },
+        {
+          "accepted_models": [
+            "a1",
+            "a2",
+            "b1",
+            "b2"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "b1d2b542718bfb2d1c4ad54c30cabe2d2e1a67ad",
+          "host_checks": 7,
+          "production_jar_sha256": "4bd6e064fa05dc5b16d35c3f7916fd174b1d203d8ad632ce827cf71ce54ab577",
+          "ref": "refs/heads/release/2026.1",
+          "tree": "f97a4cba4b02629f89377b54170e2029cdf0d673"
+        }
+      ],
+      "reviewed_facts": {
+        "cross_platform_unified_release_policy": true,
+        "current_head_refs": [
+          "refs/heads/main",
+          "refs/heads/release/2026.1"
+        ],
+        "platform_shared_release_channel": false,
+        "ref_tree_differences_verify_release_policy": true,
+        "vehicle_specific_sop_channel": false
+      },
+      "rule_prediction": 10,
+      "status": "candidate_not_independently_adjudicated",
+      "tags": []
+    },
+    {
+      "case": "channel-e",
+      "family_id": "cabin-manual-shared-origin-1",
+      "head": "ee2863937601e8fe66af100d52191d1123d530b5",
+      "leaf": "platform_reuse.release_branch_strategy",
+      "main_source_evidence": [
+        {
+          "lines": 1,
+          "path": "app/src/main/AndroidManifest.xml",
+          "sha256": "37374755e98eed8f7a4e4a3921df08c371c644b0c03270614e151eb08e8e9c46"
+        },
+        {
+          "lines": 5,
+          "path": "app/src/main/assets/fleet.properties",
+          "sha256": "6521a5f07969bbaac7e09acaf503753819487bed0a008cc282cb020dae53ff34"
+        },
+        {
+          "lines": 16,
+          "path": "app/src/main/java/cabin/domain/Fleet.java",
+          "sha256": "0e3c647a7c54135cd8f0291f4940630047852752a88050d46846431d4206c549"
+        },
+        {
+          "lines": 9,
+          "path": "app/src/main/java/cabin/domain/Handbook.java",
+          "sha256": "95bad325ec84c5bca77f1702e3f4177c29c29c750cd64424ba8be7bdb009eecd"
+        },
+        {
+          "lines": 4,
+          "path": "app/src/main/java/cabin/platform/AndroidDeviceInfo.java",
+          "sha256": "11de399299c8ff09f81f072c7c969a06804ac7d72d36b7f1a1e39cd2af4ac6ee"
+        },
+        {
+          "lines": 2,
+          "path": "app/src/main/java/cabin/platform/DeviceInfo.java",
+          "sha256": "d10af478f1b8b60bb9924645f9fc748b243462cb8f3b01a671ab22f2cfca6b5c"
+        },
+        {
+          "lines": 21,
+          "path": "app/src/main/java/cabin/ui/MainActivity.java",
+          "sha256": "639ff3b34f32cb3dfc2f4099ed2bfa7cbfd8da7ceb6182ed7318b058f93af788"
+        }
+      ],
+      "ref_behavior": [
+        {
+          "accepted_models": [
+            "a1",
+            "a2",
+            "b1",
+            "b2"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "ee2863937601e8fe66af100d52191d1123d530b5",
+          "host_checks": 7,
+          "production_jar_sha256": "b4e0f71d8489e413b97bd142b9d1f6c13d84dd79a81b965384d955f6d1b5bf5c",
+          "ref": "refs/heads/main",
+          "tree": "e6f746b2a38e2c498ef7e47435d5f1d40d44ce0c"
+        }
+      ],
+      "reviewed_facts": {
+        "cross_platform_unified_release_policy": true,
+        "current_head_refs": [
+          "refs/heads/main"
+        ],
+        "platform_shared_release_channel": false,
+        "ref_tree_differences_verify_release_policy": true,
+        "vehicle_specific_sop_channel": false
+      },
+      "rule_prediction": 10,
+      "status": "candidate_not_independently_adjudicated",
+      "tags": [
+        "refs/tags/v1.0.0 7287ef4d4bbe0aae6974861aeeec4f69886c7e61 ee2863937601e8fe66af100d52191d1123d530b5"
+      ]
+    },
+    {
+      "case": "device-a",
+      "family_id": "cabin-manual-shared-origin-1",
+      "head": "1bca60f25014186396a1cd5a5af91a87bc7b390e",
+      "leaf": "platform_reuse.platform_upgrade",
+      "main_source_evidence": [
+        {
+          "lines": 1,
+          "path": "app/src/main/AndroidManifest.xml",
+          "sha256": "37374755e98eed8f7a4e4a3921df08c371c644b0c03270614e151eb08e8e9c46"
+        },
+        {
+          "lines": 5,
+          "path": "app/src/main/assets/fleet.properties",
+          "sha256": "6521a5f07969bbaac7e09acaf503753819487bed0a008cc282cb020dae53ff34"
+        },
+        {
+          "lines": 16,
+          "path": "app/src/main/java/cabin/domain/Fleet.java",
+          "sha256": "0e3c647a7c54135cd8f0291f4940630047852752a88050d46846431d4206c549"
+        },
+        {
+          "lines": 11,
+          "path": "app/src/main/java/cabin/domain/Handbook.java",
+          "sha256": "2ddf49f299347142db4abe6eacc22666426af6727fc7f7548eaf3af32efde182"
+        },
+        {
+          "lines": 21,
+          "path": "app/src/main/java/cabin/ui/MainActivity.java",
+          "sha256": "639ff3b34f32cb3dfc2f4099ed2bfa7cbfd8da7ceb6182ed7318b058f93af788"
+        }
+      ],
+      "ref_behavior": [
+        {
+          "accepted_models": [
+            "a1",
+            "a2",
+            "b1",
+            "b2"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "1bca60f25014186396a1cd5a5af91a87bc7b390e",
+          "host_checks": 7,
+          "production_jar_sha256": "d8b20d68b5c70397403f500c4d27039beb6c5545ea8ff3c958496eed82139a31",
+          "ref": "refs/heads/main",
+          "tree": "7f29faa7b10758a710292d0728965e61556d9873"
+        }
+      ],
+      "reviewed_facts": {
+        "arch_bound_status": 0,
+        "automated_compatibility_validation_at_least_two_android_versions": false,
+        "has_arch_specific_deps": false,
+        "has_complex_permission_adaptation": false,
+        "has_interface_abstraction": false,
+        "has_non_compatible_api": true,
+        "multiple_unstable_core_paths_without_isolation": false,
+        "non_compatible_api_all_covered": false,
+        "permission_or_platform_hardcoding_blocks_core_migration": false,
+        "risk_fallback_available": false,
+        "risks_all_localized_in_compat_layer": false,
+        "single_abi_closed_dependency_without_fallback": false,
+        "version_bound_status": 0
+      },
+      "rule_prediction": 3,
+      "status": "candidate_not_independently_adjudicated",
+      "tags": []
+    },
+    {
+      "case": "device-b",
+      "family_id": "cabin-manual-shared-origin-1",
+      "head": "11ca5f1f1a568a8906a883273593ee854d9b549d",
+      "leaf": "platform_reuse.platform_upgrade",
+      "main_source_evidence": [
+        {
+          "lines": 1,
+          "path": "app/src/main/AndroidManifest.xml",
+          "sha256": "37374755e98eed8f7a4e4a3921df08c371c644b0c03270614e151eb08e8e9c46"
+        },
+        {
+          "lines": 5,
+          "path": "app/src/main/assets/fleet.properties",
+          "sha256": "6521a5f07969bbaac7e09acaf503753819487bed0a008cc282cb020dae53ff34"
+        },
+        {
+          "lines": 16,
+          "path": "app/src/main/java/cabin/domain/Fleet.java",
+          "sha256": "0e3c647a7c54135cd8f0291f4940630047852752a88050d46846431d4206c549"
+        },
+        {
+          "lines": 9,
+          "path": "app/src/main/java/cabin/domain/Handbook.java",
+          "sha256": "95bad325ec84c5bca77f1702e3f4177c29c29c750cd64424ba8be7bdb009eecd"
+        },
+        {
+          "lines": 10,
+          "path": "app/src/main/java/cabin/platform/AndroidDeviceInfo.java",
+          "sha256": "3c38865e4123ada5c836710ecd6cd297ea9d24b112f9e08e76f117b3d965678d"
+        },
+        {
+          "lines": 2,
+          "path": "app/src/main/java/cabin/platform/DeviceInfo.java",
+          "sha256": "d10af478f1b8b60bb9924645f9fc748b243462cb8f3b01a671ab22f2cfca6b5c"
+        },
+        {
+          "lines": 21,
+          "path": "app/src/main/java/cabin/ui/MainActivity.java",
+          "sha256": "639ff3b34f32cb3dfc2f4099ed2bfa7cbfd8da7ceb6182ed7318b058f93af788"
+        }
+      ],
+      "ref_behavior": [
+        {
+          "accepted_models": [
+            "a1",
+            "a2",
+            "b1",
+            "b2"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "11ca5f1f1a568a8906a883273593ee854d9b549d",
+          "host_checks": 8,
+          "production_jar_sha256": "c3a6d7955a6e15775a2a73a9a811f5783a0cef11451ff0a3351de6689ac26c87",
+          "ref": "refs/heads/main",
+          "tree": "229a18a1f24f42a027f54d10ac29c1f01633ec9e"
+        }
+      ],
+      "reviewed_facts": {
+        "arch_bound_status": 0,
+        "automated_compatibility_validation_at_least_two_android_versions": false,
+        "has_arch_specific_deps": false,
+        "has_complex_permission_adaptation": false,
+        "has_interface_abstraction": true,
+        "has_non_compatible_api": true,
+        "multiple_unstable_core_paths_without_isolation": false,
+        "non_compatible_api_all_covered": true,
+        "permission_or_platform_hardcoding_blocks_core_migration": false,
+        "risk_fallback_available": true,
+        "risks_all_localized_in_compat_layer": true,
+        "single_abi_closed_dependency_without_fallback": false,
+        "version_bound_status": 1
+      },
+      "rule_prediction": 8,
+      "status": "candidate_not_independently_adjudicated",
+      "tags": []
+    },
+    {
+      "case": "device-c",
+      "family_id": "cabin-manual-shared-origin-1",
+      "head": "ee2863937601e8fe66af100d52191d1123d530b5",
+      "leaf": "platform_reuse.platform_upgrade",
+      "main_source_evidence": [
+        {
+          "lines": 1,
+          "path": "app/src/main/AndroidManifest.xml",
+          "sha256": "37374755e98eed8f7a4e4a3921df08c371c644b0c03270614e151eb08e8e9c46"
+        },
+        {
+          "lines": 5,
+          "path": "app/src/main/assets/fleet.properties",
+          "sha256": "6521a5f07969bbaac7e09acaf503753819487bed0a008cc282cb020dae53ff34"
+        },
+        {
+          "lines": 16,
+          "path": "app/src/main/java/cabin/domain/Fleet.java",
+          "sha256": "0e3c647a7c54135cd8f0291f4940630047852752a88050d46846431d4206c549"
+        },
+        {
+          "lines": 9,
+          "path": "app/src/main/java/cabin/domain/Handbook.java",
+          "sha256": "95bad325ec84c5bca77f1702e3f4177c29c29c750cd64424ba8be7bdb009eecd"
+        },
+        {
+          "lines": 4,
+          "path": "app/src/main/java/cabin/platform/AndroidDeviceInfo.java",
+          "sha256": "11de399299c8ff09f81f072c7c969a06804ac7d72d36b7f1a1e39cd2af4ac6ee"
+        },
+        {
+          "lines": 2,
+          "path": "app/src/main/java/cabin/platform/DeviceInfo.java",
+          "sha256": "d10af478f1b8b60bb9924645f9fc748b243462cb8f3b01a671ab22f2cfca6b5c"
+        },
+        {
+          "lines": 21,
+          "path": "app/src/main/java/cabin/ui/MainActivity.java",
+          "sha256": "639ff3b34f32cb3dfc2f4099ed2bfa7cbfd8da7ceb6182ed7318b058f93af788"
+        }
+      ],
+      "ref_behavior": [
+        {
+          "accepted_models": [
+            "a1",
+            "a2",
+            "b1",
+            "b2"
+          ],
+          "android_runtime_executed": false,
+          "artifact_scope": "Java production classes and fleet assets; not an APK",
+          "compiled_against_android_api": [
+            31,
+            35
+          ],
+          "head": "ee2863937601e8fe66af100d52191d1123d530b5",
+          "host_checks": 7,
+          "production_jar_sha256": "b4e0f71d8489e413b97bd142b9d1f6c13d84dd79a81b965384d955f6d1b5bf5c",
+          "ref": "refs/heads/main",
+          "tree": "e6f746b2a38e2c498ef7e47435d5f1d40d44ce0c"
+        }
+      ],
+      "reviewed_facts": {
+        "arch_bound_status": 0,
+        "automated_compatibility_validation_at_least_two_android_versions": false,
+        "has_arch_specific_deps": false,
+        "has_complex_permission_adaptation": false,
+        "has_interface_abstraction": true,
+        "has_non_compatible_api": false,
+        "multiple_unstable_core_paths_without_isolation": false,
+        "non_compatible_api_all_covered": false,
+        "permission_or_platform_hardcoding_blocks_core_migration": false,
+        "risk_fallback_available": false,
+        "risks_all_localized_in_compat_layer": false,
+        "single_abi_closed_dependency_without_fallback": false,
+        "version_bound_status": 0
+      },
+      "rule_prediction": 10,
+      "status": "candidate_not_independently_adjudicated",
+      "tags": []
+    }
+  ],
+  "independent_holdout": false,
+  "limits": [
+    "Tiny behavioral prototypes, not production volume samples.",
+    "All seven share one family and must stay in one evaluation split.",
+    "javac API compilation and host execution do not establish APK build or Android runtime behavior.",
+    "Fact choices are explicit maintainer judgments; independent adjudication remains pending."
+  ],
+  "toolchain": "openjdk version \"17.0.10\" 2024-01-16 LTS\r\nOpenJDK Runtime Environment Microsoft-8902769 (build 17.0.10+7-LTS)\r\nOpenJDK 64-Bit Server VM Microsoft-8902769 (build 17.0.10+7-LTS, mixed mode, sharing)"
+}

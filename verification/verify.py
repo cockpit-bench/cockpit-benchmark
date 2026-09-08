@@ -175,6 +175,23 @@ def compute_leaf(record):
     return score
 
 
+def check_substitution_execution(facts, head, data, package):
+    execution = facts.get('substitution_execution')
+    if not execution or execution.get('status') in {'not_run', 'failed'}:
+        return
+    require(facts.get('evaluation_revision') == head and execution.get('revision') == head,
+            'Substitution execution revision differs')
+    path = safe_path(execution['report_path'])
+    require(path in package['files_sha256'], 'Unhashed substitution report')
+    body = (data / path).read_bytes()
+    require(sha(body) == execution['report_sha256'] == package['files_sha256'][path],
+            'Substitution report hash differs')
+    report = json.loads(body)
+    for key in ['revision', 'parent_symbol', 'status', 'command', 'tests_passed', 'tests_failed',
+                'tested_implementations', 'passed_implementations', 'coverage']:
+        require(report.get(key) == execution.get(key), 'Substitution report binding differs: ' + key)
+
+
 def verify(args):
     package = read(args.data / 'package.json')
     for name, digest in package['tool_source_sha256'].items():
@@ -214,6 +231,8 @@ def verify(args):
             require(leaf['evidence'], 'No evidence anchors')
             for anchor in leaf['evidence']:
                 check_anchor(snap, anchor)
+            if leaf['name'] == 'solid_principle.liskov_substitution':
+                check_substitution_execution(leaf['facts'], snap.head, args.data, package)
             prediction = compute_leaf(leaf)
             key = (rid, leaf['name'])
             require(key in expected, 'Unexpected leaf')

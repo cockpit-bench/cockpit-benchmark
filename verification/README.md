@@ -20,3 +20,5 @@ The verifier checks exact source HEADs and heads/tags, main worktree cleanliness
 Reviewed ownership and semantic observations are **inputs**, not conclusions inferred anew by this tool. A valid hash or existing symbol does not establish the truth, completeness or semantic relevance of an observation. Reviewers can inspect and challenge the disclosed choices. A source ownership label without an original per-path adjudication is explicitly identified as a frozen selection, not an automatically proven build closure.
 
 This is reproducible counting and rule mapping. It is not a new independent semantic review, Android build, device test or proof of complete dependency closure. No current build execution is implied by a previously published score.
+
+For test-dependent LSP promotion, the verifier also checks a hashed execution report against the evaluated revision, contract and covered production implementations. See [the execution input schema](../docs/RULE_FIXES.md).

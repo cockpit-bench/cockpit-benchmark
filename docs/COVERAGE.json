@@ -824,7 +824,7 @@
         "FW-18"
       ],
       "score": 0,
-      "source_anchored_count": 0
+      "source_anchored_count": 1
     },
     {
       "count": 0,
@@ -2701,7 +2701,7 @@
       "status": "scored"
     },
     {
-      "code_anchor_count": 0,
+      "code_anchor_count": 2,
       "evidence_state": "execution_not_classified_for_this_leaf",
       "id": "FW-07",
       "inventory_anchor_count": 1,
@@ -3507,5 +3507,5 @@
   "observed_band_cells": 42,
   "possible_band_cells": 81,
   "schema_version": "leaf-band-evidence-coverage-1",
-  "source_version": "v0.8.0"
+  "source_version": "v0.8.2"
 }
