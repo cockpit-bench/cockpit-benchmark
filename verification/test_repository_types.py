@@ -24,8 +24,8 @@ class TypeRegistryTests(unittest.TestCase):
         self.assertEqual([s['id'] for s in r['suites']],['app','fw','new-energy-matlab'])
         self.assertEqual([s['repository_count'] for s in r['suites']],[11,11,11])
         self.assertEqual([s['leaf_count'] for s in r['suites']],[88,121,143])
-        self.assertEqual([s['published_repositories'] for s in r['suites']],[9,9,9])
-        with self.assertRaises(suites.InvalidSuite):rt.validate(self.root,True)
+        self.assertEqual([s['published_repositories'] for s in r['suites']],[11,11,11])
+        self.assertEqual(rt.validate(self.root,True)['integration_status'],'published')
     def test_no_combined_score_or_generic_matlab_type(self):
         r=self.registry();r['score']=999;self.save(r)
         with self.assertRaises(suites.InvalidSuite):rt.validate(self.root)
@@ -51,6 +51,11 @@ class TypeRegistryTests(unittest.TestCase):
         r=self.registry();self.alter(r,'app','manifest',lambda s:s['repositories'][-1].update(id='APP-04'))
         with self.assertRaises(suites.InvalidSuite):rt.validate(self.root)
     def test_unpublished_inputs_fail_before_network_or_destination(self):
+        r=self.registry();r['integration_status']='local_expansion'
+        entry=next(e for e in r['suites'] if e['id']=='app')
+        entry.update(status='verified_local',published_repositories=10)
+        self.alter(r,'app','manifest',lambda m:m['repositories'][-1].update(publication_status='verified_local',repository_url=None))
+        with self.assertRaises(suites.InvalidSuite):rt.validate(self.root,True)
         dest=Path(self.temp.name)/'output'
         with patch.object(rt,'git',side_effect=AssertionError('No network or Git action allowed')):
             with self.assertRaises(suites.InvalidSuite):rt.restore(self.root,'all',dest)

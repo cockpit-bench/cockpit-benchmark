@@ -90,7 +90,7 @@
   "head": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
   "id": "APP-22",
   "limitations": [
-    "Local construction and verification only; new source repositories are not published.",
+    "Execution was performed locally before publication; source availability is recorded separately in the current type manifest.",
     "Same-author construction is not an independent holdout.",
     "No new physical vehicle, SIL/PIL/HIL, or remote CI execution."
   ],

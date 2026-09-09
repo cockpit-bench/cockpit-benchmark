@@ -13,8 +13,8 @@
 | FW-15 | telecom-service | 17 / 52 | yes |
 | FW-16 | platform-framework | 16 / 52 | yes |
 | FW-18 | telephony-service | 9 / 52 | yes |
-| FW-21 | vehicle-capability-service | 24 / 52 | local only |
-| FW-22 | vehicle-message-service | 25 / 52 | local only |
+| FW-21 | vehicle-capability-service | 24 / 52 | yes |
+| FW-22 | vehicle-message-service | 25 / 52 | yes |
 
 Scores are descriptive results from evidence. They are not construction targets or model accuracy.
 APP, FW and New Energy MATLAB remain separate populations.

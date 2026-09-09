@@ -77,7 +77,7 @@
   "head": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
   "id": "FW-22",
   "limitations": [
-    "Local construction and verification only; new source repositories are not published.",
+    "Execution was performed locally before publication; source availability is recorded separately in the current type manifest.",
     "Same-author construction is not an independent holdout.",
     "No new physical vehicle, SIL/PIL/HIL, or remote CI execution."
   ],

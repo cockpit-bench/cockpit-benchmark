@@ -367,7 +367,7 @@
       "source": {
         "evidence": {
           "path": "suites/fw/evidence/FW-21.json",
-          "sha256": "4c777d53a3550ca54e6aff00f23fad02ad773f61e9cf886e504d868a814d1117"
+          "sha256": "7bb41566ce88642140a0e6956fd0edd1e7a238e588b4ca7e98e2a083c1bcb0e1"
         },
         "family_id": "author-expansion-20260909",
         "head": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
@@ -381,11 +381,11 @@
           "source_family": "author-expansion-20260909"
         },
         "name": "vehicle-capability-service",
-        "publication_status": "verified_local",
+        "publication_status": "published",
         "refs": {
           "refs/heads/main": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c"
         },
-        "repository_url": null,
+        "repository_url": "https://github.com/cockpit-bench/vehicle-capability-service.git",
         "scan_profile": {
           "basis": "Provided internal scan guidance; joint business combinations are declared simulation design assumptions, not measured internal frequencies",
           "id": "B",
@@ -766,7 +766,7 @@
       "source": {
         "evidence": {
           "path": "suites/fw/evidence/FW-22.json",
-          "sha256": "9521172abb9df1f7286966afa83ac5d9d1604c2817771b9b3e240b64d4b41f9e"
+          "sha256": "1c41d2c1b9745d0caa7166b8a28a101cfee05ad435846c5c05dcb833d2f9e401"
         },
         "family_id": "author-expansion-20260909",
         "head": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
@@ -778,11 +778,11 @@
           "source_family": "author-expansion-20260909"
         },
         "name": "vehicle-message-service",
-        "publication_status": "verified_local",
+        "publication_status": "published",
         "refs": {
           "refs/heads/main": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac"
         },
-        "repository_url": null,
+        "repository_url": "https://github.com/cockpit-bench/vehicle-message-service.git",
         "scan_profile": {
           "basis": "Provided internal scan guidance; joint business combinations are declared simulation design assumptions, not measured internal frequencies",
           "id": "F",

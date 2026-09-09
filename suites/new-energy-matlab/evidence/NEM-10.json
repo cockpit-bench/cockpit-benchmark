@@ -512,7 +512,7 @@
   "head": "db253a0ca7ff559fc2f319e7a00abc255c9a8940",
   "id": "NEM-10",
   "limitations": [
-    "Local construction and verification only; new source repositories are not published.",
+    "Execution was performed locally before publication; source availability is recorded separately in the current type manifest.",
     "Same-author construction is not an independent holdout.",
     "No new physical vehicle, SIL/PIL/HIL, or remote CI execution."
   ],

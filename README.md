@@ -2,25 +2,25 @@
 
 [suites.json](suites.json) is the current registry. APP and FW are independent repository types; New Energy MATLAB identifies the business domain. MATLAB/Simulink is technology metadata, not a generic business type. Future MATLAB repositories from other centers require their own business classification.
 
-| Repository type | Local verified repositories / leaves | Score | Published sources |
+| Repository type | Published repositories / leaves | Score | Published sources |
 |---|---:|---:|---:|
-| [APP](suites/app/SCORECARD.md) | 11 / 88 | 140 / 440 | 9 |
-| [FW](suites/fw/SCORECARD.md) | 11 / 121 | 194 / 572 | 9 |
-| [New Energy MATLAB](suites/new-energy-matlab/SCORECARD.md) | 11 / 143 | 429 / 671 | 9 |
+| [APP](suites/app/SCORECARD.md) | 11 / 88 | 140 / 440 | 11 |
+| [FW](suites/fw/SCORECARD.md) | 11 / 121 | 194 / 572 | 11 |
+| [New Energy MATLAB](suites/new-energy-matlab/SCORECARD.md) | 11 / 143 | 429 / 671 | 11 |
 
-The six new repositories are locally implemented, executed, reviewed and admitted on `main`; they have not been uploaded or released. Each type adds two repositories. Existing 27 source HEADs/refs and complete reference objects remain frozen at v0.9.4. The old 22 pending slots are untouched. Scores remain separate; there is no combined raw score.
+Version **v0.10.0** publishes all 33 source repositories, including the six additions implemented, executed, reviewed and admitted on `main`. Each type adds two repositories. Existing 27 source HEADs/refs and complete reference objects remain frozen at v0.9.4. The old 22 pending slots are untouched. Scores remain separate; there is no combined raw score.
 
 See [the six business profiles, evidence and limits](docs/EXPANSION_20260909.md). The approved contracts are unchanged: [APP/FW v3.5.1](SCORE_RULES.md) and [the independent MATLAB effective contract](suites/matlab-simulink/EFFECTIVE_CONTRACT.md). New scores are observed outcomes, not construction targets. This is a development/regression collection, not an independent holdout or measured model accuracy.
 
-## Restore local or published inputs
+## Restore published sources
 
-Python 3.11+, Git and PowerShell are required. A source map is a local JSON object from repository ID to an existing source directory. New unpublished repositories require it; missing inputs are rejected before cloning or network access. All commands verify full history, exact HEAD/tree/refs, clean state and zero remotes. They do not run source code.
+Python 3.11+, Git and PowerShell are required. Public restoration needs no GitHub credentials or local source map. An optional source map substitutes existing local source directories; unpublished inputs without a map are rejected before cloning or network access. All commands verify full history, exact HEAD/tree/refs, clean state and zero remotes. They do not run source code.
 
 ```powershell
-# All three types: the local map needs paths for the six unpublished repositories.
-./restore.ps1 -Suite all -SourceMap C:/bench/source-map.json -Destination C:/bench/restored
+# All three types from the public repositories.
+./restore.ps1 -Suite all -Destination C:/bench/restored
 # Select only the two new APP repositories, without restoring FW or MATLAB.
-./restore.ps1 -Suite app -RepositoryIds APP-21,APP-22 -SourceMap C:/bench/source-map.json -Destination C:/bench/new-app
+./restore.ps1 -Suite app -RepositoryIds APP-21,APP-22 -Destination C:/bench/new-app
 ```
 
 `all` is the default and creates `app`, `fw`, and `new-energy-matlab` folders. A single-type request places repositories directly in its destination. `-Resume` rechecks existing inputs; `-IncludeSubmodules` checks out pinned recursive gitlinks and removes child remotes. Restore never turns a local source into a published one.
@@ -28,11 +28,11 @@ Python 3.11+, Git and PowerShell are required. A source map is a local JSON obje
 ## Verify current additions
 
 ```sh
-python verification/repository_types.py validate --wrapper .
+python verification/repository_types.py validate --wrapper . --require-publishable
 python verification/expansion.py --wrapper . --source-map C:/bench/source-map.json --records-root C:/bench/native-records --output C:/bench/expansion-replay.json
 ```
 
-The second command checks source inventories twice, code/model anchors, all 64 new leaf calculations, and retained native artifact hashes. Semantic judgments are explicit reviewed inputs; deterministic replay is not a fresh blind semantic review. Omitting `--records-root` verifies sources and rules only. `--require-publishable` correctly rejects the current local additions.
+The second command checks source inventories twice, code/model anchors, all 64 new leaf calculations, and retained native artifact hashes. Semantic judgments are explicit reviewed inputs; deterministic replay is not a fresh blind semantic review. Omitting `--records-root` verifies sources and rules only. `--require-publishable` validates all 33 published source entries. The source map used for evidence replay maps the six IDs to your restored directories; it contains paths only. The small [native-record attachment](docs/EXPANSION_20260909.md#published-native-records) supplies the optional records root without adding binaries to the wrapper.
 
 Give an evaluation agent only one selected source repository and explicitly allowed raw inputs. Never provide these manifests, standards or evidence judgments as candidate inputs. The preserved [fixed Android evaluation batch](docs/EVALUATION_BATCH.md) and its 171-leaf statistics still describe the original Validation-18, not the expanded collection.
 

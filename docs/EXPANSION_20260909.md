@@ -1,6 +1,6 @@
-# 首批六仓扩建：本地主线结果
+# 首批六仓扩建：v0.10.0 公开版本
 
-2026-09-09。用户批准后在 wrapper `main` 正常前向实施。**APP、FW、新能源 MATLAB 各新增 2 仓，当前分别为 11 仓**。MATLAB 是技术，新能源是业务归属；以后其它中心的 MATLAB 不能并入本类型。新增源码仍为本地状态，未 push、未创建公开仓或 Release。
+2026-09-09。用户批准后在 wrapper `main` 正常前向实施。**APP、FW、新能源 MATLAB 各新增 2 仓，当前分别为 11 仓**。MATLAB 是技术，新能源是业务归属；以后其它中心的 MATLAB 不能并入本类型。六个新增源码仓已向 `cockpit-bench` 公开，现行三个类型均可通过公开恢复入口下载。
 
 | 类型 | 新仓及画像 | 核心业务和真实工程组合 | 取证分数 | 生产规模 |
 |---|---|---|---:|---:|
@@ -46,6 +46,12 @@ FW-21本仓没有集成测试入口，所以该叶为0；外部APP的测试记�
 
 A/B依赖相同SDK，必须同family；四个新Android实现共享本轮构造来源。C继承ML-04来源并与原MATLAB构造族有关；D继承MiniBMS完整MIT历史。所有新仓同时带有本轮共同构造组。未来切分必须对来源族、依赖组和构造组取传递闭包，不能把相关仓划到训练和holdout两侧。此次没有候选模型实验，也没有独立holdout准入。
 
-六仓从独立本地源经 `git clone --no-local` 恢复到全新目录，核验完整历史、final HEAD/tree、所有heads/tags、clean、无alternates及remote=0。恢复只证明Git材料完整，不替代构建或仿真。原27仓实物另作只读检查，HEAD/refs未变，47个原始标准/合同/oracle/MATLAB证据文件逐字节保留。
+六仓先从独立本地源经 `git clone --no-local` 恢复到全新目录；本次发布另经PowerShell正式入口全新匿名公开恢复6/6，核验完整历史、final HEAD/tree、所有heads/tags、clean、无alternates及remote=0。33仓公开refs均匿名核对通过。原27仓沿用已有有效恢复证据，本次没有重新下载其完整历史。恢复只证明Git材料完整，不替代构建或仿真。原27源码HEAD/refs及完整参考对象不变；本次48个原标准/合同/oracle/MATLAB/旧注册入口文件逐字节保留。132项回归全部通过，无跳过。
 
-当前各类型结果：APP 140/440（88叶）、FW 194/572（121叶）、新能源MATLAB 429/671（143叶）；不相加。各类型9仓已公开、2仓仅本地。旧22 pending与全部已发布tag保持原样。正常发布须另获具体新源码目的地授权；在此之前 `--require-publishable` 应失败。
+当前各类型结果：APP 140/440（88叶）、FW 194/572（121叶）、新能源MATLAB 429/671（143叶）；不相加。各类型11仓均已公开。用户明确授权发布当前版本；旧22 pending与此前已发布tag保持原样。`--require-publishable` 检查通过。源码HEAD/refs和64个新叶分数与本地准入版本相同。
+
+## Published native records
+
+下载 [原生执行记录附件](https://github.com/cockpit-bench/cockpit-benchmark/releases/download/v0.10.0/expansion-native-records-v0.10.0.zip)（123,018 字节，22 个已绑定文件），SHA-256：`d030312dd5ece95b7e98339a723ac55590ee34c7a2f2e6ddef6dc4cad4f31564`。解压到独立目录后，将其作为 `verification/expansion.py --records-root` 输入。文件名保持与逐仓 evidence 中的记录路径一致。
+
+附件仅含已经绑定的模拟器验收结果、MATLAB输出/测量和标定扰动材料；不含Git对象、完整源码、APK或依赖。它能验证记录完整性，不会重新执行Android/MATLAB，也不是新的设备验收。原Validation-18 v0.9.4、MATLAB v0.9.0及外部Git证据仍使用其既有固定附件，不复制到新包。

@@ -252,7 +252,7 @@
       "source": {
         "evidence": {
           "path": "suites/app/evidence/APP-21.json",
-          "sha256": "54b711e376f738485753f63c7a557199839d117552b72fada10ef3faf7c4a450"
+          "sha256": "2a1c7e592a0a02c2510f18ca00a5456603058d8774da5e467260af566d40eea3"
         },
         "family_id": "author-expansion-20260909",
         "head": "13c481c9fc68b271b6d2631557f977366a66daa1",
@@ -266,11 +266,11 @@
           "source_family": "author-expansion-20260909"
         },
         "name": "scene-coordinator",
-        "publication_status": "verified_local",
+        "publication_status": "published",
         "refs": {
           "refs/heads/main": "13c481c9fc68b271b6d2631557f977366a66daa1"
         },
-        "repository_url": null,
+        "repository_url": "https://github.com/cockpit-bench/scene-coordinator.git",
         "scan_profile": {
           "basis": "Provided internal scan guidance; joint business combinations are declared simulation design assumptions, not measured internal frequencies",
           "id": "A",
@@ -532,7 +532,7 @@
       "source": {
         "evidence": {
           "path": "suites/app/evidence/APP-22.json",
-          "sha256": "7da5ccd03378fd72ec69cf363cbcfadfa159288a550f86e61a0e945054d0cb66"
+          "sha256": "6144075e9a5347f25f176c3a6d0e599ec83abc586ff159b4b0a413746c9a5437"
         },
         "family_id": "author-expansion-20260909",
         "head": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
@@ -544,11 +544,11 @@
           "source_family": "author-expansion-20260909"
         },
         "name": "drive-event-recorder",
-        "publication_status": "verified_local",
+        "publication_status": "published",
         "refs": {
           "refs/heads/main": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53"
         },
-        "repository_url": null,
+        "repository_url": "https://github.com/cockpit-bench/drive-event-recorder.git",
         "scan_profile": {
           "basis": "Provided internal scan guidance; joint business combinations are declared simulation design assumptions, not measured internal frequencies",
           "id": "E",

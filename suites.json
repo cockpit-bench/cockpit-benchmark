@@ -2,7 +2,7 @@
   "aggregation": "separate_repository_type_scores_no_raw_sum",
   "benchmark_id": "cockpit-benchmark",
   "default_suite": "all",
-  "integration_status": "local_expansion",
+  "integration_status": "published",
   "legacy_baseline": {
     "path": "suites/legacy-v094.json",
     "sha256": "fadc09b820c9781b3eb1575737301f049d75dfe99375a6ad5c92062664cea911"
@@ -23,14 +23,14 @@
       "leaf_count": 88,
       "manifest": {
         "path": "suites/app/manifest.json",
-        "sha256": "c4df3e4d899c1763a496677a813b6cd9270074e5dfcf9ef9b1f14540cca65663"
+        "sha256": "7c61a542eda48f9c57f7847e79aa5569bc5e0b44a1d158b788022f3538373fbc"
       },
       "max_score": 440,
       "name": "APP",
-      "published_repositories": 9,
+      "published_repositories": 11,
       "repository_count": 11,
       "score": 140,
-      "status": "verified_local",
+      "status": "published",
       "technology": "Android"
     },
     {
@@ -47,14 +47,14 @@
       "leaf_count": 121,
       "manifest": {
         "path": "suites/fw/manifest.json",
-        "sha256": "a19217c641696d3964024caa6f9ded2da65faaa82186de429fc54c765dc82bfe"
+        "sha256": "f36682b7f2ae29d45677ed95b2c529c54993dd87aadf27c530a6cf433709fb2c"
       },
       "max_score": 572,
       "name": "FW",
-      "published_repositories": 9,
+      "published_repositories": 11,
       "repository_count": 11,
       "score": 194,
-      "status": "verified_local",
+      "status": "published",
       "technology": "Android"
     },
     {
@@ -71,14 +71,14 @@
       "leaf_count": 143,
       "manifest": {
         "path": "suites/new-energy-matlab/manifest.json",
-        "sha256": "db6868a2b6059fb1cf6e4a162d15cea553d6edb4157f67f2bbe7ba3629f16cd7"
+        "sha256": "170db398752c9e28540cbb6989a0cd3b03f4ada85dcb1b20e04b4dde5137cfef"
       },
       "max_score": 671,
       "name": "New Energy MATLAB",
-      "published_repositories": 9,
+      "published_repositories": 11,
       "repository_count": 11,
       "score": 429,
-      "status": "verified_local",
+      "status": "published",
       "technology": "MATLAB / Simulink"
     }
   ]

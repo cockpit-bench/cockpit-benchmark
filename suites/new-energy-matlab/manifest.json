@@ -135,7 +135,7 @@
     {
       "evidence": {
         "path": "suites/new-energy-matlab/evidence/NEM-10.json",
-        "sha256": "177964c787ba6a15aa775185c1c276c1b9d26ae66f651afb14a7362ea36df887"
+        "sha256": "fe8dcc4d49e5e857d35975b29e2d7ccc75579d6689fe3cdc783eac606bbd5b8e"
       },
       "family_id": "local-matlab-generator-2026",
       "head": "db253a0ca7ff559fc2f319e7a00abc255c9a8940",
@@ -149,12 +149,12 @@
         "source_family": "local-matlab-generator-2026"
       },
       "name": "battery-energy-calibration",
-      "publication_status": "verified_local",
+      "publication_status": "published",
       "refs": {
         "refs/heads/main": "db253a0ca7ff559fc2f319e7a00abc255c9a8940",
         "refs/tags/v0.1.0": "782f3694a7007ddf1ad87ae98ded6d958b9bd340"
       },
-      "repository_url": null,
+      "repository_url": "https://github.com/cockpit-bench/battery-energy-calibration.git",
       "scan_profile": {
         "basis": "Provided internal scan guidance; joint business combinations are declared simulation design assumptions, not measured internal frequencies",
         "id": "C",
@@ -166,7 +166,7 @@
     {
       "evidence": {
         "path": "suites/new-energy-matlab/evidence/NEM-11.json",
-        "sha256": "962fffae84df6a9dc22d794d7816a6068701c86412eb6be4cbabc0fb2d1d9247"
+        "sha256": "f7ba24a5959553a7b2793362aad088903c333334bea19dd7c678d86f315a722d"
       },
       "family_id": "minibms-upstream",
       "head": "d9cf0bae322d41e7d829c02636ce343d638797e1",
@@ -178,11 +178,11 @@
         "source_family": "minibms-upstream"
       },
       "name": "battery-contactor-control",
-      "publication_status": "verified_local",
+      "publication_status": "published",
       "refs": {
         "refs/heads/main": "d9cf0bae322d41e7d829c02636ce343d638797e1"
       },
-      "repository_url": null,
+      "repository_url": "https://github.com/cockpit-bench/battery-contactor-control.git",
       "scan_profile": {
         "basis": "Provided internal scan guidance; joint business combinations are declared simulation design assumptions, not measured internal frequencies",
         "id": "D",
