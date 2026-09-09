@@ -135,6 +135,23 @@ def graph_signature(system):
             'edges':sorted(edges)}
 
 
+def acquisition_inventory(repo):
+    """Retain actual channel definitions and complete branch geometry for review."""
+    repo=Path(repo);path='Model/BatteryPowerManager.slx'
+    member='simulink/systems/system_1.xml';system=model_systems(repo/path)[member]
+    blocks=[]
+    for b in system.findall('Block'):
+        blocks.append({'sid':b.get('SID'),'name':b.get('Name'),'type':b.get('BlockType'),
+                       'parameters':{p.get('Name'):p.text for p in b.findall('P')}})
+    def route(node):
+        return {'properties':{p.get('Name'):p.text for p in node.findall('P')},
+                'branches':[route(b) for b in node.findall('Branch')]}
+    routes=[route(line) for line in system.findall('Line')]
+    return {'schema':'acquisition-routing-audit-v1','model':path,'model_sha256':sha((repo/path).read_bytes()),
+            'member':member,'blocks':blocks,'signature':graph_signature(system),'routes':routes,
+            'limits':'Retains independently authored definitions, coordinates and all branch segments. Logical duplication and readability remain explicit semantic judgments, not graph-count scores.'}
+
+
 def reuse_inventory(repo):
     repo=Path(repo);path='BatteryContactorController.slx';systems=model_systems(repo/path)
     groups=[]

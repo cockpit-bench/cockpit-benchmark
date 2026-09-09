@@ -69,7 +69,11 @@ def validate(wrapper,require_publishable=False):
             values=leaf_values(row['reference']);require(len(values)==leaves and sum(m for _,m in values.values())==maximum,'Wrong leaf contract')
             require({name:maximum for name,(_,maximum) in values.items()}==LEAF_LIMITS[type_id],'Leaf names or maxima differ from the contract')
             if source['id'] in old_refs:
-                require(row['reference']==old_refs[source['id']],'A preserved reference object changed')
+                if row['reference']!=old_refs[source['id']]:
+                    require('reference_revision' in row,'A preserved reference changed without an explicit current revision')
+                    from reference_revisions import validate as validate_revision
+                    validate_revision(wrapper,row,old_refs[source['id']],source,entry['contract']['sha256'])
+                else:require('reference_revision' not in row,'A reference revision declares no change')
                 old=old_sources[source['id']]
                 head=old.get('head',old.get('delivery',{}).get('expected_head'))
                 refs=old.get('refs',old.get('delivery',{}).get('refs'))
@@ -89,9 +93,9 @@ def validate(wrapper,require_publishable=False):
                 require(sha(encoded(inventory))==facts['source_inventory_sha256'] and inventory['head']==source['head'] and inventory['tree']==source['tree'] and inventory['refs']==source['refs'],'Inventory source binding differs')
                 from expansion import recompute
                 require(recompute(facts)=={name:value for name,(value,_) in values.items()},'Rule facts and reference scores differ')
-                for value,limit in values.values():
-                    allowed={3:{0,1,2,3},4:{0,1,2,3,4},5:{0,1,3,5},10:{0,3,8,10}}[limit]
-                    require(value is None or type(value) is int and value in allowed,'Illegal leaf score')
+            for value,limit in values.values():
+                allowed={3:{0,1,2,3},4:{0,1,2,3,4},5:{0,1,3,5},10:{0,3,8,10}}[limit]
+                require(value is None or type(value) is int and value in allowed,'Illegal leaf score')
         summary=summarize(rows);require(scores['summary']==summary,'Scorecard summary differs')
         for key,value in summary.items():require(entry[key]==value,'Registry denominator/score differs: '+key)
         published=sum(r['publication_status']=='published' for r in sources)
@@ -121,6 +125,10 @@ def check_source(path,row):
     git('-C',path,'fsck','--full','--no-progress','--no-dangling')
     return {'id':row['id'],'type_id':row['type_id'],'head':row['head'],'tree':row['tree'],'full_history':True,'clean':True,'remote_count':0,'execution':'not_run'}
 
+def restore_binding(row):
+    # Score/evidence/profile edits do not change the Git material to restore.
+    return sha(encoded({k:row[k] for k in ['id','type_id','name','head','tree','refs','publication_status','repository_url']}))
+
 def restore(wrapper,type_id,destination,resume=False,include_submodules=False,source_map=None,ids=None):
     wrapper=Path(wrapper).resolve();registry=validate(wrapper);rows=select(registry,wrapper,type_id,ids)
     destination=Path(destination).resolve();mapping=read(source_map) if source_map else {}
@@ -143,10 +151,17 @@ def restore(wrapper,type_id,destination,resume=False,include_submodules=False,so
     destination.mkdir(parents=True,exist_ok=True);results=[]
     for row in rows:
         parent=destination/row['type_id'] if type_id in {'all','android-validation18'} else destination
-        parent.mkdir(parents=True,exist_ok=True);target=legacy.safe_path(parent,row['name']);marker=parent/('.restore-'+row['id']+'.json');binding=sha(encoded(row))
+        parent.mkdir(parents=True,exist_ok=True);target=legacy.safe_path(parent,row['name']);marker=parent/('.restore-'+row['id']+'.json');binding=restore_binding(row)
         owned=False
         if marker.exists():
-            state=read(marker);require(resume and state.get('binding')==binding,'Restore progress differs');owned=state['phase']!='complete'
+            state=read(marker);require(resume and state.get('phase') in {'cloning','complete'},'Restore progress differs')
+            if state.get('binding') not in {binding,sha(encoded(row))}:
+                # Legacy complete markers included mutable evidence metadata.
+                # Rebind only after verifying the actual full, clean Git source.
+                # An unknown in-progress clone retains the strict rejection.
+                require(state['phase']=='complete' and target.is_dir(),'Restore progress differs')
+                check_source(target,row)
+            owned=state['phase']!='complete'
         if not target.exists():
             marker.write_bytes(encoded({'binding':binding,'phase':'cloning'}));git('clone','--no-local','--no-checkout',transports[row['id']],target);owned=True
         elif not resume:raise legacy.InvalidSuite('Target exists')

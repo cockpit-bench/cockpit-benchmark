@@ -512,7 +512,7 @@
               "status": "scored"
             },
             {
-              "analysis": "Deprecated Camera1 is concentrated in CameraCapture, but there is no alternate capture implementation; the MediaRecorder constructor fallback does not resolve Camera1 migration, hence 3.",
+              "analysis": "3 retained: CameraCapture directly opens android.hardware.Camera and lacks a replacement capture path. The complete SDK 34 public API at immutable AOSP commit 9736a6d287252a7e7e8feb2a709aa9e10a3caea7, matching video/build.gradle compileSdk 34, declares Camera @Deprecated at line 20352. This definition is an external static prerequisite; source_only is unknown, frozen_external supplies the complete neutral original Gitiles response, decoded API, directory response and binding. MediaRecorder constructor branching at SDK31 does not isolate the Camera1 upgrade risk. No alternative framework prior knowledge is assumed.",
               "evidence": [
                 {
                   "claim": "Deprecated Camera1 capture has no alternative capture implementation",
@@ -535,12 +535,21 @@
                   "source": "repository",
                   "start_line": 58,
                   "symbol": "requestPermissions"
+                },
+                {
+                  "claim": "Immutable complete SDK definition binding; Camera declaration at decoded line 20352",
+                  "commit": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
+                  "evidence_type": "facts",
+                  "independent_group": "sdk_definition",
+                  "json_pointer": "/external_static_inputs/android_sdk",
+                  "path": "suites/app/evidence/APP-22.json",
+                  "source": "reviewed_external_input"
                 }
               ],
               "max_score": 10,
               "name": "platform_reuse.platform_upgrade",
               "score": 3,
-              "score_reasoning": "Deprecated Camera1 is concentrated in CameraCapture, but there is no alternate capture implementation; the MediaRecorder constructor fallback does not resolve Camera1 migration, hence 3.",
+              "score_reasoning": "3 retained: CameraCapture directly opens android.hardware.Camera and lacks a replacement capture path. The complete SDK 34 public API at immutable AOSP commit 9736a6d287252a7e7e8feb2a709aa9e10a3caea7, matching video/build.gradle compileSdk 34, declares Camera @Deprecated at line 20352. This definition is an external static prerequisite; source_only is unknown, frozen_external supplies the complete neutral original Gitiles response, decoded API, directory response and binding. MediaRecorder constructor branching at SDK31 does not isolate the Camera1 upgrade risk. No alternative framework prior knowledge is assumed.",
               "status": "scored"
             }
           ],
@@ -554,7 +563,7 @@
       "source": {
         "evidence": {
           "path": "suites/app/evidence/APP-22.json",
-          "sha256": "bc8fac892382b6255435bd498a1737ff8a151b7733c44bc18bc62d99e81a8e33"
+          "sha256": "285f231fef12b085233ddb0ba0c5faecdc1b70b6b54f2781c8e384f791589268"
         },
         "family_id": "author-expansion-20260909",
         "head": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",

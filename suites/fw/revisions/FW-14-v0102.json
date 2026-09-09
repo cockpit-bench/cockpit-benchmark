@@ -1,0 +1,21 @@
+{
+  "baseline_reference_sha256": "86ff6f1c2384fcf1a4bea26f2ff6a7fb9b7f9e9217412fed786fb0244d9ad6cd",
+  "changes": [
+    {
+      "after_sha256": "b7fa4f5b268666fd0162f6e5b4d2807b810ed7b09520ca22a54678188cfe195b",
+      "before_sha256": "2fe154e7661d9e967e31c4e585acf103a5e97cfd2181bc86f3d93189b19358f2",
+      "leaf": "compilation.compilation_independence",
+      "reason": "Four production files, one Maven entry and four test sources have identical Git blobs at executed and current HEAD. Historical 25 passing host JVM tests are reused only for this unchanged input closure; no final-HEAD rerun, Android integration or whole-tree build is claimed. Full Car Java/AIDL/native still needs platform generators and unversioned private module/stub injection, so compilation independence remains 1."
+    }
+  ],
+  "contract_sha256": "2bb21ed67c9e47c3cf7691bc2a526fa3e2c41b410017fa4faa41a02132da7b91",
+  "current_reference_sha256": "89d8929bd73ea2f612c172e65c9b7e87edd109ef27c1faca529b8781fa299ab8",
+  "execution_rebinding": {
+    "path": "suites/fw/revisions/FW-14-execution-rebinding.json",
+    "sha256": "b2176c751973866e3be5689469d5b5134121019b5861bbcc3d4bbcb4e6e34788"
+  },
+  "head": "8b4badff6b9e3b96f6cb3d1c9ccf624e4ef6d784",
+  "repository_id": "FW-14",
+  "schema": "current-reference-revision-v1",
+  "tree": "1407e24eb53f5361af1b009b0a0b00f53f79fe46"
+}

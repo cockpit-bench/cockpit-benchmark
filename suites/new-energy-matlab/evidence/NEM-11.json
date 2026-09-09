@@ -309,6 +309,7 @@
             "evidence_type": "facts",
             "independent_group": "routing_inventory",
             "json_pointer": "/models/0/lines",
+            "model_path": "BatteryContactorController.slx",
             "path": "suites/new-energy-matlab/evidence/NEM-11-source.json",
             "source": "source_inventory"
           },

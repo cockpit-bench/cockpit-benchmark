@@ -87,6 +87,25 @@
       ]
     }
   },
+  "external_static_inputs": {
+    "android_sdk": {
+      "captured_utc": "2026-09-09T12:00:48.508308+00:00",
+      "commit": "9736a6d287252a7e7e8feb2a709aa9e10a3caea7",
+      "compile_sdk": 34,
+      "decoded_sha256": "2e7d7fda1fe4d919f40a2ce37132518bc20673bb4be07b828406b0e26d39e0c3",
+      "directory_response_sha256": "42a7b6de64daa4063c94d8d41ffc60b69312f1a4f04107efad719b24aa1ae02c",
+      "format": "Gitiles base64 response and complete unmodified public API signature file; no scoring annotations.",
+      "git_blob": "ff242876fb37728684d25b487cd89f5eefa396ee",
+      "path": "34/public/api/android.txt",
+      "raw_response_sha256": "29fe3f8bfe5a5b18932356b3c668be0ca153ca1eba536fd8c774472297a22ebd",
+      "repository_head": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
+      "repository_id": "APP-22",
+      "schema": "sdk-source-binding-v1",
+      "tag": "android-14.0.0_r1",
+      "upstream": "https://android.googlesource.com/platform/prebuilts/sdk",
+      "url": "https://android.googlesource.com/platform/prebuilts/sdk/+/9736a6d287252a7e7e8feb2a709aa9e10a3caea7/34/public/api/android.txt?format=TEXT"
+    }
+  },
   "head": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
   "id": "APP-22",
   "limitations": [
@@ -316,7 +335,7 @@
         "status": "scored"
       },
       {
-        "analysis": "Deprecated Camera1 is concentrated in CameraCapture, but there is no alternate capture implementation; the MediaRecorder constructor fallback does not resolve Camera1 migration, hence 3.",
+        "analysis": "3 retained: CameraCapture directly opens android.hardware.Camera and lacks a replacement capture path. The complete SDK 34 public API at immutable AOSP commit 9736a6d287252a7e7e8feb2a709aa9e10a3caea7, matching video/build.gradle compileSdk 34, declares Camera @Deprecated at line 20352. This definition is an external static prerequisite; source_only is unknown, frozen_external supplies the complete neutral original Gitiles response, decoded API, directory response and binding. MediaRecorder constructor branching at SDK31 does not isolate the Camera1 upgrade risk. No alternative framework prior knowledge is assumed.",
         "evidence": [
           {
             "claim": "Deprecated Camera1 capture has no alternative capture implementation",
@@ -339,12 +358,21 @@
             "source": "repository",
             "start_line": 58,
             "symbol": "requestPermissions"
+          },
+          {
+            "claim": "Immutable complete SDK definition binding; Camera declaration at decoded line 20352",
+            "commit": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
+            "evidence_type": "facts",
+            "independent_group": "sdk_definition",
+            "json_pointer": "/external_static_inputs/android_sdk",
+            "path": "suites/app/evidence/APP-22.json",
+            "source": "reviewed_external_input"
           }
         ],
         "max_score": 10,
         "name": "platform_reuse.platform_upgrade",
         "score": 3,
-        "score_reasoning": "Deprecated Camera1 is concentrated in CameraCapture, but there is no alternate capture implementation; the MediaRecorder constructor fallback does not resolve Camera1 migration, hence 3.",
+        "score_reasoning": "3 retained: CameraCapture directly opens android.hardware.Camera and lacks a replacement capture path. The complete SDK 34 public API at immutable AOSP commit 9736a6d287252a7e7e8feb2a709aa9e10a3caea7, matching video/build.gradle compileSdk 34, declares Camera @Deprecated at line 20352. This definition is an external static prerequisite; source_only is unknown, frozen_external supplies the complete neutral original Gitiles response, decoded API, directory response and binding. MediaRecorder constructor branching at SDK31 does not isolate the Camera1 upgrade risk. No alternative framework prior knowledge is assumed.",
         "status": "scored"
       }
     ],

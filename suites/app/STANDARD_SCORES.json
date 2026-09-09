@@ -1783,38 +1783,26 @@
             "status": "scored"
           },
           {
-            "analysis": "Threshold decision uses verified build census, observed independent responsibility/behavior anchors, and decisive local counterexamples; unknown exhaustive semantic counts are not substituted with zero.",
+            "analysis": "3: reviewed all 13 production Java files and the single-module build boundary. DevCameraActivity stores CameraInterface; preview, capture, lifecycle and callback consumption use that contract. Api2Camera selection occurs at the composition point. Replacing the backend under the existing CameraInterface changes implementation/composition, without changing the unrelated presentation, gyro or media-storage behavior. MediaSaver provides shared storage methods consumed by Activity and backend; GyroOperations encapsulates sensor handling behind GyroListener; CameraInfoCache remains inside the Camera2 backend. No cycle, reverse/source intrusion, or unnecessary cross-boundary implementation propagation was identified in this bounded repository. Direct new at composition is not by itself the 2-band violation under contract v3.5.1. No separate build component, arbitrary protocol substitutability or runtime acceptance is claimed.",
             "evidence": [
               {
-                "claim": "CameraInterface 声明预览、拍照行为接口，但不构成独立构建组件。",
+                "claim": "Activity stores the behavior contract",
                 "commit": "0ba67ea122cb867194f6987ba77879d699adaff8",
-                "end_line": 64,
+                "end_line": 85,
                 "evidence_type": "code",
-                "independent_group": "camera_contract",
-                "path": "src/com/android/devcamera/CameraInterface.java",
-                "source": "repository",
-                "source_sha256": "ade3f9d23a8332a87734b4ad2d7457a9fb150a3011a1fb93f1295886f579aa99",
-                "start_line": 24,
-                "symbol": "public interface CameraInterface {"
-              },
-              {
-                "claim": "Activity 在组合位置直接创建 Api2Camera，替换实现需修改创建点。",
-                "commit": "0ba67ea122cb867194f6987ba77879d699adaff8",
-                "end_line": 245,
-                "evidence_type": "code",
-                "independent_group": "camera_wiring",
+                "independent_group": "src/com/android/devcamera/DevCameraActivity.java:CameraInterface mCamera",
                 "path": "src/com/android/devcamera/DevCameraActivity.java",
                 "source": "repository",
                 "source_sha256": "f7fc7eaebee0bf85f64b4930a09b9afc4048fd43a4d8d71d74247e4eea4b1583",
-                "start_line": 239,
-                "symbol": "mCamera = new Api2Camera(this, frontCamera);"
+                "start_line": 80,
+                "symbol": "CameraInterface mCamera"
               },
               {
-                "claim": "Behavior-bearing camera/listener contract",
+                "claim": "Preview/capture/lifecycle and callback contract",
                 "commit": "0ba67ea122cb867194f6987ba77879d699adaff8",
-                "end_line": 36,
+                "end_line": 110,
                 "evidence_type": "code",
-                "independent_group": "public_contract",
+                "independent_group": "src/com/android/devcamera/CameraInterface.java:public interface CameraInterface",
                 "path": "src/com/android/devcamera/CameraInterface.java",
                 "source": "repository",
                 "source_sha256": "ade3f9d23a8332a87734b4ad2d7457a9fb150a3011a1fb93f1295886f579aa99",
@@ -1822,55 +1810,46 @@
                 "symbol": "public interface CameraInterface"
               },
               {
-                "claim": "Behavior-bearing camera/listener contract",
+                "claim": "Composition followed by contract calls",
                 "commit": "0ba67ea122cb867194f6987ba77879d699adaff8",
-                "end_line": 110,
+                "end_line": 260,
                 "evidence_type": "code",
-                "independent_group": "public_contract",
-                "path": "src/com/android/devcamera/CameraInterface.java",
-                "source": "repository",
-                "source_sha256": "ade3f9d23a8332a87734b4ad2d7457a9fb150a3011a1fb93f1295886f579aa99",
-                "start_line": 98,
-                "symbol": "interface MyCameraCallback"
-              },
-              {
-                "claim": "Behavior-bearing camera/listener contract",
-                "commit": "0ba67ea122cb867194f6987ba77879d699adaff8",
-                "end_line": 22,
-                "evidence_type": "code",
-                "independent_group": "public_contract",
-                "path": "src/com/android/devcamera/GyroListener.java",
-                "source": "repository",
-                "source_sha256": "d3d624f20849d62062e9d774aca8ed6c11bad6c189218a3e951bc724393d021b",
-                "start_line": 18,
-                "symbol": "public interface GyroListener"
-              },
-              {
-                "claim": "UI constructs concrete camera implementation",
-                "commit": "0ba67ea122cb867194f6987ba77879d699adaff8",
-                "end_line": 249,
-                "evidence_type": "code",
-                "independent_group": "additional_source_review",
+                "independent_group": "src/com/android/devcamera/DevCameraActivity.java:new Api2Camera",
                 "path": "src/com/android/devcamera/DevCameraActivity.java",
                 "source": "repository",
                 "source_sha256": "f7fc7eaebee0bf85f64b4930a09b9afc4048fd43a4d8d71d74247e4eea4b1583",
-                "start_line": 239,
-                "symbol": "mCamera = new Api2Camera"
+                "start_line": 231,
+                "symbol": "new Api2Camera"
               },
               {
-                "claim": "Complete scoped production build graph; null semantic totals are not zeros",
+                "claim": "Shared media-storage capability below presentation and backend",
                 "commit": "0ba67ea122cb867194f6987ba77879d699adaff8",
-                "evidence_type": "structured_facts",
-                "independent_group": "complete_production_graph",
-                "json_pointer": "/structured/0",
-                "path": "facts/APP-13.json",
-                "source": "current_head_fact_snapshot"
+                "end_line": 152,
+                "evidence_type": "code",
+                "independent_group": "src/com/android/devcamera/MediaSaver.java:saveJpeg",
+                "path": "src/com/android/devcamera/MediaSaver.java",
+                "source": "repository",
+                "source_sha256": "87813696985a68cae4569e732f5b50f0b2b6976e51c7e33488a9c23654ff11f1",
+                "start_line": 100,
+                "symbol": "saveJpeg"
+              },
+              {
+                "claim": "Sensor behavior encapsulated behind listener",
+                "commit": "0ba67ea122cb867194f6987ba77879d699adaff8",
+                "end_line": 105,
+                "evidence_type": "code",
+                "independent_group": "src/com/android/devcamera/GyroOperations.java:GyroListener",
+                "path": "src/com/android/devcamera/GyroOperations.java",
+                "source": "repository",
+                "source_sha256": "e2ae949001d8be973c8a3b61ceeb5ffa7c32c42e2e3f5b06df48f266134b85da",
+                "start_line": 29,
+                "symbol": "GyroListener"
               }
             ],
             "max_score": 3,
             "name": "architecture.decoupling",
-            "score": 2,
-            "score_reasoning": "CameraInterface提供相机调用边界且单模块图无环；DevCameraActivity直接new Api2Camera，存在可定位具体实现绑定，满足2而非完全隔离3。不能把该一处包内引用冒充跨模块引用数。",
+            "score": 3,
+            "score_reasoning": "3: reviewed all 13 production Java files and the single-module build boundary. DevCameraActivity stores CameraInterface; preview, capture, lifecycle and callback consumption use that contract. Api2Camera selection occurs at the composition point. Replacing the backend under the existing CameraInterface changes implementation/composition, without changing the unrelated presentation, gyro or media-storage behavior. MediaSaver provides shared storage methods consumed by Activity and backend; GyroOperations encapsulates sensor handling behind GyroListener; CameraInfoCache remains inside the Camera2 backend. No cycle, reverse/source intrusion, or unnecessary cross-boundary implementation propagation was identified in this bounded repository. Direct new at composition is not by itself the 2-band violation under contract v3.5.1. No separate build component, arbitrary protocol substitutability or runtime acceptance is claimed.",
             "status": "scored"
           },
           {
@@ -2135,10 +2114,14 @@
         "size_band": "small",
         "total": {
           "max": 40,
-          "score": 8
+          "score": 9
         },
         "tree": "f135a59147608422d814d790f5c62f3af443a7a7",
         "worktree_clean": true
+      },
+      "reference_revision": {
+        "path": "suites/app/revisions/APP-13-v0102.json",
+        "sha256": "c71de127db42c0c09e8ca9c598929aad530f7c9fc8688fcb075750b68b3dae8a"
       }
     },
     {
@@ -4673,7 +4656,7 @@
             "status": "scored"
           },
           {
-            "analysis": "Deprecated Camera1 is concentrated in CameraCapture, but there is no alternate capture implementation; the MediaRecorder constructor fallback does not resolve Camera1 migration, hence 3.",
+            "analysis": "3 retained: CameraCapture directly opens android.hardware.Camera and lacks a replacement capture path. The complete SDK 34 public API at immutable AOSP commit 9736a6d287252a7e7e8feb2a709aa9e10a3caea7, matching video/build.gradle compileSdk 34, declares Camera @Deprecated at line 20352. This definition is an external static prerequisite; source_only is unknown, frozen_external supplies the complete neutral original Gitiles response, decoded API, directory response and binding. MediaRecorder constructor branching at SDK31 does not isolate the Camera1 upgrade risk. No alternative framework prior knowledge is assumed.",
             "evidence": [
               {
                 "claim": "Deprecated Camera1 capture has no alternative capture implementation",
@@ -4696,12 +4679,21 @@
                 "source": "repository",
                 "start_line": 58,
                 "symbol": "requestPermissions"
+              },
+              {
+                "claim": "Immutable complete SDK definition binding; Camera declaration at decoded line 20352",
+                "commit": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
+                "evidence_type": "facts",
+                "independent_group": "sdk_definition",
+                "json_pointer": "/external_static_inputs/android_sdk",
+                "path": "suites/app/evidence/APP-22.json",
+                "source": "reviewed_external_input"
               }
             ],
             "max_score": 10,
             "name": "platform_reuse.platform_upgrade",
             "score": 3,
-            "score_reasoning": "Deprecated Camera1 is concentrated in CameraCapture, but there is no alternate capture implementation; the MediaRecorder constructor fallback does not resolve Camera1 migration, hence 3.",
+            "score_reasoning": "3 retained: CameraCapture directly opens android.hardware.Camera and lacks a replacement capture path. The complete SDK 34 public API at immutable AOSP commit 9736a6d287252a7e7e8feb2a709aa9e10a3caea7, matching video/build.gradle compileSdk 34, declares Camera @Deprecated at line 20352. This definition is an external static prerequisite; source_only is unknown, frozen_external supplies the complete neutral original Gitiles response, decoded API, directory response and binding. MediaRecorder constructor branching at SDK31 does not isolate the Camera1 upgrade risk. No alternative framework prior knowledge is assumed.",
             "status": "scored"
           }
         ],
@@ -4718,7 +4710,7 @@
     "leaf_count": 88,
     "max_score": 440,
     "repository_count": 11,
-    "score": 141
+    "score": 142
   },
   "type_id": "app"
 }

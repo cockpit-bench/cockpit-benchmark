@@ -1,0 +1,1795 @@
+{
+  "reference_id": "v0.10.2",
+  "types": {
+    "app": {
+      "bands": [
+        {
+          "count": 2,
+          "leaf": "architecture.componentization",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-13",
+            "APP-21"
+          ],
+          "score": 0
+        },
+        {
+          "count": 2,
+          "leaf": "architecture.componentization",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-03",
+            "APP-17"
+          ],
+          "score": 1
+        },
+        {
+          "count": 2,
+          "leaf": "architecture.componentization",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-15",
+            "APP-22"
+          ],
+          "score": 3
+        },
+        {
+          "count": 5,
+          "leaf": "architecture.componentization",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-01",
+            "APP-02",
+            "APP-11",
+            "APP-14",
+            "APP-16"
+          ],
+          "score": 5
+        },
+        {
+          "count": 0,
+          "leaf": "architecture.decoupling",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 0,
+          "leaf": "architecture.decoupling",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 1
+        },
+        {
+          "count": 8,
+          "leaf": "architecture.decoupling",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-01",
+            "APP-03",
+            "APP-11",
+            "APP-14",
+            "APP-15",
+            "APP-16",
+            "APP-17",
+            "APP-22"
+          ],
+          "score": 2
+        },
+        {
+          "count": 3,
+          "leaf": "architecture.decoupling",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-02",
+            "APP-13",
+            "APP-21"
+          ],
+          "score": 3
+        },
+        {
+          "count": 2,
+          "leaf": "architecture.modularization",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-13",
+            "APP-21"
+          ],
+          "score": 0
+        },
+        {
+          "count": 2,
+          "leaf": "architecture.modularization",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-03",
+            "APP-17"
+          ],
+          "score": 1
+        },
+        {
+          "count": 4,
+          "leaf": "architecture.modularization",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-14",
+            "APP-15",
+            "APP-16",
+            "APP-22"
+          ],
+          "score": 2
+        },
+        {
+          "count": 3,
+          "leaf": "architecture.modularization",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-01",
+            "APP-02",
+            "APP-11"
+          ],
+          "score": 3
+        },
+        {
+          "count": 2,
+          "leaf": "compilation.api_version_management",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-15",
+            "APP-17"
+          ],
+          "score": 0
+        },
+        {
+          "count": 9,
+          "leaf": "compilation.api_version_management",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-01",
+            "APP-02",
+            "APP-03",
+            "APP-11",
+            "APP-13",
+            "APP-14",
+            "APP-16",
+            "APP-21",
+            "APP-22"
+          ],
+          "score": 1
+        },
+        {
+          "count": 0,
+          "leaf": "compilation.api_version_management",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 2
+        },
+        {
+          "count": 0,
+          "leaf": "compilation.api_version_management",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 6,
+          "leaf": "compilation.ci_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-03",
+            "APP-13",
+            "APP-16",
+            "APP-17",
+            "APP-21",
+            "APP-22"
+          ],
+          "score": 0
+        },
+        {
+          "count": 2,
+          "leaf": "compilation.ci_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-14",
+            "APP-15"
+          ],
+          "score": 1
+        },
+        {
+          "count": 2,
+          "leaf": "compilation.ci_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-02",
+            "APP-11"
+          ],
+          "score": 2
+        },
+        {
+          "count": 1,
+          "leaf": "compilation.ci_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-01"
+          ],
+          "score": 3
+        },
+        {
+          "count": 3,
+          "leaf": "compilation.compilation_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-14",
+            "APP-15",
+            "APP-17"
+          ],
+          "score": 0
+        },
+        {
+          "count": 1,
+          "leaf": "compilation.compilation_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-16"
+          ],
+          "score": 1
+        },
+        {
+          "count": 7,
+          "leaf": "compilation.compilation_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-01",
+            "APP-02",
+            "APP-03",
+            "APP-11",
+            "APP-13",
+            "APP-21",
+            "APP-22"
+          ],
+          "score": 2
+        },
+        {
+          "count": 0,
+          "leaf": "compilation.compilation_independence",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 2,
+          "leaf": "platform_reuse.platform_upgrade",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-14",
+            "APP-15"
+          ],
+          "score": 0
+        },
+        {
+          "count": 8,
+          "leaf": "platform_reuse.platform_upgrade",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-01",
+            "APP-02",
+            "APP-03",
+            "APP-11",
+            "APP-13",
+            "APP-16",
+            "APP-17",
+            "APP-22"
+          ],
+          "score": 3
+        },
+        {
+          "count": 1,
+          "leaf": "platform_reuse.platform_upgrade",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-21"
+          ],
+          "score": 8
+        },
+        {
+          "count": 0,
+          "leaf": "platform_reuse.platform_upgrade",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 10
+        },
+        {
+          "count": 11,
+          "leaf": "platform_reuse.release_branch_strategy",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "APP-01",
+            "APP-02",
+            "APP-03",
+            "APP-11",
+            "APP-13",
+            "APP-14",
+            "APP-15",
+            "APP-16",
+            "APP-17",
+            "APP-21",
+            "APP-22"
+          ],
+          "score": 0
+        },
+        {
+          "count": 0,
+          "leaf": "platform_reuse.release_branch_strategy",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "platform_reuse.release_branch_strategy",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 8
+        },
+        {
+          "count": 0,
+          "leaf": "platform_reuse.release_branch_strategy",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 10
+        }
+      ],
+      "conditional_mode_diagnostics": [
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 77,
+          "other_leaf_hits": 61,
+          "predictor": "architecture.componentization"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 77,
+          "other_leaf_hits": 53,
+          "predictor": "architecture.decoupling"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 77,
+          "other_leaf_hits": 63,
+          "predictor": "architecture.modularization"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 77,
+          "other_leaf_hits": 52,
+          "predictor": "compilation.api_version_management"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 77,
+          "other_leaf_hits": 60,
+          "predictor": "compilation.ci_independence"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 77,
+          "other_leaf_hits": 56,
+          "predictor": "compilation.compilation_independence"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 77,
+          "other_leaf_hits": 58,
+          "predictor": "platform_reuse.platform_upgrade"
+        }
+      ],
+      "constant_leaves": [
+        "platform_reuse.release_branch_strategy"
+      ],
+      "deterministic_associations": [],
+      "independent_holdout": {
+        "reason": "Multiple recorded groups alone do not prove unexposed construction or independent adjudication.",
+        "status": "not_certified"
+      },
+      "leaf_count": 88,
+      "legal_band_cells": 32,
+      "limits": [
+        "Missing bands remain unmeasured; no scores or samples are manufactured to fill cells.",
+        "Original per-repository internal scans are unavailable; no representativeness certification.",
+        "Public current references remain Development/Regression, not a blind holdout."
+      ],
+      "modal_baseline": {
+        "denominator": 88,
+        "hits": 58,
+        "status": "in_sample_only"
+      },
+      "observed_band_cells": 23,
+      "repository_count": 11,
+      "schema": "population-diagnostics-v1",
+      "source_group_count": 10,
+      "source_groups": [
+        [
+          "APP-01"
+        ],
+        [
+          "APP-02"
+        ],
+        [
+          "APP-03"
+        ],
+        [
+          "APP-11"
+        ],
+        [
+          "APP-13"
+        ],
+        [
+          "APP-14"
+        ],
+        [
+          "APP-15"
+        ],
+        [
+          "APP-16"
+        ],
+        [
+          "APP-17"
+        ],
+        [
+          "APP-21",
+          "APP-22"
+        ]
+      ]
+    },
+    "fw": {
+      "bands": [
+        {
+          "count": 2,
+          "leaf": "compilation.api_version_management",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-15",
+            "FW-18"
+          ],
+          "score": 0
+        },
+        {
+          "count": 3,
+          "leaf": "compilation.api_version_management",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-10",
+            "FW-21",
+            "FW-22"
+          ],
+          "score": 1
+        },
+        {
+          "count": 6,
+          "leaf": "compilation.api_version_management",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-02",
+            "FW-03",
+            "FW-07",
+            "FW-08",
+            "FW-14",
+            "FW-16"
+          ],
+          "score": 2
+        },
+        {
+          "count": 0,
+          "leaf": "compilation.api_version_management",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 2,
+          "leaf": "compilation.ci_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-21",
+            "FW-22"
+          ],
+          "score": 0
+        },
+        {
+          "count": 9,
+          "leaf": "compilation.ci_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-02",
+            "FW-03",
+            "FW-07",
+            "FW-08",
+            "FW-10",
+            "FW-14",
+            "FW-15",
+            "FW-16",
+            "FW-18"
+          ],
+          "score": 1
+        },
+        {
+          "count": 0,
+          "leaf": "compilation.ci_independence",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 2
+        },
+        {
+          "count": 0,
+          "leaf": "compilation.ci_independence",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 7,
+          "leaf": "compilation.compilation_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-02",
+            "FW-03",
+            "FW-07",
+            "FW-08",
+            "FW-10",
+            "FW-15",
+            "FW-18"
+          ],
+          "score": 0
+        },
+        {
+          "count": 2,
+          "leaf": "compilation.compilation_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-14",
+            "FW-16"
+          ],
+          "score": 1
+        },
+        {
+          "count": 2,
+          "leaf": "compilation.compilation_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-21",
+            "FW-22"
+          ],
+          "score": 2
+        },
+        {
+          "count": 0,
+          "leaf": "compilation.compilation_independence",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 1,
+          "leaf": "platform_reuse.platform_upgrade",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-16"
+          ],
+          "score": 0
+        },
+        {
+          "count": 8,
+          "leaf": "platform_reuse.platform_upgrade",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-02",
+            "FW-03",
+            "FW-07",
+            "FW-08",
+            "FW-10",
+            "FW-14",
+            "FW-15",
+            "FW-18"
+          ],
+          "score": 3
+        },
+        {
+          "count": 2,
+          "leaf": "platform_reuse.platform_upgrade",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-21",
+            "FW-22"
+          ],
+          "score": 8
+        },
+        {
+          "count": 0,
+          "leaf": "platform_reuse.platform_upgrade",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 10
+        },
+        {
+          "count": 11,
+          "leaf": "platform_reuse.release_branch_strategy",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-02",
+            "FW-03",
+            "FW-07",
+            "FW-08",
+            "FW-10",
+            "FW-14",
+            "FW-15",
+            "FW-16",
+            "FW-18",
+            "FW-21",
+            "FW-22"
+          ],
+          "score": 0
+        },
+        {
+          "count": 0,
+          "leaf": "platform_reuse.release_branch_strategy",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "platform_reuse.release_branch_strategy",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 8
+        },
+        {
+          "count": 0,
+          "leaf": "platform_reuse.release_branch_strategy",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 10
+        },
+        {
+          "count": 1,
+          "leaf": "quality.integration_test",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-21"
+          ],
+          "score": 0
+        },
+        {
+          "count": 9,
+          "leaf": "quality.integration_test",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-02",
+            "FW-03",
+            "FW-07",
+            "FW-08",
+            "FW-10",
+            "FW-14",
+            "FW-15",
+            "FW-16",
+            "FW-18"
+          ],
+          "score": 1
+        },
+        {
+          "count": 0,
+          "leaf": "quality.integration_test",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 2
+        },
+        {
+          "count": 1,
+          "leaf": "quality.integration_test",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-22"
+          ],
+          "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "solid_principle.dependency_inversion",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 3,
+          "leaf": "solid_principle.dependency_inversion",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-03",
+            "FW-14",
+            "FW-18"
+          ],
+          "score": 1
+        },
+        {
+          "count": 8,
+          "leaf": "solid_principle.dependency_inversion",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-02",
+            "FW-07",
+            "FW-08",
+            "FW-10",
+            "FW-15",
+            "FW-16",
+            "FW-21",
+            "FW-22"
+          ],
+          "score": 2
+        },
+        {
+          "count": 0,
+          "leaf": "solid_principle.dependency_inversion",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "solid_principle.dependency_inversion",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 4
+        },
+        {
+          "count": 0,
+          "leaf": "solid_principle.interface_segregation",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 1,
+          "leaf": "solid_principle.interface_segregation",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-18"
+          ],
+          "score": 1
+        },
+        {
+          "count": 4,
+          "leaf": "solid_principle.interface_segregation",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-03",
+            "FW-08",
+            "FW-14",
+            "FW-16"
+          ],
+          "score": 2
+        },
+        {
+          "count": 6,
+          "leaf": "solid_principle.interface_segregation",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-02",
+            "FW-07",
+            "FW-10",
+            "FW-15",
+            "FW-21",
+            "FW-22"
+          ],
+          "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "solid_principle.interface_segregation",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 4
+        },
+        {
+          "count": 3,
+          "leaf": "solid_principle.liskov_substitution",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-08",
+            "FW-14",
+            "FW-18"
+          ],
+          "score": 0
+        },
+        {
+          "count": 0,
+          "leaf": "solid_principle.liskov_substitution",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 1
+        },
+        {
+          "count": 1,
+          "leaf": "solid_principle.liskov_substitution",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-22"
+          ],
+          "score": 2
+        },
+        {
+          "count": 7,
+          "leaf": "solid_principle.liskov_substitution",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-02",
+            "FW-03",
+            "FW-07",
+            "FW-10",
+            "FW-15",
+            "FW-16",
+            "FW-21"
+          ],
+          "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "solid_principle.liskov_substitution",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 4
+        },
+        {
+          "count": 0,
+          "leaf": "solid_principle.open_closed",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 2,
+          "leaf": "solid_principle.open_closed",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-08",
+            "FW-18"
+          ],
+          "score": 1
+        },
+        {
+          "count": 7,
+          "leaf": "solid_principle.open_closed",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-03",
+            "FW-07",
+            "FW-14",
+            "FW-15",
+            "FW-16",
+            "FW-21",
+            "FW-22"
+          ],
+          "score": 2
+        },
+        {
+          "count": 2,
+          "leaf": "solid_principle.open_closed",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-02",
+            "FW-10"
+          ],
+          "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "solid_principle.open_closed",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 4
+        },
+        {
+          "count": 0,
+          "leaf": "solid_principle.single_responsibility",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 2,
+          "leaf": "solid_principle.single_responsibility",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-14",
+            "FW-18"
+          ],
+          "score": 1
+        },
+        {
+          "count": 8,
+          "leaf": "solid_principle.single_responsibility",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-02",
+            "FW-03",
+            "FW-07",
+            "FW-08",
+            "FW-10",
+            "FW-15",
+            "FW-16",
+            "FW-22"
+          ],
+          "score": 2
+        },
+        {
+          "count": 1,
+          "leaf": "solid_principle.single_responsibility",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "FW-21"
+          ],
+          "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "solid_principle.single_responsibility",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 4
+        }
+      ],
+      "conditional_mode_diagnostics": [
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 110,
+          "other_leaf_hits": 85,
+          "predictor": "compilation.api_version_management"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 110,
+          "other_leaf_hits": 84,
+          "predictor": "compilation.ci_independence"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 110,
+          "other_leaf_hits": 88,
+          "predictor": "compilation.compilation_independence"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 110,
+          "other_leaf_hits": 87,
+          "predictor": "platform_reuse.platform_upgrade"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 110,
+          "other_leaf_hits": 87,
+          "predictor": "quality.integration_test"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 110,
+          "other_leaf_hits": 82,
+          "predictor": "solid_principle.dependency_inversion"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 110,
+          "other_leaf_hits": 86,
+          "predictor": "solid_principle.interface_segregation"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 110,
+          "other_leaf_hits": 89,
+          "predictor": "solid_principle.liskov_substitution"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 110,
+          "other_leaf_hits": 82,
+          "predictor": "solid_principle.open_closed"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 110,
+          "other_leaf_hits": 88,
+          "predictor": "solid_principle.single_responsibility"
+        }
+      ],
+      "constant_leaves": [
+        "platform_reuse.release_branch_strategy"
+      ],
+      "deterministic_associations": [],
+      "independent_holdout": {
+        "reason": "Multiple recorded groups alone do not prove unexposed construction or independent adjudication.",
+        "status": "not_certified"
+      },
+      "leaf_count": 121,
+      "legal_band_cells": 49,
+      "limits": [
+        "Missing bands remain unmeasured; no scores or samples are manufactured to fill cells.",
+        "Original per-repository internal scans are unavailable; no representativeness certification.",
+        "Public current references remain Development/Regression, not a blind holdout."
+      ],
+      "modal_baseline": {
+        "denominator": 121,
+        "hits": 86,
+        "status": "in_sample_only"
+      },
+      "observed_band_cells": 29,
+      "repository_count": 11,
+      "schema": "population-diagnostics-v1",
+      "source_group_count": 10,
+      "source_groups": [
+        [
+          "FW-16"
+        ],
+        [
+          "FW-21",
+          "FW-22"
+        ],
+        [
+          "FW-02"
+        ],
+        [
+          "FW-03"
+        ],
+        [
+          "FW-07"
+        ],
+        [
+          "FW-08"
+        ],
+        [
+          "FW-10"
+        ],
+        [
+          "FW-14"
+        ],
+        [
+          "FW-15"
+        ],
+        [
+          "FW-18"
+        ]
+      ]
+    },
+    "new-energy-matlab": {
+      "bands": [
+        {
+          "count": 0,
+          "leaf": "build_independence",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 0,
+          "leaf": "build_independence",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 1
+        },
+        {
+          "count": 0,
+          "leaf": "build_independence",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 2
+        },
+        {
+          "count": 11,
+          "leaf": "build_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-01",
+            "ML-02",
+            "ML-03",
+            "ML-04",
+            "ML-05",
+            "ML-06",
+            "ML-07",
+            "ML-08",
+            "ML-09",
+            "NEM-10",
+            "NEM-11"
+          ],
+          "score": 3
+        },
+        {
+          "count": 1,
+          "leaf": "dataflow",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEM-11"
+          ],
+          "score": 0
+        },
+        {
+          "count": 5,
+          "leaf": "dataflow",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-03",
+            "ML-05",
+            "ML-06",
+            "ML-08",
+            "ML-09"
+          ],
+          "score": 1
+        },
+        {
+          "count": 4,
+          "leaf": "dataflow",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-02",
+            "ML-04",
+            "ML-07",
+            "NEM-10"
+          ],
+          "score": 2
+        },
+        {
+          "count": 1,
+          "leaf": "dataflow",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-01"
+          ],
+          "score": 3
+        },
+        {
+          "count": 3,
+          "leaf": "device_specificity",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-03",
+            "ML-06",
+            "ML-09"
+          ],
+          "score": 0
+        },
+        {
+          "count": 0,
+          "leaf": "device_specificity",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 3,
+          "leaf": "device_specificity",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-02",
+            "ML-05",
+            "ML-08"
+          ],
+          "score": 8
+        },
+        {
+          "count": 5,
+          "leaf": "device_specificity",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-01",
+            "ML-04",
+            "ML-07",
+            "NEM-10",
+            "NEM-11"
+          ],
+          "score": 10
+        },
+        {
+          "count": 0,
+          "leaf": "directory",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 4,
+          "leaf": "directory",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-03",
+            "ML-06",
+            "ML-09",
+            "NEM-11"
+          ],
+          "score": 1
+        },
+        {
+          "count": 0,
+          "leaf": "directory",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 7,
+          "leaf": "directory",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-01",
+            "ML-02",
+            "ML-04",
+            "ML-05",
+            "ML-07",
+            "ML-08",
+            "NEM-10"
+          ],
+          "score": 5
+        },
+        {
+          "count": 3,
+          "leaf": "hierarchy",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-03",
+            "ML-06",
+            "ML-09"
+          ],
+          "score": 0
+        },
+        {
+          "count": 4,
+          "leaf": "hierarchy",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-02",
+            "ML-05",
+            "ML-08",
+            "NEM-11"
+          ],
+          "score": 1
+        },
+        {
+          "count": 3,
+          "leaf": "hierarchy",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-04",
+            "ML-07",
+            "NEM-10"
+          ],
+          "score": 2
+        },
+        {
+          "count": 1,
+          "leaf": "hierarchy",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-01"
+          ],
+          "score": 3
+        },
+        {
+          "count": 1,
+          "leaf": "interface",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEM-11"
+          ],
+          "score": 0
+        },
+        {
+          "count": 0,
+          "leaf": "interface",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 1
+        },
+        {
+          "count": 6,
+          "leaf": "interface",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-02",
+            "ML-03",
+            "ML-05",
+            "ML-06",
+            "ML-08",
+            "ML-09"
+          ],
+          "score": 2
+        },
+        {
+          "count": 4,
+          "leaf": "interface",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-01",
+            "ML-04",
+            "ML-07",
+            "NEM-10"
+          ],
+          "score": 3
+        },
+        {
+          "count": 2,
+          "leaf": "model_version",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-03",
+            "ML-09"
+          ],
+          "score": 0
+        },
+        {
+          "count": 4,
+          "leaf": "model_version",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-02",
+            "ML-05",
+            "ML-06",
+            "ML-08"
+          ],
+          "score": 1
+        },
+        {
+          "count": 1,
+          "leaf": "model_version",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEM-11"
+          ],
+          "score": 2
+        },
+        {
+          "count": 4,
+          "leaf": "model_version",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-01",
+            "ML-04",
+            "ML-07",
+            "NEM-10"
+          ],
+          "score": 3
+        },
+        {
+          "count": 3,
+          "leaf": "naming",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-03",
+            "ML-06",
+            "ML-09"
+          ],
+          "score": 0
+        },
+        {
+          "count": 1,
+          "leaf": "naming",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEM-11"
+          ],
+          "score": 1
+        },
+        {
+          "count": 3,
+          "leaf": "naming",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-02",
+            "ML-05",
+            "ML-08"
+          ],
+          "score": 3
+        },
+        {
+          "count": 4,
+          "leaf": "naming",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-01",
+            "ML-04",
+            "ML-07",
+            "NEM-10"
+          ],
+          "score": 5
+        },
+        {
+          "count": 5,
+          "leaf": "parameter_management",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-02",
+            "ML-03",
+            "ML-05",
+            "ML-06",
+            "ML-09"
+          ],
+          "score": 0
+        },
+        {
+          "count": 1,
+          "leaf": "parameter_management",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-08"
+          ],
+          "score": 1
+        },
+        {
+          "count": 1,
+          "leaf": "parameter_management",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEM-11"
+          ],
+          "score": 3
+        },
+        {
+          "count": 4,
+          "leaf": "parameter_management",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-01",
+            "ML-04",
+            "ML-07",
+            "NEM-10"
+          ],
+          "score": 5
+        },
+        {
+          "count": 0,
+          "leaf": "release_branches",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 3,
+          "leaf": "release_branches",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-03",
+            "ML-06",
+            "ML-09"
+          ],
+          "score": 3
+        },
+        {
+          "count": 3,
+          "leaf": "release_branches",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-02",
+            "ML-05",
+            "ML-08"
+          ],
+          "score": 8
+        },
+        {
+          "count": 5,
+          "leaf": "release_branches",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-01",
+            "ML-04",
+            "ML-07",
+            "NEM-10",
+            "NEM-11"
+          ],
+          "score": 10
+        },
+        {
+          "count": 0,
+          "leaf": "reuse",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 10,
+          "leaf": "reuse",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-02",
+            "ML-03",
+            "ML-04",
+            "ML-05",
+            "ML-06",
+            "ML-07",
+            "ML-08",
+            "ML-09",
+            "NEM-10",
+            "NEM-11"
+          ],
+          "score": 1
+        },
+        {
+          "count": 1,
+          "leaf": "reuse",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-01"
+          ],
+          "score": 2
+        },
+        {
+          "count": 0,
+          "leaf": "reuse",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "unit_test",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 2,
+          "leaf": "unit_test",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEM-10",
+            "NEM-11"
+          ],
+          "score": 1
+        },
+        {
+          "count": 2,
+          "leaf": "unit_test",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-01",
+            "ML-03"
+          ],
+          "score": 3
+        },
+        {
+          "count": 7,
+          "leaf": "unit_test",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-02",
+            "ML-04",
+            "ML-05",
+            "ML-06",
+            "ML-07",
+            "ML-08",
+            "ML-09"
+          ],
+          "score": 5
+        },
+        {
+          "count": 3,
+          "leaf": "version_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-03",
+            "ML-06",
+            "ML-09"
+          ],
+          "score": 0
+        },
+        {
+          "count": 3,
+          "leaf": "version_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-02",
+            "ML-05",
+            "ML-08"
+          ],
+          "score": 1
+        },
+        {
+          "count": 0,
+          "leaf": "version_independence",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 2
+        },
+        {
+          "count": 5,
+          "leaf": "version_independence",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "ML-01",
+            "ML-04",
+            "ML-07",
+            "NEM-10",
+            "NEM-11"
+          ],
+          "score": 3
+        }
+      ],
+      "conditional_mode_diagnostics": [
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 107,
+          "predictor": "dataflow"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 115,
+          "predictor": "device_specificity"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 89,
+          "predictor": "directory"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 117,
+          "predictor": "hierarchy"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 104,
+          "predictor": "interface"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 118,
+          "predictor": "model_version"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 123,
+          "predictor": "naming"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 111,
+          "predictor": "parameter_management"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 115,
+          "predictor": "release_branches"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 74,
+          "predictor": "reuse"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 81,
+          "predictor": "unit_test"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 115,
+          "predictor": "version_independence"
+        }
+      ],
+      "constant_leaves": [
+        "build_independence"
+      ],
+      "deterministic_associations": [
+        {
+          "left": "device_specificity",
+          "limits": "Observed categorical association, not causality or candidate accuracy.",
+          "pairs": [
+            {
+              "count": 3,
+              "left": 0,
+              "right": 3
+            },
+            {
+              "count": 3,
+              "left": 8,
+              "right": 8
+            },
+            {
+              "count": 5,
+              "left": 10,
+              "right": 10
+            }
+          ],
+          "right": "release_branches",
+          "status": "bidirectional_deterministic_in_sample"
+        },
+        {
+          "left": "device_specificity",
+          "limits": "Observed categorical association, not causality or candidate accuracy.",
+          "pairs": [
+            {
+              "count": 3,
+              "left": 0,
+              "right": 0
+            },
+            {
+              "count": 3,
+              "left": 8,
+              "right": 1
+            },
+            {
+              "count": 5,
+              "left": 10,
+              "right": 3
+            }
+          ],
+          "right": "version_independence",
+          "status": "bidirectional_deterministic_in_sample"
+        },
+        {
+          "left": "release_branches",
+          "limits": "Observed categorical association, not causality or candidate accuracy.",
+          "pairs": [
+            {
+              "count": 3,
+              "left": 3,
+              "right": 0
+            },
+            {
+              "count": 3,
+              "left": 8,
+              "right": 1
+            },
+            {
+              "count": 5,
+              "left": 10,
+              "right": 3
+            }
+          ],
+          "right": "version_independence",
+          "status": "bidirectional_deterministic_in_sample"
+        }
+      ],
+      "independent_holdout": {
+        "reason": "All repositories are in one recorded source/dependency/construction closure.",
+        "status": "structurally_unavailable"
+      },
+      "leaf_count": 143,
+      "legal_band_cells": 52,
+      "limits": [
+        "Missing bands remain unmeasured; no scores or samples are manufactured to fill cells.",
+        "Original per-repository internal scans are unavailable; no representativeness certification.",
+        "Public current references remain Development/Regression, not a blind holdout."
+      ],
+      "modal_baseline": {
+        "denominator": 143,
+        "hits": 78,
+        "status": "in_sample_only"
+      },
+      "observed_band_cells": 40,
+      "repository_count": 11,
+      "schema": "population-diagnostics-v1",
+      "source_group_count": 1,
+      "source_groups": [
+        [
+          "ML-01",
+          "ML-02",
+          "ML-03",
+          "ML-04",
+          "ML-05",
+          "ML-06",
+          "ML-07",
+          "ML-08",
+          "ML-09",
+          "NEM-10",
+          "NEM-11"
+        ]
+      ]
+    }
+  }
+}

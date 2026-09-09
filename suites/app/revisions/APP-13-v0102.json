@@ -1,0 +1,29 @@
+{
+  "baseline_reference_sha256": "88181029a07b29e8fd1fda96b31cdee1a61548cfac422d62b3189f3080f46bd3",
+  "changes": [
+    {
+      "after_sha256": "5208ce8872c6c733763e56d6c0560e63bbff22425832545f2640e0640b970710",
+      "before_sha256": "affab3309e7465922d786d8a86a87d70aeab6c94cfd800fb4eb488e3bb5d43d6",
+      "leaf": "architecture.decoupling",
+      "reason": "3: reviewed all 13 production Java files and the single-module build boundary. DevCameraActivity stores CameraInterface; preview, capture, lifecycle and callback consumption use that contract. Api2Camera selection occurs at the composition point. Replacing the backend under the existing CameraInterface changes implementation/composition, without changing the unrelated presentation, gyro or media-storage behavior. MediaSaver provides shared storage methods consumed by Activity and backend; GyroOperations encapsulates sensor handling behind GyroListener; CameraInfoCache remains inside the Camera2 backend. No cycle, reverse/source intrusion, or unnecessary cross-boundary implementation propagation was identified in this bounded repository. Direct new at composition is not by itself the 2-band violation under contract v3.5.1. No separate build component, arbitrary protocol substitutability or runtime acceptance is claimed.",
+      "rule_inputs": {
+        "core_mutually_coupled_without_stable_direction": false,
+        "has_circular_dependency": false,
+        "has_cross_module_source_intrusion": false,
+        "has_hardcoded_implementation_dependency": false,
+        "has_identifiable_boundaries": true,
+        "has_reverse_dependency": false,
+        "implementation_changes_do_not_require_unrelated_module_changes": true,
+        "multiple_direct_cross_boundary_or_propagation_violations": false,
+        "shared_capability_downshift_or_injection": true,
+        "stable_dependency_direction": true
+      }
+    }
+  ],
+  "contract_sha256": "2bb21ed67c9e47c3cf7691bc2a526fa3e2c41b410017fa4faa41a02132da7b91",
+  "current_reference_sha256": "fdc76d508e2ee70e1bc614623a13f78e69a40dcf4e05046d16a5109269a04fb4",
+  "head": "0ba67ea122cb867194f6987ba77879d699adaff8",
+  "repository_id": "APP-13",
+  "schema": "current-reference-revision-v1",
+  "tree": "f135a59147608422d814d790f5c62f3af443a7a7"
+}

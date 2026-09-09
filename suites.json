@@ -12,7 +12,7 @@
     {
       "canonical_scores": {
         "path": "suites/app/STANDARD_SCORES.json",
-        "sha256": "e1a60a400e486df47ed9be7bcc52e025b041ce4d085087e861cc9891ea882e7f"
+        "sha256": "f9ef83d2e95632ad1ae3c7eef369b93a152fe1bd55fe6daef854e80d49e0cbe3"
       },
       "contract": {
         "path": "SCORE_RULES.md",
@@ -23,20 +23,20 @@
       "leaf_count": 88,
       "manifest": {
         "path": "suites/app/manifest.json",
-        "sha256": "05b7cb242b8bcf41df06f8a7adc8f710cc4018e01af7cfad00814f0e99e68b3c"
+        "sha256": "bac5e0da66faf6207aee44179ebab41f6a0bc7279e517f5acb6ecfc5f86cf361"
       },
       "max_score": 440,
       "name": "APP",
       "published_repositories": 11,
       "repository_count": 11,
-      "score": 141,
+      "score": 142,
       "status": "published",
       "technology": "Android"
     },
     {
       "canonical_scores": {
         "path": "suites/fw/STANDARD_SCORES.json",
-        "sha256": "6a006d971658a10a818a61b862b13b3b3190793739fb74504cd0ff3cfa790821"
+        "sha256": "4c5a7a6cf7ebcbcc93c901caf3709cddc14571c08ae14f4aa4c929321a48624b"
       },
       "contract": {
         "path": "SCORE_RULES.md",
@@ -60,7 +60,7 @@
     {
       "canonical_scores": {
         "path": "suites/new-energy-matlab/STANDARD_SCORES.json",
-        "sha256": "5567bcfbeec8c7d1df594e20808628c2ab74dd6c612440ca00d5db42881942e9"
+        "sha256": "572cd408913d24b8d174301b9697fa0583db35d8b4cbc9474ae54aae9899350e"
       },
       "contract": {
         "path": "suites/matlab-simulink/contract-index.json",
@@ -71,13 +71,13 @@
       "leaf_count": 143,
       "manifest": {
         "path": "suites/new-energy-matlab/manifest.json",
-        "sha256": "e637ed185d2345ab0320adf56329cc910b03f72f700cc6c0aba48aab56c70185"
+        "sha256": "b35a07d754eaeb13797eeeaeac8a445663911b21360aa787152f27775d0604a6"
       },
       "max_score": 671,
       "name": "New Energy MATLAB",
       "published_repositories": 11,
       "repository_count": 11,
-      "score": 429,
+      "score": 427,
       "status": "published",
       "technology": "MATLAB / Simulink"
     }

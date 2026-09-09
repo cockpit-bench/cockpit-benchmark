@@ -1,0 +1,60 @@
+{
+  "rebinding": {
+    "current_head": "8b4badff6b9e3b96f6cb3d1c9ccf624e4ef6d784",
+    "executed_head": "d6300ac2d7c433d574efd9dbf7f595457ba99ee7",
+    "inputs": [
+      {
+        "blob": "8387ce79ad7a1d68f173e5b4d396b261b87fcd04",
+        "path": "service/src/com/android/car/pm/WindowDumpParser.java",
+        "sha256": "1ebecb0eb4e73cab614d1c74999dacd663b9fa9d4ce0171b0b5921e4952e2ba3"
+      },
+      {
+        "blob": "708e20461163120008a6825ab81e27d57e33fbf4",
+        "path": "service/src/com/android/car/util/SetMultimap.java",
+        "sha256": "3643a7353773743aecd9645bdee1a90677c8776cc8538e21b5f36486916f6444"
+      },
+      {
+        "blob": "2bd230f8a071bc20495d3dd27b3c1c7a13a18195",
+        "path": "service/src/com/android/car/util/SlidingWindow.java",
+        "sha256": "e68b41004434d695b42c8cf5e304ffcfaf8fb7afeebcf57dff3d75d4b29b09bb"
+      },
+      {
+        "blob": "006b6cd934e553686c00fc27b961ea2abe962200",
+        "path": "service/src/com/android/car/watchdog/TimeSource.java",
+        "sha256": "5718ed67d076954be44c085de2929e4eecb3731fafca2726268667c9454a8907"
+      },
+      {
+        "blob": "2ce4cd54e213cb2553b6af496e349acdba02eafa",
+        "path": "host-tests/pom.xml",
+        "sha256": "2e12045c82e97ef22405ab2347240105ac7517982026be59e29607bf96d4196a"
+      },
+      {
+        "blob": "b64c6e52a9f73a85f567115963373a9b12f671c4",
+        "path": "tests/carservice_unit_test/src/com/android/car/pm/WindowDumpParserTest.java",
+        "sha256": "58b91dcd74df37be0ae60141c082bdf045050ee54f414b78035dc50f4f459951"
+      },
+      {
+        "blob": "86f57de8866985724cbc3a060b709002970ff266",
+        "path": "tests/carservice_unit_test/src/com/android/car/SetMultimapTest.java",
+        "sha256": "fe4f278ea8b1e311b85c47d163f4699109637e1a64a5ae75987c0e5b2c1f3994"
+      },
+      {
+        "blob": "31655c609876e890090981aa6e10163364a26e08",
+        "path": "tests/carservice_unit_test/src/com/android/car/SlidingWindowTest.java",
+        "sha256": "805cfcc80fbfd0e3b21e9916b32665901c597c5347a3dabddd4aff92b8d6135b"
+      },
+      {
+        "blob": "8450a7bb2dac1f3341fd5c94746187e2f887a7fe",
+        "path": "tests/carservice_unit_test/src/com/android/car/watchdog/TimeSourceTest.java",
+        "sha256": "6250258976411d46998e5fcdbade9473ec3d6b4e2adb02ef01f43ec7d50dd4ab"
+      }
+    ],
+    "original_report": {
+      "canonical_json_sha256": "62128837bafcd5112c6a76df435f428a83b6c6d6ba368ddd71e38e4b06d32afc",
+      "container_path": "facts/FW-14.json",
+      "json_pointer": "/structured/0"
+    },
+    "scope": "Four production files, one Maven entry and four test sources have identical Git blobs at executed and current HEAD. Historical 25 passing host JVM tests are reused only for this unchanged input closure; no final-HEAD rerun, Android integration or whole-tree build is claimed."
+  },
+  "schema": "execution-rebinding-v1"
+}

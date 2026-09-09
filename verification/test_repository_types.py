@@ -91,5 +91,25 @@ class LocalRestoreTests(unittest.TestCase):
         self.git('tag','unadvertised')
         with self.assertRaises(suites.InvalidSuite):self.restore()
         self.assertFalse(self.dest.exists())
+    def test_completed_legacy_marker_survives_evidence_metadata_revision(self):
+        self.row['evidence']={'path':'old-evidence.json','sha256':'b'*64}
+        self.restore();marker=self.dest/'.restore-APP-21.json'
+        marker.write_bytes(rt.encoded({'binding':rt.sha(rt.encoded(self.row)),'phase':'complete'}))
+        self.row['evidence']={'path':'new-evidence.json','sha256':'a'*64}
+        self.assertEqual(len(self.restore(resume=True)),1)
+        self.assertEqual(rt.read(marker)['binding'],rt.restore_binding(self.row))
+    def test_changed_incomplete_legacy_marker_is_not_rebound(self):
+        self.row['evidence']={'path':'old-evidence.json','sha256':'b'*64}
+        self.restore();marker=self.dest/'.restore-APP-21.json'
+        old={'binding':rt.sha(rt.encoded(self.row)),'phase':'cloning'};marker.write_bytes(rt.encoded(old))
+        self.row['evidence']={'path':'new-evidence.json','sha256':'a'*64}
+        with self.assertRaisesRegex(suites.InvalidSuite,'Restore progress differs'):self.restore(resume=True)
+        self.assertEqual(rt.read(marker),old)
+    def test_completed_legacy_marker_cannot_hide_source_edits(self):
+        self.restore();marker=self.dest/'.restore-APP-21.json'
+        old={'binding':'0'*64,'phase':'complete'};marker.write_bytes(rt.encoded(old))
+        (self.dest/'sample-app/logic.txt').write_text('user change\n')
+        with self.assertRaises(suites.InvalidSuite):self.restore(resume=True)
+        self.assertEqual(rt.read(marker),old)
 
 if __name__=='__main__':unittest.main()

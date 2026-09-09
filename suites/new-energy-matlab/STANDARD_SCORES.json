@@ -284,7 +284,7 @@
             "status": "scored"
           },
           {
-            "analysis": "Energy accounting is encapsulated through one real model reference and parameter arguments, without a duplicate energy subsystem. Channel-specific primitive patterns are not treated as duplicate business modules; the remaining reusable responsibilities are local, so complete linked standardization required for 3 is not established.",
+            "analysis": "1: EnergyAccounting is a real positive model-reference reuse boundary, but acquisition retains separately authored sensor qualification/fallback/IIR definitions. AuxVoltageV (SIDs 199-209) and AmbientC (210-220) repeat the same 11-block range/validity/substitution/filter topology. Bounds, units, filter values and independent state are legitimate instance parameters; no source requirement for distinct qualified definitions was found. The entire acquisition subsystem retains ML-04 topology (322 direct blocks, 366 destination edges), whose same avoidable duplication supports 1. Referencing the unrelated accounting responsibility does not remove this counterexample to no-duplicate band 2; band 3 is not established.",
             "evidence": [
               {
                 "claim": "Actual model-reference boundary",
@@ -298,21 +298,32 @@
                 "symbol": "EnergyAccounting"
               },
               {
-                "claim": "Reconstruction of the referenced production implementation",
+                "claim": "Separate authored qualification and filter chain; complete block/edge/parameter audit retained",
                 "commit": "db253a0ca7ff559fc2f319e7a00abc255c9a8940",
-                "end_line": 36,
-                "evidence_type": "code",
-                "independent_group": "build_model_references.m:function",
-                "path": "build_model_references.m",
+                "evidence_type": "model",
+                "independent_group": "AuxVoltageVSubstitution",
+                "member": "simulink/systems/system_1.xml",
+                "path": "Model/BatteryPowerManager.slx",
+                "sid": "205",
                 "source": "repository",
-                "start_line": 1,
-                "symbol": "function"
+                "symbol": "AuxVoltageVSubstitution"
+              },
+              {
+                "claim": "Separate authored qualification and filter chain; complete block/edge/parameter audit retained",
+                "commit": "db253a0ca7ff559fc2f319e7a00abc255c9a8940",
+                "evidence_type": "model",
+                "independent_group": "AmbientCSubstitution",
+                "member": "simulink/systems/system_1.xml",
+                "path": "Model/BatteryPowerManager.slx",
+                "sid": "216",
+                "source": "repository",
+                "symbol": "AmbientCSubstitution"
               }
             ],
             "max_score": 3,
             "name": "reuse",
-            "score": 2,
-            "score_reasoning": "Energy accounting is encapsulated through one real model reference and parameter arguments, without a duplicate energy subsystem. Channel-specific primitive patterns are not treated as duplicate business modules; the remaining reusable responsibilities are local, so complete linked standardization required for 3 is not established.",
+            "score": 1,
+            "score_reasoning": "1: EnergyAccounting is a real positive model-reference reuse boundary, but acquisition retains separately authored sensor qualification/fallback/IIR definitions. AuxVoltageV (SIDs 199-209) and AmbientC (210-220) repeat the same 11-block range/validity/substitution/filter topology. Bounds, units, filter values and independent state are legitimate instance parameters; no source requirement for distinct qualified definitions was found. The entire acquisition subsystem retains ML-04 topology (322 direct blocks, 366 destination edges), whose same avoidable duplication supports 1. Referencing the unrelated accounting responsibility does not remove this counterexample to no-duplicate band 2; band 3 is not established.",
             "status": "scored"
           },
           {
@@ -348,14 +359,15 @@
             "status": "scored"
           },
           {
-            "analysis": "All 532 retained model connections are named, with explicit parent/reference ports and no Goto/Data Store routing. Semantic signal names follow the connected source; no hidden public path was found.",
+            "analysis": "2: named signals and explicit parent/reference ports preserve basic traceability, with no hidden Goto/Data Store communication. However acquisition combination routes travel far upward and left across other channels: AmbientC ValidLogic SID214 to Substitution SID216 includes [315,0;0,-2782;-162,0;0,-383], and input SID408 to SID216 includes [52,0;0,-3250]. These are validity/substitution paths, not necessary delay-state feedback. AuxVoltageV SID203 to205 similarly rises 2140 layout units. Root overview/named line counts alone cannot establish fully consistent, readable direction required for 3. Both production models were loaded/printed in R2023b for review; no new update, simulation or coverage is claimed.",
             "evidence": [
               {
                 "claim": "Parent routing has no implicit communication",
                 "commit": "db253a0ca7ff559fc2f319e7a00abc255c9a8940",
                 "evidence_type": "facts",
                 "independent_group": "parent_structure",
-                "json_pointer": "/models/0/block_types",
+                "json_pointer": "/models/1/block_types",
+                "model_path": "Model/BatteryPowerManager.slx",
                 "path": "suites/new-energy-matlab/evidence/NEM-10-source.json",
                 "source": "source_inventory"
               },
@@ -364,15 +376,27 @@
                 "commit": "db253a0ca7ff559fc2f319e7a00abc255c9a8940",
                 "evidence_type": "facts",
                 "independent_group": "child_routing",
-                "json_pointer": "/models/1/lines",
+                "json_pointer": "/models/0/lines",
+                "model_path": "Model/BatteryEnergyAccounting.slx",
                 "path": "suites/new-energy-matlab/evidence/NEM-10-source.json",
                 "source": "source_inventory"
+              },
+              {
+                "claim": "Long upward/left validity routing to substitution and public validity output; exact routes retained in acquisition audit",
+                "commit": "db253a0ca7ff559fc2f319e7a00abc255c9a8940",
+                "evidence_type": "model",
+                "independent_group": "acquisition_route_geometry",
+                "member": "simulink/systems/system_1.xml",
+                "path": "Model/BatteryPowerManager.slx",
+                "sid": "214",
+                "source": "repository",
+                "symbol": "AmbientCValid"
               }
             ],
             "max_score": 3,
             "name": "dataflow",
-            "score": 3,
-            "score_reasoning": "All 532 retained model connections are named, with explicit parent/reference ports and no Goto/Data Store routing. Semantic signal names follow the connected source; no hidden public path was found.",
+            "score": 2,
+            "score_reasoning": "2: named signals and explicit parent/reference ports preserve basic traceability, with no hidden Goto/Data Store communication. However acquisition combination routes travel far upward and left across other channels: AmbientC ValidLogic SID214 to Substitution SID216 includes [315,0;0,-2782;-162,0;0,-383], and input SID408 to SID216 includes [52,0;0,-3250]. These are validity/substitution paths, not necessary delay-state feedback. AuxVoltageV SID203 to205 similarly rises 2140 layout units. Root overview/named line counts alone cannot establish fully consistent, readable direction required for 3. Both production models were loaded/printed in R2023b for review; no new update, simulation or coverage is claimed.",
             "status": "scored"
           },
           {
@@ -799,6 +823,7 @@
                 "evidence_type": "facts",
                 "independent_group": "routing_inventory",
                 "json_pointer": "/models/0/lines",
+                "model_path": "BatteryContactorController.slx",
                 "path": "suites/new-energy-matlab/evidence/NEM-11-source.json",
                 "source": "source_inventory"
               },
@@ -1104,7 +1129,7 @@
     "leaf_count": 143,
     "max_score": 671,
     "repository_count": 11,
-    "score": 429
+    "score": 427
   },
   "type_id": "new-energy-matlab"
 }

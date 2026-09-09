@@ -3944,7 +3944,7 @@
             "status": "scored"
           },
           {
-            "analysis": "独立Maven入口在final HEAD编译4份真实生产源、运行原20测试及新增5测试。完整Car Java/AIDL/native仍需平台生成器和未独立锁定的私有模块/stub注入；局部可构建事实成立，整体外部约束触发1档。",
+            "analysis": "Four production files, one Maven entry and four test sources have identical Git blobs at executed and current HEAD. Historical 25 passing host JVM tests are reused only for this unchanged input closure; no final-HEAD rerun, Android integration or whole-tree build is claimed. Full Car Java/AIDL/native still needs platform generators and unversioned private module/stub injection, so compilation independence remains 1.",
             "evidence": [
               {
                 "claim": "真实Maven入口直接编译4个既有生产源文件，复用3份既有测试及TimeSource边界测试；没有源码复制或Android替身。",
@@ -4007,14 +4007,15 @@
                 "symbol": "WindowDumpParser.getParsedAppWindows"
               },
               {
-                "claim": "final HEAD离线clean verify成功；4生产文件、25/25真实单元测试、生产JAR；不代表Android集成。",
+                "claim": "Four production files, one Maven entry and four test sources have identical Git blobs at executed and current HEAD. Historical 25 passing host JVM tests are reused only for this unchanged input closure; no final-HEAD rerun, Android integration or whole-tree build is claimed.",
                 "commit": "8b4badff6b9e3b96f6cb3d1c9ccf624e4ef6d784",
                 "evidence_type": "structured_facts",
-                "independent_group": "host_final_head_execution",
-                "json_pointer": "/structured/0",
-                "path": "facts/FW-14.json",
-                "sha256": "9b72e0cbc7a16dbc7ec960def6ce5b0cb540e37d3e5a585c83e7ec248a8baf17",
-                "source": "current_head_fact_snapshot"
+                "independent_group": "historical_host_execution_rebinding",
+                "json_pointer": "/rebinding",
+                "path": "suites/fw/revisions/FW-14-execution-rebinding.json",
+                "sha256": "b2176c751973866e3be5689469d5b5134121019b5861bbcc3d4bbcb4e6e34788",
+                "source": "current_reference_revision",
+                "source_sha256": "b2176c751973866e3be5689469d5b5134121019b5861bbcc3d4bbcb4e6e34788"
               }
             ],
             "max_score": 3,
@@ -5069,6 +5070,10 @@
         },
         "tree": "1407e24eb53f5361af1b009b0a0b00f53f79fe46",
         "worktree_clean": true
+      },
+      "reference_revision": {
+        "path": "suites/fw/revisions/FW-14-v0102.json",
+        "sha256": "1e096c78e17dd8f924cfdaaa68f42b5124491d8cbb4bf71290f081ff3606d887"
       }
     },
     {

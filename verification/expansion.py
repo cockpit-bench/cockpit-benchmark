@@ -62,6 +62,12 @@ def recompute(facts):
         else:result[leaf]=rules.semantic_rule(values)[0]
     return result
 
+def check_model_pointer(inventory,anchor):
+    if anchor['source']=='source_inventory' and anchor['json_pointer'].startswith('/models/'):
+        index=int(anchor['json_pointer'].split('/')[2])
+        require(inventory['models'][index]['path']==anchor.get('model_path'),
+                'Model evidence pointer targets a different model')
+
 def verify(wrapper,source_map,records_root=None):
     wrapper=Path(wrapper);mapping=read(source_map);result=[]
     for kind in ['app','fw','new-energy-matlab']:
@@ -73,8 +79,8 @@ def verify(wrapper,source_map,records_root=None):
             require(first['head']==source['head'] and first['tree']==source['tree'] and first['refs']==source['refs'],'Source binding differs')
             require(sha(encoded(first))==facts['source_inventory_sha256'],'Source inventory differs')
             inventory=read(bound(wrapper,facts['source_inventory']));require(first==inventory,'Published inventory differs')
-            from semantic_audits import parameter_inventory,reuse_inventory
-            for field,producer in [('parameter_scope_audit',parameter_inventory),('reuse_scope_audit',reuse_inventory)]:
+            from semantic_audits import parameter_inventory,reuse_inventory,acquisition_inventory
+            for field,producer in [('parameter_scope_audit',parameter_inventory),('reuse_scope_audit',reuse_inventory),('acquisition_scope_audit',acquisition_inventory)]:
                 if field in facts:
                     recorded=read(bound(wrapper,facts[field]))
                     require(recorded==producer(repo),'Semantic scope inventory differs: '+source['id'])
@@ -90,6 +96,7 @@ def verify(wrapper,source_map,records_root=None):
                     model=next((m for m in inventory['models'] if m['path']==a['path']),None);require(model is not None,'Model outside production closure')
                     require(any(b['member']==a['member'] and b['sid']==a['sid'] and b['name']==a['symbol'] for b in model['blocks']),'Model element missing')
                 elif a['evidence_type']=='facts':
+                    check_model_pointer(inventory,a)
                     value=inventory if a['source']=='source_inventory' else facts
                     for part in a['json_pointer'].strip('/').split('/'):
                         part=part.replace('~1','/').replace('~0','~');value=value[int(part)] if isinstance(value,list) else value[part]

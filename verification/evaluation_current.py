@@ -4,6 +4,8 @@ Assignments cover all current sources so cross-type lineage cannot cross splits.
 The runner still owns process/network isolation and registration timing.
 """
 import argparse
+import base64
+import hashlib
 from collections import Counter, defaultdict
 import json
 from pathlib import Path
@@ -14,6 +16,7 @@ import evaluation_batch as legacy
 import repository_types as rt
 from coverage import TIERS
 from external_inputs import verify as verify_git
+from population_diagnostics import analyze as population_diagnostics
 
 
 def lineage(sources, assignments):
@@ -50,7 +53,9 @@ def packet_check(path,spec):
     if spec['format']=='frozen-git-inputs-v1':return verify_git(path,spec['sha256'])
     with zipfile.ZipFile(path) as z:
         names=z.namelist()
-        if len(names)!=len(set(names)) or sum(i.file_size for i in z.infolist())>64*1024*1024:raise ValueError('Duplicate/oversized raw packet')
+        # Complete raw + decoded SDK 34 definitions take the current packet
+        # above 64 MiB; retain a bounded expansion size of 96 MiB.
+        if len(names)!=len(set(names)) or sum(i.file_size for i in z.infolist())>96*1024*1024:raise ValueError('Duplicate/oversized raw packet')
         for name in names:
             if ':' in name or chr(92) in name or name.startswith('/') or any(p in {'','..','.'} for p in name.split('/')):raise ValueError('Unsafe raw path')
         index=json.loads(z.read('packet-index.json'))
@@ -59,7 +64,24 @@ def packet_check(path,spec):
         for row in index['files']:
             body=z.read(row['path'])
             if len(body)!=row['bytes'] or rt.sha(body)!=row['sha256']:raise ValueError('Raw file differs')
+        for name in names:
+            if name.endswith('/sdk/source-binding.json'):
+                sdk_check({n[len(name.rsplit('/',1)[0])+1:]:z.read(n) for n in names if n.startswith(name.rsplit('/',1)[0]+'/')})
     return {'sha256':spec['sha256'],'files':len(index['files'])}
+
+
+def sdk_check(files):
+    binding=json.loads(files['source-binding.json']);raw=files['android.txt.base64'];decoded=files['android.txt'];directory=files['directory.json']
+    if binding['schema']!='sdk-source-binding-v1':raise ValueError('SDK binding schema differs')
+    if base64.b64decode(raw,validate=True)!=decoded:raise ValueError('SDK raw and decoded bytes differ')
+    for key,body in [('raw_response_sha256',raw),('decoded_sha256',decoded),('directory_response_sha256',directory)]:
+        if rt.sha(body)!=binding[key]:raise ValueError('SDK content binding differs')
+    blob=hashlib.sha1(b'blob '+str(len(decoded)).encode()+b'\0'+decoded).hexdigest()
+    listing=json.loads(directory.decode().removeprefix(")]}'\n"))
+    if blob!=binding['git_blob'] or not any(e['name']=='android.txt' and e['id']==blob for e in listing['entries']):raise ValueError('SDK Git blob/directory differs')
+    path=str(binding['compile_sdk'])+'/public/api/android.txt'
+    if binding['path']!=path or binding['url']!=binding['upstream']+'/+/'+binding['commit']+'/'+path+'?format=TEXT':raise ValueError('SDK revision/path binding differs')
+    return binding
 
 
 def export_inputs(wrapper,repository_id,packet,output):
@@ -109,6 +131,7 @@ def prepare(wrapper,type_id,mode,assignments,external_inputs=None,profile=None):
             leaves.append({'id':row['id']+'/'+name,'repository_id':row['id'],'name':name,'score':score,'kind':type_id,'allowed_scores':allowed,'split':assignments[row['id']],'family_id':byid[row['id']]['family_id']})
     if set(ep.indexed(leaves))!=set(profile['requested']):raise ValueError('Current reference/availability universe differs')
     batch={'schema':'evaluation-batch-v2','profile':profile,'reference':{'context':context,'leaves':leaves},'assignments':assignments,'lineage_check':split,'external_packet_check':checks,'limits':'One business type per batch; source eligibility is independent of gold score. No OS isolation or blind-review claim.'}
+    batch['population_diagnostics']=population_diagnostics(leaves,split['components'])
     batch['batch_sha256']=ep.digest(batch)
     return batch
 
@@ -117,14 +140,19 @@ def assess(batch,candidate,plan=None,adjudications=None):
     result=legacy.assess(batch,candidate,plan,adjudications)
     predictions=ep.indexed(candidate['leaves']);groups=defaultdict(list)
     for row in batch['reference']['leaves']:
+        for score in row['allowed_scores']:groups.setdefault((row['name'],score),[])
         if row['id'] in batch['profile']['eligible']:groups[(row['name'],row['score'])].append(row)
     bands=[]
     for (name,score),rows in sorted(groups.items()):
         confusion=Counter()
         for row in rows:
-            p=predictions.get(row['id'],{});label=str(p['score']) if p.get('status')=='scored' else p.get('status','missing');confusion[label]+=1
-        bands.append({'leaf':name,'gold':score,'count':len(rows),'recall':confusion[str(score)]/len(rows),'predictions':dict(confusion)})
+            # legacy.assess has already validated the numeric value against
+            # integer contract tiers; JSON 3, 3.0 and -0.0 retain that meaning.
+            p=predictions.get(row['id'],{});label=str(int(p['score'])) if p.get('status')=='scored' else p.get('status','missing');confusion[label]+=1
+        bands.append({'leaf':name,'gold':score,'count':len(rows),'recall':confusion[str(score)]/len(rows) if rows else None,'predictions':dict(confusion),
+                      'measurement_status':'measured' if rows else 'unmeasured'})
     result['band_recall_and_confusion']=bands
+    result['population_diagnostics']=batch.get('population_diagnostics')
     n=result['common_eligible'];result['abstention_fraction']=result['abstained']/n if n else None
     result['family_strata']=[]
     for family in sorted({r['family_id'] for r in batch['reference']['leaves']}):
