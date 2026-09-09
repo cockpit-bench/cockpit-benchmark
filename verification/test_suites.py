@@ -32,7 +32,8 @@ class RegistryTests(unittest.TestCase):
 
     def test_finalized_local_state_is_valid(self):
         result=suites.validate(self.root)
-        self.assertEqual([s['score'] for s in result['suites']],[255,338])
+        self.assertEqual(result['suites'][0]['score'], sum(r['total']['score'] for r in suites.read(self.root/'STANDARD_SCORES.json')['repositories']))
+        self.assertEqual(result['suites'][1]['score'],338)
         if result['integration_status']!='published':
             with self.assertRaises(suites.InvalidSuite):suites.validate(self.root,True)
 

@@ -1,4 +1,6 @@
 import copy
+from collections import Counter, defaultdict
+import re
 from pathlib import Path
 import unittest
 
@@ -26,6 +28,26 @@ class EvaluationBatchTests(unittest.TestCase):
         self.assertEqual(len(result['excluded_predictions_ignored']), 16)
         self.assertEqual(sum(r['eligible'] for r in result['distribution']['groups']), 155)
         self.assertEqual(result['evidence_validity']['status'], 'not_reviewed')
+
+    def test_current_document_baselines_match_exact_eligible_sets(self):
+        # Recompute from the actual reference and availability, independently of the document writer.
+        document = (self.wrapper / 'docs/EVALUATION_BATCH.md').read_text(encoding='utf-8')
+        match = re.search(r'<!-- current-baselines:start -->(.*?)<!-- current-baselines:end -->', document, re.S)
+        self.assertIsNotNone(match)
+        block = match.group(1)
+        self.assertIn('`' + self.batch['profile']['context']['reference_id'] + '`', block)
+        availability = eb.read(self.wrapper / 'docs/evidence-availability.json')['leaves']
+        all_rows = self.batch['reference']['leaves']
+        for mode in ('完整集', 'source_only', 'frozen_external'):
+            selected_ids = ({r['id'] for r in all_rows} if mode == '完整集' else
+                            {r['id'] for r in availability if r['modes'][mode]['state'] == 'supported'})
+            groups = defaultdict(Counter)
+            for row in all_rows:
+                if row['id'] in selected_ids:
+                    groups[(row['kind'], row['name'])][row['score']] += 1
+            hits = sum(max(counts.values()) for counts in groups.values())
+            n = len(selected_ids)
+            self.assertIn(f'| {mode} | {hits}/{n} | {hits/n:.2%} |', block)
 
     def test_family_overlap_rejected(self):
         assignments = dict(self.assignments, **{'APP-14': 'train', 'FW-16': 'test'})

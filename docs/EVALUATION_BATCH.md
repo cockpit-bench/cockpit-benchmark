@@ -8,9 +8,20 @@
 python verification/evaluation_batch.py prepare --wrapper . --mode source_only --assignments /maintainer/assignments.json --output /maintainer/batch.json
 ```
 
-工具验证合同、标准分、源码 manifest 的实际文件 SHA，固定 eligible、reference、split 与 batch hash；已存在输出不会覆盖。当前 source_only 是 **155/171**，在 v0.9.1 修正答案的同一集合按类型×叶猜众数为 **118/155（76.13%）**。旧 v0.9.0 的 130/171 是当时完整标准集的分布，不能直接用于本模式比较；当前完整标准集为 129/171。均为样本内事后基线，不是 Agent 成绩。
+工具验证合同、标准分、源码 manifest 的实际文件 SHA，固定 eligible、reference、split 与 batch hash；已存在输出不会覆盖。以下均按当前标准分和各自实际 eligible 集合计算，类型×叶组内取众数，是样本内事后基线，不是 Agent 成绩。
 
-已有多组同模式 profile 时，先通过 `evaluation_profile.py common` 固定交集，再向 prepare 传 `--profile /maintainer/common.json`。工具拒绝与快照、模式或当前支持集合不一致的交集。frozen_external 还须用 `--external-packet` 提供并校验[实际原始包](EXTERNAL_GIT_INPUTS.md)；只声明摘要不能注册缺包的 frozen 批次。当前 frozen 为 156/171，同集合基线 119/156（76.28%）。
+<!-- current-baselines:start -->
+当前参考版本：`v0.9.3`。
+
+| 集合 | 众数命中/分母 | 样本内比例 |
+|---|---:|---:|
+| 完整集 | 123/171 | 71.93% |
+| source_only | 112/155 | 72.26% |
+| frozen_external | 113/156 | 72.44% |
+
+<!-- current-baselines:end -->
+
+已有多组同模式 profile 时，先通过 `evaluation_profile.py common` 固定交集，再向 prepare 传 `--profile /maintainer/common.json`。工具拒绝与快照、模式或当前支持集合不一致的交集。frozen_external 还须用 `--external-packet` 提供并校验[实际原始包](EXTERNAL_GIT_INPUTS.md)；只声明摘要不能注册缺包的 frozen 批次。当前两种模式的集合与基线见上表；frozen 模式必须另有实际外部输入包，不能仅凭这张表注册。
 
 batch 含标准分和排除理由，必须留在维护者侧。候选只得到单仓绑定 HEAD/all refs 的源码、有效合同、中性任务说明、允许的原始输入；协调器保留不透明 profile hash 并将其附到保存输出。Android 有效合同入口 `SCORE_RULES.md`；MATLAB 为 `suites/matlab-simulink/EFFECTIVE_CONTRACT.md`。候选不得读 wrapper、标准分、quality tier、oracle、facts、profile 或本说明中的分布结果。
 

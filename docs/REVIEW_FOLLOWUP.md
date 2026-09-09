@@ -1,3 +1,13 @@
+# v0.9.3 五项修复完成
+
+三个SOLID边界已按统一尺度裁定，另修复当前基线与FW-15 LSP措辞。见[横向仲裁](HORIZONTAL_ARBITRATION_V093.md)。
+
+Android258/828、MATLAB338/549；167个其他完整Android叶对象、27源码HEAD/refs及合同不变。本轮未新增Android/MATLAB执行或候选模型实验。扩展候选正式入库按用户决定单独推进。
+
+以下为历史版本记录，其分数与措辞由当前标准分及本轮仲裁覆盖。
+
+---
+
 # Pro 审阅修复进度 — v0.9.2
 
 剩余 20 个非 LSP SOLID 叶已按真实源码职责/消费者完成本轮校准；与此前 16 叶构成两批 36 叶记录，完整旧页保持历史。另复核 APP-14 编译独立性；本轮数值变化 12 叶，Android 255/828。见 [本轮裁决](SOLID_CALIBRATION_V092.md) 与 [编译证据](compilation-calibration-v092.json)。

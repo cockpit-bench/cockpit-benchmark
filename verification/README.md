@@ -1,4 +1,4 @@
-Current v0.9.2: fixed candidate evaluation uses docs/EVALUATION_BATCH.md; Android canonical is 255/828 after the remaining 20-leaf SOLID calibration and APP-14 compilation correction in docs/SOLID_CALIBRATION_V092.md. Replay uses the matching v0.9.2 data attachment in docs/VERIFICATION_INPUTS.md. MATLAB remains the independent v0.9.0 evidence/score snapshot, with supplemental ML-09 source anchors. Earlier commands below describe historical attachment versions.
+Current v0.9.3: Android 258/828; see docs/HORIZONTAL_ARBITRATION_V093.md for three severity corrections and the LSP wording fix. Current evaluation baselines are generated in docs/EVALUATION_BATCH.md. Use the matching v0.9.3 verification attachment; MATLAB and the external Git packet retain their original versions.
 
 Current v0.8.6: API scope B under SCORE_RULES.md v3.5 supersedes earlier API-scope statements below; see [API governance schema and limits](../docs/API_GOVERNANCE.md). Other leaf contracts remain unchanged.
 
