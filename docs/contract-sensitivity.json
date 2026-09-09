@@ -1,0 +1,106 @@
+{
+  "schema": "contract-sensitivity-diagnostic-v1",
+  "contract": "v3.5",
+  "method": "Counterfactual disclosed rule inputs. No repository rename, APK build, runtime execution or canonical mutation.",
+  "modularization": [
+    {
+      "id": "APP-01",
+      "head": "b51855561048ecb0b8e02a31f521c57ba0a1219e",
+      "current": 3,
+      "without_keyword_gate": 3,
+      "missing_for_alternative": [],
+      "original_named_module_count": 5
+    },
+    {
+      "id": "APP-02",
+      "head": "2fd88e579c7acbfac7236285ee306835334018b5",
+      "current": 3,
+      "without_keyword_gate": 3,
+      "missing_for_alternative": [],
+      "original_named_module_count": 2
+    },
+    {
+      "id": "APP-03",
+      "head": "db7d8ff7b918870d81d014dafedbb8319ce72b28",
+      "current": 1,
+      "without_keyword_gate": 1,
+      "missing_for_alternative": [],
+      "original_named_module_count": 1
+    },
+    {
+      "id": "APP-11",
+      "head": "70338504a8b26daa45e37feea2f47caab8f6fa36",
+      "current": 3,
+      "without_keyword_gate": 3,
+      "missing_for_alternative": [],
+      "original_named_module_count": 5
+    },
+    {
+      "id": "APP-13",
+      "head": "0ba67ea122cb867194f6987ba77879d699adaff8",
+      "current": 0,
+      "without_keyword_gate": 0,
+      "missing_for_alternative": [],
+      "original_named_module_count": 1
+    },
+    {
+      "id": "APP-14",
+      "head": "0d6ae2536a60a3fc4bbf3f0062235b16e4888648",
+      "current": 2,
+      "without_keyword_gate": 3,
+      "missing_for_alternative": [],
+      "original_named_module_count": 0
+    },
+    {
+      "id": "APP-15",
+      "head": "50f07443d3a2940634f1b398c5d1dc5e62ebaa93",
+      "current": 2,
+      "without_keyword_gate": null,
+      "missing_for_alternative": [
+        "cohesive_module_count"
+      ],
+      "original_named_module_count": 1
+    },
+    {
+      "id": "APP-16",
+      "head": "ca182d734a6bdc83ed8b3ae0ee0f2e6670e59ace",
+      "current": 2,
+      "without_keyword_gate": 3,
+      "missing_for_alternative": [],
+      "original_named_module_count": 1
+    },
+    {
+      "id": "APP-17",
+      "head": "47502088a4fbb5faf06b395671479a7f55ca3741",
+      "current": 1,
+      "without_keyword_gate": 1,
+      "missing_for_alternative": [],
+      "original_named_module_count": 0
+    }
+  ],
+  "lexical_rename": {
+    "id": "APP-02",
+    "rename": "database -> storage",
+    "other_module_names": [
+      "app",
+      "download",
+      "index"
+    ],
+    "matched_before": true,
+    "matched_after": false,
+    "before": 3,
+    "after": 2,
+    "changed_fact": "standard_named_module_count 2 -> 1 only"
+  },
+  "public_deprecated": {
+    "id": "APP-03",
+    "before": 3,
+    "without_noncompatible_signal": null,
+    "missing_for_alternative": [
+      "automated_compatibility_validation_at_least_two_android_versions"
+    ],
+    "conditional_if_no_multiversion_validation": 8,
+    "changed_fact": "has_non_compatible_api true -> false only",
+    "limit": "Isolates gate sensitivity; does not prove a replacement preserves behavior or authorize relabeling deprecated APIs."
+  }
+}

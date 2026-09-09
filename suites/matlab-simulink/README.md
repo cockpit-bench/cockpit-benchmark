@@ -5,8 +5,11 @@ Nine original control-model repositories, 13 leaves / 61 points each:
 [manifest](manifest.json), [standard answers](STANDARD_SCORES.json),
 [leaf evidence](oracle/), [readiness](VALIDATION_STATUS.json).
 
-Read [SCORING_OVERRIDES.md](SCORING_OVERRIDES.md) before the unchanged
-[original contract](SCORING_CONTRACT.md). The six excluded non-LLM dimensions are
+Candidate scoring uses the composed [current effective contract](EFFECTIVE_CONTRACT.md).
+Its [input/output binding](effective-contract-binding.json) is reproducible with
+`python verification/effective_contract.py --suite suites/matlab-simulink --check`
+from the wrapper root. [SCORING_OVERRIDES.md](SCORING_OVERRIDES.md) and the unchanged
+[original contract](SCORING_CONTRACT.md) remain historical source clauses. The six excluded non-LLM dimensions are
 not part of this suite. Android scores are independent and must not be added.
 
 ## Evidence and validation

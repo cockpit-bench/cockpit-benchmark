@@ -1,8 +1,8 @@
 # 叶 × 档位 × 证据状态覆盖
 
-基线：v0.8.6 的 18 仓标准答案；不读取 Agent 预测。
+基线：v0.9.1 的 18 仓标准答案；不读取 Agent 预测。
 
-样本内类型×叶众数基线：**130/171 = 76.0%**。这不是独立测试准确率，也不检查理由或证据质量。
+样本内类型×叶众数基线：**129/171 = 75.4%**。这不是独立测试准确率，也不检查理由或证据质量。
 
 覆盖 **42/81** 个类型×叶×合法档位组合；这是档位计数，不能替代真实任务能力验证。
 
@@ -23,9 +23,9 @@
 | FRAMEWORK | platform_reuse.release_branch_strategy | 0:9 | 3, 8, 10 |
 | FRAMEWORK | quality.integration_test | 1:9 | 0, 2, 3 |
 | FRAMEWORK | solid_principle.dependency_inversion | 1:2, 2:7 | 0, 3, 4 |
-| FRAMEWORK | solid_principle.interface_segregation | 1:1, 2:1, 3:7 | 0, 4 |
+| FRAMEWORK | solid_principle.interface_segregation | 1:1, 2:2, 3:6 | 0, 4 |
 | FRAMEWORK | solid_principle.liskov_substitution | 0:3, 3:6 | 1, 2, 4 |
-| FRAMEWORK | solid_principle.open_closed | 2:4, 3:5 | 0, 1, 4 |
+| FRAMEWORK | solid_principle.open_closed | 2:5, 3:4 | 0, 1, 4 |
 | FRAMEWORK | solid_principle.single_responsibility | 2:9 | 0, 1, 3, 4 |
 
 完整 JSON 的 cells 列出每个档位的仓 ID、源码/库存锚点数量、输入方法和 Android 集成执行证据状态。

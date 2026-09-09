@@ -1,3 +1,5 @@
-# v0.8.6 evidence availability
+# v0.9.1 evidence availability
 
-API necessary inputs were re-reviewed under v3.5. Source-only states: {'supported': 155, 'unknown': 15, 'unavailable': 1} across 171 leaves. The other 153 availability rows retain their prior adjudication. Exact row evidence and missing requirements are in [evidence-availability.json](evidence-availability.json). Coverage does not assert an Agent result. APP-02 historical external CI inputs remain excluded; source-only and frozen modes use the same common-profile protocol.
+Source-only: 155 supported, 15 unknown, 1 unavailable (APP-02 historical CI). Frozen-external: 156 supported, 14 unknown, 1 unavailable after supplying FW-07 immutable raw Git inputs. All other eligibility determinations are retained.
+
+See [evidence-availability.json](evidence-availability.json), [batch entry](EVALUATION_BATCH.md) and [external input packet](EXTERNAL_GIT_INPUTS.md). These inventories and their reasons are maintainer-only and do not assert candidate results.

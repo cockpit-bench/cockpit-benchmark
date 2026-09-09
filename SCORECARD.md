@@ -1,4 +1,4 @@
-# Validation-18 v0.8.6
+# Validation-18 v0.9.1
 
 | ID | Repository | Size | Quality | Score |
 |---|---|---|---|---|
@@ -13,12 +13,12 @@
 | APP-17 | climate-panel | small | low | 7/40 |
 | FW-02 | network-stack-service | small | high | 20/52 |
 | FW-03 | bluetooth-service | medium | high | 18/52 |
-| FW-07 | wifi-service | large | high | 20/52 |
+| FW-07 | wifi-service | large | high | 19/52 |
 | FW-08 | connectivity-service | medium | medium | 15/52 |
 | FW-10 | cell-broadcast-service | small | medium | 19/52 |
 | FW-14 | car-services | large | medium | 18/52 |
 | FW-15 | telecom-service | small | low | 18/52 |
-| FW-16 | platform-framework | large | low | 17/52 |
+| FW-16 | platform-framework | large | low | 16/52 |
 | FW-18 | telephony-service | medium | low | 11/52 |
 
 ## APP-01 navigation-map
@@ -183,7 +183,7 @@
 | solid_principle.dependency_inversion | 2/4 | 基本遵循，仍有少量改进空间。 |
 | solid_principle.interface_segregation | 3/4 | 良好遵循。 |
 | solid_principle.liskov_substitution | 3/4 | 两个真实生产实现的连接 reset 契约已恢复，并通过可复用替换测试；未达到系统化异常/边界全覆盖的 4 档。 |
-| solid_principle.open_closed | 3/4 | 良好遵循。 |
+| solid_principle.open_closed | 2/4 | 评分可注册扩展，但运行模式恢复按具体 manager 类型分支，扩展边界不完整，OCP 为局部违反的 2。 |
 | solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
 
 ## FW-08 connectivity-service
@@ -261,7 +261,7 @@
 | platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 | quality.integration_test | 1/3 | UiMode服务夜间模式等行为有真实测试断言；Spa构建没有运行测试，其他当前HEAD执行/覆盖证明缺失，最高1。 |
 | solid_principle.dependency_inversion | 2/4 | 基本遵循，仍有少量改进空间。 |
-| solid_principle.interface_segregation | 3/4 | 良好遵循。 |
+| solid_principle.interface_segregation | 2/4 | 通知提取器统一接口强制无关配置/Zen 能力，多个生产实现为空处理；问题集中于该接口族，ISP 为局部违反的 2。 |
 | solid_principle.liskov_substitution | 3/4 | 两个真实SystemService子类均初始化并发布Binder，调用者不要求额外前置；boot hook父类允许默认空，不能机械扣分。未证明跨实现异常边界契约测试，不能4。 |
 | solid_principle.open_closed | 2/4 | 基本遵循，仍有少量改进空间。 |
 | solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |

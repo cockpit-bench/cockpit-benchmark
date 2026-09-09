@@ -1,5 +1,7 @@
-# v0.8.6 maintainer replay inputs
+# v0.9.1 maintainer replay inputs
 
-[validation18-verification-data-v0.8.6.zip](https://github.com/cockpit-bench/cockpit-benchmark/releases/download/v0.8.6/validation18-verification-data-v0.8.6.zip) (5009634 bytes). SHA-256: `9a19284d29f55b9e922e3ee2c7ca5dba37598bd553dc2cf8ca9c7d9cba46f36c`.
+[validation18-verification-data-v0.9.1.zip](https://github.com/cockpit-bench/cockpit-benchmark/releases/download/v0.9.1/validation18-verification-data-v0.9.1.zip), 5021022 bytes; SHA-256 `5be866df724e0f1a2c02c2eb4e92ac11aab1f64c76aace150bf1c212634b9a63`.
 
-Use matching v0.8.6 tools and contract v3.5; extract outside wrapper/source inputs. Contains disclosed source partitions/counts and reviewed rule observations including full API governance inventories. No source repositories, Git objects or dependencies. Replay reproduces 171 leaves, 271/828; it is not a new semantic review or Android execution.
+Use matching v0.9.1 tools, unchanged v3.5 contract and frozen source refs. The package contains reviewed observations, not candidate context. Recomputes 171 leaves, 269/828; source semantic truth and Android execution are not established by replay.
+
+MATLAB retains its v0.9.0 score/evidence attachment and independent 117-leaf denominator. Candidate-safe external Git inputs are a separate packet documented in EXTERNAL_GIT_INPUTS.md.

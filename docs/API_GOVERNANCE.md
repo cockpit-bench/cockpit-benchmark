@@ -1,3 +1,5 @@
+Current v0.9.1: the v3.5 API decisions below remain unchanged. FW-07 frozen-external raw inputs are now supplied separately in EXTERNAL_GIT_INPUTS.md; its source-only eligibility is still unknown. Current Android total is 269/828 after two non-API SOLID corrections.
+
 # v0.8.6 API governance scope B
 
 Contract v3.5 implements the explicitly approved scope B. All 18 API leaves were source-reviewed against their unchanged final HEADs. The other 153 complete canonical leaf objects remain unchanged. Total: **271/828**. Historical releases retain their original contract and scores.

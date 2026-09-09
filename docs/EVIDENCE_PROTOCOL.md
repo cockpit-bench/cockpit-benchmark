@@ -1,6 +1,6 @@
 # 证据模式与固定分母运行协议
 
-本轮保持 v3.4.1 合同与已发布标准分。API 口径留待下一版讨论。本协议只规定评测输入、可比叶和统计；不重新裁定 canonical 分数。
+当前 Android 合同为 v3.5，API 方案 B 已在 v0.8.6 生效；v0.9.1 的两项 SOLID 源码修正见 SOLID_CALIBRATION.md。本协议只规定评测输入、可比叶和统计；不据可用性或候选表现改分。MATLAB 独立使用其 EFFECTIVE_CONTRACT.md。
 
 ## 三种独立模式
 
@@ -16,7 +16,7 @@ APP-02 `compilation.ci_independence` 当前历史结论依赖带时间的外部�
 
 ## 维护者清单与预注册
 
-工具位于 `verification/evaluation_profile.py`，仅使用 Python 标准库。所有 availability、reference 和完整 profile 留在维护者区。候选只能收到允许输入与不透明 profile hash；不要把 profile 的排除理由、标准分、oracle、facts 或 review 结论作为提示词。运行器在候选输出后附上已固定的 hash。
+正式统计入口为 `verification/evaluation_batch.py`，底层固定集合工具为 `evaluation_profile.py`，仅使用 Python 标准库。调用方法见 [EVALUATION_BATCH.md](EVALUATION_BATCH.md)。所有 batch、availability、reference 和完整 profile 留在维护者区。候选只能收到允许输入与不透明 profile hash；不要把 profile 的排除理由、标准分、oracle、facts 或 review 结论作为提示词。运行器在候选输出后附上已固定的 hash。
 
 在任何候选推理前：
 
@@ -67,7 +67,7 @@ reference 为 `{context, leaves:[{id,score}]}`；candidate 为 `{profile_sha256,
 
 分母永远是推理前 common eligible 集合。可比叶的 abstain、error、missing 均保留分母，并分别报告；无效 scored 输出算 error。不可比叶的预测忽略并列明，不将其分数置零，也不修改 canonical。
 
-工具输出正确/错误/弃权/错误状态/缺失数，以及 evidence_coverage=eligible/requested、output_coverage=有效数值输出/eligible、accuracy=correct/eligible。eligible 为空时准确率和输出覆盖为 null。暂不实现分档宏平均或证据语义准确率；不能把这些额外指标描述为已验证。
+底层工具输出正确/错误/弃权/错误状态/缺失数，以及 evidence_coverage=eligible/requested、output_coverage=有效数值输出/eligible、accuracy=correct/eligible。eligible 为空时准确率和输出覆盖为 null。批次入口同时报告 split×类型×叶分布、同集合样本内众数基线及这些组的宏平均准确率；它不等于按每个档位平衡的 balanced accuracy。证据有效性另由固定样本上的人工语义裁定统计，未裁定为 not_reviewed/null，不由分数命中或 oracle 文本匹配推断。
 
 ## 原始包与运行边界
 

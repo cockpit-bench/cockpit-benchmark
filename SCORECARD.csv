@@ -102,7 +102,7 @@ FW-07,wifi-service,FRAMEWORK,high,large,5ab0979c34ca9c0a5b6ac55d00e4ae2008c1aee8
 FW-07,wifi-service,FRAMEWORK,high,large,5ab0979c34ca9c0a5b6ac55d00e4ae2008c1aee8,solid_principle.dependency_inversion,2,4,scored,基本遵循，仍有少量改进空间。
 FW-07,wifi-service,FRAMEWORK,high,large,5ab0979c34ca9c0a5b6ac55d00e4ae2008c1aee8,solid_principle.interface_segregation,3,4,scored,良好遵循。
 FW-07,wifi-service,FRAMEWORK,high,large,5ab0979c34ca9c0a5b6ac55d00e4ae2008c1aee8,solid_principle.liskov_substitution,3,4,scored,两个真实生产实现的连接 reset 契约已恢复，并通过可复用替换测试；未达到系统化异常/边界全覆盖的 4 档。
-FW-07,wifi-service,FRAMEWORK,high,large,5ab0979c34ca9c0a5b6ac55d00e4ae2008c1aee8,solid_principle.open_closed,3,4,scored,良好遵循。
+FW-07,wifi-service,FRAMEWORK,high,large,5ab0979c34ca9c0a5b6ac55d00e4ae2008c1aee8,solid_principle.open_closed,2,4,scored,评分可注册扩展，但运行模式恢复按具体 manager 类型分支，扩展边界不完整，OCP 为局部违反的 2。
 FW-07,wifi-service,FRAMEWORK,high,large,5ab0979c34ca9c0a5b6ac55d00e4ae2008c1aee8,solid_principle.single_responsibility,2,4,scored,基本遵循，仍有少量改进空间。
 FW-08,connectivity-service,FRAMEWORK,medium,medium,a009ba72ec2b92c4e6f1e20e8583d654a4f58ba8,compilation.api_version_management,2,3,scored,已清点三套 Java SDK（含 Nearby）、native AIDL、两套导出 C ABI、外部 IPC/HAL/Cronet 及同 APEX 胶合。Stable native AIDL 有当前/冻结 V1 与真实服务/消费者，属于真实关键覆盖；其他关键面存在明确未闭合发布基线或外部责任，故 2 而非沿用单 Java 机制的 3。
 FW-08,connectivity-service,FRAMEWORK,medium,medium,a009ba72ec2b92c4e6f1e20e8583d654a4f58ba8,compilation.ci_independence,1,3,scored,仅平台PREUPLOAD/TEST_MAPPING，工具与集成测试在Android树CI运行，无仓库独立流水线。
@@ -158,7 +158,7 @@ FW-16,platform-framework,FRAMEWORK,low,large,25fc3b7c42910da21cdd329777726aa906d
 FW-16,platform-framework,FRAMEWORK,low,large,25fc3b7c42910da21cdd329777726aa906dd7f5c,platform_reuse.release_branch_strategy,0,10,scored,本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。
 FW-16,platform-framework,FRAMEWORK,low,large,25fc3b7c42910da21cdd329777726aa906dd7f5c,quality.integration_test,1,3,scored,UiMode服务夜间模式等行为有真实测试断言；Spa构建没有运行测试，其他当前HEAD执行/覆盖证明缺失，最高1。
 FW-16,platform-framework,FRAMEWORK,low,large,25fc3b7c42910da21cdd329777726aa906dd7f5c,solid_principle.dependency_inversion,2,4,scored,基本遵循，仍有少量改进空间。
-FW-16,platform-framework,FRAMEWORK,low,large,25fc3b7c42910da21cdd329777726aa906dd7f5c,solid_principle.interface_segregation,3,4,scored,良好遵循。
+FW-16,platform-framework,FRAMEWORK,low,large,25fc3b7c42910da21cdd329777726aa906dd7f5c,solid_principle.interface_segregation,2,4,scored,通知提取器统一接口强制无关配置/Zen 能力，多个生产实现为空处理；问题集中于该接口族，ISP 为局部违反的 2。
 FW-16,platform-framework,FRAMEWORK,low,large,25fc3b7c42910da21cdd329777726aa906dd7f5c,solid_principle.liskov_substitution,3,4,scored,两个真实SystemService子类均初始化并发布Binder，调用者不要求额外前置；boot hook父类允许默认空，不能机械扣分。未证明跨实现异常边界契约测试，不能4。
 FW-16,platform-framework,FRAMEWORK,low,large,25fc3b7c42910da21cdd329777726aa906dd7f5c,solid_principle.open_closed,2,4,scored,基本遵循，仍有少量改进空间。
 FW-16,platform-framework,FRAMEWORK,low,large,25fc3b7c42910da21cdd329777726aa906dd7f5c,solid_principle.single_responsibility,2,4,scored,基本遵循，仍有少量改进空间。
