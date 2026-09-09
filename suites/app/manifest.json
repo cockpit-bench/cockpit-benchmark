@@ -3782,7 +3782,7 @@
     {
       "evidence": {
         "path": "suites/app/evidence/APP-21.json",
-        "sha256": "2a1c7e592a0a02c2510f18ca00a5456603058d8774da5e467260af566d40eea3"
+        "sha256": "721b6866a0f2994a911597b347a4a76aaff714cc11aad91bd0480b72f6f3ee70"
       },
       "family_id": "author-expansion-20260909",
       "head": "13c481c9fc68b271b6d2631557f977366a66daa1",
@@ -3812,7 +3812,7 @@
     {
       "evidence": {
         "path": "suites/app/evidence/APP-22.json",
-        "sha256": "6144075e9a5347f25f176c3a6d0e599ec83abc586ff159b4b0a413746c9a5437"
+        "sha256": "bc8fac892382b6255435bd498a1737ff8a151b7733c44bc18bc62d99e81a8e33"
       },
       "family_id": "author-expansion-20260909",
       "head": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",

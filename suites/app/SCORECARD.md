@@ -1,6 +1,6 @@
 # APP scorecard
 
-11 repositories; 88 leaves; 140 / 440.
+11 repositories; 88 leaves; 141 / 440.
 
 | ID | Repository | Score | Published source |
 |---|---|---:|---|
@@ -13,7 +13,7 @@
 | APP-15 | system-settings | 8 / 40 | yes |
 | APP-16 | launcher-workspace | 14 / 40 | yes |
 | APP-17 | climate-panel | 7 / 40 | yes |
-| APP-21 | scene-coordinator | 13 / 40 | yes |
+| APP-21 | scene-coordinator | 14 / 40 | yes |
 | APP-22 | drive-event-recorder | 13 / 40 | yes |
 
 Scores are descriptive results from evidence. They are not construction targets or model accuracy.

@@ -470,7 +470,7 @@
             "status": "scored"
           },
           {
-            "analysis": "All 201 managed parameters are centralized with type, unit and actual consumer mapping; the loader validates mappings. Native perturbation changes 131 outputs and baseline restoration is bit-identical.",
+            "analysis": "5 is supported by a complete read-only audit of both production SLX models (549 block instances), independently enumerating numeric calibration slots: all 201 table parameters have matching values/types/units and actual SLX consumer sets; no unmanaged calibration slot was found in Constant/Gain/Saturate/UnitDelay/active Switch fields. Numeric execution timing is separately centralized at model.json period=0.01 s; inactive boolean-switch thresholds are not calibration. Unit semantics and physical purpose were reviewed across acquisition, power envelope, accounting and protection groups. Native dynamic evidence covers ONE PackTarget perturbation 28 to 30, in baseline/tuned/restored runs, affecting 131 output values; it does not validate 201 independent sensitivities. The full static scope plus real loader/model consumption supports centralized, accurate and used parameters over the 3 band. It does not certify vehicle calibration optimality.",
             "evidence": [
               {
                 "claim": "Checks calibration keys/types/consumer expressions before model configuration",
@@ -498,7 +498,7 @@
             "max_score": 5,
             "name": "parameter_management",
             "score": 5,
-            "score_reasoning": "All 201 managed parameters are centralized with type, unit and actual consumer mapping; the loader validates mappings. Native perturbation changes 131 outputs and baseline restoration is bit-identical.",
+            "score_reasoning": "5 is supported by a complete read-only audit of both production SLX models (549 block instances), independently enumerating numeric calibration slots: all 201 table parameters have matching values/types/units and actual SLX consumer sets; no unmanaged calibration slot was found in Constant/Gain/Saturate/UnitDelay/active Switch fields. Numeric execution timing is separately centralized at model.json period=0.01 s; inactive boolean-switch thresholds are not calibration. Unit semantics and physical purpose were reviewed across acquisition, power envelope, accounting and protection groups. Native dynamic evidence covers ONE PackTarget perturbation 28 to 30, in baseline/tuned/restored runs, affecting 131 output values; it does not validate 201 independent sensitivities. The full static scope plus real loader/model consumption supports centralized, accurate and used parameters over the 3 band. It does not certify vehicle calibration optimality.",
             "status": "scored"
           },
           {
@@ -694,35 +694,68 @@
             "status": "scored"
           },
           {
-            "analysis": "Twelve instances reuse BMSLib/Debouncer, but four voltage/temperature severity groups repeat the same threshold/debounce/wrapper logic instead of one shared parameterized monitor. Reuse exists alongside real duplicated logic.",
+            "analysis": "1 retained: four max/min cell-voltage/module-temperature fault groups separately implement the same 19-block, three-severity threshold/debounce/precedence topology; their twelve seven-block wrappers are also identical in topology. Threshold values, > versus < direction, V versus temperature units and separate calibrated debounce times are legitimate differences that can be explicit parameters of one definition. Each shared-definition instance can retain independent state; no source requirement for an independently qualified fork was found. Twelve actual BMSLib/Debouncer links are positive reuse evidence, but do not remove the duplicated upper monitoring logic. Thus 0 ignores real reuse, while 2 requires the absence of this avoidable duplicate logic. The previous SID 120 was a wrapper, not the linked block; direct negative group anchors and actual SID 126 link now distinguish these facts.",
             "evidence": [
               {
-                "claim": "Actual linked Debouncer instance",
+                "claim": "Separate duplicated severity-monitor group; compare topology and calibration in scope audit",
                 "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
                 "evidence_type": "model",
-                "independent_group": "BatteryContactorController.slx:Subsystem",
-                "member": "simulink/systems/system_105.xml",
+                "independent_group": "BatteryContactorController.slx:175",
+                "member": "simulink/systems/system_170.xml",
                 "path": "BatteryContactorController.slx",
-                "sid": "120",
+                "sid": "175",
                 "source": "repository",
-                "symbol": "Subsystem"
+                "symbol": "Max_Module_Temperature_Fault_State"
               },
               {
-                "claim": "One reusable debouncer definition",
+                "claim": "Separate duplicated severity-monitor group; compare topology and calibration in scope audit",
                 "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
                 "evidence_type": "model",
-                "independent_group": "MiniBMS/BMSLib.slx:Debouncer",
-                "member": "simulink/blockdiagram.xml",
-                "path": "MiniBMS/BMSLib.slx",
-                "sid": "49",
+                "independent_group": "BatteryContactorController.slx:218",
+                "member": "simulink/systems/system_170.xml",
+                "path": "BatteryContactorController.slx",
+                "sid": "218",
                 "source": "repository",
-                "symbol": "Debouncer"
+                "symbol": "Min_Module_Temperature_Fault_State"
+              },
+              {
+                "claim": "Separate duplicated severity-monitor group; compare topology and calibration in scope audit",
+                "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+                "evidence_type": "model",
+                "independent_group": "BatteryContactorController.slx:62",
+                "member": "simulink/systems/system_60.xml",
+                "path": "BatteryContactorController.slx",
+                "sid": "62",
+                "source": "repository",
+                "symbol": "Max_Cell_Voltage_Fault_State"
+              },
+              {
+                "claim": "Separate duplicated severity-monitor group; compare topology and calibration in scope audit",
+                "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+                "evidence_type": "model",
+                "independent_group": "BatteryContactorController.slx:105",
+                "member": "simulink/systems/system_60.xml",
+                "path": "BatteryContactorController.slx",
+                "sid": "105",
+                "source": "repository",
+                "symbol": "Min_Cell_Voltage_Fault_State"
+              },
+              {
+                "claim": "Actual BMSLib/Debouncer linked instance; positive counterevidence",
+                "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+                "evidence_type": "model",
+                "independent_group": "BatteryContactorController.slx:126",
+                "member": "simulink/systems/system_120.xml",
+                "path": "BatteryContactorController.slx",
+                "sid": "126",
+                "source": "repository",
+                "symbol": "Subsystem"
               }
             ],
             "max_score": 3,
             "name": "reuse",
             "score": 1,
-            "score_reasoning": "Twelve instances reuse BMSLib/Debouncer, but four voltage/temperature severity groups repeat the same threshold/debounce/wrapper logic instead of one shared parameterized monitor. Reuse exists alongside real duplicated logic.",
+            "score_reasoning": "1 retained: four max/min cell-voltage/module-temperature fault groups separately implement the same 19-block, three-severity threshold/debounce/precedence topology; their twelve seven-block wrappers are also identical in topology. Threshold values, > versus < direction, V versus temperature units and separate calibrated debounce times are legitimate differences that can be explicit parameters of one definition. Each shared-definition instance can retain independent state; no source requirement for an independently qualified fork was found. Twelve actual BMSLib/Debouncer links are positive reuse evidence, but do not remove the duplicated upper monitoring logic. Thus 0 ignores real reuse, while 2 requires the absence of this avoidable duplicate logic. The previous SID 120 was a wrapper, not the linked block; direct negative group anchors and actual SID 126 link now distinguish these facts.",
             "status": "scored"
           },
           {

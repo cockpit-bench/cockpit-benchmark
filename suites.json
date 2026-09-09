@@ -12,7 +12,7 @@
     {
       "canonical_scores": {
         "path": "suites/app/STANDARD_SCORES.json",
-        "sha256": "5782876f18e7395d8ee65c18869b948e602387eba5f1125136c3343e7646a192"
+        "sha256": "e1a60a400e486df47ed9be7bcc52e025b041ce4d085087e861cc9891ea882e7f"
       },
       "contract": {
         "path": "SCORE_RULES.md",
@@ -23,13 +23,13 @@
       "leaf_count": 88,
       "manifest": {
         "path": "suites/app/manifest.json",
-        "sha256": "7c61a542eda48f9c57f7847e79aa5569bc5e0b44a1d158b788022f3538373fbc"
+        "sha256": "05b7cb242b8bcf41df06f8a7adc8f710cc4018e01af7cfad00814f0e99e68b3c"
       },
       "max_score": 440,
       "name": "APP",
       "published_repositories": 11,
       "repository_count": 11,
-      "score": 140,
+      "score": 141,
       "status": "published",
       "technology": "Android"
     },
@@ -60,7 +60,7 @@
     {
       "canonical_scores": {
         "path": "suites/new-energy-matlab/STANDARD_SCORES.json",
-        "sha256": "33e58ad9e475d727ad9826e7f98c6fc3776d3d2f48c2d38ad26a415fceac9d07"
+        "sha256": "5567bcfbeec8c7d1df594e20808628c2ab74dd6c612440ca00d5db42881942e9"
       },
       "contract": {
         "path": "suites/matlab-simulink/contract-index.json",
@@ -71,7 +71,7 @@
       "leaf_count": 143,
       "manifest": {
         "path": "suites/new-energy-matlab/manifest.json",
-        "sha256": "170db398752c9e28540cbb6989a0cd3b03f4ada85dcb1b20e04b4dde5137cfef"
+        "sha256": "e637ed185d2345ab0320adf56329cc910b03f72f700cc6c0aba48aab56c70185"
       },
       "max_score": 671,
       "name": "New Energy MATLAB",

@@ -135,7 +135,7 @@
     {
       "evidence": {
         "path": "suites/new-energy-matlab/evidence/NEM-10.json",
-        "sha256": "fe8dcc4d49e5e857d35975b29e2d7ccc75579d6689fe3cdc783eac606bbd5b8e"
+        "sha256": "995b4975aeee3243c624a416655e8e093bed0e283ac431c7d883a946f47d0bbd"
       },
       "family_id": "local-matlab-generator-2026",
       "head": "db253a0ca7ff559fc2f319e7a00abc255c9a8940",
@@ -166,7 +166,7 @@
     {
       "evidence": {
         "path": "suites/new-energy-matlab/evidence/NEM-11.json",
-        "sha256": "f7ba24a5959553a7b2793362aad088903c333334bea19dd7c678d86f315a722d"
+        "sha256": "47ba1699f43cf1b7fe73eb97cbfd92e41801cdba1ae46a681f498f624c9ff50d"
       },
       "family_id": "minibms-upstream",
       "head": "d9cf0bae322d41e7d829c02636ce343d638797e1",

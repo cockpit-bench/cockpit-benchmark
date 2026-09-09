@@ -204,35 +204,68 @@
         "status": "scored"
       },
       {
-        "analysis": "Twelve instances reuse BMSLib/Debouncer, but four voltage/temperature severity groups repeat the same threshold/debounce/wrapper logic instead of one shared parameterized monitor. Reuse exists alongside real duplicated logic.",
+        "analysis": "1 retained: four max/min cell-voltage/module-temperature fault groups separately implement the same 19-block, three-severity threshold/debounce/precedence topology; their twelve seven-block wrappers are also identical in topology. Threshold values, > versus < direction, V versus temperature units and separate calibrated debounce times are legitimate differences that can be explicit parameters of one definition. Each shared-definition instance can retain independent state; no source requirement for an independently qualified fork was found. Twelve actual BMSLib/Debouncer links are positive reuse evidence, but do not remove the duplicated upper monitoring logic. Thus 0 ignores real reuse, while 2 requires the absence of this avoidable duplicate logic. The previous SID 120 was a wrapper, not the linked block; direct negative group anchors and actual SID 126 link now distinguish these facts.",
         "evidence": [
           {
-            "claim": "Actual linked Debouncer instance",
+            "claim": "Separate duplicated severity-monitor group; compare topology and calibration in scope audit",
             "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
             "evidence_type": "model",
-            "independent_group": "BatteryContactorController.slx:Subsystem",
-            "member": "simulink/systems/system_105.xml",
+            "independent_group": "BatteryContactorController.slx:175",
+            "member": "simulink/systems/system_170.xml",
             "path": "BatteryContactorController.slx",
-            "sid": "120",
+            "sid": "175",
             "source": "repository",
-            "symbol": "Subsystem"
+            "symbol": "Max_Module_Temperature_Fault_State"
           },
           {
-            "claim": "One reusable debouncer definition",
+            "claim": "Separate duplicated severity-monitor group; compare topology and calibration in scope audit",
             "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
             "evidence_type": "model",
-            "independent_group": "MiniBMS/BMSLib.slx:Debouncer",
-            "member": "simulink/blockdiagram.xml",
-            "path": "MiniBMS/BMSLib.slx",
-            "sid": "49",
+            "independent_group": "BatteryContactorController.slx:218",
+            "member": "simulink/systems/system_170.xml",
+            "path": "BatteryContactorController.slx",
+            "sid": "218",
             "source": "repository",
-            "symbol": "Debouncer"
+            "symbol": "Min_Module_Temperature_Fault_State"
+          },
+          {
+            "claim": "Separate duplicated severity-monitor group; compare topology and calibration in scope audit",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "model",
+            "independent_group": "BatteryContactorController.slx:62",
+            "member": "simulink/systems/system_60.xml",
+            "path": "BatteryContactorController.slx",
+            "sid": "62",
+            "source": "repository",
+            "symbol": "Max_Cell_Voltage_Fault_State"
+          },
+          {
+            "claim": "Separate duplicated severity-monitor group; compare topology and calibration in scope audit",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "model",
+            "independent_group": "BatteryContactorController.slx:105",
+            "member": "simulink/systems/system_60.xml",
+            "path": "BatteryContactorController.slx",
+            "sid": "105",
+            "source": "repository",
+            "symbol": "Min_Cell_Voltage_Fault_State"
+          },
+          {
+            "claim": "Actual BMSLib/Debouncer linked instance; positive counterevidence",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "model",
+            "independent_group": "BatteryContactorController.slx:126",
+            "member": "simulink/systems/system_120.xml",
+            "path": "BatteryContactorController.slx",
+            "sid": "126",
+            "source": "repository",
+            "symbol": "Subsystem"
           }
         ],
         "max_score": 3,
         "name": "reuse",
         "score": 1,
-        "score_reasoning": "Twelve instances reuse BMSLib/Debouncer, but four voltage/temperature severity groups repeat the same threshold/debounce/wrapper logic instead of one shared parameterized monitor. Reuse exists alongside real duplicated logic.",
+        "score_reasoning": "1 retained: four max/min cell-voltage/module-temperature fault groups separately implement the same 19-block, three-severity threshold/debounce/precedence topology; their twelve seven-block wrappers are also identical in topology. Threshold values, > versus < direction, V versus temperature units and separate calibrated debounce times are legitimate differences that can be explicit parameters of one definition. Each shared-definition instance can retain independent state; no source requirement for an independently qualified fork was found. Twelve actual BMSLib/Debouncer links are positive reuse evidence, but do not remove the duplicated upper monitoring logic. Thus 0 ignores real reuse, while 2 requires the absence of this avoidable duplicate logic. The previous SID 120 was a wrapper, not the linked block; direct negative group anchors and actual SID 126 link now distinguish these facts.",
         "status": "scored"
       },
       {
@@ -574,6 +607,10 @@
     "total_score": 36,
     "tree": "bedc2fbc0b5b9447eadc2b68bd35c33fd246a6a3"
   },
+  "reuse_scope_audit": {
+    "path": "docs/review-v0101/NEM-11-reuse-scope.json",
+    "sha256": "b61e8a78d19fb402bd612708db0ccb0e1b016fecc77230db249efd101dbdff45"
+  },
   "rule_inputs": {
     "branches": [
       "main"
@@ -601,7 +638,12 @@
     "authoring_context_known": true,
     "independent_blind_review": false,
     "scope": "No score target or quality label was read by rule replay; semantic observations are explicit reviewer inputs.",
-    "second_pass": "Each complete leaf is rechecked against final-source anchors and adjacent contract gates; separate rule code replays these shared observations."
+    "second_pass": "Each complete leaf is rechecked against final-source anchors and adjacent contract gates; separate rule code replays these shared observations.",
+    "v0101_scoped_review": {
+      "decision": 1,
+      "leaf": "reuse",
+      "method": "Maintainer inspected final source, explicit change scenarios and counterevidence; topology/consumer inventory is separate deterministic corroboration. Non-blind, no independent reviewer claim."
+    }
   },
   "source_inventory": {
     "path": "suites/new-energy-matlab/evidence/NEM-11-source.json",

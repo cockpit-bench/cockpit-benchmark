@@ -209,35 +209,46 @@
         "status": "scored"
       },
       {
-        "analysis": "No module cycles or source-directory intrusion; direction is clear, but production consumers directly construct concrete Manager/capture/storage implementations.",
+        "analysis": "RecorderActivity directly selects CameraCapture and VideoStore owned by the video module. Adding a second selectable capture implementation while retaining Camera1 requires changing the Activity field/construction and wiring: the field type is final CameraCapture, and no common capture contract or factory provides the selection. The current backend explicitly opens Camera1 and owns MediaRecorder and storage finalization. This is a local implementation-selection dependency across app/video, supporting 2; stable direction and no reverse/source intrusion or multiple severe propagation mechanisms rule out 1. An internal rewrite preserving CameraCapture methods could remain local, so neither new nor the mere concrete type is independently a defect. This differs from APP-21 consuming an already separate public vehicle SDK, and from APP-02 routing providers through factories.",
         "evidence": [
           {
-            "claim": "App consumes a separately built video library",
+            "claim": "Owned concrete backend field and construction",
             "commit": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
-            "end_line": 6,
+            "end_line": 31,
             "evidence_type": "code",
-            "independent_group": "app/build.gradle:implementation project",
-            "path": "app/build.gradle",
+            "independent_group": "app/src/main/java/org/vehicle/recorder/RecorderActivity.java:new CameraCapture",
+            "path": "app/src/main/java/org/vehicle/recorder/RecorderActivity.java",
             "source": "repository",
-            "start_line": 6,
-            "symbol": "implementation project"
+            "start_line": 14,
+            "symbol": "new CameraCapture"
           },
           {
-            "claim": "Public persistence/capture helpers expose concrete implementations",
+            "claim": "Production capture start/stop and storage result consumer",
             "commit": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
-            "end_line": 19,
+            "end_line": 76,
             "evidence_type": "code",
-            "independent_group": "video/src/main/java/org/vehicle/video/VideoStore.java:public final class VideoStore",
-            "path": "video/src/main/java/org/vehicle/video/VideoStore.java",
+            "independent_group": "app/src/main/java/org/vehicle/recorder/RecorderActivity.java:capture.start",
+            "path": "app/src/main/java/org/vehicle/recorder/RecorderActivity.java",
             "source": "repository",
-            "start_line": 11,
-            "symbol": "public final class VideoStore"
+            "start_line": 54,
+            "symbol": "capture.start"
+          },
+          {
+            "claim": "Camera1-specific implementation selection",
+            "commit": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
+            "end_line": 56,
+            "evidence_type": "code",
+            "independent_group": "video/src/main/java/org/vehicle/video/CameraCapture.java:Camera.open",
+            "path": "video/src/main/java/org/vehicle/video/CameraCapture.java",
+            "source": "repository",
+            "start_line": 36,
+            "symbol": "Camera.open"
           }
         ],
         "max_score": 3,
         "name": "architecture.decoupling",
         "score": 2,
-        "score_reasoning": "No module cycles or source-directory intrusion; direction is clear, but production consumers directly construct concrete Manager/capture/storage implementations.",
+        "score_reasoning": "RecorderActivity directly selects CameraCapture and VideoStore owned by the video module. Adding a second selectable capture implementation while retaining Camera1 requires changing the Activity field/construction and wiring: the field type is final CameraCapture, and no common capture contract or factory provides the selection. The current backend explicitly opens Camera1 and owns MediaRecorder and storage finalization. This is a local implementation-selection dependency across app/video, supporting 2; stable direction and no reverse/source intrusion or multiple severe propagation mechanisms rule out 1. An internal rewrite preserving CameraCapture methods could remain local, so neither new nor the mere concrete type is independently a defect. This differs from APP-21 consuming an already separate public vehicle SDK, and from APP-02 routing providers through factories.",
         "status": "scored"
       },
       {
@@ -635,7 +646,12 @@
     "authoring_context_known": true,
     "independent_blind_review": false,
     "scope": "No score target or quality label was read by rule replay; semantic observations are explicit reviewer inputs.",
-    "second_pass": "Each complete leaf is rechecked against final-source anchors and adjacent contract gates; separate rule code replays these shared observations."
+    "second_pass": "Each complete leaf is rechecked against final-source anchors and adjacent contract gates; separate rule code replays these shared observations.",
+    "v0101_scoped_review": {
+      "decision": 2,
+      "leaf": "architecture.decoupling",
+      "method": "Maintainer inspected final source, explicit change scenarios and counterevidence; topology/consumer inventory is separate deterministic corroboration. Non-blind, no independent reviewer claim."
+    }
   },
   "source_inventory": {
     "path": "suites/app/evidence/APP-22-source.json",

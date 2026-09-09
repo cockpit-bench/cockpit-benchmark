@@ -73,6 +73,11 @@ def verify(wrapper,source_map,records_root=None):
             require(first['head']==source['head'] and first['tree']==source['tree'] and first['refs']==source['refs'],'Source binding differs')
             require(sha(encoded(first))==facts['source_inventory_sha256'],'Source inventory differs')
             inventory=read(bound(wrapper,facts['source_inventory']));require(first==inventory,'Published inventory differs')
+            from semantic_audits import parameter_inventory,reuse_inventory
+            for field,producer in [('parameter_scope_audit',parameter_inventory),('reuse_scope_audit',reuse_inventory)]:
+                if field in facts:
+                    recorded=read(bound(wrapper,facts[field]))
+                    require(recorded==producer(repo),'Semantic scope inventory differs: '+source['id'])
             declared={leaf['name']:leaf['score'] for leaf in facts['reference']['leaves']}
             actual=recompute(facts);require(actual==declared,'Independent rule recomputation differs: '+source['id'])
             def anchor(a):

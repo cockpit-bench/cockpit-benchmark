@@ -1,0 +1,1912 @@
+{
+  "limits": "Post-hoc in-sample modal and legal-band diagnostics, not candidate accuracy; type raw scores remain separate.",
+  "reference_id": "v0.10.1",
+  "types": {
+    "app": {
+      "canonical_diagnostic": {
+        "band_cells_present": 23,
+        "band_cells_total": 32,
+        "baseline_scope": "Post-hoc in-sample mode by split/type/leaf on exactly the eligible set; not model accuracy.",
+        "groups": [
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 2,
+              "3": 2,
+              "5": 5
+            },
+            "kind": "app",
+            "missing_bands": [],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              5
+            ],
+            "name": "architecture.componentization",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "2": 9,
+              "3": 2
+            },
+            "kind": "app",
+            "missing_bands": [
+              0,
+              1
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              2
+            ],
+            "name": "architecture.decoupling",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 2,
+              "2": 4,
+              "3": 3
+            },
+            "kind": "app",
+            "missing_bands": [],
+            "modal_accuracy": 0.36363636363636365,
+            "modal_hits": 4,
+            "modal_scores": [
+              2
+            ],
+            "name": "architecture.modularization",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 9
+            },
+            "kind": "app",
+            "missing_bands": [
+              2,
+              3
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              1
+            ],
+            "name": "compilation.api_version_management",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 6,
+              "1": 2,
+              "2": 2,
+              "3": 1
+            },
+            "kind": "app",
+            "missing_bands": [],
+            "modal_accuracy": 0.5454545454545454,
+            "modal_hits": 6,
+            "modal_scores": [
+              0
+            ],
+            "name": "compilation.ci_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "1": 1,
+              "2": 7
+            },
+            "kind": "app",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              2
+            ],
+            "name": "compilation.compilation_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "3": 8,
+              "8": 1
+            },
+            "kind": "app",
+            "missing_bands": [
+              10
+            ],
+            "modal_accuracy": 0.7272727272727273,
+            "modal_hits": 8,
+            "modal_scores": [
+              3
+            ],
+            "name": "platform_reuse.platform_upgrade",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 11
+            },
+            "kind": "app",
+            "missing_bands": [
+              3,
+              8,
+              10
+            ],
+            "modal_accuracy": 1.0,
+            "modal_hits": 11,
+            "modal_scores": [
+              0
+            ],
+            "name": "platform_reuse.release_branch_strategy",
+            "split": "development"
+          }
+        ],
+        "macro_modal_accuracy": 0.6704545454545454,
+        "modal_accuracy": 0.6704545454545454,
+        "modal_hits": 59
+      },
+      "frozen_external": {
+        "baseline_scope": "Post-hoc in-sample mode by split/type/leaf on exactly the eligible set; not model accuracy.",
+        "groups": [
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 2,
+              "3": 2,
+              "5": 5
+            },
+            "kind": "app",
+            "missing_bands": [],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              5
+            ],
+            "name": "architecture.componentization",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "2": 9,
+              "3": 2
+            },
+            "kind": "app",
+            "missing_bands": [
+              0,
+              1
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              2
+            ],
+            "name": "architecture.decoupling",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 2,
+              "2": 4,
+              "3": 3
+            },
+            "kind": "app",
+            "missing_bands": [],
+            "modal_accuracy": 0.36363636363636365,
+            "modal_hits": 4,
+            "modal_scores": [
+              2
+            ],
+            "name": "architecture.modularization",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 9
+            },
+            "kind": "app",
+            "missing_bands": [
+              2,
+              3
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              1
+            ],
+            "name": "compilation.api_version_management",
+            "split": "development"
+          },
+          {
+            "eligible": 9,
+            "gold_counts": {
+              "0": 6,
+              "1": 2,
+              "2": 1
+            },
+            "kind": "app",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.6666666666666666,
+            "modal_hits": 6,
+            "modal_scores": [
+              0
+            ],
+            "name": "compilation.ci_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "1": 1,
+              "2": 7
+            },
+            "kind": "app",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              2
+            ],
+            "name": "compilation.compilation_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 6,
+            "gold_counts": {
+              "3": 5,
+              "8": 1
+            },
+            "kind": "app",
+            "missing_bands": [
+              0,
+              10
+            ],
+            "modal_accuracy": 0.8333333333333334,
+            "modal_hits": 5,
+            "modal_scores": [
+              3
+            ],
+            "name": "platform_reuse.platform_upgrade",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 11
+            },
+            "kind": "app",
+            "missing_bands": [
+              3,
+              8,
+              10
+            ],
+            "modal_accuracy": 1.0,
+            "modal_hits": 11,
+            "modal_scores": [
+              0
+            ],
+            "name": "platform_reuse.release_branch_strategy",
+            "split": "development"
+          }
+        ],
+        "macro_modal_accuracy": 0.6988636363636364,
+        "modal_accuracy": 0.691358024691358,
+        "modal_hits": 56
+      },
+      "source_only": {
+        "baseline_scope": "Post-hoc in-sample mode by split/type/leaf on exactly the eligible set; not model accuracy.",
+        "groups": [
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 2,
+              "3": 2,
+              "5": 5
+            },
+            "kind": "app",
+            "missing_bands": [],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              5
+            ],
+            "name": "architecture.componentization",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "2": 9,
+              "3": 2
+            },
+            "kind": "app",
+            "missing_bands": [
+              0,
+              1
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              2
+            ],
+            "name": "architecture.decoupling",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 2,
+              "2": 4,
+              "3": 3
+            },
+            "kind": "app",
+            "missing_bands": [],
+            "modal_accuracy": 0.36363636363636365,
+            "modal_hits": 4,
+            "modal_scores": [
+              2
+            ],
+            "name": "architecture.modularization",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 9
+            },
+            "kind": "app",
+            "missing_bands": [
+              2,
+              3
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              1
+            ],
+            "name": "compilation.api_version_management",
+            "split": "development"
+          },
+          {
+            "eligible": 9,
+            "gold_counts": {
+              "0": 6,
+              "1": 2,
+              "2": 1
+            },
+            "kind": "app",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.6666666666666666,
+            "modal_hits": 6,
+            "modal_scores": [
+              0
+            ],
+            "name": "compilation.ci_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "1": 1,
+              "2": 7
+            },
+            "kind": "app",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              2
+            ],
+            "name": "compilation.compilation_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 6,
+            "gold_counts": {
+              "3": 5,
+              "8": 1
+            },
+            "kind": "app",
+            "missing_bands": [
+              0,
+              10
+            ],
+            "modal_accuracy": 0.8333333333333334,
+            "modal_hits": 5,
+            "modal_scores": [
+              3
+            ],
+            "name": "platform_reuse.platform_upgrade",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 11
+            },
+            "kind": "app",
+            "missing_bands": [
+              3,
+              8,
+              10
+            ],
+            "modal_accuracy": 1.0,
+            "modal_hits": 11,
+            "modal_scores": [
+              0
+            ],
+            "name": "platform_reuse.release_branch_strategy",
+            "split": "development"
+          }
+        ],
+        "macro_modal_accuracy": 0.6988636363636364,
+        "modal_accuracy": 0.691358024691358,
+        "modal_hits": 56
+      }
+    },
+    "fw": {
+      "canonical_diagnostic": {
+        "band_cells_present": 29,
+        "band_cells_total": 49,
+        "baseline_scope": "Post-hoc in-sample mode by split/type/leaf on exactly the eligible set; not model accuracy.",
+        "groups": [
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 3,
+              "2": 6
+            },
+            "kind": "fw",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.5454545454545454,
+            "modal_hits": 6,
+            "modal_scores": [
+              2
+            ],
+            "name": "compilation.api_version_management",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 9
+            },
+            "kind": "fw",
+            "missing_bands": [
+              2,
+              3
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              1
+            ],
+            "name": "compilation.ci_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 7,
+              "1": 2,
+              "2": 2
+            },
+            "kind": "fw",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              0
+            ],
+            "name": "compilation.compilation_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 1,
+              "3": 8,
+              "8": 2
+            },
+            "kind": "fw",
+            "missing_bands": [
+              10
+            ],
+            "modal_accuracy": 0.7272727272727273,
+            "modal_hits": 8,
+            "modal_scores": [
+              3
+            ],
+            "name": "platform_reuse.platform_upgrade",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 11
+            },
+            "kind": "fw",
+            "missing_bands": [
+              3,
+              8,
+              10
+            ],
+            "modal_accuracy": 1.0,
+            "modal_hits": 11,
+            "modal_scores": [
+              0
+            ],
+            "name": "platform_reuse.release_branch_strategy",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 1,
+              "1": 9,
+              "3": 1
+            },
+            "kind": "fw",
+            "missing_bands": [
+              2
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              1
+            ],
+            "name": "quality.integration_test",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 3,
+              "2": 8
+            },
+            "kind": "fw",
+            "missing_bands": [
+              0,
+              3,
+              4
+            ],
+            "modal_accuracy": 0.7272727272727273,
+            "modal_hits": 8,
+            "modal_scores": [
+              2
+            ],
+            "name": "solid_principle.dependency_inversion",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 1,
+              "2": 4,
+              "3": 6
+            },
+            "kind": "fw",
+            "missing_bands": [
+              0,
+              4
+            ],
+            "modal_accuracy": 0.5454545454545454,
+            "modal_hits": 6,
+            "modal_scores": [
+              3
+            ],
+            "name": "solid_principle.interface_segregation",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "2": 1,
+              "3": 7
+            },
+            "kind": "fw",
+            "missing_bands": [
+              1,
+              4
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              3
+            ],
+            "name": "solid_principle.liskov_substitution",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 2,
+              "2": 7,
+              "3": 2
+            },
+            "kind": "fw",
+            "missing_bands": [
+              0,
+              4
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              2
+            ],
+            "name": "solid_principle.open_closed",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 2,
+              "2": 8,
+              "3": 1
+            },
+            "kind": "fw",
+            "missing_bands": [
+              0,
+              4
+            ],
+            "modal_accuracy": 0.7272727272727273,
+            "modal_hits": 8,
+            "modal_scores": [
+              2
+            ],
+            "name": "solid_principle.single_responsibility",
+            "split": "development"
+          }
+        ],
+        "macro_modal_accuracy": 0.7107438016528925,
+        "modal_accuracy": 0.7107438016528925,
+        "modal_hits": 86
+      },
+      "frozen_external": {
+        "baseline_scope": "Post-hoc in-sample mode by split/type/leaf on exactly the eligible set; not model accuracy.",
+        "groups": [
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 3,
+              "2": 6
+            },
+            "kind": "fw",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.5454545454545454,
+            "modal_hits": 6,
+            "modal_scores": [
+              2
+            ],
+            "name": "compilation.api_version_management",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 9
+            },
+            "kind": "fw",
+            "missing_bands": [
+              2,
+              3
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              1
+            ],
+            "name": "compilation.ci_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 9,
+            "gold_counts": {
+              "0": 6,
+              "1": 1,
+              "2": 2
+            },
+            "kind": "fw",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.6666666666666666,
+            "modal_hits": 6,
+            "modal_scores": [
+              0
+            ],
+            "name": "compilation.compilation_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 5,
+            "gold_counts": {
+              "0": 1,
+              "3": 2,
+              "8": 2
+            },
+            "kind": "fw",
+            "missing_bands": [
+              10
+            ],
+            "modal_accuracy": 0.4,
+            "modal_hits": 2,
+            "modal_scores": [
+              3,
+              8
+            ],
+            "name": "platform_reuse.platform_upgrade",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 11
+            },
+            "kind": "fw",
+            "missing_bands": [
+              3,
+              8,
+              10
+            ],
+            "modal_accuracy": 1.0,
+            "modal_hits": 11,
+            "modal_scores": [
+              0
+            ],
+            "name": "platform_reuse.release_branch_strategy",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 1,
+              "1": 9,
+              "3": 1
+            },
+            "kind": "fw",
+            "missing_bands": [
+              2
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              1
+            ],
+            "name": "quality.integration_test",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 3,
+              "2": 8
+            },
+            "kind": "fw",
+            "missing_bands": [
+              0,
+              3,
+              4
+            ],
+            "modal_accuracy": 0.7272727272727273,
+            "modal_hits": 8,
+            "modal_scores": [
+              2
+            ],
+            "name": "solid_principle.dependency_inversion",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 1,
+              "2": 4,
+              "3": 6
+            },
+            "kind": "fw",
+            "missing_bands": [
+              0,
+              4
+            ],
+            "modal_accuracy": 0.5454545454545454,
+            "modal_hits": 6,
+            "modal_scores": [
+              3
+            ],
+            "name": "solid_principle.interface_segregation",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "2": 1,
+              "3": 7
+            },
+            "kind": "fw",
+            "missing_bands": [
+              1,
+              4
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              3
+            ],
+            "name": "solid_principle.liskov_substitution",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 2,
+              "2": 7,
+              "3": 2
+            },
+            "kind": "fw",
+            "missing_bands": [
+              0,
+              4
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              2
+            ],
+            "name": "solid_principle.open_closed",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 2,
+              "2": 8,
+              "3": 1
+            },
+            "kind": "fw",
+            "missing_bands": [
+              0,
+              4
+            ],
+            "modal_accuracy": 0.7272727272727273,
+            "modal_hits": 8,
+            "modal_scores": [
+              2
+            ],
+            "name": "solid_principle.single_responsibility",
+            "split": "development"
+          }
+        ],
+        "macro_modal_accuracy": 0.6837465564738292,
+        "modal_accuracy": 0.6991150442477876,
+        "modal_hits": 79
+      },
+      "source_only": {
+        "baseline_scope": "Post-hoc in-sample mode by split/type/leaf on exactly the eligible set; not model accuracy.",
+        "groups": [
+          {
+            "eligible": 10,
+            "gold_counts": {
+              "0": 2,
+              "1": 3,
+              "2": 5
+            },
+            "kind": "fw",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.5,
+            "modal_hits": 5,
+            "modal_scores": [
+              2
+            ],
+            "name": "compilation.api_version_management",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 9
+            },
+            "kind": "fw",
+            "missing_bands": [
+              2,
+              3
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              1
+            ],
+            "name": "compilation.ci_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 9,
+            "gold_counts": {
+              "0": 6,
+              "1": 1,
+              "2": 2
+            },
+            "kind": "fw",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.6666666666666666,
+            "modal_hits": 6,
+            "modal_scores": [
+              0
+            ],
+            "name": "compilation.compilation_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 5,
+            "gold_counts": {
+              "0": 1,
+              "3": 2,
+              "8": 2
+            },
+            "kind": "fw",
+            "missing_bands": [
+              10
+            ],
+            "modal_accuracy": 0.4,
+            "modal_hits": 2,
+            "modal_scores": [
+              3,
+              8
+            ],
+            "name": "platform_reuse.platform_upgrade",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 11
+            },
+            "kind": "fw",
+            "missing_bands": [
+              3,
+              8,
+              10
+            ],
+            "modal_accuracy": 1.0,
+            "modal_hits": 11,
+            "modal_scores": [
+              0
+            ],
+            "name": "platform_reuse.release_branch_strategy",
+            "split": "development"
+          },
+          {
+            "eligible": 10,
+            "gold_counts": {
+              "0": 1,
+              "1": 9
+            },
+            "kind": "fw",
+            "missing_bands": [
+              2,
+              3
+            ],
+            "modal_accuracy": 0.9,
+            "modal_hits": 9,
+            "modal_scores": [
+              1
+            ],
+            "name": "quality.integration_test",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 3,
+              "2": 8
+            },
+            "kind": "fw",
+            "missing_bands": [
+              0,
+              3,
+              4
+            ],
+            "modal_accuracy": 0.7272727272727273,
+            "modal_hits": 8,
+            "modal_scores": [
+              2
+            ],
+            "name": "solid_principle.dependency_inversion",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 1,
+              "2": 4,
+              "3": 6
+            },
+            "kind": "fw",
+            "missing_bands": [
+              0,
+              4
+            ],
+            "modal_accuracy": 0.5454545454545454,
+            "modal_hits": 6,
+            "modal_scores": [
+              3
+            ],
+            "name": "solid_principle.interface_segregation",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "2": 1,
+              "3": 7
+            },
+            "kind": "fw",
+            "missing_bands": [
+              1,
+              4
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              3
+            ],
+            "name": "solid_principle.liskov_substitution",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 2,
+              "2": 7,
+              "3": 2
+            },
+            "kind": "fw",
+            "missing_bands": [
+              0,
+              4
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              2
+            ],
+            "name": "solid_principle.open_closed",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 2,
+              "2": 8,
+              "3": 1
+            },
+            "kind": "fw",
+            "missing_bands": [
+              0,
+              4
+            ],
+            "modal_accuracy": 0.7272727272727273,
+            "modal_hits": 8,
+            "modal_scores": [
+              2
+            ],
+            "name": "solid_principle.single_responsibility",
+            "split": "development"
+          }
+        ],
+        "macro_modal_accuracy": 0.6870523415977962,
+        "modal_accuracy": 0.7027027027027027,
+        "modal_hits": 78
+      }
+    },
+    "new-energy-matlab": {
+      "canonical_diagnostic": {
+        "band_cells_present": 40,
+        "band_cells_total": 52,
+        "baseline_scope": "Post-hoc in-sample mode by split/type/leaf on exactly the eligible set; not model accuracy.",
+        "groups": [
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "3": 11
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0,
+              1,
+              2
+            ],
+            "modal_accuracy": 1.0,
+            "modal_hits": 11,
+            "modal_scores": [
+              3
+            ],
+            "name": "build_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 1,
+              "1": 5,
+              "2": 3,
+              "3": 2
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              1
+            ],
+            "name": "dataflow",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "10": 5,
+              "8": 3
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              10
+            ],
+            "name": "device_specificity",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 4,
+              "5": 7
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0,
+              3
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              5
+            ],
+            "name": "directory",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "1": 4,
+              "2": 3,
+              "3": 1
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.36363636363636365,
+            "modal_hits": 4,
+            "modal_scores": [
+              1
+            ],
+            "name": "hierarchy",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 1,
+              "2": 6,
+              "3": 4
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              1
+            ],
+            "modal_accuracy": 0.5454545454545454,
+            "modal_hits": 6,
+            "modal_scores": [
+              2
+            ],
+            "name": "interface",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 4,
+              "2": 1,
+              "3": 4
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.36363636363636365,
+            "modal_hits": 4,
+            "modal_scores": [
+              1,
+              3
+            ],
+            "name": "model_version",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "1": 1,
+              "3": 3,
+              "5": 4
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.36363636363636365,
+            "modal_hits": 4,
+            "modal_scores": [
+              5
+            ],
+            "name": "naming",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 5,
+              "1": 1,
+              "3": 1,
+              "5": 4
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              0
+            ],
+            "name": "parameter_management",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "10": 5,
+              "3": 3,
+              "8": 3
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0
+            ],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              10
+            ],
+            "name": "release_branches",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 9,
+              "2": 2
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0,
+              3
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              1
+            ],
+            "name": "reuse",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 2,
+              "3": 2,
+              "5": 7
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              5
+            ],
+            "name": "unit_test",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "1": 3,
+              "3": 5
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              2
+            ],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              3
+            ],
+            "name": "version_independence",
+            "split": "development"
+          }
+        ],
+        "macro_modal_accuracy": 0.5384615384615384,
+        "modal_accuracy": 0.5384615384615384,
+        "modal_hits": 77
+      },
+      "frozen_external": {
+        "baseline_scope": "Post-hoc in-sample mode by split/type/leaf on exactly the eligible set; not model accuracy.",
+        "groups": [
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "3": 11
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0,
+              1,
+              2
+            ],
+            "modal_accuracy": 1.0,
+            "modal_hits": 11,
+            "modal_scores": [
+              3
+            ],
+            "name": "build_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 1,
+              "1": 5,
+              "2": 3,
+              "3": 2
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              1
+            ],
+            "name": "dataflow",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "10": 5,
+              "8": 3
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              10
+            ],
+            "name": "device_specificity",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 4,
+              "5": 7
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0,
+              3
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              5
+            ],
+            "name": "directory",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "1": 4,
+              "2": 3,
+              "3": 1
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.36363636363636365,
+            "modal_hits": 4,
+            "modal_scores": [
+              1
+            ],
+            "name": "hierarchy",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 1,
+              "2": 6,
+              "3": 4
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              1
+            ],
+            "modal_accuracy": 0.5454545454545454,
+            "modal_hits": 6,
+            "modal_scores": [
+              2
+            ],
+            "name": "interface",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 4,
+              "2": 1,
+              "3": 4
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.36363636363636365,
+            "modal_hits": 4,
+            "modal_scores": [
+              1,
+              3
+            ],
+            "name": "model_version",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "1": 1,
+              "3": 3,
+              "5": 4
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.36363636363636365,
+            "modal_hits": 4,
+            "modal_scores": [
+              5
+            ],
+            "name": "naming",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 5,
+              "1": 1,
+              "3": 1,
+              "5": 4
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              0
+            ],
+            "name": "parameter_management",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "10": 5,
+              "3": 3,
+              "8": 3
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0
+            ],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              10
+            ],
+            "name": "release_branches",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 9,
+              "2": 2
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0,
+              3
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              1
+            ],
+            "name": "reuse",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 2,
+              "3": 2,
+              "5": 7
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              5
+            ],
+            "name": "unit_test",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "1": 3,
+              "3": 5
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              2
+            ],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              3
+            ],
+            "name": "version_independence",
+            "split": "development"
+          }
+        ],
+        "macro_modal_accuracy": 0.5384615384615384,
+        "modal_accuracy": 0.5384615384615384,
+        "modal_hits": 77
+      },
+      "source_only": {
+        "baseline_scope": "Post-hoc in-sample mode by split/type/leaf on exactly the eligible set; not model accuracy.",
+        "groups": [
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "3": 11
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0,
+              1,
+              2
+            ],
+            "modal_accuracy": 1.0,
+            "modal_hits": 11,
+            "modal_scores": [
+              3
+            ],
+            "name": "build_independence",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 1,
+              "1": 5,
+              "2": 3,
+              "3": 2
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              1
+            ],
+            "name": "dataflow",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "10": 5,
+              "8": 3
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              10
+            ],
+            "name": "device_specificity",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 4,
+              "5": 7
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0,
+              3
+            ],
+            "modal_accuracy": 0.6363636363636364,
+            "modal_hits": 7,
+            "modal_scores": [
+              5
+            ],
+            "name": "directory",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "1": 4,
+              "2": 3,
+              "3": 1
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.36363636363636365,
+            "modal_hits": 4,
+            "modal_scores": [
+              1
+            ],
+            "name": "hierarchy",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 1,
+              "2": 6,
+              "3": 4
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              1
+            ],
+            "modal_accuracy": 0.5454545454545454,
+            "modal_hits": 6,
+            "modal_scores": [
+              2
+            ],
+            "name": "interface",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 2,
+              "1": 4,
+              "2": 1,
+              "3": 4
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.36363636363636365,
+            "modal_hits": 4,
+            "modal_scores": [
+              1,
+              3
+            ],
+            "name": "model_version",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "1": 1,
+              "3": 3,
+              "5": 4
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.36363636363636365,
+            "modal_hits": 4,
+            "modal_scores": [
+              5
+            ],
+            "name": "naming",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 5,
+              "1": 1,
+              "3": 1,
+              "5": 4
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              0
+            ],
+            "name": "parameter_management",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "10": 5,
+              "3": 3,
+              "8": 3
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0
+            ],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              10
+            ],
+            "name": "release_branches",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "1": 9,
+              "2": 2
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0,
+              3
+            ],
+            "modal_accuracy": 0.8181818181818182,
+            "modal_hits": 9,
+            "modal_scores": [
+              1
+            ],
+            "name": "reuse",
+            "split": "development"
+          },
+          {
+            "eligible": 2,
+            "gold_counts": {
+              "1": 2
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              0,
+              3,
+              5
+            ],
+            "modal_accuracy": 1.0,
+            "modal_hits": 2,
+            "modal_scores": [
+              1
+            ],
+            "name": "unit_test",
+            "split": "development"
+          },
+          {
+            "eligible": 11,
+            "gold_counts": {
+              "0": 3,
+              "1": 3,
+              "3": 5
+            },
+            "kind": "new-energy-matlab",
+            "missing_bands": [
+              2
+            ],
+            "modal_accuracy": 0.45454545454545453,
+            "modal_hits": 5,
+            "modal_scores": [
+              3
+            ],
+            "name": "version_independence",
+            "split": "development"
+          }
+        ],
+        "macro_modal_accuracy": 0.5664335664335665,
+        "modal_accuracy": 0.5373134328358209,
+        "modal_hits": 72
+      }
+    }
+  }
+}

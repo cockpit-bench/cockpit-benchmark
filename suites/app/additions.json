@@ -114,35 +114,46 @@
               "status": "scored"
             },
             {
-              "analysis": "No module cycles or source-directory intrusion; direction is clear, but production consumers directly construct concrete Manager/capture/storage implementations.",
+              "analysis": "SceneController receives the public VehicleManager SDK facade and uses snapshot/apply. Vehicle transport/provider implementation remains below the pinned AAR/Binder boundary. Replacing the service-side provider under the same contract does not require APP source changes; adding a new protocol or changing the public scene contract is a different change axis. SceneActivity constructs and connects the facade as composition/lifecycle wiring, without importing service adapters or storage. Shared capability is downshifted, dependency direction is stable, and there is no demonstrated cross-boundary implementation propagation. This supports 3 under the same concrete-public-facade interpretation used for APP-02; constructor injection or new alone is not decisive. No substitutability of arbitrary scene strategies or complete API compatibility governance is claimed.",
               "evidence": [
                 {
-                  "claim": "Activity, UI and SDK wiring share one root package",
+                  "claim": "Injected public SDK boundary; no provider implementation import",
                   "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
-                  "end_line": 17,
+                  "end_line": 31,
                   "evidence_type": "code",
-                  "independent_group": "app/src/main/java/org/vehicle/scene/SceneActivity.java:class SceneActivity",
-                  "path": "app/src/main/java/org/vehicle/scene/SceneActivity.java",
-                  "source": "repository",
-                  "start_line": 9,
-                  "symbol": "class SceneActivity"
-                },
-                {
-                  "claim": "Scene orchestration is in the same build module/root package",
-                  "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
-                  "end_line": 17,
-                  "evidence_type": "code",
-                  "independent_group": "app/src/main/java/org/vehicle/scene/SceneController.java:class SceneController",
+                  "independent_group": "app/src/main/java/org/vehicle/scene/SceneController.java:manager.snapshot",
                   "path": "app/src/main/java/org/vehicle/scene/SceneController.java",
                   "source": "repository",
-                  "start_line": 9,
-                  "symbol": "class SceneController"
+                  "start_line": 10,
+                  "symbol": "manager.snapshot"
+                },
+                {
+                  "claim": "Composition and connection of SDK facade",
+                  "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+                  "end_line": 41,
+                  "evidence_type": "code",
+                  "independent_group": "app/src/main/java/org/vehicle/scene/SceneActivity.java:manager = new VehicleManager",
+                  "path": "app/src/main/java/org/vehicle/scene/SceneActivity.java",
+                  "source": "repository",
+                  "start_line": 33,
+                  "symbol": "manager = new VehicleManager"
+                },
+                {
+                  "claim": "Pinned separately delivered SDK binary",
+                  "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+                  "end_line": 7,
+                  "evidence_type": "code",
+                  "independent_group": "app/build.gradle:implementation files",
+                  "path": "app/build.gradle",
+                  "source": "repository",
+                  "start_line": 7,
+                  "symbol": "implementation files"
                 }
               ],
               "max_score": 3,
               "name": "architecture.decoupling",
-              "score": 2,
-              "score_reasoning": "No module cycles or source-directory intrusion; direction is clear, but production consumers directly construct concrete Manager/capture/storage implementations.",
+              "score": 3,
+              "score_reasoning": "SceneController receives the public VehicleManager SDK facade and uses snapshot/apply. Vehicle transport/provider implementation remains below the pinned AAR/Binder boundary. Replacing the service-side provider under the same contract does not require APP source changes; adding a new protocol or changing the public scene contract is a different change axis. SceneActivity constructs and connects the facade as composition/lifecycle wiring, without importing service adapters or storage. Shared capability is downshifted, dependency direction is stable, and there is no demonstrated cross-boundary implementation propagation. This supports 3 under the same concrete-public-facade interpretation used for APP-02; constructor injection or new alone is not decisive. No substitutability of arbitrary scene strategies or complete API compatibility governance is claimed.",
               "status": "scored"
             },
             {
@@ -245,14 +256,14 @@
           "max_score": 40,
           "name": "scene-coordinator",
           "review_status": "maintainer_final_source_review_with_explicit_observations",
-          "total_score": 13,
+          "total_score": 14,
           "tree": "de8f0b04b122b52a2fc463f348541750ce8876d8"
         }
       },
       "source": {
         "evidence": {
           "path": "suites/app/evidence/APP-21.json",
-          "sha256": "2a1c7e592a0a02c2510f18ca00a5456603058d8774da5e467260af566d40eea3"
+          "sha256": "721b6866a0f2994a911597b347a4a76aaff714cc11aad91bd0480b72f6f3ee70"
         },
         "family_id": "author-expansion-20260909",
         "head": "13c481c9fc68b271b6d2631557f977366a66daa1",
@@ -394,35 +405,46 @@
               "status": "scored"
             },
             {
-              "analysis": "No module cycles or source-directory intrusion; direction is clear, but production consumers directly construct concrete Manager/capture/storage implementations.",
+              "analysis": "RecorderActivity directly selects CameraCapture and VideoStore owned by the video module. Adding a second selectable capture implementation while retaining Camera1 requires changing the Activity field/construction and wiring: the field type is final CameraCapture, and no common capture contract or factory provides the selection. The current backend explicitly opens Camera1 and owns MediaRecorder and storage finalization. This is a local implementation-selection dependency across app/video, supporting 2; stable direction and no reverse/source intrusion or multiple severe propagation mechanisms rule out 1. An internal rewrite preserving CameraCapture methods could remain local, so neither new nor the mere concrete type is independently a defect. This differs from APP-21 consuming an already separate public vehicle SDK, and from APP-02 routing providers through factories.",
               "evidence": [
                 {
-                  "claim": "App consumes a separately built video library",
+                  "claim": "Owned concrete backend field and construction",
                   "commit": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
-                  "end_line": 6,
+                  "end_line": 31,
                   "evidence_type": "code",
-                  "independent_group": "app/build.gradle:implementation project",
-                  "path": "app/build.gradle",
+                  "independent_group": "app/src/main/java/org/vehicle/recorder/RecorderActivity.java:new CameraCapture",
+                  "path": "app/src/main/java/org/vehicle/recorder/RecorderActivity.java",
                   "source": "repository",
-                  "start_line": 6,
-                  "symbol": "implementation project"
+                  "start_line": 14,
+                  "symbol": "new CameraCapture"
                 },
                 {
-                  "claim": "Public persistence/capture helpers expose concrete implementations",
+                  "claim": "Production capture start/stop and storage result consumer",
                   "commit": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
-                  "end_line": 19,
+                  "end_line": 76,
                   "evidence_type": "code",
-                  "independent_group": "video/src/main/java/org/vehicle/video/VideoStore.java:public final class VideoStore",
-                  "path": "video/src/main/java/org/vehicle/video/VideoStore.java",
+                  "independent_group": "app/src/main/java/org/vehicle/recorder/RecorderActivity.java:capture.start",
+                  "path": "app/src/main/java/org/vehicle/recorder/RecorderActivity.java",
                   "source": "repository",
-                  "start_line": 11,
-                  "symbol": "public final class VideoStore"
+                  "start_line": 54,
+                  "symbol": "capture.start"
+                },
+                {
+                  "claim": "Camera1-specific implementation selection",
+                  "commit": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
+                  "end_line": 56,
+                  "evidence_type": "code",
+                  "independent_group": "video/src/main/java/org/vehicle/video/CameraCapture.java:Camera.open",
+                  "path": "video/src/main/java/org/vehicle/video/CameraCapture.java",
+                  "source": "repository",
+                  "start_line": 36,
+                  "symbol": "Camera.open"
                 }
               ],
               "max_score": 3,
               "name": "architecture.decoupling",
               "score": 2,
-              "score_reasoning": "No module cycles or source-directory intrusion; direction is clear, but production consumers directly construct concrete Manager/capture/storage implementations.",
+              "score_reasoning": "RecorderActivity directly selects CameraCapture and VideoStore owned by the video module. Adding a second selectable capture implementation while retaining Camera1 requires changing the Activity field/construction and wiring: the field type is final CameraCapture, and no common capture contract or factory provides the selection. The current backend explicitly opens Camera1 and owns MediaRecorder and storage finalization. This is a local implementation-selection dependency across app/video, supporting 2; stable direction and no reverse/source intrusion or multiple severe propagation mechanisms rule out 1. An internal rewrite preserving CameraCapture methods could remain local, so neither new nor the mere concrete type is independently a defect. This differs from APP-21 consuming an already separate public vehicle SDK, and from APP-02 routing providers through factories.",
               "status": "scored"
             },
             {
@@ -532,7 +554,7 @@
       "source": {
         "evidence": {
           "path": "suites/app/evidence/APP-22.json",
-          "sha256": "6144075e9a5347f25f176c3a6d0e599ec83abc586ff159b4b0a413746c9a5437"
+          "sha256": "bc8fac892382b6255435bd498a1737ff8a151b7733c44bc18bc62d99e81a8e33"
         },
         "family_id": "author-expansion-20260909",
         "head": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",

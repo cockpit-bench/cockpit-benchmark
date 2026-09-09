@@ -1,0 +1,38 @@
+{
+  "app": {
+    "frozen_external": {
+      "eligible": 81,
+      "excluded": 7,
+      "requested": 88
+    },
+    "source_only": {
+      "eligible": 81,
+      "excluded": 7,
+      "requested": 88
+    }
+  },
+  "fw": {
+    "frozen_external": {
+      "eligible": 113,
+      "excluded": 8,
+      "requested": 121
+    },
+    "source_only": {
+      "eligible": 111,
+      "excluded": 10,
+      "requested": 121
+    }
+  },
+  "new-energy-matlab": {
+    "frozen_external": {
+      "eligible": 143,
+      "excluded": 0,
+      "requested": 143
+    },
+    "source_only": {
+      "eligible": 134,
+      "excluded": 9,
+      "requested": 143
+    }
+  }
+}

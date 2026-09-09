@@ -1,4 +1,4 @@
-Current mainline: three repository types and six published additions (v0.10.0) are described in [the root README](../README.md) and [expansion evidence](../docs/EXPANSION_20260909.md). Use repository_types.py and expansion.py for the new registry. The tools and 171-leaf counts below remain the preserved Validation-18 verification scope.
+Current mainline v0.10.1: [scoped evidence fixes](../docs/REVIEW_V0101.md) and [current three-type evaluation](../docs/CURRENT_EVALUATION.md). Use repository_types.py and expansion.py for the current registry and evaluation_current.py for current fixed populations. The tools and 171-leaf counts below remain the preserved Validation-18 verification scope.
 
 Current v0.9.4: Android 259/828; FW-03 MAP OCP arbitration and approved candidate-visible contract v3.5.1. See docs/MAP_OCP_ARBITRATION_V094.md. Use the matching v0.9.4 verification attachment; MATLAB and the external Git packet retain their original versions.
 

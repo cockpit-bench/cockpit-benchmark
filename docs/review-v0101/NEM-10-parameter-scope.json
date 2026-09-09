@@ -1,0 +1,5041 @@
+{
+  "excluded_slots": [
+    {
+      "block_path": "CellMinimumV",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "5"
+    },
+    {
+      "block_path": "CellMaximumV",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "6"
+    },
+    {
+      "block_path": "CellAverageV",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "7"
+    },
+    {
+      "block_path": "PackVoltageV",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "8"
+    },
+    {
+      "block_path": "PackCurrentA",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "9"
+    },
+    {
+      "block_path": "PackTemperatureC",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "10"
+    },
+    {
+      "block_path": "InletTemperatureC",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "11"
+    },
+    {
+      "block_path": "OutletTemperatureC",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "12"
+    },
+    {
+      "block_path": "StateOfCharge",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "13"
+    },
+    {
+      "block_path": "StateOfHealth",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "14"
+    },
+    {
+      "block_path": "IsolationKOhm",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "15"
+    },
+    {
+      "block_path": "ContactorTemperatureC",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "16"
+    },
+    {
+      "block_path": "BusRippleV",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "17"
+    },
+    {
+      "block_path": "PackPressureKPa",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "18"
+    },
+    {
+      "block_path": "CoolantFlowLpm",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "19"
+    },
+    {
+      "block_path": "HumidityPercent",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "20"
+    },
+    {
+      "block_path": "AuxVoltageV",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "21"
+    },
+    {
+      "block_path": "AmbientC",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "22"
+    },
+    {
+      "block_path": "ChargePortC",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "23"
+    },
+    {
+      "block_path": "PowerRequestKW",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "24"
+    },
+    {
+      "block_path": "PackResistanceOhm",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "25"
+    },
+    {
+      "block_path": "CapacityAh",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "26"
+    },
+    {
+      "block_path": "CellSpreadEstimateV",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "27"
+    },
+    {
+      "block_path": "PumpFeedback",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "28"
+    },
+    {
+      "block_path": "BatteryAcquisition/AmbientCPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "217"
+    },
+    {
+      "block_path": "BatteryAcquisition/AuxVoltageVPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "206"
+    },
+    {
+      "block_path": "BatteryAcquisition/BusRippleVPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "162"
+    },
+    {
+      "block_path": "BatteryAcquisition/CapacityAhPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "255"
+    },
+    {
+      "block_path": "BatteryAcquisition/CellMaximumVPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "47"
+    },
+    {
+      "block_path": "BatteryAcquisition/CellMinimumVPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "36"
+    },
+    {
+      "block_path": "BatteryAcquisition/CellSpreadEstimateVPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "266"
+    },
+    {
+      "block_path": "BatteryAcquisition/ChargePortCPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "228"
+    },
+    {
+      "block_path": "BatteryAcquisition/ContactorTemperatureCPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "151"
+    },
+    {
+      "block_path": "BatteryAcquisition/CoolantFlowLpmPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "184"
+    },
+    {
+      "block_path": "BatteryAcquisition/HumidityPercentPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "195"
+    },
+    {
+      "block_path": "BatteryAcquisition/InletTemperatureCPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "96"
+    },
+    {
+      "block_path": "BatteryAcquisition/IsolationKOhmPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "140"
+    },
+    {
+      "block_path": "BatteryAcquisition/OutletTemperatureCPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "107"
+    },
+    {
+      "block_path": "BatteryAcquisition/PackCurrentAPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "74"
+    },
+    {
+      "block_path": "BatteryAcquisition/PackPressureKPaPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "173"
+    },
+    {
+      "block_path": "BatteryAcquisition/PackResistanceOhmPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "244"
+    },
+    {
+      "block_path": "BatteryAcquisition/PackTemperatureCPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "85"
+    },
+    {
+      "block_path": "BatteryAcquisition/PackVoltageVPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "63"
+    },
+    {
+      "block_path": "BatteryAcquisition/PumpFeedbackPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "277"
+    },
+    {
+      "block_path": "BatteryAcquisition/StateOfChargePrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "118"
+    },
+    {
+      "block_path": "BatteryAcquisition/StateOfHealthPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_1.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "129"
+    },
+    {
+      "block_path": "In_PackVoltageVFiltered_1",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "1"
+    },
+    {
+      "block_path": "In_PackCurrentAFiltered_2",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "2"
+    },
+    {
+      "block_path": "In_CapacityAhFiltered_3",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "3"
+    },
+    {
+      "block_path": "In_StateOfChargeFiltered_4",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "4"
+    },
+    {
+      "block_path": "In_PackResistanceOhmFiltered_5",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "5"
+    },
+    {
+      "block_path": "In_BusRippleVFiltered_6",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "6"
+    },
+    {
+      "block_path": "In_OutletTemperatureCFiltered_7",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "7"
+    },
+    {
+      "block_path": "In_InletTemperatureCFiltered_8",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "8"
+    },
+    {
+      "block_path": "In_CoolantFlowLpmFiltered_9",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "9"
+    },
+    {
+      "block_path": "In_PackTemperatureCFiltered_10",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "10"
+    },
+    {
+      "block_path": "In_PumpFeedbackFiltered_11",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "11"
+    },
+    {
+      "block_path": "In_MeasuredSpread_12",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "12"
+    },
+    {
+      "block_path": "In_CellSpreadEstimateVFiltered_13",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "13"
+    },
+    {
+      "block_path": "In_HumidityPercentFiltered_14",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "14"
+    },
+    {
+      "block_path": "In_AmbientCFiltered_15",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "15"
+    },
+    {
+      "block_path": "In_ProtectedDischarge_16",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "16"
+    },
+    {
+      "block_path": "In_ProtectedCharge_17",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "17"
+    },
+    {
+      "block_path": "In_PackHealthy_18",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "18"
+    },
+    {
+      "block_path": "EnergyKWh",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "32"
+    },
+    {
+      "block_path": "PumpPrevious",
+      "expression": "0.01",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "55"
+    },
+    {
+      "block_path": "Out_DischargeLimitKWOutput_1",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "73"
+    },
+    {
+      "block_path": "Out_ChargeLimitKWOutput_2",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "74"
+    },
+    {
+      "block_path": "Out_PackHealthyOutput_3",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "75"
+    },
+    {
+      "block_path": "Out_MeasuredPowerKWOutput_4",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "76"
+    },
+    {
+      "block_path": "Out_EnergyUsedKWhOutput_5",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "77"
+    },
+    {
+      "block_path": "Out_RemainingEnergyKWhOutput_6",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "78"
+    },
+    {
+      "block_path": "Out_OhmicLossWOutput_7",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "79"
+    },
+    {
+      "block_path": "Out_BusRipplePercentOutput_8",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "80"
+    },
+    {
+      "block_path": "Out_RemovedHeatKWOutput_9",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "81"
+    },
+    {
+      "block_path": "Out_PumpDutyOutput_10",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "82"
+    },
+    {
+      "block_path": "Out_PumpMismatchOutput_11",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "83"
+    },
+    {
+      "block_path": "Out_SpreadMismatchOutput_12",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "84"
+    },
+    {
+      "block_path": "Out_CondensationRiskOutput_13",
+      "expression": "[0.01,0]",
+      "field": "SampleTime",
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryEnergyAccounting.slx",
+      "reason": "Execution timing is centrally defined by Model/model.json period and the reconstruction/configuration code; it is not one of the 201 calibration-table parameters",
+      "sid": "85"
+    }
+  ],
+  "limits": "Inventory and expression/value consistency only. Unit semantics, physical-purpose plausibility, exclusion rationale and score are explicit human review. One native perturbation is not full parameter sensitivity coverage.",
+  "managed_parameter_count": 201,
+  "model_reference_arguments": [
+    {
+      "expressions": [
+        "EnergyAccounting_CondensationRiskThreshold",
+        "EnergyAccounting_DewDepression",
+        "EnergyAccounting_EnergyKWh_Initial",
+        "EnergyAccounting_HumidityFull",
+        "EnergyAccounting_KWhPerTick",
+        "EnergyAccounting_LossPumpFeedforward",
+        "EnergyAccounting_MeasuredPowerKW",
+        "EnergyAccounting_PackTarget",
+        "EnergyAccounting_PumpDemand_Lower",
+        "EnergyAccounting_PumpDemand_Upper",
+        "EnergyAccounting_PumpMismatchThreshold",
+        "EnergyAccounting_PumpPrevious_Initial",
+        "EnergyAccounting_PumpRate_Lower",
+        "EnergyAccounting_PumpRate_Upper",
+        "EnergyAccounting_RemainingKWh",
+        "EnergyAccounting_RemovedHeatKW",
+        "EnergyAccounting_RippleRatio",
+        "EnergyAccounting_SpreadDisagreementThreshold",
+        "EnergyAccounting_TemperaturePumpSlope"
+      ],
+      "member": "simulink/systems/system_root.xml",
+      "model": "Model/BatteryPowerManager.slx",
+      "parameters": [
+        "EnergyAccounting_CondensationRiskThreshold",
+        "EnergyAccounting_DewDepression",
+        "EnergyAccounting_EnergyKWh_Initial",
+        "EnergyAccounting_HumidityFull",
+        "EnergyAccounting_KWhPerTick",
+        "EnergyAccounting_LossPumpFeedforward",
+        "EnergyAccounting_MeasuredPowerKW",
+        "EnergyAccounting_PackTarget",
+        "EnergyAccounting_PumpDemand_Lower",
+        "EnergyAccounting_PumpDemand_Upper",
+        "EnergyAccounting_PumpMismatchThreshold",
+        "EnergyAccounting_PumpPrevious_Initial",
+        "EnergyAccounting_PumpRate_Lower",
+        "EnergyAccounting_PumpRate_Upper",
+        "EnergyAccounting_RemainingKWh",
+        "EnergyAccounting_RemovedHeatKW",
+        "EnergyAccounting_RippleRatio",
+        "EnergyAccounting_SpreadDisagreementThreshold",
+        "EnergyAccounting_TemperaturePumpSlope"
+      ],
+      "sid": "550",
+      "uses_default_values": false
+    }
+  ],
+  "models": [
+    {
+      "block_count": 464,
+      "block_types": {
+        "Constant": 85,
+        "Gain": 55,
+        "Inport": 87,
+        "Logic": 25,
+        "MinMax": 2,
+        "ModelReference": 1,
+        "Outport": 65,
+        "Product": 1,
+        "RelationalOperator": 52,
+        "Saturate": 10,
+        "SubSystem": 3,
+        "Sum": 32,
+        "Switch": 24,
+        "UnitDelay": 22
+      },
+      "path": "Model/BatteryPowerManager.slx",
+      "sha256": "c584ad29c579f4ac6b130a8d2f69851f4a0486a9cad20a0a7c134ca3eb603f90"
+    },
+    {
+      "block_count": 85,
+      "block_types": {
+        "Abs": 2,
+        "Constant": 5,
+        "DataTypeConversion": 13,
+        "Gain": 8,
+        "Inport": 18,
+        "Logic": 1,
+        "Outport": 13,
+        "Product": 7,
+        "RelationalOperator": 4,
+        "Saturate": 2,
+        "Sum": 10,
+        "UnitDelay": 2
+      },
+      "path": "Model/BatteryEnergyAccounting.slx",
+      "sha256": "1da46ea3bdf1e7838f2fb1c65c7b954612ea25f1c948fad00ea42dc9bf302644"
+    }
+  ],
+  "parameters": [
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/AmbientCFallback",
+          "expression": "BatteryAcquisition_AmbientCFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "215"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/AmbientCFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_AmbientCFallback",
+      "unit": "degC",
+      "value": 20.0,
+      "worksheet_row": 2
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/AmbientCHighValidThreshold",
+          "expression": "BatteryAcquisition_AmbientCHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "212"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/AmbientCHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_AmbientCHighValidThreshold",
+      "unit": "degC",
+      "value": 60.0,
+      "worksheet_row": 3
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/AmbientCLowValidThreshold",
+          "expression": "BatteryAcquisition_AmbientCLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "210"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/AmbientCLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_AmbientCLowValidThreshold",
+      "unit": "degC",
+      "value": -40.0,
+      "worksheet_row": 4
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/AmbientCNewWeight",
+          "expression": "BatteryAcquisition_AmbientCNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "218"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/AmbientCNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_AmbientCNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 5
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/AmbientCOldWeight",
+          "expression": "BatteryAcquisition_AmbientCOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "219"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/AmbientCOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_AmbientCOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 6
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/AmbientCPrevious",
+          "expression": "BatteryAcquisition_AmbientCPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "217"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/AmbientCPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_AmbientCPrevious_Initial",
+      "unit": "degC",
+      "value": 20.0,
+      "worksheet_row": 7
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/AuxVoltageVFallback",
+          "expression": "BatteryAcquisition_AuxVoltageVFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "204"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/AuxVoltageVFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_AuxVoltageVFallback",
+      "unit": "V",
+      "value": 13.0,
+      "worksheet_row": 8
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/AuxVoltageVHighValidThreshold",
+          "expression": "BatteryAcquisition_AuxVoltageVHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "201"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/AuxVoltageVHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_AuxVoltageVHighValidThreshold",
+      "unit": "V",
+      "value": 18.0,
+      "worksheet_row": 9
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/AuxVoltageVLowValidThreshold",
+          "expression": "BatteryAcquisition_AuxVoltageVLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "199"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/AuxVoltageVLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_AuxVoltageVLowValidThreshold",
+      "unit": "V",
+      "value": 6.0,
+      "worksheet_row": 10
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/AuxVoltageVNewWeight",
+          "expression": "BatteryAcquisition_AuxVoltageVNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "207"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/AuxVoltageVNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_AuxVoltageVNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 11
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/AuxVoltageVOldWeight",
+          "expression": "BatteryAcquisition_AuxVoltageVOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "208"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/AuxVoltageVOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_AuxVoltageVOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 12
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/AuxVoltageVPrevious",
+          "expression": "BatteryAcquisition_AuxVoltageVPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "206"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/AuxVoltageVPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_AuxVoltageVPrevious_Initial",
+      "unit": "V",
+      "value": 13.0,
+      "worksheet_row": 13
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/BusRippleVFallback",
+          "expression": "BatteryAcquisition_BusRippleVFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "160"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/BusRippleVFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_BusRippleVFallback",
+      "unit": "V",
+      "value": 2.0,
+      "worksheet_row": 14
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/BusRippleVHighValidThreshold",
+          "expression": "BatteryAcquisition_BusRippleVHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "157"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/BusRippleVHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_BusRippleVHighValidThreshold",
+      "unit": "V",
+      "value": 50.0,
+      "worksheet_row": 15
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/BusRippleVLowValidThreshold",
+          "expression": "BatteryAcquisition_BusRippleVLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "155"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/BusRippleVLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_BusRippleVLowValidThreshold",
+      "unit": "V",
+      "value": 0.0,
+      "worksheet_row": 16
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/BusRippleVNewWeight",
+          "expression": "BatteryAcquisition_BusRippleVNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "163"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/BusRippleVNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_BusRippleVNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 17
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/BusRippleVOldWeight",
+          "expression": "BatteryAcquisition_BusRippleVOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "164"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/BusRippleVOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_BusRippleVOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 18
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/BusRippleVPrevious",
+          "expression": "BatteryAcquisition_BusRippleVPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "162"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/BusRippleVPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_BusRippleVPrevious_Initial",
+      "unit": "V",
+      "value": 2.0,
+      "worksheet_row": 19
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CapacityAhFallback",
+          "expression": "BatteryAcquisition_CapacityAhFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "253"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CapacityAhFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CapacityAhFallback",
+      "unit": "Ah",
+      "value": 160.0,
+      "worksheet_row": 20
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CapacityAhHighValidThreshold",
+          "expression": "BatteryAcquisition_CapacityAhHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "250"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CapacityAhHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CapacityAhHighValidThreshold",
+      "unit": "Ah",
+      "value": 300.0,
+      "worksheet_row": 21
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CapacityAhLowValidThreshold",
+          "expression": "BatteryAcquisition_CapacityAhLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "248"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CapacityAhLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CapacityAhLowValidThreshold",
+      "unit": "Ah",
+      "value": 50.0,
+      "worksheet_row": 22
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CapacityAhNewWeight",
+          "expression": "BatteryAcquisition_CapacityAhNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "256"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CapacityAhNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CapacityAhNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 23
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CapacityAhOldWeight",
+          "expression": "BatteryAcquisition_CapacityAhOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "257"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CapacityAhOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CapacityAhOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 24
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CapacityAhPrevious",
+          "expression": "BatteryAcquisition_CapacityAhPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "255"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CapacityAhPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CapacityAhPrevious_Initial",
+      "unit": "Ah",
+      "value": 160.0,
+      "worksheet_row": 25
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellAverageVHighValidThreshold",
+          "expression": "BatteryAcquisition_CellAverageVHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "53"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellAverageVHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellAverageVHighValidThreshold",
+      "unit": "V",
+      "value": 4.5,
+      "worksheet_row": 26
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellAverageVLowValidThreshold",
+          "expression": "BatteryAcquisition_CellAverageVLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "51"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellAverageVLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellAverageVLowValidThreshold",
+      "unit": "V",
+      "value": 2.0,
+      "worksheet_row": 27
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellMaximumVFallback",
+          "expression": "BatteryAcquisition_CellMaximumVFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "45"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellMaximumVFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellMaximumVFallback",
+      "unit": "V",
+      "value": 3.8,
+      "worksheet_row": 28
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellMaximumVHighValidThreshold",
+          "expression": "BatteryAcquisition_CellMaximumVHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "42"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellMaximumVHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellMaximumVHighValidThreshold",
+      "unit": "V",
+      "value": 4.5,
+      "worksheet_row": 29
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellMaximumVLowValidThreshold",
+          "expression": "BatteryAcquisition_CellMaximumVLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "40"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellMaximumVLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellMaximumVLowValidThreshold",
+      "unit": "V",
+      "value": 2.0,
+      "worksheet_row": 30
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellMaximumVNewWeight",
+          "expression": "BatteryAcquisition_CellMaximumVNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "48"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellMaximumVNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellMaximumVNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 31
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellMaximumVOldWeight",
+          "expression": "BatteryAcquisition_CellMaximumVOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "49"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellMaximumVOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellMaximumVOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 32
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellMaximumVPrevious",
+          "expression": "BatteryAcquisition_CellMaximumVPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "47"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellMaximumVPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellMaximumVPrevious_Initial",
+      "unit": "V",
+      "value": 3.8,
+      "worksheet_row": 33
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellMinimumVFallback",
+          "expression": "BatteryAcquisition_CellMinimumVFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "34"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellMinimumVFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellMinimumVFallback",
+      "unit": "V",
+      "value": 3.5,
+      "worksheet_row": 34
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellMinimumVHighValidThreshold",
+          "expression": "BatteryAcquisition_CellMinimumVHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "31"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellMinimumVHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellMinimumVHighValidThreshold",
+      "unit": "V",
+      "value": 4.5,
+      "worksheet_row": 35
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellMinimumVLowValidThreshold",
+          "expression": "BatteryAcquisition_CellMinimumVLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "29"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellMinimumVLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellMinimumVLowValidThreshold",
+      "unit": "V",
+      "value": 2.0,
+      "worksheet_row": 36
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellMinimumVNewWeight",
+          "expression": "BatteryAcquisition_CellMinimumVNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "37"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellMinimumVNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellMinimumVNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 37
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellMinimumVOldWeight",
+          "expression": "BatteryAcquisition_CellMinimumVOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "38"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellMinimumVOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellMinimumVOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 38
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellMinimumVPrevious",
+          "expression": "BatteryAcquisition_CellMinimumVPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "36"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellMinimumVPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellMinimumVPrevious_Initial",
+      "unit": "V",
+      "value": 3.5,
+      "worksheet_row": 39
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellSpreadEstimateVFallback",
+          "expression": "BatteryAcquisition_CellSpreadEstimateVFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "264"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellSpreadEstimateVFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellSpreadEstimateVFallback",
+      "unit": "V",
+      "value": 0.1,
+      "worksheet_row": 40
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellSpreadEstimateVHighValidThreshold",
+          "expression": "BatteryAcquisition_CellSpreadEstimateVHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "261"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellSpreadEstimateVHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellSpreadEstimateVHighValidThreshold",
+      "unit": "V",
+      "value": 1.0,
+      "worksheet_row": 41
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellSpreadEstimateVLowValidThreshold",
+          "expression": "BatteryAcquisition_CellSpreadEstimateVLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "259"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellSpreadEstimateVLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellSpreadEstimateVLowValidThreshold",
+      "unit": "V",
+      "value": 0.0,
+      "worksheet_row": 42
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellSpreadEstimateVNewWeight",
+          "expression": "BatteryAcquisition_CellSpreadEstimateVNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "267"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellSpreadEstimateVNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellSpreadEstimateVNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 43
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellSpreadEstimateVOldWeight",
+          "expression": "BatteryAcquisition_CellSpreadEstimateVOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "268"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellSpreadEstimateVOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellSpreadEstimateVOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 44
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CellSpreadEstimateVPrevious",
+          "expression": "BatteryAcquisition_CellSpreadEstimateVPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "266"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CellSpreadEstimateVPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CellSpreadEstimateVPrevious_Initial",
+      "unit": "V",
+      "value": 0.1,
+      "worksheet_row": 45
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/ChargePortCFallback",
+          "expression": "BatteryAcquisition_ChargePortCFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "226"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/ChargePortCFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_ChargePortCFallback",
+      "unit": "degC",
+      "value": 25.0,
+      "worksheet_row": 46
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/ChargePortCHighValidThreshold",
+          "expression": "BatteryAcquisition_ChargePortCHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "223"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/ChargePortCHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_ChargePortCHighValidThreshold",
+      "unit": "degC",
+      "value": 130.0,
+      "worksheet_row": 47
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/ChargePortCLowValidThreshold",
+          "expression": "BatteryAcquisition_ChargePortCLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "221"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/ChargePortCLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_ChargePortCLowValidThreshold",
+      "unit": "degC",
+      "value": -40.0,
+      "worksheet_row": 48
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/ChargePortCNewWeight",
+          "expression": "BatteryAcquisition_ChargePortCNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "229"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/ChargePortCNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_ChargePortCNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 49
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/ChargePortCOldWeight",
+          "expression": "BatteryAcquisition_ChargePortCOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "230"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/ChargePortCOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_ChargePortCOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 50
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/ChargePortCPrevious",
+          "expression": "BatteryAcquisition_ChargePortCPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "228"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/ChargePortCPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_ChargePortCPrevious_Initial",
+      "unit": "degC",
+      "value": 25.0,
+      "worksheet_row": 51
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/ContactorTemperatureCFallback",
+          "expression": "BatteryAcquisition_ContactorTemperatureCFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "149"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/ContactorTemperatureCFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_ContactorTemperatureCFallback",
+      "unit": "degC",
+      "value": 30.0,
+      "worksheet_row": 52
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/ContactorTemperatureCHighValidThreshold",
+          "expression": "BatteryAcquisition_ContactorTemperatureCHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "146"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/ContactorTemperatureCHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_ContactorTemperatureCHighValidThreshold",
+      "unit": "degC",
+      "value": 160.0,
+      "worksheet_row": 53
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/ContactorTemperatureCLowValidThreshold",
+          "expression": "BatteryAcquisition_ContactorTemperatureCLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "144"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/ContactorTemperatureCLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_ContactorTemperatureCLowValidThreshold",
+      "unit": "degC",
+      "value": -40.0,
+      "worksheet_row": 54
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/ContactorTemperatureCNewWeight",
+          "expression": "BatteryAcquisition_ContactorTemperatureCNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "152"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/ContactorTemperatureCNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_ContactorTemperatureCNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 55
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/ContactorTemperatureCOldWeight",
+          "expression": "BatteryAcquisition_ContactorTemperatureCOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "153"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/ContactorTemperatureCOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_ContactorTemperatureCOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 56
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/ContactorTemperatureCPrevious",
+          "expression": "BatteryAcquisition_ContactorTemperatureCPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "151"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/ContactorTemperatureCPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_ContactorTemperatureCPrevious_Initial",
+      "unit": "degC",
+      "value": 30.0,
+      "worksheet_row": 57
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CoolantFlowLpmFallback",
+          "expression": "BatteryAcquisition_CoolantFlowLpmFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "182"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CoolantFlowLpmFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CoolantFlowLpmFallback",
+      "unit": "L/min",
+      "value": 8.0,
+      "worksheet_row": 58
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CoolantFlowLpmHighValidThreshold",
+          "expression": "BatteryAcquisition_CoolantFlowLpmHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "179"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CoolantFlowLpmHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CoolantFlowLpmHighValidThreshold",
+      "unit": "L/min",
+      "value": 30.0,
+      "worksheet_row": 59
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CoolantFlowLpmLowValidThreshold",
+          "expression": "BatteryAcquisition_CoolantFlowLpmLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "177"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CoolantFlowLpmLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CoolantFlowLpmLowValidThreshold",
+      "unit": "L/min",
+      "value": 0.0,
+      "worksheet_row": 60
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CoolantFlowLpmNewWeight",
+          "expression": "BatteryAcquisition_CoolantFlowLpmNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "185"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CoolantFlowLpmNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CoolantFlowLpmNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 61
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CoolantFlowLpmOldWeight",
+          "expression": "BatteryAcquisition_CoolantFlowLpmOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "186"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CoolantFlowLpmOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CoolantFlowLpmOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 62
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/CoolantFlowLpmPrevious",
+          "expression": "BatteryAcquisition_CoolantFlowLpmPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "184"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/CoolantFlowLpmPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_CoolantFlowLpmPrevious_Initial",
+      "unit": "L/min",
+      "value": 8.0,
+      "worksheet_row": 63
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/HumidityPercentFallback",
+          "expression": "BatteryAcquisition_HumidityPercentFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "193"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/HumidityPercentFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_HumidityPercentFallback",
+      "unit": "percent",
+      "value": 35.0,
+      "worksheet_row": 64
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/HumidityPercentHighValidThreshold",
+          "expression": "BatteryAcquisition_HumidityPercentHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "190"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/HumidityPercentHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_HumidityPercentHighValidThreshold",
+      "unit": "percent",
+      "value": 100.0,
+      "worksheet_row": 65
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/HumidityPercentLowValidThreshold",
+          "expression": "BatteryAcquisition_HumidityPercentLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "188"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/HumidityPercentLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_HumidityPercentLowValidThreshold",
+      "unit": "percent",
+      "value": 0.0,
+      "worksheet_row": 66
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/HumidityPercentNewWeight",
+          "expression": "BatteryAcquisition_HumidityPercentNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "196"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/HumidityPercentNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_HumidityPercentNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 67
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/HumidityPercentOldWeight",
+          "expression": "BatteryAcquisition_HumidityPercentOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "197"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/HumidityPercentOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_HumidityPercentOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 68
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/HumidityPercentPrevious",
+          "expression": "BatteryAcquisition_HumidityPercentPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "195"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/HumidityPercentPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_HumidityPercentPrevious_Initial",
+      "unit": "percent",
+      "value": 35.0,
+      "worksheet_row": 69
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/InletTemperatureCFallback",
+          "expression": "BatteryAcquisition_InletTemperatureCFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "94"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/InletTemperatureCFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_InletTemperatureCFallback",
+      "unit": "degC",
+      "value": 22.0,
+      "worksheet_row": 70
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/InletTemperatureCHighValidThreshold",
+          "expression": "BatteryAcquisition_InletTemperatureCHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "91"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/InletTemperatureCHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_InletTemperatureCHighValidThreshold",
+      "unit": "degC",
+      "value": 100.0,
+      "worksheet_row": 71
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/InletTemperatureCLowValidThreshold",
+          "expression": "BatteryAcquisition_InletTemperatureCLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "89"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/InletTemperatureCLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_InletTemperatureCLowValidThreshold",
+      "unit": "degC",
+      "value": -40.0,
+      "worksheet_row": 72
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/InletTemperatureCNewWeight",
+          "expression": "BatteryAcquisition_InletTemperatureCNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "97"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/InletTemperatureCNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_InletTemperatureCNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 73
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/InletTemperatureCOldWeight",
+          "expression": "BatteryAcquisition_InletTemperatureCOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "98"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/InletTemperatureCOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_InletTemperatureCOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 74
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/InletTemperatureCPrevious",
+          "expression": "BatteryAcquisition_InletTemperatureCPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "96"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/InletTemperatureCPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_InletTemperatureCPrevious_Initial",
+      "unit": "degC",
+      "value": 22.0,
+      "worksheet_row": 75
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/IsolationKOhmFallback",
+          "expression": "BatteryAcquisition_IsolationKOhmFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "138"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/IsolationKOhmFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_IsolationKOhmFallback",
+      "unit": "kOhm",
+      "value": 800.0,
+      "worksheet_row": 76
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/IsolationKOhmHighValidThreshold",
+          "expression": "BatteryAcquisition_IsolationKOhmHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "135"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/IsolationKOhmHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_IsolationKOhmHighValidThreshold",
+      "unit": "kOhm",
+      "value": 4000.0,
+      "worksheet_row": 77
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/IsolationKOhmLowValidThreshold",
+          "expression": "BatteryAcquisition_IsolationKOhmLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "133"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/IsolationKOhmLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_IsolationKOhmLowValidThreshold",
+      "unit": "kOhm",
+      "value": 0.0,
+      "worksheet_row": 78
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/IsolationKOhmNewWeight",
+          "expression": "BatteryAcquisition_IsolationKOhmNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "141"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/IsolationKOhmNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_IsolationKOhmNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 79
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/IsolationKOhmOldWeight",
+          "expression": "BatteryAcquisition_IsolationKOhmOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "142"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/IsolationKOhmOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_IsolationKOhmOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 80
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/IsolationKOhmPrevious",
+          "expression": "BatteryAcquisition_IsolationKOhmPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "140"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/IsolationKOhmPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_IsolationKOhmPrevious_Initial",
+      "unit": "kOhm",
+      "value": 800.0,
+      "worksheet_row": 81
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/OutletTemperatureCFallback",
+          "expression": "BatteryAcquisition_OutletTemperatureCFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "105"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/OutletTemperatureCFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_OutletTemperatureCFallback",
+      "unit": "degC",
+      "value": 28.0,
+      "worksheet_row": 82
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/OutletTemperatureCHighValidThreshold",
+          "expression": "BatteryAcquisition_OutletTemperatureCHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "102"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/OutletTemperatureCHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_OutletTemperatureCHighValidThreshold",
+      "unit": "degC",
+      "value": 100.0,
+      "worksheet_row": 83
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/OutletTemperatureCLowValidThreshold",
+          "expression": "BatteryAcquisition_OutletTemperatureCLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "100"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/OutletTemperatureCLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_OutletTemperatureCLowValidThreshold",
+      "unit": "degC",
+      "value": -40.0,
+      "worksheet_row": 84
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/OutletTemperatureCNewWeight",
+          "expression": "BatteryAcquisition_OutletTemperatureCNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "108"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/OutletTemperatureCNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_OutletTemperatureCNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 85
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/OutletTemperatureCOldWeight",
+          "expression": "BatteryAcquisition_OutletTemperatureCOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "109"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/OutletTemperatureCOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_OutletTemperatureCOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 86
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/OutletTemperatureCPrevious",
+          "expression": "BatteryAcquisition_OutletTemperatureCPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "107"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/OutletTemperatureCPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_OutletTemperatureCPrevious_Initial",
+      "unit": "degC",
+      "value": 28.0,
+      "worksheet_row": 87
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackCurrentAFallback",
+          "expression": "BatteryAcquisition_PackCurrentAFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "72"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackCurrentAFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackCurrentAFallback",
+      "unit": "A",
+      "value": 20.0,
+      "worksheet_row": 88
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackCurrentAHighValidThreshold",
+          "expression": "BatteryAcquisition_PackCurrentAHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "69"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackCurrentAHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackCurrentAHighValidThreshold",
+      "unit": "A",
+      "value": 700.0,
+      "worksheet_row": 89
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackCurrentALowValidThreshold",
+          "expression": "BatteryAcquisition_PackCurrentALowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "67"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackCurrentALowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackCurrentALowValidThreshold",
+      "unit": "A",
+      "value": -500.0,
+      "worksheet_row": 90
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackCurrentANewWeight",
+          "expression": "BatteryAcquisition_PackCurrentANewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "75"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackCurrentANewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackCurrentANewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 91
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackCurrentAOldWeight",
+          "expression": "BatteryAcquisition_PackCurrentAOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "76"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackCurrentAOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackCurrentAOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 92
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackCurrentAPrevious",
+          "expression": "BatteryAcquisition_PackCurrentAPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "74"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackCurrentAPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackCurrentAPrevious_Initial",
+      "unit": "A",
+      "value": 20.0,
+      "worksheet_row": 93
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackPressureKPaFallback",
+          "expression": "BatteryAcquisition_PackPressureKPaFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "171"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackPressureKPaFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackPressureKPaFallback",
+      "unit": "kPa",
+      "value": 100.0,
+      "worksheet_row": 94
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackPressureKPaHighValidThreshold",
+          "expression": "BatteryAcquisition_PackPressureKPaHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "168"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackPressureKPaHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackPressureKPaHighValidThreshold",
+      "unit": "kPa",
+      "value": 200.0,
+      "worksheet_row": 95
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackPressureKPaLowValidThreshold",
+          "expression": "BatteryAcquisition_PackPressureKPaLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "166"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackPressureKPaLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackPressureKPaLowValidThreshold",
+      "unit": "kPa",
+      "value": 60.0,
+      "worksheet_row": 96
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackPressureKPaNewWeight",
+          "expression": "BatteryAcquisition_PackPressureKPaNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "174"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackPressureKPaNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackPressureKPaNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 97
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackPressureKPaOldWeight",
+          "expression": "BatteryAcquisition_PackPressureKPaOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "175"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackPressureKPaOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackPressureKPaOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 98
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackPressureKPaPrevious",
+          "expression": "BatteryAcquisition_PackPressureKPaPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "173"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackPressureKPaPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackPressureKPaPrevious_Initial",
+      "unit": "kPa",
+      "value": 100.0,
+      "worksheet_row": 99
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackResistanceOhmFallback",
+          "expression": "BatteryAcquisition_PackResistanceOhmFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "242"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackResistanceOhmFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackResistanceOhmFallback",
+      "unit": "ohm",
+      "value": 0.08,
+      "worksheet_row": 100
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackResistanceOhmHighValidThreshold",
+          "expression": "BatteryAcquisition_PackResistanceOhmHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "239"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackResistanceOhmHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackResistanceOhmHighValidThreshold",
+      "unit": "ohm",
+      "value": 0.4,
+      "worksheet_row": 101
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackResistanceOhmLowValidThreshold",
+          "expression": "BatteryAcquisition_PackResistanceOhmLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "237"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackResistanceOhmLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackResistanceOhmLowValidThreshold",
+      "unit": "ohm",
+      "value": 0.01,
+      "worksheet_row": 102
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackResistanceOhmNewWeight",
+          "expression": "BatteryAcquisition_PackResistanceOhmNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "245"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackResistanceOhmNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackResistanceOhmNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 103
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackResistanceOhmOldWeight",
+          "expression": "BatteryAcquisition_PackResistanceOhmOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "246"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackResistanceOhmOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackResistanceOhmOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 104
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackResistanceOhmPrevious",
+          "expression": "BatteryAcquisition_PackResistanceOhmPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "244"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackResistanceOhmPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackResistanceOhmPrevious_Initial",
+      "unit": "ohm",
+      "value": 0.08,
+      "worksheet_row": 105
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackTemperatureCFallback",
+          "expression": "BatteryAcquisition_PackTemperatureCFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "83"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackTemperatureCFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackTemperatureCFallback",
+      "unit": "degC",
+      "value": 25.0,
+      "worksheet_row": 106
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackTemperatureCHighValidThreshold",
+          "expression": "BatteryAcquisition_PackTemperatureCHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "80"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackTemperatureCHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackTemperatureCHighValidThreshold",
+      "unit": "degC",
+      "value": 90.0,
+      "worksheet_row": 107
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackTemperatureCLowValidThreshold",
+          "expression": "BatteryAcquisition_PackTemperatureCLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "78"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackTemperatureCLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackTemperatureCLowValidThreshold",
+      "unit": "degC",
+      "value": -40.0,
+      "worksheet_row": 108
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackTemperatureCNewWeight",
+          "expression": "BatteryAcquisition_PackTemperatureCNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "86"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackTemperatureCNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackTemperatureCNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 109
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackTemperatureCOldWeight",
+          "expression": "BatteryAcquisition_PackTemperatureCOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "87"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackTemperatureCOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackTemperatureCOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 110
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackTemperatureCPrevious",
+          "expression": "BatteryAcquisition_PackTemperatureCPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "85"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackTemperatureCPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackTemperatureCPrevious_Initial",
+      "unit": "degC",
+      "value": 25.0,
+      "worksheet_row": 111
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackVoltageVFallback",
+          "expression": "BatteryAcquisition_PackVoltageVFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "61"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackVoltageVFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackVoltageVFallback",
+      "unit": "V",
+      "value": 360.0,
+      "worksheet_row": 112
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackVoltageVHighValidThreshold",
+          "expression": "BatteryAcquisition_PackVoltageVHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "58"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackVoltageVHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackVoltageVHighValidThreshold",
+      "unit": "V",
+      "value": 900.0,
+      "worksheet_row": 113
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackVoltageVLowValidThreshold",
+          "expression": "BatteryAcquisition_PackVoltageVLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "56"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackVoltageVLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackVoltageVLowValidThreshold",
+      "unit": "V",
+      "value": 100.0,
+      "worksheet_row": 114
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackVoltageVNewWeight",
+          "expression": "BatteryAcquisition_PackVoltageVNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "64"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackVoltageVNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackVoltageVNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 115
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackVoltageVOldWeight",
+          "expression": "BatteryAcquisition_PackVoltageVOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "65"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackVoltageVOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackVoltageVOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 116
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PackVoltageVPrevious",
+          "expression": "BatteryAcquisition_PackVoltageVPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "63"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PackVoltageVPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PackVoltageVPrevious_Initial",
+      "unit": "V",
+      "value": 360.0,
+      "worksheet_row": 117
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PowerRequestKWHighValidThreshold",
+          "expression": "BatteryAcquisition_PowerRequestKWHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "234"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PowerRequestKWHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PowerRequestKWHighValidThreshold",
+      "unit": "kW",
+      "value": 300.0,
+      "worksheet_row": 118
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PowerRequestKWLowValidThreshold",
+          "expression": "BatteryAcquisition_PowerRequestKWLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "232"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PowerRequestKWLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PowerRequestKWLowValidThreshold",
+      "unit": "kW",
+      "value": -200.0,
+      "worksheet_row": 119
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PumpFeedbackFallback",
+          "expression": "BatteryAcquisition_PumpFeedbackFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "275"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PumpFeedbackFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PumpFeedbackFallback",
+      "unit": "1",
+      "value": 0.4,
+      "worksheet_row": 120
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PumpFeedbackHighValidThreshold",
+          "expression": "BatteryAcquisition_PumpFeedbackHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "272"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PumpFeedbackHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PumpFeedbackHighValidThreshold",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 121
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PumpFeedbackLowValidThreshold",
+          "expression": "BatteryAcquisition_PumpFeedbackLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "270"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PumpFeedbackLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PumpFeedbackLowValidThreshold",
+      "unit": "1",
+      "value": 0.0,
+      "worksheet_row": 122
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PumpFeedbackNewWeight",
+          "expression": "BatteryAcquisition_PumpFeedbackNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "278"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PumpFeedbackNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PumpFeedbackNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 123
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PumpFeedbackOldWeight",
+          "expression": "BatteryAcquisition_PumpFeedbackOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "279"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PumpFeedbackOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PumpFeedbackOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 124
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/PumpFeedbackPrevious",
+          "expression": "BatteryAcquisition_PumpFeedbackPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "277"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/PumpFeedbackPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_PumpFeedbackPrevious_Initial",
+      "unit": "1",
+      "value": 0.4,
+      "worksheet_row": 125
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/StateOfChargeFallback",
+          "expression": "BatteryAcquisition_StateOfChargeFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "116"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/StateOfChargeFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_StateOfChargeFallback",
+      "unit": "1",
+      "value": 0.6,
+      "worksheet_row": 126
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/StateOfChargeHighValidThreshold",
+          "expression": "BatteryAcquisition_StateOfChargeHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "113"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/StateOfChargeHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_StateOfChargeHighValidThreshold",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 127
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/StateOfChargeLowValidThreshold",
+          "expression": "BatteryAcquisition_StateOfChargeLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "111"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/StateOfChargeLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_StateOfChargeLowValidThreshold",
+      "unit": "1",
+      "value": 0.0,
+      "worksheet_row": 128
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/StateOfChargeNewWeight",
+          "expression": "BatteryAcquisition_StateOfChargeNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "119"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/StateOfChargeNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_StateOfChargeNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 129
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/StateOfChargeOldWeight",
+          "expression": "BatteryAcquisition_StateOfChargeOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "120"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/StateOfChargeOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_StateOfChargeOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 130
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/StateOfChargePrevious",
+          "expression": "BatteryAcquisition_StateOfChargePrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "118"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/StateOfChargePrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_StateOfChargePrevious_Initial",
+      "unit": "1",
+      "value": 0.6,
+      "worksheet_row": 131
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/StateOfHealthFallback",
+          "expression": "BatteryAcquisition_StateOfHealthFallback",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "127"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/StateOfHealthFallback.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_StateOfHealthFallback",
+      "unit": "1",
+      "value": 0.95,
+      "worksheet_row": 132
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/StateOfHealthHighValidThreshold",
+          "expression": "BatteryAcquisition_StateOfHealthHighValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "124"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/StateOfHealthHighValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_StateOfHealthHighValidThreshold",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 133
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/StateOfHealthLowValidThreshold",
+          "expression": "BatteryAcquisition_StateOfHealthLowValidThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "122"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/StateOfHealthLowValidThreshold.Value"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_StateOfHealthLowValidThreshold",
+      "unit": "1",
+      "value": 0.4,
+      "worksheet_row": 134
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/StateOfHealthNewWeight",
+          "expression": "BatteryAcquisition_StateOfHealthNewWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "130"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/StateOfHealthNewWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_StateOfHealthNewWeight",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 135
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/StateOfHealthOldWeight",
+          "expression": "BatteryAcquisition_StateOfHealthOldWeight",
+          "field": "Gain",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "131"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/StateOfHealthOldWeight.Gain"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_StateOfHealthOldWeight",
+      "unit": "1",
+      "value": 0.8,
+      "worksheet_row": 136
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "BatteryAcquisition/StateOfHealthPrevious",
+          "expression": "BatteryAcquisition_StateOfHealthPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_1.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "129"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "BatteryAcquisition/StateOfHealthPrevious.InitialCondition"
+      ],
+      "group": "BatteryAcquisition",
+      "name": "BatteryAcquisition_StateOfHealthPrevious_Initial",
+      "unit": "1",
+      "value": 0.95,
+      "worksheet_row": 137
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/BalanceBase",
+          "expression": "CellPowerEnvelope_BalanceBase",
+          "field": "Value",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "306"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/BalanceBase.Value"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_BalanceBase",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 138
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/BalanceFactor",
+          "expression": "CellPowerEnvelope_BalanceFactor_Lower",
+          "field": "LowerLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "309"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/BalanceFactor.LowerLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_BalanceFactor_Lower",
+      "unit": "1",
+      "value": 0.1,
+      "worksheet_row": 139
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/BalanceFactor",
+          "expression": "CellPowerEnvelope_BalanceFactor_Upper",
+          "field": "UpperLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "309"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/BalanceFactor.UpperLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_BalanceFactor_Upper",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 140
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ChargeCeiling",
+          "expression": "CellPowerEnvelope_ChargeCeiling",
+          "field": "Value",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "285"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ChargeCeiling.Value"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ChargeCeiling",
+      "unit": "V",
+      "value": 4.2,
+      "worksheet_row": 141
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ChargePortFactor",
+          "expression": "CellPowerEnvelope_ChargePortFactor_Lower",
+          "field": "LowerLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "317"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ChargePortFactor.LowerLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ChargePortFactor_Lower",
+      "unit": "1",
+      "value": 0.0,
+      "worksheet_row": 142
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ChargePortFactor",
+          "expression": "CellPowerEnvelope_ChargePortFactor_Upper",
+          "field": "UpperLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "317"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ChargePortFactor.UpperLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ChargePortFactor_Upper",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 143
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ChargeRated",
+          "expression": "CellPowerEnvelope_ChargeRated",
+          "field": "Gain",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "324"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ChargeRated.Gain"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ChargeRated",
+      "unit": "kW",
+      "value": 120.0,
+      "worksheet_row": 144
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ColdFactor",
+          "expression": "CellPowerEnvelope_ColdFactor_Lower",
+          "field": "LowerLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "292"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ColdFactor.LowerLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ColdFactor_Lower",
+      "unit": "1",
+      "value": 0.0,
+      "worksheet_row": 145
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ColdFactor",
+          "expression": "CellPowerEnvelope_ColdFactor_Upper",
+          "field": "UpperLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "292"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ColdFactor.UpperLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ColdFactor_Upper",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 146
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ColdOffset",
+          "expression": "CellPowerEnvelope_ColdOffset",
+          "field": "Value",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "289"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ColdOffset.Value"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ColdOffset",
+      "unit": "degC",
+      "value": 20.0,
+      "worksheet_row": 147
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ColdSlope",
+          "expression": "CellPowerEnvelope_ColdSlope",
+          "field": "Gain",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "291"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ColdSlope.Gain"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ColdSlope",
+      "unit": "1/degC",
+      "value": 0.02857142857142857,
+      "worksheet_row": 148
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ContactorCeiling",
+          "expression": "CellPowerEnvelope_ContactorCeiling",
+          "field": "Value",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "310"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ContactorCeiling.Value"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ContactorCeiling",
+      "unit": "degC",
+      "value": 120.0,
+      "worksheet_row": 149
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ContactorFactor",
+          "expression": "CellPowerEnvelope_ContactorFactor_Lower",
+          "field": "LowerLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "313"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ContactorFactor.LowerLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ContactorFactor_Lower",
+      "unit": "1",
+      "value": 0.0,
+      "worksheet_row": 150
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ContactorFactor",
+          "expression": "CellPowerEnvelope_ContactorFactor_Upper",
+          "field": "UpperLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "313"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ContactorFactor.UpperLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ContactorFactor_Upper",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 151
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ContactorSlope",
+          "expression": "CellPowerEnvelope_ContactorSlope",
+          "field": "Gain",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "312"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ContactorSlope.Gain"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ContactorSlope",
+      "unit": "1/degC",
+      "value": 0.025,
+      "worksheet_row": 152
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/DischargeFloor",
+          "expression": "CellPowerEnvelope_DischargeFloor",
+          "field": "Value",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "281"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/DischargeFloor.Value"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_DischargeFloor",
+      "unit": "V",
+      "value": 2.8,
+      "worksheet_row": 153
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/DischargeRated",
+          "expression": "CellPowerEnvelope_DischargeRated",
+          "field": "Gain",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "322"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/DischargeRated.Gain"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_DischargeRated",
+      "unit": "kW",
+      "value": 180.0,
+      "worksheet_row": 154
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/HighVoltageFactor",
+          "expression": "CellPowerEnvelope_HighVoltageFactor_Lower",
+          "field": "LowerLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "288"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/HighVoltageFactor.LowerLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_HighVoltageFactor_Lower",
+      "unit": "1",
+      "value": 0.0,
+      "worksheet_row": 155
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/HighVoltageFactor",
+          "expression": "CellPowerEnvelope_HighVoltageFactor_Upper",
+          "field": "UpperLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "288"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/HighVoltageFactor.UpperLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_HighVoltageFactor_Upper",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 156
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/HighVoltageSlope",
+          "expression": "CellPowerEnvelope_HighVoltageSlope",
+          "field": "Gain",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "287"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/HighVoltageSlope.Gain"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_HighVoltageSlope",
+      "unit": "1/V",
+      "value": 3.3333333333333335,
+      "worksheet_row": 157
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/HotCeiling",
+          "expression": "CellPowerEnvelope_HotCeiling",
+          "field": "Value",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "293"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/HotCeiling.Value"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_HotCeiling",
+      "unit": "degC",
+      "value": 60.0,
+      "worksheet_row": 158
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/HotFactor",
+          "expression": "CellPowerEnvelope_HotFactor_Lower",
+          "field": "LowerLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "296"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/HotFactor.LowerLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_HotFactor_Lower",
+      "unit": "1",
+      "value": 0.0,
+      "worksheet_row": 159
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/HotFactor",
+          "expression": "CellPowerEnvelope_HotFactor_Upper",
+          "field": "UpperLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "296"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/HotFactor.UpperLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_HotFactor_Upper",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 160
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/HotSlope",
+          "expression": "CellPowerEnvelope_HotSlope",
+          "field": "Gain",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "295"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/HotSlope.Gain"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_HotSlope",
+      "unit": "1/degC",
+      "value": 0.06666666666666667,
+      "worksheet_row": 161
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/LowVoltageFactor",
+          "expression": "CellPowerEnvelope_LowVoltageFactor_Lower",
+          "field": "LowerLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "284"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/LowVoltageFactor.LowerLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_LowVoltageFactor_Lower",
+      "unit": "1",
+      "value": 0.0,
+      "worksheet_row": 162
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/LowVoltageFactor",
+          "expression": "CellPowerEnvelope_LowVoltageFactor_Upper",
+          "field": "UpperLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "284"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/LowVoltageFactor.UpperLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_LowVoltageFactor_Upper",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 163
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/LowVoltageSlope",
+          "expression": "CellPowerEnvelope_LowVoltageSlope",
+          "field": "Gain",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "283"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/LowVoltageSlope.Gain"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_LowVoltageSlope",
+      "unit": "1/V",
+      "value": 2.0,
+      "worksheet_row": 164
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/NominalResistance",
+          "expression": "CellPowerEnvelope_NominalResistance",
+          "field": "Value",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "318"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/NominalResistance.Value"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_NominalResistance",
+      "unit": "ohm",
+      "value": 0.08,
+      "worksheet_row": 165
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/PortCeiling",
+          "expression": "CellPowerEnvelope_PortCeiling",
+          "field": "Value",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "314"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/PortCeiling.Value"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_PortCeiling",
+      "unit": "degC",
+      "value": 100.0,
+      "worksheet_row": 166
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/PortSlope",
+          "expression": "CellPowerEnvelope_PortSlope",
+          "field": "Gain",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "316"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/PortSlope.Gain"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_PortSlope",
+      "unit": "1/degC",
+      "value": 0.025,
+      "worksheet_row": 167
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ResistanceFactor",
+          "expression": "CellPowerEnvelope_ResistanceFactor_Lower",
+          "field": "LowerLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "320"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ResistanceFactor.LowerLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ResistanceFactor_Lower",
+      "unit": "1",
+      "value": 0.2,
+      "worksheet_row": 168
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/ResistanceFactor",
+          "expression": "CellPowerEnvelope_ResistanceFactor_Upper",
+          "field": "UpperLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "320"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/ResistanceFactor.UpperLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_ResistanceFactor_Upper",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 169
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/SocCeiling",
+          "expression": "CellPowerEnvelope_SocCeiling",
+          "field": "Value",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "301"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/SocCeiling.Value"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_SocCeiling",
+      "unit": "1",
+      "value": 0.98,
+      "worksheet_row": 170
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/SocFloor",
+          "expression": "CellPowerEnvelope_SocFloor",
+          "field": "Value",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "297"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/SocFloor.Value"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_SocFloor",
+      "unit": "1",
+      "value": 0.05,
+      "worksheet_row": 171
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/SocHighFactor",
+          "expression": "CellPowerEnvelope_SocHighFactor_Lower",
+          "field": "LowerLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "304"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/SocHighFactor.LowerLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_SocHighFactor_Lower",
+      "unit": "1",
+      "value": 0.0,
+      "worksheet_row": 172
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/SocHighFactor",
+          "expression": "CellPowerEnvelope_SocHighFactor_Upper",
+          "field": "UpperLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "304"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/SocHighFactor.UpperLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_SocHighFactor_Upper",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 173
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/SocHighSlope",
+          "expression": "CellPowerEnvelope_SocHighSlope",
+          "field": "Gain",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "303"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/SocHighSlope.Gain"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_SocHighSlope",
+      "unit": "1",
+      "value": 5.555555555555555,
+      "worksheet_row": 174
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/SocLowFactor",
+          "expression": "CellPowerEnvelope_SocLowFactor_Lower",
+          "field": "LowerLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "300"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/SocLowFactor.LowerLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_SocLowFactor_Lower",
+      "unit": "1",
+      "value": 0.0,
+      "worksheet_row": 175
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/SocLowFactor",
+          "expression": "CellPowerEnvelope_SocLowFactor_Upper",
+          "field": "UpperLimit",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "300"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/SocLowFactor.UpperLimit"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_SocLowFactor_Upper",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 176
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/SocLowSlope",
+          "expression": "CellPowerEnvelope_SocLowSlope",
+          "field": "Gain",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "299"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/SocLowSlope.Gain"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_SocLowSlope",
+      "unit": "1",
+      "value": 6.666666666666667,
+      "worksheet_row": 177
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CellPowerEnvelope/SpreadSlope",
+          "expression": "CellPowerEnvelope_SpreadSlope",
+          "field": "Gain",
+          "member": "simulink/systems/system_2.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "307"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "CellPowerEnvelope/SpreadSlope.Gain"
+      ],
+      "group": "CellPowerEnvelope",
+      "name": "CellPowerEnvelope_SpreadSlope",
+      "unit": "1/V",
+      "value": 1.5,
+      "worksheet_row": 178
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "CondensationRiskThreshold",
+          "expression": "EnergyAccounting_CondensationRiskThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "25"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/CondensationRiskThreshold.Value"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_CondensationRiskThreshold",
+      "unit": "percent",
+      "value": 85.0,
+      "worksheet_row": 179
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "DewDepression",
+          "expression": "EnergyAccounting_DewDepression",
+          "field": "Gain",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "28"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/DewDepression.Gain"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_DewDepression",
+      "unit": "degC/percent",
+      "value": 0.2,
+      "worksheet_row": 180
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "EnergyKWh",
+          "expression": "EnergyAccounting_EnergyKWh_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "32"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/EnergyKWh.InitialCondition"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_EnergyKWh_Initial",
+      "unit": "kWh",
+      "value": 0.0,
+      "worksheet_row": 181
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "HumidityFull",
+          "expression": "EnergyAccounting_HumidityFull",
+          "field": "Value",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "36"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/HumidityFull.Value"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_HumidityFull",
+      "unit": "percent",
+      "value": 100.0,
+      "worksheet_row": 182
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "KWhPerTick",
+          "expression": "EnergyAccounting_KWhPerTick",
+          "field": "Gain",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "38"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/KWhPerTick.Gain"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_KWhPerTick",
+      "unit": "h",
+      "value": 2.777777777777778e-06,
+      "worksheet_row": 183
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "LossPumpFeedforward",
+          "expression": "EnergyAccounting_LossPumpFeedforward",
+          "field": "Gain",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "39"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/LossPumpFeedforward.Gain"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_LossPumpFeedforward",
+      "unit": "1/W",
+      "value": 0.00015,
+      "worksheet_row": 184
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "MeasuredPowerKW",
+          "expression": "EnergyAccounting_MeasuredPowerKW",
+          "field": "Gain",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "40"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/MeasuredPowerKW.Gain"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_MeasuredPowerKW",
+      "unit": "kW/(V*A)",
+      "value": 0.001,
+      "worksheet_row": 185
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "PackTarget",
+          "expression": "EnergyAccounting_PackTarget",
+          "field": "Value",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "45"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/PackTarget.Value"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_PackTarget",
+      "unit": "degC",
+      "value": 28.0,
+      "worksheet_row": 186
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "PumpDemand",
+          "expression": "EnergyAccounting_PumpDemand_Lower",
+          "field": "LowerLimit",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "47"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/PumpDemand.LowerLimit"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_PumpDemand_Lower",
+      "unit": "1",
+      "value": 0.0,
+      "worksheet_row": 187
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "PumpDemand",
+          "expression": "EnergyAccounting_PumpDemand_Upper",
+          "field": "UpperLimit",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "47"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/PumpDemand.UpperLimit"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_PumpDemand_Upper",
+      "unit": "1",
+      "value": 1.0,
+      "worksheet_row": 188
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "PumpMismatchThreshold",
+          "expression": "EnergyAccounting_PumpMismatchThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "53"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/PumpMismatchThreshold.Value"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_PumpMismatchThreshold",
+      "unit": "1",
+      "value": 0.3,
+      "worksheet_row": 189
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "PumpPrevious",
+          "expression": "EnergyAccounting_PumpPrevious_Initial",
+          "field": "InitialCondition",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "55"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/PumpPrevious.InitialCondition"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_PumpPrevious_Initial",
+      "unit": "1",
+      "value": 0.0,
+      "worksheet_row": 190
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "PumpRate",
+          "expression": "EnergyAccounting_PumpRate_Lower",
+          "field": "LowerLimit",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "56"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/PumpRate.LowerLimit"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_PumpRate_Lower",
+      "unit": "1/tick",
+      "value": -0.015,
+      "worksheet_row": 191
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "PumpRate",
+          "expression": "EnergyAccounting_PumpRate_Upper",
+          "field": "UpperLimit",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "56"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/PumpRate.UpperLimit"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_PumpRate_Upper",
+      "unit": "1/tick",
+      "value": 0.025,
+      "worksheet_row": 192
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "RemainingKWh",
+          "expression": "EnergyAccounting_RemainingKWh",
+          "field": "Gain",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "59"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/RemainingKWh.Gain"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_RemainingKWh",
+      "unit": "kWh/(Ah*V)",
+      "value": 0.001,
+      "worksheet_row": 193
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "RemovedHeatKW",
+          "expression": "EnergyAccounting_RemovedHeatKW",
+          "field": "Gain",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "61"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/RemovedHeatKW.Gain"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_RemovedHeatKW",
+      "unit": "kW/(L/min*degC)",
+      "value": 0.0697,
+      "worksheet_row": 194
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "RippleRatio",
+          "expression": "EnergyAccounting_RippleRatio",
+          "field": "Gain",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "64"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/RippleRatio.Gain"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_RippleRatio",
+      "unit": "percent",
+      "value": 100.0,
+      "worksheet_row": 195
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "SpreadDisagreementThreshold",
+          "expression": "EnergyAccounting_SpreadDisagreementThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "66"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/SpreadDisagreementThreshold.Value"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_SpreadDisagreementThreshold",
+      "unit": "V",
+      "value": 0.15,
+      "worksheet_row": 196
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "TemperaturePumpSlope",
+          "expression": "EnergyAccounting_TemperaturePumpSlope",
+          "field": "Gain",
+          "member": "simulink/systems/system_root.xml",
+          "model": "Model/BatteryEnergyAccounting.slx",
+          "sid": "72"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "EnergyAccounting/TemperaturePumpSlope.Gain"
+      ],
+      "group": "EnergyAccounting",
+      "name": "EnergyAccounting_TemperaturePumpSlope",
+      "unit": "1/degC",
+      "value": 0.035,
+      "worksheet_row": 197
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "PackProtection/AuxHealthyThreshold",
+          "expression": "PackProtection_AuxHealthyThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_3.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "329"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "PackProtection/AuxHealthyThreshold.Value"
+      ],
+      "group": "PackProtection",
+      "name": "PackProtection_AuxHealthyThreshold",
+      "unit": "V",
+      "value": 10.0,
+      "worksheet_row": 198
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "PackProtection/IsolationHealthyThreshold",
+          "expression": "PackProtection_IsolationHealthyThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_3.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "327"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "PackProtection/IsolationHealthyThreshold.Value"
+      ],
+      "group": "PackProtection",
+      "name": "PackProtection_IsolationHealthyThreshold",
+      "unit": "kohm",
+      "value": 300.0,
+      "worksheet_row": 199
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "PackProtection/NoCharge",
+          "expression": "PackProtection_NoCharge",
+          "field": "Value",
+          "member": "simulink/systems/system_3.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "335"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "PackProtection/NoCharge.Value"
+      ],
+      "group": "PackProtection",
+      "name": "PackProtection_NoCharge",
+      "unit": "kW",
+      "value": 0.0,
+      "worksheet_row": 200
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "PackProtection/NoDischarge",
+          "expression": "PackProtection_NoDischarge",
+          "field": "Value",
+          "member": "simulink/systems/system_3.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "333"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "PackProtection/NoDischarge.Value"
+      ],
+      "group": "PackProtection",
+      "name": "PackProtection_NoDischarge",
+      "unit": "kW",
+      "value": 0.0,
+      "worksheet_row": 201
+    },
+    {
+      "actual_consumers": [
+        {
+          "block_path": "PackProtection/PressureHealthyThreshold",
+          "expression": "PackProtection_PressureHealthyThreshold",
+          "field": "Value",
+          "member": "simulink/systems/system_3.xml",
+          "model": "Model/BatteryPowerManager.slx",
+          "sid": "325"
+        }
+      ],
+      "data_type": "double",
+      "declared_consumers": [
+        "PackProtection/PressureHealthyThreshold.Value"
+      ],
+      "group": "PackProtection",
+      "name": "PackProtection_PressureHealthyThreshold",
+      "unit": "kPa",
+      "value": 150.0,
+      "worksheet_row": 202
+    }
+  ],
+  "schema": "parameter-scope-audit-v1",
+  "scope_basis": "Enumerate every block in both production root/reference models before matching table rows. Constant values, gains, saturation limits, delays and active switch thresholds are calibration slots. Remaining reviewed types are port/routing/structural or fixed algebraic/boolean operators; their port counts, signs, comparison direction, conversion type and model-reference configuration define structure rather than tunable physical calibration. Unknown block types are rejected.",
+  "separate_timing_configuration": {
+    "json_pointer": "/period",
+    "path": "Model/model.json",
+    "unit": "s",
+    "value": 0.01
+  },
+  "unmanaged_calibration_slots": []
+}
