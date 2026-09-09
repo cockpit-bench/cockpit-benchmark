@@ -5,13 +5,10 @@ contract, source manifest, standard answers and reproducible evidence.
 
 | Suite | Repositories / leaves | Score | Contract |
 |---|---|---|---|
-| [Android APP / Framework](SCORECARD.md) | 18 / 171 | 269 / 828 | [v3.5](SCORE_RULES.md) |
+| [Android APP / Framework](SCORECARD.md) | 18 / 171 | 255 / 828 | [v3.5](SCORE_RULES.md) |
 | [MATLAB / Simulink](suites/matlab-simulink/README.md) | 9 / 117 | 338 / 549 | [Effective contract](suites/matlab-simulink/EFFECTIVE_CONTRACT.md) |
 
-Version v0.9.1 adds fixed-set evaluation and evidence review, corrects two Android
-SOLID scores after a [16-leaf source calibration](docs/SOLID_CALIBRATION.md), and supplies
-a composed MATLAB contract. All 27 source HEADs/refs, both scoring contracts and
-MATLAB scores/evidence remain unchanged. Report suite scores separately; do not add the raw totals.
+Version v0.9.2 completes the [remaining 20-leaf SOLID source calibration](docs/SOLID_CALIBRATION_V092.md) and rechecks APP-14 compilation independence; 12 Android scores change. The previous 16-leaf review remains historical. All 27 source HEADs/refs, both contracts and MATLAB scores remain unchanged. ML-09 adds source anchors; the MATLAB and frozen external Git attachments retain their original versions. Report suite scores separately; do not add the raw totals.
 Android’s 22 pending repositories remain excluded. Both suites are Dev/Regression,
 not independent holdouts. Keep each declared source family within one split.
 
@@ -45,7 +42,7 @@ for the second command. Its hash is frozen in
 
 Android’s [verifier](verification/README.md), [API governance](docs/API_GOVERNANCE.md),
 [evidence protocol](docs/EVIDENCE_PROTOCOL.md) and
-[v0.9.1 evidence attachment](https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.9.1)
+[v0.9.2 evidence attachment](https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.9.2)
 remain the reference for that suite. Give an evaluation agent only its selected
 source repository and explicitly allowed raw inputs, never the wrapper answers.
 

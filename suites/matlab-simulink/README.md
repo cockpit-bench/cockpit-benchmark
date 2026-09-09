@@ -58,3 +58,5 @@ remote-free; this is source restoration, not execution validation.
 All samples remain Dev/Regression; keep the source family in one evaluation
 split. Independent agent review does not imply external gold or human expert
 certification. Source repositories contain no standard answers.
+
+Maintenance in wrapper v0.9.2 adds ML-09 source anchors for the numerical comparison and mismatch failure in run_tests.m. Scores and the original v0.9.0 measured evidence attachment are unchanged.

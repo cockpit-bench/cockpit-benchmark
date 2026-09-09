@@ -1,4 +1,4 @@
-# Validation-18 v0.9.1
+# Validation-18 v0.9.2
 
 | ID | Repository | Size | Quality | Score |
 |---|---|---|---|---|
@@ -7,19 +7,19 @@
 | APP-03 | owner-handbook | small | high | 10/40 |
 | APP-11 | podcast-player | medium | medium | 18/40 |
 | APP-13 | camera-inspector | small | medium | 8/40 |
-| APP-14 | system-ui-shell | large | medium | 12/40 |
+| APP-14 | system-ui-shell | large | medium | 11/40 |
 | APP-15 | system-settings | large | low | 8/40 |
 | APP-16 | launcher-workspace | medium | low | 14/40 |
 | APP-17 | climate-panel | small | low | 7/40 |
 | FW-02 | network-stack-service | small | high | 20/52 |
-| FW-03 | bluetooth-service | medium | high | 18/52 |
+| FW-03 | bluetooth-service | medium | high | 16/52 |
 | FW-07 | wifi-service | large | high | 19/52 |
-| FW-08 | connectivity-service | medium | medium | 15/52 |
+| FW-08 | connectivity-service | medium | medium | 14/52 |
 | FW-10 | cell-broadcast-service | small | medium | 19/52 |
-| FW-14 | car-services | large | medium | 18/52 |
-| FW-15 | telecom-service | small | low | 18/52 |
+| FW-14 | car-services | large | medium | 13/52 |
+| FW-15 | telecom-service | small | low | 15/52 |
 | FW-16 | platform-framework | large | low | 16/52 |
-| FW-18 | telephony-service | medium | low | 11/52 |
+| FW-18 | telephony-service | medium | low | 9/52 |
 
 ## APP-01 navigation-map
 
@@ -95,7 +95,7 @@
 | architecture.modularization | 2/3 | plugin/common/animation等至少三个内聚真实构建模块成立；包括Java库后仍没有两个小写加关键字模块名，21不能替代命名门槛，维持2。 |
 | compilation.api_version_management | 1/3 | 插件接口有整数 VERSION 和运行时相等校验，但未提取并比较发布 API；共享跨进程 AIDL、系统组件和平台依赖也无完整治理，1。 |
 | compilation.ci_independence | 1/3 | 当前仓有 5 个 TEST_MAPPING，映射到真实 Soong 测试目标；没有 PREUPLOAD.cfg 或独立 provider 配置，仅有 Android 系统层 CI，1。 |
-| compilation.compilation_independence | 1/3 | animation/surfaceeffects有实际Gradle公共SDK局部单元；完整SystemUI需平台私有API和仓外SettingsLib/WindowManager-Shell，按1而非Soong自动0。 |
+| compilation.compilation_independence | 0/3 | 完整平台依赖；Gradle片段无父插件加载环境，旧插件javac源集/类路径遗漏当前必需类型；不存在已交付且闭合的独立生产构建入口。 |
 | platform_reuse.platform_upgrade | 0/10 | 状态栏启动直接向IStatusBarService注册，锁屏状态通过ActivityTaskManager私有Binder更新；这是两条真实核心平台通路，现有插件/DI未提供它们的跨版本替代实现。SystemUI以platform_apis/privileged方式构建，按多核心未隔离内部接口依赖评0。wallpaper ambient 调用有明确非关键/异常忽略，不作为核心阻断证据。 |
 | platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 
@@ -164,11 +164,11 @@
 | platform_reuse.platform_upgrade | 3/10 | 蓝牙系统权限、隐藏Binder、native平台链深度绑定；profile隔离不覆盖全部风险，但源码JNI和profile边界保留移植路径，total=3无单ABI闭源；3分。 |
 | platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 | quality.integration_test | 1/3 | A2DP服务测试通过真实服务生命周期、native协作者调用与断言验证行为；无绑定HEAD执行证明，最高1。 |
-| solid_principle.dependency_inversion | 1/4 | 多处违反，设计不合理。 |
-| solid_principle.interface_segregation | 3/4 | 良好遵循。 |
+| solid_principle.dependency_inversion | 1/4 | 若干窄回调和存储接口为正证，但Profile政策、音频启动、MAP服务及GATT宿主存在跨独立职责的具体实现/全局状态依赖。 |
+| solid_principle.interface_segregation | 2/4 | 媒体、OBEX和Profile生命周期契约多数按客户端拆分；OPP双向会话强加单向确认能力及扫描Manager对整个GattService的依赖仍有改进点。 |
 | solid_principle.liskov_substitution | 3/4 | 两个真实profile对合法生命周期均初始化/释放资源并返回成功；cleanup本来是可选钩子，重复start是生命周期防御条件而非任意收紧输入。调用者检查adapter与expected profile，不能将条件异常机械记为0；未证明系统化跨实现契约测试，裁3。 |
-| solid_principle.open_closed | 2/4 | 基本遵循，仍有少量改进空间。 |
-| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.open_closed | 1/4 | 具有生命周期/回调扩展点，但Profile连接策略和MAP消息支持两条独立业务链仍要求修改核心条件，构成多处扩展传播。 |
+| solid_principle.single_responsibility | 2/4 | 基本按Profile和服务职责拆分；跨Profile适配器策略及OPP服务仍有集中职责混杂，尚不能判良好或优秀。 |
 
 ## FW-07 wifi-service
 
@@ -196,11 +196,11 @@
 | platform_reuse.platform_upgrade | 3/10 | 平台SDK shim和mainline模块保留迁移路径；ConnectivityService仍有未封装SystemProperties及多个API层条件，局部抽象不能抹掉未覆盖风险，封顶3；JNI源码不是单ABI闭源SO。 |
 | platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 | quality.integration_test | 1/3 | Android测试有真实Manager到Service交互及断言，缺少绑定HEAD的Android执行结果与覆盖代理，最高1。 |
-| solid_principle.dependency_inversion | 2/4 | 基本遵循，仍有少量改进空间。 |
-| solid_principle.interface_segregation | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.dependency_inversion | 2/4 | 主要跨边界依赖通过Binder、HAL契约、Scoreable和回调隔离，依赖创建也有明确替换缝隙；Nearby的Provider政策仍固定具体后端。 |
+| solid_principle.interface_segregation | 2/4 | 多个生产接口按职责充分收窄，但诊断客户端仍被迫依赖完整连接管理Binder能力，尚未达到全仓良好。 |
 | solid_principle.liskov_substitution | 0/4 | IPv6 no-op由父契约明确允许；但API30 IPv4删除无条件返回true，违反父契约true当且仅当map改变的后置条件，触发明确替换违反0档。 |
-| solid_principle.open_closed | 2/4 | 基本遵循，仍有少量改进空间。 |
-| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.open_closed | 1/4 | 网络Agent、HAL和回调提供真实扩展能力，但OEM网络偏好、Tethering传输、Nearby发现后端三个独立主要业务面仍有核心扩展修改链。 |
+| solid_principle.single_responsibility | 2/4 | 主要职责真实拆为网络排序、Tethering、统计、Ethernet、mDNS及Nearby协作者；OEM偏好已有内部工厂分责，局部改进主要是Tethering政策协调与具体传输适配同居。 |
 
 ## FW-10 cell-broadcast-service
 
@@ -228,11 +228,11 @@
 | platform_reuse.platform_upgrade | 3/10 | CarPackageManagerService.init直接读取系统驾驶安全区域属性并更新安全策略，CarAudioService直接读私有开关；这些是实际运行行为而非只用dump/log证明风险。VehicleStub真实按有效性由AIDL回退HIDL，说明有硬件迁移通路但不覆盖上述平台消费。未发现单ABI闭源核心链，保持3；ICarImpl.dumpRROs 不作为核心风险主证。 |
 | platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 | quality.integration_test | 1/3 | 旋钮输入与capture/occupant组件有真实交互断言，尚无当前HEAD执行结果和覆盖代理，最高1。 |
-| solid_principle.dependency_inversion | 2/4 | 基本遵循，仍有少量改进空间。 |
-| solid_principle.interface_segregation | 3/4 | 良好遵循。 |
+| solid_principle.dependency_inversion | 1/4 | 音频、用户乘员、属性多个高层链依赖具体服务/全局查找；抽象存在但未覆盖主要业务依赖，符合多处违反。 |
+| solid_principle.interface_segregation | 1/4 | 音频能力总接口与系统总 facade 在两个独立业务面造成无关能力依赖，符合多处违反；同时存在真实窄接口。 |
 | solid_principle.liskov_substitution | 0/4 | CarAudioService异步init允许返回时初始化未完成，弱化CarSystemService明示的functional后置。getCarService专门wait只能补偿该入口，通用生命周期调用者仍在init返回后调用onInitComplete。 |
-| solid_principle.open_closed | 3/4 | 良好遵循。 |
-| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.open_closed | 2/4 | 主扩展面已有真实策略、配置和监听；新增 HAL 业务族/本地电源执行组件仍需修改处理核心的内部装配，基本遵循，尚不足良好。 |
+| solid_principle.single_responsibility | 1/4 | 电源与用户两个独立业务面存在实质职责混合，符合“多处违反，设计不合理”；不依类长度计分。 |
 
 ## FW-15 telecom-service
 
@@ -244,11 +244,11 @@
 | platform_reuse.platform_upgrade | 3/10 | CallAudioRouteStateMachine.setMuteOn通过工厂取得IAudioService后直接调用带当前用户的setMicrophoneMute，源码说明普通AudioManager不具等价跨用户语义。工厂封装服务获取，不消除业务对私有接口的消费。属于可局部迁移的未封装风险，3成立；Analytics 硬件版本 dump 不作为核心风险主证。 |
 | platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 | quality.integration_test | 1/3 | 图执行测试有真实先后关系与结果断言，但无final-HEAD Android执行证明。 |
-| solid_principle.dependency_inversion | 2/4 | 基本遵循，仍有少量具体或隐式全局依赖。 |
-| solid_principle.interface_segregation | 3/4 | 良好遵循。 |
+| solid_principle.dependency_inversion | 2/4 | 基本遵循。CallsManager接收号码/时钟/通知抽象和工厂，焦点消费Requester/CallFocus，过滤调度消费CallFilter。未倒置处集中在高层接入与组装：核心选择具体过滤策略，CallIntentProcessor选具体广播器并解释其返回类型。普通Android API及组合根new不自动扣分；反例是可变实现选择进入生产政策路径。 |
+| solid_principle.interface_segregation | 2/4 | 基本遵循。焦点以CallFocus窄视图工作，号码适配/过滤回调各有专门边界。CallsManagerListener和Call.Listener却混合音频、视频、会议、RTT和诊断；仅关心移除事件的传感器也依赖全集。两套监听属于同一通话事件族，不把大量默认空方法或多个观察者当成独立多业务面违反。 |
 | solid_principle.liskov_substitution | 3/4 | 两个生产过滤器均保持CompletionStage结果契约；没有系统化多实现契约执行记录，不能4。 |
-| solid_principle.open_closed | 3/4 | 良好遵循。 |
-| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.open_closed | 1/4 | 音频路由中央映射和过滤图超时清理分别绑定具体端点/过滤实现，形成两个独立核心扩展传播面，OCP为多处违反的1；不是按switch数量或组合根new计分。 |
+| solid_principle.single_responsibility | 2/4 | 基本遵循。呼叫日志、音频、传感器、焦点和过滤执行都有独立生产责任。CallsManager的跨呼叫状态协调本身合法，不能因类长扣分；但核心还承担过滤图产品组装、音频对象装配和错误界面启动，PhoneAccountRegistrar合并账号选择、语音订阅同步与XML机制。问题以协调器和账号存储附近集中，尚不支持整个设计不合理。 |
 
 ## FW-16 platform-framework
 
@@ -276,8 +276,8 @@
 | platform_reuse.platform_upgrade | 3/10 | 核心电话流程与平台内部服务/HAL绑定，CommandsInterface/RIL提供部分迁移边界但不覆盖全局服务访问；无单架构闭源SO证据，total=3且有迁移路径，3分。 |
 | platform_reuse.release_branch_strategy | 0/10 | 本地 refs 未形成可验证的平台/车型 SOP 发布通道；main 和上游来源分支不等于跨平台统一发布。 |
 | quality.integration_test | 1/3 | 真实GsmCdmaPhone交互测试有断言和Android配置；未有final HEAD设备执行证明，最高1。 |
-| solid_principle.dependency_inversion | 1/4 | 多处违反，设计不合理。 |
-| solid_principle.interface_segregation | 1/4 | 多处违反，设计不合理。 |
+| solid_principle.dependency_inversion | 1/4 | 多处违反。订阅高层查找ProxyController/MultiSimSettingController单例并操作静态Phone集合；独立数据高层DcTracker自行取UiccController，CellularDataService经PhoneFactory查找Phone再访问公开mCi。CommandsInterface、IDataService、NITZ和可注入工厂是真实正向证据，但未覆盖运行期全局旁路。配置工厂反射加载不是单独扣分原因。 |
+| solid_principle.interface_segregation | 1/4 | 多处违反。CommandsInterface合并SIM PIN、拨号和数据；SIM状态与数据服务消费者均依赖全集。独立上层Phone/PhoneInternalInterface再聚合通话、数据、身份及电话本，电话本为IccRecords/文件处理器依赖完整Phone。无线命令层与高层电话能力是两层契约，不把同一CommandsInterface的两个消费者重复算多种胖接口。NITZ/IDataService表明仍有专门边界。 |
 | solid_principle.liskov_substitution | 0/4 | SIP 生产实现破坏查询结果和异步完成合同：成功回调结果类型不符合父接口，另有请求不完成，触发明确替换违反档。 |
-| solid_principle.open_closed | 2/4 | 基本遵循，仍有少量改进空间。 |
-| solid_principle.single_responsibility | 2/4 | 基本遵循，仍有少量改进空间。 |
+| solid_principle.open_closed | 1/4 | 多处违反。GsmCdmaPhone语音路由按GSM/CDMA/IMS及运营商条件选择，独立短信发送/重试又枚举IMS/GSM/CDMA并直接调用两种静态PDU编码。新增承载或制式政策需进入两个调度器；SMSDispatcher多态未封住重编码选择。配置工厂和IDataService是有效正向边界，阻止0分但不能覆盖核心反例。 |
+| solid_principle.single_responsibility | 1/4 | 多处违反。GsmCdmaPhone除门面委派外亲自实现IMS/CS及紧急/WPS路由、语音信箱SIM/SharedPreferences/运营商回退；SubscriptionController同时直接映射/查询数据库并分配modem radio capability、刷新数据tracker和广播。电话政策与持久化、订阅仓储与radio政策是两个独立聚合，不靠类长判分。 |

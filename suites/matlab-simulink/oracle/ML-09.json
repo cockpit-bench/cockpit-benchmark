@@ -260,6 +260,27 @@
           "path": "run_tests.m",
           "ref": "97e8582c9bda384528dd9215811e6fc00740892c",
           "sha256": "e2c4577d6c84f350264ff39f8a91b859434af633ad659734e1759f596eee52a8"
+        },
+        {
+          "line": 31,
+          "matched_text": "errors=abs(actual-v.expected);limits=v.absolute_tolerance+v.relative_tolerance*abs(v.expected);",
+          "path": "run_tests.m",
+          "ref": "97e8582c9bda384528dd9215811e6fc00740892c",
+          "sha256": "e2c4577d6c84f350264ff39f8a91b859434af633ad659734e1759f596eee52a8"
+        },
+        {
+          "line": 32,
+          "matched_text": "[badrow,badcol]=find(errors>limits | ~isfinite(actual) | ~isfinite(v.expected) | ~isfinite(errors) | ~isfinite(limits),1);",
+          "path": "run_tests.m",
+          "ref": "97e8582c9bda384528dd9215811e6fc00740892c",
+          "sha256": "e2c4577d6c84f350264ff39f8a91b859434af633ad659734e1759f596eee52a8"
+        },
+        {
+          "line": 34,
+          "matched_text": "error('ModelTest:Mismatch','%s sample %d: actual %.17g expected %.17g', ...",
+          "path": "run_tests.m",
+          "ref": "97e8582c9bda384528dd9215811e6fc00740892c",
+          "sha256": "e2c4577d6c84f350264ff39f8a91b859434af633ad659734e1759f596eee52a8"
         }
       ],
       "id": "unit_test",

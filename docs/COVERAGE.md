@@ -1,10 +1,10 @@
 # 叶 × 档位 × 证据状态覆盖
 
-基线：v0.9.1 的 18 仓标准答案；不读取 Agent 预测。
+基线：v0.9.2 的 18 仓标准答案；不读取 Agent 预测。
 
-样本内类型×叶众数基线：**129/171 = 75.4%**。这不是独立测试准确率，也不检查理由或证据质量。
+样本内类型×叶众数基线：**123/171 = 71.9%**。这不是独立测试准确率，也不检查理由或证据质量。
 
-覆盖 **42/81** 个类型×叶×合法档位组合；这是档位计数，不能替代真实任务能力验证。
+覆盖 **44/81** 个类型×叶×合法档位组合；这是档位计数，不能替代真实任务能力验证。
 
 | 类型 | 叶 | 分数:样本数 | 缺失档位 |
 |---|---|---|---|
@@ -13,7 +13,7 @@
 | APP | architecture.modularization | 0:1, 1:2, 2:3, 3:3 |  |
 | APP | compilation.api_version_management | 0:2, 1:7 | 2, 3 |
 | APP | compilation.ci_independence | 0:4, 1:2, 2:2, 3:1 |  |
-| APP | compilation.compilation_independence | 0:2, 1:2, 2:5 | 3 |
+| APP | compilation.compilation_independence | 0:3, 1:1, 2:5 | 3 |
 | APP | platform_reuse.platform_upgrade | 0:2, 3:7 | 8, 10 |
 | APP | platform_reuse.release_branch_strategy | 0:9 | 3, 8, 10 |
 | FRAMEWORK | compilation.api_version_management | 0:2, 1:1, 2:6 | 3 |
@@ -22,11 +22,11 @@
 | FRAMEWORK | platform_reuse.platform_upgrade | 0:1, 3:8 | 8, 10 |
 | FRAMEWORK | platform_reuse.release_branch_strategy | 0:9 | 3, 8, 10 |
 | FRAMEWORK | quality.integration_test | 1:9 | 0, 2, 3 |
-| FRAMEWORK | solid_principle.dependency_inversion | 1:2, 2:7 | 0, 3, 4 |
-| FRAMEWORK | solid_principle.interface_segregation | 1:1, 2:2, 3:6 | 0, 4 |
+| FRAMEWORK | solid_principle.dependency_inversion | 1:3, 2:6 | 0, 3, 4 |
+| FRAMEWORK | solid_principle.interface_segregation | 1:2, 2:4, 3:3 | 0, 4 |
 | FRAMEWORK | solid_principle.liskov_substitution | 0:3, 3:6 | 1, 2, 4 |
-| FRAMEWORK | solid_principle.open_closed | 2:5, 3:4 | 0, 1, 4 |
-| FRAMEWORK | solid_principle.single_responsibility | 2:9 | 0, 1, 3, 4 |
+| FRAMEWORK | solid_principle.open_closed | 1:4, 2:3, 3:2 | 0, 4 |
+| FRAMEWORK | solid_principle.single_responsibility | 1:2, 2:7 | 0, 3, 4 |
 
 完整 JSON 的 cells 列出每个档位的仓 ID、源码/库存锚点数量、输入方法和 Android 集成执行证据状态。
 9 个 FW 集成测试叶的 final-HEAD Android 执行证据：recorded 0，absent 9，未分类 0；另有 host recorded 0，不计作设备执行。其他叶不凭此字段缺失推断未执行。
