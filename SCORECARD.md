@@ -1,4 +1,4 @@
-# Validation-18 v0.9.3
+# Validation-18 v0.9.4
 
 | ID | Repository | Size | Quality | Score |
 |---|---|---|---|---|
@@ -12,7 +12,7 @@
 | APP-16 | launcher-workspace | medium | low | 14/40 |
 | APP-17 | climate-panel | small | low | 7/40 |
 | FW-02 | network-stack-service | small | high | 20/52 |
-| FW-03 | bluetooth-service | medium | high | 16/52 |
+| FW-03 | bluetooth-service | medium | high | 17/52 |
 | FW-07 | wifi-service | large | high | 19/52 |
 | FW-08 | connectivity-service | medium | medium | 14/52 |
 | FW-10 | cell-broadcast-service | small | medium | 19/52 |
@@ -167,7 +167,7 @@
 | solid_principle.dependency_inversion | 1/4 | 若干窄回调和存储接口为正证，但Profile政策、音频启动、MAP服务及GATT宿主存在跨独立职责的具体实现/全局状态依赖。 |
 | solid_principle.interface_segregation | 2/4 | 媒体、OBEX和Profile生命周期契约多数按客户端拆分；OPP双向会话强加单向确认能力及扫描Manager对整个GattService的依赖仍有改进点。 |
 | solid_principle.liskov_substitution | 3/4 | 两个真实profile对合法生命周期均初始化/释放资源并返回成功；cleanup本来是可选钩子，重复start是生命周期防御条件而非任意收紧输入。调用者检查adapter与expected profile，不能将条件异常机械记为0；未证明系统化跨实现契约测试，裁3。 |
-| solid_principle.open_closed | 1/4 | 具有生命周期/回调扩展点，但Profile连接策略和MAP消息支持两条独立业务链仍要求修改核心条件，构成多处扩展传播。 |
+| solid_principle.open_closed | 2/4 | 生命周期、OBEX回调及同契约MAP Provider有实际扩展机制；Profile连接控制仍直接依赖具体服务。MAP类别映射未证明超出必要协议适配的第二条不合理传播，按基本遵循、局部改进为2。 |
 | solid_principle.single_responsibility | 2/4 | 基本按Profile和服务职责拆分；跨Profile适配器策略及OPP服务仍有集中职责混杂，尚不能判良好或优秀。 |
 
 ## FW-07 wifi-service

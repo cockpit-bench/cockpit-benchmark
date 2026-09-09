@@ -1,8 +1,8 @@
-Current v0.9.1 (API scope B adopted in v0.8.6): API scope B under SCORE_RULES.md v3.5 supersedes earlier API-scope statements below; see API_GOVERNANCE.md. Other leaf contracts remain unchanged.
+Current v0.9.4: SCORE_RULES.md v3.5.1 adds approved general SOLID interpretation. Existing leaves/bands, API scope B and execution evidence requirements are unchanged. Historical guidance below does not override the current contract.
 
 # Validation-18 执行规范
 
-本规范汇总已接受的建设要求。评分以同版本的 SCORE_RULES.md v3.5 为准；原 REAL_REPOSITORY_GUIDANCE.md 是历史档案，不作为自动执行指令。原文中的统计、未裁定建议和旧评分表不覆盖本规范。
+本规范汇总已接受的建设要求。评分以同版本的 SCORE_RULES.md v3.5.1 为准；原 REAL_REPOSITORY_GUIDANCE.md 是历史档案，不作为自动执行指令。原文中的统计、未裁定建议和旧评分表不覆盖本规范。
 
 ## 目标与范围
 

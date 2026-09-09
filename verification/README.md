@@ -1,6 +1,6 @@
-Current v0.9.3: Android 258/828; see docs/HORIZONTAL_ARBITRATION_V093.md for three severity corrections and the LSP wording fix. Current evaluation baselines are generated in docs/EVALUATION_BATCH.md. Use the matching v0.9.3 verification attachment; MATLAB and the external Git packet retain their original versions.
+Current v0.9.4: Android 259/828; FW-03 MAP OCP arbitration and approved candidate-visible contract v3.5.1. See docs/MAP_OCP_ARBITRATION_V094.md. Use the matching v0.9.4 verification attachment; MATLAB and the external Git packet retain their original versions.
 
-Current v0.8.6: API scope B under SCORE_RULES.md v3.5 supersedes earlier API-scope statements below; see [API governance schema and limits](../docs/API_GOVERNANCE.md). Other leaf contracts remain unchanged.
+Historical v0.8.6 context: API scope B under SCORE_RULES.md v3.5 supersedes earlier API-scope statements below; see [API governance schema and limits](../docs/API_GOVERNANCE.md). Other leaf contracts remain unchanged.
 
 # Public verification
 

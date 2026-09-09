@@ -5,10 +5,10 @@ contract, source manifest, standard answers and reproducible evidence.
 
 | Suite | Repositories / leaves | Score | Contract |
 |---|---|---|---|
-| [Android APP / Framework](SCORECARD.md) | 18 / 171 | 258 / 828 | [v3.5](SCORE_RULES.md) |
+| [Android APP / Framework](SCORECARD.md) | 18 / 171 | 259 / 828 | [v3.5.1](SCORE_RULES.md) |
 | [MATLAB / Simulink](suites/matlab-simulink/README.md) | 9 / 117 | 338 / 549 | [Effective contract](suites/matlab-simulink/EFFECTIVE_CONTRACT.md) |
 
-Version v0.9.3 resolves [three horizontal SOLID severity boundaries](docs/HORIZONTAL_ARBITRATION_V093.md) and two wording/baseline defects. Three scores change; FW-15 LSP keeps its score with narrower wording. All 27 source HEADs/refs, contracts and MATLAB scores/evidence remain unchanged; expansion is separate.
+Version v0.9.4 resolves the [FW-03 MAP extension-scenario adjudication](docs/MAP_OCP_ARBITRATION_V094.md) and adopts approved, case-free SOLID explanations in contract v3.5.1. One score changes; 170 other complete Android leaves, all 27 source HEADs/refs and MATLAB scores/evidence are unchanged. Expansion remains separate.
 
 ## Restore
 
@@ -40,7 +40,7 @@ for the second command. Its hash is frozen in
 
 Android’s [verifier](verification/README.md), [API governance](docs/API_GOVERNANCE.md),
 [evidence protocol](docs/EVIDENCE_PROTOCOL.md) and
-[v0.9.3 evidence attachment](https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.9.3)
+[v0.9.4 evidence attachment](https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.9.4)
 remain the reference for that suite. Give an evaluation agent only its selected
 source repository and explicitly allowed raw inputs, never the wrapper answers.
 

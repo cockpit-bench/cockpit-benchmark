@@ -11,13 +11,13 @@ python verification/evaluation_batch.py prepare --wrapper . --mode source_only -
 工具验证合同、标准分、源码 manifest 的实际文件 SHA，固定 eligible、reference、split 与 batch hash；已存在输出不会覆盖。以下均按当前标准分和各自实际 eligible 集合计算，类型×叶组内取众数，是样本内事后基线，不是 Agent 成绩。
 
 <!-- current-baselines:start -->
-当前参考版本：`v0.9.3`。
+当前参考版本：`v0.9.4`。
 
 | 集合 | 众数命中/分母 | 样本内比例 |
 |---|---:|---:|
-| 完整集 | 123/171 | 71.93% |
-| source_only | 112/155 | 72.26% |
-| frozen_external | 113/156 | 72.44% |
+| 完整集 | 124/171 | 72.51% |
+| source_only | 113/155 | 72.90% |
+| frozen_external | 114/156 | 73.08% |
 
 <!-- current-baselines:end -->
 

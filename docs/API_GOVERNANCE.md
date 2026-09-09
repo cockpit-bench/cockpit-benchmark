@@ -1,4 +1,4 @@
-Current v0.9.1: the v3.5 API decisions below remain unchanged. FW-07 frozen-external raw inputs are now supplied separately in EXTERNAL_GIT_INPUTS.md; its source-only eligibility is still unknown. Current Android total is 269/828 after two non-API SOLID corrections.
+Current v0.9.4: API scope B is unchanged by v3.5.1, which only clarifies SOLID interpretation. API review tables below describe the historical v0.8.6 adjudication; current totals are in STANDARD_SCORES.json. FW-07 frozen-external inputs remain in EXTERNAL_GIT_INPUTS.md.
 
 # v0.8.6 API governance scope B
 
