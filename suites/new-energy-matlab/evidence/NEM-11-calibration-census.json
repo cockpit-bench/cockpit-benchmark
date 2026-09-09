@@ -1,0 +1,1375 @@
+{
+  "head": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+  "limits": "Expression inventory only; business meaning, active configuration and parameter completeness require semantic review.",
+  "models": [
+    {
+      "expressions": [
+        {
+          "expression": "0.1",
+          "field": "FixedStep",
+          "id": "2",
+          "member": "simulink/configSet0.xml",
+          "name": null,
+          "node_type": "Object"
+        },
+        {
+          "expression": "1",
+          "field": "FixedStep",
+          "id": "2",
+          "member": "simulink/configSet1.xml",
+          "name": null,
+          "node_type": "Object"
+        },
+        {
+          "expression": "IDLE\nentry:\nBM_OperMode = 100;\nBM_CtctrCnctCmd = false;\n",
+          "field": "labelString",
+          "id": "3",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "state"
+        },
+        {
+          "expression": "CONTACTOR_CONNECT_COMMAND\nentry:\nBM_OperMode = 110;\nBM_CtctrCnctCmd = true;",
+          "field": "labelString",
+          "id": "39",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "state"
+        },
+        {
+          "expression": "FAULT\nentry:\nBM_OperMode = 255;\nBM_CtctrCnctCmd = false;\n",
+          "field": "labelString",
+          "id": "109",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "state"
+        },
+        {
+          "expression": "CONTACTOR_CONNECT_FAIL\nentry:\nBM_OperMode = 115;\nBM_CtctrFlt = true;",
+          "field": "labelString",
+          "id": "49",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "state"
+        },
+        {
+          "expression": "CONTACTOR_CONNECT_CHECK\nentry:\nBM_OperMode = 111;",
+          "field": "labelString",
+          "id": "45",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "state"
+        },
+        {
+          "expression": "CONTACTOR_CONNECT_SEQUENCE",
+          "field": "labelString",
+          "id": "61",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "state"
+        },
+        {
+          "expression": "CONTACTOR_CONNECT_SUCCESS\nentry:\nBM_OperMode = 120;\nBM_StsCtctrCnct = true;",
+          "field": "labelString",
+          "id": "47",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "state"
+        },
+        {
+          "expression": "CHARGING\nentry:\nBM_OperMode = 130;",
+          "field": "labelString",
+          "id": "52",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "state"
+        },
+        {
+          "expression": "DISCHARGING\nentry:\nBM_OperMode = 140;",
+          "field": "labelString",
+          "id": "54",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "state"
+        },
+        {
+          "expression": "[Obsr_VBus >= 0.95*Obsr_VBatPack]",
+          "field": "labelString",
+          "id": "62",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[Obsr_StsChPlg == true]",
+          "field": "labelString",
+          "id": "53",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[Obsr_StsIgnOn == true]",
+          "field": "labelString",
+          "id": "55",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[Obsr_StsChPlg == true]",
+          "field": "labelString",
+          "id": "59",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[(Obsr_StsChPlg == false) && (Obsr_StsIgnOn == true)]",
+          "field": "labelString",
+          "id": "60",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[(Obsr_StsChPlg == false)||(BPC_BattSoc >= 98.5 )]",
+          "field": "labelString",
+          "id": "57",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[((Obsr_StsIgnOn == false)||(BPC_BattSoc < 3 ))]",
+          "field": "labelString",
+          "id": "58",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "CONTACTOR_DICCONNECT_CHECK\nentry:\nBM_OperMode = 211;",
+          "field": "labelString",
+          "id": "89",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "state"
+        },
+        {
+          "expression": "CONTACTOR_DISCONNECT_FAIL\nentry:\nBM_OperMode = 230;\nBM_CtctrFlt = true;",
+          "field": "labelString",
+          "id": "93",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "state"
+        },
+        {
+          "expression": "CONTACTOR_DISCONNECT_COMMAND\nentry:\nBM_OperMode = 200;\nBM_CtctrCnctCmd = false;",
+          "field": "labelString",
+          "id": "67",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "state"
+        },
+        {
+          "expression": "CONTACTOR_DISCONNECT_SUCCESS\nentry:\nBM_OperMode = 220;\nBM_StsCtctrCnct = false;\n",
+          "field": "labelString",
+          "id": "91",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "state"
+        },
+        {
+          "expression": "[((Obsr_StsIgnOn == false)||(BPC_BattSoc < 3 ))]",
+          "field": "labelString",
+          "id": "73",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[(Obsr_StsChPlg == false)||(BPC_BattSoc >= 98.5 )]",
+          "field": "labelString",
+          "id": "74",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "{BM_CtctrFlt = false;\nBM_StsCtctrCnct = false;}",
+          "field": "labelString",
+          "id": "33",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[BFH_StsBattFlt == false]",
+          "field": "labelString",
+          "id": "43",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[((Obsr_StsIgnOn == true)&&(BPC_BattSoc > 3 ))||((Obsr_StsChPlg == true)&&(BPC_BattSoc < 98.5))]",
+          "field": "labelString",
+          "id": "44",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[after(BM_TiCtctrCnct_P,tick)]",
+          "field": "labelString",
+          "id": "46",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[(Obsr_StsIgnOn == false) && (Obsr_StsChPlg == false)]",
+          "field": "labelString",
+          "id": "112",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[Obsr_VBus < 0.98*Obsr_VBatPack]",
+          "field": "labelString",
+          "id": "50",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[BFH_StsBattFlt == true]",
+          "field": "labelString",
+          "id": "117",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[Obsr_VBus >= 0.95*Obsr_VBatPack]",
+          "field": "labelString",
+          "id": "48",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[Obsr_VBus >= 0.95*Obsr_VBatPack]",
+          "field": "labelString",
+          "id": "64",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[(Obsr_StsChPlg == false)||(BPC_BattSoc >= 98.5 )]",
+          "field": "labelString",
+          "id": "68",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[((Obsr_StsIgnOn == false)||(BPC_BattSoc < 3 ))]",
+          "field": "labelString",
+          "id": "71",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[BFH_StsBattFlt == true]",
+          "field": "labelString",
+          "id": "72",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[after(BM_TiCtctrDCnct_P,tick)]",
+          "field": "labelString",
+          "id": "78",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "[Obsr_VBus < 0.2*Obsr_VBatPack]",
+          "field": "labelString",
+          "id": "92",
+          "member": "simulink/stateflow/chart_119.xml",
+          "name": null,
+          "node_type": "transition"
+        },
+        {
+          "expression": "CVM_VCellMinCutoffTh_P",
+          "field": "Value",
+          "id": "107",
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_VCellMinDrtdTh_P",
+          "field": "Value",
+          "id": "108",
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_VCellMinWarnTh_P",
+          "field": "Value",
+          "id": "109",
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrCutoff_C",
+          "field": "Value",
+          "id": "110",
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrDrtd_C",
+          "field": "Value",
+          "id": "111",
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant4",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrWarn_C",
+          "field": "Value",
+          "id": "112",
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant5",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrNoFlt_C",
+          "field": "Value",
+          "id": "113",
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant6",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Value",
+          "id": "122",
+          "member": "simulink/systems/system_120.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_DMaxVCellMinCutoff_P",
+          "field": "Value",
+          "id": "123",
+          "member": "simulink/systems/system_120.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_DMinVCellMinCutoff_P",
+          "field": "Value",
+          "id": "124",
+          "member": "simulink/systems/system_120.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Value",
+          "id": "130",
+          "member": "simulink/systems/system_128.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_DMaxVCellMinDrtd_P",
+          "field": "Value",
+          "id": "131",
+          "member": "simulink/systems/system_128.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_DMinVCellMinDrtd_P",
+          "field": "Value",
+          "id": "132",
+          "member": "simulink/systems/system_128.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Value",
+          "id": "138",
+          "member": "simulink/systems/system_136.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_DMaxVCellMinWarn_P",
+          "field": "Value",
+          "id": "139",
+          "member": "simulink/systems/system_136.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_DMinVCellMinWarn_P",
+          "field": "Value",
+          "id": "140",
+          "member": "simulink/systems/system_136.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrTMdulSnsr_C",
+          "field": "Value",
+          "id": "173",
+          "member": "simulink/systems/system_170.xml",
+          "name": "Constant",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_TMdulMaxCutoffTh_P",
+          "field": "Value",
+          "id": "177",
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_TMdulMaxDrtdTh_P",
+          "field": "Value",
+          "id": "178",
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_TMdulMaxWarnTh_P",
+          "field": "Value",
+          "id": "179",
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrCutoff_C",
+          "field": "Value",
+          "id": "180",
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrDrtd_C",
+          "field": "Value",
+          "id": "181",
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant4",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrWarn_C",
+          "field": "Value",
+          "id": "182",
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant5",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrNoFlt_C",
+          "field": "Value",
+          "id": "183",
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant6",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Value",
+          "id": "192",
+          "member": "simulink/systems/system_190.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_DMaxTMdulMaxCutoff_P",
+          "field": "Value",
+          "id": "193",
+          "member": "simulink/systems/system_190.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_DMinTMdulMaxCutoff_P",
+          "field": "Value",
+          "id": "194",
+          "member": "simulink/systems/system_190.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Value",
+          "id": "200",
+          "member": "simulink/systems/system_198.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_DMaxTMdulMaxDrtd_P",
+          "field": "Value",
+          "id": "201",
+          "member": "simulink/systems/system_198.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_DMinTMdulMaxDrtd_P",
+          "field": "Value",
+          "id": "202",
+          "member": "simulink/systems/system_198.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "BM_TiCtctrCnct_P",
+          "field": "Value",
+          "id": "28",
+          "member": "simulink/systems/system_20.xml",
+          "name": "Constant",
+          "node_type": "Block"
+        },
+        {
+          "expression": "BM_TiCtctrDCnct_P",
+          "field": "Value",
+          "id": "29",
+          "member": "simulink/systems/system_20.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Value",
+          "id": "208",
+          "member": "simulink/systems/system_206.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_DMaxTMdulMaxWarn_P",
+          "field": "Value",
+          "id": "209",
+          "member": "simulink/systems/system_206.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_DMinTMdulMaxWarn_P",
+          "field": "Value",
+          "id": "210",
+          "member": "simulink/systems/system_206.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_TMdulMinCutoffTh_P",
+          "field": "Value",
+          "id": "220",
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_TMdulMinDrtdTh_P",
+          "field": "Value",
+          "id": "221",
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_TMdulMinWarnTh_P",
+          "field": "Value",
+          "id": "222",
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrCutoff_C",
+          "field": "Value",
+          "id": "223",
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrDrtd_C",
+          "field": "Value",
+          "id": "224",
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant4",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrWarn_C",
+          "field": "Value",
+          "id": "225",
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant5",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrNoFlt_C",
+          "field": "Value",
+          "id": "226",
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant6",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Value",
+          "id": "235",
+          "member": "simulink/systems/system_233.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_DMaxTMdulMinCutoff_P",
+          "field": "Value",
+          "id": "236",
+          "member": "simulink/systems/system_233.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_DMinTMdulMinCutoff_P",
+          "field": "Value",
+          "id": "237",
+          "member": "simulink/systems/system_233.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Value",
+          "id": "243",
+          "member": "simulink/systems/system_241.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_DMaxTMdulMinDrtd_P",
+          "field": "Value",
+          "id": "244",
+          "member": "simulink/systems/system_241.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_DMinTMdulMinDrtd_P",
+          "field": "Value",
+          "id": "245",
+          "member": "simulink/systems/system_241.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Value",
+          "id": "251",
+          "member": "simulink/systems/system_249.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_DMaxTMdulMinWarn_P",
+          "field": "Value",
+          "id": "252",
+          "member": "simulink/systems/system_249.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "MTM_DMinTMdulMinWarn_P",
+          "field": "Value",
+          "id": "253",
+          "member": "simulink/systems/system_249.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "BPC_BattTotalCharge_P",
+          "field": "Value",
+          "id": "38",
+          "member": "simulink/systems/system_35.xml",
+          "name": "BMS_TiProc_C2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "48*0.985",
+          "field": "InitialValue",
+          "id": "39",
+          "member": "simulink/systems/system_35.xml",
+          "name": "Data Store\nMemory1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "48*3*4.22*0.985",
+          "field": "InitialValue",
+          "id": "40",
+          "member": "simulink/systems/system_35.xml",
+          "name": "Data Store\nMemory2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "-1",
+          "field": "SampleTime",
+          "id": "45",
+          "member": "simulink/systems/system_35.xml",
+          "name": "Discrete-Time\nIntegrator",
+          "node_type": "Block"
+        },
+        {
+          "expression": "BPC_BattTotalCharge_P",
+          "field": "UpperSaturationLimit",
+          "id": "45",
+          "member": "simulink/systems/system_35.xml",
+          "name": "Discrete-Time\nIntegrator",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "LowerSaturationLimit",
+          "id": "45",
+          "member": "simulink/systems/system_35.xml",
+          "name": "Discrete-Time\nIntegrator",
+          "node_type": "Block"
+        },
+        {
+          "expression": "-1",
+          "field": "SampleTime",
+          "id": "46",
+          "member": "simulink/systems/system_35.xml",
+          "name": "Discrete-Time\nIntegrator1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "BPC_BattTotalEnergy_P",
+          "field": "UpperSaturationLimit",
+          "id": "46",
+          "member": "simulink/systems/system_35.xml",
+          "name": "Discrete-Time\nIntegrator1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "LowerSaturationLimit",
+          "id": "46",
+          "member": "simulink/systems/system_35.xml",
+          "name": "Discrete-Time\nIntegrator1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "-BMS_TiSample_C/3600",
+          "field": "Gain",
+          "id": "49",
+          "member": "simulink/systems/system_35.xml",
+          "name": "Gain",
+          "node_type": "Block"
+        },
+        {
+          "expression": "-BMS_TiSample_C/3600",
+          "field": "Gain",
+          "id": "50",
+          "member": "simulink/systems/system_35.xml",
+          "name": "Gain1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "100",
+          "field": "Gain",
+          "id": "51",
+          "member": "simulink/systems/system_35.xml",
+          "name": "Gain2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "100",
+          "field": "UpperLimit",
+          "id": "54",
+          "member": "simulink/systems/system_35.xml",
+          "name": "Saturation",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "LowerLimit",
+          "id": "54",
+          "member": "simulink/systems/system_35.xml",
+          "name": "Saturation",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_VCellMaxCutoffTh_P",
+          "field": "Value",
+          "id": "64",
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_VCellMaxDrtdTh_P",
+          "field": "Value",
+          "id": "65",
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_VCellMaxWarnTh_P",
+          "field": "Value",
+          "id": "66",
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrCutoff_C",
+          "field": "Value",
+          "id": "67",
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrDrtd_C",
+          "field": "Value",
+          "id": "68",
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant4",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrWarn_C",
+          "field": "Value",
+          "id": "69",
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant5",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrNoFlt_C",
+          "field": "Value",
+          "id": "70",
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant6",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Value",
+          "id": "79",
+          "member": "simulink/systems/system_77.xml",
+          "name": "Constant",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_DMaxVCellMaxCutoff_P",
+          "field": "Value",
+          "id": "80",
+          "member": "simulink/systems/system_77.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_DMinVCellMaxCutoff_P",
+          "field": "Value",
+          "id": "81",
+          "member": "simulink/systems/system_77.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "1",
+          "field": "DelayLength",
+          "id": "15",
+          "member": "simulink/systems/system_8.xml",
+          "name": "Delay",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Value",
+          "id": "87",
+          "member": "simulink/systems/system_85.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_DMaxVCellMaxDrtd_P",
+          "field": "Value",
+          "id": "88",
+          "member": "simulink/systems/system_85.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_DMinVCellMaxDrtd_P",
+          "field": "Value",
+          "id": "89",
+          "member": "simulink/systems/system_85.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Value",
+          "id": "95",
+          "member": "simulink/systems/system_93.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_DMaxVCellMaxWarn_P",
+          "field": "Value",
+          "id": "96",
+          "member": "simulink/systems/system_93.xml",
+          "name": "Constant2",
+          "node_type": "Block"
+        },
+        {
+          "expression": "CVM_DMinVCellMaxWarn_P",
+          "field": "Value",
+          "id": "97",
+          "member": "simulink/systems/system_93.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "BMS_ModeEnaFltChk",
+          "field": "BreakpointsForDimension1",
+          "id": "59",
+          "member": "simulink/systems/system_root.xml",
+          "name": "BMS_FltEnaFlag",
+          "node_type": "Block"
+        },
+        {
+          "expression": "BMS_EnaFltSts",
+          "field": "Table",
+          "id": "59",
+          "member": "simulink/systems/system_root.xml",
+          "name": "BMS_FltEnaFlag",
+          "node_type": "Block"
+        },
+        {
+          "expression": "NrCutoff_C",
+          "field": "Value",
+          "id": "149",
+          "member": "simulink/systems/system_root.xml",
+          "name": "Constant3",
+          "node_type": "Block"
+        },
+        {
+          "expression": "-1",
+          "field": "SampleTime",
+          "id": "265",
+          "member": "simulink/systems/system_root.xml",
+          "name": "Unit Delay",
+          "node_type": "Block"
+        }
+      ],
+      "path": "BatteryContactorController.slx",
+      "sha256": "eb832ad518968b1f44f6facee50a8e2959bf09baeb519daed321ff019323a009"
+    },
+    {
+      "expressions": [
+        {
+          "expression": "1",
+          "field": "Value",
+          "id": null,
+          "member": "simulink/bddefaults.xml",
+          "name": null,
+          "node_type": "Block"
+        },
+        {
+          "expression": "inf",
+          "field": "SampleTime",
+          "id": null,
+          "member": "simulink/bddefaults.xml",
+          "name": null,
+          "node_type": "Block"
+        },
+        {
+          "expression": "-1",
+          "field": "SampleTime",
+          "id": null,
+          "member": "simulink/bddefaults.xml",
+          "name": null,
+          "node_type": "Block"
+        },
+        {
+          "expression": "-1",
+          "field": "SampleTime",
+          "id": null,
+          "member": "simulink/bddefaults.xml",
+          "name": null,
+          "node_type": "Block"
+        },
+        {
+          "expression": "-1",
+          "field": "SampleTime",
+          "id": null,
+          "member": "simulink/bddefaults.xml",
+          "name": null,
+          "node_type": "Block"
+        },
+        {
+          "expression": "-1",
+          "field": "SampleTime",
+          "id": null,
+          "member": "simulink/bddefaults.xml",
+          "name": null,
+          "node_type": "Block"
+        },
+        {
+          "expression": "-1",
+          "field": "SampleTime",
+          "id": null,
+          "member": "simulink/bddefaults.xml",
+          "name": null,
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Threshold",
+          "id": null,
+          "member": "simulink/bddefaults.xml",
+          "name": null,
+          "node_type": "Block"
+        },
+        {
+          "expression": "-1",
+          "field": "SampleTime",
+          "id": null,
+          "member": "simulink/bddefaults.xml",
+          "name": null,
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "InitialCondition",
+          "id": null,
+          "member": "simulink/bddefaults.xml",
+          "name": null,
+          "node_type": "Block"
+        },
+        {
+          "expression": "1",
+          "field": "SampleTime",
+          "id": null,
+          "member": "simulink/bddefaults.xml",
+          "name": null,
+          "node_type": "Block"
+        },
+        {
+          "expression": "0",
+          "field": "Value",
+          "id": "42",
+          "member": "simulink/blockdiagram.xml",
+          "name": "Constant1",
+          "node_type": "Block"
+        },
+        {
+          "expression": "-1",
+          "field": "SampleTime",
+          "id": "44",
+          "member": "simulink/blockdiagram.xml",
+          "name": "Unit Delay",
+          "node_type": "Block"
+        },
+        {
+          "expression": "auto",
+          "field": "FixedStep",
+          "id": "2",
+          "member": "simulink/configSet0.xml",
+          "name": null,
+          "node_type": "Object"
+        }
+      ],
+      "path": "MiniBMS/BMSLib.slx",
+      "sha256": "2b8f3ac44760931b52cf14f358dedd1018b24aef4d85b43fa30fc5054c6e422b"
+    }
+  ],
+  "schema": "calibration-expression-census-v1",
+  "scope": {
+    "models": [
+      "BatteryContactorController.slx",
+      "MiniBMS/BMSLib.slx"
+    ],
+    "scripts": [
+      "MiniBMS/MiniBMSVariables.m",
+      "initialize_controller.m"
+    ]
+  },
+  "scripts": [
+    {
+      "assignments": [
+        {
+          "line": 7,
+          "text": "NrTMdulSnsr_C = uint8(3);"
+        },
+        {
+          "line": 10,
+          "text": "NrCells_C = uint8(3);"
+        },
+        {
+          "line": 13,
+          "text": "Em = [2.8 3.228 3.284 3.361 3.408 3.427 3.472 3.477 3.493 3.504 3.516 3.528 3.537 3.545 3.555 3.561 3.566 3.576 3.587 3.589 3.594 3.6 3.608 3.61 3.616 3.619 3.626 3.632 3.637 3.64 3.645 3.646 3.652 3.655 3.658 3.661 3.664 3.668 3.673 3.678 3.68 3.681 3.686 3.692 3.699 3.702 3.705 3.71 3.717 3.723 3.728 3.733 3.735 3.742 3.749 3.755 3.761 3.768 3.773 3.78 3.791 3.798 3.798 3.814 3.818 3.825 3.841 3.846 3.855 3.863 3.877 3.885 3.894 3.907 3.919 3.926 3.935 3.944 3.954 3.964 3.974 3.988 3.998 4.014 4.029 4.034 4.047 4.065 4.074 4.086 4.097 4.131 4.126 4.138 4.15 4.18 4.174 4.187 4.207 4.231 4.221];"
+        },
+        {
+          "line": 14,
+          "text": "CapLUTBp = [0 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.1 0.11 0.12 0.13 0.14 0.15 0.16 0.17 0.18 0.19 0.2 0.21 0.22 0.23 0.24 0.25 0.26 0.27 0.28 0.29 0.3 0.31 0.32 0.33 0.34 0.35 0.36 0.37 0.38 0.39 0.4 0.41 0.42 0.43 0.44 0.45 0.46 0.47 0.48 0.49 0.5 0.51 0.52 0.53 0.54 0.55 0.56 0.57 0.58 0.59 0.6 0.61 0.62 0.63 0.64 0.65 0.66 0.67 0.68 0.69 0.7 0.71 0.72 0.73 0.74 0.75 0.76 0.77 0.78 0.79 0.8 0.81 0.82 0.83 0.84 0.85 0.86 0.87 0.88 0.89 0.9 0.91 0.92 0.93 0.94 0.95 0.96 0.97 0.98 0.99 1];"
+        },
+        {
+          "line": 15,
+          "text": "RInt = [0.008846 0.009319 0.009027 0.00847 0.01032 0.01314;0.006389 0.006554 0.005553 0.005525 0.006043 0.007805;0.004364 0.004101 0.00406 0.003452 0.003846 0.004517;0.002031 0.002563 0.002532 0.00246 0.002716 0.003047;0.001443 0.001825 0.001795 0.001778 0.001924 0.002234;0.0005603 0.0007192 0.0006887 0.0007557 0.0007355 0.001014;0.001028 0.001338 0.001 0.001536 0.001546 0.002789];"
+        },
+        {
+          "line": 16,
+          "text": "BattTempBp = [243.1 253.1 263.1 273.1 283.1 298.1 313.1]*0.1;"
+        },
+        {
+          "line": 17,
+          "text": "CapSOCBp = [0 0.2 0.4 0.6 0.8 1];"
+        },
+        {
+          "line": 22,
+          "text": "BMS_TiSample_C = single(0.1);"
+        },
+        {
+          "line": 25,
+          "text": "BMS_ModeEnaFltChk = [0 100 110 111 115 120 130 140 200 211 220 230 255];"
+        },
+        {
+          "line": 26,
+          "text": "BMS_EnaFltSts = [1 1 1 1 1 1 1 1 0 0 0 0 0];"
+        },
+        {
+          "line": 30,
+          "text": "CVM_VCellMinCutoffTh_P = single(3.26);"
+        },
+        {
+          "line": 31,
+          "text": "CVM_VCellMinDrtdTh_P = single(3);"
+        },
+        {
+          "line": 32,
+          "text": "CVM_VCellMinWarnTh_P = single(2.8);"
+        },
+        {
+          "line": 35,
+          "text": "CVM_DMaxVCellMinCutoff_P = int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 36,
+          "text": "CVM_DMinVCellMinCutoff_P = -int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 37,
+          "text": "CVM_DMaxVCellMinDrtd_P = int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 38,
+          "text": "CVM_DMinVCellMinDrtd_P = -int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 39,
+          "text": "CVM_DMaxVCellMinWarn_P = int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 40,
+          "text": "CVM_DMinVCellMinWarn_P = -int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 43,
+          "text": "CVM_VCellMaxCutoffTh_P = single(4.22);"
+        },
+        {
+          "line": 44,
+          "text": "CVM_VCellMaxDrtdTh_P = single(4.15);"
+        },
+        {
+          "line": 45,
+          "text": "CVM_VCellMaxWarnTh_P = single(4.1);"
+        },
+        {
+          "line": 48,
+          "text": "CVM_DMaxVCellMaxCutoff_P = int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 49,
+          "text": "CVM_DMinVCellMaxCutoff_P = -int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 50,
+          "text": "CVM_DMaxVCellMaxDrtd_P = int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 51,
+          "text": "CVM_DMinVCellMaxDrtd_P = -int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 52,
+          "text": "CVM_DMaxVCellMaxWarn_P = int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 53,
+          "text": "CVM_DMinVCellMaxWarn_P = -int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 58,
+          "text": "MTM_TMdulMinCutoffTh_P = single(-20);"
+        },
+        {
+          "line": 59,
+          "text": "MTM_TMdulMinDrtdTh_P = single(0);"
+        },
+        {
+          "line": 60,
+          "text": "MTM_TMdulMinWarnTh_P = single(5);"
+        },
+        {
+          "line": 63,
+          "text": "MTM_DMaxTMdulMinCutoff_P = int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 64,
+          "text": "MTM_DMinTMdulMinCutoff_P = -int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 65,
+          "text": "MTM_DMaxTMdulMinDrtd_P = int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 66,
+          "text": "MTM_DMinTMdulMinDrtd_P = -int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 67,
+          "text": "MTM_DMaxTMdulMinWarn_P = int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 68,
+          "text": "MTM_DMinTMdulMinWarn_P = -int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 71,
+          "text": "MTM_TMdulMaxCutoffTh_P = single(55);"
+        },
+        {
+          "line": 72,
+          "text": "MTM_TMdulMaxDrtdTh_P = single(52.5);"
+        },
+        {
+          "line": 73,
+          "text": "MTM_TMdulMaxWarnTh_P = single(50);"
+        },
+        {
+          "line": 76,
+          "text": "MTM_DMaxTMdulMaxCutoff_P = int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 77,
+          "text": "MTM_DMinTMdulMaxCutoff_P = -int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 78,
+          "text": "MTM_DMaxTMdulMaxDrtd_P = int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 79,
+          "text": "MTM_DMinTMdulMaxDrtd_P = -int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 80,
+          "text": "MTM_DMaxTMdulMaxWarn_P = int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 81,
+          "text": "MTM_DMinTMdulMaxWarn_P = -int16(0.5/BMS_TiSample_C);"
+        },
+        {
+          "line": 86,
+          "text": "BM_TiCtctrCnct_P = single(1)/BMS_TiSample_C;"
+        },
+        {
+          "line": 87,
+          "text": "BM_TiCtctrDCnct_P = single(1)/BMS_TiSample_C;"
+        },
+        {
+          "line": 92,
+          "text": "BPC_BattTotalCharge_P  = single(48);"
+        },
+        {
+          "line": 95,
+          "text": "BPC_BattTotalEnergy_P = BPC_BattTotalCharge_P * single(NrCells_C) * CVM_VCellMaxCutoffTh_P;"
+        },
+        {
+          "line": 99,
+          "text": "NrCutoff_C = uint8(3);"
+        },
+        {
+          "line": 100,
+          "text": "NrDrtd_C = uint8(2);"
+        },
+        {
+          "line": 101,
+          "text": "NrWarn_C = uint8(1);"
+        },
+        {
+          "line": 102,
+          "text": "NrNoFlt_C = uint8(0);"
+        }
+      ],
+      "path": "MiniBMS/MiniBMSVariables.m",
+      "sha256": "761dfc6ab640b8161382788ef0a506a5f5e67b731d0520e3e8a50fb679862ee7"
+    },
+    {
+      "assignments": [
+        {
+          "line": 2,
+          "text": "root=fileparts(mfilename('fullpath'));addpath(fullfile(root,'MiniBMS'));"
+        },
+        {
+          "line": 5,
+          "text": "ws=get_param('BatteryContactorController','ModelWorkspace');names=who;"
+        },
+        {
+          "line": 7,
+          "text": "name=names{k};value=eval(name);"
+        }
+      ],
+      "path": "initialize_controller.m",
+      "sha256": "46f9a5a7531847b7e041ec24eadab0cecb3d492902bf832a0f3411368bfb9666"
+    }
+  ]
+}

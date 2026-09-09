@@ -1,5 +1,5 @@
 {
-  "reference_id": "v0.10.2",
+  "reference_id": "v0.10.3",
   "types": {
     "app": {
       "bands": [
@@ -406,6 +406,641 @@
       "observed_band_cells": 23,
       "repository_count": 11,
       "schema": "population-diagnostics-v1",
+      "size_support": {
+        "bands": [
+          {
+            "generalization": "not_established",
+            "leaf": "architecture.componentization",
+            "repositories": [
+              "APP-13",
+              "APP-21"
+            ],
+            "score": 0,
+            "size_bands": {
+              "small": 2
+            },
+            "source_groups": 2,
+            "source_loc_max": 2348,
+            "source_loc_median": 1235.0,
+            "source_loc_min": 122,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "architecture.componentization",
+            "repositories": [
+              "APP-03",
+              "APP-17"
+            ],
+            "score": 1,
+            "size_bands": {
+              "small": 2
+            },
+            "source_groups": 2,
+            "source_loc_max": 2951,
+            "source_loc_median": 1591.0,
+            "source_loc_min": 231,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "architecture.componentization",
+            "repositories": [
+              "APP-15",
+              "APP-22"
+            ],
+            "score": 3,
+            "size_bands": {
+              "large": 1,
+              "small": 1
+            },
+            "source_groups": 2,
+            "source_loc_max": 277404,
+            "source_loc_median": 138895.5,
+            "source_loc_min": 387,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "architecture.componentization",
+            "repositories": [
+              "APP-01",
+              "APP-02",
+              "APP-11",
+              "APP-14",
+              "APP-16"
+            ],
+            "score": 5,
+            "size_bands": {
+              "large": 2,
+              "medium": 3
+            },
+            "source_groups": 5,
+            "source_loc_max": 361419,
+            "source_loc_median": 76663,
+            "source_loc_min": 34394,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "architecture.decoupling",
+            "repositories": [],
+            "score": 0,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "architecture.decoupling",
+            "repositories": [],
+            "score": 1,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "architecture.decoupling",
+            "repositories": [
+              "APP-01",
+              "APP-03",
+              "APP-11",
+              "APP-14",
+              "APP-15",
+              "APP-16",
+              "APP-17",
+              "APP-22"
+            ],
+            "score": 2,
+            "size_bands": {
+              "large": 3,
+              "medium": 2,
+              "small": 3
+            },
+            "source_groups": 8,
+            "source_loc_max": 361419,
+            "source_loc_median": 60992.0,
+            "source_loc_min": 231,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "architecture.decoupling",
+            "repositories": [
+              "APP-02",
+              "APP-13",
+              "APP-21"
+            ],
+            "score": 3,
+            "size_bands": {
+              "medium": 1,
+              "small": 2
+            },
+            "source_groups": 3,
+            "source_loc_max": 34394,
+            "source_loc_median": 2348,
+            "source_loc_min": 122,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "architecture.modularization",
+            "repositories": [
+              "APP-13",
+              "APP-21"
+            ],
+            "score": 0,
+            "size_bands": {
+              "small": 2
+            },
+            "source_groups": 2,
+            "source_loc_max": 2348,
+            "source_loc_median": 1235.0,
+            "source_loc_min": 122,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "architecture.modularization",
+            "repositories": [
+              "APP-03",
+              "APP-17"
+            ],
+            "score": 1,
+            "size_bands": {
+              "small": 2
+            },
+            "source_groups": 2,
+            "source_loc_max": 2951,
+            "source_loc_median": 1591.0,
+            "source_loc_min": 231,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "architecture.modularization",
+            "repositories": [
+              "APP-14",
+              "APP-15",
+              "APP-16",
+              "APP-22"
+            ],
+            "score": 2,
+            "size_bands": {
+              "large": 2,
+              "medium": 1,
+              "small": 1
+            },
+            "source_groups": 4,
+            "source_loc_max": 361419,
+            "source_loc_median": 177033.5,
+            "source_loc_min": 387,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "architecture.modularization",
+            "repositories": [
+              "APP-01",
+              "APP-02",
+              "APP-11"
+            ],
+            "score": 3,
+            "size_bands": {
+              "large": 1,
+              "medium": 2
+            },
+            "source_groups": 3,
+            "source_loc_max": 253031,
+            "source_loc_median": 45321,
+            "source_loc_min": 34394,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.api_version_management",
+            "repositories": [
+              "APP-15",
+              "APP-17"
+            ],
+            "score": 0,
+            "size_bands": {
+              "large": 1,
+              "small": 1
+            },
+            "source_groups": 2,
+            "source_loc_max": 277404,
+            "source_loc_median": 140177.5,
+            "source_loc_min": 2951,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.api_version_management",
+            "repositories": [
+              "APP-01",
+              "APP-02",
+              "APP-03",
+              "APP-11",
+              "APP-13",
+              "APP-14",
+              "APP-16",
+              "APP-21",
+              "APP-22"
+            ],
+            "score": 1,
+            "size_bands": {
+              "large": 2,
+              "medium": 3,
+              "small": 4
+            },
+            "source_groups": 8,
+            "source_loc_max": 361419,
+            "source_loc_median": 34394,
+            "source_loc_min": 122,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.api_version_management",
+            "repositories": [],
+            "score": 2,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.api_version_management",
+            "repositories": [],
+            "score": 3,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.ci_independence",
+            "repositories": [
+              "APP-03",
+              "APP-13",
+              "APP-16",
+              "APP-17",
+              "APP-21",
+              "APP-22"
+            ],
+            "score": 0,
+            "size_bands": {
+              "medium": 1,
+              "small": 5
+            },
+            "source_groups": 5,
+            "source_loc_max": 76663,
+            "source_loc_median": 1367.5,
+            "source_loc_min": 122,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.ci_independence",
+            "repositories": [
+              "APP-14",
+              "APP-15"
+            ],
+            "score": 1,
+            "size_bands": {
+              "large": 2
+            },
+            "source_groups": 2,
+            "source_loc_max": 361419,
+            "source_loc_median": 319411.5,
+            "source_loc_min": 277404,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.ci_independence",
+            "repositories": [
+              "APP-02",
+              "APP-11"
+            ],
+            "score": 2,
+            "size_bands": {
+              "medium": 2
+            },
+            "source_groups": 2,
+            "source_loc_max": 45321,
+            "source_loc_median": 39857.5,
+            "source_loc_min": 34394,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.ci_independence",
+            "repositories": [
+              "APP-01"
+            ],
+            "score": 3,
+            "size_bands": {
+              "large": 1
+            },
+            "source_groups": 1,
+            "source_loc_max": 253031,
+            "source_loc_median": 253031,
+            "source_loc_min": 253031,
+            "support": "one_source_group_only"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.compilation_independence",
+            "repositories": [
+              "APP-14",
+              "APP-15",
+              "APP-17"
+            ],
+            "score": 0,
+            "size_bands": {
+              "large": 2,
+              "small": 1
+            },
+            "source_groups": 3,
+            "source_loc_max": 361419,
+            "source_loc_median": 277404,
+            "source_loc_min": 2951,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.compilation_independence",
+            "repositories": [
+              "APP-16"
+            ],
+            "score": 1,
+            "size_bands": {
+              "medium": 1
+            },
+            "source_groups": 1,
+            "source_loc_max": 76663,
+            "source_loc_median": 76663,
+            "source_loc_min": 76663,
+            "support": "one_source_group_only"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.compilation_independence",
+            "repositories": [
+              "APP-01",
+              "APP-02",
+              "APP-03",
+              "APP-11",
+              "APP-13",
+              "APP-21",
+              "APP-22"
+            ],
+            "score": 2,
+            "size_bands": {
+              "large": 1,
+              "medium": 2,
+              "small": 4
+            },
+            "source_groups": 6,
+            "source_loc_max": 253031,
+            "source_loc_median": 2348,
+            "source_loc_min": 122,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.compilation_independence",
+            "repositories": [],
+            "score": 3,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.platform_upgrade",
+            "repositories": [
+              "APP-14",
+              "APP-15"
+            ],
+            "score": 0,
+            "size_bands": {
+              "large": 2
+            },
+            "source_groups": 2,
+            "source_loc_max": 361419,
+            "source_loc_median": 319411.5,
+            "source_loc_min": 277404,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.platform_upgrade",
+            "repositories": [
+              "APP-01",
+              "APP-02",
+              "APP-03",
+              "APP-11",
+              "APP-13",
+              "APP-16",
+              "APP-17",
+              "APP-22"
+            ],
+            "score": 3,
+            "size_bands": {
+              "large": 1,
+              "medium": 3,
+              "small": 4
+            },
+            "source_groups": 8,
+            "source_loc_max": 253031,
+            "source_loc_median": 18672.5,
+            "source_loc_min": 231,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.platform_upgrade",
+            "repositories": [
+              "APP-21"
+            ],
+            "score": 8,
+            "size_bands": {
+              "small": 1
+            },
+            "source_groups": 1,
+            "source_loc_max": 122,
+            "source_loc_median": 122,
+            "source_loc_min": 122,
+            "support": "one_source_group_only"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.platform_upgrade",
+            "repositories": [],
+            "score": 10,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.release_branch_strategy",
+            "repositories": [
+              "APP-01",
+              "APP-02",
+              "APP-03",
+              "APP-11",
+              "APP-13",
+              "APP-14",
+              "APP-15",
+              "APP-16",
+              "APP-17",
+              "APP-21",
+              "APP-22"
+            ],
+            "score": 0,
+            "size_bands": {
+              "large": 3,
+              "medium": 3,
+              "small": 5
+            },
+            "source_groups": 10,
+            "source_loc_max": 361419,
+            "source_loc_median": 34394,
+            "source_loc_min": 122,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.release_branch_strategy",
+            "repositories": [],
+            "score": 3,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.release_branch_strategy",
+            "repositories": [],
+            "score": 8,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.release_branch_strategy",
+            "repositories": [],
+            "score": 10,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          }
+        ],
+        "limits": "Descriptive conditional sizes; no internal joint-frequency data, independent sample guarantee or generalization accuracy. A represented band is not a completed coverage claim.",
+        "metric": "production_source_loc",
+        "schema": "android-size-band-support-v1",
+        "sources": {
+          "APP-01": {
+            "head": "b51855561048ecb0b8e02a31f521c57ba0a1219e",
+            "size_band": "large",
+            "source_files": 1961,
+            "source_loc": 253031
+          },
+          "APP-02": {
+            "head": "2fd88e579c7acbfac7236285ee306835334018b5",
+            "size_band": "medium",
+            "source_files": 282,
+            "source_loc": 34394
+          },
+          "APP-03": {
+            "head": "db7d8ff7b918870d81d014dafedbb8319ce72b28",
+            "size_band": "small",
+            "source_files": 5,
+            "source_loc": 231
+          },
+          "APP-11": {
+            "head": "70338504a8b26daa45e37feea2f47caab8f6fa36",
+            "size_band": "medium",
+            "source_files": 440,
+            "source_loc": 45321
+          },
+          "APP-13": {
+            "head": "0ba67ea122cb867194f6987ba77879d699adaff8",
+            "size_band": "small",
+            "source_files": 13,
+            "source_loc": 2348
+          },
+          "APP-14": {
+            "head": "0d6ae2536a60a3fc4bbf3f0062235b16e4888648",
+            "size_band": "large",
+            "source_files": 2812,
+            "source_loc": 361419
+          },
+          "APP-15": {
+            "head": "50f07443d3a2940634f1b398c5d1dc5e62ebaa93",
+            "size_band": "large",
+            "source_files": 2640,
+            "source_loc": 277404
+          },
+          "APP-16": {
+            "head": "ca182d734a6bdc83ed8b3ae0ee0f2e6670e59ace",
+            "size_band": "medium",
+            "source_files": 529,
+            "source_loc": 76663
+          },
+          "APP-17": {
+            "head": "47502088a4fbb5faf06b395671479a7f55ca3741",
+            "size_band": "small",
+            "source_files": 18,
+            "source_loc": 2951
+          },
+          "APP-21": {
+            "head": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "size_band": "small",
+            "source_files": 2,
+            "source_loc": 122
+          },
+          "APP-22": {
+            "head": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
+            "size_band": "small",
+            "source_files": 3,
+            "source_loc": 387
+          }
+        }
+      },
       "source_group_count": 10,
       "source_groups": [
         [
@@ -439,7 +1074,8 @@
           "APP-21",
           "APP-22"
         ]
-      ]
+      ],
+      "unresolved_reference_leaves": []
     },
     "fw": {
       "bands": [
@@ -1022,6 +1658,903 @@
       "observed_band_cells": 29,
       "repository_count": 11,
       "schema": "population-diagnostics-v1",
+      "size_support": {
+        "bands": [
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.api_version_management",
+            "repositories": [
+              "FW-15",
+              "FW-18"
+            ],
+            "score": 0,
+            "size_bands": {
+              "medium": 1,
+              "small": 1
+            },
+            "source_groups": 2,
+            "source_loc_max": 109851,
+            "source_loc_median": 75309.5,
+            "source_loc_min": 40768,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.api_version_management",
+            "repositories": [
+              "FW-10",
+              "FW-21",
+              "FW-22"
+            ],
+            "score": 1,
+            "size_bands": {
+              "small": 3
+            },
+            "source_groups": 2,
+            "source_loc_max": 4783,
+            "source_loc_median": 321,
+            "source_loc_min": 279,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.api_version_management",
+            "repositories": [
+              "FW-02",
+              "FW-03",
+              "FW-07",
+              "FW-08",
+              "FW-14",
+              "FW-16"
+            ],
+            "score": 2,
+            "size_bands": {
+              "large": 3,
+              "medium": 2,
+              "small": 1
+            },
+            "source_groups": 6,
+            "source_loc_max": 2905419,
+            "source_loc_median": 150021.0,
+            "source_loc_min": 23189,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.api_version_management",
+            "repositories": [],
+            "score": 3,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.ci_independence",
+            "repositories": [
+              "FW-21",
+              "FW-22"
+            ],
+            "score": 0,
+            "size_bands": {
+              "small": 2
+            },
+            "source_groups": 1,
+            "source_loc_max": 321,
+            "source_loc_median": 300.0,
+            "source_loc_min": 279,
+            "support": "one_source_group_only"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.ci_independence",
+            "repositories": [
+              "FW-02",
+              "FW-03",
+              "FW-07",
+              "FW-08",
+              "FW-10",
+              "FW-14",
+              "FW-15",
+              "FW-16",
+              "FW-18"
+            ],
+            "score": 1,
+            "size_bands": {
+              "large": 3,
+              "medium": 3,
+              "small": 3
+            },
+            "source_groups": 9,
+            "source_loc_max": 2905419,
+            "source_loc_median": 99746,
+            "source_loc_min": 4783,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.ci_independence",
+            "repositories": [],
+            "score": 2,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.ci_independence",
+            "repositories": [],
+            "score": 3,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.compilation_independence",
+            "repositories": [
+              "FW-02",
+              "FW-03",
+              "FW-07",
+              "FW-08",
+              "FW-10",
+              "FW-15",
+              "FW-18"
+            ],
+            "score": 0,
+            "size_bands": {
+              "large": 1,
+              "medium": 3,
+              "small": 3
+            },
+            "source_groups": 7,
+            "source_loc_max": 200296,
+            "source_loc_median": 95090,
+            "source_loc_min": 4783,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.compilation_independence",
+            "repositories": [
+              "FW-14",
+              "FW-16"
+            ],
+            "score": 1,
+            "size_bands": {
+              "large": 2
+            },
+            "source_groups": 2,
+            "source_loc_max": 2905419,
+            "source_loc_median": 1568289.0,
+            "source_loc_min": 231159,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.compilation_independence",
+            "repositories": [
+              "FW-21",
+              "FW-22"
+            ],
+            "score": 2,
+            "size_bands": {
+              "small": 2
+            },
+            "source_groups": 1,
+            "source_loc_max": 321,
+            "source_loc_median": 300.0,
+            "source_loc_min": 279,
+            "support": "one_source_group_only"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "compilation.compilation_independence",
+            "repositories": [],
+            "score": 3,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.platform_upgrade",
+            "repositories": [
+              "FW-16"
+            ],
+            "score": 0,
+            "size_bands": {
+              "large": 1
+            },
+            "source_groups": 1,
+            "source_loc_max": 2905419,
+            "source_loc_median": 2905419,
+            "source_loc_min": 2905419,
+            "support": "one_source_group_only"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.platform_upgrade",
+            "repositories": [
+              "FW-02",
+              "FW-03",
+              "FW-07",
+              "FW-08",
+              "FW-10",
+              "FW-14",
+              "FW-15",
+              "FW-18"
+            ],
+            "score": 3,
+            "size_bands": {
+              "large": 2,
+              "medium": 3,
+              "small": 3
+            },
+            "source_groups": 8,
+            "source_loc_max": 231159,
+            "source_loc_median": 97418.0,
+            "source_loc_min": 4783,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.platform_upgrade",
+            "repositories": [
+              "FW-21",
+              "FW-22"
+            ],
+            "score": 8,
+            "size_bands": {
+              "small": 2
+            },
+            "source_groups": 1,
+            "source_loc_max": 321,
+            "source_loc_median": 300.0,
+            "source_loc_min": 279,
+            "support": "one_source_group_only"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.platform_upgrade",
+            "repositories": [],
+            "score": 10,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.release_branch_strategy",
+            "repositories": [
+              "FW-02",
+              "FW-03",
+              "FW-07",
+              "FW-08",
+              "FW-10",
+              "FW-14",
+              "FW-15",
+              "FW-16",
+              "FW-18",
+              "FW-21",
+              "FW-22"
+            ],
+            "score": 0,
+            "size_bands": {
+              "large": 3,
+              "medium": 3,
+              "small": 5
+            },
+            "source_groups": 10,
+            "source_loc_max": 2905419,
+            "source_loc_median": 95090,
+            "source_loc_min": 279,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.release_branch_strategy",
+            "repositories": [],
+            "score": 3,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.release_branch_strategy",
+            "repositories": [],
+            "score": 8,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "platform_reuse.release_branch_strategy",
+            "repositories": [],
+            "score": 10,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "quality.integration_test",
+            "repositories": [
+              "FW-21"
+            ],
+            "score": 0,
+            "size_bands": {
+              "small": 1
+            },
+            "source_groups": 1,
+            "source_loc_max": 279,
+            "source_loc_median": 279,
+            "source_loc_min": 279,
+            "support": "one_source_group_only"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "quality.integration_test",
+            "repositories": [
+              "FW-02",
+              "FW-03",
+              "FW-07",
+              "FW-08",
+              "FW-10",
+              "FW-14",
+              "FW-15",
+              "FW-16",
+              "FW-18"
+            ],
+            "score": 1,
+            "size_bands": {
+              "large": 3,
+              "medium": 3,
+              "small": 3
+            },
+            "source_groups": 9,
+            "source_loc_max": 2905419,
+            "source_loc_median": 99746,
+            "source_loc_min": 4783,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "quality.integration_test",
+            "repositories": [],
+            "score": 2,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "quality.integration_test",
+            "repositories": [
+              "FW-22"
+            ],
+            "score": 3,
+            "size_bands": {
+              "small": 1
+            },
+            "source_groups": 1,
+            "source_loc_max": 321,
+            "source_loc_median": 321,
+            "source_loc_min": 321,
+            "support": "one_source_group_only"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.dependency_inversion",
+            "repositories": [],
+            "score": 0,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.dependency_inversion",
+            "repositories": [
+              "FW-03",
+              "FW-14",
+              "FW-18"
+            ],
+            "score": 1,
+            "size_bands": {
+              "large": 1,
+              "medium": 2
+            },
+            "source_groups": 3,
+            "source_loc_max": 231159,
+            "source_loc_median": 109851,
+            "source_loc_min": 95090,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.dependency_inversion",
+            "repositories": [
+              "FW-02",
+              "FW-07",
+              "FW-08",
+              "FW-10",
+              "FW-15",
+              "FW-16",
+              "FW-21",
+              "FW-22"
+            ],
+            "score": 2,
+            "size_bands": {
+              "large": 2,
+              "medium": 1,
+              "small": 5
+            },
+            "source_groups": 7,
+            "source_loc_max": 2905419,
+            "source_loc_median": 31978.5,
+            "source_loc_min": 279,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.dependency_inversion",
+            "repositories": [],
+            "score": 3,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.dependency_inversion",
+            "repositories": [],
+            "score": 4,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.interface_segregation",
+            "repositories": [],
+            "score": 0,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.interface_segregation",
+            "repositories": [
+              "FW-18"
+            ],
+            "score": 1,
+            "size_bands": {
+              "medium": 1
+            },
+            "source_groups": 1,
+            "source_loc_max": 109851,
+            "source_loc_median": 109851,
+            "source_loc_min": 109851,
+            "support": "one_source_group_only"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.interface_segregation",
+            "repositories": [
+              "FW-03",
+              "FW-08",
+              "FW-14",
+              "FW-16"
+            ],
+            "score": 2,
+            "size_bands": {
+              "large": 2,
+              "medium": 2
+            },
+            "source_groups": 4,
+            "source_loc_max": 2905419,
+            "source_loc_median": 165452.5,
+            "source_loc_min": 95090,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.interface_segregation",
+            "repositories": [
+              "FW-02",
+              "FW-07",
+              "FW-10",
+              "FW-15",
+              "FW-21",
+              "FW-22"
+            ],
+            "score": 3,
+            "size_bands": {
+              "large": 1,
+              "small": 5
+            },
+            "source_groups": 5,
+            "source_loc_max": 200296,
+            "source_loc_median": 13986.0,
+            "source_loc_min": 279,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.interface_segregation",
+            "repositories": [],
+            "score": 4,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.liskov_substitution",
+            "repositories": [
+              "FW-08",
+              "FW-14",
+              "FW-18"
+            ],
+            "score": 0,
+            "size_bands": {
+              "large": 1,
+              "medium": 2
+            },
+            "source_groups": 3,
+            "source_loc_max": 231159,
+            "source_loc_median": 109851,
+            "source_loc_min": 99746,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.liskov_substitution",
+            "repositories": [],
+            "score": 1,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.liskov_substitution",
+            "repositories": [
+              "FW-22"
+            ],
+            "score": 2,
+            "size_bands": {
+              "small": 1
+            },
+            "source_groups": 1,
+            "source_loc_max": 321,
+            "source_loc_median": 321,
+            "source_loc_min": 321,
+            "support": "one_source_group_only"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.liskov_substitution",
+            "repositories": [
+              "FW-02",
+              "FW-03",
+              "FW-07",
+              "FW-10",
+              "FW-15",
+              "FW-16",
+              "FW-21"
+            ],
+            "score": 3,
+            "size_bands": {
+              "large": 2,
+              "medium": 1,
+              "small": 4
+            },
+            "source_groups": 7,
+            "source_loc_max": 2905419,
+            "source_loc_median": 40768,
+            "source_loc_min": 279,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.liskov_substitution",
+            "repositories": [],
+            "score": 4,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.open_closed",
+            "repositories": [],
+            "score": 0,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.open_closed",
+            "repositories": [
+              "FW-08",
+              "FW-18"
+            ],
+            "score": 1,
+            "size_bands": {
+              "medium": 2
+            },
+            "source_groups": 2,
+            "source_loc_max": 109851,
+            "source_loc_median": 104798.5,
+            "source_loc_min": 99746,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.open_closed",
+            "repositories": [
+              "FW-03",
+              "FW-07",
+              "FW-14",
+              "FW-15",
+              "FW-16",
+              "FW-21",
+              "FW-22"
+            ],
+            "score": 2,
+            "size_bands": {
+              "large": 3,
+              "medium": 1,
+              "small": 3
+            },
+            "source_groups": 6,
+            "source_loc_max": 2905419,
+            "source_loc_median": 95090,
+            "source_loc_min": 279,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.open_closed",
+            "repositories": [
+              "FW-02",
+              "FW-10"
+            ],
+            "score": 3,
+            "size_bands": {
+              "small": 2
+            },
+            "source_groups": 2,
+            "source_loc_max": 23189,
+            "source_loc_median": 13986.0,
+            "source_loc_min": 4783,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.open_closed",
+            "repositories": [],
+            "score": 4,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.single_responsibility",
+            "repositories": [],
+            "score": 0,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.single_responsibility",
+            "repositories": [
+              "FW-14",
+              "FW-18"
+            ],
+            "score": 1,
+            "size_bands": {
+              "large": 1,
+              "medium": 1
+            },
+            "source_groups": 2,
+            "source_loc_max": 231159,
+            "source_loc_median": 170505.0,
+            "source_loc_min": 109851,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.single_responsibility",
+            "repositories": [
+              "FW-02",
+              "FW-03",
+              "FW-07",
+              "FW-08",
+              "FW-10",
+              "FW-15",
+              "FW-16",
+              "FW-22"
+            ],
+            "score": 2,
+            "size_bands": {
+              "large": 2,
+              "medium": 2,
+              "small": 4
+            },
+            "source_groups": 8,
+            "source_loc_max": 2905419,
+            "source_loc_median": 67929.0,
+            "source_loc_min": 321,
+            "support": "multiple_recorded_groups"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.single_responsibility",
+            "repositories": [
+              "FW-21"
+            ],
+            "score": 3,
+            "size_bands": {
+              "small": 1
+            },
+            "source_groups": 1,
+            "source_loc_max": 279,
+            "source_loc_median": 279,
+            "source_loc_min": 279,
+            "support": "one_source_group_only"
+          },
+          {
+            "generalization": "not_established",
+            "leaf": "solid_principle.single_responsibility",
+            "repositories": [],
+            "score": 4,
+            "size_bands": {},
+            "source_groups": 0,
+            "source_loc_max": null,
+            "source_loc_median": null,
+            "source_loc_min": null,
+            "support": "unmeasured"
+          }
+        ],
+        "limits": "Descriptive conditional sizes; no internal joint-frequency data, independent sample guarantee or generalization accuracy. A represented band is not a completed coverage claim.",
+        "metric": "production_source_loc",
+        "schema": "android-size-band-support-v1",
+        "sources": {
+          "FW-02": {
+            "head": "263ad12e7fa4e37a2ca8976e3750a89f37ed996b",
+            "size_band": "small",
+            "source_files": 259,
+            "source_loc": 23189
+          },
+          "FW-03": {
+            "head": "de95b814d40d093d26cd89e910299baee2b5dc31",
+            "size_band": "medium",
+            "source_files": 299,
+            "source_loc": 95090
+          },
+          "FW-07": {
+            "head": "5ab0979c34ca9c0a5b6ac55d00e4ae2008c1aee8",
+            "size_band": "large",
+            "source_files": 584,
+            "source_loc": 200296
+          },
+          "FW-08": {
+            "head": "a009ba72ec2b92c4e6f1e20e8583d654a4f58ba8",
+            "size_band": "medium",
+            "source_files": 631,
+            "source_loc": 99746
+          },
+          "FW-10": {
+            "head": "4490b3b574cf74da20a1e24d13c2deead4c30acf",
+            "size_band": "small",
+            "source_files": 18,
+            "source_loc": 4783
+          },
+          "FW-14": {
+            "head": "8b4badff6b9e3b96f6cb3d1c9ccf624e4ef6d784",
+            "size_band": "large",
+            "source_files": 1696,
+            "source_loc": 231159
+          },
+          "FW-15": {
+            "head": "ef75009ea54653a0e3eb3e82a245dd6399048005",
+            "size_band": "small",
+            "source_files": 157,
+            "source_loc": 40768
+          },
+          "FW-16": {
+            "head": "25fc3b7c42910da21cdd329777726aa906dd7f5c",
+            "size_band": "large",
+            "source_files": 15008,
+            "source_loc": 2905419
+          },
+          "FW-18": {
+            "head": "a3de337721e3a292ab2bbed174227f9c75d16fd0",
+            "size_band": "medium",
+            "source_files": 351,
+            "source_loc": 109851
+          },
+          "FW-21": {
+            "head": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "size_band": "small",
+            "source_files": 8,
+            "source_loc": 279
+          },
+          "FW-22": {
+            "head": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "size_band": "small",
+            "source_files": 6,
+            "source_loc": 321
+          }
+        }
+      },
       "source_group_count": 10,
       "source_groups": [
         [
@@ -1055,7 +2588,8 @@
         [
           "FW-18"
         ]
-      ]
+      ],
+      "unresolved_reference_leaves": []
     },
     "new-energy-matlab": {
       "bands": [
@@ -1237,14 +2771,13 @@
           "score": 0
         },
         {
-          "count": 4,
+          "count": 3,
           "leaf": "hierarchy",
           "measurement_status": "represented",
           "repository_ids": [
             "ML-02",
             "ML-05",
-            "ML-08",
-            "NEM-11"
+            "ML-08"
           ],
           "score": 1
         },
@@ -1260,11 +2793,12 @@
           "score": 2
         },
         {
-          "count": 1,
+          "count": 2,
           "leaf": "hierarchy",
           "measurement_status": "represented",
           "repository_ids": [
-            "ML-01"
+            "ML-01",
+            "NEM-11"
           ],
           "score": 3
         },
@@ -1419,12 +2953,10 @@
           "score": 1
         },
         {
-          "count": 1,
+          "count": 0,
           "leaf": "parameter_management",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "NEM-11"
-          ],
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
           "score": 3
         },
         {
@@ -1610,73 +3142,73 @@
       "conditional_mode_diagnostics": [
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 132,
-          "other_leaf_hits": 107,
+          "other_leaf_denominator": 131,
+          "other_leaf_hits": 106,
           "predictor": "dataflow"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 132,
+          "other_leaf_denominator": 131,
           "other_leaf_hits": 115,
           "predictor": "device_specificity"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 132,
+          "other_leaf_denominator": 131,
           "other_leaf_hits": 89,
           "predictor": "directory"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 132,
-          "other_leaf_hits": 117,
+          "other_leaf_denominator": 131,
+          "other_leaf_hits": 119,
           "predictor": "hierarchy"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 132,
-          "other_leaf_hits": 104,
+          "other_leaf_denominator": 131,
+          "other_leaf_hits": 103,
           "predictor": "interface"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 132,
-          "other_leaf_hits": 118,
+          "other_leaf_denominator": 131,
+          "other_leaf_hits": 117,
           "predictor": "model_version"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 132,
-          "other_leaf_hits": 123,
+          "other_leaf_denominator": 131,
+          "other_leaf_hits": 122,
           "predictor": "naming"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 132,
-          "other_leaf_hits": 111,
+          "other_leaf_denominator": 120,
+          "other_leaf_hits": 99,
           "predictor": "parameter_management"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 132,
+          "other_leaf_denominator": 131,
           "other_leaf_hits": 115,
           "predictor": "release_branches"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 132,
-          "other_leaf_hits": 74,
+          "other_leaf_denominator": 131,
+          "other_leaf_hits": 73,
           "predictor": "reuse"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 132,
+          "other_leaf_denominator": 131,
           "other_leaf_hits": 81,
           "predictor": "unit_test"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 132,
+          "other_leaf_denominator": 131,
           "other_leaf_hits": 115,
           "predictor": "version_independence"
         }
@@ -1767,11 +3299,11 @@
         "Public current references remain Development/Regression, not a blind holdout."
       ],
       "modal_baseline": {
-        "denominator": 143,
-        "hits": 78,
+        "denominator": 142,
+        "hits": 77,
         "status": "in_sample_only"
       },
-      "observed_band_cells": 40,
+      "observed_band_cells": 39,
       "repository_count": 11,
       "schema": "population-diagnostics-v1",
       "source_group_count": 1,
@@ -1789,6 +3321,9 @@
           "NEM-10",
           "NEM-11"
         ]
+      ],
+      "unresolved_reference_leaves": [
+        "NEM-11/parameter_management"
       ]
     }
   }

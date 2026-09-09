@@ -68,17 +68,25 @@ def check_model_pointer(inventory,anchor):
         require(inventory['models'][index]['path']==anchor.get('model_path'),
                 'Model evidence pointer targets a different model')
 
-def verify(wrapper,source_map,records_root=None):
+def verify(wrapper,source_map,records_root=None,ids=None):
     wrapper=Path(wrapper);mapping=read(source_map);result=[]
+    requested=set(ids) if ids is not None else None
+    if ids is not None:require(bool(ids) and len(requested)==len(ids),'Empty or duplicate source selection')
     for kind in ['app','fw','new-energy-matlab']:
         addition=read(wrapper/'suites'/kind/'additions.json')
         for entry in addition['repositories']:
-            source=entry['source'];facts=read(bound(wrapper,source['evidence']));repo=Path(mapping[source['id']])
+            source=entry['source']
+            if requested is not None and source['id'] not in requested:continue
+            facts=read(bound(wrapper,source['evidence']));repo=Path(mapping[source['id']])
             first=extract(repo,facts['production_scope']);second=extract(repo,facts['production_scope'])
             require(encoded(first)==encoded(second),'Repeated source facts differ')
             require(first['head']==source['head'] and first['tree']==source['tree'] and first['refs']==source['refs'],'Source binding differs')
             require(sha(encoded(first))==facts['source_inventory_sha256'],'Source inventory differs')
             inventory=read(bound(wrapper,facts['source_inventory']));require(first==inventory,'Published inventory differs')
+            if 'calibration_census' in facts:
+                from calibration_census import census
+                require(read(bound(wrapper,facts['calibration_census']))==census(repo,facts['calibration_census_scope']),
+                        'Calibration expression census differs: '+source['id'])
             from semantic_audits import parameter_inventory,reuse_inventory,acquisition_inventory
             for field,producer in [('parameter_scope_audit',parameter_inventory),('reuse_scope_audit',reuse_inventory),('acquisition_scope_audit',acquisition_inventory)]:
                 if field in facts:
@@ -86,6 +94,14 @@ def verify(wrapper,source_map,records_root=None):
                     require(recorded==producer(repo),'Semantic scope inventory differs: '+source['id'])
             declared={leaf['name']:leaf['score'] for leaf in facts['reference']['leaves']}
             actual=recompute(facts);require(actual==declared,'Independent rule recomputation differs: '+source['id'])
+            if kind=='app':
+                owners={r['build_owner'] for r in first['production']}
+                keywords=('base','core','common','util','widget','app','main','library','sdk','feature','biz','module')
+                named=sum(bool(re.fullmatch('[a-z][a-z0-9_-]*',name)) and any(k in name for k in keywords) for name in owners)
+                for leaf,values in facts['rule_inputs'].items():
+                    if leaf.startswith('architecture.'):
+                        require(values['standard_named_module_count']==named,
+                                'Module naming fact differs from production build owners: '+source['id'])
             def anchor(a):
                 require(a['commit']==source['head'],'Stale evidence anchor')
                 if a['evidence_type']=='code':
@@ -95,6 +111,13 @@ def verify(wrapper,source_map,records_root=None):
                 elif a['evidence_type']=='model':
                     model=next((m for m in inventory['models'] if m['path']==a['path']),None);require(model is not None,'Model outside production closure')
                     require(any(b['member']==a['member'] and b['sid']==a['sid'] and b['name']==a['symbol'] for b in model['blocks']),'Model element missing')
+                elif a['evidence_type']=='stateflow':
+                    from calibration_census import xml_expressions
+                    require(a['path'] in facts['production_scope']['models'],'Stateflow outside production scope')
+                    body=git('-C',repo,'show','HEAD:'+a['path'],binary=True)
+                    with zipfile.ZipFile(io.BytesIO(body)) as z:expressions=xml_expressions(z.read(a['member']),a['member'])
+                    require(any(r['node_type']==a['node_type'] and r['id']==a['ssid'] and r['field']==a['field']
+                                and a['symbol'] in r['expression'] for r in expressions),'Stateflow expression anchor missing')
                 elif a['evidence_type']=='facts':
                     check_model_pointer(inventory,a)
                     value=inventory if a['source']=='source_inventory' else facts
@@ -110,11 +133,13 @@ def verify(wrapper,source_map,records_root=None):
                 for record in facts['execution']['records']:
                     path=Path(records_root)/record['path'];require(path.is_file() and sha(path.read_bytes())==record['sha256'],'Native record differs: '+record['path'])
             result.append({'id':source['id'],'head':source['head'],'leaves':len(actual),'differences':0,'inventory_repeat_identical':True,'native_artifacts_checked':bool(records_root)})
+    if requested is not None:require({r['id'] for r in result}==requested,'Unknown or non-addition source selected')
     return {'status':'passed','repositories':result,'leaves':sum(r['leaves'] for r in result),'review_scope':'Shared explicit semantic observations, independent rule code and two deterministic source extractions; not blind semantic review'}
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--wrapper',type=Path,required=True);parser.add_argument('--source-map',type=Path,required=True);parser.add_argument('--records-root',type=Path);parser.add_argument('--output',type=Path)
-    args=parser.parse_args();result=verify(args.wrapper,args.source_map,args.records_root)
+    parser.add_argument('--ids',nargs='+')
+    args=parser.parse_args();result=verify(args.wrapper,args.source_map,args.records_root,args.ids)
     if args.output:args.output.write_bytes(encoded(result))
     print(json.dumps(result,ensure_ascii=False));return 0
 if __name__=='__main__':sys.exit(main())

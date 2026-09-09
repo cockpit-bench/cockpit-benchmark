@@ -1,6 +1,5 @@
 {
-  "limits": "Descriptive in-sample diagnostics. No candidate accuracy, holdout certification or source representation claim.",
-  "reference_id": "v0.10.2",
+  "reference_id": "v0.10.3",
   "types": {
     "app": {
       "canonical_diagnostic": {
@@ -482,17 +481,17 @@
           {
             "candidate_accuracy": 0.0,
             "candidate_correct": 0,
-            "eligible": 5,
+            "eligible": 4,
             "gold_counts": {
-              "3": 4,
-              "8": 1
+              "3": 4
             },
             "kind": "app",
             "missing_bands": [
               0,
+              8,
               10
             ],
-            "modal_accuracy": 0.8,
+            "modal_accuracy": 1.0,
             "modal_hits": 4,
             "modal_scores": [
               3
@@ -523,8 +522,8 @@
           }
         ],
         "macro_candidate_accuracy": 0.0,
-        "macro_modal_accuracy": 0.6833333333333333,
-        "modal_accuracy": 0.675,
+        "macro_modal_accuracy": 0.7083333333333334,
+        "modal_accuracy": 0.6835443037974683,
         "modal_hits": 54
       }
     },
@@ -1089,21 +1088,20 @@
           {
             "candidate_accuracy": 0.0,
             "candidate_correct": 0,
-            "eligible": 5,
+            "eligible": 3,
             "gold_counts": {
               "0": 1,
-              "3": 2,
-              "8": 2
+              "3": 2
             },
             "kind": "fw",
             "missing_bands": [
+              8,
               10
             ],
-            "modal_accuracy": 0.4,
+            "modal_accuracy": 0.6666666666666666,
             "modal_hits": 2,
             "modal_scores": [
-              3,
-              8
+              3
             ],
             "name": "platform_reuse.platform_upgrade",
             "split": "development"
@@ -1262,8 +1260,8 @@
           }
         ],
         "macro_candidate_accuracy": 0.0,
-        "macro_modal_accuracy": 0.6870523415977962,
-        "modal_accuracy": 0.7027027027027027,
+        "macro_modal_accuracy": 0.7112947658402203,
+        "modal_accuracy": 0.7155963302752294,
         "modal_hits": 78
       }
     },
@@ -1360,16 +1358,18 @@
             "eligible": 11,
             "gold_counts": {
               "0": 3,
-              "1": 4,
+              "1": 3,
               "2": 3,
-              "3": 1
+              "3": 2
             },
             "kind": "new-energy-matlab",
             "missing_bands": [],
-            "modal_accuracy": 0.36363636363636365,
-            "modal_hits": 4,
+            "modal_accuracy": 0.2727272727272727,
+            "modal_hits": 3,
             "modal_scores": [
-              1
+              0,
+              1,
+              2
             ],
             "name": "hierarchy",
             "split": "development"
@@ -1439,16 +1439,17 @@
           {
             "candidate_accuracy": 0.0,
             "candidate_correct": 0,
-            "eligible": 11,
+            "eligible": 10,
             "gold_counts": {
               "0": 5,
               "1": 1,
-              "3": 1,
               "5": 4
             },
             "kind": "new-energy-matlab",
-            "missing_bands": [],
-            "modal_accuracy": 0.45454545454545453,
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.5,
             "modal_hits": 5,
             "modal_scores": [
               0
@@ -1542,9 +1543,9 @@
           }
         ],
         "macro_candidate_accuracy": 0.0,
-        "macro_modal_accuracy": 0.5454545454545454,
-        "modal_accuracy": 0.5454545454545454,
-        "modal_hits": 78
+        "macro_modal_accuracy": 0.5419580419580419,
+        "modal_accuracy": 0.5422535211267606,
+        "modal_hits": 77
       },
       "frozen_external": {
         "baseline_scope": "Post-hoc in-sample mode by split/type/leaf on exactly the eligible set; not model accuracy.",
@@ -1638,16 +1639,18 @@
             "eligible": 11,
             "gold_counts": {
               "0": 3,
-              "1": 4,
+              "1": 3,
               "2": 3,
-              "3": 1
+              "3": 2
             },
             "kind": "new-energy-matlab",
             "missing_bands": [],
-            "modal_accuracy": 0.36363636363636365,
-            "modal_hits": 4,
+            "modal_accuracy": 0.2727272727272727,
+            "modal_hits": 3,
             "modal_scores": [
-              1
+              0,
+              1,
+              2
             ],
             "name": "hierarchy",
             "split": "development"
@@ -1717,16 +1720,17 @@
           {
             "candidate_accuracy": 0.0,
             "candidate_correct": 0,
-            "eligible": 11,
+            "eligible": 10,
             "gold_counts": {
               "0": 5,
               "1": 1,
-              "3": 1,
               "5": 4
             },
             "kind": "new-energy-matlab",
-            "missing_bands": [],
-            "modal_accuracy": 0.45454545454545453,
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.5,
             "modal_hits": 5,
             "modal_scores": [
               0
@@ -1820,9 +1824,9 @@
           }
         ],
         "macro_candidate_accuracy": 0.0,
-        "macro_modal_accuracy": 0.5454545454545454,
-        "modal_accuracy": 0.5454545454545454,
-        "modal_hits": 78
+        "macro_modal_accuracy": 0.5419580419580419,
+        "modal_accuracy": 0.5422535211267606,
+        "modal_hits": 77
       },
       "source_only": {
         "baseline_scope": "Post-hoc in-sample mode by split/type/leaf on exactly the eligible set; not model accuracy.",
@@ -1916,16 +1920,18 @@
             "eligible": 11,
             "gold_counts": {
               "0": 3,
-              "1": 4,
+              "1": 3,
               "2": 3,
-              "3": 1
+              "3": 2
             },
             "kind": "new-energy-matlab",
             "missing_bands": [],
-            "modal_accuracy": 0.36363636363636365,
-            "modal_hits": 4,
+            "modal_accuracy": 0.2727272727272727,
+            "modal_hits": 3,
             "modal_scores": [
-              1
+              0,
+              1,
+              2
             ],
             "name": "hierarchy",
             "split": "development"
@@ -1995,16 +2001,17 @@
           {
             "candidate_accuracy": 0.0,
             "candidate_correct": 0,
-            "eligible": 11,
+            "eligible": 10,
             "gold_counts": {
               "0": 5,
               "1": 1,
-              "3": 1,
               "5": 4
             },
             "kind": "new-energy-matlab",
-            "missing_bands": [],
-            "modal_accuracy": 0.45454545454545453,
+            "missing_bands": [
+              3
+            ],
+            "modal_accuracy": 0.5,
             "modal_hits": 5,
             "modal_scores": [
               0
@@ -2098,9 +2105,9 @@
           }
         ],
         "macro_candidate_accuracy": 0.0,
-        "macro_modal_accuracy": 0.5734265734265734,
-        "modal_accuracy": 0.5447761194029851,
-        "modal_hits": 73
+        "macro_modal_accuracy": 0.5699300699300699,
+        "modal_accuracy": 0.5413533834586466,
+        "modal_hits": 72
       }
     }
   }

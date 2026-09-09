@@ -20,6 +20,35 @@ def build_independence(dependencies):
   else:return None
  return min(scores)
 
+def unit_test(t):
+ """Score reviewed valid tests; unknown pass evidence cannot establish a tier.
+
+ ``present`` retains the existing meaning of valid tests with suitable method.
+ Existing bound all-passed records establish a majority without invented counts.
+ Partial runs require explicit passed/total counts to establish a majority.
+ """
+ if not isinstance(t,dict) or any(type(t.get(k)) is not bool for k in ('present','all_passed')):
+  raise ValueError('Missing or invalid test status')
+ cv=t.get('decision');ratio=None
+ if cv is not None:
+  if not isinstance(cv,(list,tuple)) or len(cv)!=2 or any(type(n) is not int for n in cv) or not 0<=cv[0]<=cv[1]:
+   raise ValueError('Invalid decision coverage counts')
+  if cv[1]:ratio=cv[0]/cv[1]
+ passed=t.get('passed');total=t.get('total')
+ if passed is not None or total is not None:
+  if type(passed) is not int or type(total) is not int or not 0<=passed<=total:
+   raise ValueError('Invalid test pass counts')
+  if t['all_passed']!=(total>0 and passed==total):raise ValueError('Test status conflicts with pass counts')
+  if t['present'] and total==0:raise ValueError('Valid tests require a nonzero test count')
+ if not t['present']:
+  if t['all_passed'] or (total is not None and total>0) or (cv is not None and cv[1]>0):
+   raise ValueError('Absent tests conflict with execution evidence')
+  return 0
+ if ratio is None or ratio<.5:return 1
+ if t['all_passed']:return 5 if ratio>=.8 else 3
+ if total is None:return None
+ return 3 if passed*2>total else 1
+
 def recompute(f):
  o=f['semantic_observations'];r={}
  conditions={
@@ -32,8 +61,8 @@ def recompute(f):
  'model_version':[(3,o['history']=='complete'),(2,o['history']=='dated_major'),(1,o['history']=='partial')],
  'parameter_management':[(5,o['parameters']=='central_accurate'),(3,o['parameters']=='external_classified'),(1,o['parameters']=='partial')]}
  for leaf,predicates in conditions.items():r[leaf]=next((v for v,ok in predicates if ok),0)
- t=f['source_tests'];cv=t['decision'];ratio=cv[0]/cv[1] if cv and cv[1] else -1
- r['unit_test']=5 if t['present'] and t['all_passed'] and ratio>=.8 else 3 if t['present'] and ratio>=.5 else 1 if t['present'] else 0
+ if o['parameters'] is None:r['parameter_management']=None
+ r['unit_test']=unit_test(f['source_tests'])
  r['build_independence']=build_independence(f.get('external_business_dependencies'))
  v=f['version'];parts=v.split('_')[0].split('.');r['version_independence']=3 if len(parts)==3 and all(x.isdecimal() for x in parts) else 1 if v.startswith('R') and v[1:].isdecimal() else 0
  # Derive branch predicates from actual refs rather than the primary release descriptors.

@@ -166,7 +166,7 @@
     {
       "evidence": {
         "path": "suites/new-energy-matlab/evidence/NEM-11.json",
-        "sha256": "a7b66abaf61747b2a7428ea1960fdfaa8b87ecd9a347830ebe19d3048bbbb25a"
+        "sha256": "acfedec9d00f4d9156002f0ca621363a2491f2d6a959a6caf9f277ac7197e631"
       },
       "family_id": "minibms-upstream",
       "head": "d9cf0bae322d41e7d829c02636ce343d638797e1",

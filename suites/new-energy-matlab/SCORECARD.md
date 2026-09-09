@@ -1,6 +1,8 @@
 # New Energy MATLAB scorecard
 
-11 repositories; 143 leaves; 427 / 671.
+11 repositories; 143 requested leaves; 142 scored; 1 unresolved. Full score: null.
+
+Known subtotal: 426 / 666 for 142 scored leaves; unresolved maximum: 5.
 
 | ID | Repository | Score | Published source |
 |---|---|---:|---|
@@ -14,7 +16,6 @@
 | ML-08 | thermal-network-controller | 40 / 61 | yes |
 | ML-09 | vehicle-actuator-supervisor | 16 / 61 | yes |
 | NEM-10 | battery-energy-calibration | 53 / 61 | yes |
-| NEM-11 | battery-contactor-control | 36 / 61 | yes |
+| NEM-11 | battery-contactor-control | unresolved / 61 | yes |
 
-Scores are descriptive results from evidence. They are not construction targets or model accuracy.
-APP, FW and New Energy MATLAB remain separate populations.
+An unresolved reference is excluded from numeric evaluation; it is not zero. The approved contract is unchanged.

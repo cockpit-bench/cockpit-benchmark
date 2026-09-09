@@ -6,8 +6,8 @@
       "requested": 88
     },
     "source_only": {
-      "eligible": 80,
-      "excluded": 8,
+      "eligible": 79,
+      "excluded": 9,
       "requested": 88
     }
   },
@@ -18,20 +18,20 @@
       "requested": 121
     },
     "source_only": {
-      "eligible": 111,
-      "excluded": 10,
+      "eligible": 109,
+      "excluded": 12,
       "requested": 121
     }
   },
   "new-energy-matlab": {
     "frozen_external": {
-      "eligible": 143,
-      "excluded": 0,
+      "eligible": 142,
+      "excluded": 1,
       "requested": 143
     },
     "source_only": {
-      "eligible": 134,
-      "excluded": 9,
+      "eligible": 133,
+      "excluded": 10,
       "requested": 143
     }
   }

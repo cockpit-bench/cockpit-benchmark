@@ -46,7 +46,9 @@ def register(availability, mode, context):
     for key, row in sorted(leaves.items()):
         support = row.get('modes', {}).get(mode, {})
         reason = None
-        if row.get('reference_id') != context['reference_id']:
+        if row.get('reference_status') == 'unresolved':
+            reason = 'reference_unresolved'
+        elif row.get('reference_id') != context['reference_id']:
             reason = 'reference_mismatch'
         elif support.get('state') != 'supported':
             reason = 'evidence_unknown_or_unavailable'

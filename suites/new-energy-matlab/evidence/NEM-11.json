@@ -1,4 +1,18 @@
 {
+  "calibration_census": {
+    "path": "suites/new-energy-matlab/evidence/NEM-11-calibration-census.json",
+    "sha256": "5aa34757b0580badff216ea045eac013deba27d6ec2b8992d76df55649c0f1c4"
+  },
+  "calibration_census_scope": {
+    "models": [
+      "BatteryContactorController.slx",
+      "MiniBMS/BMSLib.slx"
+    ],
+    "scripts": [
+      "MiniBMS/MiniBMSVariables.m",
+      "initialize_controller.m"
+    ]
+  },
   "execution": {
     "binding": {
       "head": "d9cf0bae322d41e7d829c02636ce343d638797e1",
@@ -172,7 +186,7 @@
     "id": "NEM-11",
     "leaves": [
       {
-        "analysis": "Five recognizable top-level BMS roles contain uneven nesting and twelve generic fault wrappers. Coarse responsibility division exists, but repeated Subsystem/Subsystem1/Subsystem2 layers obscure the lower-level abstraction.",
+        "analysis": "The production hierarchy has 21 authored ordinary subsystems and one actually linked Debouncer definition (deduplicated), all with identifiable single responsibilities. The five top roles separate fault aggregation, operating mode, battery-state accounting, cell-voltage monitoring and temperature monitoring. Four second-level threshold groups have 18 direct blocks each; twelve third-level debounce wrappers have seven each. Tool-generated Stateflow representation is excluded. Generic wrapper names remain a naming weakness and repeated wrapper logic a reuse weakness; neither alone proves unclear hierarchical responsibilities.",
         "evidence": [
           {
             "claim": "Top-level voltage monitoring",
@@ -199,8 +213,8 @@
         ],
         "max_score": 3,
         "name": "hierarchy",
-        "score": 1,
-        "score_reasoning": "Five recognizable top-level BMS roles contain uneven nesting and twelve generic fault wrappers. Coarse responsibility division exists, but repeated Subsystem/Subsystem1/Subsystem2 layers obscure the lower-level abstraction.",
+        "score": 3,
+        "score_reasoning": "The production hierarchy has 21 authored ordinary subsystems and one actually linked Debouncer definition (deduplicated), all with identifiable single responsibilities. The five top roles separate fault aggregation, operating mode, battery-state accounting, cell-voltage monitoring and temperature monitoring. Four second-level threshold groups have 18 direct blocks each; twelve third-level debounce wrappers have seven each. Tool-generated Stateflow representation is excluded. Generic wrapper names remain a naming weakness and repeated wrapper logic a reuse weakness; neither alone proves unclear hierarchical responsibilities.",
         "status": "scored"
       },
       {
@@ -426,7 +440,7 @@
         "status": "scored"
       },
       {
-        "analysis": "Tunable thresholds, debounce times and capacities are named and grouped in one script. The lower-voltage cutoff threshold 3.26 exceeds the warning threshold 2.8, so centralization alone does not establish accurate severity calibration; 5 is not supported.",
+        "analysis": "The former tier 3 is contradicted by Stateflow SOC and voltage-ratio guards, repeated hard-coded initial capacities/cell counts/voltages and independent execution timing. Independent census finds 43 centralized business quantities, six additional noncentralized quantities and hard-coded copies of five centralized quantities. Most business quantities are therefore centralized; tier 1 literally requiring a scattered majority is also not established. Tier 0 is not supported. This contract gap is unresolved: no integer is imputed pending an explicit tier-1 interpretation.",
         "evidence": [
           {
             "claim": "Actual under-voltage severity calibration ordering",
@@ -449,13 +463,52 @@
             "source": "repository",
             "start_line": 7,
             "symbol": "name=names{k};value=eval(name)"
+          },
+          {
+            "claim": "Uncentralized business guard in the active contactor chart",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "stateflow",
+            "field": "labelString",
+            "independent_group": "contactor-chart-transition-44",
+            "member": "simulink/stateflow/chart_119.xml",
+            "node_type": "transition",
+            "path": "BatteryContactorController.slx",
+            "source": "repository",
+            "ssid": "44",
+            "symbol": "BPC_BattSoc > 3"
+          },
+          {
+            "claim": "Uncentralized business guard in the active contactor chart",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "stateflow",
+            "field": "labelString",
+            "independent_group": "contactor-chart-transition-48",
+            "member": "simulink/stateflow/chart_119.xml",
+            "node_type": "transition",
+            "path": "BatteryContactorController.slx",
+            "source": "repository",
+            "ssid": "48",
+            "symbol": "0.95*Obsr_VBatPack"
+          },
+          {
+            "claim": "Uncentralized business guard in the active contactor chart",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "stateflow",
+            "field": "labelString",
+            "independent_group": "contactor-chart-transition-92",
+            "member": "simulink/stateflow/chart_119.xml",
+            "node_type": "transition",
+            "path": "BatteryContactorController.slx",
+            "source": "repository",
+            "ssid": "92",
+            "symbol": "0.2*Obsr_VBatPack"
           }
         ],
         "max_score": 5,
         "name": "parameter_management",
-        "score": 3,
-        "score_reasoning": "Tunable thresholds, debounce times and capacities are named and grouped in one script. The lower-voltage cutoff threshold 3.26 exceeds the warning threshold 2.8, so centralization alone does not establish accurate severity calibration; 5 is not supported.",
-        "status": "scored"
+        "score": null,
+        "score_reasoning": "The former tier 3 is contradicted by Stateflow SOC and voltage-ratio guards, repeated hard-coded initial capacities/cell counts/voltages and independent execution timing. Independent census finds 43 centralized business quantities, six additional noncentralized quantities and hard-coded copies of five centralized quantities. Most business quantities are therefore centralized; tier 1 literally requiring a scattered majority is also not established. Tier 0 is not supported. This contract gap is unresolved: no integer is imputed pending an explicit tier-1 interpretation.",
+        "status": "failed"
       },
       {
         "analysis": "Real native MIL tests and output/property assertions pass for the bound version. No current decision coverage numerator/denominator is retained, so coverage-based 3/5 is not supported.",
@@ -605,6 +658,7 @@
     "max_score": 61,
     "name": "battery-contactor-control",
     "review_status": "maintainer_final_source_review_with_explicit_observations",
+    "total": null,
     "total_score": 36,
     "tree": "bedc2fbc0b5b9447eadc2b68bd35c33fd246a6a3"
   },
@@ -619,11 +673,11 @@
     "external_business_dependencies": [],
     "semantic_observations": {
       "directory": "partial",
-      "hierarchy": "coarse",
+      "hierarchy": "uniform_single_responsibility",
       "history": "dated_major",
       "interface": "implicit",
       "naming": "partial",
-      "parameters": "external_classified",
+      "parameters": null,
       "reuse": "duplicate",
       "routing": "confused"
     },

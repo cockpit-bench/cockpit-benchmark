@@ -60,24 +60,24 @@
     {
       "canonical_scores": {
         "path": "suites/new-energy-matlab/STANDARD_SCORES.json",
-        "sha256": "572cd408913d24b8d174301b9697fa0583db35d8b4cbc9474ae54aae9899350e"
+        "sha256": "b88ef67489820359bc185e01694f3b4d66a8d366a980981de16a3f101dfdb23d"
       },
       "contract": {
         "path": "suites/matlab-simulink/contract-index.json",
         "sha256": "d63e2da4840178571af2ced5ce89f53c42fcf48ddc4c38a37d78aec93ef1ce1f"
       },
-      "failed_leaves": 0,
+      "failed_leaves": 1,
       "id": "new-energy-matlab",
       "leaf_count": 143,
       "manifest": {
         "path": "suites/new-energy-matlab/manifest.json",
-        "sha256": "b35a07d754eaeb13797eeeaeac8a445663911b21360aa787152f27775d0604a6"
+        "sha256": "873d2f2d8f6cf9dd9f439095e687b96b57de885bf3ed5e7a6410dc1bd6fc9bcf"
       },
       "max_score": 671,
       "name": "New Energy MATLAB",
       "published_repositories": 11,
       "repository_count": 11,
-      "score": 427,
+      "score": null,
       "status": "published",
       "technology": "MATLAB / Simulink"
     }

@@ -33,7 +33,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "app"
     },
@@ -66,7 +66,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -101,7 +101,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -136,7 +136,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -163,7 +163,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -198,7 +198,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -231,7 +231,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -264,7 +264,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -301,7 +301,7 @@
           "state": "unavailable"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": true,
       "type_id": "app"
     },
@@ -332,7 +332,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -369,7 +369,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -402,7 +402,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -429,7 +429,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -464,7 +464,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -499,7 +499,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -534,7 +534,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -561,7 +561,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -592,7 +592,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -623,7 +623,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -658,7 +658,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "app"
     },
@@ -685,7 +685,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -720,7 +720,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -755,7 +755,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -790,7 +790,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -821,7 +821,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -852,7 +852,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -885,7 +885,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -918,7 +918,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -945,7 +945,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -982,7 +982,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1013,7 +1013,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1044,7 +1044,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1071,7 +1071,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1102,7 +1102,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1133,7 +1133,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1170,7 +1170,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "app"
     },
@@ -1197,7 +1197,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1236,7 +1236,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1275,7 +1275,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1314,7 +1314,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1347,7 +1347,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1404,7 +1404,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1439,7 +1439,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1476,7 +1476,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "app"
     },
@@ -1503,7 +1503,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1538,7 +1538,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1569,7 +1569,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1602,7 +1602,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1633,7 +1633,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1664,7 +1664,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1695,7 +1695,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1732,7 +1732,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "app"
     },
@@ -1759,7 +1759,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1794,7 +1794,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1829,7 +1829,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1864,7 +1864,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1891,7 +1891,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1922,7 +1922,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1955,7 +1955,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1990,7 +1990,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "app"
     },
@@ -2017,7 +2017,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2056,7 +2056,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2095,7 +2095,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2134,7 +2134,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2161,7 +2161,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2192,7 +2192,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2225,7 +2225,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2258,7 +2258,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2285,7 +2285,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2330,7 +2330,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2375,7 +2375,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2420,7 +2420,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2445,7 +2445,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2470,7 +2470,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2495,7 +2495,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2504,24 +2504,31 @@
       "id": "APP-21/platform_reuse.platform_upgrade",
       "modes": {
         "frozen_external": {
-          "basis": "Complete tracked source/refs contain the necessary static evidence; no external execution is needed for the declared rule conditions.",
+          "basis": "Complete unchanged official SDK 34 raw and decoded definitions, upstream commit/blob binding and repository HEAD/build-file binding are provided for static platform dependency inspection. No cross-SDK execution is inferred.",
           "evidence_ids": [
-            "APP-21:source-head"
+            "APP-21:sdk-repair"
           ],
-          "kind": "source",
+          "kind": "frozen_raw",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
+          "raw_complete": true,
           "state": "supported"
         },
         "source_only": {
-          "basis": "Complete tracked source/refs contain the necessary static evidence; no external execution is needed for the declared rule conditions.",
-          "evidence_ids": [
-            "APP-21:source-head"
-          ],
+          "basis": "Complete official compileSdk 34 public API definitions are required to classify every Android platform dependency and are not tracked in this repository.",
+          "evidence_ids": [],
           "kind": "source",
-          "state": "supported"
+          "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
-      "requires_external": false,
+      "packet_id": "sdk-repair",
+      "reference_id": "v0.10.3",
+      "requires_external": true,
+      "sdk_requirements": [
+        {
+          "compile_sdk": 34,
+          "directory": "sdk"
+        }
+      ],
       "type_id": "app"
     },
     {
@@ -2545,7 +2552,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2570,7 +2577,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2595,7 +2602,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2620,7 +2627,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2645,7 +2652,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2670,7 +2677,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2695,7 +2702,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2709,7 +2716,7 @@
             "APP-22:sdk34-definition"
           ],
           "kind": "frozen_raw",
-          "packet_sha256": "7533e6b5782d8d65b6771b1838d52660e0bcd0e419950d45ec9f5eab737c4d1d",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
           "raw_complete": true,
           "state": "supported"
         },
@@ -2721,7 +2728,7 @@
         }
       },
       "packet_id": "current-raw",
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": true,
       "type_id": "app"
     },
@@ -2746,7 +2753,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2771,7 +2778,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2796,7 +2803,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2821,7 +2828,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2852,7 +2859,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -2883,7 +2890,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -2920,7 +2927,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -2953,7 +2960,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -2980,7 +2987,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3011,7 +3018,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3044,7 +3051,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3081,7 +3088,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3116,7 +3123,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3147,7 +3154,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3180,7 +3187,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3211,7 +3218,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3246,7 +3253,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -3285,7 +3292,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3322,7 +3329,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -3349,7 +3356,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3380,7 +3387,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3419,7 +3426,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3464,7 +3471,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3499,7 +3506,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3542,7 +3549,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3583,7 +3590,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3614,7 +3621,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3645,7 +3652,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3661,7 +3668,7 @@
           ],
           "kind": "frozen_raw",
           "missing": [],
-          "packet_sha256": "7533e6b5782d8d65b6771b1838d52660e0bcd0e419950d45ec9f5eab737c4d1d",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
           "raw_complete": true,
           "state": "supported"
         },
@@ -3684,7 +3691,7 @@
         }
       },
       "packet_id": "legacy-fw07",
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": true,
       "type_id": "fw"
     },
@@ -3723,7 +3730,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3754,7 +3761,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3785,7 +3792,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3818,7 +3825,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3855,7 +3862,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3892,7 +3899,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3935,7 +3942,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3972,7 +3979,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4003,7 +4010,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4034,7 +4041,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4075,7 +4082,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4110,7 +4117,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -4137,7 +4144,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4168,7 +4175,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4205,7 +4212,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4244,7 +4251,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4283,7 +4290,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4326,7 +4333,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4367,7 +4374,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4398,7 +4405,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4429,7 +4436,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4460,7 +4467,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4505,7 +4512,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -4532,7 +4539,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4563,7 +4570,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4602,7 +4609,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4635,7 +4642,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4672,7 +4679,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4703,7 +4710,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4734,7 +4741,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4765,7 +4772,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4810,7 +4817,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4851,7 +4858,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4890,7 +4897,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -4917,7 +4924,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4948,7 +4955,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4987,7 +4994,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5034,7 +5041,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5069,7 +5076,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5122,7 +5129,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5177,7 +5184,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5208,7 +5215,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5239,7 +5246,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5270,7 +5277,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5305,7 +5312,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -5332,7 +5339,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5363,7 +5370,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5396,7 +5403,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5427,7 +5434,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5460,7 +5467,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5499,7 +5506,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5530,7 +5537,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5561,7 +5568,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5596,7 +5603,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -5639,7 +5646,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5674,7 +5681,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5701,7 +5708,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5732,7 +5739,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5765,7 +5772,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5798,7 +5805,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5833,7 +5840,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5864,7 +5871,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5897,7 +5904,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5928,7 +5935,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5959,7 +5966,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5992,7 +5999,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6027,7 +6034,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -6054,7 +6061,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6085,7 +6092,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6116,7 +6123,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6149,7 +6156,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6188,7 +6195,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6225,7 +6232,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6262,7 +6269,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6287,7 +6294,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6312,7 +6319,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6337,7 +6344,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6346,24 +6353,31 @@
       "id": "FW-21/platform_reuse.platform_upgrade",
       "modes": {
         "frozen_external": {
-          "basis": "Complete tracked source/refs contain the necessary static evidence; no external execution is needed for the declared rule conditions.",
+          "basis": "Complete unchanged official SDK 34 raw and decoded definitions, upstream commit/blob binding and repository HEAD/build-file binding are provided for static platform dependency inspection. No cross-SDK execution is inferred.",
           "evidence_ids": [
-            "FW-21:source-head"
+            "FW-21:sdk-repair"
           ],
-          "kind": "source",
+          "kind": "frozen_raw",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
+          "raw_complete": true,
           "state": "supported"
         },
         "source_only": {
-          "basis": "Complete tracked source/refs contain the necessary static evidence; no external execution is needed for the declared rule conditions.",
-          "evidence_ids": [
-            "FW-21:source-head"
-          ],
+          "basis": "Complete official compileSdk 34 public API definitions are required to classify every Android platform dependency and are not tracked in this repository.",
+          "evidence_ids": [],
           "kind": "source",
-          "state": "supported"
+          "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
-      "requires_external": false,
+      "packet_id": "sdk-repair",
+      "reference_id": "v0.10.3",
+      "requires_external": true,
+      "sdk_requirements": [
+        {
+          "compile_sdk": 34,
+          "directory": "sdk"
+        }
+      ],
       "type_id": "fw"
     },
     {
@@ -6387,7 +6401,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6412,7 +6426,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6437,7 +6451,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6462,7 +6476,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6487,7 +6501,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6512,7 +6526,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6537,7 +6551,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6562,7 +6576,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6587,7 +6601,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6612,7 +6626,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6621,24 +6635,31 @@
       "id": "FW-22/platform_reuse.platform_upgrade",
       "modes": {
         "frozen_external": {
-          "basis": "Complete tracked source/refs contain the necessary static evidence; no external execution is needed for the declared rule conditions.",
+          "basis": "Complete unchanged official SDK 34 raw and decoded definitions, upstream commit/blob binding and repository HEAD/build-file binding are provided for static platform dependency inspection. No cross-SDK execution is inferred.",
           "evidence_ids": [
-            "FW-22:source-head"
+            "FW-22:sdk-repair"
           ],
-          "kind": "source",
+          "kind": "frozen_raw",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
+          "raw_complete": true,
           "state": "supported"
         },
         "source_only": {
-          "basis": "Complete tracked source/refs contain the necessary static evidence; no external execution is needed for the declared rule conditions.",
-          "evidence_ids": [
-            "FW-22:source-head"
-          ],
+          "basis": "Complete official compileSdk 34 public API definitions are required to classify every Android platform dependency and are not tracked in this repository.",
+          "evidence_ids": [],
           "kind": "source",
-          "state": "supported"
+          "state": "unknown"
         }
       },
-      "reference_id": "v0.10.2",
-      "requires_external": false,
+      "packet_id": "sdk-repair",
+      "reference_id": "v0.10.3",
+      "requires_external": true,
+      "sdk_requirements": [
+        {
+          "compile_sdk": 34,
+          "directory": "sdk"
+        }
+      ],
       "type_id": "fw"
     },
     {
@@ -6662,7 +6683,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6676,7 +6697,7 @@
             "FW-22:current-raw"
           ],
           "kind": "frozen_raw",
-          "packet_sha256": "7533e6b5782d8d65b6771b1838d52660e0bcd0e419950d45ec9f5eab737c4d1d",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
           "raw_complete": true,
           "state": "supported"
         },
@@ -6687,8 +6708,8 @@
           "state": "unknown"
         }
       },
-      "packet_id": "current-raw",
-      "reference_id": "v0.10.2",
+      "packet_id": "sdk-repair",
+      "reference_id": "v0.10.3",
       "requires_external": true,
       "type_id": "fw"
     },
@@ -6713,7 +6734,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6738,7 +6759,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6763,7 +6784,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6788,7 +6809,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6813,7 +6834,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6838,7 +6859,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -6863,7 +6884,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -6888,7 +6909,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -6913,7 +6934,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -6927,7 +6948,7 @@
             "ML-01:current-raw"
           ],
           "kind": "frozen_raw",
-          "packet_sha256": "7533e6b5782d8d65b6771b1838d52660e0bcd0e419950d45ec9f5eab737c4d1d",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
           "raw_complete": true,
           "state": "supported"
         },
@@ -6939,7 +6960,7 @@
         }
       },
       "packet_id": "current-raw",
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": true,
       "type_id": "new-energy-matlab"
     },
@@ -6964,7 +6985,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -6989,7 +7010,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7014,7 +7035,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7039,7 +7060,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7064,7 +7085,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7089,7 +7110,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7114,7 +7135,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7139,7 +7160,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7164,7 +7185,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7189,7 +7210,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7214,7 +7235,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7239,7 +7260,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7253,7 +7274,7 @@
             "ML-02:current-raw"
           ],
           "kind": "frozen_raw",
-          "packet_sha256": "7533e6b5782d8d65b6771b1838d52660e0bcd0e419950d45ec9f5eab737c4d1d",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
           "raw_complete": true,
           "state": "supported"
         },
@@ -7265,7 +7286,7 @@
         }
       },
       "packet_id": "current-raw",
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": true,
       "type_id": "new-energy-matlab"
     },
@@ -7290,7 +7311,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7315,7 +7336,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7340,7 +7361,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7365,7 +7386,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7390,7 +7411,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7415,7 +7436,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7440,7 +7461,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7465,7 +7486,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7490,7 +7511,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7515,7 +7536,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7540,7 +7561,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7565,7 +7586,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7579,7 +7600,7 @@
             "ML-03:current-raw"
           ],
           "kind": "frozen_raw",
-          "packet_sha256": "7533e6b5782d8d65b6771b1838d52660e0bcd0e419950d45ec9f5eab737c4d1d",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
           "raw_complete": true,
           "state": "supported"
         },
@@ -7591,7 +7612,7 @@
         }
       },
       "packet_id": "current-raw",
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": true,
       "type_id": "new-energy-matlab"
     },
@@ -7616,7 +7637,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7641,7 +7662,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7666,7 +7687,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7691,7 +7712,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7716,7 +7737,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7741,7 +7762,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7766,7 +7787,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7791,7 +7812,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7816,7 +7837,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7841,7 +7862,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7866,7 +7887,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7891,7 +7912,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7905,7 +7926,7 @@
             "ML-04:current-raw"
           ],
           "kind": "frozen_raw",
-          "packet_sha256": "7533e6b5782d8d65b6771b1838d52660e0bcd0e419950d45ec9f5eab737c4d1d",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
           "raw_complete": true,
           "state": "supported"
         },
@@ -7917,7 +7938,7 @@
         }
       },
       "packet_id": "current-raw",
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": true,
       "type_id": "new-energy-matlab"
     },
@@ -7942,7 +7963,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7967,7 +7988,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7992,7 +8013,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8017,7 +8038,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8042,7 +8063,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8067,7 +8088,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8092,7 +8113,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8117,7 +8138,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8142,7 +8163,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8167,7 +8188,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8192,7 +8213,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8217,7 +8238,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8231,7 +8252,7 @@
             "ML-05:current-raw"
           ],
           "kind": "frozen_raw",
-          "packet_sha256": "7533e6b5782d8d65b6771b1838d52660e0bcd0e419950d45ec9f5eab737c4d1d",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
           "raw_complete": true,
           "state": "supported"
         },
@@ -8243,7 +8264,7 @@
         }
       },
       "packet_id": "current-raw",
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": true,
       "type_id": "new-energy-matlab"
     },
@@ -8268,7 +8289,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8293,7 +8314,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8318,7 +8339,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8343,7 +8364,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8368,7 +8389,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8393,7 +8414,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8418,7 +8439,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8443,7 +8464,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8468,7 +8489,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8493,7 +8514,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8518,7 +8539,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8543,7 +8564,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8557,7 +8578,7 @@
             "ML-06:current-raw"
           ],
           "kind": "frozen_raw",
-          "packet_sha256": "7533e6b5782d8d65b6771b1838d52660e0bcd0e419950d45ec9f5eab737c4d1d",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
           "raw_complete": true,
           "state": "supported"
         },
@@ -8569,7 +8590,7 @@
         }
       },
       "packet_id": "current-raw",
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": true,
       "type_id": "new-energy-matlab"
     },
@@ -8594,7 +8615,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8619,7 +8640,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8644,7 +8665,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8669,7 +8690,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8694,7 +8715,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8719,7 +8740,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8744,7 +8765,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8769,7 +8790,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8794,7 +8815,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8819,7 +8840,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8844,7 +8865,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8869,7 +8890,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8883,7 +8904,7 @@
             "ML-07:current-raw"
           ],
           "kind": "frozen_raw",
-          "packet_sha256": "7533e6b5782d8d65b6771b1838d52660e0bcd0e419950d45ec9f5eab737c4d1d",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
           "raw_complete": true,
           "state": "supported"
         },
@@ -8895,7 +8916,7 @@
         }
       },
       "packet_id": "current-raw",
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": true,
       "type_id": "new-energy-matlab"
     },
@@ -8920,7 +8941,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8945,7 +8966,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8970,7 +8991,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8995,7 +9016,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9020,7 +9041,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9045,7 +9066,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9070,7 +9091,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9095,7 +9116,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9120,7 +9141,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9145,7 +9166,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9170,7 +9191,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9195,7 +9216,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9209,7 +9230,7 @@
             "ML-08:current-raw"
           ],
           "kind": "frozen_raw",
-          "packet_sha256": "7533e6b5782d8d65b6771b1838d52660e0bcd0e419950d45ec9f5eab737c4d1d",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
           "raw_complete": true,
           "state": "supported"
         },
@@ -9221,7 +9242,7 @@
         }
       },
       "packet_id": "current-raw",
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": true,
       "type_id": "new-energy-matlab"
     },
@@ -9246,7 +9267,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9271,7 +9292,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9296,7 +9317,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9321,7 +9342,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9346,7 +9367,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9371,7 +9392,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9396,7 +9417,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9421,7 +9442,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9446,7 +9467,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9471,7 +9492,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9496,7 +9517,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9521,7 +9542,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9535,7 +9556,7 @@
             "ML-09:current-raw"
           ],
           "kind": "frozen_raw",
-          "packet_sha256": "7533e6b5782d8d65b6771b1838d52660e0bcd0e419950d45ec9f5eab737c4d1d",
+          "packet_sha256": "c32452a5ed3fdf66d8b5f6cd98cc1ec5185c7587ae8998c51fcf51dc0a94346f",
           "raw_complete": true,
           "state": "supported"
         },
@@ -9547,7 +9568,7 @@
         }
       },
       "packet_id": "current-raw",
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": true,
       "type_id": "new-energy-matlab"
     },
@@ -9572,7 +9593,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9597,7 +9618,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9622,7 +9643,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9647,7 +9668,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9672,7 +9693,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9697,7 +9718,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9722,7 +9743,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9747,7 +9768,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9772,7 +9793,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9797,7 +9818,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9822,7 +9843,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9847,7 +9868,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9872,7 +9893,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9897,7 +9918,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9922,7 +9943,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9947,7 +9968,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9972,7 +9993,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9997,7 +10018,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10022,7 +10043,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10047,7 +10068,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10072,7 +10093,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10097,7 +10118,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10122,7 +10143,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10147,7 +10168,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10172,7 +10193,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10197,7 +10218,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10222,7 +10243,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10247,7 +10268,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10272,7 +10293,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10297,7 +10318,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10322,7 +10343,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10347,7 +10368,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10372,7 +10393,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10397,7 +10418,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "v0.10.2",
+      "reference_id": "v0.10.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     }
@@ -10427,9 +10448,21 @@
       "format": "frozen-git-inputs-v1",
       "name": "android-frozen-git-inputs-v0.9.1.zip",
       "sha256": "1d7ecfa03c08c6916f047a5d0a403e651a193d6eab2a9391be38d41cb0def9d9"
+    },
+    "sdk-repair": {
+      "bytes": 6338770,
+      "format": "candidate-raw-inputs-v1",
+      "name": "candidate-sdk-inputs-v0.10.3.zip",
+      "repositories": [
+        "APP-21",
+        "FW-21",
+        "FW-22"
+      ],
+      "sha256": "3cc895264f5b561741cd0afa68205fac5b975f8136c0797e1448fbea4e78e670",
+      "url": "https://github.com/cockpit-bench/cockpit-benchmark/releases/download/v0.10.3/candidate-sdk-inputs-v0.10.3.zip"
     }
   },
-  "reference_id": "v0.10.2",
-  "registry_sha256": "ead8b71d3189da36eb0436649a692a54213f4d9a109fbf4d01e57801d0a916ac",
+  "reference_id": "v0.10.3",
+  "registry_sha256": "07bc7a20b70e409b17c576acd8ccc140091dfe58a158cd9e45ee67cdac4968df",
   "schema": "current-evaluation-inputs-v1"
 }

@@ -1,0 +1,29 @@
+{
+  "cases": [
+    "NEM-11"
+  ],
+  "files": [
+    {
+      "path": "docs/independent-review-20260910/NEM11/review.json",
+      "sha256": "13d59e1253bc833c19074d2e67efba828d1ad82bfe47fdfc9c259ad14ffc69c6"
+    },
+    {
+      "path": "docs/independent-review-20260910/NEM11/review.md",
+      "sha256": "80ebbe613961bb7f2023457f8674e3d66182e63d8f805a399775d504b4374d2f"
+    },
+    {
+      "path": "docs/independent-review-20260910/NEM11/static-inventory.json",
+      "sha256": "567c57ae6a1ee3a03aad8ff82e7f7416ed84b0766cbeec4ab5ef241966de820d"
+    },
+    {
+      "path": "docs/independent-review-20260910/NEM11/supplement-hierarchy-release.json",
+      "sha256": "f2253847fff7ed56c89d88b7461f2ea4b50700aee32c7322efd94006fe40fac8"
+    },
+    {
+      "path": "docs/independent-review-20260910/NEM11/supplement-hierarchy-release.md",
+      "sha256": "c4cb92a87cf46a2b0ca375695f19984a92eeb6a8f0b701319ff7865a6f5c19bc"
+    }
+  ],
+  "schema": "independent-public-review-v1",
+  "scope": "Independent-context source and contract review of the 13 public NEM-11 leaves, followed by scoped source-only clarification. No maintainer score files supplied initially; follow-up is adjudication, not blind evaluation. No OS isolation or new native execution claimed."
+}
