@@ -125,8 +125,8 @@ def validate_matlab(wrapper,suite):
     else:require(scores['total']==suite['score'],'Canonical registry score differs')
     return rows
 
-def validate(wrapper,require_publishable=False):
-    wrapper=Path(wrapper).resolve();registry=read(wrapper/'suites.json')
+def validate_legacy(wrapper,require_publishable=False,registry=None):
+    wrapper=Path(wrapper).resolve();registry=read(wrapper/'suites.json') if registry is None else registry
     require(set(registry)=={'schema_version','benchmark_id','planned_release','integration_status','default_suite','aggregation','suites'},'Unsupported registry keys (no combined score)')
     require(registry['schema_version']=='benchmark-suites-1' and registry['benchmark_id']=='cockpit-benchmark','Wrong registry')
     require(registry['aggregation']=='separate_suite_scores_no_raw_sum','Raw suite totals must remain separate')
@@ -162,6 +162,19 @@ def validate(wrapper,require_publishable=False):
         require(len(ids)==suite['repository_count'] and not ids&all_ids,'Duplicate/cross-suite IDs')
         all_ids|=ids
         if require_publishable:require(suite['status']=='published',suite['id']+': not finally validated/published; do not release preparation')
+    return registry
+
+def validate(wrapper,require_publishable=False):
+    registry=read(Path(wrapper)/'suites.json')
+    if registry.get('schema_version')=='benchmark-repository-types-2':
+        from repository_types import validate as validate_types
+        return validate_types(wrapper,require_publishable)
+    return validate_legacy(wrapper,require_publishable,registry)
+
+def legacy_registry(wrapper):
+    registry=read(Path(wrapper)/'suites.json')
+    if registry.get('schema_version')=='benchmark-repository-types-2':
+        return read(bound(wrapper,registry['legacy_baseline']))
     return registry
 
 def git(*args,binary=False):
@@ -245,8 +258,11 @@ def restore_matlab(rows,destination,resume=False):
             completed_repositories=len(results),execution='not_run')))
     return results
 
-def restore(wrapper,suite_id,destination,resume=False,include_submodules=False):
+def restore(wrapper,suite_id,destination,resume=False,include_submodules=False,source_map=None,ids=None):
     wrapper=Path(wrapper).resolve();registry=validate(wrapper)
+    if registry.get('schema_version')=='benchmark-repository-types-2':
+        from repository_types import restore as restore_types
+        return restore_types(wrapper,suite_id,destination,resume,include_submodules,source_map,ids)
     selected=[s for s in registry['suites'] if suite_id=='all' or s['id']==suite_id]
     require(selected,'Unknown suite')
     for suite in selected:
@@ -271,16 +287,17 @@ def main():
     check=sub.add_parser('validate');check.add_argument('--wrapper',type=Path,required=True)
     check.add_argument('--require-publishable',action='store_true')
     fetch=sub.add_parser('restore');fetch.add_argument('--wrapper',type=Path,required=True)
-    fetch.add_argument('--suite',choices=['android-validation18','matlab-simulink','all'],required=True)
+    fetch.add_argument('--suite',choices=['app','fw','new-energy-matlab','android-validation18','matlab-simulink','all'],required=True)
     fetch.add_argument('--destination',type=Path,required=True);fetch.add_argument('--resume',action='store_true')
     fetch.add_argument('--include-submodules',action='store_true')
+    fetch.add_argument('--source-map',type=Path);fetch.add_argument('--ids',nargs='+')
     args=parser.parse_args()
     try:
         if args.command=='validate':
             registry=validate(args.wrapper,args.require_publishable)
             print(json.dumps({'status':'valid_registry','integration_status':registry['integration_status'],
                 'suites':[{'id':s['id'],'state':s['status'],'leaves':s['leaf_count'],'max_score':s['max_score']} for s in registry['suites']]}))
-        else:restore(args.wrapper,args.suite,args.destination,args.resume,args.include_submodules)
+        else:restore(args.wrapper,args.suite,args.destination,args.resume,args.include_submodules,args.source_map,args.ids)
     except (InvalidSuite,KeyError,ValueError,OSError,subprocess.CalledProcessError) as exc:
         print('REJECTED: '+str(exc),file=sys.stderr);return 1
     return 0

@@ -16,7 +16,7 @@ ARCHIVE=os.environ.get('MATLAB_EVIDENCE_ARCHIVE')
 @unittest.skipUnless(ARCHIVE,'Set MATLAB_EVIDENCE_ARCHIVE to the frozen release attachment')
 class AttachmentTests(unittest.TestCase):
     def setUp(self):
-        self.suite=next(s for s in suites.read(W/'suites.json')['suites'] if s['id']=='matlab-simulink')
+        self.suite=next(s for s in suites.legacy_registry(W)['suites'] if s['id']=='matlab-simulink')
 
     def test_frozen_attachment_replays(self):
         result=evidence.verify(W,self.suite,ARCHIVE)

@@ -221,8 +221,8 @@ def verify(wrapper,suite,archive,sources_root=None):
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--wrapper',type=Path,required=True);p.add_argument('--archive',type=Path,required=True);p.add_argument('--output',type=Path);p.add_argument('--sources',type=Path)
     args=p.parse_args()
-    from suites import validate,encoded
-    registry=validate(args.wrapper)
+    from suites import validate,encoded,legacy_registry
+    validate(args.wrapper);registry=legacy_registry(args.wrapper)
     result=verify(args.wrapper,next(s for s in registry['suites'] if s['id']=='matlab-simulink'),args.archive,args.sources)
     if args.output:args.output.write_bytes(encoded(result))
     print(json.dumps(result))

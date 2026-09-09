@@ -1,0 +1,5374 @@
+{
+  "ci_candidates": [],
+  "excluded_source": [],
+  "files": [
+    {
+      "blob": "219649ea8bf62d9dc59b6542c717ea85555e22d9",
+      "bytes": 494,
+      "path": ".gitignore",
+      "sha256": "93cfb6415c9608fb872d05cde99a6ff78e3b15f367d1e9fa23bd0c1a126f21db"
+    },
+    {
+      "blob": "147045c80f295b488029d67ccfe162e02eae5a7a",
+      "bytes": 331847,
+      "path": "BatteryContactorController.slx",
+      "sha256": "eb832ad518968b1f44f6facee50a8e2959bf09baeb519daed321ff019323a009"
+    },
+    {
+      "blob": "803db1f20d331c3562e4db6720bd679406a2d9d9",
+      "bytes": 200348,
+      "path": "Demo/Charge.PNG",
+      "sha256": "e41aa91959ad45cd2bbabdcfe3af7e4dfb06dcdac3560758a4df0520522ef532"
+    },
+    {
+      "blob": "107d415ef2d4ebaeb8486ce3aa56cbf8e533ada7",
+      "bytes": 199185,
+      "path": "Demo/ChargeFault.PNG",
+      "sha256": "61f1f353c2439fcb00f39d2e3ba77c6cf77e279fe721c510bc87ea32fc177cef"
+    },
+    {
+      "blob": "d138ace2c683c8c0b0e1383becfb7123c3f7a7a3",
+      "bytes": 200448,
+      "path": "Demo/Discharge.PNG",
+      "sha256": "b87316d7825ae30bdf8ae4bfa6e146090e3d92ae69d8c9237bf63140eec1adba"
+    },
+    {
+      "blob": "12a45bd107a3b9513c0687af81ecc9e0eb1a3f20",
+      "bytes": 200034,
+      "path": "Demo/DischargeFault.PNG",
+      "sha256": "940549c202b85b976ddfe5f75e8bfa5793df19a98e50e4b6095d76a180f08006"
+    },
+    {
+      "blob": "2ef7750bfadca76b16e8a112d4eeaf84a64d4742",
+      "bytes": 209036,
+      "path": "Demo/Idle.PNG",
+      "sha256": "b8714a31f5b49b11fc3b83688c4b977c8a07c2e216c726976d639954265ea5a3"
+    },
+    {
+      "blob": "b9ab13436c2ab09141f55bab801b391a6e366e39",
+      "bytes": 1339,
+      "path": "INTERFACES.md",
+      "sha256": "6ed97499407f7bbb518d9749332fb6c1d5a47c0bc29dacc0fe0a506250a50609"
+    },
+    {
+      "blob": "b8a2e31a952d1591aaffa8a357d0903e01f9ce5c",
+      "bytes": 1067,
+      "path": "LICENSE",
+      "sha256": "6623253f7a1489911ab30874d90d5d0393e45b46aa430e42f516f7c12588131c"
+    },
+    {
+      "blob": "2e773020c18062c089daae3128cddb646e7e9d7a",
+      "bytes": 22093,
+      "path": "MiniBMS/BMSLib.slx",
+      "sha256": "2b8f3ac44760931b52cf14f358dedd1018b24aef4d85b43fa30fc5054c6e422b"
+    },
+    {
+      "blob": "bc2d0ba76880f13b39d4af687f831af4a3f0155a",
+      "bytes": 65358,
+      "path": "MiniBMS/MiniBMS.slx",
+      "sha256": "6710e36944dd99bdff1301fa9350e59f36012da95e555f31b4db4869d570b311"
+    },
+    {
+      "blob": "acec4ddd5ed3037f9ab3f5145860005e92554287",
+      "bytes": 4786,
+      "path": "MiniBMS/MiniBMSVariables.m",
+      "sha256": "761dfc6ab640b8161382788ef0a506a5f5e67b731d0520e3e8a50fb679862ee7"
+    },
+    {
+      "blob": "363a1e53bee1e3bc8722c6d2aa45c764d0e44411",
+      "bytes": 1756,
+      "path": "README.md",
+      "sha256": "c937bc73bb3d48a23564b80d9fea05deb95afe317d99649ca74433f32b7018fd"
+    },
+    {
+      "blob": "7ecf123a670f5e0ed7eb8563a597a21bdfd17c7f",
+      "bytes": 7,
+      "path": "VERSION",
+      "sha256": "3d097c315a1c543040f548da4c7051265e94c77211a2411ced1d4621344270de"
+    },
+    {
+      "blob": "481cd59c0d9d82f817a8c7b40b90b0742513a056",
+      "bytes": 1647,
+      "path": "create_controller.m",
+      "sha256": "1c1fc63cedf9e85cfb9f84c6476b47d84a9f7a1f7782a05be5ba27a17134622b"
+    },
+    {
+      "blob": "27d1991b27af3dd8f1316e1212f5af06b27b38e3",
+      "bytes": 496,
+      "path": "initialize_controller.m",
+      "sha256": "46f9a5a7531847b7e041ec24eadab0cecb3d492902bf832a0f3411368bfb9666"
+    },
+    {
+      "blob": "c37e0084811937f7c795dc699708b0bdd6e49d48",
+      "bytes": 228,
+      "path": "production-models.json",
+      "sha256": "861dfac8bdd626322d803f3b66c426ecc398bcbbe3305295a085ef60f01a71e7"
+    },
+    {
+      "blob": "6ea349dc3afc4817017802303dc934e515e4293e",
+      "bytes": 3852,
+      "path": "run_acceptance.m",
+      "sha256": "2ce9c227c616f98b29f4f697e22748393e13176742a46bac4244e7c509399657"
+    }
+  ],
+  "head": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+  "models": [
+    {
+      "block_types": {
+        "Constant": 69,
+        "DataStoreMemory": 2,
+        "DataStoreRead": 2,
+        "DataStoreWrite": 2,
+        "DataTypeConversion": 2,
+        "Delay": 1,
+        "Demux": 1,
+        "DiscreteIntegrator": 2,
+        "From": 22,
+        "Gain": 3,
+        "Goto": 12,
+        "Inport": 46,
+        "Lookup_n-D": 1,
+        "MinMax": 5,
+        "MultiPortSwitch": 12,
+        "Mux": 1,
+        "Outport": 41,
+        "Product": 3,
+        "Reference": 12,
+        "RelationalOperator": 13,
+        "S-Function": 1,
+        "Saturate": 1,
+        "SubSystem": 22,
+        "Sum": 1,
+        "Terminator": 1,
+        "UnitDelay": 1
+      },
+      "blocks": [
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "CVM_VCellMin",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Position": "[-595, -22, -565, -8]",
+            "ZOrder": "285"
+          },
+          "sid": "106",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant",
+          "parameters": {
+            "Position": "[-480, 10, -335, 30]",
+            "Value": "CVM_VCellMinCutoffTh_P",
+            "ZOrder": "288"
+          },
+          "sid": "107",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-480, 90, -335, 110]",
+            "Value": "CVM_VCellMinDrtdTh_P",
+            "ZOrder": "290"
+          },
+          "sid": "108",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-480, 170, -335, 190]",
+            "Value": "CVM_VCellMinWarnTh_P",
+            "ZOrder": "291"
+          },
+          "sid": "109",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[280, 52, 355, 78]",
+            "Value": "NrCutoff_C",
+            "ZOrder": "295"
+          },
+          "sid": "110",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant4",
+          "parameters": {
+            "Position": "[80, 132, 155, 158]",
+            "Value": "NrDrtd_C",
+            "ZOrder": "297"
+          },
+          "sid": "111",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant5",
+          "parameters": {
+            "Position": "[-130, 222, -55, 248]",
+            "Value": "NrWarn_C",
+            "ZOrder": "301"
+          },
+          "sid": "112",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Constant6",
+          "parameters": {
+            "Position": "[-130, 187, -55, 213]",
+            "Value": "NrNoFlt_C",
+            "ZOrder": "302"
+          },
+          "sid": "113",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Multiport\nSwitch",
+          "parameters": {
+            "DataPortOrder": "Zero-based contiguous",
+            "InputSameDT": "off",
+            "Inputs": "2",
+            "Position": "[385, -7, 425, 77]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "292",
+            "zeroidx": "on"
+          },
+          "sid": "114",
+          "type": "MultiPortSwitch"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Multiport\nSwitch1",
+          "parameters": {
+            "DataPortOrder": "Zero-based contiguous",
+            "InputSameDT": "off",
+            "Inputs": "2",
+            "Position": "[195, 73, 235, 157]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "294",
+            "zeroidx": "on"
+          },
+          "sid": "115",
+          "type": "MultiPortSwitch"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Multiport\nSwitch2",
+          "parameters": {
+            "DataPortOrder": "Zero-based contiguous",
+            "InputSameDT": "off",
+            "Inputs": "2",
+            "Position": "[-5, 150, 35, 250]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "298",
+            "zeroidx": "on"
+          },
+          "sid": "116",
+          "type": "MultiPortSwitch"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Relational\nOperator",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": "<",
+            "OutDataTypeStr": "boolean",
+            "Position": "[-315, -31, -280, 36]",
+            "RndMeth": "Simplest",
+            "ZOrder": "293"
+          },
+          "sid": "117",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Relational\nOperator1",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": "<",
+            "OutDataTypeStr": "boolean",
+            "Position": "[-315, 49, -280, 116]",
+            "RndMeth": "Simplest",
+            "ZOrder": "296"
+          },
+          "sid": "118",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Relational\nOperator2",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": "<",
+            "OutDataTypeStr": "boolean",
+            "Position": "[-315, 129, -280, 196]",
+            "RndMeth": "Simplest",
+            "ZOrder": "299"
+          },
+          "sid": "119",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-255, -16, -155, 26]",
+            "ZOrder": "2492"
+          },
+          "sid": "120",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Subsystem1",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-255, 64, -155, 106]",
+            "ZOrder": "2495"
+          },
+          "sid": "128",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "Subsystem2",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-255, 144, -155, 186]",
+            "ZOrder": "2496"
+          },
+          "sid": "136",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_105.xml",
+          "name": "CVM_StCellMinVFlt",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Position": "[470, 28, 500, 42]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "287"
+          },
+          "sid": "144",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_120.xml",
+          "name": "Fault",
+          "parameters": {
+            "Position": "[-100, -47, -70, -33]",
+            "ZOrder": "2492"
+          },
+          "sid": "121",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_120.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-40, 37, -15, 63]",
+            "Value": "0",
+            "ZOrder": "2497"
+          },
+          "sid": "122",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_120.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-165, 85, -5, 105]",
+            "Value": "CVM_DMaxVCellMinCutoff_P",
+            "ZOrder": "2498"
+          },
+          "sid": "123",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_120.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[-165, 130, -5, 150]",
+            "Value": "CVM_DMinVCellMinCutoff_P",
+            "ZOrder": "2499"
+          },
+          "sid": "124",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_120.xml",
+          "name": "From7",
+          "parameters": {
+            "GotoTag": "BMS_FltEnaFlag",
+            "Position": "[-150, -5, -15, 15]",
+            "TagVisibility": "global",
+            "ZOrder": "6762"
+          },
+          "sid": "125",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_120.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "LibraryVersion": "1.8",
+            "Position": "[35, -68, 180, 168]",
+            "SourceBlock": "BMSLib/Debouncer",
+            "SourceType": "Debouncer",
+            "ZOrder": "2521"
+          },
+          "sid": "126",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/systems/system_120.xml",
+          "name": "DebouncedFlt",
+          "parameters": {
+            "Position": "[270, 43, 300, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "2493"
+          },
+          "sid": "127",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_128.xml",
+          "name": "Fault",
+          "parameters": {
+            "Position": "[-100, -47, -70, -33]",
+            "ZOrder": "2492"
+          },
+          "sid": "129",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_128.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-40, 37, -15, 63]",
+            "Value": "0",
+            "ZOrder": "2497"
+          },
+          "sid": "130",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_128.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-165, 85, -5, 105]",
+            "Value": "CVM_DMaxVCellMinDrtd_P",
+            "ZOrder": "2498"
+          },
+          "sid": "131",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_128.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[-165, 130, -5, 150]",
+            "Value": "CVM_DMinVCellMinDrtd_P",
+            "ZOrder": "2499"
+          },
+          "sid": "132",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_128.xml",
+          "name": "From7",
+          "parameters": {
+            "GotoTag": "BMS_FltEnaFlag",
+            "Position": "[-150, -5, -15, 15]",
+            "TagVisibility": "global",
+            "ZOrder": "6762"
+          },
+          "sid": "133",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_128.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "LibraryVersion": "1.8",
+            "Position": "[35, -68, 180, 168]",
+            "SourceBlock": "BMSLib/Debouncer",
+            "SourceType": "Debouncer",
+            "ZOrder": "2522"
+          },
+          "sid": "134",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/systems/system_128.xml",
+          "name": "DebouncedFlt",
+          "parameters": {
+            "Position": "[270, 43, 300, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "2493"
+          },
+          "sid": "135",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_136.xml",
+          "name": "Fault",
+          "parameters": {
+            "Position": "[-100, -47, -70, -33]",
+            "ZOrder": "2492"
+          },
+          "sid": "137",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_136.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-40, 37, -15, 63]",
+            "Value": "0",
+            "ZOrder": "2497"
+          },
+          "sid": "138",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_136.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-165, 85, -5, 105]",
+            "Value": "CVM_DMaxVCellMinWarn_P",
+            "ZOrder": "2498"
+          },
+          "sid": "139",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_136.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[-165, 130, -5, 150]",
+            "Value": "CVM_DMinVCellMinWarn_P",
+            "ZOrder": "2499"
+          },
+          "sid": "140",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_136.xml",
+          "name": "From7",
+          "parameters": {
+            "GotoTag": "BMS_FltEnaFlag",
+            "Position": "[-150, -5, -15, 15]",
+            "TagVisibility": "global",
+            "ZOrder": "6762"
+          },
+          "sid": "141",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_136.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "LibraryVersion": "1.8",
+            "Position": "[35, -68, 180, 168]",
+            "SourceBlock": "BMSLib/Debouncer",
+            "SourceType": "Debouncer",
+            "ZOrder": "2522"
+          },
+          "sid": "142",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/systems/system_136.xml",
+          "name": "DebouncedFlt",
+          "parameters": {
+            "Position": "[270, 43, 300, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "2493"
+          },
+          "sid": "143",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_170.xml",
+          "name": "Obsr_TMdul",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Position": "[-265, 68, -235, 82]",
+            "ZOrder": "4"
+          },
+          "sid": "171",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_170.xml",
+          "name": "Cast",
+          "parameters": {
+            "OutDataTypeStr": "single",
+            "Position": "[-145, 178, -70, 202]",
+            "RndMeth": "Floor",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "6730"
+          },
+          "sid": "172",
+          "type": "DataTypeConversion"
+        },
+        {
+          "member": "simulink/systems/system_170.xml",
+          "name": "Constant",
+          "parameters": {
+            "Position": "[-275, 177, -190, 203]",
+            "Value": "NrTMdulSnsr_C",
+            "ZOrder": "300"
+          },
+          "sid": "173",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_170.xml",
+          "name": "Divide",
+          "parameters": {
+            "Inputs": "*/",
+            "Position": "[-25, 129, 10, 211]",
+            "ZOrder": "299"
+          },
+          "sid": "174",
+          "type": "Product"
+        },
+        {
+          "member": "simulink/systems/system_170.xml",
+          "name": "Max_Module_Temperature_Fault_State",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[65, 42, 230, 108]",
+            "ZOrder": "302"
+          },
+          "sid": "175",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_170.xml",
+          "name": "Min",
+          "parameters": {
+            "Position": "[-125, -31, -95, 1]",
+            "ZOrder": "290"
+          },
+          "sid": "216",
+          "type": "MinMax"
+        },
+        {
+          "member": "simulink/systems/system_170.xml",
+          "name": "Min1",
+          "parameters": {
+            "Function": "max",
+            "Position": "[-125, 59, -95, 91]",
+            "ZOrder": "291"
+          },
+          "sid": "217",
+          "type": "MinMax"
+        },
+        {
+          "member": "simulink/systems/system_170.xml",
+          "name": "Min_Module_Temperature_Fault_State",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[65, -48, 230, 18]",
+            "ZOrder": "292"
+          },
+          "sid": "218",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_170.xml",
+          "name": "Sum",
+          "parameters": {
+            "IconShape": "rectangular",
+            "Inputs": "+",
+            "Position": "[-125, 135, -95, 165]",
+            "ShowName": "off",
+            "ZOrder": "297"
+          },
+          "sid": "259",
+          "type": "Sum"
+        },
+        {
+          "member": "simulink/systems/system_170.xml",
+          "name": "MTM_StMdulMinTFlt",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Position": "[305, -22, 335, -8]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "294"
+          },
+          "sid": "260",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_170.xml",
+          "name": "MTM_StMdulMaxTFlt",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "2",
+            "Position": "[305, 68, 335, 82]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "295"
+          },
+          "sid": "261",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_170.xml",
+          "name": "MTM_TBat",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "3",
+            "Position": "[305, 163, 335, 177]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "301"
+          },
+          "sid": "262",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Obsr_TMdul",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Position": "[-595, -22, -565, -8]",
+            "ZOrder": "285"
+          },
+          "sid": "176",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant",
+          "parameters": {
+            "Position": "[-480, 10, -335, 30]",
+            "Value": "MTM_TMdulMaxCutoffTh_P",
+            "ZOrder": "288"
+          },
+          "sid": "177",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-480, 90, -335, 110]",
+            "Value": "MTM_TMdulMaxDrtdTh_P",
+            "ZOrder": "290"
+          },
+          "sid": "178",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-480, 170, -335, 190]",
+            "Value": "MTM_TMdulMaxWarnTh_P",
+            "ZOrder": "291"
+          },
+          "sid": "179",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[275, 52, 350, 78]",
+            "Value": "NrCutoff_C",
+            "ZOrder": "295"
+          },
+          "sid": "180",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant4",
+          "parameters": {
+            "Position": "[65, 132, 140, 158]",
+            "Value": "NrDrtd_C",
+            "ZOrder": "297"
+          },
+          "sid": "181",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant5",
+          "parameters": {
+            "Position": "[-110, 222, -35, 248]",
+            "Value": "NrWarn_C",
+            "ZOrder": "301"
+          },
+          "sid": "182",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Constant6",
+          "parameters": {
+            "Position": "[-110, 187, -35, 213]",
+            "Value": "NrNoFlt_C",
+            "ZOrder": "302"
+          },
+          "sid": "183",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Multiport\nSwitch",
+          "parameters": {
+            "DataPortOrder": "Zero-based contiguous",
+            "InputSameDT": "off",
+            "Inputs": "2",
+            "Position": "[380, -7, 420, 77]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "292",
+            "zeroidx": "on"
+          },
+          "sid": "184",
+          "type": "MultiPortSwitch"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Multiport\nSwitch1",
+          "parameters": {
+            "DataPortOrder": "Zero-based contiguous",
+            "InputSameDT": "off",
+            "Inputs": "2",
+            "Position": "[190, 73, 230, 157]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "294",
+            "zeroidx": "on"
+          },
+          "sid": "185",
+          "type": "MultiPortSwitch"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Multiport\nSwitch2",
+          "parameters": {
+            "DataPortOrder": "Zero-based contiguous",
+            "InputSameDT": "off",
+            "Inputs": "2",
+            "Position": "[-10, 150, 30, 250]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "298",
+            "zeroidx": "on"
+          },
+          "sid": "186",
+          "type": "MultiPortSwitch"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Relational\nOperator",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": ">",
+            "OutDataTypeStr": "boolean",
+            "Position": "[-315, -31, -280, 36]",
+            "RndMeth": "Simplest",
+            "ZOrder": "293"
+          },
+          "sid": "187",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Relational\nOperator1",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": ">",
+            "OutDataTypeStr": "boolean",
+            "Position": "[-315, 49, -280, 116]",
+            "RndMeth": "Simplest",
+            "ZOrder": "296"
+          },
+          "sid": "188",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Relational\nOperator2",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": ">",
+            "OutDataTypeStr": "boolean",
+            "Position": "[-315, 129, -280, 196]",
+            "RndMeth": "Simplest",
+            "ZOrder": "299"
+          },
+          "sid": "189",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-245, -16, -145, 26]",
+            "ZOrder": "2504"
+          },
+          "sid": "190",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Subsystem1",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-245, 64, -145, 106]",
+            "ZOrder": "2505"
+          },
+          "sid": "198",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "Subsystem2",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-245, 144, -145, 186]",
+            "ZOrder": "2506"
+          },
+          "sid": "206",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_175.xml",
+          "name": "MTM_StMdulMaxTFlt",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Position": "[465, 28, 495, 42]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "287"
+          },
+          "sid": "214",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_190.xml",
+          "name": "Fault",
+          "parameters": {
+            "Position": "[-100, -47, -70, -33]",
+            "ZOrder": "2492"
+          },
+          "sid": "191",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_190.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-40, 37, -15, 63]",
+            "Value": "0",
+            "ZOrder": "2497"
+          },
+          "sid": "192",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_190.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-165, 85, -5, 105]",
+            "Value": "MTM_DMaxTMdulMaxCutoff_P",
+            "ZOrder": "2498"
+          },
+          "sid": "193",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_190.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[-165, 130, -5, 150]",
+            "Value": "MTM_DMinTMdulMaxCutoff_P",
+            "ZOrder": "2499"
+          },
+          "sid": "194",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_190.xml",
+          "name": "From7",
+          "parameters": {
+            "GotoTag": "BMS_FltEnaFlag",
+            "Position": "[-150, -5, -15, 15]",
+            "TagVisibility": "global",
+            "ZOrder": "6762"
+          },
+          "sid": "195",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_190.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "LibraryVersion": "1.8",
+            "Position": "[35, -68, 180, 168]",
+            "SourceBlock": "BMSLib/Debouncer",
+            "SourceType": "Debouncer",
+            "ZOrder": "2522"
+          },
+          "sid": "196",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/systems/system_190.xml",
+          "name": "DebouncedFlt",
+          "parameters": {
+            "Position": "[270, 43, 300, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "2493"
+          },
+          "sid": "197",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_198.xml",
+          "name": "Fault",
+          "parameters": {
+            "Position": "[-100, -47, -70, -33]",
+            "ZOrder": "2492"
+          },
+          "sid": "199",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_198.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-40, 37, -15, 63]",
+            "Value": "0",
+            "ZOrder": "2497"
+          },
+          "sid": "200",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_198.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-165, 85, -5, 105]",
+            "Value": "MTM_DMaxTMdulMaxDrtd_P",
+            "ZOrder": "2498"
+          },
+          "sid": "201",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_198.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[-165, 130, -5, 150]",
+            "Value": "MTM_DMinTMdulMaxDrtd_P",
+            "ZOrder": "2499"
+          },
+          "sid": "202",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_198.xml",
+          "name": "From7",
+          "parameters": {
+            "GotoTag": "BMS_FltEnaFlag",
+            "Position": "[-150, -5, -15, 15]",
+            "TagVisibility": "global",
+            "ZOrder": "6762"
+          },
+          "sid": "203",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_198.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "LibraryVersion": "1.8",
+            "Position": "[35, -68, 180, 168]",
+            "SourceBlock": "BMSLib/Debouncer",
+            "SourceType": "Debouncer",
+            "ZOrder": "2522"
+          },
+          "sid": "204",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/systems/system_198.xml",
+          "name": "DebouncedFlt",
+          "parameters": {
+            "Position": "[270, 43, 300, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "2493"
+          },
+          "sid": "205",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_20.xml",
+          "name": "Obsr_StsIgnOn",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Position": "[585, 493, 615, 507]",
+            "ZOrder": "6670"
+          },
+          "sid": "21",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_20.xml",
+          "name": "Obsr_StsChPlg",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Port": "2",
+            "Position": "[585, 548, 615, 562]",
+            "ZOrder": "6671"
+          },
+          "sid": "22",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_20.xml",
+          "name": "BFH_StsBattFlt",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Port": "3",
+            "Position": "[585, 438, 615, 452]",
+            "ZOrder": "6672"
+          },
+          "sid": "23",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_20.xml",
+          "name": "Obsr_VBus",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Port": "4",
+            "Position": "[585, 658, 615, 672]",
+            "ZOrder": "6674"
+          },
+          "sid": "24",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_20.xml",
+          "name": "Obsr_VBatPack",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Port": "5",
+            "Position": "[585, 713, 615, 727]",
+            "ZOrder": "6675"
+          },
+          "sid": "25",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_20.xml",
+          "name": "BPC_BattSoc",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Port": "6",
+            "Position": "[585, 823, 615, 837]",
+            "ZOrder": "6682"
+          },
+          "sid": "26",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_20.xml",
+          "name": "BMS OPERATION MODE",
+          "parameters": {
+            "ErrorFcn": "Stateflow.Translate.translate",
+            "LibraryVersion": "1.267",
+            "PermitHierarchicalResolution": "ExplicitOnly",
+            "Position": "[700, 407, 955, 868]",
+            "SFBlockType": "Chart",
+            "TreatAsAtomicUnit": "on",
+            "ZOrder": "6669"
+          },
+          "sid": "27",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_20.xml",
+          "name": "Constant",
+          "parameters": {
+            "Position": "[510, 597, 615, 623]",
+            "Value": "BM_TiCtctrCnct_P",
+            "ZOrder": "6676"
+          },
+          "sid": "28",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_20.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[510, 762, 615, 788]",
+            "Value": "BM_TiCtctrDCnct_P",
+            "ZOrder": "6677"
+          },
+          "sid": "29",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_20.xml",
+          "name": "BM_OperMode",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Position": "[1030, 458, 1060, 472]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6678"
+          },
+          "sid": "30",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_20.xml",
+          "name": "BM_CtctrFlt",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "2",
+            "Position": "[1030, 573, 1060, 587]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6679"
+          },
+          "sid": "31",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_20.xml",
+          "name": "BM_StsCtctrCnct",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "3",
+            "Position": "[1030, 803, 1060, 817]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6680"
+          },
+          "sid": "32",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_20.xml",
+          "name": "BM_CtctrCnctCmd",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "4",
+            "Position": "[1030, 688, 1060, 702]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6681"
+          },
+          "sid": "33",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_206.xml",
+          "name": "Fault",
+          "parameters": {
+            "Position": "[-100, -47, -70, -33]",
+            "ZOrder": "2492"
+          },
+          "sid": "207",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_206.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-40, 37, -15, 63]",
+            "Value": "0",
+            "ZOrder": "2497"
+          },
+          "sid": "208",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_206.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-165, 85, -5, 105]",
+            "Value": "MTM_DMaxTMdulMaxWarn_P",
+            "ZOrder": "2498"
+          },
+          "sid": "209",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_206.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[-165, 130, -5, 150]",
+            "Value": "MTM_DMinTMdulMaxWarn_P",
+            "ZOrder": "2499"
+          },
+          "sid": "210",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_206.xml",
+          "name": "From7",
+          "parameters": {
+            "GotoTag": "BMS_FltEnaFlag",
+            "Position": "[-150, -5, -15, 15]",
+            "TagVisibility": "global",
+            "ZOrder": "6762"
+          },
+          "sid": "211",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_206.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "LibraryVersion": "1.8",
+            "Position": "[35, -68, 180, 168]",
+            "SourceBlock": "BMSLib/Debouncer",
+            "SourceType": "Debouncer",
+            "ZOrder": "2522"
+          },
+          "sid": "212",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/systems/system_206.xml",
+          "name": "DebouncedFlt",
+          "parameters": {
+            "Position": "[270, 43, 300, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "2493"
+          },
+          "sid": "213",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Obsr_TMdul",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Position": "[-595, -22, -565, -8]",
+            "ZOrder": "285"
+          },
+          "sid": "219",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant",
+          "parameters": {
+            "Position": "[-480, 10, -335, 30]",
+            "Value": "MTM_TMdulMinCutoffTh_P",
+            "ZOrder": "288"
+          },
+          "sid": "220",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-480, 90, -335, 110]",
+            "Value": "MTM_TMdulMinDrtdTh_P",
+            "ZOrder": "290"
+          },
+          "sid": "221",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-480, 170, -335, 190]",
+            "Value": "MTM_TMdulMinWarnTh_P",
+            "ZOrder": "291"
+          },
+          "sid": "222",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[290, 52, 365, 78]",
+            "Value": "NrCutoff_C",
+            "ZOrder": "295"
+          },
+          "sid": "223",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant4",
+          "parameters": {
+            "Position": "[80, 132, 155, 158]",
+            "Value": "NrDrtd_C",
+            "ZOrder": "297"
+          },
+          "sid": "224",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant5",
+          "parameters": {
+            "Position": "[-95, 222, -20, 248]",
+            "Value": "NrWarn_C",
+            "ZOrder": "301"
+          },
+          "sid": "225",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Constant6",
+          "parameters": {
+            "Position": "[-95, 187, -20, 213]",
+            "Value": "NrNoFlt_C",
+            "ZOrder": "302"
+          },
+          "sid": "226",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Multiport\nSwitch",
+          "parameters": {
+            "DataPortOrder": "Zero-based contiguous",
+            "InputSameDT": "off",
+            "Inputs": "2",
+            "Position": "[395, -7, 435, 77]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "292",
+            "zeroidx": "on"
+          },
+          "sid": "227",
+          "type": "MultiPortSwitch"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Multiport\nSwitch1",
+          "parameters": {
+            "DataPortOrder": "Zero-based contiguous",
+            "InputSameDT": "off",
+            "Inputs": "2",
+            "Position": "[205, 73, 245, 157]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "294",
+            "zeroidx": "on"
+          },
+          "sid": "228",
+          "type": "MultiPortSwitch"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Multiport\nSwitch2",
+          "parameters": {
+            "DataPortOrder": "Zero-based contiguous",
+            "InputSameDT": "off",
+            "Inputs": "2",
+            "Position": "[5, 150, 45, 250]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "298",
+            "zeroidx": "on"
+          },
+          "sid": "229",
+          "type": "MultiPortSwitch"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Relational\nOperator",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": "<",
+            "OutDataTypeStr": "boolean",
+            "Position": "[-315, -31, -280, 36]",
+            "RndMeth": "Simplest",
+            "ZOrder": "293"
+          },
+          "sid": "230",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Relational\nOperator1",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": "<",
+            "OutDataTypeStr": "boolean",
+            "Position": "[-315, 49, -280, 116]",
+            "RndMeth": "Simplest",
+            "ZOrder": "296"
+          },
+          "sid": "231",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Relational\nOperator2",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": "<",
+            "OutDataTypeStr": "boolean",
+            "Position": "[-315, 129, -280, 196]",
+            "RndMeth": "Simplest",
+            "ZOrder": "299"
+          },
+          "sid": "232",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-245, -16, -145, 26]",
+            "ZOrder": "2497"
+          },
+          "sid": "233",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Subsystem1",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-245, 64, -145, 106]",
+            "ZOrder": "2502"
+          },
+          "sid": "241",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "Subsystem2",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-245, 144, -145, 186]",
+            "ZOrder": "2503"
+          },
+          "sid": "249",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_218.xml",
+          "name": "MTM_StMdulMinTFlt",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Position": "[480, 28, 510, 42]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "287"
+          },
+          "sid": "257",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_233.xml",
+          "name": "Fault",
+          "parameters": {
+            "Position": "[-100, -47, -70, -33]",
+            "ZOrder": "2492"
+          },
+          "sid": "234",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_233.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-40, 37, -15, 63]",
+            "Value": "0",
+            "ZOrder": "2497"
+          },
+          "sid": "235",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_233.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-165, 85, -5, 105]",
+            "Value": "MTM_DMaxTMdulMinCutoff_P",
+            "ZOrder": "2498"
+          },
+          "sid": "236",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_233.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[-165, 130, -5, 150]",
+            "Value": "MTM_DMinTMdulMinCutoff_P",
+            "ZOrder": "2499"
+          },
+          "sid": "237",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_233.xml",
+          "name": "From7",
+          "parameters": {
+            "GotoTag": "BMS_FltEnaFlag",
+            "Position": "[-150, -5, -15, 15]",
+            "TagVisibility": "global",
+            "ZOrder": "6762"
+          },
+          "sid": "238",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_233.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "LibraryVersion": "1.8",
+            "Position": "[35, -68, 180, 168]",
+            "SourceBlock": "BMSLib/Debouncer",
+            "SourceType": "Debouncer",
+            "ZOrder": "2522"
+          },
+          "sid": "239",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/systems/system_233.xml",
+          "name": "DebouncedFlt",
+          "parameters": {
+            "Position": "[270, 43, 300, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "2493"
+          },
+          "sid": "240",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_241.xml",
+          "name": "Fault",
+          "parameters": {
+            "Position": "[-100, -47, -70, -33]",
+            "ZOrder": "2492"
+          },
+          "sid": "242",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_241.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-40, 37, -15, 63]",
+            "Value": "0",
+            "ZOrder": "2497"
+          },
+          "sid": "243",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_241.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-165, 85, -5, 105]",
+            "Value": "MTM_DMaxTMdulMinDrtd_P",
+            "ZOrder": "2498"
+          },
+          "sid": "244",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_241.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[-165, 130, -5, 150]",
+            "Value": "MTM_DMinTMdulMinDrtd_P",
+            "ZOrder": "2499"
+          },
+          "sid": "245",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_241.xml",
+          "name": "From7",
+          "parameters": {
+            "GotoTag": "BMS_FltEnaFlag",
+            "Position": "[-150, -5, -15, 15]",
+            "TagVisibility": "global",
+            "ZOrder": "6762"
+          },
+          "sid": "246",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_241.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "LibraryVersion": "1.8",
+            "Position": "[35, -68, 180, 168]",
+            "SourceBlock": "BMSLib/Debouncer",
+            "SourceType": "Debouncer",
+            "ZOrder": "2522"
+          },
+          "sid": "247",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/systems/system_241.xml",
+          "name": "DebouncedFlt",
+          "parameters": {
+            "Position": "[270, 43, 300, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "2493"
+          },
+          "sid": "248",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_249.xml",
+          "name": "Fault",
+          "parameters": {
+            "Position": "[-100, -47, -70, -33]",
+            "ZOrder": "2492"
+          },
+          "sid": "250",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_249.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-40, 37, -15, 63]",
+            "Value": "0",
+            "ZOrder": "2497"
+          },
+          "sid": "251",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_249.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-165, 85, -5, 105]",
+            "Value": "MTM_DMaxTMdulMinWarn_P",
+            "ZOrder": "2498"
+          },
+          "sid": "252",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_249.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[-165, 130, -5, 150]",
+            "Value": "MTM_DMinTMdulMinWarn_P",
+            "ZOrder": "2499"
+          },
+          "sid": "253",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_249.xml",
+          "name": "From7",
+          "parameters": {
+            "GotoTag": "BMS_FltEnaFlag",
+            "Position": "[-150, -5, -15, 15]",
+            "TagVisibility": "global",
+            "ZOrder": "6762"
+          },
+          "sid": "254",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_249.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "LibraryVersion": "1.8",
+            "Position": "[35, -68, 180, 168]",
+            "SourceBlock": "BMSLib/Debouncer",
+            "SourceType": "Debouncer",
+            "ZOrder": "2522"
+          },
+          "sid": "255",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/systems/system_249.xml",
+          "name": "DebouncedFlt",
+          "parameters": {
+            "Position": "[270, 43, 300, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "2493"
+          },
+          "sid": "256",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": "BFH_StsBattFlt",
+          "parameters": {
+            "Position": "[20, 101, 40, 119]",
+            "ZOrder": "74"
+          },
+          "sid": "27::95",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": "Obsr_StsIgnOn",
+          "parameters": {
+            "Port": "2",
+            "Position": "[20, 136, 40, 154]",
+            "ZOrder": "75"
+          },
+          "sid": "27::96",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": "Obsr_StsChPlg",
+          "parameters": {
+            "Port": "3",
+            "Position": "[20, 171, 40, 189]",
+            "ZOrder": "76"
+          },
+          "sid": "27::97",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": "BM_TiCtctrCnct_P",
+          "parameters": {
+            "Port": "4",
+            "Position": "[20, 206, 40, 224]",
+            "ZOrder": "77"
+          },
+          "sid": "27::98",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": "Obsr_VBus",
+          "parameters": {
+            "Port": "5",
+            "Position": "[20, 246, 40, 264]",
+            "ZOrder": "78"
+          },
+          "sid": "27::99",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": "Obsr_VBatPack",
+          "parameters": {
+            "Port": "6",
+            "Position": "[20, 281, 40, 299]",
+            "ZOrder": "79"
+          },
+          "sid": "27::100",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": "BM_TiCtctrDCnct_P",
+          "parameters": {
+            "Port": "7",
+            "Position": "[20, 316, 40, 334]",
+            "ZOrder": "80"
+          },
+          "sid": "27::101",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": "BPC_BattSoc",
+          "parameters": {
+            "Port": "8",
+            "Position": "[20, 351, 40, 369]",
+            "ZOrder": "85"
+          },
+          "sid": "27::106",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": " Demux ",
+          "parameters": {
+            "Outputs": "1",
+            "Position": "[270, 280, 320, 320]",
+            "ZOrder": "87"
+          },
+          "sid": "27::110",
+          "type": "Demux"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": " SFunction ",
+          "parameters": {
+            "EnableBusSupport": "on",
+            "FunctionName": "sf_sfun",
+            "PortCounts": "[8 5]",
+            "Position": "[180, 100, 230, 280]",
+            "SFcnIsStateOwnerBlock": "off",
+            "SFunctionDeploymentMode": "off",
+            "Tag": "Stateflow S-Function 3",
+            "ZOrder": "86"
+          },
+          "sid": "27::109",
+          "type": "S-Function"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": " Terminator ",
+          "parameters": {
+            "Position": "[460, 291, 480, 309]",
+            "ZOrder": "88"
+          },
+          "sid": "27::111",
+          "type": "Terminator"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": "BM_OperMode",
+          "parameters": {
+            "Position": "[460, 101, 480, 119]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "81"
+          },
+          "sid": "27::102",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": "BM_CtctrFlt",
+          "parameters": {
+            "Port": "2",
+            "Position": "[460, 136, 480, 154]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "82"
+          },
+          "sid": "27::103",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": "BM_CtctrCnctCmd",
+          "parameters": {
+            "Port": "3",
+            "Position": "[460, 171, 480, 189]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "83"
+          },
+          "sid": "27::104",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_27.xml",
+          "name": "BM_StsCtctrCnct",
+          "parameters": {
+            "Port": "4",
+            "Position": "[460, 206, 480, 224]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "84"
+          },
+          "sid": "27::105",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Obsr_IBatPack",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Position": "[-580, 8, -550, 22]",
+            "ZOrder": "4"
+          },
+          "sid": "36",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Obsr_VBatPack",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Port": "2",
+            "Position": "[-580, 168, -550, 182]",
+            "ZOrder": "6875"
+          },
+          "sid": "37",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "BMS_TiProc_C2",
+          "parameters": {
+            "HideAutomaticName": "off",
+            "Position": "[-305, 342, -170, 368]",
+            "ShowName": "off",
+            "Value": "BPC_BattTotalCharge_P",
+            "ZOrder": "6900"
+          },
+          "sid": "38",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Data Store\nMemory1",
+          "parameters": {
+            "BackgroundColor": "cyan",
+            "DataStoreName": "BPC_BattAmpHr",
+            "InitialValue": "48*0.985",
+            "OutDataTypeStr": "double",
+            "Position": "[-720, 20, -623, 50]",
+            "ReadBeforeWriteMsg": "warning",
+            "ShowAdditionalParam": "off",
+            "WriteAfterReadMsg": "warning",
+            "WriteAfterWriteMsg": "warning",
+            "ZOrder": "6906"
+          },
+          "sid": "39",
+          "type": "DataStoreMemory"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Data Store\nMemory2",
+          "parameters": {
+            "BackgroundColor": "cyan",
+            "DataStoreName": "BPC_BattWHr",
+            "InitialValue": "48*3*4.22*0.985",
+            "OutDataTypeStr": "double",
+            "Position": "[-720, 75, -623, 105]",
+            "ReadBeforeWriteMsg": "warning",
+            "ShowAdditionalParam": "off",
+            "WriteAfterReadMsg": "warning",
+            "WriteAfterWriteMsg": "warning",
+            "ZOrder": "6907"
+          },
+          "sid": "40",
+          "type": "DataStoreMemory"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Data Store\nRead1",
+          "parameters": {
+            "BackgroundColor": "cyan",
+            "DataStoreName": "BPC_BattWHr",
+            "IndexOptions": "Index vector (dialog)",
+            "Indices": "1",
+            "OutputSizes": "1",
+            "Position": "[-400, 205, -295, 235]",
+            "ZOrder": "6908"
+          },
+          "sid": "41",
+          "type": "DataStoreRead"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Data Store\nRead2",
+          "parameters": {
+            "BackgroundColor": "cyan",
+            "DataStoreName": "BPC_BattAmpHr",
+            "IndexOptions": "Index vector (dialog)",
+            "Indices": "1",
+            "OutputSizes": "1",
+            "Position": "[-400, 65, -295, 95]",
+            "ZOrder": "6909"
+          },
+          "sid": "42",
+          "type": "DataStoreRead"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Data Store\nWrite1",
+          "parameters": {
+            "BackgroundColor": "cyan",
+            "DataStoreName": "BPC_BattWHr",
+            "IndexOptions": "Index vector (dialog)",
+            "Indices": "1",
+            "OutputSizes": "1",
+            "Position": "[95, 132, 205, 158]",
+            "ZOrder": "6910"
+          },
+          "sid": "43",
+          "type": "DataStoreWrite"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Data Store\nWrite2",
+          "parameters": {
+            "BackgroundColor": "cyan",
+            "DataStoreName": "BPC_BattAmpHr",
+            "IndexOptions": "Index vector (dialog)",
+            "Indices": "1",
+            "OutputSizes": "1",
+            "Position": "[95, -10, 205, 20]",
+            "ZOrder": "6911"
+          },
+          "sid": "44",
+          "type": "DataStoreWrite"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Discrete-Time\nIntegrator",
+          "parameters": {
+            "ICPrevOutput": "DiscIntNeverNeededParam",
+            "ICPrevScaledInput": "DiscIntNeverNeededParam",
+            "InitialConditionSetting": "Auto",
+            "InitialConditionSource": "external",
+            "LimitOutput": "on",
+            "LowerSaturationLimit": "0",
+            "Position": "[-130, -18, -75, 113]",
+            "SampleTime": "-1",
+            "UpperSaturationLimit": "BPC_BattTotalCharge_P",
+            "ZOrder": "6904"
+          },
+          "sid": "45",
+          "type": "DiscreteIntegrator"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Discrete-Time\nIntegrator1",
+          "parameters": {
+            "ICPrevOutput": "DiscIntNeverNeededParam",
+            "ICPrevScaledInput": "DiscIntNeverNeededParam",
+            "InitialConditionSetting": "Auto",
+            "InitialConditionSource": "external",
+            "LimitOutput": "on",
+            "LowerSaturationLimit": "0",
+            "Position": "[-130, 122, -75, 253]",
+            "SampleTime": "-1",
+            "UpperSaturationLimit": "BPC_BattTotalEnergy_P",
+            "ZOrder": "6905"
+          },
+          "sid": "46",
+          "type": "DiscreteIntegrator"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Divide",
+          "parameters": {
+            "Inputs": "*/",
+            "OutDataTypeStr": "single",
+            "Position": "[-120, 282, -80, 378]",
+            "ZOrder": "6899"
+          },
+          "sid": "47",
+          "type": "Product"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "From",
+          "parameters": {
+            "GotoTag": "BPM_BattCharge",
+            "Position": "[-435, 292, -315, 318]",
+            "ZOrder": "6896"
+          },
+          "sid": "48",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Gain",
+          "parameters": {
+            "Gain": "-BMS_TiSample_C/3600",
+            "OutDataTypeStr": "double",
+            "Position": "[-290, -15, -155, 45]",
+            "ZOrder": "6912"
+          },
+          "sid": "49",
+          "type": "Gain"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Gain1",
+          "parameters": {
+            "Gain": "-BMS_TiSample_C/3600",
+            "OutDataTypeStr": "double",
+            "Position": "[-290, 125, -155, 185]",
+            "ZOrder": "6913"
+          },
+          "sid": "50",
+          "type": "Gain"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Gain2",
+          "parameters": {
+            "Gain": "100",
+            "OutMax": "[100]",
+            "OutMin": "[0]",
+            "Position": "[-25, 315, 5, 345]",
+            "ZOrder": "6901"
+          },
+          "sid": "51",
+          "type": "Gain"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Goto",
+          "parameters": {
+            "GotoTag": "BPM_BattCharge",
+            "Position": "[25, 82, 150, 108]",
+            "ZOrder": "6895"
+          },
+          "sid": "52",
+          "type": "Goto"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Multiply1",
+          "parameters": {
+            "Position": "[-400, 117, -365, 193]",
+            "ZOrder": "6883"
+          },
+          "sid": "53",
+          "type": "Product"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "Saturation",
+          "parameters": {
+            "LowerLimit": "0",
+            "Position": "[35, 315, 65, 345]",
+            "UpperLimit": "100",
+            "ZOrder": "6902"
+          },
+          "sid": "54",
+          "type": "Saturate"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "BPC_BattAmpHr",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Position": "[210, 43, 240, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6882"
+          },
+          "sid": "55",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "BPC_BattWh",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "2",
+            "Position": "[210, 183, 240, 197]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6889"
+          },
+          "sid": "56",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_35.xml",
+          "name": "BPC_BattSoc",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "3",
+            "Position": "[210, 323, 240, 337]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6897"
+          },
+          "sid": "57",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_60.xml",
+          "name": "Obsr_VCell",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Position": "[-325, -2, -295, 12]",
+            "ZOrder": "1"
+          },
+          "sid": "61",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_60.xml",
+          "name": "Max_Cell_Voltage_Fault_State",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-90, 17, 75, 83]",
+            "ZOrder": "287"
+          },
+          "sid": "62",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_60.xml",
+          "name": "Min",
+          "parameters": {
+            "Position": "[-185, -56, -155, -24]",
+            "ZOrder": "279"
+          },
+          "sid": "103",
+          "type": "MinMax"
+        },
+        {
+          "member": "simulink/systems/system_60.xml",
+          "name": "Min1",
+          "parameters": {
+            "Function": "max",
+            "Position": "[-185, 34, -155, 66]",
+            "ZOrder": "280"
+          },
+          "sid": "104",
+          "type": "MinMax"
+        },
+        {
+          "member": "simulink/systems/system_60.xml",
+          "name": "Min_Cell_Voltage_Fault_State",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-90, -73, 75, -7]",
+            "ZOrder": "286"
+          },
+          "sid": "105",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_60.xml",
+          "name": "CVM_StCellMinVFlt",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Position": "[150, -47, 180, -33]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "288"
+          },
+          "sid": "146",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_60.xml",
+          "name": "CVM_StCellMaxVFlt",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "2",
+            "Position": "[150, 43, 180, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "289"
+          },
+          "sid": "147",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "CVM_VCellMin",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Position": "[-595, -22, -565, -8]",
+            "ZOrder": "285"
+          },
+          "sid": "63",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant",
+          "parameters": {
+            "Position": "[-480, 10, -335, 30]",
+            "Value": "CVM_VCellMaxCutoffTh_P",
+            "ZOrder": "288"
+          },
+          "sid": "64",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-480, 90, -335, 110]",
+            "Value": "CVM_VCellMaxDrtdTh_P",
+            "ZOrder": "290"
+          },
+          "sid": "65",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-480, 170, -335, 190]",
+            "Value": "CVM_VCellMaxWarnTh_P",
+            "ZOrder": "291"
+          },
+          "sid": "66",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[300, 52, 375, 78]",
+            "Value": "NrCutoff_C",
+            "ZOrder": "295"
+          },
+          "sid": "67",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant4",
+          "parameters": {
+            "Position": "[90, 132, 165, 158]",
+            "Value": "NrDrtd_C",
+            "ZOrder": "297"
+          },
+          "sid": "68",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant5",
+          "parameters": {
+            "Position": "[-105, 222, -30, 248]",
+            "Value": "NrWarn_C",
+            "ZOrder": "301"
+          },
+          "sid": "69",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Constant6",
+          "parameters": {
+            "Position": "[-105, 187, -30, 213]",
+            "Value": "NrNoFlt_C",
+            "ZOrder": "302"
+          },
+          "sid": "70",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Multiport\nSwitch",
+          "parameters": {
+            "DataPortOrder": "Zero-based contiguous",
+            "InputSameDT": "off",
+            "Inputs": "2",
+            "Position": "[405, -7, 445, 77]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "292",
+            "zeroidx": "on"
+          },
+          "sid": "71",
+          "type": "MultiPortSwitch"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Multiport\nSwitch1",
+          "parameters": {
+            "DataPortOrder": "Zero-based contiguous",
+            "InputSameDT": "off",
+            "Inputs": "2",
+            "Position": "[215, 73, 255, 157]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "294",
+            "zeroidx": "on"
+          },
+          "sid": "72",
+          "type": "MultiPortSwitch"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Multiport\nSwitch2",
+          "parameters": {
+            "DataPortOrder": "Zero-based contiguous",
+            "InputSameDT": "off",
+            "Inputs": "2",
+            "Position": "[15, 150, 55, 250]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "298",
+            "zeroidx": "on"
+          },
+          "sid": "73",
+          "type": "MultiPortSwitch"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Relational\nOperator",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": ">",
+            "OutDataTypeStr": "boolean",
+            "Position": "[-315, -31, -280, 36]",
+            "RndMeth": "Simplest",
+            "ZOrder": "293"
+          },
+          "sid": "74",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Relational\nOperator1",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": ">",
+            "OutDataTypeStr": "boolean",
+            "Position": "[-315, 49, -280, 116]",
+            "RndMeth": "Simplest",
+            "ZOrder": "296"
+          },
+          "sid": "75",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Relational\nOperator2",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": ">",
+            "OutDataTypeStr": "boolean",
+            "Position": "[-315, 129, -280, 196]",
+            "RndMeth": "Simplest",
+            "ZOrder": "299"
+          },
+          "sid": "76",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-215, -16, -115, 26]",
+            "ZOrder": "2497"
+          },
+          "sid": "77",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Subsystem1",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-215, 64, -115, 106]",
+            "ZOrder": "2498"
+          },
+          "sid": "85",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "Subsystem2",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[-215, 144, -115, 186]",
+            "ZOrder": "2499"
+          },
+          "sid": "93",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_62.xml",
+          "name": "CVM_StCellMaxVFlt",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Position": "[490, 28, 520, 42]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "287"
+          },
+          "sid": "101",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_77.xml",
+          "name": "Fault",
+          "parameters": {
+            "Position": "[-100, -47, -70, -33]",
+            "ZOrder": "2492"
+          },
+          "sid": "78",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_77.xml",
+          "name": "Constant",
+          "parameters": {
+            "Position": "[-45, 35, -15, 65]",
+            "Value": "0",
+            "ZOrder": "6764"
+          },
+          "sid": "79",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_77.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-165, 85, -5, 105]",
+            "Value": "CVM_DMaxVCellMaxCutoff_P",
+            "ZOrder": "2498"
+          },
+          "sid": "80",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_77.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[-165, 130, -5, 150]",
+            "Value": "CVM_DMinVCellMaxCutoff_P",
+            "ZOrder": "2499"
+          },
+          "sid": "81",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_77.xml",
+          "name": "From7",
+          "parameters": {
+            "GotoTag": "BMS_FltEnaFlag",
+            "Position": "[-150, -5, -15, 15]",
+            "TagVisibility": "global",
+            "ZOrder": "6762"
+          },
+          "sid": "82",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_77.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "LibraryVersion": "1.8",
+            "Position": "[35, -68, 180, 168]",
+            "SourceBlock": "BMSLib/Debouncer",
+            "SourceType": "Debouncer",
+            "ZOrder": "2522"
+          },
+          "sid": "83",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/systems/system_77.xml",
+          "name": "DebouncedFlt",
+          "parameters": {
+            "Position": "[270, 43, 300, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "2493"
+          },
+          "sid": "84",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_8.xml",
+          "name": "CVM_StCellMaxVFlt",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Position": "[-65, 43, -35, 57]",
+            "ZOrder": "6723"
+          },
+          "sid": "9",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_8.xml",
+          "name": "CVM_StCellMinVFlt",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Port": "2",
+            "Position": "[-65, 98, -35, 112]",
+            "ZOrder": "6724"
+          },
+          "sid": "10",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_8.xml",
+          "name": "MTM_StMdulMinTFlt",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Port": "3",
+            "Position": "[-65, 153, -35, 167]",
+            "ZOrder": "6725"
+          },
+          "sid": "11",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_8.xml",
+          "name": "MTM_StMdulMaxTFlt",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Port": "4",
+            "Position": "[-65, 208, -35, 222]",
+            "ZOrder": "6726"
+          },
+          "sid": "12",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_8.xml",
+          "name": "BM_HvCtctrFlt",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "Port": "5",
+            "Position": "[-65, 263, -35, 277]",
+            "ZOrder": "6728"
+          },
+          "sid": "13",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_8.xml",
+          "name": "Cast",
+          "parameters": {
+            "OutDataTypeStr": "uint8",
+            "Position": "[45, 258, 120, 282]",
+            "RndMeth": "Floor",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "6729"
+          },
+          "sid": "14",
+          "type": "DataTypeConversion"
+        },
+        {
+          "member": "simulink/systems/system_8.xml",
+          "name": "Delay",
+          "parameters": {
+            "DelayLength": "1",
+            "InputPortMap": "u0",
+            "Position": "[-10, 258, 15, 282]",
+            "ZOrder": "6730"
+          },
+          "sid": "15",
+          "type": "Delay"
+        },
+        {
+          "member": "simulink/systems/system_8.xml",
+          "name": "Max",
+          "parameters": {
+            "Function": "max",
+            "OutDataTypeStr": "uint8",
+            "Position": "[205, 143, 235, 177]",
+            "ZOrder": "6720"
+          },
+          "sid": "16",
+          "type": "MinMax"
+        },
+        {
+          "member": "simulink/systems/system_8.xml",
+          "name": "Mux",
+          "parameters": {
+            "DisplayOption": "bar",
+            "Inputs": "5",
+            "Position": "[155, 17, 160, 303]",
+            "ShowName": "off",
+            "ZOrder": "6721"
+          },
+          "sid": "17",
+          "type": "Mux"
+        },
+        {
+          "member": "simulink/systems/system_8.xml",
+          "name": "BFH_StsBattFlt",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Position": "[320, 153, 350, 167]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6727"
+          },
+          "sid": "18",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_85.xml",
+          "name": "Fault",
+          "parameters": {
+            "Position": "[-100, -47, -70, -33]",
+            "ZOrder": "2492"
+          },
+          "sid": "86",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_85.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-40, 37, -15, 63]",
+            "Value": "0",
+            "ZOrder": "2497"
+          },
+          "sid": "87",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_85.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-165, 85, -5, 105]",
+            "Value": "CVM_DMaxVCellMaxDrtd_P",
+            "ZOrder": "2498"
+          },
+          "sid": "88",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_85.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[-165, 130, -5, 150]",
+            "Value": "CVM_DMinVCellMaxDrtd_P",
+            "ZOrder": "2499"
+          },
+          "sid": "89",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_85.xml",
+          "name": "From7",
+          "parameters": {
+            "GotoTag": "BMS_FltEnaFlag",
+            "Position": "[-150, -5, -15, 15]",
+            "TagVisibility": "global",
+            "ZOrder": "6763"
+          },
+          "sid": "90",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_85.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "LibraryVersion": "1.8",
+            "Position": "[35, -68, 180, 168]",
+            "SourceBlock": "BMSLib/Debouncer",
+            "SourceType": "Debouncer",
+            "ZOrder": "2522"
+          },
+          "sid": "91",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/systems/system_85.xml",
+          "name": "DebouncedFlt",
+          "parameters": {
+            "Position": "[270, 43, 300, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "2493"
+          },
+          "sid": "92",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_93.xml",
+          "name": "Fault",
+          "parameters": {
+            "Position": "[-100, -47, -70, -33]",
+            "ZOrder": "2492"
+          },
+          "sid": "94",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_93.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[-40, 37, -15, 63]",
+            "Value": "0",
+            "ZOrder": "2497"
+          },
+          "sid": "95",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_93.xml",
+          "name": "Constant2",
+          "parameters": {
+            "Position": "[-165, 85, -5, 105]",
+            "Value": "CVM_DMaxVCellMaxWarn_P",
+            "ZOrder": "2498"
+          },
+          "sid": "96",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_93.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[-165, 130, -5, 150]",
+            "Value": "CVM_DMinVCellMaxWarn_P",
+            "ZOrder": "2499"
+          },
+          "sid": "97",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_93.xml",
+          "name": "From7",
+          "parameters": {
+            "GotoTag": "BMS_FltEnaFlag",
+            "Position": "[-150, -5, -15, 15]",
+            "TagVisibility": "global",
+            "ZOrder": "6763"
+          },
+          "sid": "98",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_93.xml",
+          "name": "Subsystem",
+          "parameters": {
+            "LibraryVersion": "1.8",
+            "Position": "[35, -68, 180, 168]",
+            "SourceBlock": "BMSLib/Debouncer",
+            "SourceType": "Debouncer",
+            "ZOrder": "2522"
+          },
+          "sid": "99",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/systems/system_93.xml",
+          "name": "DebouncedFlt",
+          "parameters": {
+            "Position": "[270, 43, 300, 57]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "2493"
+          },
+          "sid": "100",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Obsr_VCell",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "OutDataTypeStr": "single",
+            "PortDimensions": "3",
+            "Position": "[85, 68, 115, 82]",
+            "Unit": "V",
+            "ZOrder": "-1"
+          },
+          "sid": "1",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Obsr_VBatPack",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "OutDataTypeStr": "single",
+            "Port": "2",
+            "PortDimensions": "1",
+            "Position": "[90, 478, 120, 492]",
+            "Unit": "V",
+            "ZOrder": "2"
+          },
+          "sid": "2",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Obsr_VBus",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "OutDataTypeStr": "single",
+            "Port": "3",
+            "PortDimensions": "1",
+            "Position": "[820, 193, 850, 207]",
+            "Unit": "V",
+            "ZOrder": "1"
+          },
+          "sid": "3",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Obsr_TMdul",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "OutDataTypeStr": "single",
+            "Port": "4",
+            "PortDimensions": "3",
+            "Position": "[85, 248, 115, 262]",
+            "Unit": "degC",
+            "ZOrder": "7"
+          },
+          "sid": "4",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Obsr_IBatPack",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "OutDataTypeStr": "single",
+            "Port": "5",
+            "PortDimensions": "1",
+            "Position": "[90, 418, 120, 432]",
+            "Unit": "A",
+            "ZOrder": "4"
+          },
+          "sid": "5",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Obsr_StsIgnOn",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "OutDataTypeStr": "boolean",
+            "Port": "6",
+            "PortDimensions": "1",
+            "Position": "[820, 43, 850, 57]",
+            "Unit": "1",
+            "ZOrder": "6683"
+          },
+          "sid": "6",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Obsr_StsChPlg",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "OutDataTypeStr": "boolean",
+            "Port": "7",
+            "PortDimensions": "1",
+            "Position": "[820, 93, 850, 107]",
+            "Unit": "1",
+            "ZOrder": "6684"
+          },
+          "sid": "7",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "BATTERY_FAULT_HANDLING - BFH",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[1000, 397, 1210, 673]",
+            "ZOrder": "6722"
+          },
+          "sid": "8",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "BATTERY_OPERATION_MODE - BM",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[995, 21, 1210, 329]",
+            "ZOrder": "10"
+          },
+          "sid": "20",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "BATTERY_PARAMETER_CALCULATION - BPC",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[220, 394, 475, 516]",
+            "ZOrder": "6699"
+          },
+          "sid": "35",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "BMS_FltEnaFlag",
+          "parameters": {
+            "BreakpointsForDimension1": "BMS_ModeEnaFltChk",
+            "DiagnosticForOutOfRangeInput": "Error",
+            "ExtrapMethod": "Clip",
+            "InputPortMap": "u0",
+            "InternalRulePriority": "Speed",
+            "InterpMethod": "Nearest",
+            "NumberOfTableDimensions": "1",
+            "Position": "[315, 608, 380, 672]",
+            "RndMeth": "Simplest",
+            "Table": "BMS_EnaFltSts",
+            "ZOrder": "6757"
+          },
+          "sid": "59",
+          "type": "Lookup_n-D"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "CELL_VOLTAGE_MONITORING - CVM",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[220, 17, 475, 128]",
+            "ZOrder": "5"
+          },
+          "sid": "60",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Constant3",
+          "parameters": {
+            "Position": "[1220, 622, 1295, 648]",
+            "Value": "NrCutoff_C",
+            "ZOrder": "6741"
+          },
+          "sid": "149",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "From",
+          "parameters": {
+            "GotoTag": "BPC_BattSoc",
+            "Position": "[800, 287, 925, 313]",
+            "TagVisibility": "global",
+            "ZOrder": "6731"
+          },
+          "sid": "150",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "From1",
+          "parameters": {
+            "GotoTag": "Obsr_VBatPack",
+            "Position": "[800, 237, 915, 263]",
+            "ZOrder": "6701"
+          },
+          "sid": "151",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "From2",
+          "parameters": {
+            "GotoTag": "BM_OperMode",
+            "Position": "[55, 627, 190, 653]",
+            "ZOrder": "6755"
+          },
+          "sid": "152",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "From3",
+          "parameters": {
+            "GotoTag": "CVM_StCellMinVFlt",
+            "Position": "[765, 470, 900, 490]",
+            "ZOrder": "6715"
+          },
+          "sid": "153",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "From4",
+          "parameters": {
+            "GotoTag": "CVM_StCellMaxVFlt",
+            "Position": "[765, 415, 900, 435]",
+            "ZOrder": "6716"
+          },
+          "sid": "154",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "From5",
+          "parameters": {
+            "GotoTag": "MTM_StMdulMinTFlt",
+            "Position": "[765, 525, 900, 545]",
+            "ZOrder": "6717"
+          },
+          "sid": "155",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "From6",
+          "parameters": {
+            "GotoTag": "MTM_StMdulMaxTFlt",
+            "Position": "[765, 580, 900, 600]",
+            "ZOrder": "6718"
+          },
+          "sid": "156",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "From8",
+          "parameters": {
+            "GotoTag": "BFH_StsBattFlt",
+            "Position": "[800, 140, 935, 160]",
+            "ZOrder": "6724"
+          },
+          "sid": "157",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "From9",
+          "parameters": {
+            "GotoTag": "BM_CtctrFlt",
+            "Position": "[765, 637, 900, 653]",
+            "ZOrder": "6726"
+          },
+          "sid": "158",
+          "type": "From"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Goto",
+          "parameters": {
+            "GotoTag": "BM_CtctrFlt",
+            "Position": "[1375, 127, 1510, 153]",
+            "ZOrder": "6695"
+          },
+          "sid": "159",
+          "type": "Goto"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Goto1",
+          "parameters": {
+            "GotoTag": "BPC_BattSoc",
+            "Position": "[530, 540, 665, 560]",
+            "TagVisibility": "global",
+            "ZOrder": "6730"
+          },
+          "sid": "160",
+          "type": "Goto"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Goto10",
+          "parameters": {
+            "GotoTag": "BFH_StsBattFlt",
+            "Position": "[1475, 600, 1610, 620]",
+            "ZOrder": "6725"
+          },
+          "sid": "161",
+          "type": "Goto"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Goto2",
+          "parameters": {
+            "GotoTag": "BM_CtctrCnctCmd",
+            "Position": "[1395, 342, 1535, 368]",
+            "TagVisibility": "global",
+            "ZOrder": "6739"
+          },
+          "sid": "162",
+          "type": "Goto"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Goto3",
+          "parameters": {
+            "GotoTag": "Obsr_VBatPack",
+            "Position": "[200, 542, 315, 568]",
+            "ZOrder": "6700"
+          },
+          "sid": "163",
+          "type": "Goto"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Goto4",
+          "parameters": {
+            "GotoTag": "BM_OperMode",
+            "Position": "[1375, -3, 1510, 23]",
+            "ZOrder": "6754"
+          },
+          "sid": "164",
+          "type": "Goto"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Goto5",
+          "parameters": {
+            "GotoTag": "CVM_StCellMinVFlt",
+            "Position": "[555, 35, 690, 55]",
+            "ZOrder": "6709"
+          },
+          "sid": "165",
+          "type": "Goto"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Goto6",
+          "parameters": {
+            "GotoTag": "CVM_StCellMaxVFlt",
+            "Position": "[555, 90, 690, 110]",
+            "ZOrder": "6710"
+          },
+          "sid": "166",
+          "type": "Goto"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Goto7",
+          "parameters": {
+            "GotoTag": "MTM_StMdulMinTFlt",
+            "Position": "[560, 210, 695, 230]",
+            "ZOrder": "6711"
+          },
+          "sid": "167",
+          "type": "Goto"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Goto8",
+          "parameters": {
+            "GotoTag": "MTM_StMdulMaxTFlt",
+            "Position": "[560, 245, 695, 265]",
+            "ZOrder": "6712"
+          },
+          "sid": "168",
+          "type": "Goto"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Goto9",
+          "parameters": {
+            "GotoTag": "BMS_FltEnaFlag",
+            "Position": "[540, 630, 675, 650]",
+            "TagVisibility": "global",
+            "ZOrder": "6760"
+          },
+          "sid": "169",
+          "type": "Goto"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "MODULE_TEMPERATURE_MONITORING - MTM",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Position": "[220, 201, 475, 309]",
+            "ZOrder": "8"
+          },
+          "sid": "170",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Relational\nOperator",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": "==",
+            "OutDataTypeStr": "boolean",
+            "Position": "[1330, 562, 1365, 658]",
+            "RndMeth": "Simplest",
+            "ZOrder": "6728"
+          },
+          "sid": "264",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "Unit Delay",
+          "parameters": {
+            "HasFrameUpgradeWarning": "on",
+            "Position": "[225, 623, 260, 657]",
+            "SampleTime": "-1",
+            "ZOrder": "6762"
+          },
+          "sid": "265",
+          "type": "UnitDelay"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "BM_OperMode",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Position": "[1385, 58, 1415, 72]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6691"
+          },
+          "sid": "266",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "BM_CtctrCnctCmd",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "2",
+            "Position": "[1385, 283, 1415, 297]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6694"
+          },
+          "sid": "267",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "BPC_BattSoc",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "3",
+            "Position": "[565, 488, 595, 502]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6705"
+          },
+          "sid": "268",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "BPC_BattWh",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "4",
+            "Position": "[565, 448, 595, 462]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6706"
+          },
+          "sid": "269",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "BPC_BattAmpHr",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "5",
+            "Position": "[565, 408, 595, 422]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6707"
+          },
+          "sid": "270",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "MTM_TBat",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "6",
+            "Position": "[560, 283, 590, 297]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6714"
+          },
+          "sid": "271",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "BFH_StsBattFlt",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "7",
+            "Position": "[1385, 528, 1415, 542]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6723"
+          },
+          "sid": "272",
+          "type": "Outport"
+        },
+        {
+          "member": "simulink/systems/system_root.xml",
+          "name": "BM_StsCtctrCnct",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "Port": "8",
+            "Position": "[1385, 208, 1415, 222]",
+            "VectorParamsAs1DForOutWhenUnconnected": "off",
+            "ZOrder": "6727"
+          },
+          "sid": "273",
+          "type": "Outport"
+        }
+      ],
+      "effective_logic_blocks": 115,
+      "lines": [
+        {
+          "Dst": "116#in:1",
+          "Src": "136#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "115#in:1",
+          "Src": "128#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "114#in:1",
+          "Src": "120#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "116#in:2",
+          "Src": "113#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "116#in:3",
+          "Src": "112#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "119#in:2",
+          "Src": "109#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "136#in:1",
+          "Src": "119#out:1",
+          "ZOrder": "7",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "115#in:2",
+          "Points": "[14, 0; 0, -85]",
+          "Src": "116#out:1",
+          "ZOrder": "8",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "115#in:3",
+          "Src": "111#out:1",
+          "ZOrder": "9",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "118#in:2",
+          "Src": "108#out:1",
+          "ZOrder": "10",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "128#in:1",
+          "Src": "118#out:1",
+          "ZOrder": "11",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "114#in:3",
+          "Src": "110#out:1",
+          "ZOrder": "12",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "114#in:2",
+          "Points": "[12, 0; 0, -80]",
+          "Src": "115#out:1",
+          "ZOrder": "13",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "117#in:2",
+          "Src": "107#out:1",
+          "ZOrder": "14",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "120#in:1",
+          "Src": "117#out:1",
+          "ZOrder": "15",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "144#in:1",
+          "Src": "114#out:1",
+          "ZOrder": "16",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Points": "[54, 0]",
+          "Src": "106#out:1",
+          "ZOrder": "17",
+          "member": "simulink/systems/system_105.xml"
+        },
+        {
+          "Dst": "126#in:5",
+          "Src": "124#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_120.xml"
+        },
+        {
+          "Dst": "126#in:4",
+          "Src": "123#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_120.xml"
+        },
+        {
+          "Dst": "126#in:3",
+          "Src": "122#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_120.xml"
+        },
+        {
+          "Dst": "126#in:2",
+          "Src": "125#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_120.xml"
+        },
+        {
+          "Dst": "127#in:1",
+          "Src": "126#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_120.xml"
+        },
+        {
+          "Dst": "126#in:1",
+          "Src": "121#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_120.xml"
+        },
+        {
+          "Dst": "134#in:1",
+          "Src": "129#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_128.xml"
+        },
+        {
+          "Dst": "135#in:1",
+          "Src": "134#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_128.xml"
+        },
+        {
+          "Dst": "134#in:2",
+          "Src": "133#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_128.xml"
+        },
+        {
+          "Dst": "134#in:3",
+          "Src": "130#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_128.xml"
+        },
+        {
+          "Dst": "134#in:4",
+          "Src": "131#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_128.xml"
+        },
+        {
+          "Dst": "134#in:5",
+          "Src": "132#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_128.xml"
+        },
+        {
+          "Dst": "142#in:5",
+          "Src": "140#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_136.xml"
+        },
+        {
+          "Dst": "142#in:4",
+          "Src": "139#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_136.xml"
+        },
+        {
+          "Dst": "142#in:3",
+          "Src": "138#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_136.xml"
+        },
+        {
+          "Dst": "142#in:2",
+          "Src": "141#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_136.xml"
+        },
+        {
+          "Dst": "143#in:1",
+          "Src": "142#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_136.xml"
+        },
+        {
+          "Dst": "142#in:1",
+          "Src": "137#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_136.xml"
+        },
+        {
+          "Dst": "174#in:2",
+          "Src": "172#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_170.xml"
+        },
+        {
+          "Dst": "172#in:1",
+          "Src": "173#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_170.xml"
+        },
+        {
+          "Dst": "262#in:1",
+          "Src": "174#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_170.xml"
+        },
+        {
+          "Dst": "174#in:1",
+          "Src": "259#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_170.xml"
+        },
+        {
+          "Points": "[64, 0]",
+          "Src": "171#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_170.xml"
+        },
+        {
+          "Dst": "260#in:1",
+          "Src": "218#out:1",
+          "ZOrder": "9",
+          "member": "simulink/systems/system_170.xml"
+        },
+        {
+          "Dst": "218#in:1",
+          "Src": "216#out:1",
+          "ZOrder": "10",
+          "member": "simulink/systems/system_170.xml"
+        },
+        {
+          "Dst": "261#in:1",
+          "Src": "175#out:1",
+          "ZOrder": "11",
+          "member": "simulink/systems/system_170.xml"
+        },
+        {
+          "Dst": "175#in:1",
+          "Src": "217#out:1",
+          "ZOrder": "12",
+          "member": "simulink/systems/system_170.xml"
+        },
+        {
+          "Dst": "186#in:1",
+          "Src": "206#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "185#in:1",
+          "Src": "198#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "184#in:1",
+          "Src": "190#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Points": "[54, 0]",
+          "Src": "176#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "214#in:1",
+          "Src": "184#out:1",
+          "ZOrder": "9",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "190#in:1",
+          "Src": "187#out:1",
+          "ZOrder": "10",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "187#in:2",
+          "Src": "177#out:1",
+          "ZOrder": "11",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "184#in:2",
+          "Points": "[12, 0; 0, -80]",
+          "Src": "185#out:1",
+          "ZOrder": "12",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "184#in:3",
+          "Src": "180#out:1",
+          "ZOrder": "13",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "198#in:1",
+          "Src": "188#out:1",
+          "ZOrder": "14",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "188#in:2",
+          "Src": "178#out:1",
+          "ZOrder": "15",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "185#in:3",
+          "Src": "181#out:1",
+          "ZOrder": "16",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "185#in:2",
+          "Points": "[14, 0; 0, -85]",
+          "Src": "186#out:1",
+          "ZOrder": "17",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "206#in:1",
+          "Src": "189#out:1",
+          "ZOrder": "18",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "189#in:2",
+          "Src": "179#out:1",
+          "ZOrder": "19",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "186#in:3",
+          "Src": "182#out:1",
+          "ZOrder": "20",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "186#in:2",
+          "Src": "183#out:1",
+          "ZOrder": "21",
+          "member": "simulink/systems/system_175.xml"
+        },
+        {
+          "Dst": "196#in:5",
+          "Src": "194#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_190.xml"
+        },
+        {
+          "Dst": "196#in:4",
+          "Src": "193#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_190.xml"
+        },
+        {
+          "Dst": "196#in:3",
+          "Src": "192#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_190.xml"
+        },
+        {
+          "Dst": "196#in:2",
+          "Src": "195#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_190.xml"
+        },
+        {
+          "Dst": "197#in:1",
+          "Src": "196#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_190.xml"
+        },
+        {
+          "Dst": "196#in:1",
+          "Src": "191#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_190.xml"
+        },
+        {
+          "Dst": "204#in:1",
+          "Src": "199#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_198.xml"
+        },
+        {
+          "Dst": "205#in:1",
+          "Src": "204#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_198.xml"
+        },
+        {
+          "Dst": "204#in:2",
+          "Src": "203#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_198.xml"
+        },
+        {
+          "Dst": "204#in:3",
+          "Src": "200#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_198.xml"
+        },
+        {
+          "Dst": "204#in:4",
+          "Src": "201#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_198.xml"
+        },
+        {
+          "Dst": "204#in:5",
+          "Src": "202#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_198.xml"
+        },
+        {
+          "Dst": "27#in:8",
+          "Src": "26#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_20.xml"
+        },
+        {
+          "Dst": "33#in:1",
+          "Src": "27#out:3",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_20.xml"
+        },
+        {
+          "Dst": "32#in:1",
+          "Src": "27#out:4",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_20.xml"
+        },
+        {
+          "Dst": "31#in:1",
+          "Src": "27#out:2",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_20.xml"
+        },
+        {
+          "Dst": "30#in:1",
+          "Src": "27#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_20.xml"
+        },
+        {
+          "Dst": "27#in:7",
+          "Src": "29#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_20.xml"
+        },
+        {
+          "Dst": "27#in:4",
+          "Src": "28#out:1",
+          "ZOrder": "7",
+          "member": "simulink/systems/system_20.xml"
+        },
+        {
+          "Dst": "27#in:6",
+          "Src": "25#out:1",
+          "ZOrder": "8",
+          "member": "simulink/systems/system_20.xml"
+        },
+        {
+          "Dst": "27#in:5",
+          "Src": "24#out:1",
+          "ZOrder": "9",
+          "member": "simulink/systems/system_20.xml"
+        },
+        {
+          "Dst": "27#in:3",
+          "Src": "22#out:1",
+          "ZOrder": "10",
+          "member": "simulink/systems/system_20.xml"
+        },
+        {
+          "Dst": "27#in:2",
+          "Src": "21#out:1",
+          "ZOrder": "11",
+          "member": "simulink/systems/system_20.xml"
+        },
+        {
+          "Dst": "27#in:1",
+          "Src": "23#out:1",
+          "ZOrder": "12",
+          "member": "simulink/systems/system_20.xml"
+        },
+        {
+          "Dst": "212#in:5",
+          "Src": "210#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_206.xml"
+        },
+        {
+          "Dst": "212#in:4",
+          "Src": "209#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_206.xml"
+        },
+        {
+          "Dst": "212#in:3",
+          "Src": "208#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_206.xml"
+        },
+        {
+          "Dst": "212#in:2",
+          "Src": "211#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_206.xml"
+        },
+        {
+          "Dst": "213#in:1",
+          "Src": "212#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_206.xml"
+        },
+        {
+          "Dst": "212#in:1",
+          "Src": "207#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_206.xml"
+        },
+        {
+          "Dst": "229#in:1",
+          "Src": "249#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "228#in:1",
+          "Src": "241#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "227#in:1",
+          "Src": "233#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "229#in:2",
+          "Src": "226#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "229#in:3",
+          "Src": "225#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "232#in:2",
+          "Src": "222#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "249#in:1",
+          "Src": "232#out:1",
+          "ZOrder": "7",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "228#in:2",
+          "Points": "[14, 0; 0, -85]",
+          "Src": "229#out:1",
+          "ZOrder": "8",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "228#in:3",
+          "Src": "224#out:1",
+          "ZOrder": "9",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "231#in:2",
+          "Src": "221#out:1",
+          "ZOrder": "10",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "241#in:1",
+          "Src": "231#out:1",
+          "ZOrder": "11",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "227#in:3",
+          "Src": "223#out:1",
+          "ZOrder": "12",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "227#in:2",
+          "Points": "[12, 0; 0, -80]",
+          "Src": "228#out:1",
+          "ZOrder": "13",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "230#in:2",
+          "Src": "220#out:1",
+          "ZOrder": "14",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "233#in:1",
+          "Src": "230#out:1",
+          "ZOrder": "15",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "257#in:1",
+          "Src": "227#out:1",
+          "ZOrder": "16",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Points": "[54, 0]",
+          "Src": "219#out:1",
+          "ZOrder": "17",
+          "member": "simulink/systems/system_218.xml"
+        },
+        {
+          "Dst": "239#in:5",
+          "Src": "237#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_233.xml"
+        },
+        {
+          "Dst": "239#in:4",
+          "Src": "236#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_233.xml"
+        },
+        {
+          "Dst": "239#in:3",
+          "Src": "235#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_233.xml"
+        },
+        {
+          "Dst": "239#in:2",
+          "Src": "238#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_233.xml"
+        },
+        {
+          "Dst": "240#in:1",
+          "Src": "239#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_233.xml"
+        },
+        {
+          "Dst": "239#in:1",
+          "Src": "234#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_233.xml"
+        },
+        {
+          "Dst": "247#in:1",
+          "Src": "242#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_241.xml"
+        },
+        {
+          "Dst": "248#in:1",
+          "Src": "247#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_241.xml"
+        },
+        {
+          "Dst": "247#in:2",
+          "Src": "246#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_241.xml"
+        },
+        {
+          "Dst": "247#in:3",
+          "Src": "243#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_241.xml"
+        },
+        {
+          "Dst": "247#in:4",
+          "Src": "244#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_241.xml"
+        },
+        {
+          "Dst": "247#in:5",
+          "Src": "245#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_241.xml"
+        },
+        {
+          "Dst": "255#in:5",
+          "Src": "253#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_249.xml"
+        },
+        {
+          "Dst": "255#in:4",
+          "Src": "252#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_249.xml"
+        },
+        {
+          "Dst": "255#in:3",
+          "Src": "251#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_249.xml"
+        },
+        {
+          "Dst": "255#in:2",
+          "Src": "254#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_249.xml"
+        },
+        {
+          "Dst": "256#in:1",
+          "Src": "255#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_249.xml"
+        },
+        {
+          "Dst": "255#in:1",
+          "Src": "250#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_249.xml"
+        },
+        {
+          "Dst": "27::110#in:1",
+          "Points": "[20, 0]",
+          "Src": "27::109#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "27::111#in:1",
+          "Src": "27::110#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "27::105#in:1",
+          "Labels": "[0, 0]",
+          "Name": "BM_StsCtctrCnct",
+          "Src": "27::109#out:5",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "27::104#in:1",
+          "Labels": "[0, 0]",
+          "Name": "BM_CtctrCnctCmd",
+          "Src": "27::109#out:4",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "27::103#in:1",
+          "Labels": "[0, 0]",
+          "Name": "BM_CtctrFlt",
+          "Src": "27::109#out:3",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "27::102#in:1",
+          "Labels": "[0, 0]",
+          "Name": "BM_OperMode",
+          "Src": "27::109#out:2",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "27::109#in:8",
+          "Src": "27::106#out:1",
+          "ZOrder": "7",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "27::109#in:7",
+          "Src": "27::101#out:1",
+          "ZOrder": "8",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "27::109#in:6",
+          "Src": "27::100#out:1",
+          "ZOrder": "9",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "27::109#in:5",
+          "Src": "27::99#out:1",
+          "ZOrder": "10",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "27::109#in:4",
+          "Src": "27::98#out:1",
+          "ZOrder": "11",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "27::109#in:3",
+          "Src": "27::97#out:1",
+          "ZOrder": "12",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "27::109#in:2",
+          "Src": "27::96#out:1",
+          "ZOrder": "13",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "27::109#in:1",
+          "Src": "27::95#out:1",
+          "ZOrder": "14",
+          "member": "simulink/systems/system_27.xml"
+        },
+        {
+          "Dst": "46#in:1",
+          "Src": "50#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Dst": "45#in:1",
+          "Src": "49#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Dst": "45#in:2",
+          "Src": "42#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Dst": "46#in:2",
+          "Src": "41#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Dst": "50#in:1",
+          "Src": "53#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Dst": "57#in:1",
+          "Src": "54#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Dst": "54#in:1",
+          "Src": "51#out:1",
+          "ZOrder": "7",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Dst": "47#in:2",
+          "Src": "38#out:1",
+          "ZOrder": "8",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Dst": "51#in:1",
+          "Src": "47#out:1",
+          "ZOrder": "9",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Dst": "47#in:1",
+          "Src": "48#out:1",
+          "ZOrder": "10",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Points": "[138, 0]",
+          "Src": "46#out:1",
+          "ZOrder": "11",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Dst": "53#in:2",
+          "Src": "37#out:1",
+          "ZOrder": "14",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Points": "[48, 0]",
+          "Src": "45#out:1",
+          "ZOrder": "15",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Points": "[106, 0]",
+          "Src": "36#out:1",
+          "ZOrder": "20",
+          "member": "simulink/systems/system_35.xml"
+        },
+        {
+          "Dst": "147#in:1",
+          "Src": "62#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_60.xml"
+        },
+        {
+          "Dst": "146#in:1",
+          "Src": "105#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_60.xml"
+        },
+        {
+          "Dst": "62#in:1",
+          "Src": "104#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_60.xml"
+        },
+        {
+          "Dst": "105#in:1",
+          "Src": "103#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_60.xml"
+        },
+        {
+          "Points": "[64, 0]",
+          "Src": "61#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_60.xml"
+        },
+        {
+          "Dst": "73#in:1",
+          "Src": "93#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "72#in:1",
+          "Src": "85#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "85#in:1",
+          "Src": "75#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "77#in:1",
+          "Src": "74#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "71#in:1",
+          "Src": "77#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "93#in:1",
+          "Src": "76#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Points": "[54, 0]",
+          "Src": "63#out:1",
+          "ZOrder": "7",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "101#in:1",
+          "Src": "71#out:1",
+          "ZOrder": "12",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "74#in:2",
+          "Src": "64#out:1",
+          "ZOrder": "13",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "71#in:2",
+          "Points": "[12, 0; 0, -80]",
+          "Src": "72#out:1",
+          "ZOrder": "14",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "71#in:3",
+          "Src": "67#out:1",
+          "ZOrder": "15",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "75#in:2",
+          "Src": "65#out:1",
+          "ZOrder": "16",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "72#in:3",
+          "Src": "68#out:1",
+          "ZOrder": "17",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "72#in:2",
+          "Points": "[14, 0; 0, -85]",
+          "Src": "73#out:1",
+          "ZOrder": "18",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "76#in:2",
+          "Src": "66#out:1",
+          "ZOrder": "19",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "73#in:3",
+          "Src": "69#out:1",
+          "ZOrder": "20",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "73#in:2",
+          "Src": "70#out:1",
+          "ZOrder": "21",
+          "member": "simulink/systems/system_62.xml"
+        },
+        {
+          "Dst": "83#in:5",
+          "Src": "81#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_77.xml"
+        },
+        {
+          "Dst": "83#in:4",
+          "Src": "80#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_77.xml"
+        },
+        {
+          "Dst": "83#in:3",
+          "Src": "79#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_77.xml"
+        },
+        {
+          "Dst": "83#in:2",
+          "Src": "82#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_77.xml"
+        },
+        {
+          "Dst": "84#in:1",
+          "Src": "83#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_77.xml"
+        },
+        {
+          "Dst": "83#in:1",
+          "Src": "78#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_77.xml"
+        },
+        {
+          "Dst": "14#in:1",
+          "Src": "15#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_8.xml"
+        },
+        {
+          "Dst": "17#in:5",
+          "Src": "14#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_8.xml"
+        },
+        {
+          "Dst": "15#in:1",
+          "Src": "13#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_8.xml"
+        },
+        {
+          "Dst": "18#in:1",
+          "Src": "16#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_8.xml"
+        },
+        {
+          "Dst": "17#in:3",
+          "Src": "11#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_8.xml"
+        },
+        {
+          "Dst": "17#in:1",
+          "Src": "9#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_8.xml"
+        },
+        {
+          "Dst": "17#in:2",
+          "Src": "10#out:1",
+          "ZOrder": "7",
+          "member": "simulink/systems/system_8.xml"
+        },
+        {
+          "Dst": "17#in:4",
+          "Src": "12#out:1",
+          "ZOrder": "8",
+          "member": "simulink/systems/system_8.xml"
+        },
+        {
+          "Dst": "16#in:1",
+          "Src": "17#out:1",
+          "ZOrder": "9",
+          "member": "simulink/systems/system_8.xml"
+        },
+        {
+          "Dst": "91#in:1",
+          "Src": "86#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_85.xml"
+        },
+        {
+          "Dst": "92#in:1",
+          "Src": "91#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_85.xml"
+        },
+        {
+          "Dst": "91#in:2",
+          "Src": "90#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_85.xml"
+        },
+        {
+          "Dst": "91#in:3",
+          "Src": "87#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_85.xml"
+        },
+        {
+          "Dst": "91#in:4",
+          "Src": "88#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_85.xml"
+        },
+        {
+          "Dst": "91#in:5",
+          "Src": "89#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_85.xml"
+        },
+        {
+          "Dst": "99#in:5",
+          "Src": "97#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_93.xml"
+        },
+        {
+          "Dst": "99#in:4",
+          "Src": "96#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_93.xml"
+        },
+        {
+          "Dst": "99#in:3",
+          "Src": "95#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_93.xml"
+        },
+        {
+          "Dst": "99#in:2",
+          "Src": "98#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_93.xml"
+        },
+        {
+          "Dst": "100#in:1",
+          "Src": "99#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_93.xml"
+        },
+        {
+          "Dst": "99#in:1",
+          "Src": "94#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_93.xml"
+        },
+        {
+          "Dst": "60#in:1",
+          "Src": "1#out:1",
+          "ZOrder": "1",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "170#in:1",
+          "Src": "4#out:1",
+          "ZOrder": "2",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "20#in:6",
+          "Src": "150#out:1",
+          "ZOrder": "3",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "20#in:1",
+          "Src": "6#out:1",
+          "ZOrder": "4",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "20#in:2",
+          "Src": "7#out:1",
+          "ZOrder": "5",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "20#in:3",
+          "Src": "157#out:1",
+          "ZOrder": "6",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "20#in:4",
+          "Src": "3#out:1",
+          "ZOrder": "7",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Points": "[46, 0]",
+          "Src": "20#out:4",
+          "ZOrder": "10",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "159#in:1",
+          "Src": "20#out:2",
+          "ZOrder": "11",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Points": "[30, 0]",
+          "Src": "2#out:1",
+          "ZOrder": "14",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "20#in:5",
+          "Src": "151#out:1",
+          "ZOrder": "15",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "35#in:1",
+          "Src": "5#out:1",
+          "ZOrder": "16",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Points": "[27, 0]",
+          "Src": "35#out:3",
+          "ZOrder": "19",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "269#in:1",
+          "Src": "35#out:2",
+          "ZOrder": "20",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "270#in:1",
+          "Src": "35#out:1",
+          "ZOrder": "21",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "165#in:1",
+          "Src": "60#out:1",
+          "ZOrder": "22",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "166#in:1",
+          "Src": "60#out:2",
+          "ZOrder": "23",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "167#in:1",
+          "Src": "170#out:1",
+          "ZOrder": "24",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "168#in:1",
+          "Src": "170#out:2",
+          "ZOrder": "25",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "271#in:1",
+          "Src": "170#out:3",
+          "ZOrder": "26",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "8#in:1",
+          "Src": "154#out:1",
+          "ZOrder": "27",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "8#in:2",
+          "Src": "153#out:1",
+          "ZOrder": "28",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "8#in:3",
+          "Src": "155#out:1",
+          "ZOrder": "29",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "8#in:4",
+          "Src": "156#out:1",
+          "ZOrder": "30",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Points": "[32, 0]",
+          "Src": "8#out:1",
+          "ZOrder": "33",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "8#in:5",
+          "Src": "158#out:1",
+          "ZOrder": "34",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "273#in:1",
+          "Src": "20#out:3",
+          "ZOrder": "35",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "161#in:1",
+          "Src": "264#out:1",
+          "ZOrder": "36",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "264#in:2",
+          "Src": "149#out:1",
+          "ZOrder": "37",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Points": "[48, 0]",
+          "Src": "20#out:1",
+          "ZOrder": "40",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "265#in:1",
+          "Src": "152#out:1",
+          "ZOrder": "41",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "169#in:1",
+          "Src": "59#out:1",
+          "ZOrder": "42",
+          "member": "simulink/systems/system_root.xml"
+        },
+        {
+          "Dst": "59#in:1",
+          "Src": "265#out:1",
+          "ZOrder": "43",
+          "member": "simulink/systems/system_root.xml"
+        }
+      ],
+      "path": "BatteryContactorController.slx",
+      "sha256": "eb832ad518968b1f44f6facee50a8e2959bf09baeb519daed321ff019323a009",
+      "stateflow": {
+        "states": 13,
+        "transitions": 30
+      }
+    },
+    {
+      "block_types": {
+        "Constant": 2,
+        "Inport": 5,
+        "Logic": 1,
+        "Outport": 1,
+        "Reference": 2,
+        "RelationalOperator": 2,
+        "SubSystem": 1,
+        "Sum": 2,
+        "Switch": 3,
+        "Terminator": 1,
+        "UnitDelay": 1
+      },
+      "blocks": [
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Debouncer",
+          "parameters": {
+            "ContentPreviewEnabled": "on",
+            "Ports": "[5, 1]",
+            "Position": "[1080, 254, 1200, 466]",
+            "RequestExecContextInheritance": "off",
+            "ZOrder": "2584"
+          },
+          "sid": "49",
+          "type": "SubSystem"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "bSts",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "IconDisplay": "Port number",
+            "Position": "[125, 218, 155, 232]",
+            "ZOrder": "2584"
+          },
+          "sid": "50",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Ena",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "IconDisplay": "Port number",
+            "Port": "2",
+            "Position": "[365, 263, 395, 277]",
+            "ZOrder": "2585"
+          },
+          "sid": "51",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Rst",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "IconDisplay": "Port number",
+            "Port": "3",
+            "Position": "[550, 218, 580, 232]",
+            "ZOrder": "2586"
+          },
+          "sid": "52",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Dmax",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "IconDisplay": "Port number",
+            "Port": "4",
+            "Position": "[565, 23, 595, 37]",
+            "ZOrder": "2587"
+          },
+          "sid": "53",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Dmin",
+          "parameters": {
+            "BackgroundColor": "yellow",
+            "IconDisplay": "Port number",
+            "Port": "5",
+            "Position": "[580, 428, 610, 442]",
+            "ZOrder": "2588"
+          },
+          "sid": "54",
+          "type": "Inport"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Constant",
+          "parameters": {
+            "Position": "[60, 210, 90, 240]",
+            "ZOrder": "2574"
+          },
+          "sid": "39",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Constant1",
+          "parameters": {
+            "Position": "[555, 165, 585, 195]",
+            "Value": "0",
+            "ZOrder": "2577"
+          },
+          "sid": "42",
+          "type": "Constant"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "OR",
+          "parameters": {
+            "AllPortsSameDT": "off",
+            "IconShape": "distinctive",
+            "Operator": "OR",
+            "OutDataTypeStr": "boolean",
+            "Ports": "[2, 1]",
+            "Position": "[1048, 386, 1093, 444]",
+            "ZOrder": "2590"
+          },
+          "sid": "56",
+          "type": "Logic"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Relational\nOperator",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": "<=",
+            "OutDataTypeStr": "boolean",
+            "Ports": "[2, 1]",
+            "Position": "[970, 22, 1000, 53]",
+            "RndMeth": "Simplest",
+            "ZOrder": "2580"
+          },
+          "sid": "45",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Relational\nOperator1",
+          "parameters": {
+            "InputSameDT": "off",
+            "Operator": "<=",
+            "OutDataTypeStr": "boolean",
+            "Ports": "[2, 1]",
+            "Position": "[970, 412, 1000, 443]",
+            "RndMeth": "Simplest",
+            "ZOrder": "2581"
+          },
+          "sid": "46",
+          "type": "RelationalOperator"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "S-R\nFlip-Flop",
+          "parameters": {
+            "LibraryVersion": "1.66",
+            "Ports": "[2, 2]",
+            "Position": "[1175, 20, 1220, 95]",
+            "SourceBlock": "simulink_extras/Flip Flops/S-R\nFlip-Flop",
+            "SourceProductBaseCode": "SL",
+            "SourceProductName": "Simulink",
+            "SourceType": "SRFlipFlop",
+            "ZOrder": "2582"
+          },
+          "sid": "47",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Saturation\nDynamic",
+          "parameters": {
+            "LibraryVersion": "1.444",
+            "Ports": "[3, 1]",
+            "Position": "[795, 145, 865, 305]",
+            "SourceBlock": "simulink/Discontinuities/Saturation\nDynamic",
+            "SourceProductBaseCode": "SL",
+            "SourceProductName": "Simulink",
+            "SourceType": "Saturation Dynamic",
+            "ZOrder": "2578"
+          },
+          "sid": "43",
+          "type": "Reference"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Sum",
+          "parameters": {
+            "IconShape": "round",
+            "InputSameDT": "off",
+            "Inputs": "|++",
+            "OutDataTypeStr": "Inherit: Inherit via internal rule",
+            "Ports": "[2, 1]",
+            "Position": "[100, 120, 120, 140]",
+            "SaturateOnIntegerOverflow": "off",
+            "ShowName": "off",
+            "ZOrder": "2572"
+          },
+          "sid": "37",
+          "type": "Sum"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Sum1",
+          "parameters": {
+            "IconShape": "round",
+            "InputSameDT": "off",
+            "Inputs": "-+|",
+            "OutDataTypeStr": "Inherit: Inherit via internal rule",
+            "Ports": "[2, 1]",
+            "Position": "[100, 325, 120, 345]",
+            "SaturateOnIntegerOverflow": "off",
+            "ShowName": "off",
+            "ZOrder": "2573"
+          },
+          "sid": "38",
+          "type": "Sum"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Switch",
+          "parameters": {
+            "Criteria": "u2 ~= 0",
+            "InputSameDT": "off",
+            "Position": "[240, 160, 295, 290]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "2571"
+          },
+          "sid": "36",
+          "type": "Switch"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Switch1",
+          "parameters": {
+            "Criteria": "u2 ~= 0",
+            "InputSameDT": "off",
+            "Position": "[460, 205, 515, 335]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "2575"
+          },
+          "sid": "40",
+          "type": "Switch"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Switch2",
+          "parameters": {
+            "Criteria": "u2 ~= 0",
+            "InputSameDT": "off",
+            "Position": "[630, 160, 685, 290]",
+            "SaturateOnIntegerOverflow": "off",
+            "ZOrder": "2576"
+          },
+          "sid": "41",
+          "type": "Switch"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Terminator",
+          "parameters": {
+            "Position": "[1260, 60, 1290, 90]",
+            "ZOrder": "2583"
+          },
+          "sid": "48",
+          "type": "Terminator"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "Unit Delay",
+          "parameters": {
+            "BlockMirror": "on",
+            "InputProcessing": "Elements as channels (sample based)",
+            "NamePlacement": "alternate",
+            "Position": "[515, 488, 550, 522]",
+            "SampleTime": "-1",
+            "ZOrder": "2579"
+          },
+          "sid": "44",
+          "type": "UnitDelay"
+        },
+        {
+          "member": "simulink/blockdiagram.xml",
+          "name": "dSts",
+          "parameters": {
+            "BackgroundColor": "lightBlue",
+            "IconDisplay": "Port number",
+            "Position": "[1300, 33, 1330, 47]",
+            "ZOrder": "2589"
+          },
+          "sid": "55",
+          "type": "Outport"
+        }
+      ],
+      "effective_logic_blocks": 13,
+      "lines": [
+        {
+          "Dst": "43#in:2",
+          "Src": "41#out:1",
+          "ZOrder": "67",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Points": "[15, 0]",
+          "Src": "39#out:1",
+          "ZOrder": "57",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Points": "[125, 0]",
+          "Src": "54#out:1",
+          "ZOrder": "100",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Dst": "48#in:1",
+          "Src": "47#out:2",
+          "ZOrder": "95",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Points": "[-110, 0]",
+          "Src": "44#out:1",
+          "ZOrder": "72",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Dst": "55#in:1",
+          "Src": "47#out:1",
+          "ZOrder": "101",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Dst": "41#in:1",
+          "Src": "42#out:1",
+          "ZOrder": "66",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Dst": "36#in:1",
+          "Points": "[55, 0; 0, 50]",
+          "Src": "37#out:1",
+          "ZOrder": "55",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Points": "[9, 0]",
+          "Src": "43#out:1",
+          "ZOrder": "70",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Points": "[140, 0]",
+          "Src": "53#out:1",
+          "ZOrder": "99",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Points": "[19, 0]",
+          "Src": "52#out:1",
+          "ZOrder": "98",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Dst": "40#in:2",
+          "Src": "51#out:1",
+          "ZOrder": "97",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Dst": "36#in:3",
+          "Points": "[55, 0; 0, -65]",
+          "Src": "38#out:1",
+          "ZOrder": "56",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Dst": "40#in:1",
+          "Src": "36#out:1",
+          "ZOrder": "63",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Dst": "41#in:3",
+          "Src": "40#out:1",
+          "ZOrder": "64",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Dst": "36#in:2",
+          "Src": "50#out:1",
+          "ZOrder": "96",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Dst": "47#in:1",
+          "Src": "45#out:1",
+          "ZOrder": "92",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Dst": "47#in:2",
+          "Points": "[25, 0; 0, -340]",
+          "Src": "56#out:1",
+          "ZOrder": "129",
+          "member": "simulink/blockdiagram.xml"
+        },
+        {
+          "Dst": "56#in:2",
+          "Src": "46#out:1",
+          "ZOrder": "130",
+          "member": "simulink/blockdiagram.xml"
+        }
+      ],
+      "path": "MiniBMS/BMSLib.slx",
+      "sha256": "2b8f3ac44760931b52cf14f358dedd1018b24aef4d85b43fa30fc5054c6e422b",
+      "stateflow": {
+        "states": 0,
+        "transitions": 0
+      }
+    }
+  ],
+  "production": [],
+  "refs": {
+    "refs/heads/main": "d9cf0bae322d41e7d829c02636ce343d638797e1"
+  },
+  "scope": {
+    "models": [
+      "BatteryContactorController.slx",
+      "MiniBMS/BMSLib.slx"
+    ]
+  },
+  "size": {
+    "effective_logic_blocks": 128,
+    "physical_lines": 0,
+    "source_files": 0,
+    "source_loc": 0
+  },
+  "tree": "bedc2fbc0b5b9447eadc2b68bd35c33fd246a6a3"
+}

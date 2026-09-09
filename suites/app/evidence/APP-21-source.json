@@ -1,0 +1,164 @@
+{
+  "ci_candidates": [],
+  "excluded_source": [
+    {
+      "path": "app/src/debug/java/org/vehicle/scene/AcceptanceRunner.java",
+      "reason": "debug acceptance, sample consumer, or generated output outside declared production roots"
+    }
+  ],
+  "files": [
+    {
+      "blob": "81c6e86337040b79a003dbd8380aa9dcccaad4b8",
+      "bytes": 42,
+      "path": ".gitignore",
+      "sha256": "7c25770586e7b95e88541a8d204131bc31076ce31779cb31220587fc9f9b2ffd"
+    },
+    {
+      "blob": "29f81d812f3e768fa89638d1f72920dbfd1413a8",
+      "bytes": 11558,
+      "path": "LICENSE",
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    {
+      "blob": "5078bc023f9219111907b95dcd1213b2eadd0bbc",
+      "bytes": 236,
+      "path": "NOTICE",
+      "sha256": "dc1f6a46c645dee7e6d257461c0bf75a06455be540db54493d8f816b013764db"
+    },
+    {
+      "blob": "f39d728a6be7b724a20bcc0a40c231a82cf58c5f",
+      "bytes": 823,
+      "path": "README.md",
+      "sha256": "30a8ada93b6ff30184fd41a729567f34aa0bf4093bd66b9aab108c142883fd92"
+    },
+    {
+      "blob": "851717f037fb407f66bfb3926a116a63c4b449ab",
+      "bytes": 706,
+      "path": "app/build.gradle",
+      "sha256": "0aadd9caf2f9fbb48b65c46984cd11ec112608dc280106d7c9427dbe558e9203"
+    },
+    {
+      "blob": "3b08da26982ec06c8f39575780416d447d935ba1",
+      "bytes": 190,
+      "path": "app/src/debug/AndroidManifest.xml",
+      "sha256": "491d820fcf56ce46839f4356ddcf53e73dad5030e917b58b277c571e14b0a383"
+    },
+    {
+      "blob": "f46c409cdeba3fc4a8e1967f509899fd4b136c81",
+      "bytes": 8411,
+      "path": "app/src/debug/java/org/vehicle/scene/AcceptanceRunner.java",
+      "sha256": "a7dd135138079a05fa47a1c1ec01d2aced912b64c2469de793de0e66b7acc03c"
+    },
+    {
+      "blob": "56dd2276a143d4f5514c5dde0588ef4c2b5039c8",
+      "bytes": 594,
+      "path": "app/src/main/AndroidManifest.xml",
+      "sha256": "8616825bffb8faeb3fb5f74b306d1a9c8a244ccda1a4965fb27c47c5fc962766"
+    },
+    {
+      "blob": "e7473cdf44bdf76129e2b41617bff6037391bcbb",
+      "bytes": 3130,
+      "path": "app/src/main/java/org/vehicle/scene/SceneActivity.java",
+      "sha256": "43d29cc39d57d559c7d70edd66f40a0683efcd9a34aaf9f6cd7d9d2fb9213a0d"
+    },
+    {
+      "blob": "354b51a003a9b0505fdf9f13733ac5acd251ea61",
+      "bytes": 1273,
+      "path": "app/src/main/java/org/vehicle/scene/SceneController.java",
+      "sha256": "c517f99345dea3093262c76153f54285f8122eea1f447a5e1ee5a284c0455dc5"
+    },
+    {
+      "blob": "89ed708181001365278aa2f1a41239378e921a72",
+      "bytes": 123,
+      "path": "build.gradle",
+      "sha256": "819eaa10fda9a87608d5c45d888ee8c58bae2ebfd0528918b5c433f4b1c0be55"
+    },
+    {
+      "blob": "f2dd524e98eb53cc06ea654d787df16b2841777f",
+      "bytes": 99,
+      "path": "dependencies/SHA256SUMS",
+      "sha256": "d2adc5f65a05b9e1b2ff6444b06fb06112638aaee6cdfaa9d4ebb1a5020eed83"
+    },
+    {
+      "blob": "bfd9302bc6d1b9ee971aadbe9ded89ef55b85388",
+      "bytes": 316,
+      "path": "dependencies/SOURCE.md",
+      "sha256": "726fa346a33f2e6780f915c817bedf9f8ad45476b829bfad158ed627d65a9fa6"
+    },
+    {
+      "blob": "12f258ffc6fb964b77b505a01dcb2569218f0343",
+      "bytes": 14037,
+      "path": "dependencies/vehicle-capability-sdk-1.0.0.aar",
+      "sha256": "1ba0e1f9099c2506a7c87fe615870c469f4198048c4b37014b410da7216f9915"
+    },
+    {
+      "blob": "0bfe4d4aeb585a9754c88bc0085d3c0a1415fd39",
+      "bytes": 102,
+      "path": "gradle.properties",
+      "sha256": "d9f0b51cfebcfd770dd4f57f3568c2acafb585016ed7cd5a3eb11220075d8816"
+    },
+    {
+      "blob": "e708b1c023ec8b20f512888fe07c5bd3ff77bb8f",
+      "bytes": 59203,
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637"
+    },
+    {
+      "blob": "12ec65295eba169c4d36f382508ea7c316dfe20a",
+      "bytes": 230,
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "67b52d806eee8963f650f69e4d2afad60ee1bbdbd044d2209f635f26724493c2"
+    },
+    {
+      "blob": "4f906e0c811fc9e230eb44819f509cd0627f2600",
+      "bytes": 5766,
+      "path": "gradlew",
+      "sha256": "63135287117a1e6d12c84580f1f49c61d1ba02218ecd28660605e97f976e7d65"
+    },
+    {
+      "blob": "107acd32c4e687021ef32db511e8a206129b88ec",
+      "bytes": 2674,
+      "path": "gradlew.bat",
+      "sha256": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129"
+    },
+    {
+      "blob": "5697555b7bc0adb25d88642638af7b7941055ace",
+      "bytes": 275,
+      "path": "settings.gradle",
+      "sha256": "fd1770de357b069c6fd28c9a97f43f9b2ffeda1b572657ab78b7fc73963a34ec"
+    }
+  ],
+  "head": "13c481c9fc68b271b6d2631557f977366a66daa1",
+  "models": [],
+  "production": [
+    {
+      "build_owner": "app",
+      "language": "Java",
+      "path": "app/src/main/java/org/vehicle/scene/SceneActivity.java",
+      "physical_lines": 100,
+      "source_loc": 93
+    },
+    {
+      "build_owner": "app",
+      "language": "Java",
+      "path": "app/src/main/java/org/vehicle/scene/SceneController.java",
+      "physical_lines": 34,
+      "source_loc": 29
+    }
+  ],
+  "refs": {
+    "refs/heads/main": "13c481c9fc68b271b6d2631557f977366a66daa1"
+  },
+  "scope": {
+    "production_roots": [
+      "app/src/main/java"
+    ]
+  },
+  "size": {
+    "effective_logic_blocks": 0,
+    "physical_lines": 134,
+    "source_files": 2,
+    "source_loc": 122
+  },
+  "tree": "de8f0b04b122b52a2fc463f348541750ce8876d8"
+}

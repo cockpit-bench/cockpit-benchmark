@@ -1,0 +1,769 @@
+{
+  "execution": {
+    "binding": {
+      "apks": [
+        {
+          "install": "Performing Streamed Install\nSuccess",
+          "path": "service/build/outputs/apk/debug/service-debug.apk",
+          "sha256": "5a59dc1a3d65a40e9624aa4cb6a049c88308d0557a93714074f77231cd8d06ca"
+        }
+      ],
+      "head": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+      "tree": "ce7085c121e648dd75bb12104edf358a5eff5475"
+    },
+    "records": [
+      {
+        "bytes": 166,
+        "path": "final-android/scene-touring.log",
+        "sha256": "5af44bdcc1ddbcc43aeae6ec418e3a9032a8c6fb97836d3dd1dac8abf12b575a"
+      },
+      {
+        "bytes": 163,
+        "path": "final-android/scene-city.log",
+        "sha256": "f944704426a11d55180438ecba4ab1091b787d1f70ac01047e6863374aca606a"
+      },
+      {
+        "bytes": 104,
+        "path": "final-android/permission.log",
+        "sha256": "f9af7c721d0dd8cfb81357e124b922983adfff63c2d60b267f9b2e679c4ff957"
+      }
+    ],
+    "status": "passed",
+    "summary": {
+      "external_consumer_source": {
+        "apks": [
+          {
+            "install": "Performing Streamed Install\nSuccess",
+            "path": "app/build/outputs/apk/touring/debug/app-touring-debug.apk",
+            "sha256": "f0ef871e346ab9066854695bcfc6e95c1caade58405890e754192e02bcfbe1fe"
+          },
+          {
+            "install": "Performing Streamed Install\nSuccess",
+            "path": "app/build/outputs/apk/city/debug/app-city-debug.apk",
+            "sha256": "e4e7880b8f393de848dda94719fc69ec5f0c0d34ecfc92e8a547216cab7d95cc"
+          }
+        ],
+        "head": "13c481c9fc68b271b6d2631557f977366a66daa1",
+        "tree": "de8f0b04b122b52a2fc463f348541750ce8876d8"
+      },
+      "fingerprint": "google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+      "owned_integration_suite": false,
+      "physical_device": false,
+      "runtime": "Android emulator API 35",
+      "target": "emulator-5582",
+      "tests": [
+        {
+          "checks": 35,
+          "command": [
+            "C:\\Users\\曹博弢\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+            "-s",
+            "emulator-5582",
+            "shell",
+            "am",
+            "instrument",
+            "-w",
+            "-r",
+            "org.vehicle.scene/org.vehicle.scene.AcceptanceRunner"
+          ],
+          "log": "scene-touring.log",
+          "name": "scene-touring",
+          "sha256": "5af44bdcc1ddbcc43aeae6ec418e3a9032a8c6fb97836d3dd1dac8abf12b575a",
+          "status": "passed"
+        },
+        {
+          "checks": 35,
+          "command": [
+            "C:\\Users\\曹博弢\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+            "-s",
+            "emulator-5582",
+            "shell",
+            "am",
+            "instrument",
+            "-w",
+            "-r",
+            "org.vehicle.scene.city/org.vehicle.scene.AcceptanceRunner"
+          ],
+          "log": "scene-city.log",
+          "name": "scene-city",
+          "sha256": "f944704426a11d55180438ecba4ab1091b787d1f70ac01047e6863374aca606a",
+          "status": "passed"
+        },
+        {
+          "checks": 2,
+          "command": [
+            "C:\\Users\\曹博弢\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+            "-s",
+            "emulator-5582",
+            "shell",
+            "am",
+            "instrument",
+            "-w",
+            "-r",
+            "org.vehicle.permissionprobe/org.vehicle.permissionprobe.ProbeRunner"
+          ],
+          "log": "permission.log",
+          "name": "permission",
+          "sha256": "f9af7c721d0dd8cfb81357e124b922983adfff63c2d60b267f9b2e679c4ff957",
+          "status": "passed"
+        }
+      ]
+    }
+  },
+  "head": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+  "id": "FW-21",
+  "limitations": [
+    "Local construction and verification only; new source repositories are not published.",
+    "Same-author construction is not an independent holdout.",
+    "No new physical vehicle, SIL/PIL/HIL, or remote CI execution."
+  ],
+  "production_scope": {
+    "production_roots": [
+      "sdk/src/main/java",
+      "sdk/src/main/aidl",
+      "service/src/main/java"
+    ]
+  },
+  "reference": {
+    "head": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+    "id": "FW-21",
+    "leaves": [
+      {
+        "analysis": "No effective CI definition is present in the full tracked-file inventory.",
+        "deterministic_absence": true,
+        "evidence": [
+          {
+            "claim": "Complete CI candidate inventory is empty",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "evidence_type": "facts",
+            "independent_group": "inventory",
+            "json_pointer": "/ci_candidates",
+            "path": "suites/fw/evidence/FW-21-source.json",
+            "source": "source_inventory"
+          }
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "score": 0,
+        "score_reasoning": "No effective CI definition is present in the full tracked-file inventory.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Gradle builds meaningful production APK/AAR units with a closed local module graph and declared Android SDK dependencies. No hermetic environment or released compatibility baseline supports 3.",
+        "evidence": [
+          {
+            "claim": "Actual Gradle module graph",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 5,
+            "evidence_type": "code",
+            "independent_group": "settings.gradle:include",
+            "path": "settings.gradle",
+            "source": "repository",
+            "start_line": 4,
+            "symbol": "include"
+          },
+          {
+            "claim": "Build SDK, variants and module dependencies",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 6,
+            "evidence_type": "code",
+            "independent_group": "service/build.gradle:android",
+            "path": "service/build.gradle",
+            "source": "repository",
+            "start_line": 1,
+            "symbol": "android"
+          }
+        ],
+        "max_score": 3,
+        "name": "compilation.compilation_independence",
+        "score": 2,
+        "score_reasoning": "Gradle builds meaningful production APK/AAR units with a closed local module graph and declared Android SDK dependencies. No hermetic environment or released compatibility baseline supports 3.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Only real development mainline commits exist; neither two product flavors nor a main branch proves a release-channel strategy.",
+        "deterministic_absence": true,
+        "evidence": [
+          {
+            "claim": "All actual heads/tags, without a release strategy",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "evidence_type": "facts",
+            "independent_group": "inventory",
+            "json_pointer": "/refs",
+            "path": "suites/fw/evidence/FW-21-source.json",
+            "source": "source_inventory"
+          }
+        ],
+        "max_score": 10,
+        "name": "platform_reuse.release_branch_strategy",
+        "score": 0,
+        "score_reasoning": "Only real development mainline commits exist; neither two product flavors nor a main branch proves a release-channel strategy.",
+        "status": "scored"
+      },
+      {
+        "analysis": "This repository has no integration test runner or assertion suite. Cross-repository Scene acceptance proves exercised behavior but is not a repository-owned integration suite.",
+        "deterministic_absence": true,
+        "evidence": [
+          {
+            "claim": "Tracked inventory contains service/SDK and debug fault control, but no test runner",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "evidence_type": "facts",
+            "independent_group": "inventory",
+            "json_pointer": "/files",
+            "path": "suites/fw/evidence/FW-21-source.json",
+            "source": "source_inventory"
+          }
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "score": 0,
+        "score_reasoning": "This repository has no integration test runner or assertion suite. Cross-repository Scene acceptance proves exercised behavior but is not a repository-owned integration suite.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Two real adapters preserve snapshot/apply and declared optional-capability semantics. Tests exercise both, but no reusable systematic substitution suite covers all exception/pre/post cases; 4 is not established.",
+        "evidence": [
+          {
+            "claim": "Production snapshot/apply parent contract",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 9,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/capability/service/VehicleAdapter.java:interface VehicleAdapter",
+            "path": "service/src/main/java/org/vehicle/capability/service/VehicleAdapter.java",
+            "source": "repository",
+            "start_line": 5,
+            "symbol": "interface VehicleAdapter"
+          },
+          {
+            "claim": "Absent HVAC returns declared unsupported capability; valid lamp commands preserve scaling",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 34,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/capability/service/CityAdapter.java:public Bundle apply",
+            "path": "service/src/main/java/org/vehicle/capability/service/CityAdapter.java",
+            "source": "repository",
+            "start_line": 21,
+            "symbol": "public Bundle apply"
+          },
+          {
+            "claim": "Second production implementation preserves state/result semantics",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 44,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/capability/service/TouringAdapter.java:public Bundle apply",
+            "path": "service/src/main/java/org/vehicle/capability/service/TouringAdapter.java",
+            "source": "repository",
+            "start_line": 22,
+            "symbol": "public Bundle apply"
+          }
+        ],
+        "issues": [],
+        "max_score": 4,
+        "name": "solid_principle.liskov_substitution",
+        "recommendations": [],
+        "score": 3,
+        "score_reasoning": "Two real adapters preserve snapshot/apply and declared optional-capability semantics. Tests exercise both, but no reusable systematic substitution suite covers all exception/pre/post cases; 4 is not established.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Service coordinates the IPC boundary; adapters own device mappings and the ECU store owns persistence. No material unrelated responsibility is observed in these small production classes; no exceptional automotive practice supports 4.",
+        "evidence": [
+          {
+            "claim": "Binder permission/dispatch and callback lifecycle remain in service",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 42,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/capability/service/CapabilityService.java:private final IVehicleCapabilities.Stub",
+            "path": "service/src/main/java/org/vehicle/capability/service/CapabilityService.java",
+            "source": "repository",
+            "start_line": 34,
+            "symbol": "private final IVehicleCapabilities.Stub"
+          },
+          {
+            "claim": "Adapter translates physical units and dispatches supported capabilities",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 44,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/capability/service/TouringAdapter.java:public Bundle apply",
+            "path": "service/src/main/java/org/vehicle/capability/service/TouringAdapter.java",
+            "source": "repository",
+            "start_line": 22,
+            "symbol": "public Bundle apply"
+          }
+        ],
+        "issues": [],
+        "max_score": 4,
+        "name": "solid_principle.single_responsibility",
+        "recommendations": [],
+        "score": 3,
+        "score_reasoning": "Service coordinates the IPC boundary; adapters own device mappings and the ECU store owns persistence. No material unrelated responsibility is observed in these small production classes; no exceptional automotive practice supports 4.",
+        "status": "scored"
+      },
+      {
+        "analysis": "A useful local implementation boundary exists, but the demonstrated extension scenario propagates into an existing generic responsibility; the issue is localized.",
+        "evidence": [
+          {
+            "claim": "Adding a third existing-contract profile unnecessarily requires a client SDK whitelist change",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 64,
+            "evidence_type": "code",
+            "independent_group": "sdk/src/main/java/org/vehicle/capability/VehicleManager.java:if (!profile.equals",
+            "path": "sdk/src/main/java/org/vehicle/capability/VehicleManager.java",
+            "source": "repository",
+            "start_line": 56,
+            "symbol": "if (!profile.equals"
+          },
+          {
+            "claim": "Service has an implementation map and local registration",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 27,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/capability/service/CapabilityService.java:adapters.put",
+            "path": "service/src/main/java/org/vehicle/capability/service/CapabilityService.java",
+            "source": "repository",
+            "start_line": 19,
+            "symbol": "adapters.put"
+          }
+        ],
+        "issues": [
+          "Adding a third existing-contract profile unnecessarily requires a client SDK whitelist change",
+          "Service has an implementation map and local registration"
+        ],
+        "max_score": 4,
+        "name": "solid_principle.open_closed",
+        "recommendations": [
+          "Isolate the concrete dependency or policy when this actual extension/maintenance responsibility evolves."
+        ],
+        "score": 2,
+        "score_reasoning": "A useful local implementation boundary exists, but the demonstrated extension scenario propagates into an existing generic responsibility; the issue is localized.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Current consumers are not forced to implement or prepare unrelated capabilities. Optional state/command results follow the actual contract; interface width alone is not a violation. No exceptional practice supports 4.",
+        "evidence": [
+          {
+            "claim": "Cohesive state, command and subscription contract",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 1,
+            "evidence_type": "code",
+            "independent_group": "sdk/src/main/aidl/org/vehicle/capability/IVehicleCapabilities.aidl:interface",
+            "path": "sdk/src/main/aidl/org/vehicle/capability/IVehicleCapabilities.aidl",
+            "source": "repository",
+            "start_line": 1,
+            "symbol": "interface"
+          },
+          {
+            "claim": "Optional HVAC absence is discoverable, without a forced empty HVAC method",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 24,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/capability/service/CityAdapter.java:b.putBoolean",
+            "path": "service/src/main/java/org/vehicle/capability/service/CityAdapter.java",
+            "source": "repository",
+            "start_line": 16,
+            "symbol": "b.putBoolean"
+          }
+        ],
+        "issues": [],
+        "max_score": 4,
+        "name": "solid_principle.interface_segregation",
+        "recommendations": [],
+        "score": 3,
+        "score_reasoning": "Current consumers are not forced to implement or prepare unrelated capabilities. Optional state/command results follow the actual contract; interface width alone is not a violation. No exceptional practice supports 4.",
+        "status": "scored"
+      },
+      {
+        "analysis": "The IPC/API boundary is explicit, but high-level or sibling implementations still directly depend on concrete storage/transport/adapter classes; this is a local coupling mechanism.",
+        "evidence": [
+          {
+            "claim": "City implementation depends on another concrete adapter for validation",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 32,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/capability/service/CityAdapter.java:TouringAdapter.range",
+            "path": "service/src/main/java/org/vehicle/capability/service/CityAdapter.java",
+            "source": "repository",
+            "start_line": 24,
+            "symbol": "TouringAdapter.range"
+          },
+          {
+            "claim": "Adapter depends on concrete ECU store",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 15,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/capability/service/TouringAdapter.java:private final SimulatedBodyController",
+            "path": "service/src/main/java/org/vehicle/capability/service/TouringAdapter.java",
+            "source": "repository",
+            "start_line": 7,
+            "symbol": "private final SimulatedBodyController"
+          }
+        ],
+        "issues": [
+          "City implementation depends on another concrete adapter for validation",
+          "Adapter depends on concrete ECU store"
+        ],
+        "max_score": 4,
+        "name": "solid_principle.dependency_inversion",
+        "recommendations": [
+          "Isolate the concrete dependency or policy when this actual extension/maintenance responsibility evolves."
+        ],
+        "score": 2,
+        "score_reasoning": "The IPC/API boundary is explicit, but high-level or sibling implementations still directly depend on concrete storage/transport/adapter classes; this is a local coupling mechanism.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Complete reviewed boundary inventory is in rule_inputs. Android SDK ownership is not treated as verified consumption compatibility responsibility.",
+        "evidence": [
+          {
+            "claim": "Build SDK, variants and module dependencies",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 6,
+            "evidence_type": "code",
+            "independent_group": "service/build.gradle:android",
+            "path": "service/build.gradle",
+            "source": "repository",
+            "start_line": 1,
+            "symbol": "android"
+          },
+          {
+            "claim": "Actual cross-process callable interface",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 1,
+            "evidence_type": "code",
+            "independent_group": "sdk/src/main/aidl/org/vehicle/capability/IVehicleCapabilities.aidl:interface",
+            "path": "sdk/src/main/aidl/org/vehicle/capability/IVehicleCapabilities.aidl",
+            "source": "repository",
+            "start_line": 1,
+            "symbol": "interface"
+          }
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version_management",
+        "score": 1,
+        "score_reasoning": "Key provided/consumed boundaries have only manual release/version pins. No documented semantic compatibility policy or released API extraction/diff exists; current behavioral tests do not substitute for compatibility governance.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Production uses public Android APIs, has no native ABI or hidden/vendor calls, and no business SDK version split. No complete platform abstraction or two-version automatic validation supports 10.",
+        "evidence": [
+          {
+            "claim": "Public Android service/Binder boundary",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 99,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/capability/service/CapabilityService.java:public IBinder onBind",
+            "path": "service/src/main/java/org/vehicle/capability/service/CapabilityService.java",
+            "source": "repository",
+            "start_line": 91,
+            "symbol": "public IBinder onBind"
+          },
+          {
+            "claim": "Public Android persistence API; no native/hidden platform dependency",
+            "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+            "end_line": 14,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/capability/service/SimulatedBodyController.java:class SimulatedBodyController",
+            "path": "service/src/main/java/org/vehicle/capability/service/SimulatedBodyController.java",
+            "source": "repository",
+            "start_line": 6,
+            "symbol": "class SimulatedBodyController"
+          }
+        ],
+        "max_score": 10,
+        "name": "platform_reuse.platform_upgrade",
+        "score": 8,
+        "score_reasoning": "Production uses public Android APIs, has no native ABI or hidden/vendor calls, and no business SDK version split. No complete platform abstraction or two-version automatic validation supports 10.",
+        "status": "scored"
+      }
+    ],
+    "max_score": 52,
+    "name": "vehicle-capability-service",
+    "review_status": "maintainer_final_source_review_with_explicit_observations",
+    "total_score": 24,
+    "tree": "ce7085c121e648dd75bb12104edf358a5eff5475"
+  },
+  "rule_inputs": {
+    "compilation.api_version_management": {
+      "api_governance": {
+        "boundaries": [
+          {
+            "consumer": "independent Android client",
+            "coverage_reason": "Version labels and execution on one current runtime do not establish API compatibility governance",
+            "covered": false,
+            "critical": true,
+            "evidence": [
+              {
+                "claim": "Public Manager wrapper",
+                "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+                "end_line": 16,
+                "evidence_type": "code",
+                "independent_group": "sdk/src/main/java/org/vehicle/capability/VehicleManager.java:public final class",
+                "path": "sdk/src/main/java/org/vehicle/capability/VehicleManager.java",
+                "source": "repository",
+                "start_line": 8,
+                "symbol": "public final class"
+              },
+              {
+                "claim": "Actual cross-process callable interface",
+                "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+                "end_line": 1,
+                "evidence_type": "code",
+                "independent_group": "sdk/src/main/aidl/org/vehicle/capability/IVehicleCapabilities.aidl:interface",
+                "path": "sdk/src/main/aidl/org/vehicle/capability/IVehicleCapabilities.aidl",
+                "source": "repository",
+                "start_line": 1,
+                "symbol": "interface"
+              }
+            ],
+            "fixed_external_responsibility_verified": false,
+            "id": "manager-sdk",
+            "mechanism": "Manual version / build pin; no extraction against a released compatibility baseline",
+            "owner": "vehicle-capability-service",
+            "owns_contract": true,
+            "real_compatibility_check": false,
+            "role": "provided",
+            "scope_basis": "Actual independently consumed contract or production platform boundary; same-release private glue is separately excluded.",
+            "type": "Java/AAR",
+            "version_baseline": "1.0.0 manual SDK",
+            "version_controlled": true
+          },
+          {
+            "consumer": "Manager clients and callbacks",
+            "coverage_reason": "Version labels and execution on one current runtime do not establish API compatibility governance",
+            "covered": false,
+            "critical": true,
+            "evidence": [
+              {
+                "claim": "Public Manager wrapper",
+                "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+                "end_line": 16,
+                "evidence_type": "code",
+                "independent_group": "sdk/src/main/java/org/vehicle/capability/VehicleManager.java:public final class",
+                "path": "sdk/src/main/java/org/vehicle/capability/VehicleManager.java",
+                "source": "repository",
+                "start_line": 8,
+                "symbol": "public final class"
+              },
+              {
+                "claim": "Actual cross-process callable interface",
+                "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+                "end_line": 1,
+                "evidence_type": "code",
+                "independent_group": "sdk/src/main/aidl/org/vehicle/capability/IVehicleCapabilities.aidl:interface",
+                "path": "sdk/src/main/aidl/org/vehicle/capability/IVehicleCapabilities.aidl",
+                "source": "repository",
+                "start_line": 1,
+                "symbol": "interface"
+              }
+            ],
+            "fixed_external_responsibility_verified": false,
+            "id": "binder-service",
+            "mechanism": "Manual version / build pin; no extraction against a released compatibility baseline",
+            "owner": "vehicle-capability-service",
+            "owns_contract": true,
+            "real_compatibility_check": false,
+            "role": "provided",
+            "scope_basis": "Actual independently consumed contract or production platform boundary; same-release private glue is separately excluded.",
+            "type": "Binder/AIDL",
+            "version_baseline": "initial AIDL with no compatibility baseline",
+            "version_controlled": true
+          },
+          {
+            "consumer": "vehicle-capability-service",
+            "coverage_reason": "Version labels and execution on one current runtime do not establish API compatibility governance",
+            "covered": false,
+            "critical": true,
+            "evidence": [
+              {
+                "claim": "Build SDK, variants and module dependencies",
+                "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+                "end_line": 6,
+                "evidence_type": "code",
+                "independent_group": "service/build.gradle:android",
+                "path": "service/build.gradle",
+                "source": "repository",
+                "start_line": 1,
+                "symbol": "android"
+              },
+              {
+                "claim": "Public Android service/Binder boundary",
+                "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+                "end_line": 99,
+                "evidence_type": "code",
+                "independent_group": "service/src/main/java/org/vehicle/capability/service/CapabilityService.java:public IBinder onBind",
+                "path": "service/src/main/java/org/vehicle/capability/service/CapabilityService.java",
+                "source": "repository",
+                "start_line": 91,
+                "symbol": "public IBinder onBind"
+              }
+            ],
+            "fixed_external_responsibility_verified": false,
+            "id": "android-platform",
+            "mechanism": "Manual version / build pin; no extraction against a released compatibility baseline",
+            "owner": "Android SDK",
+            "owns_contract": false,
+            "real_compatibility_check": false,
+            "role": "consumed",
+            "scope_basis": "Actual independently consumed contract or production platform boundary; same-release private glue is separately excluded.",
+            "type": "public Framework API",
+            "version_baseline": "compileSdk 34 / minSdk 26",
+            "version_controlled": true
+          },
+          {
+            "consumer": "vehicle-capability-service",
+            "coverage_reason": "Version labels and execution on one current runtime do not establish API compatibility governance",
+            "covered": false,
+            "critical": false,
+            "evidence": [
+              {
+                "claim": "Actual Gradle module graph",
+                "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+                "end_line": 5,
+                "evidence_type": "code",
+                "independent_group": "settings.gradle:include",
+                "path": "settings.gradle",
+                "source": "repository",
+                "start_line": 4,
+                "symbol": "include"
+              },
+              {
+                "claim": "Build SDK, variants and module dependencies",
+                "commit": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+                "end_line": 6,
+                "evidence_type": "code",
+                "independent_group": "service/build.gradle:android",
+                "path": "service/build.gradle",
+                "source": "repository",
+                "start_line": 1,
+                "symbol": "android"
+              }
+            ],
+            "fixed_external_responsibility_verified": false,
+            "id": "same-release-glue",
+            "mechanism": "Manual version / build pin; no extraction against a released compatibility baseline",
+            "owner": "vehicle-capability-service",
+            "owns_contract": true,
+            "real_compatibility_check": false,
+            "role": "internal",
+            "scope_basis": "Actual independently consumed contract or production platform boundary; same-release private glue is separately excluded.",
+            "type": "private Java glue",
+            "version_baseline": "same APK/release",
+            "version_controlled": true
+          }
+        ],
+        "inventory_complete": true,
+        "revision": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+        "scope_basis": "Reviewed all production sources, AIDL declarations, Manifest entry points and Gradle release boundaries. Public Android UI/Binder/media APIs are grouped by owner; no native ABI or external provider/URI API exists.",
+        "unresolved": []
+      },
+      "evaluation_revision": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+      "manual_api_version_exists": true,
+      "semantic_api_versioning": false
+    },
+    "compilation.ci_independence": {
+      "valid_independent_ci_exists": false,
+      "valid_platform_ci_exists": false
+    },
+    "compilation.compilation_independence": {
+      "critical_cross_repo_api_versions_locked": true,
+      "external_dependencies_declared_interfaces": true,
+      "full_build_requires_unversioned_platform_injection": false,
+      "meaningful_independent_production_unit_exists": true,
+      "real_compatibility_check_or_commitment": false,
+      "repeatable_module_build_entry": true,
+      "repeatable_or_hermetic_environment": false,
+      "repository_source_module_closure_complete": true,
+      "requires_platform_tree_or_undeclared_external_source": false
+    },
+    "platform_reuse.platform_upgrade": {
+      "arch_bound_status": 0,
+      "automated_compatibility_validation_at_least_two_android_versions": false,
+      "has_arch_specific_deps": false,
+      "has_complex_permission_adaptation": false,
+      "has_interface_abstraction": false,
+      "has_light_permission_adaptation": true,
+      "has_non_compatible_api": false,
+      "multiple_unstable_core_paths_without_isolation": false,
+      "non_compatible_api_all_covered": true,
+      "permission_or_platform_hardcoding_blocks_core_migration": false,
+      "risk_fallback_available": true,
+      "risks_all_localized_in_compat_layer": true,
+      "single_abi_closed_dependency_without_fallback": false,
+      "version_bound_status": 0
+    },
+    "platform_reuse.release_branch_strategy": {
+      "cross_platform_unified_release_policy": false,
+      "platform_shared_release_channel": false,
+      "release_policy_evidence_verified": false,
+      "vehicle_specific_sop_channel": false
+    },
+    "quality.integration_test": {
+      "final_head_integration_execution_exists": false,
+      "valid_integration_assertions_and_interface_behavior": false
+    },
+    "solid_principle.dependency_inversion": {
+      "exceptional_automotive_practice_demonstrated": false,
+      "observation": "The IPC/API boundary is explicit, but high-level or sibling implementations still directly depend on concrete storage/transport/adapter classes; this is a local coupling mechanism.",
+      "positive_conformance_observed": true,
+      "scope_sufficient": true,
+      "violation_extent": "localized"
+    },
+    "solid_principle.interface_segregation": {
+      "exceptional_automotive_practice_demonstrated": false,
+      "observation": "Current consumers are not forced to implement or prepare unrelated capabilities. Optional state/command results follow the actual contract; interface width alone is not a violation. No exceptional practice supports 4.",
+      "positive_conformance_observed": true,
+      "scope_sufficient": true,
+      "violation_extent": "none_observed"
+    },
+    "solid_principle.liskov_substitution": {
+      "child_symbols": [
+        "TouringAdapter",
+        "CityAdapter"
+      ],
+      "empty_override_violation_count": 0,
+      "evaluation_revision": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+      "multiple_unexplained_override_or_exception_risks": false,
+      "overridden_methods": [
+        "snapshot",
+        "apply"
+      ],
+      "parent_symbol": "VehicleAdapter",
+      "postcondition_risk_count": 0,
+      "precondition_risk_count": 0,
+      "production_implementation_count": 2,
+      "substitution_execution": {
+        "status": "not_run"
+      },
+      "substitution_test_count": 0,
+      "unconditional_throw_violation_count": 0
+    },
+    "solid_principle.open_closed": {
+      "exceptional_automotive_practice_demonstrated": false,
+      "observation": "A useful local implementation boundary exists, but the demonstrated extension scenario propagates into an existing generic responsibility; the issue is localized.",
+      "positive_conformance_observed": true,
+      "scope_sufficient": true,
+      "violation_extent": "localized"
+    },
+    "solid_principle.single_responsibility": {
+      "exceptional_automotive_practice_demonstrated": false,
+      "observation": "Service coordinates the IPC boundary; adapters own device mappings and the ECU store owns persistence. No material unrelated responsibility is observed in these small production classes; no exceptional automotive practice supports 4.",
+      "positive_conformance_observed": true,
+      "scope_sufficient": true,
+      "violation_extent": "none_observed"
+    }
+  },
+  "schema_version": "expansion-evidence-1",
+  "semantic_review": {
+    "authoring_context_known": true,
+    "independent_blind_review": false,
+    "scope": "No score target or quality label was read by rule replay; semantic observations are explicit reviewer inputs.",
+    "second_pass": "Each complete leaf is rechecked against final-source anchors and adjacent contract gates; separate rule code replays these shared observations."
+  },
+  "source_inventory": {
+    "path": "suites/fw/evidence/FW-21-source.json",
+    "sha256": "afaca551de9c3320fbbe42be876cb6b5bff7a1cd12d0489af611fb1d06ca5a31"
+  },
+  "source_inventory_sha256": "afaca551de9c3320fbbe42be876cb6b5bff7a1cd12d0489af611fb1d06ca5a31",
+  "state": "verified_local",
+  "tree": "ce7085c121e648dd75bb12104edf358a5eff5475",
+  "type_id": "fw"
+}

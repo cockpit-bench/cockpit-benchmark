@@ -1,6 +1,6 @@
 [CmdletBinding()]
 # After a network interruption: ./restore.ps1 -Destination <same-directory> -Resume
-param([Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()][string]$Destination, [switch]$Resume, [switch]$IncludeSubmodules, [ValidateSet("android-validation18","matlab-simulink","all")][string]$Suite = "android-validation18")
+param([Parameter(Mandatory=$true)][ValidateNotNullOrEmpty()][string]$Destination, [switch]$Resume, [switch]$IncludeSubmodules, [ValidateSet("app","fw","new-energy-matlab","android-validation18","matlab-simulink","all")][string]$Suite = "all", [string]$SourceMap, [string[]]$RepositoryIds)
 $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version Latest
 $expectedHashes = [ordered]@{
@@ -9,7 +9,7 @@ $expectedHashes = [ordered]@{
     "ACTIVE_EIGHTEEN.md" = "f64d70be58fea89e65d152c839f8e47a386f5e5db8c43ec81cda6008ad35881b"
     "LICENSE" = "950f20ff178debfcf2526200837304a7512f39c022dc1f9105a6e0af62788df0"
     "NOTICE" = "ff71f002bf010747ebc6a65858605d93e07bdbf19e2514ea0bab67f6e8bb1420"
-    "README.md" = "6ad757049fb5280f141b687a69f9f67aa271c5c8f0d8a82d789c2ec85d14c685"
+    "README.md" = "a03250540517692a5f4b4dfa4b4e7bcd6f703541ee9e841aefb237904a4f843d"
     "SCORECARD.csv" = "49aaa5df1f3d561d56f6d3870ca27df2dffda6bb428cac122e597cd710e4e730"
     "SCORECARD.md" = "c0d86db5ebbb779a086d18d49bfeff354fb4da2c2b90f5e062a232819507ccb8"
     "SCORE_RULES.md" = "2bb21ed67c9e47c3cf7691bc2a526fa3e2c41b410017fa4faa41a02132da7b91"
@@ -26,6 +26,7 @@ $expectedHashes = [ordered]@{
     "docs/EVIDENCE_AVAILABILITY.md" = "48661c71c76d3afa5c0c6e321e5993b244cb9fcba3423d1fa8b5804fae9cc5d2"
     "docs/EVIDENCE_PROTOCOL.md" = "55da0019130fc7c3603bdd67655aaff23c255b0fdd297f624ebb29bfff47f22b"
     "docs/EXECUTION_SPEC.md" = "b8659cfdf5bc699dd099a88b5bb3fd768f85395b56a6fea0fdea9296a2db365b"
+    "docs/EXPANSION_20260909.md" = "7097c9af64e7839485b7198e71b2f1f13b194ffc42e2b8353745f95f2bf92bb3"
     "docs/EXTERNAL_GIT_INPUTS.md" = "0330d0a1eea6a37c0ed2a9ec95613974e9174d813dd97d26330595f819a1a6c9"
     "docs/HORIZONTAL_ARBITRATION_V093.md" = "504dcaab3441221d831aab02113614cc4fd92b0a4798ad5b6aa9faf05e8ac17f"
     "docs/INTEGRATION_EXECUTION.md" = "2b5b369751f52ee224d040fb2845df0451c31b6d1ef5f1c4269a89233f818e9d"
@@ -86,7 +87,24 @@ $expectedHashes = [ordered]@{
     "oracle/FW-15.json" = "79a7c638cb4d735f02712ee5160659281b89f0191b1c7281254d68ba9b33443d"
     "oracle/FW-16.json" = "dceb43bea031c520526328a73e71e80e157da6c11b56a74a6bc2f921831368d2"
     "oracle/FW-18.json" = "4a4830eb68ede260e6a6ca4b0ee45c3dd0122fef5128ddb085f7371e0748b4bb"
-    "suites.json" = "fadc09b820c9781b3eb1575737301f049d75dfe99375a6ad5c92062664cea911"
+    "suites.json" = "4b103a499ca14fd23ceb0731f6b6dc1dc93e87a45e90a5e311b970024b586a81"
+    "suites/app/SCORECARD.md" = "972344f1f868aa426e0ded6610950f622ac69e4119bd9046935fc72664dccfe0"
+    "suites/app/STANDARD_SCORES.json" = "5782876f18e7395d8ee65c18869b948e602387eba5f1125136c3343e7646a192"
+    "suites/app/additions.json" = "bc140a331505548a6c8242f370e00aae00a55c621c23efb3e2f06ba6b04956be"
+    "suites/app/evidence/APP-21-source.json" = "bc896a055575968a5859fa95cdfc319468518dc6f34c58c95b9a96173091cc94"
+    "suites/app/evidence/APP-21.json" = "54b711e376f738485753f63c7a557199839d117552b72fada10ef3faf7c4a450"
+    "suites/app/evidence/APP-22-source.json" = "4a6b232e039df62dd9c71b7b9af03aa4ee5cee332599005d441ce00e7d8692f8"
+    "suites/app/evidence/APP-22.json" = "7da5ccd03378fd72ec69cf363cbcfadfa159288a550f86e61a0e945054d0cb66"
+    "suites/app/manifest.json" = "c4df3e4d899c1763a496677a813b6cd9270074e5dfcf9ef9b1f14540cca65663"
+    "suites/fw/SCORECARD.md" = "9930621f8dd73b86c793aeef28fb61ea99fe2e8262e9007781232daaae861c4c"
+    "suites/fw/STANDARD_SCORES.json" = "6a006d971658a10a818a61b862b13b3b3190793739fb74504cd0ff3cfa790821"
+    "suites/fw/additions.json" = "a61d36b234a5adcf3fcd4cc4540e7230d1ce8f63cd4597ce28f3d0465f9c9639"
+    "suites/fw/evidence/FW-21-source.json" = "afaca551de9c3320fbbe42be876cb6b5bff7a1cd12d0489af611fb1d06ca5a31"
+    "suites/fw/evidence/FW-21.json" = "4c777d53a3550ca54e6aff00f23fad02ad773f61e9cf886e504d868a814d1117"
+    "suites/fw/evidence/FW-22-source.json" = "82dffb1691142d29491a597611651b2b6148892e0059a78268d71b5e4b5267b5"
+    "suites/fw/evidence/FW-22.json" = "9521172abb9df1f7286966afa83ac5d9d1604c2817771b9b3e240b64d4b41f9e"
+    "suites/fw/manifest.json" = "a19217c641696d3964024caa6f9ded2da65faaa82186de429fc54c765dc82bfe"
+    "suites/legacy-v094.json" = "fadc09b820c9781b3eb1575737301f049d75dfe99375a6ad5c92062664cea911"
     "suites/matlab-simulink/DATASET_LIMITS.json" = "12b2a775b1c2563b298b620fb422f0ba69b7091f99ef3a02e909b7806b3aad4f"
     "suites/matlab-simulink/DATASET_LIMITS.md" = "f3de5bd55e52d1852b52488ede2b204ad2c124d48de360d22199939bf5e64605"
     "suites/matlab-simulink/EFFECTIVE_CONTRACT.md" = "36f75b2b79416d227c0f0538573774067e6ef4fa096e3272df88bb3439495665"
@@ -111,7 +129,15 @@ $expectedHashes = [ordered]@{
     "suites/matlab-simulink/oracle/ML-07.json" = "5d63c8e249e8d1472ea041f9e00f57ef0e31d3d9b17cf4f290c4bef6ab362584"
     "suites/matlab-simulink/oracle/ML-08.json" = "57b0b777b2ffb031add5189c92953dae99fa761c60778331c160ec0b226195b2"
     "suites/matlab-simulink/oracle/ML-09.json" = "85f720482680eb5748ed443dbadaa388c1c13ee6579c2268fd524c27ca47aca6"
-    "verification/README.md" = "3bc57b228c7b18cf25b5c0e4642bd6a3af8ff6a0b52a7af65c92b737523cf18a"
+    "suites/new-energy-matlab/SCORECARD.md" = "ef2daeacc6f96cbda42713e2bba520fe2d897b9a6e46058dbe825c2136457301"
+    "suites/new-energy-matlab/STANDARD_SCORES.json" = "33e58ad9e475d727ad9826e7f98c6fc3776d3d2f48c2d38ad26a415fceac9d07"
+    "suites/new-energy-matlab/additions.json" = "d526a6bf6c076177498af16c3c7b20751be455b51d4a3ddfbc7f56652d953ce2"
+    "suites/new-energy-matlab/evidence/NEM-10-source.json" = "07f142e97185c0768392c3b627611ab43e49f42a02ea662cd66024f386643d20"
+    "suites/new-energy-matlab/evidence/NEM-10.json" = "177964c787ba6a15aa775185c1c276c1b9d26ae66f651afb14a7362ea36df887"
+    "suites/new-energy-matlab/evidence/NEM-11-source.json" = "5d1de30a247c3759a3d5326f8bdd9be52f07ca8a3d3971310e21be96b1c133b5"
+    "suites/new-energy-matlab/evidence/NEM-11.json" = "962fffae84df6a9dc22d794d7816a6068701c86412eb6be4cbabc0fb2d1d9247"
+    "suites/new-energy-matlab/manifest.json" = "db6868a2b6059fb1cf6e4a162d15cea553d6edb4157f67f2bbe7ba3629f16cd7"
+    "verification/README.md" = "08424e8c76a93459ed3f11d7cf4b3ce0717c976195953083782295f86f6d848f"
     "verification/boundary.py" = "9b9888b7e33b26ef4b65033d982099c413540074408ff81df0f6cbd34a59f384"
     "verification/check_split.py" = "7a85129e20da6e5d52b07bf35ee244fd68305f9b122c9cb6478b07b1c37d1c8e"
     "verification/counting.py" = "01535dfe4097e289681ec0ab9f8d774cdfe11811c4d249c0050cbbee686ab9da"
@@ -120,14 +146,17 @@ $expectedHashes = [ordered]@{
     "verification/evaluation_batch.py" = "2b1f826f034fd09032c7c4109a39f98a5da574929fc5e5d1278c91c9a699f5a9"
     "verification/evaluation_profile.py" = "8ab808d05a4106d913d127ff2e9f67210ff3d6d53acacd18f6aa33cc233b7ad5"
     "verification/examples/build_boundary_prototypes.py" = "5c802e00142f1815b67271210f51b3dc824e3598e84027667b64f02a81794394"
+    "verification/expansion.py" = "28b2e189539a1e9133452e12e9716a8e55847e01976abe721892faa4018b93d3"
     "verification/external_inputs.py" = "54882587f5cad6dd75be0b5b1feca9ac3c4dbe252667bc3b17dffd654b232b5d"
-    "verification/matlab_evidence.py" = "f5f1f7749ff08b979a3e433d941db91292006f86a2b2065453af8a2132239630"
+    "verification/matlab_evidence.py" = "2488ab60fbff3505161c49ea1c54aa148c3493dd64f3089c95b16a89bc69f894"
     "verification/matlab_properties.py" = "066d12dc74dfaf6ede617a32d6bcc9903f1c371e45198ce4a83a848101802c5f"
     "verification/matlab_recompute.py" = "bcc05daf3b8f8a19fb064926e0cd0d6ba9930fd085427a169103d0516000178f"
     "verification/matlab_validators.py" = "99fabdd335fc4d873f1b269979710dc9faaff316ccdcc2bb2fe0a921dc7c7ef8"
+    "verification/repository_types.py" = "8b6f0b2bcb44c6de3c0850f9541c9339d6b70972724c01c68900e612726e16a9"
     "verification/rules.py" = "f0936ed0d1bb7400f4f44985abdb23c41330e5593fe7ea08643dfd652b334c4d"
-    "verification/suites.py" = "0de336069f39a380772e59708459dd4922f2da33ad1d051a616cd74104d3f93b"
-    "verification/suites.schema.json" = "9cbe5d9ba378ec35c4d6f27131158259dd636addc1df0643885da9d4f1dea217"
+    "verification/suites-v1.schema.json" = "e293769beb9b82de969bc8ede7cde568f5fd8c3c499375253af0d19840c67244"
+    "verification/suites.py" = "efe6a054e0cb5c6c0ca0a59ae1c7b11673521c205f37291c9bed41b389488fbb"
+    "verification/suites.schema.json" = "0e7abd73038b2e17f94de2c51e5d0984ff23589a415f442ff9b1c2d806202cbf"
     "verification/test_api_governance.py" = "b6dff09ba8cd6f0074e5faa9664f97604b78e8b8de90f1a2729288fa63f9c315"
     "verification/test_boundary_regression.py" = "a4237e27c9f627f2a5f807fe02e97149903e9db1c17c27a5992c84889cde83a2"
     "verification/test_cpp_counting.py" = "79c6f3d34c6a8d20904f3f1747b440e56f728cf54820d93b9df06680000370a5"
@@ -137,11 +166,12 @@ $expectedHashes = [ordered]@{
     "verification/test_external_inputs.py" = "9c364f6e1d1a524681020430c8712ea392556015c81e4e02847f17435857a774"
     "verification/test_integration_execution.py" = "119e8df0701e4a110d4d13419ca864c90002deb238f843442aa1872f9257e492"
     "verification/test_lineage_split.py" = "a5ab7544a3bcfba9c80bef10238fa03713b07b9cf46d2845bd88db3ea3dedbb8"
-    "verification/test_matlab_evidence.py" = "c17da7b4e6df1d2bf8c8bdeba7616d28081a53fa4a36fd86d202f6bc719c65a1"
+    "verification/test_matlab_evidence.py" = "996f6168f4e27d1af9d52670f61fb3a3c6775891d0bf7f39d6405bb30cdb6aba"
     "verification/test_public_verification.py" = "5ef960a5004a3228aa73356ae67746737d14970f048ff02bc81e8d516f11c6f4"
     "verification/test_public_verification_consistency.py" = "8100627a20dd4d5b51724209069bf5b5f3cdb719e55536fe99938aa2ebde83a8"
+    "verification/test_repository_types.py" = "098ce468bad388f2182f792a9b1bc880cf5f63f20c99f0da4c0c1b9f9fd6a28f"
     "verification/test_rule_boundaries.py" = "9d61d0c5ce9a5fc20e8e38c63c8998fe136084b8d72855383792814484b12517"
-    "verification/test_suites.py" = "a455bcd48fc3f4f3e81c6a457e723d9a616e10a968a67ce197dd8c3083eb60c5"
+    "verification/test_suites.py" = "77464d95e44e130ee7ccf3bb9dedf77a9b0cf36615f7245a614e5ff0b604c52d"
     "verification/verify.py" = "ee47327357e008a659750b7bc42a10796973650987a7e9989f1e29092f322d4c"
 }
 function Invoke-CheckedGit {
@@ -201,12 +231,15 @@ foreach ($entry in $expectedHashes.GetEnumerator()) {
         throw "SHA-256 mismatch: $($entry.Key)"
     }
 }
-if ($Suite -ne 'android-validation18') {
+$registry = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'suites.json') -Raw | ConvertFrom-Json
+if ($registry.schema_version -eq 'benchmark-repository-types-2' -or $Suite -ne 'android-validation18') {
     $python = Get-Command python -ErrorAction SilentlyContinue
     if (-not $python) { throw 'Python 3.11+ is required for the additional suite dispatcher.' }
     $arguments = @((Join-Path $PSScriptRoot 'verification/suites.py'), 'restore', '--wrapper', $PSScriptRoot, '--suite', $Suite, '--destination', $Destination)
     if ($Resume) { $arguments += '--resume' }
     if ($IncludeSubmodules) { $arguments += '--include-submodules' }
+    if ($SourceMap) { $arguments += @('--source-map', $SourceMap) }
+    if ($RepositoryIds) { $arguments += '--ids'; $arguments += $RepositoryIds }
     & $python.Source @arguments
     if ($LASTEXITCODE -ne 0) { throw "Suite restoration rejected or failed ($LASTEXITCODE)." }
     return

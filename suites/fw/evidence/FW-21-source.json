@@ -1,0 +1,238 @@
+{
+  "ci_candidates": [],
+  "excluded_source": [
+    {
+      "path": "service/src/debug/java/org/vehicle/capability/service/SimulatorControl.java",
+      "reason": "debug acceptance, sample consumer, or generated output outside declared production roots"
+    }
+  ],
+  "files": [
+    {
+      "blob": "6dd61da099bffbee5bf08e43ef89c2ce8ef23502",
+      "bytes": 46,
+      "path": ".gitignore",
+      "sha256": "89ded145d3165aa9b6c42e6bfd7b46d30044448f0fc0ed4f5ea273bf32e32913"
+    },
+    {
+      "blob": "29f81d812f3e768fa89638d1f72920dbfd1413a8",
+      "bytes": 11558,
+      "path": "LICENSE",
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    {
+      "blob": "5078bc023f9219111907b95dcd1213b2eadd0bbc",
+      "bytes": 236,
+      "path": "NOTICE",
+      "sha256": "dc1f6a46c645dee7e6d257461c0bf75a06455be540db54493d8f816b013764db"
+    },
+    {
+      "blob": "2d39958b1312f6d3761ffa70441700c75cc7dffe",
+      "bytes": 1220,
+      "path": "README.md",
+      "sha256": "72a7f9d246760922ff4d2bd412c847b90a231751c6f86aa06c9087ee03ae5f31"
+    },
+    {
+      "blob": "8bbfc79e85d2b73728a2dd6eff585033497973fe",
+      "bytes": 124,
+      "path": "build.gradle",
+      "sha256": "1467cdb729659ab1780bdc5a7f768d766887ee0d55acc561bbcfce6be8be78fd"
+    },
+    {
+      "blob": "8aa9c2b819d9fd1e5198415ce2a17bd3dd6ba5a0",
+      "bytes": 105,
+      "path": "gradle.properties",
+      "sha256": "fec5a7f16fa6ea509517f8393eb433f063d1d0594f04f166f28cf58da8b65f33"
+    },
+    {
+      "blob": "e708b1c023ec8b20f512888fe07c5bd3ff77bb8f",
+      "bytes": 59203,
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637"
+    },
+    {
+      "blob": "10ea3b7e6524017340f493f0f685907fa4f755a3",
+      "bytes": 236,
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "0b9c5e30a047cd3235fcca4d30ae01ef07efff5424849ea74277dcc02ebdd7b2"
+    },
+    {
+      "blob": "02640cba68b8881cb234133808bb8fa88db5856c",
+      "bytes": 5951,
+      "path": "gradlew",
+      "sha256": "c15a47b60a4eeede9ffee33433fd990d8b6236607372b9bb1f6dc51b07b78c39"
+    },
+    {
+      "blob": "ac1b06f93825db68fb0c0b5150917f340eaa5d02",
+      "bytes": 2763,
+      "path": "gradlew.bat",
+      "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b"
+    },
+    {
+      "blob": "bf78526827a47f4013a14f38c22f4220a5f1297b",
+      "bytes": 302,
+      "path": "sdk/build.gradle",
+      "sha256": "a25882a7b1b6c59030f8fc52a3db45519dcb4baa0873843c319bcbcd7c948c70"
+    },
+    {
+      "blob": "9c5d2fe0b0cd053bb8cb06c2d5ab216b4ca94a69",
+      "bytes": 13,
+      "path": "sdk/src/main/AndroidManifest.xml",
+      "sha256": "6ffce38a2b1abc5f552b2114873ae38f67de915ca64e5a123e322c4821a552b0"
+    },
+    {
+      "blob": "c698bd106988d830122f3d5ec391d9d950f0b1b8",
+      "bytes": 116,
+      "path": "sdk/src/main/aidl/org/vehicle/capability/ICapabilityListener.aidl",
+      "sha256": "9bef7ec286dfe584a9935dc50cde986fddff05855aaa97d997dd045791f20eab"
+    },
+    {
+      "blob": "60cff0d826343fd453321217eb85b01726ef1e7a",
+      "bytes": 347,
+      "path": "sdk/src/main/aidl/org/vehicle/capability/IVehicleCapabilities.aidl",
+      "sha256": "018e567c8ea5f7474afa00d96262a72505f12e4989d5eb26330a0626ca6d2cfe"
+    },
+    {
+      "blob": "9c138ced2d0f06ed4eb96ae27833ab96e775d8f3",
+      "bytes": 3528,
+      "path": "sdk/src/main/java/org/vehicle/capability/VehicleManager.java",
+      "sha256": "e6713b9a68e9a38fa2e22c4d16b353ee589e0cb4e8d57b154933bc67bf8aa649"
+    },
+    {
+      "blob": "bb6db239d3d30ad42be94b21822678b68f0f4cd7",
+      "bytes": 449,
+      "path": "service/build.gradle",
+      "sha256": "952acb2b76cb75ef22689652d30df083483e8ec7ed755771584a9c95cb528604"
+    },
+    {
+      "blob": "176ae68eae479cb6f0bf8912c8df9e239015edc9",
+      "bytes": 255,
+      "path": "service/src/debug/AndroidManifest.xml",
+      "sha256": "d43b4eb8ddb123d8c37cb62c35d15e333d8c22b7e71dac81af3466b4ecf576d3"
+    },
+    {
+      "blob": "cb696d6309b145e775e453543d6e425ddbb0e578",
+      "bytes": 759,
+      "path": "service/src/debug/java/org/vehicle/capability/service/SimulatorControl.java",
+      "sha256": "d44581c68072a6d62b6451f060b05a2788ed09b44d7997ab21b1c595079c52fa"
+    },
+    {
+      "blob": "a7bcfc5a4ec636cc5c93b7248c9daa9f2c18a29d",
+      "bytes": 498,
+      "path": "service/src/main/AndroidManifest.xml",
+      "sha256": "f907bac42cb077c21749d18088616528155d85eaeffdd91e5d4c07191129cd00"
+    },
+    {
+      "blob": "cc84067f2fbc4962bf76277589f715df403af89f",
+      "bytes": 3461,
+      "path": "service/src/main/java/org/vehicle/capability/service/CapabilityService.java",
+      "sha256": "f78dfae1597239f51a2824ed5f237ce83974afaa7c27b1e14954e2d3e12d1092"
+    },
+    {
+      "blob": "3a811a79bc95081730b38e3e60824e04d96c0570",
+      "bytes": 981,
+      "path": "service/src/main/java/org/vehicle/capability/service/CityAdapter.java",
+      "sha256": "1e35eb611bf2beab3889d7133f9e3f109517660a5e9e217bf9f2e92c3983d0da"
+    },
+    {
+      "blob": "1fbbca0d2ae2e3842af1ca4212ce2eba9e62949b",
+      "bytes": 606,
+      "path": "service/src/main/java/org/vehicle/capability/service/SimulatedBodyController.java",
+      "sha256": "0fb9a90646582cb3a679c4792eedd3c2a1c963ce8ebd67b231e850c6ed808a4d"
+    },
+    {
+      "blob": "9f4ed7ccbb646d86acb04fd5470485dee2388c61",
+      "bytes": 1456,
+      "path": "service/src/main/java/org/vehicle/capability/service/TouringAdapter.java",
+      "sha256": "26dc32dc5ea34572f2acd1025034c7aec01a4d81a2d7e847006085b2cf75713a"
+    },
+    {
+      "blob": "8c318ba69ace691cb2ee815c869f2f904137c2e4",
+      "bytes": 177,
+      "path": "service/src/main/java/org/vehicle/capability/service/VehicleAdapter.java",
+      "sha256": "592cd7de7fcaeecc39a09b031f617597e9e45aca29738239e6ac07082fa7aaa0"
+    },
+    {
+      "blob": "eb5f49b976c8d09776212e7e68028be5e514dfa4",
+      "bytes": 307,
+      "path": "settings.gradle",
+      "sha256": "cb889decd5d87f6577358ac52dc1ae2cdfcd93ee9b8a28ab5303df4495bca114"
+    }
+  ],
+  "head": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c",
+  "models": [],
+  "production": [
+    {
+      "build_owner": "sdk",
+      "language": "AIDL",
+      "path": "sdk/src/main/aidl/org/vehicle/capability/ICapabilityListener.aidl",
+      "physical_lines": 1,
+      "source_loc": 1
+    },
+    {
+      "build_owner": "sdk",
+      "language": "AIDL",
+      "path": "sdk/src/main/aidl/org/vehicle/capability/IVehicleCapabilities.aidl",
+      "physical_lines": 1,
+      "source_loc": 1
+    },
+    {
+      "build_owner": "sdk",
+      "language": "Java",
+      "path": "sdk/src/main/java/org/vehicle/capability/VehicleManager.java",
+      "physical_lines": 117,
+      "source_loc": 99
+    },
+    {
+      "build_owner": "service",
+      "language": "Java",
+      "path": "service/src/main/java/org/vehicle/capability/service/CapabilityService.java",
+      "physical_lines": 106,
+      "source_loc": 93
+    },
+    {
+      "build_owner": "service",
+      "language": "Java",
+      "path": "service/src/main/java/org/vehicle/capability/service/CityAdapter.java",
+      "physical_lines": 34,
+      "source_loc": 28
+    },
+    {
+      "build_owner": "service",
+      "language": "Java",
+      "path": "service/src/main/java/org/vehicle/capability/service/SimulatedBodyController.java",
+      "physical_lines": 21,
+      "source_loc": 15
+    },
+    {
+      "build_owner": "service",
+      "language": "Java",
+      "path": "service/src/main/java/org/vehicle/capability/service/TouringAdapter.java",
+      "physical_lines": 44,
+      "source_loc": 36
+    },
+    {
+      "build_owner": "service",
+      "language": "Java",
+      "path": "service/src/main/java/org/vehicle/capability/service/VehicleAdapter.java",
+      "physical_lines": 9,
+      "source_loc": 6
+    }
+  ],
+  "refs": {
+    "refs/heads/main": "391009f3dddcde3ee6c43139b5c9b58bc9d53e4c"
+  },
+  "scope": {
+    "production_roots": [
+      "sdk/src/main/java",
+      "sdk/src/main/aidl",
+      "service/src/main/java"
+    ]
+  },
+  "size": {
+    "effective_logic_blocks": 0,
+    "physical_lines": 333,
+    "source_files": 8,
+    "source_loc": 279
+  },
+  "tree": "ce7085c121e648dd75bb12104edf358a5eff5475"
+}

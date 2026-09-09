@@ -1,49 +1,43 @@
-# Cockpit Benchmark — independent suites
+# Benchmark — APP, FW and New Energy MATLAB
 
-[suites.json](suites.json) is the unified index. Each suite has its own scoring
-contract, source manifest, standard answers and reproducible evidence.
+[suites.json](suites.json) is the current registry. APP and FW are independent repository types; New Energy MATLAB identifies the business domain. MATLAB/Simulink is technology metadata, not a generic business type. Future MATLAB repositories from other centers require their own business classification.
 
-| Suite | Repositories / leaves | Score | Contract |
-|---|---|---|---|
-| [Android APP / Framework](SCORECARD.md) | 18 / 171 | 259 / 828 | [v3.5.1](SCORE_RULES.md) |
-| [MATLAB / Simulink](suites/matlab-simulink/README.md) | 9 / 117 | 338 / 549 | [Effective contract](suites/matlab-simulink/EFFECTIVE_CONTRACT.md) |
+| Repository type | Local verified repositories / leaves | Score | Published sources |
+|---|---:|---:|---:|
+| [APP](suites/app/SCORECARD.md) | 11 / 88 | 140 / 440 | 9 |
+| [FW](suites/fw/SCORECARD.md) | 11 / 121 | 194 / 572 | 9 |
+| [New Energy MATLAB](suites/new-energy-matlab/SCORECARD.md) | 11 / 143 | 429 / 671 | 9 |
 
-Version v0.9.4 resolves the [FW-03 MAP extension-scenario adjudication](docs/MAP_OCP_ARBITRATION_V094.md) and adopts approved, case-free SOLID explanations in contract v3.5.1. One score changes; 170 other complete Android leaves, all 27 source HEADs/refs and MATLAB scores/evidence are unchanged. Expansion remains separate.
+The six new repositories are locally implemented, executed, reviewed and admitted on `main`; they have not been uploaded or released. Each type adds two repositories. Existing 27 source HEADs/refs and complete reference objects remain frozen at v0.9.4. The old 22 pending slots are untouched. Scores remain separate; there is no combined raw score.
 
-## Restore
+See [the six business profiles, evidence and limits](docs/EXPANSION_20260909.md). The approved contracts are unchanged: [APP/FW v3.5.1](SCORE_RULES.md) and [the independent MATLAB effective contract](suites/matlab-simulink/EFFECTIVE_CONTRACT.md). New scores are observed outcomes, not construction targets. This is a development/regression collection, not an independent holdout or measured model accuracy.
+
+## Restore local or published inputs
+
+Python 3.11+, Git and PowerShell are required. A source map is a local JSON object from repository ID to an existing source directory. New unpublished repositories require it; missing inputs are rejected before cloning or network access. All commands verify full history, exact HEAD/tree/refs, clean state and zero remotes. They do not run source code.
 
 ```powershell
-./restore.ps1 -Destination C:/bench/android
-./restore.ps1 -Suite matlab-simulink -Destination C:/bench/matlab
-./restore.ps1 -Suite all -Destination C:/bench/all
+# All three types: the local map needs paths for the six unpublished repositories.
+./restore.ps1 -Suite all -SourceMap C:/bench/source-map.json -Destination C:/bench/restored
+# Select only the two new APP repositories, without restoring FW or MATLAB.
+./restore.ps1 -Suite app -RepositoryIds APP-21,APP-22 -SourceMap C:/bench/source-map.json -Destination C:/bench/new-app
 ```
 
-The default remains Android. `all` restores to separate `android-validation18`
-and `matlab-simulink` subdirectories. `-Resume` rechecks existing sources;
-`-IncludeSubmodules` applies to Android. MATLAB has no declared submodules.
-The additional suite dispatcher requires Python 3.11+ and Git; Android retains
-its PowerShell/Git requirements. Restoration verifies frozen HEADs, all refs,
-complete history and clean remote-free repositories. It does not execute models.
+`all` is the default and creates `app`, `fw`, and `new-energy-matlab` folders. A single-type request places repositories directly in its destination. `-Resume` rechecks existing inputs; `-IncludeSubmodules` checks out pinned recursive gitlinks and removes child remotes. Restore never turns a local source into a published one.
 
-## Verify
+## Verify current additions
 
 ```sh
-python verification/suites.py validate --wrapper . --require-publishable
-python verification/matlab_evidence.py --wrapper . --archive matlab-verification-data-v0.9.0.zip --sources C:/bench/matlab
+python verification/repository_types.py validate --wrapper .
+python verification/expansion.py --wrapper . --source-map C:/bench/source-map.json --records-root C:/bench/native-records --output C:/bench/expansion-replay.json
 ```
 
-The first command checks the published registry and complete evidence index;
-it does not by itself replay the attachment. Download the MATLAB attachment
-from [v0.9.0](https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.9.0)
-for the second command. Its hash is frozen in
-[EVIDENCE_INDEX.json](suites/matlab-simulink/EVIDENCE_INDEX.json).
+The second command checks source inventories twice, code/model anchors, all 64 new leaf calculations, and retained native artifact hashes. Semantic judgments are explicit reviewed inputs; deterministic replay is not a fresh blind semantic review. Omitting `--records-root` verifies sources and rules only. `--require-publishable` correctly rejects the current local additions.
 
-Android’s [verifier](verification/README.md), [API governance](docs/API_GOVERNANCE.md),
-[evidence protocol](docs/EVIDENCE_PROTOCOL.md) and
-[v0.9.4 evidence attachment](https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.9.4)
-remain the reference for that suite. Give an evaluation agent only its selected
-source repository and explicitly allowed raw inputs, never the wrapper answers.
+Give an evaluation agent only one selected source repository and explicitly allowed raw inputs. Never provide these manifests, standards or evidence judgments as candidate inputs. The preserved [fixed Android evaluation batch](docs/EVALUATION_BATCH.md) and its 171-leaf statistics still describe the original Validation-18, not the expanded collection.
 
-For candidate evaluation use the [fixed batch entry](docs/EVALUATION_BATCH.md). Source-only and frozen-external are separate modes; score accuracy and sampled semantic evidence validity are separate metrics.
+## Preserved release compatibility
 
-See [review follow-up scope and remaining work](docs/REVIEW_FOLLOWUP.md).
+The root `manifest.json`, `STANDARD_SCORES.json`, `SCORECARD.*`, original Android verification attachment and `suites/matlab-simulink` remain the frozen legacy evidence payloads. [legacy-v094.json](suites/legacy-v094.json) binds them. They are not the primary current type registry.
+
+Historical selector aliases `android-validation18` (APP plus FW) and `matlab-simulink` (New Energy MATLAB) remain accepted for compatibility; on this mainline they select the corresponding **current** type populations. Use the immutable [v0.9.4 release](https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.9.4) for the exact original 18/9 restoration and its original behavior. Old refs and tags are not moved.

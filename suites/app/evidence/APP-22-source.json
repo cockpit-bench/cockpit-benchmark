@@ -1,0 +1,182 @@
+{
+  "ci_candidates": [],
+  "excluded_source": [
+    {
+      "path": "app/src/debug/java/org/vehicle/recorder/AcceptanceRunner.java",
+      "reason": "debug acceptance, sample consumer, or generated output outside declared production roots"
+    },
+    {
+      "path": "app/src/debug/java/org/vehicle/recorder/CameraAcceptanceRunner.java",
+      "reason": "debug acceptance, sample consumer, or generated output outside declared production roots"
+    }
+  ],
+  "files": [
+    {
+      "blob": "6dd61da099bffbee5bf08e43ef89c2ce8ef23502",
+      "bytes": 46,
+      "path": ".gitignore",
+      "sha256": "89ded145d3165aa9b6c42e6bfd7b46d30044448f0fc0ed4f5ea273bf32e32913"
+    },
+    {
+      "blob": "29f81d812f3e768fa89638d1f72920dbfd1413a8",
+      "bytes": 11558,
+      "path": "LICENSE",
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    {
+      "blob": "5078bc023f9219111907b95dcd1213b2eadd0bbc",
+      "bytes": 236,
+      "path": "NOTICE",
+      "sha256": "dc1f6a46c645dee7e6d257461c0bf75a06455be540db54493d8f816b013764db"
+    },
+    {
+      "blob": "7501b2d8981cb817d1e678c6a5f5dfdd34481504",
+      "bytes": 959,
+      "path": "README.md",
+      "sha256": "4bcf018929b80b3a17ccdbaec1ddbdbd64fb87ff479cfd5eb84fbe204091f783"
+    },
+    {
+      "blob": "ccdf93af8d71cfb212f63792cf5f0cb0248abca4",
+      "bytes": 431,
+      "path": "app/build.gradle",
+      "sha256": "cd5ebc2dca3011051557e7ae2025f21fa330a13605b27fbaee871b788451f6e0"
+    },
+    {
+      "blob": "bd2e77fa7c5372775a80789de611e530db06abfc",
+      "bytes": 319,
+      "path": "app/src/debug/AndroidManifest.xml",
+      "sha256": "505eb6879b72b611a6f742ca15d40c35dfd816609c7bd122d1cb758277dd1f20"
+    },
+    {
+      "blob": "0e66efa99255013eb3ba80071c1694f4d14f5b9d",
+      "bytes": 8965,
+      "path": "app/src/debug/java/org/vehicle/recorder/AcceptanceRunner.java",
+      "sha256": "953f8a03d2859f892a64fb068e774b4f4a8ef22c0237a8604554b9c1513a7fac"
+    },
+    {
+      "blob": "59a3c5cc528c076c3f8398fa34229063f309adae",
+      "bytes": 3892,
+      "path": "app/src/debug/java/org/vehicle/recorder/CameraAcceptanceRunner.java",
+      "sha256": "21f3211be26b5f1d25e664499cbeb681361b2ccc0f692392f0d31c7152fc770e"
+    },
+    {
+      "blob": "bf388f247440db89a5830accfcc7745861ee2502",
+      "bytes": 595,
+      "path": "app/src/main/AndroidManifest.xml",
+      "sha256": "752b9538ff42c60ef520adfd4ee7bfe4fae66fab9a6379c29fe53b5b68f63377"
+    },
+    {
+      "blob": "31ff41efb566ff8cf3b6795de55fdb562202b9b6",
+      "bytes": 4847,
+      "path": "app/src/main/java/org/vehicle/recorder/RecorderActivity.java",
+      "sha256": "bb1eff3368b3a894766a40e4078f5d55c021e1aad77fb3dd6f9bfe3510a40d26"
+    },
+    {
+      "blob": "8bbfc79e85d2b73728a2dd6eff585033497973fe",
+      "bytes": 124,
+      "path": "build.gradle",
+      "sha256": "1467cdb729659ab1780bdc5a7f768d766887ee0d55acc561bbcfce6be8be78fd"
+    },
+    {
+      "blob": "8aa9c2b819d9fd1e5198415ce2a17bd3dd6ba5a0",
+      "bytes": 105,
+      "path": "gradle.properties",
+      "sha256": "fec5a7f16fa6ea509517f8393eb433f063d1d0594f04f166f28cf58da8b65f33"
+    },
+    {
+      "blob": "e708b1c023ec8b20f512888fe07c5bd3ff77bb8f",
+      "bytes": 59203,
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637"
+    },
+    {
+      "blob": "10ea3b7e6524017340f493f0f685907fa4f755a3",
+      "bytes": 236,
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "0b9c5e30a047cd3235fcca4d30ae01ef07efff5424849ea74277dcc02ebdd7b2"
+    },
+    {
+      "blob": "02640cba68b8881cb234133808bb8fa88db5856c",
+      "bytes": 5951,
+      "path": "gradlew",
+      "sha256": "c15a47b60a4eeede9ffee33433fd990d8b6236607372b9bb1f6dc51b07b78c39"
+    },
+    {
+      "blob": "ac1b06f93825db68fb0c0b5150917f340eaa5d02",
+      "bytes": 2763,
+      "path": "gradlew.bat",
+      "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b"
+    },
+    {
+      "blob": "29d7a48b8707c247912b97c299efe5eb2e23bf82",
+      "bytes": 299,
+      "path": "settings.gradle",
+      "sha256": "463029a677fab77affe97f9ffe5e61801df8d2f4fb2cf4ac2db1174bcc6428f6"
+    },
+    {
+      "blob": "37657de8fdcae73c560f7a2ae2ba5b7c722ff022",
+      "bytes": 297,
+      "path": "video/build.gradle",
+      "sha256": "a157d42ded3a2821556a3610934e95cc624ce413d5cc61fc6438703baa24dc97"
+    },
+    {
+      "blob": "9c5d2fe0b0cd053bb8cb06c2d5ab216b4ca94a69",
+      "bytes": 13,
+      "path": "video/src/main/AndroidManifest.xml",
+      "sha256": "6ffce38a2b1abc5f552b2114873ae38f67de915ca64e5a123e322c4821a552b0"
+    },
+    {
+      "blob": "43d90ed520e180e5fb7a5d4f055245dd8dc16533",
+      "bytes": 3599,
+      "path": "video/src/main/java/org/vehicle/video/CameraCapture.java",
+      "sha256": "559b5f7551955245d6d70ff9c276a6d97fb8dc94be26a3a9436420806d9c1bdc"
+    },
+    {
+      "blob": "41cbbf5176dd2ef1eb5e8fc07470359e3978573f",
+      "bytes": 5985,
+      "path": "video/src/main/java/org/vehicle/video/VideoStore.java",
+      "sha256": "a1091fea8abcc0dcd5001227a40598bd016ff396813b67f7f9221b4ba0fb70b6"
+    }
+  ],
+  "head": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53",
+  "models": [],
+  "production": [
+    {
+      "build_owner": "app",
+      "language": "Java",
+      "path": "app/src/main/java/org/vehicle/recorder/RecorderActivity.java",
+      "physical_lines": 147,
+      "source_loc": 140
+    },
+    {
+      "build_owner": "video",
+      "language": "Java",
+      "path": "video/src/main/java/org/vehicle/video/CameraCapture.java",
+      "physical_lines": 109,
+      "source_loc": 100
+    },
+    {
+      "build_owner": "video",
+      "language": "Java",
+      "path": "video/src/main/java/org/vehicle/video/VideoStore.java",
+      "physical_lines": 164,
+      "source_loc": 147
+    }
+  ],
+  "refs": {
+    "refs/heads/main": "aefc64aaa8173ee29e2b0021ba54c2ca1b203b53"
+  },
+  "scope": {
+    "production_roots": [
+      "app/src/main/java",
+      "video/src/main/java"
+    ]
+  },
+  "size": {
+    "effective_logic_blocks": 0,
+    "physical_lines": 420,
+    "source_files": 3,
+    "source_loc": 387
+  },
+  "tree": "16c620b0d8a44f4327f6662281979c8e4d95402d"
+}

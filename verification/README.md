@@ -1,3 +1,5 @@
+Current mainline: three repository types and six local additions are described in [the root README](../README.md) and [expansion evidence](../docs/EXPANSION_20260909.md). Use repository_types.py and expansion.py for the new registry. The tools and 171-leaf counts below remain the preserved Validation-18 verification scope.
+
 Current v0.9.4: Android 259/828; FW-03 MAP OCP arbitration and approved candidate-visible contract v3.5.1. See docs/MAP_OCP_ARBITRATION_V094.md. Use the matching v0.9.4 verification attachment; MATLAB and the external Git packet retain their original versions.
 
 Historical v0.8.6 context: API scope B under SCORE_RULES.md v3.5 supersedes earlier API-scope statements below; see [API governance schema and limits](../docs/API_GOVERNANCE.md). Other leaf contracts remain unchanged.

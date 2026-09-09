@@ -1,0 +1,633 @@
+{
+  "execution": {
+    "binding": {
+      "apks": [
+        {
+          "install": "Performing Streamed Install\nSuccess",
+          "path": "app/build/outputs/apk/touring/debug/app-touring-debug.apk",
+          "sha256": "f0ef871e346ab9066854695bcfc6e95c1caade58405890e754192e02bcfbe1fe"
+        },
+        {
+          "install": "Performing Streamed Install\nSuccess",
+          "path": "app/build/outputs/apk/city/debug/app-city-debug.apk",
+          "sha256": "e4e7880b8f393de848dda94719fc69ec5f0c0d34ecfc92e8a547216cab7d95cc"
+        }
+      ],
+      "head": "13c481c9fc68b271b6d2631557f977366a66daa1",
+      "tree": "de8f0b04b122b52a2fc463f348541750ce8876d8"
+    },
+    "records": [
+      {
+        "bytes": 166,
+        "path": "final-android/scene-touring.log",
+        "sha256": "5af44bdcc1ddbcc43aeae6ec418e3a9032a8c6fb97836d3dd1dac8abf12b575a"
+      },
+      {
+        "bytes": 163,
+        "path": "final-android/scene-city.log",
+        "sha256": "f944704426a11d55180438ecba4ab1091b787d1f70ac01047e6863374aca606a"
+      }
+    ],
+    "status": "passed",
+    "summary": {
+      "fingerprint": "google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+      "physical_device": false,
+      "runtime": "Android emulator API 35",
+      "target": "emulator-5582",
+      "tests": [
+        {
+          "checks": 35,
+          "command": [
+            "C:\\Users\\曹博弢\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+            "-s",
+            "emulator-5582",
+            "shell",
+            "am",
+            "instrument",
+            "-w",
+            "-r",
+            "org.vehicle.scene/org.vehicle.scene.AcceptanceRunner"
+          ],
+          "log": "scene-touring.log",
+          "name": "scene-touring",
+          "sha256": "5af44bdcc1ddbcc43aeae6ec418e3a9032a8c6fb97836d3dd1dac8abf12b575a",
+          "status": "passed"
+        },
+        {
+          "checks": 35,
+          "command": [
+            "C:\\Users\\曹博弢\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+            "-s",
+            "emulator-5582",
+            "shell",
+            "am",
+            "instrument",
+            "-w",
+            "-r",
+            "org.vehicle.scene.city/org.vehicle.scene.AcceptanceRunner"
+          ],
+          "log": "scene-city.log",
+          "name": "scene-city",
+          "sha256": "f944704426a11d55180438ecba4ab1091b787d1f70ac01047e6863374aca606a",
+          "status": "passed"
+        }
+      ]
+    }
+  },
+  "head": "13c481c9fc68b271b6d2631557f977366a66daa1",
+  "id": "APP-21",
+  "limitations": [
+    "Local construction and verification only; new source repositories are not published.",
+    "Same-author construction is not an independent holdout.",
+    "No new physical vehicle, SIL/PIL/HIL, or remote CI execution."
+  ],
+  "production_scope": {
+    "production_roots": [
+      "app/src/main/java"
+    ]
+  },
+  "reference": {
+    "head": "13c481c9fc68b271b6d2631557f977366a66daa1",
+    "id": "APP-21",
+    "leaves": [
+      {
+        "analysis": "No effective CI definition is present in the full tracked-file inventory.",
+        "deterministic_absence": true,
+        "evidence": [
+          {
+            "claim": "Complete CI candidate inventory is empty",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "evidence_type": "facts",
+            "independent_group": "inventory",
+            "json_pointer": "/ci_candidates",
+            "path": "suites/app/evidence/APP-21-source.json",
+            "source": "source_inventory"
+          }
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "score": 0,
+        "score_reasoning": "No effective CI definition is present in the full tracked-file inventory.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Gradle builds meaningful production APK/AAR units with a closed local module graph and declared Android SDK dependencies. No hermetic environment or released compatibility baseline supports 3.",
+        "evidence": [
+          {
+            "claim": "Actual Gradle module graph",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "end_line": 4,
+            "evidence_type": "code",
+            "independent_group": "settings.gradle:include",
+            "path": "settings.gradle",
+            "source": "repository",
+            "start_line": 4,
+            "symbol": "include"
+          },
+          {
+            "claim": "Build SDK, variants and module dependencies",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "end_line": 7,
+            "evidence_type": "code",
+            "independent_group": "app/build.gradle:android",
+            "path": "app/build.gradle",
+            "source": "repository",
+            "start_line": 1,
+            "symbol": "android"
+          }
+        ],
+        "max_score": 3,
+        "name": "compilation.compilation_independence",
+        "score": 2,
+        "score_reasoning": "Gradle builds meaningful production APK/AAR units with a closed local module graph and declared Android SDK dependencies. No hermetic environment or released compatibility baseline supports 3.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Only real development mainline commits exist; neither two product flavors nor a main branch proves a release-channel strategy.",
+        "deterministic_absence": true,
+        "evidence": [
+          {
+            "claim": "All actual heads/tags, without a release strategy",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "evidence_type": "facts",
+            "independent_group": "inventory",
+            "json_pointer": "/refs",
+            "path": "suites/app/evidence/APP-21-source.json",
+            "source": "source_inventory"
+          }
+        ],
+        "max_score": 10,
+        "name": "platform_reuse.release_branch_strategy",
+        "score": 0,
+        "score_reasoning": "Only real development mainline commits exist; neither two product flavors nor a main branch proves a release-channel strategy.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Single root-package application with no independently buildable component boundary.",
+        "evidence": [
+          {
+            "claim": "Activity, UI and SDK wiring share one root package",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "end_line": 17,
+            "evidence_type": "code",
+            "independent_group": "app/src/main/java/org/vehicle/scene/SceneActivity.java:class SceneActivity",
+            "path": "app/src/main/java/org/vehicle/scene/SceneActivity.java",
+            "source": "repository",
+            "start_line": 9,
+            "symbol": "class SceneActivity"
+          },
+          {
+            "claim": "Scene orchestration is in the same build module/root package",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "end_line": 17,
+            "evidence_type": "code",
+            "independent_group": "app/src/main/java/org/vehicle/scene/SceneController.java:class SceneController",
+            "path": "app/src/main/java/org/vehicle/scene/SceneController.java",
+            "source": "repository",
+            "start_line": 9,
+            "symbol": "class SceneController"
+          }
+        ],
+        "max_score": 5,
+        "name": "architecture.componentization",
+        "score": 0,
+        "score_reasoning": "Single root-package application with no independently buildable component boundary.",
+        "status": "scored"
+      },
+      {
+        "analysis": "No module cycles or source-directory intrusion; direction is clear, but production consumers directly construct concrete Manager/capture/storage implementations.",
+        "evidence": [
+          {
+            "claim": "Activity, UI and SDK wiring share one root package",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "end_line": 17,
+            "evidence_type": "code",
+            "independent_group": "app/src/main/java/org/vehicle/scene/SceneActivity.java:class SceneActivity",
+            "path": "app/src/main/java/org/vehicle/scene/SceneActivity.java",
+            "source": "repository",
+            "start_line": 9,
+            "symbol": "class SceneActivity"
+          },
+          {
+            "claim": "Scene orchestration is in the same build module/root package",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "end_line": 17,
+            "evidence_type": "code",
+            "independent_group": "app/src/main/java/org/vehicle/scene/SceneController.java:class SceneController",
+            "path": "app/src/main/java/org/vehicle/scene/SceneController.java",
+            "source": "repository",
+            "start_line": 9,
+            "symbol": "class SceneController"
+          }
+        ],
+        "max_score": 3,
+        "name": "architecture.decoupling",
+        "score": 2,
+        "score_reasoning": "No module cycles or source-directory intrusion; direction is clear, but production consumers directly construct concrete Manager/capture/storage implementations.",
+        "status": "scored"
+      },
+      {
+        "analysis": "One app module and root package do not establish modular structure.",
+        "evidence": [
+          {
+            "claim": "Actual Gradle module graph",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "end_line": 4,
+            "evidence_type": "code",
+            "independent_group": "settings.gradle:include",
+            "path": "settings.gradle",
+            "source": "repository",
+            "start_line": 4,
+            "symbol": "include"
+          },
+          {
+            "claim": "Scene orchestration is in the same build module/root package",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "end_line": 17,
+            "evidence_type": "code",
+            "independent_group": "app/src/main/java/org/vehicle/scene/SceneController.java:class SceneController",
+            "path": "app/src/main/java/org/vehicle/scene/SceneController.java",
+            "source": "repository",
+            "start_line": 9,
+            "symbol": "class SceneController"
+          }
+        ],
+        "max_score": 3,
+        "name": "architecture.modularization",
+        "score": 0,
+        "score_reasoning": "One app module and root package do not establish modular structure.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Complete reviewed boundary inventory is in rule_inputs. Android SDK ownership is not treated as verified consumption compatibility responsibility.",
+        "evidence": [
+          {
+            "claim": "Build SDK, variants and module dependencies",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "end_line": 7,
+            "evidence_type": "code",
+            "independent_group": "app/build.gradle:android",
+            "path": "app/build.gradle",
+            "source": "repository",
+            "start_line": 1,
+            "symbol": "android"
+          },
+          {
+            "claim": "Actual vehicle command consumer",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "end_line": 29,
+            "evidence_type": "code",
+            "independent_group": "app/src/main/java/org/vehicle/scene/SceneController.java:manager.apply",
+            "path": "app/src/main/java/org/vehicle/scene/SceneController.java",
+            "source": "repository",
+            "start_line": 21,
+            "symbol": "manager.apply"
+          }
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version_management",
+        "score": 1,
+        "score_reasoning": "Key provided/consumed boundaries have only manual release/version pins. No documented semantic compatibility policy or released API extraction/diff exists; current behavioral tests do not substitute for compatibility governance.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Production uses public Android APIs, has no native ABI or hidden/vendor calls, and no business SDK version split. No complete platform abstraction or two-version automatic validation supports 10.",
+        "evidence": [
+          {
+            "claim": "Vehicle transport is consumed through SDK",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "end_line": 41,
+            "evidence_type": "code",
+            "independent_group": "app/src/main/java/org/vehicle/scene/SceneActivity.java:manager = new VehicleManager",
+            "path": "app/src/main/java/org/vehicle/scene/SceneActivity.java",
+            "source": "repository",
+            "start_line": 33,
+            "symbol": "manager = new VehicleManager"
+          },
+          {
+            "claim": "Other platform use is public Activity/UI API",
+            "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+            "end_line": 23,
+            "evidence_type": "code",
+            "independent_group": "app/src/main/java/org/vehicle/scene/SceneActivity.java:public void onCreate",
+            "path": "app/src/main/java/org/vehicle/scene/SceneActivity.java",
+            "source": "repository",
+            "start_line": 15,
+            "symbol": "public void onCreate"
+          }
+        ],
+        "max_score": 10,
+        "name": "platform_reuse.platform_upgrade",
+        "score": 8,
+        "score_reasoning": "Production uses public Android APIs, has no native ABI or hidden/vendor calls, and no business SDK version split. No complete platform abstraction or two-version automatic validation supports 10.",
+        "status": "scored"
+      }
+    ],
+    "max_score": 40,
+    "name": "scene-coordinator",
+    "review_status": "maintainer_final_source_review_with_explicit_observations",
+    "total_score": 13,
+    "tree": "de8f0b04b122b52a2fc463f348541750ce8876d8"
+  },
+  "rule_inputs": {
+    "architecture.componentization": {
+      "api_dependency_edge_count": 0,
+      "code_not_in_root_package": false,
+      "cohesive_module_count": 1,
+      "component_responsibilities_clear": true,
+      "concrete_implementation_edge_count": 1,
+      "core_mutually_coupled_without_stable_direction": false,
+      "cross_module_source_intrusion_count": 0,
+      "dependency_cycle_count": 0,
+      "dependency_scc_count": 1,
+      "explicit_public_contract_count": 0,
+      "has_business_packages": false,
+      "has_circular_dependency": false,
+      "has_cross_module_source_intrusion": false,
+      "has_hardcoded_implementation_dependency": true,
+      "has_identifiable_boundaries": true,
+      "has_layered_directory": false,
+      "has_reverse_dependency": false,
+      "implementation_changes_do_not_require_unrelated_module_changes": true,
+      "implementation_dependency_edge_count": 1,
+      "independently_buildable_cohesive_component_count": 1,
+      "module_build_test_entry_or_clear_api_implementation_boundary": true,
+      "module_count": 1,
+      "module_responsibilities_identifiable": true,
+      "module_test_entry_count": 1,
+      "multiple_direct_cross_boundary_or_propagation_violations": false,
+      "platform_change_propagation_module_count": 1,
+      "real_build_module_count": 1,
+      "replaceable_component_count": 0,
+      "reusable_component_count": 0,
+      "reverse_dependency_edge_count": 0,
+      "shared_capability_downshift_or_explicit_contract_reuse": false,
+      "shared_capability_downshift_or_injection": false,
+      "shared_capability_owner_count": 0,
+      "stable_dependency_direction": true,
+      "standard_named_module_count": 1
+    },
+    "architecture.decoupling": {
+      "api_dependency_edge_count": 0,
+      "code_not_in_root_package": false,
+      "cohesive_module_count": 1,
+      "component_responsibilities_clear": true,
+      "concrete_implementation_edge_count": 1,
+      "core_mutually_coupled_without_stable_direction": false,
+      "cross_module_source_intrusion_count": 0,
+      "dependency_cycle_count": 0,
+      "dependency_scc_count": 1,
+      "explicit_public_contract_count": 0,
+      "has_business_packages": false,
+      "has_circular_dependency": false,
+      "has_cross_module_source_intrusion": false,
+      "has_hardcoded_implementation_dependency": true,
+      "has_identifiable_boundaries": true,
+      "has_layered_directory": false,
+      "has_reverse_dependency": false,
+      "implementation_changes_do_not_require_unrelated_module_changes": true,
+      "implementation_dependency_edge_count": 1,
+      "independently_buildable_cohesive_component_count": 1,
+      "module_build_test_entry_or_clear_api_implementation_boundary": true,
+      "module_count": 1,
+      "module_responsibilities_identifiable": true,
+      "module_test_entry_count": 1,
+      "multiple_direct_cross_boundary_or_propagation_violations": false,
+      "platform_change_propagation_module_count": 1,
+      "real_build_module_count": 1,
+      "replaceable_component_count": 0,
+      "reusable_component_count": 0,
+      "reverse_dependency_edge_count": 0,
+      "shared_capability_downshift_or_explicit_contract_reuse": false,
+      "shared_capability_downshift_or_injection": false,
+      "shared_capability_owner_count": 0,
+      "stable_dependency_direction": true,
+      "standard_named_module_count": 1
+    },
+    "architecture.modularization": {
+      "api_dependency_edge_count": 0,
+      "code_not_in_root_package": false,
+      "cohesive_module_count": 1,
+      "component_responsibilities_clear": true,
+      "concrete_implementation_edge_count": 1,
+      "core_mutually_coupled_without_stable_direction": false,
+      "cross_module_source_intrusion_count": 0,
+      "dependency_cycle_count": 0,
+      "dependency_scc_count": 1,
+      "explicit_public_contract_count": 0,
+      "has_business_packages": false,
+      "has_circular_dependency": false,
+      "has_cross_module_source_intrusion": false,
+      "has_hardcoded_implementation_dependency": true,
+      "has_identifiable_boundaries": true,
+      "has_layered_directory": false,
+      "has_reverse_dependency": false,
+      "implementation_changes_do_not_require_unrelated_module_changes": true,
+      "implementation_dependency_edge_count": 1,
+      "independently_buildable_cohesive_component_count": 1,
+      "module_build_test_entry_or_clear_api_implementation_boundary": true,
+      "module_count": 1,
+      "module_responsibilities_identifiable": true,
+      "module_test_entry_count": 1,
+      "multiple_direct_cross_boundary_or_propagation_violations": false,
+      "platform_change_propagation_module_count": 1,
+      "real_build_module_count": 1,
+      "replaceable_component_count": 0,
+      "reusable_component_count": 0,
+      "reverse_dependency_edge_count": 0,
+      "shared_capability_downshift_or_explicit_contract_reuse": false,
+      "shared_capability_downshift_or_injection": false,
+      "shared_capability_owner_count": 0,
+      "stable_dependency_direction": true,
+      "standard_named_module_count": 1
+    },
+    "compilation.api_version_management": {
+      "api_governance": {
+        "boundaries": [
+          {
+            "consumer": "SceneController",
+            "coverage_reason": "Version labels and execution on one current runtime do not establish API compatibility governance",
+            "covered": false,
+            "critical": true,
+            "evidence": [
+              {
+                "claim": "Versioned binary consumption",
+                "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+                "end_line": 7,
+                "evidence_type": "code",
+                "independent_group": "app/build.gradle:implementation files",
+                "path": "app/build.gradle",
+                "source": "repository",
+                "start_line": 7,
+                "symbol": "implementation files"
+              },
+              {
+                "claim": "Actual vehicle command consumer",
+                "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+                "end_line": 29,
+                "evidence_type": "code",
+                "independent_group": "app/src/main/java/org/vehicle/scene/SceneController.java:manager.apply",
+                "path": "app/src/main/java/org/vehicle/scene/SceneController.java",
+                "source": "repository",
+                "start_line": 21,
+                "symbol": "manager.apply"
+              }
+            ],
+            "fixed_external_responsibility_verified": false,
+            "id": "vehicle-sdk",
+            "mechanism": "Manual version / build pin; no extraction against a released compatibility baseline",
+            "owner": "Vehicle Capability Service",
+            "owns_contract": false,
+            "real_compatibility_check": false,
+            "role": "consumed",
+            "scope_basis": "Actual independently consumed contract or production platform boundary; same-release private glue is separately excluded.",
+            "type": "AAR/Binder",
+            "version_baseline": "1.0.0 AAR SHA256SUMS",
+            "version_controlled": true
+          },
+          {
+            "consumer": "scene-coordinator",
+            "coverage_reason": "Version labels and execution on one current runtime do not establish API compatibility governance",
+            "covered": false,
+            "critical": true,
+            "evidence": [
+              {
+                "claim": "Build SDK, variants and module dependencies",
+                "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+                "end_line": 7,
+                "evidence_type": "code",
+                "independent_group": "app/build.gradle:android",
+                "path": "app/build.gradle",
+                "source": "repository",
+                "start_line": 1,
+                "symbol": "android"
+              },
+              {
+                "claim": "Vehicle transport is consumed through SDK",
+                "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+                "end_line": 41,
+                "evidence_type": "code",
+                "independent_group": "app/src/main/java/org/vehicle/scene/SceneActivity.java:manager = new VehicleManager",
+                "path": "app/src/main/java/org/vehicle/scene/SceneActivity.java",
+                "source": "repository",
+                "start_line": 33,
+                "symbol": "manager = new VehicleManager"
+              }
+            ],
+            "fixed_external_responsibility_verified": false,
+            "id": "android-platform",
+            "mechanism": "Manual version / build pin; no extraction against a released compatibility baseline",
+            "owner": "Android SDK",
+            "owns_contract": false,
+            "real_compatibility_check": false,
+            "role": "consumed",
+            "scope_basis": "Actual independently consumed contract or production platform boundary; same-release private glue is separately excluded.",
+            "type": "public Framework API",
+            "version_baseline": "compileSdk 34 / minSdk 26",
+            "version_controlled": true
+          },
+          {
+            "consumer": "scene-coordinator",
+            "coverage_reason": "Version labels and execution on one current runtime do not establish API compatibility governance",
+            "covered": false,
+            "critical": false,
+            "evidence": [
+              {
+                "claim": "Actual Gradle module graph",
+                "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+                "end_line": 4,
+                "evidence_type": "code",
+                "independent_group": "settings.gradle:include",
+                "path": "settings.gradle",
+                "source": "repository",
+                "start_line": 4,
+                "symbol": "include"
+              },
+              {
+                "claim": "Build SDK, variants and module dependencies",
+                "commit": "13c481c9fc68b271b6d2631557f977366a66daa1",
+                "end_line": 7,
+                "evidence_type": "code",
+                "independent_group": "app/build.gradle:android",
+                "path": "app/build.gradle",
+                "source": "repository",
+                "start_line": 1,
+                "symbol": "android"
+              }
+            ],
+            "fixed_external_responsibility_verified": false,
+            "id": "same-release-glue",
+            "mechanism": "Manual version / build pin; no extraction against a released compatibility baseline",
+            "owner": "scene-coordinator",
+            "owns_contract": true,
+            "real_compatibility_check": false,
+            "role": "internal",
+            "scope_basis": "Actual independently consumed contract or production platform boundary; same-release private glue is separately excluded.",
+            "type": "private Java glue",
+            "version_baseline": "same APK/release",
+            "version_controlled": true
+          }
+        ],
+        "inventory_complete": true,
+        "revision": "13c481c9fc68b271b6d2631557f977366a66daa1",
+        "scope_basis": "Reviewed all production sources, AIDL declarations, Manifest entry points and Gradle release boundaries. Public Android UI/Binder/media APIs are grouped by owner; no native ABI or external provider/URI API exists.",
+        "unresolved": []
+      },
+      "evaluation_revision": "13c481c9fc68b271b6d2631557f977366a66daa1",
+      "manual_api_version_exists": true,
+      "semantic_api_versioning": false
+    },
+    "compilation.ci_independence": {
+      "valid_independent_ci_exists": false,
+      "valid_platform_ci_exists": false
+    },
+    "compilation.compilation_independence": {
+      "critical_cross_repo_api_versions_locked": true,
+      "external_dependencies_declared_interfaces": true,
+      "full_build_requires_unversioned_platform_injection": false,
+      "meaningful_independent_production_unit_exists": true,
+      "real_compatibility_check_or_commitment": false,
+      "repeatable_module_build_entry": true,
+      "repeatable_or_hermetic_environment": false,
+      "repository_source_module_closure_complete": true,
+      "requires_platform_tree_or_undeclared_external_source": false
+    },
+    "platform_reuse.platform_upgrade": {
+      "arch_bound_status": 0,
+      "automated_compatibility_validation_at_least_two_android_versions": false,
+      "has_arch_specific_deps": false,
+      "has_complex_permission_adaptation": false,
+      "has_interface_abstraction": false,
+      "has_light_permission_adaptation": true,
+      "has_non_compatible_api": false,
+      "multiple_unstable_core_paths_without_isolation": false,
+      "non_compatible_api_all_covered": true,
+      "permission_or_platform_hardcoding_blocks_core_migration": false,
+      "risk_fallback_available": true,
+      "risks_all_localized_in_compat_layer": true,
+      "single_abi_closed_dependency_without_fallback": false,
+      "version_bound_status": 0
+    },
+    "platform_reuse.release_branch_strategy": {
+      "cross_platform_unified_release_policy": false,
+      "platform_shared_release_channel": false,
+      "release_policy_evidence_verified": false,
+      "vehicle_specific_sop_channel": false
+    }
+  },
+  "schema_version": "expansion-evidence-1",
+  "semantic_review": {
+    "authoring_context_known": true,
+    "independent_blind_review": false,
+    "scope": "No score target or quality label was read by rule replay; semantic observations are explicit reviewer inputs.",
+    "second_pass": "Each complete leaf is rechecked against final-source anchors and adjacent contract gates; separate rule code replays these shared observations."
+  },
+  "source_inventory": {
+    "path": "suites/app/evidence/APP-21-source.json",
+    "sha256": "bc896a055575968a5859fa95cdfc319468518dc6f34c58c95b9a96173091cc94"
+  },
+  "source_inventory_sha256": "bc896a055575968a5859fa95cdfc319468518dc6f34c58c95b9a96173091cc94",
+  "state": "verified_local",
+  "tree": "de8f0b04b122b52a2fc463f348541750ce8876d8",
+  "type_id": "app"
+}

@@ -1,0 +1,857 @@
+{
+  "execution": {
+    "binding": {
+      "apks": [
+        {
+          "install": "Performing Streamed Install\nSuccess",
+          "path": "service/build/outputs/apk/debug/service-debug.apk",
+          "sha256": "23d6cae4e18b09f543e154754ef5625ec795fec6e8a24d75c18e2ec7064739d0"
+        },
+        {
+          "install": "Performing Streamed Install\nSuccess",
+          "path": "sample/build/outputs/apk/debug/sample-debug.apk",
+          "sha256": "20a10ed583306f3acea750950de3a93e3f42cf26b3992c5f2cf7709b3d31e7ae"
+        }
+      ],
+      "head": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+      "tree": "05c6b31846df853feb61f65cb77bda6c7aff9538"
+    },
+    "records": [
+      {
+        "bytes": 159,
+        "path": "final-android/message.log",
+        "sha256": "145a6308177904a25da9eb579db8aea0b81bcebca27253b41d5ec6eb2edbe4ed"
+      },
+      {
+        "bytes": 104,
+        "path": "final-android/permission.log",
+        "sha256": "f9af7c721d0dd8cfb81357e124b922983adfff63c2d60b267f9b2e679c4ff957"
+      }
+    ],
+    "status": "passed",
+    "summary": {
+      "fingerprint": "google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+      "physical_device": false,
+      "runtime": "Android emulator API 35",
+      "target": "emulator-5582",
+      "tests": [
+        {
+          "checks": 19,
+          "command": [
+            "C:\\Users\\曹博弢\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+            "-s",
+            "emulator-5582",
+            "shell",
+            "am",
+            "instrument",
+            "-w",
+            "-r",
+            "org.vehicle.messages.sample/org.vehicle.messages.sample.AcceptanceRunner"
+          ],
+          "log": "message.log",
+          "name": "message",
+          "sha256": "145a6308177904a25da9eb579db8aea0b81bcebca27253b41d5ec6eb2edbe4ed",
+          "status": "passed"
+        },
+        {
+          "checks": 2,
+          "command": [
+            "C:\\Users\\曹博弢\\AppData\\Local\\Android\\Sdk\\platform-tools\\adb.exe",
+            "-s",
+            "emulator-5582",
+            "shell",
+            "am",
+            "instrument",
+            "-w",
+            "-r",
+            "org.vehicle.permissionprobe/org.vehicle.permissionprobe.ProbeRunner"
+          ],
+          "log": "permission.log",
+          "name": "permission",
+          "sha256": "f9af7c721d0dd8cfb81357e124b922983adfff63c2d60b267f9b2e679c4ff957",
+          "status": "passed"
+        }
+      ]
+    }
+  },
+  "head": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+  "id": "FW-22",
+  "limitations": [
+    "Local construction and verification only; new source repositories are not published.",
+    "Same-author construction is not an independent holdout.",
+    "No new physical vehicle, SIL/PIL/HIL, or remote CI execution."
+  ],
+  "production_scope": {
+    "production_roots": [
+      "api/src/main/java",
+      "api/src/main/aidl",
+      "service/src/main/java"
+    ]
+  },
+  "reference": {
+    "head": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+    "id": "FW-22",
+    "leaves": [
+      {
+        "analysis": "No effective CI definition is present in the full tracked-file inventory.",
+        "deterministic_absence": true,
+        "evidence": [
+          {
+            "claim": "Complete CI candidate inventory is empty",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "evidence_type": "facts",
+            "independent_group": "inventory",
+            "json_pointer": "/ci_candidates",
+            "path": "suites/fw/evidence/FW-22-source.json",
+            "source": "source_inventory"
+          }
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "score": 0,
+        "score_reasoning": "No effective CI definition is present in the full tracked-file inventory.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Gradle builds meaningful production APK/AAR units with a closed local module graph and declared Android SDK dependencies. No hermetic environment or released compatibility baseline supports 3.",
+        "evidence": [
+          {
+            "claim": "Actual Gradle module graph",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 6,
+            "evidence_type": "code",
+            "independent_group": "settings.gradle:include",
+            "path": "settings.gradle",
+            "source": "repository",
+            "start_line": 4,
+            "symbol": "include"
+          },
+          {
+            "claim": "Build SDK, variants and module dependencies",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 6,
+            "evidence_type": "code",
+            "independent_group": "service/build.gradle:android",
+            "path": "service/build.gradle",
+            "source": "repository",
+            "start_line": 1,
+            "symbol": "android"
+          }
+        ],
+        "max_score": 3,
+        "name": "compilation.compilation_independence",
+        "score": 2,
+        "score_reasoning": "Gradle builds meaningful production APK/AAR units with a closed local module graph and declared Android SDK dependencies. No hermetic environment or released compatibility baseline supports 3.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Only real development mainline commits exist; neither two product flavors nor a main branch proves a release-channel strategy.",
+        "deterministic_absence": true,
+        "evidence": [
+          {
+            "claim": "All actual heads/tags, without a release strategy",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "evidence_type": "facts",
+            "independent_group": "inventory",
+            "json_pointer": "/refs",
+            "path": "suites/fw/evidence/FW-22-source.json",
+            "source": "source_inventory"
+          }
+        ],
+        "max_score": 10,
+        "name": "platform_reuse.release_branch_strategy",
+        "score": 0,
+        "score_reasoning": "Only real development mainline commits exist; neither two product flavors nor a main branch proves a release-channel strategy.",
+        "status": "scored"
+      },
+      {
+        "analysis": "One complete native integration scenario passed all 19 assertions on the final source. Five defined key interaction edges are exercised (5/5); assertion count is not used as coverage.",
+        "evidence": [
+          {
+            "claim": "Real instrumentation test and business assertions",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 147,
+            "evidence_type": "code",
+            "independent_group": "sample/src/debug/java/org/vehicle/messages/sample/AcceptanceRunner.java:public void onStart",
+            "path": "sample/src/debug/java/org/vehicle/messages/sample/AcceptanceRunner.java",
+            "source": "repository",
+            "start_line": 62,
+            "symbol": "public void onStart"
+          },
+          {
+            "claim": "Bound native log, APK hashes and actual emulator run",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "evidence_type": "facts",
+            "independent_group": "native_execution",
+            "json_pointer": "/execution",
+            "path": "suites/fw/evidence/FW-22.json",
+            "source": "facts"
+          }
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "score": 3,
+        "score_reasoning": "One complete native integration scenario passed all 19 assertions on the final source. Five defined key interaction edges are exercised (5/5); assertion count is not used as coverage.",
+        "status": "scored"
+      },
+      {
+        "analysis": "One production implementation of the message IPC contract; inspected valid-call behavior and error preconditions show no current substitution violation. No second production implementation or reusable substitution suite supports 3.",
+        "evidence": [
+          {
+            "claim": "Actual production IPC contract",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 1,
+            "evidence_type": "code",
+            "independent_group": "api/src/main/aidl/org/vehicle/messages/IMessageService.aidl:interface",
+            "path": "api/src/main/aidl/org/vehicle/messages/IMessageService.aidl",
+            "source": "repository",
+            "start_line": 1,
+            "symbol": "interface"
+          },
+          {
+            "claim": "One concrete Binder implementation, with declared range/protocol validation",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 63,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/messages/service/MessageService.java:private final IMessageService.Stub",
+            "path": "service/src/main/java/org/vehicle/messages/service/MessageService.java",
+            "source": "repository",
+            "start_line": 27,
+            "symbol": "private final IMessageService.Stub"
+          }
+        ],
+        "issues": [],
+        "max_score": 4,
+        "name": "solid_principle.liskov_substitution",
+        "recommendations": [],
+        "score": 2,
+        "score_reasoning": "One production implementation of the message IPC contract; inspected valid-call behavior and error preconditions show no current substitution violation. No second production implementation or reusable substitution suite supports 3.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Persistence and wire format are separate, but the IPC service also owns queue scheduling, expiration and delivery state policy. This is a localized responsibility concentration, not a severe or pervasive design failure.",
+        "evidence": [
+          {
+            "claim": "Binder validation and permission checking",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 52,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/messages/service/MessageService.java:public Bundle submit",
+            "path": "service/src/main/java/org/vehicle/messages/service/MessageService.java",
+            "source": "repository",
+            "start_line": 29,
+            "symbol": "public Bundle submit"
+          },
+          {
+            "claim": "The same service owns retry scheduling and expiration/delivery policy",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 89,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/messages/service/MessageService.java:private void drain",
+            "path": "service/src/main/java/org/vehicle/messages/service/MessageService.java",
+            "source": "repository",
+            "start_line": 62,
+            "symbol": "private void drain"
+          }
+        ],
+        "issues": [
+          "Binder validation and permission checking",
+          "The same service owns retry scheduling and expiration/delivery policy"
+        ],
+        "max_score": 4,
+        "name": "solid_principle.single_responsibility",
+        "recommendations": [
+          "Isolate the concrete dependency or policy when this actual extension/maintenance responsibility evolves."
+        ],
+        "score": 2,
+        "score_reasoning": "Persistence and wire format are separate, but the IPC service also owns queue scheduling, expiration and delivery state policy. This is a localized responsibility concentration, not a severe or pervasive design failure.",
+        "status": "scored"
+      },
+      {
+        "analysis": "A useful local implementation boundary exists, but the demonstrated extension scenario propagates into an existing generic responsibility; the issue is localized.",
+        "evidence": [
+          {
+            "claim": "Replacing a transport implementation changes the generic queue-draining service",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 79,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/messages/service/MessageService.java:new LoopbackTransport().exchange",
+            "path": "service/src/main/java/org/vehicle/messages/service/MessageService.java",
+            "source": "repository",
+            "start_line": 71,
+            "symbol": "new LoopbackTransport().exchange"
+          },
+          {
+            "claim": "Wire encoding and HTTP exchange have a concrete local boundary",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 18,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/messages/service/LoopbackTransport.java:class LoopbackTransport",
+            "path": "service/src/main/java/org/vehicle/messages/service/LoopbackTransport.java",
+            "source": "repository",
+            "start_line": 10,
+            "symbol": "class LoopbackTransport"
+          }
+        ],
+        "issues": [
+          "Replacing a transport implementation changes the generic queue-draining service",
+          "Wire encoding and HTTP exchange have a concrete local boundary"
+        ],
+        "max_score": 4,
+        "name": "solid_principle.open_closed",
+        "recommendations": [
+          "Isolate the concrete dependency or policy when this actual extension/maintenance responsibility evolves."
+        ],
+        "score": 2,
+        "score_reasoning": "A useful local implementation boundary exists, but the demonstrated extension scenario propagates into an existing generic responsibility; the issue is localized.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Current consumers are not forced to implement or prepare unrelated capabilities. Optional state/command results follow the actual contract; interface width alone is not a violation. No exceptional practice supports 4.",
+        "evidence": [
+          {
+            "claim": "Submit/status/subscription serve the same message consumer responsibility",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 1,
+            "evidence_type": "code",
+            "independent_group": "api/src/main/aidl/org/vehicle/messages/IMessageService.aidl:interface",
+            "path": "api/src/main/aidl/org/vehicle/messages/IMessageService.aidl",
+            "source": "repository",
+            "start_line": 1,
+            "symbol": "interface"
+          },
+          {
+            "claim": "Manager exposes the same focused consumer API",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 97,
+            "evidence_type": "code",
+            "independent_group": "api/src/main/java/org/vehicle/messages/MessageManager.java:public Bundle submit",
+            "path": "api/src/main/java/org/vehicle/messages/MessageManager.java",
+            "source": "repository",
+            "start_line": 72,
+            "symbol": "public Bundle submit"
+          }
+        ],
+        "issues": [],
+        "max_score": 4,
+        "name": "solid_principle.interface_segregation",
+        "recommendations": [],
+        "score": 3,
+        "score_reasoning": "Current consumers are not forced to implement or prepare unrelated capabilities. Optional state/command results follow the actual contract; interface width alone is not a violation. No exceptional practice supports 4.",
+        "status": "scored"
+      },
+      {
+        "analysis": "The IPC/API boundary is explicit, but high-level or sibling implementations still directly depend on concrete storage/transport/adapter classes; this is a local coupling mechanism.",
+        "evidence": [
+          {
+            "claim": "High-level service constructs concrete persistence",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 25,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/messages/service/MessageService.java:store = new MessageStore",
+            "path": "service/src/main/java/org/vehicle/messages/service/MessageService.java",
+            "source": "repository",
+            "start_line": 17,
+            "symbol": "store = new MessageStore"
+          },
+          {
+            "claim": "High-level drain constructs concrete transport",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 79,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/messages/service/MessageService.java:new LoopbackTransport().exchange",
+            "path": "service/src/main/java/org/vehicle/messages/service/MessageService.java",
+            "source": "repository",
+            "start_line": 71,
+            "symbol": "new LoopbackTransport().exchange"
+          }
+        ],
+        "issues": [
+          "High-level service constructs concrete persistence",
+          "High-level drain constructs concrete transport"
+        ],
+        "max_score": 4,
+        "name": "solid_principle.dependency_inversion",
+        "recommendations": [
+          "Isolate the concrete dependency or policy when this actual extension/maintenance responsibility evolves."
+        ],
+        "score": 2,
+        "score_reasoning": "The IPC/API boundary is explicit, but high-level or sibling implementations still directly depend on concrete storage/transport/adapter classes; this is a local coupling mechanism.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Complete reviewed boundary inventory is in rule_inputs. Android SDK ownership is not treated as verified consumption compatibility responsibility.",
+        "evidence": [
+          {
+            "claim": "Build SDK, variants and module dependencies",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 6,
+            "evidence_type": "code",
+            "independent_group": "service/build.gradle:android",
+            "path": "service/build.gradle",
+            "source": "repository",
+            "start_line": 1,
+            "symbol": "android"
+          },
+          {
+            "claim": "Actual cross-process callable interface",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 1,
+            "evidence_type": "code",
+            "independent_group": "api/src/main/aidl/org/vehicle/messages/IMessageService.aidl:interface",
+            "path": "api/src/main/aidl/org/vehicle/messages/IMessageService.aidl",
+            "source": "repository",
+            "start_line": 1,
+            "symbol": "interface"
+          }
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version_management",
+        "score": 1,
+        "score_reasoning": "Key provided/consumed boundaries have only manual release/version pins. No documented semantic compatibility policy or released API extraction/diff exists; current behavioral tests do not substitute for compatibility governance.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Production uses public Android APIs, has no native ABI or hidden/vendor calls, and no business SDK version split. No complete platform abstraction or two-version automatic validation supports 10.",
+        "evidence": [
+          {
+            "claim": "Public Android service/Binder boundary",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 105,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/messages/service/MessageService.java:public IBinder onBind",
+            "path": "service/src/main/java/org/vehicle/messages/service/MessageService.java",
+            "source": "repository",
+            "start_line": 97,
+            "symbol": "public IBinder onBind"
+          },
+          {
+            "claim": "Public Android persistence API; no native/hidden platform dependency",
+            "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+            "end_line": 16,
+            "evidence_type": "code",
+            "independent_group": "service/src/main/java/org/vehicle/messages/service/MessageStore.java:class MessageStore",
+            "path": "service/src/main/java/org/vehicle/messages/service/MessageStore.java",
+            "source": "repository",
+            "start_line": 8,
+            "symbol": "class MessageStore"
+          }
+        ],
+        "max_score": 10,
+        "name": "platform_reuse.platform_upgrade",
+        "score": 8,
+        "score_reasoning": "Production uses public Android APIs, has no native ABI or hidden/vendor calls, and no business SDK version split. No complete platform abstraction or two-version automatic validation supports 10.",
+        "status": "scored"
+      }
+    ],
+    "max_score": 52,
+    "name": "vehicle-message-service",
+    "review_status": "maintainer_final_source_review_with_explicit_observations",
+    "total_score": 25,
+    "tree": "05c6b31846df853feb61f65cb77bda6c7aff9538"
+  },
+  "rule_inputs": {
+    "compilation.api_version_management": {
+      "api_governance": {
+        "boundaries": [
+          {
+            "consumer": "independent Android client",
+            "coverage_reason": "Version labels and execution on one current runtime do not establish API compatibility governance",
+            "covered": false,
+            "critical": true,
+            "evidence": [
+              {
+                "claim": "Public Manager wrapper",
+                "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+                "end_line": 14,
+                "evidence_type": "code",
+                "independent_group": "api/src/main/java/org/vehicle/messages/MessageManager.java:public final class",
+                "path": "api/src/main/java/org/vehicle/messages/MessageManager.java",
+                "source": "repository",
+                "start_line": 6,
+                "symbol": "public final class"
+              },
+              {
+                "claim": "Actual cross-process callable interface",
+                "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+                "end_line": 1,
+                "evidence_type": "code",
+                "independent_group": "api/src/main/aidl/org/vehicle/messages/IMessageService.aidl:interface",
+                "path": "api/src/main/aidl/org/vehicle/messages/IMessageService.aidl",
+                "source": "repository",
+                "start_line": 1,
+                "symbol": "interface"
+              }
+            ],
+            "fixed_external_responsibility_verified": false,
+            "id": "manager-sdk",
+            "mechanism": "Manual version / build pin; no extraction against a released compatibility baseline",
+            "owner": "vehicle-message-service",
+            "owns_contract": true,
+            "real_compatibility_check": false,
+            "role": "provided",
+            "scope_basis": "Actual independently consumed contract or production platform boundary; same-release private glue is separately excluded.",
+            "type": "Java/AAR",
+            "version_baseline": "1.0.0 manual SDK",
+            "version_controlled": true
+          },
+          {
+            "consumer": "Manager clients and callbacks",
+            "coverage_reason": "Version labels and execution on one current runtime do not establish API compatibility governance",
+            "covered": false,
+            "critical": true,
+            "evidence": [
+              {
+                "claim": "Public Manager wrapper",
+                "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+                "end_line": 14,
+                "evidence_type": "code",
+                "independent_group": "api/src/main/java/org/vehicle/messages/MessageManager.java:public final class",
+                "path": "api/src/main/java/org/vehicle/messages/MessageManager.java",
+                "source": "repository",
+                "start_line": 6,
+                "symbol": "public final class"
+              },
+              {
+                "claim": "Actual cross-process callable interface",
+                "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+                "end_line": 1,
+                "evidence_type": "code",
+                "independent_group": "api/src/main/aidl/org/vehicle/messages/IMessageService.aidl:interface",
+                "path": "api/src/main/aidl/org/vehicle/messages/IMessageService.aidl",
+                "source": "repository",
+                "start_line": 1,
+                "symbol": "interface"
+              }
+            ],
+            "fixed_external_responsibility_verified": false,
+            "id": "binder-service",
+            "mechanism": "Manual version / build pin; no extraction against a released compatibility baseline",
+            "owner": "vehicle-message-service",
+            "owns_contract": true,
+            "real_compatibility_check": false,
+            "role": "provided",
+            "scope_basis": "Actual independently consumed contract or production platform boundary; same-release private glue is separately excluded.",
+            "type": "Binder/AIDL",
+            "version_baseline": "initial AIDL with no compatibility baseline",
+            "version_controlled": true
+          },
+          {
+            "consumer": "local receiver",
+            "coverage_reason": "Version labels and execution on one current runtime do not establish API compatibility governance",
+            "covered": false,
+            "critical": true,
+            "evidence": [
+              {
+                "claim": "Versioned wire keys",
+                "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+                "end_line": 25,
+                "evidence_type": "code",
+                "independent_group": "service/src/main/java/org/vehicle/messages/service/LoopbackTransport.java:request.put(version",
+                "path": "service/src/main/java/org/vehicle/messages/service/LoopbackTransport.java",
+                "source": "repository",
+                "start_line": 17,
+                "symbol": "request.put(version"
+              },
+              {
+                "claim": "Exact acknowledgement check",
+                "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+                "end_line": 50,
+                "evidence_type": "code",
+                "independent_group": "service/src/main/java/org/vehicle/messages/service/LoopbackTransport.java:ack.optString",
+                "path": "service/src/main/java/org/vehicle/messages/service/LoopbackTransport.java",
+                "source": "repository",
+                "start_line": 45,
+                "symbol": "ack.optString"
+              }
+            ],
+            "fixed_external_responsibility_verified": false,
+            "id": "delivery-protocol",
+            "mechanism": "Manual version / build pin; no extraction against a released compatibility baseline",
+            "owner": "Message service",
+            "owns_contract": true,
+            "real_compatibility_check": false,
+            "role": "provided",
+            "scope_basis": "Actual independently consumed contract or production platform boundary; same-release private glue is separately excluded.",
+            "type": "HTTP JSON",
+            "version_baseline": "protocol 1 / 2, runtime negotiation only",
+            "version_controlled": true
+          },
+          {
+            "consumer": "vehicle-message-service",
+            "coverage_reason": "Version labels and execution on one current runtime do not establish API compatibility governance",
+            "covered": false,
+            "critical": true,
+            "evidence": [
+              {
+                "claim": "Build SDK, variants and module dependencies",
+                "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+                "end_line": 6,
+                "evidence_type": "code",
+                "independent_group": "service/build.gradle:android",
+                "path": "service/build.gradle",
+                "source": "repository",
+                "start_line": 1,
+                "symbol": "android"
+              },
+              {
+                "claim": "Public Android service/Binder boundary",
+                "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+                "end_line": 105,
+                "evidence_type": "code",
+                "independent_group": "service/src/main/java/org/vehicle/messages/service/MessageService.java:public IBinder onBind",
+                "path": "service/src/main/java/org/vehicle/messages/service/MessageService.java",
+                "source": "repository",
+                "start_line": 97,
+                "symbol": "public IBinder onBind"
+              }
+            ],
+            "fixed_external_responsibility_verified": false,
+            "id": "android-platform",
+            "mechanism": "Manual version / build pin; no extraction against a released compatibility baseline",
+            "owner": "Android SDK",
+            "owns_contract": false,
+            "real_compatibility_check": false,
+            "role": "consumed",
+            "scope_basis": "Actual independently consumed contract or production platform boundary; same-release private glue is separately excluded.",
+            "type": "public Framework API",
+            "version_baseline": "compileSdk 34 / minSdk 26",
+            "version_controlled": true
+          },
+          {
+            "consumer": "vehicle-message-service",
+            "coverage_reason": "Version labels and execution on one current runtime do not establish API compatibility governance",
+            "covered": false,
+            "critical": false,
+            "evidence": [
+              {
+                "claim": "Actual Gradle module graph",
+                "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+                "end_line": 6,
+                "evidence_type": "code",
+                "independent_group": "settings.gradle:include",
+                "path": "settings.gradle",
+                "source": "repository",
+                "start_line": 4,
+                "symbol": "include"
+              },
+              {
+                "claim": "Build SDK, variants and module dependencies",
+                "commit": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+                "end_line": 6,
+                "evidence_type": "code",
+                "independent_group": "service/build.gradle:android",
+                "path": "service/build.gradle",
+                "source": "repository",
+                "start_line": 1,
+                "symbol": "android"
+              }
+            ],
+            "fixed_external_responsibility_verified": false,
+            "id": "same-release-glue",
+            "mechanism": "Manual version / build pin; no extraction against a released compatibility baseline",
+            "owner": "vehicle-message-service",
+            "owns_contract": true,
+            "real_compatibility_check": false,
+            "role": "internal",
+            "scope_basis": "Actual independently consumed contract or production platform boundary; same-release private glue is separately excluded.",
+            "type": "private Java glue",
+            "version_baseline": "same APK/release",
+            "version_controlled": true
+          }
+        ],
+        "inventory_complete": true,
+        "revision": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+        "scope_basis": "Reviewed all production sources, AIDL declarations, Manifest entry points and Gradle release boundaries. Public Android UI/Binder/media APIs are grouped by owner; no native ABI or external provider/URI API exists.",
+        "unresolved": []
+      },
+      "evaluation_revision": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+      "manual_api_version_exists": true,
+      "semantic_api_versioning": false
+    },
+    "compilation.ci_independence": {
+      "valid_independent_ci_exists": false,
+      "valid_platform_ci_exists": false
+    },
+    "compilation.compilation_independence": {
+      "critical_cross_repo_api_versions_locked": true,
+      "external_dependencies_declared_interfaces": true,
+      "full_build_requires_unversioned_platform_injection": false,
+      "meaningful_independent_production_unit_exists": true,
+      "real_compatibility_check_or_commitment": false,
+      "repeatable_module_build_entry": true,
+      "repeatable_or_hermetic_environment": false,
+      "repository_source_module_closure_complete": true,
+      "requires_platform_tree_or_undeclared_external_source": false
+    },
+    "platform_reuse.platform_upgrade": {
+      "arch_bound_status": 0,
+      "automated_compatibility_validation_at_least_two_android_versions": false,
+      "has_arch_specific_deps": false,
+      "has_complex_permission_adaptation": false,
+      "has_interface_abstraction": false,
+      "has_light_permission_adaptation": true,
+      "has_non_compatible_api": false,
+      "multiple_unstable_core_paths_without_isolation": false,
+      "non_compatible_api_all_covered": true,
+      "permission_or_platform_hardcoding_blocks_core_migration": false,
+      "risk_fallback_available": true,
+      "risks_all_localized_in_compat_layer": true,
+      "single_abi_closed_dependency_without_fallback": false,
+      "version_bound_status": 0
+    },
+    "platform_reuse.release_branch_strategy": {
+      "cross_platform_unified_release_policy": false,
+      "platform_shared_release_channel": false,
+      "release_policy_evidence_verified": false,
+      "vehicle_specific_sop_channel": false
+    },
+    "quality.integration_test": {
+      "evaluation_revision": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+      "final_head_integration_execution_exists": true,
+      "integration_execution": {
+        "android_api": 35,
+        "artifacts": [],
+        "assertions_passed": 19,
+        "build_fingerprint": "google/sdk_gphone64_x86_64/emu64xa:15/AE3A.240806.043/12960925:userdebug/dev-keys",
+        "command": "adb -s emulator-5582 shell am instrument -w -r org.vehicle.messages.sample/org.vehicle.messages.sample.AcceptanceRunner",
+        "coverage": {
+          "all_edges": [
+            [
+              "sample consumer",
+              "Manager API"
+            ],
+            [
+              "Manager API",
+              "Binder service"
+            ],
+            [
+              "Binder service",
+              "SQLite queue"
+            ],
+            [
+              "queue scheduler",
+              "HTTP receiver"
+            ],
+            [
+              "Binder service",
+              "consumer callback"
+            ]
+          ],
+          "covered_edges": [
+            [
+              "sample consumer",
+              "Manager API"
+            ],
+            [
+              "Manager API",
+              "Binder service"
+            ],
+            [
+              "Binder service",
+              "SQLite queue"
+            ],
+            [
+              "queue scheduler",
+              "HTTP receiver"
+            ],
+            [
+              "Binder service",
+              "consumer callback"
+            ]
+          ],
+          "definition": "One edge is covered only when a real producer/consumer interaction is asserted in the native acceptance scenario; this is not statement or decision coverage.",
+          "denominator": 5,
+          "name": "key cross-component interaction edges",
+          "numerator": 5,
+          "ratio": 1,
+          "scope": "Production Manager, Binder service, SQLite, loopback protocol and callback; sample UI rendering excluded",
+          "threshold": 0.5
+        },
+        "expected_outcomes": "Pending state persists; exact acknowledgements complete delivery; invalid/expired messages do not create incorrect remote effects",
+        "mode": "local",
+        "objectives": "Persist, retry and acknowledge caller-scoped messages across a real service-process restart",
+        "pass_ratio": 1,
+        "report_path": "final-android/message.log",
+        "report_sha256": "145a6308177904a25da9eb579db8aea0b81bcebca27253b41d5ec6eb2edbe4ed",
+        "revision": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+        "runner": "sample/src/debug/java/org/vehicle/messages/sample/AcceptanceRunner.java",
+        "runtime": "android_emulator",
+        "runtime_environment": "Android API 35, isolated AVD, local loopback receiver",
+        "status": "completed",
+        "target_id": "emulator-5582",
+        "tests_failed": 0,
+        "tests_passed": 1,
+        "tests_skipped": 0,
+        "tests_total": 1
+      },
+      "valid_integration_assertions_and_interface_behavior": true
+    },
+    "solid_principle.dependency_inversion": {
+      "exceptional_automotive_practice_demonstrated": false,
+      "observation": "The IPC/API boundary is explicit, but high-level or sibling implementations still directly depend on concrete storage/transport/adapter classes; this is a local coupling mechanism.",
+      "positive_conformance_observed": true,
+      "scope_sufficient": true,
+      "violation_extent": "localized"
+    },
+    "solid_principle.interface_segregation": {
+      "exceptional_automotive_practice_demonstrated": false,
+      "observation": "Current consumers are not forced to implement or prepare unrelated capabilities. Optional state/command results follow the actual contract; interface width alone is not a violation. No exceptional practice supports 4.",
+      "positive_conformance_observed": true,
+      "scope_sufficient": true,
+      "violation_extent": "none_observed"
+    },
+    "solid_principle.liskov_substitution": {
+      "child_symbols": [
+        "MessageService.binder"
+      ],
+      "empty_override_violation_count": 0,
+      "evaluation_revision": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+      "multiple_unexplained_override_or_exception_risks": false,
+      "overridden_methods": [
+        "submit",
+        "status",
+        "subscribe",
+        "unsubscribe"
+      ],
+      "parent_symbol": "IMessageService.Stub",
+      "postcondition_risk_count": 0,
+      "precondition_risk_count": 0,
+      "production_implementation_count": 1,
+      "substitution_execution": {
+        "status": "not_run"
+      },
+      "substitution_test_count": 0,
+      "unconditional_throw_violation_count": 0
+    },
+    "solid_principle.open_closed": {
+      "exceptional_automotive_practice_demonstrated": false,
+      "observation": "A useful local implementation boundary exists, but the demonstrated extension scenario propagates into an existing generic responsibility; the issue is localized.",
+      "positive_conformance_observed": true,
+      "scope_sufficient": true,
+      "violation_extent": "localized"
+    },
+    "solid_principle.single_responsibility": {
+      "exceptional_automotive_practice_demonstrated": false,
+      "observation": "Persistence and wire format are separate, but the IPC service also owns queue scheduling, expiration and delivery state policy. This is a localized responsibility concentration, not a severe or pervasive design failure.",
+      "positive_conformance_observed": true,
+      "scope_sufficient": true,
+      "violation_extent": "localized"
+    }
+  },
+  "schema_version": "expansion-evidence-1",
+  "semantic_review": {
+    "authoring_context_known": true,
+    "independent_blind_review": false,
+    "scope": "No score target or quality label was read by rule replay; semantic observations are explicit reviewer inputs.",
+    "second_pass": "Each complete leaf is rechecked against final-source anchors and adjacent contract gates; separate rule code replays these shared observations."
+  },
+  "source_inventory": {
+    "path": "suites/fw/evidence/FW-22-source.json",
+    "sha256": "82dffb1691142d29491a597611651b2b6148892e0059a78268d71b5e4b5267b5"
+  },
+  "source_inventory_sha256": "82dffb1691142d29491a597611651b2b6148892e0059a78268d71b5e4b5267b5",
+  "state": "verified_local",
+  "tree": "05c6b31846df853feb61f65cb77bda6c7aff9538",
+  "type_id": "fw"
+}

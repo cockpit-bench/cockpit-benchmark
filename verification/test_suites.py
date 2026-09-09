@@ -21,6 +21,9 @@ class RegistryTests(unittest.TestCase):
             src=WRAPPER/name;dst=self.root/name
             if src.is_dir():shutil.copytree(src,dst)
             else:shutil.copyfile(src,dst)
+        # These regressions retain the frozen v1 execution gates. New type
+        # registry/selection regressions live in test_repository_types.py.
+        (self.root/'suites.json').write_bytes(suites.encoded(suites.legacy_registry(WRAPPER)))
 
     def tearDown(self):self.temp.cleanup()
 

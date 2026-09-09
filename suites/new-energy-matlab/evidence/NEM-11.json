@@ -1,0 +1,614 @@
+{
+  "execution": {
+    "binding": {
+      "head": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+      "runtime": "MATLAB R2023b",
+      "source_unchanged_after_run": true,
+      "tree": "bedc2fbc0b5b9447eadc2b68bd35c33fd246a6a3",
+      "working_file_sha256": {
+        ".gitignore": "93cfb6415c9608fb872d05cde99a6ff78e3b15f367d1e9fa23bd0c1a126f21db",
+        "BatteryContactorController.slx": "eb832ad518968b1f44f6facee50a8e2959bf09baeb519daed321ff019323a009",
+        "Demo/Charge.PNG": "e41aa91959ad45cd2bbabdcfe3af7e4dfb06dcdac3560758a4df0520522ef532",
+        "Demo/ChargeFault.PNG": "61f1f353c2439fcb00f39d2e3ba77c6cf77e279fe721c510bc87ea32fc177cef",
+        "Demo/Discharge.PNG": "b87316d7825ae30bdf8ae4bfa6e146090e3d92ae69d8c9237bf63140eec1adba",
+        "Demo/DischargeFault.PNG": "940549c202b85b976ddfe5f75e8bfa5793df19a98e50e4b6095d76a180f08006",
+        "Demo/Idle.PNG": "b8714a31f5b49b11fc3b83688c4b977c8a07c2e216c726976d639954265ea5a3",
+        "INTERFACES.md": "6ed97499407f7bbb518d9749332fb6c1d5a47c0bc29dacc0fe0a506250a50609",
+        "LICENSE": "d86d8a3934435d636e568953f76b040b73d9f9f9ad3f1c654224d0cf08c7207b",
+        "MiniBMS/BMSLib.slx": "2b8f3ac44760931b52cf14f358dedd1018b24aef4d85b43fa30fc5054c6e422b",
+        "MiniBMS/MiniBMS.slx": "6710e36944dd99bdff1301fa9350e59f36012da95e555f31b4db4869d570b311",
+        "MiniBMS/MiniBMSVariables.m": "e469a35f0c62510c09d8ffdac7d93871f8d94f1250278f9d55e8c6f972a03dc7",
+        "README.md": "c937bc73bb3d48a23564b80d9fea05deb95afe317d99649ca74433f32b7018fd",
+        "VERSION": "3d097c315a1c543040f548da4c7051265e94c77211a2411ced1d4621344270de",
+        "create_controller.m": "1c1fc63cedf9e85cfb9f84c6476b47d84a9f7a1f7782a05be5ba27a17134622b",
+        "initialize_controller.m": "46f9a5a7531847b7e041ec24eadab0cecb3d492902bf832a0f3411368bfb9666",
+        "production-models.json": "861dfac8bdd626322d803f3b66c426ecc398bcbbe3305295a085ef60f01a71e7",
+        "run_acceptance.m": "2ce9c227c616f98b29f4f697e22748393e13176742a46bac4244e7c509399657"
+      }
+    },
+    "records": [
+      {
+        "bytes": 1341,
+        "path": "final-contactor-mil/acceptance.json",
+        "sha256": "a76182b8e282844db969d1da0a2a313c9dc7131eca2e5b3d5518e791b1a18506"
+      },
+      {
+        "bytes": 6464,
+        "path": "final-contactor-mil/charge.bin",
+        "sha256": "0ab549a60ee3527ca69d4ac721bbe5527788ee4a6b0e11c61e4144c3e20ca151"
+      },
+      {
+        "bytes": 6464,
+        "path": "final-contactor-mil/contactor-timeout.bin",
+        "sha256": "a77af6992e7637b2d4635754229306391438e805662445abff750980b565412a"
+      },
+      {
+        "bytes": 6464,
+        "path": "final-contactor-mil/discharge.bin",
+        "sha256": "cab5eaf499f13f5cd2bff400703719c8abffa9307688862ff1f7a48b5f2a307f"
+      },
+      {
+        "bytes": 6464,
+        "path": "final-contactor-mil/longer-temperature-debounce.bin",
+        "sha256": "9d273e2de193218e5ebdc6b7d13a97112346f866892ed7c4dd450bb395fd9618"
+      },
+      {
+        "bytes": 6464,
+        "path": "final-contactor-mil/temperature-fault-recovery.bin",
+        "sha256": "cf8972a5840bbe464325986f90d5602ed739396211e86a6ebb210804f51c42d9"
+      },
+      {
+        "bytes": 6464,
+        "path": "final-contactor-mil/temperature-transient.bin",
+        "sha256": "9ace97b9f7eb154f43eabfdace099f239cc9b7c58ed64c4b580c927e332278b8"
+      }
+    ],
+    "status": "passed",
+    "summary": {
+      "final-contactor-mil": {
+        "cases": [
+          {
+            "modes": [
+              100,
+              110,
+              111,
+              120,
+              140
+            ],
+            "name": "discharge",
+            "samples": 101
+          },
+          {
+            "modes": [
+              100,
+              110,
+              111,
+              120,
+              130
+            ],
+            "name": "charge",
+            "samples": 101
+          },
+          {
+            "modes": [
+              100,
+              110,
+              111,
+              115,
+              255
+            ],
+            "name": "contactor-timeout",
+            "samples": 101
+          },
+          {
+            "modes": [
+              100,
+              110,
+              111,
+              120,
+              140,
+              200,
+              211,
+              220,
+              255
+            ],
+            "name": "temperature-fault-recovery",
+            "samples": 101
+          },
+          {
+            "modes": [
+              100,
+              110,
+              111,
+              120,
+              140
+            ],
+            "name": "temperature-transient",
+            "samples": 101
+          },
+          {
+            "modes": [
+              100,
+              110,
+              111,
+              120,
+              140,
+              200,
+              211,
+              220,
+              255
+            ],
+            "name": "longer-temperature-debounce",
+            "samples": 101
+          }
+        ],
+        "checks": 12,
+        "codegen": "not_run",
+        "coverage": "not_collected",
+        "execution": "normal MIL",
+        "fault_onset_seconds": 3.9000000000000004,
+        "matlab": "23.2.0.2365128 (R2023b)",
+        "samples": 606,
+        "status": "passed",
+        "tuned_fault_onset_seconds": 4.4
+      }
+    }
+  },
+  "head": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+  "id": "NEM-11",
+  "limitations": [
+    "Local construction and verification only; new source repositories are not published.",
+    "Same-author construction is not an independent holdout.",
+    "No new physical vehicle, SIL/PIL/HIL, or remote CI execution."
+  ],
+  "production_scope": {
+    "models": [
+      "BatteryContactorController.slx",
+      "MiniBMS/BMSLib.slx"
+    ]
+  },
+  "reference": {
+    "head": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+    "id": "NEM-11",
+    "leaves": [
+      {
+        "analysis": "Five recognizable top-level BMS roles contain uneven nesting and twelve generic fault wrappers. Coarse responsibility division exists, but repeated Subsystem/Subsystem1/Subsystem2 layers obscure the lower-level abstraction.",
+        "evidence": [
+          {
+            "claim": "Top-level voltage monitoring",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "model",
+            "independent_group": "BatteryContactorController.slx:CELL_VOLTAGE_MONITORING - CVM",
+            "member": "simulink/systems/system_root.xml",
+            "path": "BatteryContactorController.slx",
+            "sid": "60",
+            "source": "repository",
+            "symbol": "CELL_VOLTAGE_MONITORING - CVM"
+          },
+          {
+            "claim": "Generic nested fault wrapper",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "model",
+            "independent_group": "BatteryContactorController.slx:Subsystem1",
+            "member": "simulink/systems/system_105.xml",
+            "path": "BatteryContactorController.slx",
+            "sid": "128",
+            "source": "repository",
+            "symbol": "Subsystem1"
+          }
+        ],
+        "max_score": 3,
+        "name": "hierarchy",
+        "score": 1,
+        "score_reasoning": "Five recognizable top-level BMS roles contain uneven nesting and twelve generic fault wrappers. Coarse responsibility division exists, but repeated Subsystem/Subsystem1/Subsystem2 layers obscure the lower-level abstraction.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Twelve instances reuse BMSLib/Debouncer, but four voltage/temperature severity groups repeat the same threshold/debounce/wrapper logic instead of one shared parameterized monitor. Reuse exists alongside real duplicated logic.",
+        "evidence": [
+          {
+            "claim": "Actual linked Debouncer instance",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "model",
+            "independent_group": "BatteryContactorController.slx:Subsystem",
+            "member": "simulink/systems/system_105.xml",
+            "path": "BatteryContactorController.slx",
+            "sid": "120",
+            "source": "repository",
+            "symbol": "Subsystem"
+          },
+          {
+            "claim": "One reusable debouncer definition",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "model",
+            "independent_group": "MiniBMS/BMSLib.slx:Debouncer",
+            "member": "simulink/blockdiagram.xml",
+            "path": "MiniBMS/BMSLib.slx",
+            "sid": "49",
+            "source": "repository",
+            "symbol": "Debouncer"
+          }
+        ],
+        "max_score": 3,
+        "name": "reuse",
+        "score": 1,
+        "score_reasoning": "Twelve instances reuse BMSLib/Debouncer, but four voltage/temperature severity groups repeat the same threshold/debounce/wrapper logic instead of one shared parameterized monitor. Reuse exists alongside real duplicated logic.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Root ports are explicit, but internal Goto/From and Data Store reads/writes influence public SoC, energy and mode outputs; under the whole-production-boundary contract these are implicit communication.",
+        "evidence": [
+          {
+            "claim": "Implicit energy store input affects public output",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "model",
+            "independent_group": "BatteryContactorController.slx:Data Store\nRead1",
+            "member": "simulink/systems/system_35.xml",
+            "path": "BatteryContactorController.slx",
+            "sid": "41",
+            "source": "repository",
+            "symbol": "Data Store\nRead1"
+          },
+          {
+            "claim": "Public output is downstream of implicit BPC state",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "model",
+            "independent_group": "BatteryContactorController.slx:BPC_BattWh",
+            "member": "simulink/systems/system_35.xml",
+            "path": "BatteryContactorController.slx",
+            "sid": "56",
+            "source": "repository",
+            "symbol": "BPC_BattWh"
+          }
+        ],
+        "max_score": 3,
+        "name": "interface",
+        "score": 0,
+        "score_reasoning": "Root ports are explicit, but internal Goto/From and Data Store reads/writes influence public SoC, energy and mode outputs; under the whole-production-boundary contract these are implicit communication.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Only 4 of 236 root-controller connections carry names, alongside 34 Goto/From and Data Store paths. Native read-before-write/order warnings corroborate the implicit routing limitation.",
+        "evidence": [
+          {
+            "claim": "Full connection-name inventory",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "facts",
+            "independent_group": "routing_inventory",
+            "json_pointer": "/models/0/lines",
+            "path": "suites/new-energy-matlab/evidence/NEM-11-source.json",
+            "source": "source_inventory"
+          },
+          {
+            "claim": "Implicit write with execution-order dependence",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "model",
+            "independent_group": "BatteryContactorController.slx:Data Store\nWrite1",
+            "member": "simulink/systems/system_35.xml",
+            "path": "BatteryContactorController.slx",
+            "sid": "43",
+            "source": "repository",
+            "symbol": "Data Store\nWrite1"
+          }
+        ],
+        "max_score": 3,
+        "name": "dataflow",
+        "score": 0,
+        "score_reasoning": "Only 4 of 236 root-controller connections carry names, alongside 34 Goto/From and Data Store paths. Native read-before-write/order warnings corroborate the implicit routing limitation.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Top-level BMS roles and ports are meaningful, but many Constant/Gain/Subsystem names and nearly all signal connections retain defaults. This is partial meaningful naming, not mostly consistent semantics.",
+        "evidence": [
+          {
+            "claim": "Semantic top-level role",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "model",
+            "independent_group": "BatteryContactorController.slx:BATTERY_OPERATION_MODE - BM",
+            "member": "simulink/systems/system_root.xml",
+            "path": "BatteryContactorController.slx",
+            "sid": "20",
+            "source": "repository",
+            "symbol": "BATTERY_OPERATION_MODE - BM"
+          },
+          {
+            "claim": "Default primitive block name",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "model",
+            "independent_group": "BatteryContactorController.slx:Constant1",
+            "member": "simulink/systems/system_105.xml",
+            "path": "BatteryContactorController.slx",
+            "sid": "108",
+            "source": "repository",
+            "symbol": "Constant1"
+          }
+        ],
+        "max_score": 5,
+        "name": "naming",
+        "score": 1,
+        "score_reasoning": "Top-level BMS roles and ports are meaningful, but many Constant/Gain/Subsystem names and nearly all signal connections retain defaults. This is partial meaningful naming, not mostly consistent semantics.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Demo images are separate, but production controller/scripts live at root and the MiniBMS folder mixes the active library/parameter script with retained environment model. Classification is partial.",
+        "evidence": [
+          {
+            "claim": "Mixed production/environment tree",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "facts",
+            "independent_group": "directory_inventory",
+            "json_pointer": "/files",
+            "path": "suites/new-energy-matlab/evidence/NEM-11-source.json",
+            "source": "source_inventory"
+          },
+          {
+            "claim": "Explicitly retained environment under the same MiniBMS directory",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "end_line": 11,
+            "evidence_type": "code",
+            "independent_group": "production-models.json:excluded_environment",
+            "path": "production-models.json",
+            "source": "repository",
+            "start_line": 7,
+            "symbol": "excluded_environment"
+          }
+        ],
+        "max_score": 5,
+        "name": "directory",
+        "score": 1,
+        "score_reasoning": "Demo images are separate, but production controller/scripts live at root and the MiniBMS folder mixes the active library/parameter script with retained environment model. Classification is partial.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Release 0.1.0 records date, extraction, exposed 7/8 ports and unchanged chart intent. It lacks complete versioned signal/type/range change control and a continuous controller-specific release history.",
+        "evidence": [
+          {
+            "claim": "Dated controller change description",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "end_line": 9,
+            "evidence_type": "code",
+            "independent_group": "README.md:Release 0.1.0",
+            "path": "README.md",
+            "source": "repository",
+            "start_line": 9,
+            "symbol": "Release 0.1.0"
+          },
+          {
+            "claim": "Versioned exposed boundary",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "end_line": 9,
+            "evidence_type": "code",
+            "independent_group": "INTERFACES.md:# Controller boundary",
+            "path": "INTERFACES.md",
+            "source": "repository",
+            "start_line": 1,
+            "symbol": "# Controller boundary"
+          }
+        ],
+        "max_score": 3,
+        "name": "model_version",
+        "score": 2,
+        "score_reasoning": "Release 0.1.0 records date, extraction, exposed 7/8 ports and unchanged chart intent. It lacks complete versioned signal/type/range change control and a continuous controller-specific release history.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Tunable thresholds, debounce times and capacities are named and grouped in one script. The lower-voltage cutoff threshold 3.26 exceeds the warning threshold 2.8, so centralization alone does not establish accurate severity calibration; 5 is not supported.",
+        "evidence": [
+          {
+            "claim": "Actual under-voltage severity calibration ordering",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "end_line": 36,
+            "evidence_type": "code",
+            "independent_group": "MiniBMS/MiniBMSVariables.m:CVM_VCellMinCutoffTh_P",
+            "path": "MiniBMS/MiniBMSVariables.m",
+            "source": "repository",
+            "start_line": 30,
+            "symbol": "CVM_VCellMinCutoffTh_P"
+          },
+          {
+            "claim": "Script parameters populate the model workspace",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "end_line": 11,
+            "evidence_type": "code",
+            "independent_group": "initialize_controller.m:name=names{k};value=eval(name)",
+            "path": "initialize_controller.m",
+            "source": "repository",
+            "start_line": 7,
+            "symbol": "name=names{k};value=eval(name)"
+          }
+        ],
+        "max_score": 5,
+        "name": "parameter_management",
+        "score": 3,
+        "score_reasoning": "Tunable thresholds, debounce times and capacities are named and grouped in one script. The lower-voltage cutoff threshold 3.26 exceeds the warning threshold 2.8, so centralization alone does not establish accurate severity calibration; 5 is not supported.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Real native MIL tests and output/property assertions pass for the bound version. No current decision coverage numerator/denominator is retained, so coverage-based 3/5 is not supported.",
+        "evidence": [
+          {
+            "claim": "Actual charge/discharge and fault assertions",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "end_line": 38,
+            "evidence_type": "code",
+            "independent_group": "run_acceptance.m:normal=execute",
+            "path": "run_acceptance.m",
+            "source": "repository",
+            "start_line": 8,
+            "symbol": "normal=execute"
+          },
+          {
+            "claim": "Changed debounce parameter produces later fault onset",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "end_line": 37,
+            "evidence_type": "code",
+            "independent_group": "run_acceptance.m:tuned=execute",
+            "path": "run_acceptance.m",
+            "source": "repository",
+            "start_line": 29,
+            "symbol": "tuned=execute"
+          }
+        ],
+        "max_score": 5,
+        "name": "unit_test",
+        "score": 1,
+        "score_reasoning": "Real native MIL tests and output/property assertions pass for the bound version. No current decision coverage numerator/denominator is retained, so coverage-based 3/5 is not supported.",
+        "status": "scored"
+      },
+      {
+        "analysis": "All production model and library/parameter dependencies are in this repository. MATLAB/Simulink and Embedded Coder (only for optional energy code generation) are tool prerequisites, not external business-source dependencies.",
+        "evidence": [
+          {
+            "claim": "Complete production model closure",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "facts",
+            "independent_group": "model_closure",
+            "json_pointer": "/scope/models",
+            "path": "suites/new-energy-matlab/evidence/NEM-11-source.json",
+            "source": "source_inventory"
+          },
+          {
+            "claim": "Documented native tool and dependency entry points",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "end_line": 9,
+            "evidence_type": "code",
+            "independent_group": "README.md:MATLAB R2023b",
+            "path": "README.md",
+            "source": "repository",
+            "start_line": 5,
+            "symbol": "MATLAB R2023b"
+          }
+        ],
+        "max_score": 3,
+        "name": "build_independence",
+        "score": 3,
+        "score_reasoning": "All production model and library/parameter dependencies are in this repository. MATLAB/Simulink and Embedded Coder (only for optional energy code generation) are tool prerequisites, not external business-source dependencies.",
+        "status": "scored"
+      },
+      {
+        "analysis": "The independent documented model/controller release uses a MAJOR.MINOR.PATCH version.",
+        "evidence": [
+          {
+            "claim": "Current semantic controller version",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "end_line": 1,
+            "evidence_type": "code",
+            "independent_group": "VERSION:0.1.0",
+            "path": "VERSION",
+            "source": "repository",
+            "start_line": 1,
+            "symbol": "0.1.0"
+          },
+          {
+            "claim": "Documented release identity",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "end_line": 9,
+            "evidence_type": "code",
+            "independent_group": "README.md:Release 0.1.0",
+            "path": "README.md",
+            "source": "repository",
+            "start_line": 9,
+            "symbol": "Release 0.1.0"
+          }
+        ],
+        "max_score": 3,
+        "name": "version_independence",
+        "score": 3,
+        "score_reasoning": "The independent documented model/controller release uses a MAJOR.MINOR.PATCH version.",
+        "status": "scored"
+      },
+      {
+        "analysis": "Actual refs contain only main; named model-workspace/script parameters configure this unified mainline. The accepted MATLAB branch-name approximation applies; no multi-platform execution is asserted.",
+        "evidence": [
+          {
+            "claim": "Actual unified mainline refs",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "facts",
+            "independent_group": "branch_inventory",
+            "json_pointer": "/refs",
+            "path": "suites/new-energy-matlab/evidence/NEM-11-source.json",
+            "source": "source_inventory"
+          },
+          {
+            "claim": "Parameter configuration on the same mainline",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "end_line": 11,
+            "evidence_type": "code",
+            "independent_group": "initialize_controller.m:ModelWorkspace",
+            "path": "initialize_controller.m",
+            "source": "repository",
+            "start_line": 5,
+            "symbol": "ModelWorkspace"
+          }
+        ],
+        "max_score": 10,
+        "name": "release_branches",
+        "score": 10,
+        "score_reasoning": "Actual refs contain only main; named model-workspace/script parameters configure this unified mainline. The accepted MATLAB branch-name approximation applies; no multi-platform execution is asserted.",
+        "status": "scored"
+      },
+      {
+        "analysis": "No vehicle/platform token exists in actual branch names. This is the explicitly accepted branch-name approximation, not proof that the model runs on every device.",
+        "deterministic_absence": true,
+        "evidence": [
+          {
+            "claim": "Complete actual branch names",
+            "commit": "d9cf0bae322d41e7d829c02636ce343d638797e1",
+            "evidence_type": "facts",
+            "independent_group": "inventory",
+            "json_pointer": "/refs",
+            "path": "suites/new-energy-matlab/evidence/NEM-11-source.json",
+            "source": "source_inventory"
+          }
+        ],
+        "max_score": 10,
+        "name": "device_specificity",
+        "score": 10,
+        "score_reasoning": "No vehicle/platform token exists in actual branch names. This is the explicitly accepted branch-name approximation, not proof that the model runs on every device.",
+        "status": "scored"
+      }
+    ],
+    "max_score": 61,
+    "name": "battery-contactor-control",
+    "review_status": "maintainer_final_source_review_with_explicit_observations",
+    "total_score": 36,
+    "tree": "bedc2fbc0b5b9447eadc2b68bd35c33fd246a6a3"
+  },
+  "rule_inputs": {
+    "branches": [
+      "main"
+    ],
+    "external_business_dependencies": [],
+    "semantic_observations": {
+      "directory": "partial",
+      "hierarchy": "coarse",
+      "history": "dated_major",
+      "interface": "implicit",
+      "naming": "partial",
+      "parameters": "external_classified",
+      "reuse": "duplicate",
+      "routing": "confused"
+    },
+    "source_tests": {
+      "all_passed": true,
+      "decision": null,
+      "present": true
+    },
+    "version": "0.1.0"
+  },
+  "schema_version": "expansion-evidence-1",
+  "semantic_review": {
+    "authoring_context_known": true,
+    "independent_blind_review": false,
+    "scope": "No score target or quality label was read by rule replay; semantic observations are explicit reviewer inputs.",
+    "second_pass": "Each complete leaf is rechecked against final-source anchors and adjacent contract gates; separate rule code replays these shared observations."
+  },
+  "source_inventory": {
+    "path": "suites/new-energy-matlab/evidence/NEM-11-source.json",
+    "sha256": "5d1de30a247c3759a3d5326f8bdd9be52f07ca8a3d3971310e21be96b1c133b5"
+  },
+  "source_inventory_sha256": "5d1de30a247c3759a3d5326f8bdd9be52f07ca8a3d3971310e21be96b1c133b5",
+  "state": "verified_local",
+  "tree": "bedc2fbc0b5b9447eadc2b68bd35c33fd246a6a3",
+  "type_id": "new-energy-matlab"
+}

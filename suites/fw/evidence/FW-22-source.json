@@ -1,0 +1,234 @@
+{
+  "ci_candidates": [],
+  "excluded_source": [
+    {
+      "path": "sample/src/debug/java/org/vehicle/messages/sample/AcceptanceRunner.java",
+      "reason": "debug acceptance, sample consumer, or generated output outside declared production roots"
+    },
+    {
+      "path": "sample/src/main/java/org/vehicle/messages/sample/ConsoleActivity.java",
+      "reason": "debug acceptance, sample consumer, or generated output outside declared production roots"
+    }
+  ],
+  "files": [
+    {
+      "blob": "6dd61da099bffbee5bf08e43ef89c2ce8ef23502",
+      "bytes": 46,
+      "path": ".gitignore",
+      "sha256": "89ded145d3165aa9b6c42e6bfd7b46d30044448f0fc0ed4f5ea273bf32e32913"
+    },
+    {
+      "blob": "29f81d812f3e768fa89638d1f72920dbfd1413a8",
+      "bytes": 11558,
+      "path": "LICENSE",
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    {
+      "blob": "5078bc023f9219111907b95dcd1213b2eadd0bbc",
+      "bytes": 236,
+      "path": "NOTICE",
+      "sha256": "dc1f6a46c645dee7e6d257461c0bf75a06455be540db54493d8f816b013764db"
+    },
+    {
+      "blob": "340a8194c42b1297340207f23b344b707c17035e",
+      "bytes": 1375,
+      "path": "README.md",
+      "sha256": "6b8839b6c2ec592976da45b5c2f007927017ab51579925511a9b9adc7786e2eb"
+    },
+    {
+      "blob": "4c34d0a4cdfa981cb68b47cf9dee39bc043f3196",
+      "bytes": 300,
+      "path": "api/build.gradle",
+      "sha256": "aca6a0c98b5670a0e4b2d62b06a47569815b44e8b642b588958c861d7b7d0c9d"
+    },
+    {
+      "blob": "9c5d2fe0b0cd053bb8cb06c2d5ab216b4ca94a69",
+      "bytes": 13,
+      "path": "api/src/main/AndroidManifest.xml",
+      "sha256": "6ffce38a2b1abc5f552b2114873ae38f67de915ca64e5a123e322c4821a552b0"
+    },
+    {
+      "blob": "33b111655ff15856ce5026c0d11b82d419312664",
+      "bytes": 113,
+      "path": "api/src/main/aidl/org/vehicle/messages/IMessageListener.aidl",
+      "sha256": "846bfefd7d871d0648369e444c3dd2487cb696654903dd1074f8009d5869f457"
+    },
+    {
+      "blob": "e0cddfab05710c25fb6f3b467b9337c6c37477e5",
+      "bytes": 315,
+      "path": "api/src/main/aidl/org/vehicle/messages/IMessageService.aidl",
+      "sha256": "d47e3eda8deeea5ceb859c854932f4e58b7b91f6a301b71ecdaee93b57833365"
+    },
+    {
+      "blob": "26ab4db276e6714e0e17da7abfe8e5dc4e355c35",
+      "bytes": 3207,
+      "path": "api/src/main/java/org/vehicle/messages/MessageManager.java",
+      "sha256": "f412f3787aa1212fff913b5513ade6946f6db5258de27a709aa6503a66e38c42"
+    },
+    {
+      "blob": "8bbfc79e85d2b73728a2dd6eff585033497973fe",
+      "bytes": 124,
+      "path": "build.gradle",
+      "sha256": "1467cdb729659ab1780bdc5a7f768d766887ee0d55acc561bbcfce6be8be78fd"
+    },
+    {
+      "blob": "8aa9c2b819d9fd1e5198415ce2a17bd3dd6ba5a0",
+      "bytes": 105,
+      "path": "gradle.properties",
+      "sha256": "fec5a7f16fa6ea509517f8393eb433f063d1d0594f04f166f28cf58da8b65f33"
+    },
+    {
+      "blob": "e708b1c023ec8b20f512888fe07c5bd3ff77bb8f",
+      "bytes": 59203,
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637"
+    },
+    {
+      "blob": "10ea3b7e6524017340f493f0f685907fa4f755a3",
+      "bytes": 236,
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "0b9c5e30a047cd3235fcca4d30ae01ef07efff5424849ea74277dcc02ebdd7b2"
+    },
+    {
+      "blob": "02640cba68b8881cb234133808bb8fa88db5856c",
+      "bytes": 5951,
+      "path": "gradlew",
+      "sha256": "c15a47b60a4eeede9ffee33433fd990d8b6236607372b9bb1f6dc51b07b78c39"
+    },
+    {
+      "blob": "ac1b06f93825db68fb0c0b5150917f340eaa5d02",
+      "bytes": 2763,
+      "path": "gradlew.bat",
+      "sha256": "af835f98787e9269af5a046edcb821a592fed372139df7b947b471a63cfc236b"
+    },
+    {
+      "blob": "5a345ccd7cebc73f10647940dfa98e14a7090140",
+      "bytes": 443,
+      "path": "sample/build.gradle",
+      "sha256": "7636751fab231856526bd6759064d090e84b492f8f9cdfcf450ca8b318be15e1"
+    },
+    {
+      "blob": "c78d8cc0c8583ee1ac97ffb58d5b22b138089d15",
+      "bytes": 211,
+      "path": "sample/src/debug/AndroidManifest.xml",
+      "sha256": "369084ef558dcb87f53e7369380c9e6ad96d401967f76852da837f2b5b42d43d"
+    },
+    {
+      "blob": "e4954e97405b83fb7b85227e94c38126a081a071",
+      "bytes": 9029,
+      "path": "sample/src/debug/java/org/vehicle/messages/sample/AcceptanceRunner.java",
+      "sha256": "6b418f6203bfec6b5b2263d747a7108f2cf43926e5ff73b5340183b4300423e1"
+    },
+    {
+      "blob": "7e5a4be7510caad7a8a682643ec6bb45e87f80b7",
+      "bytes": 622,
+      "path": "sample/src/main/AndroidManifest.xml",
+      "sha256": "b7a80bd5dfb681c9e16df365505a92afdfb5574692da71d42575f510030e42c2"
+    },
+    {
+      "blob": "d3b26e4d2abcbbeb3b7cd8ffcdee570cfbc38385",
+      "bytes": 1759,
+      "path": "sample/src/main/java/org/vehicle/messages/sample/ConsoleActivity.java",
+      "sha256": "02ff41ae41dc040ea35d545bcb882613fbb5612b370090b8b21c58b3683d8758"
+    },
+    {
+      "blob": "c7ed2edafbf28e6d263261eff11f03daadc15ff4",
+      "bytes": 445,
+      "path": "service/build.gradle",
+      "sha256": "24d7aa539fdfb27e239ca360c214b1378346f8cb728b5b70765d420c9b7947b0"
+    },
+    {
+      "blob": "7bfc8752dfaa93b53a6a8badc02227e72c417635",
+      "bytes": 577,
+      "path": "service/src/main/AndroidManifest.xml",
+      "sha256": "6ed4cd74155e19d87ae9f506a6671ca5db25f374275f387f383045634eba4919"
+    },
+    {
+      "blob": "6b67e345dc6cb7f4a4078bf417f4be1516249497",
+      "bytes": 1931,
+      "path": "service/src/main/java/org/vehicle/messages/service/LoopbackTransport.java",
+      "sha256": "04550d243b03006dbf469e36999ba6b72114839b986a3348667f598524f7e7ad"
+    },
+    {
+      "blob": "654d9305af41af9f18ee0e0da1054405cffece80",
+      "bytes": 3509,
+      "path": "service/src/main/java/org/vehicle/messages/service/MessageService.java",
+      "sha256": "27f795467b423e2b6ed488a04c46ac36b481fee06413eef74bda26ffbc8dd5fa"
+    },
+    {
+      "blob": "19684dd6af67943aad6cfa0c7631ee117f78a398",
+      "bytes": 3331,
+      "path": "service/src/main/java/org/vehicle/messages/service/MessageStore.java",
+      "sha256": "a718eedcd963a460b8cb288faed99b04844da5e20e0206d4d7d2e5e5dd80a0cb"
+    },
+    {
+      "blob": "089848bd4801bccaa48e12b59ec802788b0494e0",
+      "bytes": 323,
+      "path": "settings.gradle",
+      "sha256": "993f3807e7a5f1a74e55e46cefffe4dada155d6fbc1632e9ffa4964ee2e7ae06"
+    }
+  ],
+  "head": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac",
+  "models": [],
+  "production": [
+    {
+      "build_owner": "api",
+      "language": "AIDL",
+      "path": "api/src/main/aidl/org/vehicle/messages/IMessageListener.aidl",
+      "physical_lines": 1,
+      "source_loc": 1
+    },
+    {
+      "build_owner": "api",
+      "language": "AIDL",
+      "path": "api/src/main/aidl/org/vehicle/messages/IMessageService.aidl",
+      "physical_lines": 1,
+      "source_loc": 1
+    },
+    {
+      "build_owner": "api",
+      "language": "Java",
+      "path": "api/src/main/java/org/vehicle/messages/MessageManager.java",
+      "physical_lines": 106,
+      "source_loc": 92
+    },
+    {
+      "build_owner": "service",
+      "language": "Java",
+      "path": "service/src/main/java/org/vehicle/messages/service/LoopbackTransport.java",
+      "physical_lines": 50,
+      "source_loc": 47
+    },
+    {
+      "build_owner": "service",
+      "language": "Java",
+      "path": "service/src/main/java/org/vehicle/messages/service/MessageService.java",
+      "physical_lines": 106,
+      "source_loc": 94
+    },
+    {
+      "build_owner": "service",
+      "language": "Java",
+      "path": "service/src/main/java/org/vehicle/messages/service/MessageStore.java",
+      "physical_lines": 95,
+      "source_loc": 86
+    }
+  ],
+  "refs": {
+    "refs/heads/main": "62670c9ddc17c101882a3f2d5f3f4fd8047c4bac"
+  },
+  "scope": {
+    "production_roots": [
+      "api/src/main/java",
+      "api/src/main/aidl",
+      "service/src/main/java"
+    ]
+  },
+  "size": {
+    "effective_logic_blocks": 0,
+    "physical_lines": 359,
+    "source_files": 6,
+    "source_loc": 321
+  },
+  "tree": "05c6b31846df853feb61f65cb77bda6c7aff9538"
+}
