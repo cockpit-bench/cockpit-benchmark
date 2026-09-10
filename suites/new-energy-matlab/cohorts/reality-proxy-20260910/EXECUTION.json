@@ -1,1276 +1,375 @@
 {
-  "revision": "fidelity-repair-20260910",
   "admission": {
+    "business_properties": 138,
+    "max_abs_error": 0.0,
     "repositories": [
       {
-        "case_id": "NEP-01",
-        "samples": 11948,
-        "outputs": 108,
-        "comparisons": 1170904,
-        "range_checks": 1290384,
-        "business_property_count": 4,
-        "scenarios": 2811,
         "all_passed": true,
+        "business_property_count": 4,
+        "case_id": "NEP-01",
+        "comparisons": 1170904,
         "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 108,
+        "owned_tests": true,
+        "range_checks": 1290384,
         "runtime_source_binding": {
-          "Model/calibrationVcVcuInD.mat": "7ddd1b670972c9ee9dd0e44b448f38a818aec4275a389bf54e7f937c395271ee",
           "Model/VcVcuInD.slx": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
           "Model/VcVcuInDDiagByte.mexw64": "10371ab30f40e848e61b775f120a1d6561298ce76429e14385fe9b9a986b6ae5",
           "Model/VcVcuInDDiagByte.tlc": "bb936d752219a9cfc6cc754637853a9544e4e254720678c946235f0c1716816c",
           "Model/VcVcuInDValidateCalibration.p": "94f15db77560f8cd8e23da6e0b86ee26eb9b26e4b62d4b7aa82ada2de30301e3",
-          "Src/ert_main.c": "e3ea93b443044c523d68700c03c7b05986af9e0118de78da1e10acc1d687191d",
-          "Src/rtwtypes.h": "48f563a3e177c7f2ac1d23324f012f614d0e38aa0510fbad584146be6f959108",
+          "Model/calibrationVcVcuInD.mat": "7ddd1b670972c9ee9dd0e44b448f38a818aec4275a389bf54e7f937c395271ee",
           "Src/VcVcuInD.c": "1d52ff31ed1f29ada181e5ad1bb1bb5ba61dd391ca1c985d2abaa0a4adeb0603",
           "Src/VcVcuInD.h": "1634da697a220edc60ebf7b1187a33070d4fb0d78ea28981eac0327adf1cad73",
+          "Src/VcVcuInDDiagByte.c": "eb4f5c69670243e00556a20055cfbfbc62016f3d7957bdc52dc7ce6c1b87c4d4",
           "Src/VcVcuInD_data.c": "3b037e1e9336faef9b57eb4c4bc8c7e3b3d8502fcc690a65fc5aa8ebefbe5009",
           "Src/VcVcuInD_private.h": "e76029691b8b3c67971849f129848be6d60e095e6620c5e7ac15202912a9aa23",
           "Src/VcVcuInD_types.h": "6a3a6b8e2ff35a219952329d5496108f7567876b40193f95a804b2741f6aba9a",
-          "Src/VcVcuInDDiagByte.c": "eb4f5c69670243e00556a20055cfbfbc62016f3d7957bdc52dc7ce6c1b87c4d4",
+          "Src/ert_main.c": "e3ea93b443044c523d68700c03c7b05986af9e0118de78da1e10acc1d687191d",
+          "Src/rtwtypes.h": "48f563a3e177c7f2ac1d23324f012f614d0e38aa0510fbad584146be6f959108",
           "Src/zero_crossing_types.h": "e6acb1608bea92be70e8dfb256aedd54c024d7643307ac1c899778f1e323ee03"
         },
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
-        "owned_tests": true
+        "samples": 11948,
+        "scenarios": 2811
       },
       {
-        "case_id": "NEP-02",
-        "samples": 4002,
-        "outputs": 39,
-        "comparisons": 120060,
-        "range_checks": 156078,
-        "business_property_count": 10,
-        "scenarios": 816,
         "all_passed": true,
+        "business_property_count": 10,
+        "case_id": "NEP-02",
+        "comparisons": 120060,
         "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 39,
+        "owned_tests": true,
+        "range_checks": 156078,
         "runtime_source_binding": {
           "Model/VcVcuOutQM.slx": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
           "Model/VcVcuOutQMDiagByte.mexw64": "fb21768e2e55ef6fb9671b036d09e4ac53c42c30e116d21a1389fcb6e2083fe2",
           "Model/VcVcuOutQMDiagByte.tlc": "5f62c0dff2a5742c56e6e9201da83da7ad1c9bb552006912aa0edd91d49fa28e",
-          "Src/ert_main.c": "cb00356c0aa764549a483f346e2a438858beda1c746ad78681012db5c033d2bb",
-          "Src/rtwtypes.h": "524543a53b29b5534ad5a5075414d8f8ddd9ac1c5cb924054b96d3408fa1fe3b",
           "Src/VcVcuOutQM.c": "0499d48417bb29ef70113ca4bbe06f924b0ec2fdd0443474e3e84a77e7211f7b",
           "Src/VcVcuOutQM.h": "5fd01f4fd2e9990b32543ceb658af5ed14da7a284d631cfe85ef65cdea297d76",
+          "Src/VcVcuOutQMDiagByte.c": "a3e1bfd3d277b750e33c2463cd6d6fc3a93000d8d9f02b19c114be7a7e332763",
           "Src/VcVcuOutQM_data.c": "fedc56eb4bf05fa31bbb25f7d1afa298f35d9f30485ca6a375e0b854185d7e45",
           "Src/VcVcuOutQM_private.h": "ebc24bcfb3790fcca677192905b0589b06c7e18c347a5f00c42cca17e904bb58",
           "Src/VcVcuOutQM_types.h": "ef3d35ec972286f656d1c1844dde1ca9ae2a8436d44cfdd110a52676a24205d4",
-          "Src/VcVcuOutQMDiagByte.c": "a3e1bfd3d277b750e33c2463cd6d6fc3a93000d8d9f02b19c114be7a7e332763",
+          "Src/ert_main.c": "cb00356c0aa764549a483f346e2a438858beda1c746ad78681012db5c033d2bb",
+          "Src/rtwtypes.h": "524543a53b29b5534ad5a5075414d8f8ddd9ac1c5cb924054b96d3408fa1fe3b",
           "Src/zero_crossing_types.h": "7f719013559e6f370c96d2547faf6f92fb8fff060f7b5e163090cecb846e3e28"
         },
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
-        "owned_tests": true
+        "samples": 4002,
+        "scenarios": 816
       },
       {
-        "case_id": "NEP-03",
-        "samples": 2679,
-        "outputs": 26,
-        "comparisons": 58938,
-        "range_checks": 69654,
-        "business_property_count": 20,
-        "scenarios": 630,
         "all_passed": true,
+        "business_property_count": 20,
+        "case_id": "NEP-03",
+        "comparisons": 58938,
         "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 26,
+        "owned_tests": true,
+        "range_checks": 69654,
         "runtime_source_binding": {
-          "Model/calibrationVcVmcTrq.mat": "48c879990488a03d50a0c3f250af99f087557fc1f25198bffb9b807c15c9bace",
           "Model/VcVmcTrq.slx": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
           "Model/VcVmcTrqValidateCalibration.p": "7de39be8dab16237e5bde5750f6cfa82292ce0610a9e8c9021235c4818b85d9d",
-          "Src/ert_main.c": "fba38f6b0efdccdf2637dbfbda2fbcbb39e8cec8344de08827a7dc370e856a8f",
-          "Src/rtwtypes.h": "7ceb6f405355a90510ecff7d4ca0cb6442f754981c44f574eed39f503102f3f4",
+          "Model/calibrationVcVmcTrq.mat": "48c879990488a03d50a0c3f250af99f087557fc1f25198bffb9b807c15c9bace",
           "Src/VcVmcTrq.c": "eb317ea5749bf9aded03deff07491436e932125ef39d95a54841490889e3a2bb",
           "Src/VcVmcTrq.h": "af759506cf3a23a9dec5950b0431c1a1d9ad6d03cf13e01814a8e969213c56c1",
           "Src/VcVmcTrq_data.c": "b0aa59fa5f5e52b17ba8d1f99147ef11ba4f92b85f3290dc0f31fa82dbe6c03b",
           "Src/VcVmcTrq_private.h": "cbcab8d7297a27037be02ba5c6343e4f9e3716a83fda3e17325cdbac51126adf",
           "Src/VcVmcTrq_types.h": "9163b3a86a402f0091049fae7658ffd66c5d7572bc2b6cbbf44147c951d101cf",
+          "Src/ert_main.c": "fba38f6b0efdccdf2637dbfbda2fbcbb39e8cec8344de08827a7dc370e856a8f",
+          "Src/rtwtypes.h": "7ceb6f405355a90510ecff7d4ca0cb6442f754981c44f574eed39f503102f3f4",
           "Src/zero_crossing_types.h": "eb5b1ee469c048efc3c7cc507d6c34f0222f080a2d08e68f323f002a391d9843"
         },
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
-        "owned_tests": true
+        "samples": 2679,
+        "scenarios": 630
       },
       {
-        "case_id": "NEP-04",
-        "samples": 2283,
-        "outputs": 22,
-        "comparisons": 45660,
-        "range_checks": 50226,
-        "business_property_count": 10,
-        "scenarios": 537,
         "all_passed": true,
+        "business_property_count": 10,
+        "case_id": "NEP-04",
+        "comparisons": 45660,
         "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 22,
+        "owned_tests": true,
+        "range_checks": 50226,
         "runtime_source_binding": {
-          "Model/calibrationVcErcRgn.mat": "002358cd093b5891918e2777d6866c6c1bbe5d9dd1d02e594c3a1825acc15cf0",
           "Model/VcErcRgn.slx": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
-          "Src/ert_main.c": "c6fb58cf080110de35af9e94d1a7271e38c24df3b20d8b5ea8344aaadd25d93b",
-          "Src/rtwtypes.h": "9c51b0ffe7d49c8e8b169a1aefaecbcb3e4aa7a6ea9110087af792e821d1438f",
+          "Model/calibrationVcErcRgn.mat": "002358cd093b5891918e2777d6866c6c1bbe5d9dd1d02e594c3a1825acc15cf0",
           "Src/VcErcRgn.c": "72f1e509ca2f526201004cf466d6ac517bb2d749d391195f0dc4a5c12790d3c2",
           "Src/VcErcRgn.h": "d73f6debebf4c76768d7866d325212078cda24b036ca2254b1d9be549241b304",
           "Src/VcErcRgn_data.c": "612b108a39d91552df28491750339aba993e4b4967df9e9508fc74223537bde7",
           "Src/VcErcRgn_private.h": "2719b706a14f6129a5edacd0716884b4b30e1f232f808d43e2ea5c24f813b4d1",
           "Src/VcErcRgn_types.h": "8948f8522dc2ccac3385aa7751ab0153db5b938c43b4222e5e505aa8a549712e",
+          "Src/ert_main.c": "c6fb58cf080110de35af9e94d1a7271e38c24df3b20d8b5ea8344aaadd25d93b",
+          "Src/rtwtypes.h": "9c51b0ffe7d49c8e8b169a1aefaecbcb3e4aa7a6ea9110087af792e821d1438f",
           "Src/zero_crossing_types.h": "df076bccb8fe3827b1aa3b7ee8d73f70a4e84476b4108629415063726edabcae"
         },
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
-        "owned_tests": true
+        "samples": 2283,
+        "scenarios": 537
       },
       {
-        "case_id": "NEP-05",
-        "samples": 1899,
-        "outputs": 22,
-        "comparisons": 34182,
-        "range_checks": 41778,
-        "business_property_count": 7,
-        "scenarios": 446,
         "all_passed": true,
+        "business_property_count": 7,
+        "case_id": "NEP-05",
+        "comparisons": 34182,
         "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 22,
+        "owned_tests": false,
+        "range_checks": 41778,
         "runtime_source_binding": {
           "Model/VcDmcDrv.slx": "89b842ccca776dae7c705cc7ccac216c1fad1ae87698359756536ff53769a875"
         },
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
-        "owned_tests": false
+        "samples": 1899,
+        "scenarios": 446
       },
       {
-        "case_id": "NEP-06",
-        "samples": 2514,
-        "outputs": 27,
-        "comparisons": 55308,
-        "range_checks": 67878,
-        "business_property_count": 14,
-        "scenarios": 592,
         "all_passed": true,
+        "business_property_count": 14,
+        "case_id": "NEP-06",
+        "comparisons": 55308,
         "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 27,
+        "owned_tests": true,
+        "range_checks": 67878,
         "runtime_source_binding": {
           "Model/VcWrcWhl.slx": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
-          "Src/ert_main.c": "721dd2903b656bcd170db722da5d561f4a66f2699cd3cd3bd760959e70f26a09",
-          "Src/rt_nonfinite.c": "c3fa5c078aaa7294d566ac396c622824a974a4c2c4633a0dc706a098bc79e928",
-          "Src/rt_nonfinite.h": "2e4947aa0001a4141db238abec792d1fd230e2fd9f593dba059f50b1941288e2",
-          "Src/rtGetInf.c": "22fb249ec49bb7c9d53041e21d68b1287d570d4491b1942a1c5f2031b50bd86d",
-          "Src/rtGetInf.h": "7c87be5c5f52d29d58e4a72b5eb7f238c013cc8bad6fd7b287a1b6410e92d396",
-          "Src/rtGetNaN.c": "4b29d346b57f7e2a718f2a05f552524c97615bc987338a0e994d9f6ec9b07f2a",
-          "Src/rtGetNaN.h": "92923d5bcbb1bac1868d98eb4ba0fa961dc5ddb089bd7aa7cfac0560ffd4cb5e",
-          "Src/rtwtypes.h": "6538e92f029a7d410b7e1d252fe66e439c8b78754fa8b7da43661a6d43cfda1e",
           "Src/VcWrcWhl.c": "6dfc6a555f9b5e05646de0234227481d69fd43f4559fcffe974ea2bf86315545",
           "Src/VcWrcWhl.h": "32d1b4cc8164231c2f7cddc4095ba407c13419cf4869afa94fafe4a25b2f3e12",
           "Src/VcWrcWhl_data.c": "2e7d2b3fc64867730f41e42508da286f793cea477c134a5ff614fb1c2c929a02",
           "Src/VcWrcWhl_private.h": "a533f8c59af4caee6d19fcc75d2c0b74404fd05b50b092d948565d4761c2429e",
           "Src/VcWrcWhl_types.h": "b22317f46a114221fabcb29ebdc9dee638b11cf710361d2221b978767c122b00",
+          "Src/ert_main.c": "721dd2903b656bcd170db722da5d561f4a66f2699cd3cd3bd760959e70f26a09",
+          "Src/rtGetInf.c": "22fb249ec49bb7c9d53041e21d68b1287d570d4491b1942a1c5f2031b50bd86d",
+          "Src/rtGetInf.h": "7c87be5c5f52d29d58e4a72b5eb7f238c013cc8bad6fd7b287a1b6410e92d396",
+          "Src/rtGetNaN.c": "4b29d346b57f7e2a718f2a05f552524c97615bc987338a0e994d9f6ec9b07f2a",
+          "Src/rtGetNaN.h": "92923d5bcbb1bac1868d98eb4ba0fa961dc5ddb089bd7aa7cfac0560ffd4cb5e",
+          "Src/rt_nonfinite.c": "c3fa5c078aaa7294d566ac396c622824a974a4c2c4633a0dc706a098bc79e928",
+          "Src/rt_nonfinite.h": "2e4947aa0001a4141db238abec792d1fd230e2fd9f593dba059f50b1941288e2",
+          "Src/rtwtypes.h": "6538e92f029a7d410b7e1d252fe66e439c8b78754fa8b7da43661a6d43cfda1e",
           "Src/zero_crossing_types.h": "282daa5c4f586b9470d128b2433d02fad78565f954c631d4264b450c44914b73"
         },
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
-        "owned_tests": true
+        "samples": 2514,
+        "scenarios": 592
       },
       {
-        "case_id": "NEP-07",
-        "samples": 2680,
-        "outputs": 28,
-        "comparisons": 64320,
-        "range_checks": 75040,
-        "business_property_count": 14,
-        "scenarios": 630,
         "all_passed": true,
+        "business_property_count": 14,
+        "case_id": "NEP-07",
+        "comparisons": 64320,
         "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 28,
+        "owned_tests": true,
+        "range_checks": 75040,
         "runtime_source_binding": {
-          "Model/calibrationVcDeChg.mat": "fcfbcca7aa74825b517af1c830518b6fda5815deb300b199c18c75828e330f89",
           "Model/VcDeChg.slx": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
           "Model/VcDeChgValidateCalibration.p": "02e04e52fbd7eb8740f4fc8680fe37551131adde5852b77ae6ac68be8d8136f4",
-          "Src/ert_main.c": "97f0a90a439cddf332ec6e78a642a7e58ae3d6a3859e9130519929450d31dc8b",
-          "Src/rtwtypes.h": "68d9b3418a2d0cf0479ea7af45e2f9ed0a6230a85e8633675292711b67d13ba5",
+          "Model/calibrationVcDeChg.mat": "fcfbcca7aa74825b517af1c830518b6fda5815deb300b199c18c75828e330f89",
           "Src/VcDeChg.c": "1ceb16b1b5f6ab0369761e0e22b4e0d506488456a8747da07dccac8251b98328",
           "Src/VcDeChg.h": "7eaaf49b761c7b89bb966cc2e558ce29e6b567558809171ce16b5d1bde679d39",
           "Src/VcDeChg_data.c": "22235b55a1f7fd43fba9ef36bac6665c52c5e1430496950ee9c8f6cac0f3e14b",
           "Src/VcDeChg_private.h": "ebbf031c1a50c29515b4dc937e42435714d09c54e3b7bc172e68312c8ba42e7e",
           "Src/VcDeChg_types.h": "918936b0982d7aa646a26f781bd24c104e7a86bcb2b05c3e2a27afe3b11a6b31",
+          "Src/ert_main.c": "97f0a90a439cddf332ec6e78a642a7e58ae3d6a3859e9130519929450d31dc8b",
+          "Src/rtwtypes.h": "68d9b3418a2d0cf0479ea7af45e2f9ed0a6230a85e8633675292711b67d13ba5",
           "Src/zero_crossing_types.h": "352b69e9beffe5444a9a13d1b34b407647819c0f12c20f043e018c911e967207"
         },
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
-        "owned_tests": true
+        "samples": 2680,
+        "scenarios": 630
       },
       {
-        "case_id": "NEP-08",
-        "samples": 4748,
-        "outputs": 47,
-        "comparisons": 180424,
-        "range_checks": 223156,
-        "business_property_count": 15,
-        "scenarios": 1091,
         "all_passed": true,
+        "business_property_count": 15,
+        "case_id": "NEP-08",
+        "comparisons": 180424,
         "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 47,
+        "owned_tests": true,
+        "range_checks": 223156,
         "runtime_source_binding": {
-          "Model/calibrationVcPvcThm.mat": "3cfcd69214102d8dda45946a100cccc538c0498f647d0eaa13e8c0e24f132155",
           "Model/VcPvcThm.slx": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
-          "Src/ert_main.c": "b6f74d4d87c0c635878087d519ee83f0afbeaa4ecd5ece71940288db25c6501f",
-          "Src/rtwtypes.h": "3a7d924c08a7de266acffbddf5f5fbcd852829816da47b2e50f503bde0b8bbf6",
+          "Model/calibrationVcPvcThm.mat": "3cfcd69214102d8dda45946a100cccc538c0498f647d0eaa13e8c0e24f132155",
           "Src/VcPvcThm.c": "24577b5dccca915420062bbb4621a7025f197b7246b261f67dc29a153d0304e2",
           "Src/VcPvcThm.h": "2a1134b20a5053b670bddc00b34060b6fa204a83612c1a8cc7f7e3aa43f4d4d6",
           "Src/VcPvcThm_data.c": "1be854d024680833615605e14db297f285f338179512ea36311e747181e8658a",
           "Src/VcPvcThm_private.h": "3defcfa2a3db7473b805e5fa0adffe71f5a81fad3cf9ecee710a4f575ff00083",
           "Src/VcPvcThm_types.h": "5e8d32277a6f7819d6fa64fffd905f390283e0f274a1f37c7c072298adb37518",
+          "Src/ert_main.c": "b6f74d4d87c0c635878087d519ee83f0afbeaa4ecd5ece71940288db25c6501f",
+          "Src/rtwtypes.h": "3a7d924c08a7de266acffbddf5f5fbcd852829816da47b2e50f503bde0b8bbf6",
           "Src/zero_crossing_types.h": "c7efae9d8fb4610151db756f3d89c2be0dc336fd35b85fc0a0dfa68c0a678704"
         },
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
-        "owned_tests": true
+        "samples": 4748,
+        "scenarios": 1091
       },
       {
-        "case_id": "NEP-09",
-        "samples": 5493,
-        "outputs": 52,
-        "comparisons": 258171,
-        "range_checks": 285636,
-        "business_property_count": 12,
-        "scenarios": 1294,
         "all_passed": true,
+        "business_property_count": 12,
+        "case_id": "NEP-09",
+        "comparisons": 258171,
         "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 52,
+        "owned_tests": true,
+        "range_checks": 285636,
         "runtime_source_binding": {
           "Model/VcSfCPropR.slx": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
-          "Src/ert_main.c": "7d09ef6eeb55969d44e673056c0e17c6994ec67e0db857cf543aec4fa35cc5e3",
-          "Src/rt_nonfinite.c": "b1bd1f39d4f0d14ea32b8173f8dfb4aa3b530c449ae10427c8537d13e8948bd3",
-          "Src/rt_nonfinite.h": "227a7fb8b78b3344dc037c95447789d8330734340f5e0a0e2580e9e38ba552a7",
-          "Src/rtGetInf.c": "32a92e72e97de3c04aa3ea296ca37c9d767f2dab004e5994b93cbedfa6640388",
-          "Src/rtGetInf.h": "2d79812bfe1668725fb1a6143f801304a7cfb5fa2fe24a43e4fcdf74284421f4",
-          "Src/rtGetNaN.c": "ab7b7659407cf8adea13a6d1e6f236b810641592e6bb09e46dd465b5b0d0eedb",
-          "Src/rtGetNaN.h": "396e4fd598188e112a8aecdbd830c2768f71da9e57fe002e02b0da611d4d4ef3",
-          "Src/rtwtypes.h": "2767332ea93689010c01299b4ec845ff4fc0dbde63a44624f40da9b2d16e2f99",
           "Src/VcSfCPropR.c": "956533e16a58b9d71960805c37490b0d311dfe0275eb02593606a5c13e17df27",
           "Src/VcSfCPropR.h": "2408e8fbd8342e0627e82a799c482b876db49906e8ff9211ebbda7c58fff22fb",
           "Src/VcSfCPropR_data.c": "01ff25533e92292ed11867aa0cb314fb7a0b4092f4ef23774e1368ccbde6e8ae",
           "Src/VcSfCPropR_private.h": "3109e4a581dc06e66f71dee06eac33593ea494ba6ae7600a22ab07a4fd50cb8b",
           "Src/VcSfCPropR_types.h": "ba39a02957ce5b29de6e36040edd0d221f1691ea29a6f082027dc179e9720740",
+          "Src/ert_main.c": "7d09ef6eeb55969d44e673056c0e17c6994ec67e0db857cf543aec4fa35cc5e3",
+          "Src/rtGetInf.c": "32a92e72e97de3c04aa3ea296ca37c9d767f2dab004e5994b93cbedfa6640388",
+          "Src/rtGetInf.h": "2d79812bfe1668725fb1a6143f801304a7cfb5fa2fe24a43e4fcdf74284421f4",
+          "Src/rtGetNaN.c": "ab7b7659407cf8adea13a6d1e6f236b810641592e6bb09e46dd465b5b0d0eedb",
+          "Src/rtGetNaN.h": "396e4fd598188e112a8aecdbd830c2768f71da9e57fe002e02b0da611d4d4ef3",
+          "Src/rt_nonfinite.c": "b1bd1f39d4f0d14ea32b8173f8dfb4aa3b530c449ae10427c8537d13e8948bd3",
+          "Src/rt_nonfinite.h": "227a7fb8b78b3344dc037c95447789d8330734340f5e0a0e2580e9e38ba552a7",
+          "Src/rtwtypes.h": "2767332ea93689010c01299b4ec845ff4fc0dbde63a44624f40da9b2d16e2f99",
           "Src/zero_crossing_types.h": "f8bbd0370c9e44fa4ab617ad58de2d72ebc265bb0cc5e378e116747702168a82"
         },
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
-        "owned_tests": true
+        "samples": 5493,
+        "scenarios": 1294
       },
       {
-        "case_id": "NEP-10",
-        "samples": 16433,
-        "outputs": 181,
-        "comparisons": 2662146,
-        "range_checks": 2974373,
+        "all_passed": true,
         "business_property_count": 25,
-        "scenarios": 3869,
-        "all_passed": true,
+        "case_id": "NEP-10",
+        "comparisons": 2662146,
         "max_abs_error": 0.0,
-        "runtime_source_binding": {
-          "Model/calibrationVcSfDPropR.mat": "557bef34ed3e5de0f892aba8d89eebfc27e25293418bda13f1d9b4445e78df76",
-          "Model/FaultComponentLibrary.slx": "053d98c55916ececf78bbe6f1f670a9acf8ada11e75b99c87fca7664eb77f9f7",
-          "Model/VcSfDPropR.slx": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5"
-        },
         "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
-        "owned_tests": false
+        "outputs": 181,
+        "owned_tests": false,
+        "range_checks": 2974373,
+        "runtime_source_binding": {
+          "Model/FaultComponentLibrary.slx": "053d98c55916ececf78bbe6f1f670a9acf8ada11e75b99c87fca7664eb77f9f7",
+          "Model/VcSfDPropR.slx": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5",
+          "Model/calibrationVcSfDPropR.mat": "557bef34ed3e5de0f892aba8d89eebfc27e25293418bda13f1d9b4445e78df76"
+        },
+        "samples": 16433,
+        "scenarios": 3869
       },
       {
-        "case_id": "NEP-11",
-        "samples": 1270,
-        "outputs": 13,
-        "comparisons": 11430,
-        "range_checks": 16510,
-        "business_property_count": 7,
-        "scenarios": 273,
         "all_passed": true,
+        "business_property_count": 7,
+        "case_id": "NEP-11",
+        "comparisons": 11430,
         "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 13,
+        "owned_tests": true,
+        "range_checks": 16510,
         "runtime_source_binding": {
           "Model/VcScHv.slx": "ba394a7420f16636675e276f095334bb02484c76c43ee0ab8068242a8ecdc59f"
         },
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
-        "owned_tests": true
+        "samples": 1270,
+        "scenarios": 273
       }
     ],
-    "total_samples": 55949,
     "total_comparisons": 4661543,
     "total_range_checks": 5250713,
-    "business_properties": 138,
-    "max_abs_error": 0.0
-  },
-  "native_engine": "MATLAB/Simulink R2023b normal mode",
-  "host_replay": [
-    {
-      "case_id": "NEP-01",
-      "compiler": "Explicit LCC-win64 through mex",
-      "compiled": true,
-      "executed": true,
-      "samples": 11948,
-      "outputs": 108,
-      "max_abs_error": 0,
-      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
-      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-    },
-    {
-      "case_id": "NEP-02",
-      "compiler": "Explicit LCC-win64 through mex",
-      "compiled": true,
-      "executed": true,
-      "samples": 4002,
-      "outputs": 39,
-      "max_abs_error": 0,
-      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
-      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-    },
-    {
-      "case_id": "NEP-03",
-      "compiler": "Explicit LCC-win64 through mex",
-      "compiled": true,
-      "executed": true,
-      "samples": 2679,
-      "outputs": 26,
-      "max_abs_error": 0,
-      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
-      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-    },
-    {
-      "case_id": "NEP-04",
-      "compiler": "Explicit LCC-win64 through mex",
-      "compiled": true,
-      "executed": true,
-      "samples": 2283,
-      "outputs": 22,
-      "max_abs_error": 0,
-      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
-      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-    },
-    {
-      "case_id": "NEP-06",
-      "compiler": "Explicit LCC-win64 through mex",
-      "compiled": true,
-      "executed": true,
-      "samples": 2514,
-      "outputs": 27,
-      "max_abs_error": 0,
-      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
-      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-    },
-    {
-      "case_id": "NEP-07",
-      "compiler": "Explicit LCC-win64 through mex",
-      "compiled": true,
-      "executed": true,
-      "samples": 2680,
-      "outputs": 28,
-      "max_abs_error": 0,
-      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
-      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-    },
-    {
-      "case_id": "NEP-08",
-      "compiler": "Explicit LCC-win64 through mex",
-      "compiled": true,
-      "executed": true,
-      "samples": 4748,
-      "outputs": 47,
-      "max_abs_error": 0,
-      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
-      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-    },
-    {
-      "case_id": "NEP-09",
-      "compiler": "Explicit LCC-win64 through mex",
-      "compiled": true,
-      "executed": true,
-      "samples": 5493,
-      "outputs": 52,
-      "max_abs_error": 0,
-      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
-      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-    }
-  ],
-  "mutation_detection": {
-    "detected": 4,
-    "results": [
-      {
-        "case_id": "NEP-03",
-        "samples": 2679,
-        "outputs": 26,
-        "channel_comparisons": 58938,
-        "business_properties": [
-          {
-            "name": "Thermal at 80 C",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 74.0,
-            "maximum": 74.0,
-            "expected": 74,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal factor at 80 C",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 1.0,
-            "maximum": 1.0,
-            "expected": 1,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal at 120 C",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 37.0,
-            "maximum": 37.0,
-            "expected": 37,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal factor at 120 C",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 0.5,
-            "maximum": 0.5,
-            "expected": 0.5,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal at 160 C",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal factor at 160 C",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal at 180 C",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal factor at 180 C",
-            "passed": false,
-            "checked_samples": 3,
-            "minimum": -0.25,
-            "maximum": -0.25,
-            "expected": 0,
-            "op": "equal"
-          },
-          {
-            "name": "brake",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0,
-            "op": "equal"
-          },
-          {
-            "name": "reverse",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": -74.0,
-            "maximum": -74.0,
-            "expected": -74,
-            "op": "equal"
-          },
-          {
-            "name": "pedal-disagree",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0,
-            "op": "equal"
-          },
-          {
-            "name": "power",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 3.183098793029785,
-            "maximum": 3.183098793029785,
-            "expected": 3.1830988618379066,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal interior factor -20",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 1.0,
-            "maximum": 1.0,
-            "expected": 1,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal interior command -20",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 74.0,
-            "maximum": 74.0,
-            "expected": 74,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal interior factor 100",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 0.75,
-            "maximum": 0.75,
-            "expected": 0.75,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal interior command 100",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 55.5,
-            "maximum": 55.5,
-            "expected": 55.5,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal interior factor 140",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 0.25,
-            "maximum": 0.25,
-            "expected": 0.25,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal interior command 140",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 18.5,
-            "maximum": 18.5,
-            "expected": 18.5,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal interior factor 170",
-            "passed": false,
-            "checked_samples": 3,
-            "minimum": -0.125,
-            "maximum": -0.125,
-            "expected": 0,
-            "op": "equal"
-          },
-          {
-            "name": "Thermal interior command 170",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0,
-            "op": "equal"
-          }
-        ],
-        "range_checks": 69654,
-        "all_passed": false,
-        "errors": [
-          {
-            "kind": "business_property",
-            "name": "Thermal factor at 180 C",
-            "passed": false,
-            "checked_samples": 3,
-            "minimum": -0.25,
-            "maximum": -0.25,
-            "expected": 0,
-            "op": "equal",
-            "actual": [
-              -0.25,
-              -0.25,
-              -0.25
-            ]
-          },
-          {
-            "kind": "business_property",
-            "name": "Thermal interior factor 170",
-            "passed": false,
-            "checked_samples": 3,
-            "minimum": -0.125,
-            "maximum": -0.125,
-            "expected": 0,
-            "op": "equal",
-            "actual": [
-              -0.125,
-              -0.125,
-              -0.125
-            ]
-          },
-          {
-            "kind": "range",
-            "output": "yVcVmcTrq_ThermalFactor_DOC",
-            "declared": [
-              0,
-              1
-            ],
-            "min": -0.25,
-            "max": 1.0,
-            "samples": 18
-          }
-        ],
-        "max_channel_error": 0.0,
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected."
-      },
-      {
-        "case_id": "NEP-08",
-        "samples": 4748,
-        "outputs": 47,
-        "channel_comparisons": 180424,
-        "business_properties": [
-          {
-            "name": "Unsaturated integral accumulates",
-            "passed": false,
-            "checked_samples": 100,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0.015,
-            "op": "ramp"
-          },
-          {
-            "name": "Integral after 100 qualified samples",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 1.5,
-            "op": "equal"
-          },
-          {
-            "name": "Command includes integral",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 10.0,
-            "maximum": 10.0,
-            "expected": 11.5,
-            "op": "equal"
-          },
-          {
-            "name": "Reset clears integral",
-            "passed": true,
-            "checked_samples": 2,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0,
-            "op": "equal"
-          },
-          {
-            "name": "No flow forces cooling",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 100.0,
-            "maximum": 100.0,
-            "expected": 100,
-            "op": "equal"
-          },
-          {
-            "name": "Heating mode heater",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 100.0,
-            "maximum": 100.0,
-            "expected": 100,
-            "op": "equal"
-          },
-          {
-            "name": "Heating mode compressor",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0,
-            "op": "equal"
-          },
-          {
-            "name": "Cooling PI interior -5",
-            "passed": true,
-            "checked_samples": 1,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0.0,
-            "op": "equal"
-          },
-          {
-            "name": "Cooling state interior -5",
-            "passed": true,
-            "checked_samples": 1,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0.0,
-            "op": "equal"
-          },
-          {
-            "name": "Cooling PI interior 3.6",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 24.000015258789062,
-            "maximum": 24.000015258789062,
-            "expected": 24.36,
-            "op": "equal"
-          },
-          {
-            "name": "Cooling state interior 3.6",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0.36,
-            "op": "equal"
-          },
-          {
-            "name": "Cooling PI interior 11.4",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 76.00000762939453,
-            "maximum": 76.00000762939453,
-            "expected": 77.14,
-            "op": "equal"
-          },
-          {
-            "name": "Cooling state interior 11.4",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 1.1400000000000001,
-            "op": "equal"
-          },
-          {
-            "name": "Cooling PI interior 20",
-            "passed": true,
-            "checked_samples": 1,
-            "minimum": 100.0,
-            "maximum": 100.0,
-            "expected": 100,
-            "op": "equal"
-          },
-          {
-            "name": "Cooling state interior 20",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 1.5,
-            "op": "equal"
-          }
-        ],
-        "range_checks": 223156,
-        "all_passed": false,
-        "errors": [
-          {
-            "kind": "business_property",
-            "name": "Unsaturated integral accumulates",
-            "passed": false,
-            "checked_samples": 100,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0.015,
-            "op": "ramp",
-            "actual": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0
-            ]
-          },
-          {
-            "kind": "business_property",
-            "name": "Integral after 100 qualified samples",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 1.5,
-            "op": "equal",
-            "actual": [
-              0.0
-            ]
-          },
-          {
-            "kind": "business_property",
-            "name": "Command includes integral",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 10.0,
-            "maximum": 10.0,
-            "expected": 11.5,
-            "op": "equal",
-            "actual": [
-              10.0
-            ]
-          },
-          {
-            "kind": "business_property",
-            "name": "Cooling PI interior 3.6",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 24.000015258789062,
-            "maximum": 24.000015258789062,
-            "expected": 24.36,
-            "op": "equal",
-            "actual": [
-              24.000015258789062
-            ]
-          },
-          {
-            "kind": "business_property",
-            "name": "Cooling state interior 3.6",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0.36,
-            "op": "equal",
-            "actual": [
-              0.0
-            ]
-          },
-          {
-            "kind": "business_property",
-            "name": "Cooling PI interior 11.4",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 76.00000762939453,
-            "maximum": 76.00000762939453,
-            "expected": 77.14,
-            "op": "equal",
-            "actual": [
-              76.00000762939453
-            ]
-          },
-          {
-            "kind": "business_property",
-            "name": "Cooling state interior 11.4",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 1.1400000000000001,
-            "op": "equal",
-            "actual": [
-              0.0
-            ]
-          },
-          {
-            "kind": "business_property",
-            "name": "Cooling state interior 20",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 1.5,
-            "op": "equal",
-            "actual": [
-              0.0
-            ]
-          }
-        ],
-        "max_channel_error": 0.0,
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected."
-      },
-      {
-        "case_id": "NEP-09",
-        "samples": 5493,
-        "outputs": 52,
-        "channel_comparisons": 258171,
-        "business_properties": [
-          {
-            "name": "Reset restores permit 1",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 1.0,
-            "maximum": 1.0,
-            "expected": 1,
-            "op": "equal"
-          },
-          {
-            "name": "Rejection counter 1",
-            "passed": true,
-            "checked_samples": 1,
-            "minimum": 1.0,
-            "maximum": 1.0,
-            "expected": [
-              1
-            ],
-            "op": "sequence"
-          },
-          {
-            "name": "Three sample latch 1",
-            "passed": true,
-            "checked_samples": 1,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": [
-              0
-            ],
-            "op": "sequence"
-          },
-          {
-            "name": "Transient vs latched recovery 1",
-            "passed": true,
-            "checked_samples": 5,
-            "minimum": 1.0,
-            "maximum": 1.0,
-            "expected": 1,
-            "op": "equal"
-          },
-          {
-            "name": "Reset restores permit 2",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 1.0,
-            "maximum": 1.0,
-            "expected": 1,
-            "op": "equal"
-          },
-          {
-            "name": "Rejection counter 2",
-            "passed": true,
-            "checked_samples": 2,
-            "minimum": 1.0,
-            "maximum": 2.0,
-            "expected": [
-              1,
-              2
-            ],
-            "op": "sequence"
-          },
-          {
-            "name": "Three sample latch 2",
-            "passed": false,
-            "checked_samples": 2,
-            "minimum": 0.0,
-            "maximum": 1.0,
-            "expected": [
-              0,
-              0
-            ],
-            "op": "sequence"
-          },
-          {
-            "name": "Transient vs latched recovery 2",
-            "passed": false,
-            "checked_samples": 5,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 1,
-            "op": "equal"
-          },
-          {
-            "name": "Reset restores permit 3",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 1.0,
-            "maximum": 1.0,
-            "expected": 1,
-            "op": "equal"
-          },
-          {
-            "name": "Rejection counter 3",
-            "passed": true,
-            "checked_samples": 3,
-            "minimum": 1.0,
-            "maximum": 3.0,
-            "expected": [
-              1,
-              2,
-              3
-            ],
-            "op": "sequence"
-          },
-          {
-            "name": "Three sample latch 3",
-            "passed": false,
-            "checked_samples": 3,
-            "minimum": 0.0,
-            "maximum": 1.0,
-            "expected": [
-              0,
-              0,
-              1
-            ],
-            "op": "sequence"
-          },
-          {
-            "name": "Transient vs latched recovery 3",
-            "passed": true,
-            "checked_samples": 5,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0,
-            "op": "equal"
-          }
-        ],
-        "range_checks": 285636,
-        "all_passed": false,
-        "errors": [
-          {
-            "kind": "business_property",
-            "name": "Three sample latch 2",
-            "passed": false,
-            "checked_samples": 2,
-            "minimum": 0.0,
-            "maximum": 1.0,
-            "expected": [
-              0,
-              0
-            ],
-            "op": "sequence",
-            "actual": [
-              0.0,
-              1.0
-            ]
-          },
-          {
-            "kind": "business_property",
-            "name": "Transient vs latched recovery 2",
-            "passed": false,
-            "checked_samples": 5,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 1,
-            "op": "equal",
-            "actual": [
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0
-            ]
-          },
-          {
-            "kind": "business_property",
-            "name": "Three sample latch 3",
-            "passed": false,
-            "checked_samples": 3,
-            "minimum": 0.0,
-            "maximum": 1.0,
-            "expected": [
-              0,
-              0,
-              1
-            ],
-            "op": "sequence",
-            "actual": [
-              0.0,
-              1.0,
-              1.0
-            ]
-          }
-        ],
-        "max_channel_error": 0.0,
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected."
-      },
-      {
-        "case_id": "NEP-11",
-        "samples": 1270,
-        "outputs": 13,
-        "channel_comparisons": 11430,
-        "business_properties": [
-          {
-            "name": "Precharge enters at request 49",
-            "passed": true,
-            "checked_samples": 1,
-            "minimum": 1.0,
-            "maximum": 1.0,
-            "expected": 1,
-            "op": "equal"
-          },
-          {
-            "name": "Completion at 490 ms",
-            "passed": true,
-            "checked_samples": 1,
-            "minimum": 2.0,
-            "maximum": 2.0,
-            "expected": 2,
-            "op": "equal"
-          },
-          {
-            "name": "Precharge enters at request 50",
-            "passed": true,
-            "checked_samples": 1,
-            "minimum": 1.0,
-            "maximum": 1.0,
-            "expected": 1,
-            "op": "equal"
-          },
-          {
-            "name": "Completion at 500 ms",
-            "passed": true,
-            "checked_samples": 1,
-            "minimum": 2.0,
-            "maximum": 2.0,
-            "expected": 2,
-            "op": "equal"
-          },
-          {
-            "name": "Precharge enters at request 51",
-            "passed": true,
-            "checked_samples": 1,
-            "minimum": 1.0,
-            "maximum": 1.0,
-            "expected": 1,
-            "op": "equal"
-          },
-          {
-            "name": "Completion at 510 ms",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 2.0,
-            "maximum": 2.0,
-            "expected": 3,
-            "op": "equal"
-          },
-          {
-            "name": "Zero voltage cannot close contactor",
-            "passed": true,
-            "checked_samples": 60,
-            "minimum": 0.0,
-            "maximum": 0.0,
-            "expected": 0,
-            "op": "equal"
-          }
-        ],
-        "range_checks": 16510,
-        "all_passed": false,
-        "errors": [
-          {
-            "kind": "business_property",
-            "name": "Completion at 510 ms",
-            "passed": false,
-            "checked_samples": 1,
-            "minimum": 2.0,
-            "maximum": 2.0,
-            "expected": 3,
-            "op": "equal",
-            "actual": [
-              2.0
-            ]
-          },
-          {
-            "kind": "range",
-            "output": "yVcScHv_ElapsedPrecharge_DOC",
-            "declared": [
-              0,
-              0.5
-            ],
-            "min": 0.0,
-            "max": 0.5099999904632568,
-            "samples": 12
-          }
-        ],
-        "max_channel_error": 0.0,
-        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected."
-      }
-    ]
+    "total_samples": 55949
   },
   "engineering_contract_checks": [
     {
-      "case_id": "NEP-01",
       "bus_elements": 104,
+      "calibration_array_objects": 0,
+      "case_id": "NEP-01",
       "compiled_bus_type": [
         "VcVcuInD_DomainInputs_Bus"
       ],
-      "wrong_bus_dimensions_rejected": true,
       "rejection": "Error due to multiple causes.",
-      "calibration_array_objects": 0
+      "wrong_bus_dimensions_rejected": true
     },
     {
-      "case_id": "NEP-02",
       "bus_elements": 39,
+      "calibration_array_objects": 2,
+      "case_id": "NEP-02",
       "compiled_bus_type": [
         "VcVcuOutQM_DomainInputs_Bus"
       ],
-      "wrong_bus_dimensions_rejected": true,
       "rejection": "Error due to multiple causes.",
-      "calibration_array_objects": 2
+      "wrong_bus_dimensions_rejected": true
     },
     {
-      "case_id": "NEP-03",
       "bus_elements": 36,
+      "calibration_array_objects": 2,
+      "case_id": "NEP-03",
       "compiled_bus_type": [
         "VcVmcTrq_DomainInputs_Bus"
       ],
-      "wrong_bus_dimensions_rejected": true,
       "rejection": "Error due to multiple causes.",
-      "calibration_array_objects": 2
+      "wrong_bus_dimensions_rejected": true
     },
     {
-      "case_id": "NEP-04",
       "bus_elements": 28,
+      "calibration_array_objects": 3,
+      "case_id": "NEP-04",
       "compiled_bus_type": [
         "VcErcRgn_DomainInputs_Bus"
       ],
-      "wrong_bus_dimensions_rejected": true,
       "rejection": "Error due to multiple causes.",
-      "calibration_array_objects": 3
+      "wrong_bus_dimensions_rejected": true
     },
     {
-      "case_id": "NEP-06",
       "bus_elements": 26,
+      "calibration_array_objects": 3,
+      "case_id": "NEP-06",
       "compiled_bus_type": [
         "VcWrcWhl_DomainInputs_Bus"
       ],
-      "wrong_bus_dimensions_rejected": true,
       "rejection": "Error due to multiple causes.",
-      "calibration_array_objects": 3
+      "wrong_bus_dimensions_rejected": true
     },
     {
-      "case_id": "NEP-07",
       "bus_elements": 33,
+      "calibration_array_objects": 2,
+      "case_id": "NEP-07",
       "compiled_bus_type": [
         "VcDeChg_DomainInputs_Bus"
       ],
-      "wrong_bus_dimensions_rejected": true,
       "rejection": "Error due to multiple causes.",
-      "calibration_array_objects": 2
+      "wrong_bus_dimensions_rejected": true
     },
     {
-      "case_id": "NEP-08",
       "bus_elements": 35,
+      "calibration_array_objects": 2,
+      "case_id": "NEP-08",
       "compiled_bus_type": [
         "VcPvcThm_DomainInputs_Bus"
       ],
-      "wrong_bus_dimensions_rejected": true,
       "rejection": "Error due to multiple causes.",
-      "calibration_array_objects": 2
+      "wrong_bus_dimensions_rejected": true
     },
     {
-      "case_id": "NEP-09",
       "bus_elements": 35,
+      "calibration_array_objects": 0,
+      "case_id": "NEP-09",
       "compiled_bus_type": [
         "VcSfCPropR_DomainInputs_Bus"
       ],
-      "wrong_bus_dimensions_rejected": true,
       "rejection": "Error due to multiple causes.",
-      "calibration_array_objects": 0
+      "wrong_bus_dimensions_rejected": true
     },
     {
-      "case_id": "NEP-10",
       "bus_elements": 321,
+      "calibration_array_objects": 0,
+      "case_id": "NEP-10",
       "compiled_bus_type": [
         "VcSfDPropR_DomainInputs_Bus"
       ],
-      "wrong_bus_dimensions_rejected": true,
       "rejection": "Error due to multiple causes.",
-      "calibration_array_objects": 0
+      "wrong_bus_dimensions_rejected": true
     }
   ],
   "final_source_binding": [
     {
-      "id": "NEP-01",
-      "head": "8bc46b4f9b0e8d556750c6e894628c9961ddb661",
-      "tree": "dc785093275e2b06b972091c3b0550c70b248a05",
       "files": {
         ".gitignore": "5c49b58ad3bdb8ec71acfd5f2a63f72444f4060ec2bfa6eac65ba2664e471069",
         "Documentation/BusinessBehavior.md": "4cd476daa883e24c5b35a61ec6e8ef8bd178396ce26c57288e3bff788dc93613",
@@ -1306,12 +405,12 @@
         "UnitTest/native-replay.tsv": "8deb6b5a4b6db156ada65bfdb9b2c6b3d6f176ea90da89f5404a15a009665fa8",
         "UnitTest/test-properties.json": "f5c2b14e0b9f25a13dce362efde837199c4a729c31cd1c9144006b2ec9736c6c",
         "UnitTest/test-vectors.tsv": "173f9239f2046e7df82095580faff69369dcd87dfd5f91dea70e4f4e2b54cff7"
-      }
+      },
+      "head": "8bc46b4f9b0e8d556750c6e894628c9961ddb661",
+      "id": "NEP-01",
+      "tree": "dc785093275e2b06b972091c3b0550c70b248a05"
     },
     {
-      "id": "NEP-02",
-      "head": "f7abfddcd039fb28bd70b0362300fe0c6f406a81",
-      "tree": "7f891a92edcace17bfb810ec9f0f09dde4213580",
       "files": {
         ".gitignore": "5c49b58ad3bdb8ec71acfd5f2a63f72444f4060ec2bfa6eac65ba2664e471069",
         "Documentation/BusinessBehavior.md": "e8846557fff4121bef3ae9e3c43573ca3920206353e02b50f6e43d45c103b920",
@@ -1344,12 +443,12 @@
         "UnitTest/native-replay.tsv": "589964d2ec5a2cbf7d89f0635e19699e8a274e9830ac3f30157baf69ce426eeb",
         "UnitTest/test-properties.json": "5e7af5a49d0d0fe3600aaf5d096199becf1275c9673e6642187f6d16e16ad27e",
         "UnitTest/test-vectors.tsv": "4cc0f2514306dd0ce86991f84df0be6b897d98311939e82af7a2588eeb40318d"
-      }
+      },
+      "head": "f7abfddcd039fb28bd70b0362300fe0c6f406a81",
+      "id": "NEP-02",
+      "tree": "7f891a92edcace17bfb810ec9f0f09dde4213580"
     },
     {
-      "id": "NEP-03",
-      "head": "eb9ef33fe5ea2b8f5d6efef5cee297d004e6f152",
-      "tree": "f078cae7344f761b06f7ce20e1556bd7aefd198b",
       "files": {
         ".gitignore": "5c49b58ad3bdb8ec71acfd5f2a63f72444f4060ec2bfa6eac65ba2664e471069",
         "Documentation/BusinessBehavior.md": "cc27536e341ef04733f85e3ecfa210c512ad776b562ecbc2b263dc0b338680c2",
@@ -1382,12 +481,12 @@
         "UnitTest/native-replay.tsv": "7186869939a6eb708682d3b236d5aadf23c1d9d6f81fe954e02246aa8c2afe9e",
         "UnitTest/test-properties.json": "0f85bb23dce04881b0872e3bb435318fa9fdaf29074e5266aa800aef51b19a19",
         "UnitTest/test-vectors.tsv": "9a8f317aa7f9825d335be0683f6bde3ebe898ac4e25a47d60e1ac5d3b106b2d4"
-      }
+      },
+      "head": "eb9ef33fe5ea2b8f5d6efef5cee297d004e6f152",
+      "id": "NEP-03",
+      "tree": "f078cae7344f761b06f7ce20e1556bd7aefd198b"
     },
     {
-      "id": "NEP-04",
-      "head": "1b3adf266528202a746899c2dddb3e1bc9569459",
-      "tree": "7c105d2ea5899949a47c1eb7454599bb006457e2",
       "files": {
         ".gitignore": "5c49b58ad3bdb8ec71acfd5f2a63f72444f4060ec2bfa6eac65ba2664e471069",
         "Documentation/BusinessBehavior.md": "d27efebc7357f359bda48a7836c7f4347cf010b230dac3836d96f5b977916094",
@@ -1418,12 +517,12 @@
         "UnitTest/native-replay.tsv": "af6e005310f9b16ab2a599a16a4a35e2c6d9c74d2545d6797e131e6b94e25d39",
         "UnitTest/test-properties.json": "14c11f2ddd59a9066617ce095415b4d6c517e07bd7e4b6cf0d9ea25afebf71b6",
         "UnitTest/test-vectors.tsv": "1ab7abc250102c75152490530d6a934bf26b81c6d41539a80465bb85540cdf98"
-      }
+      },
+      "head": "1b3adf266528202a746899c2dddb3e1bc9569459",
+      "id": "NEP-04",
+      "tree": "7c105d2ea5899949a47c1eb7454599bb006457e2"
     },
     {
-      "id": "NEP-05",
-      "head": "3a5f747d55331682a1ddadc49551f04236e3f958",
-      "tree": "209a2bad7b4bce70a715ce83f31698bf2275ec31",
       "files": {
         ".gitignore": "5c49b58ad3bdb8ec71acfd5f2a63f72444f4060ec2bfa6eac65ba2664e471069",
         "Documentation/BusinessBehavior.md": "f661950cecedde2eef384460e4c23a694c800fe19b17fe2b224c9fdaf7eb9665",
@@ -1437,12 +536,12 @@
         "README.md": "7f7121e10732f890690c5dde23dd1142a98b251f18f3b189f3a4c82f73ff8842",
         "Src/README.txt": "3a148e4e979520edbdd5a7ed07bbff043a3191f9f28791c9fc4992724f0913aa",
         "UnitTest/README.txt": "1556214aaf4b397af7768e8f7ab6f758631be8e11dadf4d228f4901b85d4a885"
-      }
+      },
+      "head": "3a5f747d55331682a1ddadc49551f04236e3f958",
+      "id": "NEP-05",
+      "tree": "209a2bad7b4bce70a715ce83f31698bf2275ec31"
     },
     {
-      "id": "NEP-06",
-      "head": "a538de0bb86968d4a21e1b8583ed322a3c5da44b",
-      "tree": "896fd203a6a7f7bd29b2f9f8e3353d5ed75da982",
       "files": {
         ".gitignore": "5c49b58ad3bdb8ec71acfd5f2a63f72444f4060ec2bfa6eac65ba2664e471069",
         "VcWrcWhl/Documentation/BusinessBehavior.md": "cb6fc4169d99baf405eb2d7c68c6b39718aef5776caa43ff4a87565254bb904c",
@@ -1478,12 +577,12 @@
         "VcWrcWhl/UnitTest/native-replay.tsv": "7884ef916b2169c0a8689172a81e06feaa08fcd79f98b988ce08abdff0220a11",
         "VcWrcWhl/UnitTest/test-properties.json": "42e0788ec8cd11de5e34d5b4db1c7d3e155169b5ad11d87028b33f2288365ddf",
         "VcWrcWhl/UnitTest/test-vectors.tsv": "a2dee02a6d5494c979d3428de01b96e8cfa4138a20f5f7eb0eed2122b4e785f5"
-      }
+      },
+      "head": "a538de0bb86968d4a21e1b8583ed322a3c5da44b",
+      "id": "NEP-06",
+      "tree": "896fd203a6a7f7bd29b2f9f8e3353d5ed75da982"
     },
     {
-      "id": "NEP-07",
-      "head": "591ba778755c00c6d1586fe8128616ec82a52702",
-      "tree": "6c5c34bb6b81f01008223960578301ef2143fc6a",
       "files": {
         ".gitignore": "5c49b58ad3bdb8ec71acfd5f2a63f72444f4060ec2bfa6eac65ba2664e471069",
         "Documentation/BusinessBehavior.md": "ad42eac6370838708e6ce5bcd75636f22f74706a9bed306cfa76cd1856c06742",
@@ -1516,12 +615,12 @@
         "UnitTest/native-replay.tsv": "a621658546596ccf7a6ea95dc5b19d50b0792153684141d86b8a0de0c2b0781e",
         "UnitTest/test-properties.json": "26c74eb93904495728899d48c073ae886bb85669ba29c0d6f0b2946b68f13d84",
         "UnitTest/test-vectors.tsv": "943070da9c14244181ff975b0e8457fe005d9d40cef1f08008ed8f6b28310f70"
-      }
+      },
+      "head": "591ba778755c00c6d1586fe8128616ec82a52702",
+      "id": "NEP-07",
+      "tree": "6c5c34bb6b81f01008223960578301ef2143fc6a"
     },
     {
-      "id": "NEP-08",
-      "head": "47cf4cc68507f956e909799b6a162fa121a227ce",
-      "tree": "99675a211b9f1c8762ea216f04458ba201b3dc96",
       "files": {
         ".gitignore": "5c49b58ad3bdb8ec71acfd5f2a63f72444f4060ec2bfa6eac65ba2664e471069",
         "Documentation/BusinessBehavior.md": "46ea8790d2b93cf0fd41034d75caadfb6b6d75a60528e6aa6c68d08f3b7c66f8",
@@ -1552,12 +651,12 @@
         "UintTest/native-replay.tsv": "142f5c58507c8075dcb7c374e2102c3eba21118aba068e0587a696be6fc2b34e",
         "UintTest/test-properties.json": "6b11bb12ac055e0185a0a5085ec214f2fa87d952aa75c94033feec45f3aeea15",
         "UintTest/test-vectors.tsv": "97fe29891cde2524ff56496090d8483112aff2b5c1245f4cd5a37ebb7ac25a83"
-      }
+      },
+      "head": "47cf4cc68507f956e909799b6a162fa121a227ce",
+      "id": "NEP-08",
+      "tree": "99675a211b9f1c8762ea216f04458ba201b3dc96"
     },
     {
-      "id": "NEP-09",
-      "head": "90865f70529fa91acaf339ac227f61c1d11ccac3",
-      "tree": "2ceeb2aaff2630dd6d0c5df3244f49c6d790ae87",
       "files": {
         ".gitignore": "5c49b58ad3bdb8ec71acfd5f2a63f72444f4060ec2bfa6eac65ba2664e471069",
         "Documentation/BusinessBehavior.md": "876265ba52f0266780e9ab9c05d4ebe7746b8c444171a3ce4529fc4dff3ba278",
@@ -1593,12 +692,12 @@
         "UnitTest/native-replay.tsv": "df5363ad91310936360ccc2d90f52cdc6c2ce0e39725c3b5e3fa55232801657a",
         "UnitTest/test-properties.json": "1dbd50657e5da9c788100d28ea78fcac6430aa47afba2ce94fe2d6cff00b6430",
         "UnitTest/test-vectors.tsv": "ee0395ce510537ec5914db977b6302162a406b1ff43b308965c1c8cdfef88508"
-      }
+      },
+      "head": "90865f70529fa91acaf339ac227f61c1d11ccac3",
+      "id": "NEP-09",
+      "tree": "2ceeb2aaff2630dd6d0c5df3244f49c6d790ae87"
     },
     {
-      "id": "NEP-10",
-      "head": "a9ede4539f091a1809913432d18f69b896f9059f",
-      "tree": "a02c3ca5e33500df085fd9241f040121d877f9d5",
       "files": {
         ".gitignore": "5c49b58ad3bdb8ec71acfd5f2a63f72444f4060ec2bfa6eac65ba2664e471069",
         "Documentation/BusinessBehavior.md": "37a4280c8b727837a6a86c9bc2e9b7b9b170fbb9b2f6e214102671e8c8e6a596",
@@ -1615,12 +714,12 @@
         "README.md": "05985a57c6dffac28f64e60fff0b4382423abe9d2e37c9b25173785b41d308c6",
         "Src/README.txt": "3a148e4e979520edbdd5a7ed07bbff043a3191f9f28791c9fc4992724f0913aa",
         "UnitTest/README.txt": "1556214aaf4b397af7768e8f7ab6f758631be8e11dadf4d228f4901b85d4a885"
-      }
+      },
+      "head": "a9ede4539f091a1809913432d18f69b896f9059f",
+      "id": "NEP-10",
+      "tree": "a02c3ca5e33500df085fd9241f040121d877f9d5"
     },
     {
-      "id": "NEP-11",
-      "head": "1355172665a7af21e594a15ce9e5b90c4d3c172b",
-      "tree": "39c709eceae215a8ea5f85bbc7055eaed59824d6",
       "files": {
         ".gitignore": "5c49b58ad3bdb8ec71acfd5f2a63f72444f4060ec2bfa6eac65ba2664e471069",
         "Documentation/BusinessBehavior.md": "176840607f5072ee7347b5a0f5c114b2846ed59b86c7ec29ba0f8741bb971a67",
@@ -1640,104 +739,1013 @@
         "UnitTest/native-replay.tsv": "ae7b2a727321ba23004f710e1cf181db006bd64fa611f31d7e71e351cd5f6778",
         "UnitTest/test-properties.json": "a15ea4fc2ea98b77e71b246fb0944b60900564b9f188794103399326ba367e9f",
         "UnitTest/test-vectors.tsv": "f4dd34e0c2ce7f844ad396e9b02711e9ccfe17989b5e8cf50044da1a75471007"
-      }
+      },
+      "head": "1355172665a7af21e594a15ce9e5b90c4d3c172b",
+      "id": "NEP-11",
+      "tree": "39c709eceae215a8ea5f85bbc7055eaed59824d6"
     }
   ],
-  "scope": "Local unpublished engineering repair; no BTC, target ECU, physical device, SIL/PIL/HIL or C statement coverage. Build-contract adjudication paused. No candidate runs.",
+  "host_replay": [
+    {
+      "case_id": "NEP-01",
+      "compiled": true,
+      "compiler": "Explicit LCC-win64 through mex",
+      "executed": true,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "max_abs_error": 0,
+      "outputs": 108,
+      "samples": 11948,
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-02",
+      "compiled": true,
+      "compiler": "Explicit LCC-win64 through mex",
+      "executed": true,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "max_abs_error": 0,
+      "outputs": 39,
+      "samples": 4002,
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-03",
+      "compiled": true,
+      "compiler": "Explicit LCC-win64 through mex",
+      "executed": true,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "max_abs_error": 0,
+      "outputs": 26,
+      "samples": 2679,
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-04",
+      "compiled": true,
+      "compiler": "Explicit LCC-win64 through mex",
+      "executed": true,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "max_abs_error": 0,
+      "outputs": 22,
+      "samples": 2283,
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-06",
+      "compiled": true,
+      "compiler": "Explicit LCC-win64 through mex",
+      "executed": true,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "max_abs_error": 0,
+      "outputs": 27,
+      "samples": 2514,
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-07",
+      "compiled": true,
+      "compiler": "Explicit LCC-win64 through mex",
+      "executed": true,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "max_abs_error": 0,
+      "outputs": 28,
+      "samples": 2680,
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-08",
+      "compiled": true,
+      "compiler": "Explicit LCC-win64 through mex",
+      "executed": true,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "max_abs_error": 0,
+      "outputs": 47,
+      "samples": 4748,
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-09",
+      "compiled": true,
+      "compiler": "Explicit LCC-win64 through mex",
+      "executed": true,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "max_abs_error": 0,
+      "outputs": 52,
+      "samples": 5493,
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    }
+  ],
+  "mutation_detection": {
+    "detected": 4,
+    "results": [
+      {
+        "all_passed": false,
+        "business_properties": [
+          {
+            "checked_samples": 3,
+            "expected": 74,
+            "maximum": 74.0,
+            "minimum": 74.0,
+            "name": "Thermal at 80 C",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 1,
+            "maximum": 1.0,
+            "minimum": 1.0,
+            "name": "Thermal factor at 80 C",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 37,
+            "maximum": 37.0,
+            "minimum": 37.0,
+            "name": "Thermal at 120 C",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 0.5,
+            "maximum": 0.5,
+            "minimum": 0.5,
+            "name": "Thermal factor at 120 C",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 0,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Thermal at 160 C",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 0,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Thermal factor at 160 C",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 0,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Thermal at 180 C",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 0,
+            "maximum": -0.25,
+            "minimum": -0.25,
+            "name": "Thermal factor at 180 C",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "checked_samples": 3,
+            "expected": 0,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "brake",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": -74,
+            "maximum": -74.0,
+            "minimum": -74.0,
+            "name": "reverse",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 0,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "pedal-disagree",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 3.1830988618379066,
+            "maximum": 3.183098793029785,
+            "minimum": 3.183098793029785,
+            "name": "power",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 1,
+            "maximum": 1.0,
+            "minimum": 1.0,
+            "name": "Thermal interior factor -20",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 74,
+            "maximum": 74.0,
+            "minimum": 74.0,
+            "name": "Thermal interior command -20",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 0.75,
+            "maximum": 0.75,
+            "minimum": 0.75,
+            "name": "Thermal interior factor 100",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 55.5,
+            "maximum": 55.5,
+            "minimum": 55.5,
+            "name": "Thermal interior command 100",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 0.25,
+            "maximum": 0.25,
+            "minimum": 0.25,
+            "name": "Thermal interior factor 140",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 18.5,
+            "maximum": 18.5,
+            "minimum": 18.5,
+            "name": "Thermal interior command 140",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 0,
+            "maximum": -0.125,
+            "minimum": -0.125,
+            "name": "Thermal interior factor 170",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "checked_samples": 3,
+            "expected": 0,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Thermal interior command 170",
+            "op": "equal",
+            "passed": true
+          }
+        ],
+        "case_id": "NEP-03",
+        "channel_comparisons": 58938,
+        "errors": [
+          {
+            "actual": [
+              -0.25,
+              -0.25,
+              -0.25
+            ],
+            "checked_samples": 3,
+            "expected": 0,
+            "kind": "business_property",
+            "maximum": -0.25,
+            "minimum": -0.25,
+            "name": "Thermal factor at 180 C",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "actual": [
+              -0.125,
+              -0.125,
+              -0.125
+            ],
+            "checked_samples": 3,
+            "expected": 0,
+            "kind": "business_property",
+            "maximum": -0.125,
+            "minimum": -0.125,
+            "name": "Thermal interior factor 170",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "declared": [
+              0,
+              1
+            ],
+            "kind": "range",
+            "max": 1.0,
+            "min": -0.25,
+            "output": "yVcVmcTrq_ThermalFactor_DOC",
+            "samples": 18
+          }
+        ],
+        "max_channel_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 26,
+        "range_checks": 69654,
+        "samples": 2679
+      },
+      {
+        "all_passed": false,
+        "business_properties": [
+          {
+            "checked_samples": 100,
+            "expected": 0.015,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Unsaturated integral accumulates",
+            "op": "ramp",
+            "passed": false
+          },
+          {
+            "checked_samples": 1,
+            "expected": 1.5,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Integral after 100 qualified samples",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "checked_samples": 1,
+            "expected": 11.5,
+            "maximum": 10.0,
+            "minimum": 10.0,
+            "name": "Command includes integral",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "checked_samples": 2,
+            "expected": 0,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Reset clears integral",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 100,
+            "maximum": 100.0,
+            "minimum": 100.0,
+            "name": "No flow forces cooling",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 100,
+            "maximum": 100.0,
+            "minimum": 100.0,
+            "name": "Heating mode heater",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 0,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Heating mode compressor",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 1,
+            "expected": 0.0,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Cooling PI interior -5",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 1,
+            "expected": 0.0,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Cooling state interior -5",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 1,
+            "expected": 24.36,
+            "maximum": 24.000015258789062,
+            "minimum": 24.000015258789062,
+            "name": "Cooling PI interior 3.6",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "checked_samples": 1,
+            "expected": 0.36,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Cooling state interior 3.6",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "checked_samples": 1,
+            "expected": 77.14,
+            "maximum": 76.00000762939453,
+            "minimum": 76.00000762939453,
+            "name": "Cooling PI interior 11.4",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "checked_samples": 1,
+            "expected": 1.1400000000000001,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Cooling state interior 11.4",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "checked_samples": 1,
+            "expected": 100,
+            "maximum": 100.0,
+            "minimum": 100.0,
+            "name": "Cooling PI interior 20",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 1,
+            "expected": 1.5,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Cooling state interior 20",
+            "op": "equal",
+            "passed": false
+          }
+        ],
+        "case_id": "NEP-08",
+        "channel_comparisons": 180424,
+        "errors": [
+          {
+            "actual": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "checked_samples": 100,
+            "expected": 0.015,
+            "kind": "business_property",
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Unsaturated integral accumulates",
+            "op": "ramp",
+            "passed": false
+          },
+          {
+            "actual": [
+              0.0
+            ],
+            "checked_samples": 1,
+            "expected": 1.5,
+            "kind": "business_property",
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Integral after 100 qualified samples",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "actual": [
+              10.0
+            ],
+            "checked_samples": 1,
+            "expected": 11.5,
+            "kind": "business_property",
+            "maximum": 10.0,
+            "minimum": 10.0,
+            "name": "Command includes integral",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "actual": [
+              24.000015258789062
+            ],
+            "checked_samples": 1,
+            "expected": 24.36,
+            "kind": "business_property",
+            "maximum": 24.000015258789062,
+            "minimum": 24.000015258789062,
+            "name": "Cooling PI interior 3.6",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "actual": [
+              0.0
+            ],
+            "checked_samples": 1,
+            "expected": 0.36,
+            "kind": "business_property",
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Cooling state interior 3.6",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "actual": [
+              76.00000762939453
+            ],
+            "checked_samples": 1,
+            "expected": 77.14,
+            "kind": "business_property",
+            "maximum": 76.00000762939453,
+            "minimum": 76.00000762939453,
+            "name": "Cooling PI interior 11.4",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "actual": [
+              0.0
+            ],
+            "checked_samples": 1,
+            "expected": 1.1400000000000001,
+            "kind": "business_property",
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Cooling state interior 11.4",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "actual": [
+              0.0
+            ],
+            "checked_samples": 1,
+            "expected": 1.5,
+            "kind": "business_property",
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Cooling state interior 20",
+            "op": "equal",
+            "passed": false
+          }
+        ],
+        "max_channel_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 47,
+        "range_checks": 223156,
+        "samples": 4748
+      },
+      {
+        "all_passed": false,
+        "business_properties": [
+          {
+            "checked_samples": 3,
+            "expected": 1,
+            "maximum": 1.0,
+            "minimum": 1.0,
+            "name": "Reset restores permit 1",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 1,
+            "expected": [
+              1
+            ],
+            "maximum": 1.0,
+            "minimum": 1.0,
+            "name": "Rejection counter 1",
+            "op": "sequence",
+            "passed": true
+          },
+          {
+            "checked_samples": 1,
+            "expected": [
+              0
+            ],
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Three sample latch 1",
+            "op": "sequence",
+            "passed": true
+          },
+          {
+            "checked_samples": 5,
+            "expected": 1,
+            "maximum": 1.0,
+            "minimum": 1.0,
+            "name": "Transient vs latched recovery 1",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": 1,
+            "maximum": 1.0,
+            "minimum": 1.0,
+            "name": "Reset restores permit 2",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 2,
+            "expected": [
+              1,
+              2
+            ],
+            "maximum": 2.0,
+            "minimum": 1.0,
+            "name": "Rejection counter 2",
+            "op": "sequence",
+            "passed": true
+          },
+          {
+            "checked_samples": 2,
+            "expected": [
+              0,
+              0
+            ],
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "name": "Three sample latch 2",
+            "op": "sequence",
+            "passed": false
+          },
+          {
+            "checked_samples": 5,
+            "expected": 1,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Transient vs latched recovery 2",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "checked_samples": 3,
+            "expected": 1,
+            "maximum": 1.0,
+            "minimum": 1.0,
+            "name": "Reset restores permit 3",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": [
+              1,
+              2,
+              3
+            ],
+            "maximum": 3.0,
+            "minimum": 1.0,
+            "name": "Rejection counter 3",
+            "op": "sequence",
+            "passed": true
+          },
+          {
+            "checked_samples": 3,
+            "expected": [
+              0,
+              0,
+              1
+            ],
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "name": "Three sample latch 3",
+            "op": "sequence",
+            "passed": false
+          },
+          {
+            "checked_samples": 5,
+            "expected": 0,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Transient vs latched recovery 3",
+            "op": "equal",
+            "passed": true
+          }
+        ],
+        "case_id": "NEP-09",
+        "channel_comparisons": 258171,
+        "errors": [
+          {
+            "actual": [
+              0.0,
+              1.0
+            ],
+            "checked_samples": 2,
+            "expected": [
+              0,
+              0
+            ],
+            "kind": "business_property",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "name": "Three sample latch 2",
+            "op": "sequence",
+            "passed": false
+          },
+          {
+            "actual": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "checked_samples": 5,
+            "expected": 1,
+            "kind": "business_property",
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Transient vs latched recovery 2",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "actual": [
+              0.0,
+              1.0,
+              1.0
+            ],
+            "checked_samples": 3,
+            "expected": [
+              0,
+              0,
+              1
+            ],
+            "kind": "business_property",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "name": "Three sample latch 3",
+            "op": "sequence",
+            "passed": false
+          }
+        ],
+        "max_channel_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 52,
+        "range_checks": 285636,
+        "samples": 5493
+      },
+      {
+        "all_passed": false,
+        "business_properties": [
+          {
+            "checked_samples": 1,
+            "expected": 1,
+            "maximum": 1.0,
+            "minimum": 1.0,
+            "name": "Precharge enters at request 49",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 1,
+            "expected": 2,
+            "maximum": 2.0,
+            "minimum": 2.0,
+            "name": "Completion at 490 ms",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 1,
+            "expected": 1,
+            "maximum": 1.0,
+            "minimum": 1.0,
+            "name": "Precharge enters at request 50",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 1,
+            "expected": 2,
+            "maximum": 2.0,
+            "minimum": 2.0,
+            "name": "Completion at 500 ms",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 1,
+            "expected": 1,
+            "maximum": 1.0,
+            "minimum": 1.0,
+            "name": "Precharge enters at request 51",
+            "op": "equal",
+            "passed": true
+          },
+          {
+            "checked_samples": 1,
+            "expected": 3,
+            "maximum": 2.0,
+            "minimum": 2.0,
+            "name": "Completion at 510 ms",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "checked_samples": 60,
+            "expected": 0,
+            "maximum": 0.0,
+            "minimum": 0.0,
+            "name": "Zero voltage cannot close contactor",
+            "op": "equal",
+            "passed": true
+          }
+        ],
+        "case_id": "NEP-11",
+        "channel_comparisons": 11430,
+        "errors": [
+          {
+            "actual": [
+              2.0
+            ],
+            "checked_samples": 1,
+            "expected": 3,
+            "kind": "business_property",
+            "maximum": 2.0,
+            "minimum": 2.0,
+            "name": "Completion at 510 ms",
+            "op": "equal",
+            "passed": false
+          },
+          {
+            "declared": [
+              0,
+              0.5
+            ],
+            "kind": "range",
+            "max": 0.5099999904632568,
+            "min": 0.0,
+            "output": "yVcScHv_ElapsedPrecharge_DOC",
+            "samples": 12
+          }
+        ],
+        "max_channel_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "outputs": 13,
+        "range_checks": 16510,
+        "samples": 1270
+      }
+    ]
+  },
+  "native_engine": "MATLAB/Simulink R2023b normal mode",
+  "public_raw_attachment": {
+    "bytes": 2345737,
+    "name": "ne-fidelity-native-inputs-v0.11.3.zip",
+    "records": 104,
+    "scope": "Source-bound raw native inputs/records; maintainers only; no source transport or private reserved materials",
+    "sha256": "2324dd4ca006ec2bfb158fa5bad0295cf6f0d85a7971eba8ca8b7867d068a9b7",
+    "url": "https://github.com/cockpit-bench/cockpit-benchmark/releases/download/v0.11.3/ne-fidelity-native-inputs-v0.11.3.zip"
+  },
   "restored_native": {
+    "all_exact_equal": true,
+    "business_properties": 138,
+    "compared_values": 5250713,
     "repositories": [
       {
-        "id": "NEP-01",
-        "samples": 11948,
-        "outputs": 108,
         "compared_values": 1290384,
         "exact_equal": true,
-        "independent_checks_passed": true
+        "id": "NEP-01",
+        "independent_checks_passed": true,
+        "outputs": 108,
+        "samples": 11948
       },
       {
-        "id": "NEP-02",
-        "samples": 4002,
-        "outputs": 39,
         "compared_values": 156078,
         "exact_equal": true,
-        "independent_checks_passed": true
+        "id": "NEP-02",
+        "independent_checks_passed": true,
+        "outputs": 39,
+        "samples": 4002
       },
       {
-        "id": "NEP-03",
-        "samples": 2679,
-        "outputs": 26,
         "compared_values": 69654,
         "exact_equal": true,
-        "independent_checks_passed": true
+        "id": "NEP-03",
+        "independent_checks_passed": true,
+        "outputs": 26,
+        "samples": 2679
       },
       {
-        "id": "NEP-04",
-        "samples": 2283,
-        "outputs": 22,
         "compared_values": 50226,
         "exact_equal": true,
-        "independent_checks_passed": true
+        "id": "NEP-04",
+        "independent_checks_passed": true,
+        "outputs": 22,
+        "samples": 2283
       },
       {
-        "id": "NEP-05",
-        "samples": 1899,
-        "outputs": 22,
         "compared_values": 41778,
         "exact_equal": true,
-        "independent_checks_passed": true
+        "id": "NEP-05",
+        "independent_checks_passed": true,
+        "outputs": 22,
+        "samples": 1899
       },
       {
-        "id": "NEP-06",
-        "samples": 2514,
-        "outputs": 27,
         "compared_values": 67878,
         "exact_equal": true,
-        "independent_checks_passed": true
+        "id": "NEP-06",
+        "independent_checks_passed": true,
+        "outputs": 27,
+        "samples": 2514
       },
       {
-        "id": "NEP-07",
-        "samples": 2680,
-        "outputs": 28,
         "compared_values": 75040,
         "exact_equal": true,
-        "independent_checks_passed": true
+        "id": "NEP-07",
+        "independent_checks_passed": true,
+        "outputs": 28,
+        "samples": 2680
       },
       {
-        "id": "NEP-08",
-        "samples": 4748,
-        "outputs": 47,
         "compared_values": 223156,
         "exact_equal": true,
-        "independent_checks_passed": true
+        "id": "NEP-08",
+        "independent_checks_passed": true,
+        "outputs": 47,
+        "samples": 4748
       },
       {
-        "id": "NEP-09",
-        "samples": 5493,
-        "outputs": 52,
         "compared_values": 285636,
         "exact_equal": true,
-        "independent_checks_passed": true
+        "id": "NEP-09",
+        "independent_checks_passed": true,
+        "outputs": 52,
+        "samples": 5493
       },
       {
-        "id": "NEP-10",
-        "samples": 16433,
-        "outputs": 181,
         "compared_values": 2974373,
         "exact_equal": true,
-        "independent_checks_passed": true
+        "id": "NEP-10",
+        "independent_checks_passed": true,
+        "outputs": 181,
+        "samples": 16433
       },
       {
-        "id": "NEP-11",
-        "samples": 1270,
-        "outputs": 13,
         "compared_values": 16510,
         "exact_equal": true,
-        "independent_checks_passed": true
+        "id": "NEP-11",
+        "independent_checks_passed": true,
+        "outputs": 13,
+        "samples": 1270
       }
     ],
-    "samples": 55949,
-    "compared_values": 5250713,
-    "all_exact_equal": true,
-    "business_properties": 138
-  }
+    "samples": 55949
+  },
+  "revision": "fidelity-repair-20260910",
+  "scope": "Published engineering repair; publication adds no native execution; no BTC, target ECU, physical device, SIL/PIL/HIL or C statement coverage. Build-contract adjudication paused. No candidate runs."
 }

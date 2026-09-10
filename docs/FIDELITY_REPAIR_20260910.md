@@ -1,6 +1,6 @@
-# 新能源工程修复（本地，未发布）
+# 新能源工程修复（v0.11.3）
 
-本轮修复此前11仓只读审阅确认的四类问题。九个模型有工程修改，NEP-11只更新测试表与说明，NEP-05逐字节保持。原v0.11.2源码和常用wrapper保持；本分支及新源码提交均未上传。
+本轮修复此前11仓只读审阅确认的四类问题。九个模型有工程修改，NEP-11只更新测试表与说明，NEP-05逐字节保持。原v0.11.2标签保持；v0.11.3公开当前修复提交，旧源码完整历史保留。
 
 | 问题 | 当前实现 | 验证 |
 |---|---|---|
@@ -21,6 +21,6 @@
 
 当前仍是一个知情构造族，正式候选运行0；逐叶众数123/143、21/52档位有观测均未因工程改造自动改变。内部36仓逐仓联合画像、38模型与80配置的对应关系、生产算法/标定仍缺失。固定步长、分支别名、DataStore用途集中及尾部格式覆盖不足等范围限制仍保留，不能称完整真实分布已复原。
 
-本地包提供11个完整源码bundle、单仓候选输入和维护者wrapper。每份候选只含一个源码bundle、原合同及文件清单，不含参考分或其他仓。默认公共下载入口会拒绝未发布新HEAD；本地恢复使用bundle入口，或为PowerShell入口提供SourceMap。完整Git恢复核验HEAD/tree/全部源码refs、298个文件的SHA256、干净状态、无remote和无alternates。
+当前公开11个源码仓可通过wrapper默认入口或ne_reality.py restore匿名恢复，无需本地SourceMap。单仓candidate导出源码bundle、原合同和清单，不含gold。发布不新增原生执行，沿用上述已经绑定的结果。
 
-原始记录在维护者工作目录`matlab-benchmark/fidelity-repair-20260910/evidence`，包括原源/恢复回放、工程接口负例、标定响应、故障变体、工作簿回读与模型视图。当前源码绑定见本组`EXECUTION.json`、`manifest.json`及`OBSERVATIONS.json`。
+原始验证附件：[下载](https://github.com/cockpit-bench/cockpit-benchmark/releases/download/v0.11.3/ne-fidelity-native-inputs-v0.11.3.zip)，2345737字节，SHA256 `2324dd4ca006ec2bfb158fa5bad0295cf6f0d85a7971eba8ca8b7867d068a9b7`。其中记录保持原始字节；便携profile单独调整路径。它是维护者输入，不向候选提供。

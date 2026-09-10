@@ -2,7 +2,7 @@
   "aggregation": "separate_repository_type_scores_no_raw_sum",
   "benchmark_id": "cockpit-benchmark",
   "default_suite": "all",
-  "integration_status": "local_expansion",
+  "integration_status": "published",
   "legacy_baseline": {
     "path": "suites/legacy-v094.json",
     "sha256": "a1944ba5d6d8a5a5d58d1f3d7b270b26150cda56a165d12c3c9737df754cae5b"
@@ -64,7 +64,7 @@
       },
       "cohorts": {
         "path": "suites/new-energy-matlab/cohorts.json",
-        "sha256": "177f63340214b0bf9d3125377d66374bce9b1421ab5fee435e8e4a395f061b3b"
+        "sha256": "4371e0021ed3e7d522bd8a61ef35a9ca648ed82288075d101063c0b11bc7e6ff"
       },
       "contract": {
         "path": "suites/new-energy-matlab/cohorts/reality-proxy-20260910/contract-index.json",
@@ -75,14 +75,14 @@
       "leaf_count": 143,
       "manifest": {
         "path": "suites/new-energy-matlab/cohorts/reality-proxy-20260910/manifest.json",
-        "sha256": "22a357080319b9952c64b366633462c69ab2cc1cc7e4ca4a8d876aa227feac96"
+        "sha256": "a411922a2a0402164ca4037c4e7c495ca48bbf3abd6cdb49417d17f9e288d374"
       },
       "max_score": 671,
       "name": "New Energy MATLAB",
-      "published_repositories": 0,
+      "published_repositories": 11,
       "repository_count": 11,
       "score": 409,
-      "status": "verified_local",
+      "status": "published",
       "technology": "MATLAB / Simulink"
     }
   ]

@@ -14,11 +14,11 @@
       "leaves": 143,
       "manifest": {
         "path": "suites/new-energy-matlab/cohorts/reality-proxy-20260910/manifest.json",
-        "sha256": "22a357080319b9952c64b366633462c69ab2cc1cc7e4ca4a8d876aa227feac96"
+        "sha256": "a411922a2a0402164ca4037c4e7c495ca48bbf3abd6cdb49417d17f9e288d374"
       },
       "repositories": 11,
       "role": "new model-centered synthetic reality proxies",
-      "status": "verified_local"
+      "status": "published"
     }
   ],
   "default_analysis_cohort": "reality-proxy-20260910",

@@ -33,7 +33,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "app"
     },
@@ -66,7 +66,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -101,7 +101,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -136,7 +136,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -163,7 +163,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -198,7 +198,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -231,7 +231,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -264,7 +264,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -301,7 +301,7 @@
           "state": "unavailable"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": true,
       "type_id": "app"
     },
@@ -332,7 +332,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -369,7 +369,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -402,7 +402,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -429,7 +429,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -464,7 +464,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -499,7 +499,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -534,7 +534,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -561,7 +561,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -592,7 +592,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -623,7 +623,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -658,7 +658,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "app"
     },
@@ -685,7 +685,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -720,7 +720,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -755,7 +755,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -790,7 +790,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -821,7 +821,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -852,7 +852,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -885,7 +885,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -918,7 +918,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -945,7 +945,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -982,7 +982,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1013,7 +1013,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1044,7 +1044,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1071,7 +1071,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1102,7 +1102,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1133,7 +1133,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1170,7 +1170,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "app"
     },
@@ -1197,7 +1197,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1236,7 +1236,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1275,7 +1275,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1314,7 +1314,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1347,7 +1347,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1404,7 +1404,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1439,7 +1439,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1476,7 +1476,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "app"
     },
@@ -1503,7 +1503,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1538,7 +1538,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1569,7 +1569,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1602,7 +1602,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1633,7 +1633,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1664,7 +1664,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1695,7 +1695,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1732,7 +1732,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "app"
     },
@@ -1759,7 +1759,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1794,7 +1794,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1829,7 +1829,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1864,7 +1864,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1891,7 +1891,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1922,7 +1922,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1955,7 +1955,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -1990,7 +1990,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "app"
     },
@@ -2017,7 +2017,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2056,7 +2056,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2095,7 +2095,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2134,7 +2134,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2161,7 +2161,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2192,7 +2192,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2225,7 +2225,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2258,7 +2258,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2285,7 +2285,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2330,7 +2330,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2375,7 +2375,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2420,7 +2420,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2445,7 +2445,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2470,7 +2470,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2495,7 +2495,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2521,7 +2521,7 @@
         }
       },
       "packet_id": "sdk-repair",
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": true,
       "sdk_requirements": [
         {
@@ -2552,7 +2552,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2577,7 +2577,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2602,7 +2602,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2627,7 +2627,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2652,7 +2652,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2677,7 +2677,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2702,7 +2702,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2728,7 +2728,7 @@
         }
       },
       "packet_id": "current-raw",
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": true,
       "type_id": "app"
     },
@@ -2753,7 +2753,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2778,7 +2778,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2803,7 +2803,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2828,7 +2828,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "app"
     },
@@ -2859,7 +2859,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -2890,7 +2890,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -2927,7 +2927,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -2960,7 +2960,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -2987,7 +2987,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3018,7 +3018,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3051,7 +3051,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3088,7 +3088,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3123,7 +3123,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3154,7 +3154,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3187,7 +3187,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3218,7 +3218,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3253,7 +3253,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -3292,7 +3292,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3329,7 +3329,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -3356,7 +3356,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3387,7 +3387,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3426,7 +3426,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3471,7 +3471,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3506,7 +3506,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3549,7 +3549,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3590,7 +3590,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3621,7 +3621,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3652,7 +3652,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3691,7 +3691,7 @@
         }
       },
       "packet_id": "legacy-fw07",
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": true,
       "type_id": "fw"
     },
@@ -3730,7 +3730,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3761,7 +3761,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3792,7 +3792,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3825,7 +3825,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3862,7 +3862,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3899,7 +3899,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3942,7 +3942,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -3979,7 +3979,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4010,7 +4010,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4041,7 +4041,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4082,7 +4082,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4117,7 +4117,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -4144,7 +4144,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4175,7 +4175,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4212,7 +4212,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4251,7 +4251,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4290,7 +4290,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4333,7 +4333,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4374,7 +4374,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4405,7 +4405,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4436,7 +4436,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4467,7 +4467,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4512,7 +4512,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -4539,7 +4539,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4570,7 +4570,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4609,7 +4609,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4642,7 +4642,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4679,7 +4679,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4710,7 +4710,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4741,7 +4741,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4772,7 +4772,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4817,7 +4817,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4858,7 +4858,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4897,7 +4897,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -4924,7 +4924,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4955,7 +4955,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -4994,7 +4994,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5041,7 +5041,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5076,7 +5076,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5129,7 +5129,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5184,7 +5184,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5215,7 +5215,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5246,7 +5246,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5277,7 +5277,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5312,7 +5312,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -5339,7 +5339,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5370,7 +5370,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5403,7 +5403,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5434,7 +5434,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5467,7 +5467,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5506,7 +5506,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5537,7 +5537,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5568,7 +5568,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5603,7 +5603,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -5646,7 +5646,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5681,7 +5681,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5708,7 +5708,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5739,7 +5739,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5772,7 +5772,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5805,7 +5805,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5840,7 +5840,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5871,7 +5871,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5904,7 +5904,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5935,7 +5935,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5966,7 +5966,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -5999,7 +5999,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6034,7 +6034,7 @@
           "state": "unknown"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": null,
       "type_id": "fw"
     },
@@ -6061,7 +6061,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6092,7 +6092,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6123,7 +6123,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6156,7 +6156,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6195,7 +6195,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6232,7 +6232,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6269,7 +6269,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6294,7 +6294,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6319,7 +6319,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6344,7 +6344,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6370,7 +6370,7 @@
         }
       },
       "packet_id": "sdk-repair",
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": true,
       "sdk_requirements": [
         {
@@ -6401,7 +6401,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6426,7 +6426,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6451,7 +6451,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6476,7 +6476,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6501,7 +6501,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6526,7 +6526,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6551,7 +6551,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6576,7 +6576,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6601,7 +6601,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6626,7 +6626,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6652,7 +6652,7 @@
         }
       },
       "packet_id": "sdk-repair",
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": true,
       "sdk_requirements": [
         {
@@ -6683,7 +6683,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6709,7 +6709,7 @@
         }
       },
       "packet_id": "sdk-repair",
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": true,
       "type_id": "fw"
     },
@@ -6734,7 +6734,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6759,7 +6759,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6784,7 +6784,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6809,7 +6809,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6834,7 +6834,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "fw"
     },
@@ -6866,7 +6866,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -6896,7 +6896,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -6928,7 +6928,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -6960,7 +6960,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -6992,7 +6992,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7026,7 +7026,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7054,7 +7054,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7084,7 +7084,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7114,7 +7114,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7144,7 +7144,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7174,7 +7174,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7202,7 +7202,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7236,7 +7236,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7268,7 +7268,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7298,7 +7298,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7330,7 +7330,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7362,7 +7362,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7394,7 +7394,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7428,7 +7428,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7456,7 +7456,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7486,7 +7486,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7516,7 +7516,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7546,7 +7546,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7576,7 +7576,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7604,7 +7604,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7638,7 +7638,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7670,7 +7670,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7700,7 +7700,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7732,7 +7732,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7764,7 +7764,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7796,7 +7796,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7830,7 +7830,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7858,7 +7858,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7888,7 +7888,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7918,7 +7918,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7948,7 +7948,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -7978,7 +7978,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8006,7 +8006,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8040,7 +8040,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8072,7 +8072,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8102,7 +8102,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8134,7 +8134,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8166,7 +8166,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8198,7 +8198,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8232,7 +8232,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8260,7 +8260,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8290,7 +8290,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8320,7 +8320,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8350,7 +8350,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8380,7 +8380,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8408,7 +8408,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8442,7 +8442,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8472,7 +8472,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8502,7 +8502,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8532,7 +8532,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8562,7 +8562,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8590,7 +8590,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8620,7 +8620,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8648,7 +8648,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8678,7 +8678,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8710,7 +8710,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8742,7 +8742,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8772,7 +8772,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8800,7 +8800,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8830,7 +8830,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8862,7 +8862,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8892,7 +8892,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8924,7 +8924,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8956,7 +8956,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -8988,7 +8988,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9022,7 +9022,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9050,7 +9050,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9080,7 +9080,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9110,7 +9110,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9140,7 +9140,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9170,7 +9170,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9198,7 +9198,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9232,7 +9232,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9264,7 +9264,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9294,7 +9294,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9326,7 +9326,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9358,7 +9358,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9390,7 +9390,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9424,7 +9424,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9452,7 +9452,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9482,7 +9482,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9512,7 +9512,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9542,7 +9542,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9572,7 +9572,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9600,7 +9600,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9634,7 +9634,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9666,7 +9666,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9696,7 +9696,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9728,7 +9728,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9760,7 +9760,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9792,7 +9792,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9824,7 +9824,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9852,7 +9852,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9882,7 +9882,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9912,7 +9912,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9942,7 +9942,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -9972,7 +9972,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10000,7 +10000,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10032,7 +10032,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10064,7 +10064,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10094,7 +10094,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10126,7 +10126,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10158,7 +10158,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10190,7 +10190,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10224,7 +10224,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10252,7 +10252,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10282,7 +10282,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10312,7 +10312,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10342,7 +10342,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10372,7 +10372,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10400,7 +10400,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10434,7 +10434,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10466,7 +10466,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10496,7 +10496,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10528,7 +10528,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10560,7 +10560,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10588,7 +10588,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10620,7 +10620,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10648,7 +10648,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10678,7 +10678,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10708,7 +10708,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10738,7 +10738,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10768,7 +10768,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10796,7 +10796,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10828,7 +10828,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10858,7 +10858,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10888,7 +10888,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10918,7 +10918,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10948,7 +10948,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -10980,7 +10980,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -11010,7 +11010,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -11038,7 +11038,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -11068,7 +11068,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -11100,7 +11100,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -11132,7 +11132,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -11162,7 +11162,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -11190,7 +11190,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     },
@@ -11220,7 +11220,7 @@
           "state": "supported"
         }
       },
-      "reference_id": "local-fidelity-repair-20260910",
+      "reference_id": "v0.11.3",
       "requires_external": false,
       "type_id": "new-energy-matlab"
     }
@@ -11255,7 +11255,7 @@
       "url": "https://github.com/cockpit-bench/cockpit-benchmark/releases/download/v0.10.3/candidate-sdk-inputs-v0.10.3.zip"
     }
   },
-  "reference_id": "local-fidelity-repair-20260910",
-  "registry_sha256": "b9d933d7da704e34e1fb5465be3fb49e7612837e1d923ea3eec02d3ae66da6f4",
+  "reference_id": "v0.11.3",
+  "registry_sha256": "e3c9e9d4ea91f3bbcd48f2bf1118955eb22479e976b4257aba20e2aa9326e97e",
   "schema": "current-evaluation-inputs-v1"
 }
