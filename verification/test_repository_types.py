@@ -99,9 +99,9 @@ class LocalRestoreTests(unittest.TestCase):
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.base=Path(self.temp.name);self.origin=self.base/'source';self.origin.mkdir()
         def git(*args):return subprocess.check_output(['git','-C',str(self.origin),*args],stderr=subprocess.STDOUT,text=True).strip()
-        self.git=git;git('init','-b','main');git('config','user.name','Restore test');git('config','user.email','restore@example.invalid')
-        (self.origin/'logic.txt').write_text('first\n');git('add','.');git('commit','-m','first');git('tag','v1')
-        (self.origin/'logic.txt').write_text('second\n');git('add','.');git('commit','-m','second')
+        self.git=git;git('init','-b','main');git('config','core.autocrlf','false');git('config','user.name','Restore test');git('config','user.email','restore@example.invalid')
+        (self.origin/'logic.txt').write_bytes(b'first\n');git('add','.');git('commit','-m','first');git('tag','v1')
+        (self.origin/'logic.txt').write_bytes(b'second\n');git('add','.');git('commit','-m','second')
         self.row={'id':'APP-21','name':'sample-app','type_id':'app','head':git('rev-parse','HEAD'),'tree':git('rev-parse','HEAD^{tree}'),'refs':{k:v for k,v in (x.split('|') for x in git('for-each-ref','--format=%(refname)|%(objectname)','refs/heads','refs/tags').splitlines())},'publication_status':'verified_local','repository_url':None}
         self.mapping=self.base/'source-map.json';self.mapping.write_text(json.dumps({'APP-21':str(self.origin)}));self.wrapper=self.base/'wrapper';self.wrapper.mkdir();self.dest=self.base/'restored'
     def tearDown(self):self.temp.cleanup()
