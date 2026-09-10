@@ -1,6 +1,6 @@
 # 新能源现实代理 11 仓：v0.11.0 发布
 
-六项具体审阅问题已完成修复、原生验证和参考重审，本版公开11个Vc*源码仓。公开集合共44仓：APP11、FW11、新能源22（旧联调11与现实代理11分别统计）。四个私有预留仓不纳入发布；原33源码历史和参考不变。
+六项具体审阅问题已完成修复、原生验证和参考重审，本版公开11个Vc*源码仓。v0.11.1 当前集合为33仓：APP11、FW11、现实代理11。旧新能源联调11仓已退出当前登记，远端删仓正在等待GitHub权限；四个私有预留仓保持保密。下列业务修复与执行记录沿用v0.11.0，不是本次新增运行。
 
 ## 六项修复与证据
 
@@ -65,7 +65,7 @@ NEP-01增加跨信号合理性；NEP-02分别控制驱动和辅助执行器；NE
 
 原116个标签保持旧基线，新增11个标签标识初始本地模型修复。9仓随后仅有表格排版提交，因此master为2或3提交。平台/auto分支仍保留旧快照；分支名代理评分不代表当前master已实现或验证多平台，不能称真实八个月生产发布历史。
 
-原新能源联调组、APP、FW各自分母与合同保持；原evaluation_current.py和默认restore仍对应公开33仓，新组入口为verification/ne_reality.py。
+当前evaluation_current.py与默认restore已统一选择APP11、FW11、NEP11，旧组不再登记。ne_reality.py继续支持相同NEP组；有效合同和143参考叶未改。
 
 ## 公开入口与恢复
 
@@ -87,7 +87,7 @@ python verification/ne_reality.py replay --source-root <恢复目录> --output <
 python verification/ne_reality.py candidate --source-root <恢复目录> --id NEP-01 --output <全新单仓目录>
 ```
 
-重复restore对已完成仓重新验证，不重置用户修改。离线既有bundle可继续通过--bundle-root使用；在线恢复不依赖本机source-map。默认restore.ps1与evaluation_current.py继续对应原33仓。
+重复restore对已完成仓重新验证，不重置用户修改。离线既有bundle可继续通过--bundle-root使用；在线恢复不依赖本机source-map。默认restore.ps1与evaluation_current.py现统一覆盖APP11、FW11、NEP11。
 
 原始执行附件：[下载](https://github.com/cockpit-bench/cockpit-benchmark/releases/download/v0.11.0/ne-reality-native-inputs-v0.11.0.zip)，2393479字节，SHA256 `c66e279b2e97e0e356a397b4d6622d814a538302ff93e35596f9be7b88aa49aa`。附件为维护者原始输入/记录，不向候选提供。EXECUTION.json绑定的记录可直接核对；发布本身没有新增MATLAB、host C或设备执行，沿用已绑定修复验证。
 

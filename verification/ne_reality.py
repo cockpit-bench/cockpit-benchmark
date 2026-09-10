@@ -53,13 +53,13 @@ def load(wrapper):
 def validate_catalog(wrapper,path=None):
     wrapper=Path(wrapper);catalog=read(path or wrapper/'suites/new-energy-matlab/cohorts.json')
     require(catalog['repository_type']=='new-energy-matlab' and catalog['default_analysis_cohort']==COHORT,'Wrong cohort routing')
-    require({x['id'] for x in catalog['cohorts']}=={'legacy-integration',COHORT} and len(catalog['cohorts'])==2,'Cohorts must remain separate')
+    require([x['id'] for x in catalog['cohorts']]==[COHORT],'Only the current reality cohort is admitted')
     for entry in catalog['cohorts']:
         for key in ['manifest','canonical_scores','contract']:bound(wrapper,entry[key])
     _,_,manifest,_,_=load(wrapper)
     current=next(c for c in catalog['cohorts'] if c['id']==COHORT)
     if current['status']=='published':require(all(s['publication_status']=='published' for s in manifest['repositories']),'Published cohort contains a local source')
-    return {'cohorts':2,'repository_type':'new-energy-matlab','new_cohort_repositories':11,'new_cohort_leaves':143,'legacy_bindings_verified':True}
+    return {'cohorts':1,'repository_type':'new-energy-matlab','new_cohort_repositories':11,'new_cohort_leaves':143}
 
 def check_split(wrapper,assignments):
     _,_,manifest,_,_=load(wrapper);ids={r['id'] for r in manifest['repositories']}
@@ -123,7 +123,7 @@ def candidate(wrapper,bundle_root,rid,output,source_root=None):
         out.mkdir(parents=True);shutil.copy2(bundle,out/bundle.name)
     else:
         require(source_root is not None,'Provide --source-root with restored public sources, or --bundle-root')
-        repo=safe(Path(source_root),source['group']+'/'+source['name']);bundle_restore.verify_repository(repo,source)
+        repo=census.source_path(source_root,source);bundle_restore.verify_repository(repo,source)
         out.mkdir(parents=True);bundle=out/Path(source['bundle']['path']).name
         bundle_restore.git(repo,'bundle','create',str(bundle.resolve()),'--all')
     for e in contract['authorities']:shutil.copy2(bound(root,e),out/e['path'])

@@ -1,36 +1,7 @@
 {
-  "schema": "ne-cohorts-1",
-  "repository_type": "new-energy-matlab",
-  "default_analysis_cohort": "reality-proxy-20260910",
-  "aggregation": "separate_cohorts_separate_contracts_no_raw_sum",
+  "aggregation": "single_current_cohort",
   "cohorts": [
     {
-      "id": "legacy-integration",
-      "role": "published integration/regression; not the internal-reality calibration default",
-      "status": "published",
-      "manifest": {
-        "path": "suites/new-energy-matlab/manifest.json",
-        "sha256": "873d2f2d8f6cf9dd9f439095e687b96b57de885bf3ed5e7a6410dc1bd6fc9bcf"
-      },
-      "canonical_scores": {
-        "path": "suites/new-energy-matlab/STANDARD_SCORES.json",
-        "sha256": "b88ef67489820359bc185e01694f3b4d66a8d366a980981de16a3f101dfdb23d"
-      },
-      "contract": {
-        "path": "suites/matlab-simulink/contract-index.json",
-        "sha256": "d63e2da4840178571af2ced5ce89f53c42fcf48ddc4c38a37d78aec93ef1ce1f"
-      },
-      "repositories": 11,
-      "leaves": 143
-    },
-    {
-      "id": "reality-proxy-20260910",
-      "role": "new model-centered synthetic reality proxies",
-      "status": "published",
-      "manifest": {
-        "path": "suites/new-energy-matlab/cohorts/reality-proxy-20260910/manifest.json",
-        "sha256": "501802f32c9b94c47564e41ce018e4421bfe3660a751552199ce8f22b53f49ee"
-      },
       "canonical_scores": {
         "path": "suites/new-energy-matlab/cohorts/reality-proxy-20260910/STANDARD_SCORES.json",
         "sha256": "538c95b3bd1e4e6627ed398c2a450a2f0b332a956e3a8b1e75ed2e4d3142545f"
@@ -39,8 +10,18 @@
         "path": "suites/new-energy-matlab/cohorts/reality-proxy-20260910/contract-index.json",
         "sha256": "0e520a2a41904649c545164fdc8d37abff0588b6c5aa943e9f863c22525b389d"
       },
+      "id": "reality-proxy-20260910",
+      "leaves": 143,
+      "manifest": {
+        "path": "suites/new-energy-matlab/cohorts/reality-proxy-20260910/manifest.json",
+        "sha256": "501802f32c9b94c47564e41ce018e4421bfe3660a751552199ce8f22b53f49ee"
+      },
       "repositories": 11,
-      "leaves": 143
+      "role": "new model-centered synthetic reality proxies",
+      "status": "published"
     }
-  ]
+  ],
+  "default_analysis_cohort": "reality-proxy-20260910",
+  "repository_type": "new-energy-matlab",
+  "schema": "ne-cohorts-1"
 }

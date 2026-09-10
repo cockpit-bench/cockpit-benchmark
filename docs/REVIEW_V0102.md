@@ -13,7 +13,7 @@
 
 APP为142/440（88叶），FW为194/572（121叶），新能源MATLAB为427/671（143叶），各11仓，三类不相加。相对v0.10.1仅三叶分值改变，另349分值保持。33源码HEAD/tree/refs和两个合同保持；原冻结Android根目录和原MATLAB参考对象未改。当前APP-13/FW-14采用显式修订记录，校验前后完整对象、受影响叶、合同、源版本及规则输入，未静默改写兼容入口。
 
-NEM-10采集子图的可复算材料为[块、连接与完整分支坐标](review-v0102/NEM-10-acquisition.json)和[与ML-04的拓扑对照](review-v0102/NEM-10-comparison.json)。`simulink/systems/system_1.xml` 内AmbientC有效性块SID214到Substitution SID216保留`[315,0;0,-2782;-162,0;0,-383]`折返，输入SID408到SID216上行3250布局单位；这些是组合逻辑资格判定路径。命名完整不自动满足最高档流向要求。实际使用R2023b加载/制图作辅助审阅，没有新增update、MIL、coverage、codegen或设备验证。
+NEM-10采集子图的可复算材料为[块、连接与完整分支坐标](https://github.com/cockpit-bench/cockpit-benchmark/blob/ac6ffa46096993853dc7871413a9efe008bec2ec/docs/review-v0102/NEM-10-acquisition.json)和[与ML-04的拓扑对照](https://github.com/cockpit-bench/cockpit-benchmark/blob/ac6ffa46096993853dc7871413a9efe008bec2ec/docs/review-v0102/NEM-10-comparison.json)。`simulink/systems/system_1.xml` 内AmbientC有效性块SID214到Substitution SID216保留`[315,0;0,-2782;-162,0;0,-383]`折返，输入SID408到SID216上行3250布局单位；这些是组合逻辑资格判定路径。命名完整不自动满足最高档流向要求。实际使用R2023b加载/制图作辅助审阅，没有新增update、MIL、coverage、codegen或设备验证。
 
 APP-13在`DevCameraActivity.java:83`保存`CameraInterface`，后续业务通过该契约调用；239行是构造接线。更换符合原契约的相机实现无需改无关UI、传感器或存储行为。`MediaSaver`承接共享存储，`GyroOperations/GyroListener`封装传感器行为，`CameraInfoCache`保留在Camera2后端内部。没有把`new`或具体类型单独当作扣分证据，也没有声称单模块已形成独立构建组件。明确修订见[APP-13](../suites/app/revisions/APP-13-v0102.json)。
 

@@ -36,4 +36,4 @@ ML-09 补充数值比较/失败分支源码锚点，分数与 MATLAB 原附件�
 
 模块命名、deprecated API 和平台实现者口径见 [待决定的具体对照](CONTRACT_DECISION.md)；未批准前保留 v3.5。现有公开 Dev/Regression 仍不作独立 holdout；不启用 22 pending，也不把两 suite 原始分相加。本轮未执行候选模型实验或新增 Android/MATLAB 构建、设备运行。
 
-使用入口：[固定批次](EVALUATION_BATCH.md)、[SOLID 校准](SOLID_CALIBRATION.md)、[原始输入](EXTERNAL_GIT_INPUTS.md)、[MATLAB 有效合同](../suites/matlab-simulink/EFFECTIVE_CONTRACT.md)。
+使用入口：[固定批次](EVALUATION_BATCH.md)、[SOLID 校准](SOLID_CALIBRATION.md)、[原始输入](EXTERNAL_GIT_INPUTS.md)、[MATLAB 有效合同](https://github.com/cockpit-bench/cockpit-benchmark/blob/ac6ffa46096993853dc7871413a9efe008bec2ec/suites/matlab-simulink/EFFECTIVE_CONTRACT.md)。

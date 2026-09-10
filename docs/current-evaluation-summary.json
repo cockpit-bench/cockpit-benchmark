@@ -25,13 +25,13 @@
   },
   "new-energy-matlab": {
     "frozen_external": {
-      "eligible": 142,
-      "excluded": 1,
+      "eligible": 143,
+      "excluded": 0,
       "requested": 143
     },
     "source_only": {
-      "eligible": 133,
-      "excluded": 10,
+      "eligible": 143,
+      "excluded": 0,
       "requested": 143
     }
   }

@@ -13,12 +13,12 @@ class PopulationDiagnosticsTests(unittest.TestCase):
         batch=ec.prepare(W,'new-energy-matlab','source_only',assign);d=batch['population_diagnostics']
         self.assertEqual((d['repository_count'],d['source_group_count']),(11,1))
         self.assertEqual(d['independent_holdout']['status'],'structurally_unavailable')
-        self.assertEqual(d['observed_band_cells'],39);self.assertEqual(d['legal_band_cells'],52)
+        self.assertEqual(d['observed_band_cells'],21);self.assertEqual(d['legal_band_cells'],52)
         pairs={frozenset([p['left'],p['right']]) for p in d['deterministic_associations']}
         self.assertIn(frozenset(['release_branches','device_specificity']),pairs)
         result=ec.assess(batch,{'profile_sha256':batch['profile']['profile_sha256'],'leaves':[]})
         self.assertEqual(len(result['band_recall_and_confusion']),52)
-        missing=next(b for b in result['band_recall_and_confusion'] if b['leaf']=='build_independence' and b['gold']==0)
+        missing=next(b for b in result['band_recall_and_confusion'] if b['leaf']=='build_independence' and b['gold']==3)
         self.assertEqual((missing['count'],missing['recall'],missing['measurement_status']),(0,None,'unmeasured'))
     def test_new_cross_combination_removes_artificial_deterministic_association(self):
         leaves=[{'repository_id':rid,'name':name,'score':score,'allowed_scores':[0,1,2,3]}

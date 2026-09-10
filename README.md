@@ -1,50 +1,41 @@
-## v0.11.0：新能源现实代理11仓发布
+本地准备完成，尚未发布。GitHub旧11仓删除已获用户批准，但实际请求因令牌缺少 delete_repo 返回403；设备授权正在等待用户完成。当前远端仍是v0.11.0。
 
-新增公开11个Vc*模型仓，六项业务/类型/测试/变更记录问题已修复。当前公开44仓：APP11、FW11、新能源22；新能源旧联调组与新现实代理组各11仓，合同和分数分别报告。新组143叶409/671；原33仓及四个私有预留仓保持。见[现实代理入口与验证](docs/NE_REALITY_REBUILD_20260910.md)。
+# Benchmark — APP、FW、新能源 MATLAB
 
-新11仓：`python verification/ne_reality.py restore --destination <目录> --output <回执.json>`。旧默认恢复/评测继续兼容原33仓。
+v0.11.1 将旧新能源联调 11 仓移出当前集合，并按用户指令删除对应 GitHub 源码仓。当前只有三类各 11 仓，共 33 仓、352 个参考叶；不跨类型合计健康度分数。
 
-# Benchmark — APP, FW and New Energy MATLAB
+| 类型 | 仓数 / 参考叶 | 参考分 | 有效合同 |
+|---|---:|---:|---|
+| [APP](suites/app/SCORECARD.md) | 11 / 88 | 142/440 | [Android v3.5.1](SCORE_RULES.md) |
+| [FW](suites/fw/SCORECARD.md) | 11 / 121 | 194/572 | [Android v3.5.1](SCORE_RULES.md) |
+| [新能源现实代理](suites/new-energy-matlab/cohorts/reality-proxy-20260910/README.md) | 11 / 143 | 409/671 | [Part 7 及已批准补充](suites/new-energy-matlab/cohorts/reality-proxy-20260910/contract-index.json) |
 
-[suites.json](suites.json) is the current registry. APP and FW are independent repository types; New Energy MATLAB identifies the business domain. MATLAB/Simulink is technology metadata, not a generic business type. Future MATLAB repositories from other centers require their own business classification.
+[suites.json](suites.json) 是唯一当前注册入口。新能源仅 NEP-01..11；旧 ML-01..09、NEM-10、NEM-11 已退出，旧 ID 会被恢复入口拒绝。APP/FW 和现实代理源码、参考叶值及有效合同未改变。四个私有预留仓保持保密。
 
-| Legacy integration repository type | Published repositories / leaves | Score | Published sources |
-|---|---:|---:|---:|
-| [APP](suites/app/SCORECARD.md) | 11 / 88 | 142 / 440 | 11 |
-| [FW](suites/fw/SCORECARD.md) | 11 / 121 | 194 / 572 | 11 |
-| [New Energy MATLAB](suites/new-energy-matlab/SCORECARD.md) | 11 / 143 | 142 scored; 1 unresolved; total null | 11 |
+## 恢复
 
-The retained **v0.10.3** baseline repairs scoring guards and candidate SDK inputs over the same 33 public sources. NEM-11 hierarchy changes 1→3; its parameter reference changes 3→failed/null while the approved contract stays unchanged. The other 350 leaf values and all source HEADs/trees/refs remain unchanged. New Energy has 142 scored leaves totaling 426/666, plus one unresolved leaf worth 5; its full total is null. The old 22 pending slots and unpublished reserved material remain outside this release. See [changes, evidence and remaining limits](docs/REVIEW_V0103.md).
-
-See [the six business profiles, evidence and limits](docs/EXPANSION_20260909.md). The approved contracts are unchanged: [APP/FW v3.5.1](SCORE_RULES.md) and [the independent MATLAB effective contract](suites/matlab-simulink/EFFECTIVE_CONTRACT.md). New scores are observed outcomes, not construction targets. This is a development/regression collection, not an independent holdout or measured model accuracy.
-
-## Restore published sources
-
-Python 3.11+, Git and PowerShell are required. Public restoration needs no GitHub credentials or local source map. An optional source map substitutes existing local source directories; unpublished inputs without a map are rejected before cloning or network access. All commands verify full history, exact HEAD/tree/refs, clean state and zero remotes. They do not run source code.
+需要 Python 3.11+、Git、PowerShell。公开恢复无需 GitHub 凭据；验证完整主仓历史、HEAD/tree/refs、干净状态和零 remotes，不执行源码。
 
 ```powershell
-# All three types from the public repositories.
-./restore.ps1 -Suite all -Destination C:/bench/restored
-# Select only the two new APP repositories, without restoring FW or MATLAB.
-./restore.ps1 -Suite app -RepositoryIds APP-21,APP-22 -Destination C:/bench/new-app
+./restore.ps1 -Destination C:/bench/restored
+./restore.ps1 -Suite new-energy-matlab -Destination C:/bench/energy
+./restore.ps1 -Suite app -RepositoryIds APP-21,APP-22 -Destination C:/bench/apps
 ```
 
-`all` is the default and creates `app`, `fw`, and `new-energy-matlab` folders. A single-type request places repositories directly in its destination. `-Resume` rechecks existing inputs; `-IncludeSubmodules` checks out pinned recursive gitlinks and removes child remotes. Restore never turns a local source into a published one.
-
-## Verify current additions
+默认 `all` 恢复当前 33 仓，按 app、fw、new-energy-matlab 分目录；单类型直接放入目的地。`-Resume` 复核已有仓，`-IncludeSubmodules` 检查固定子模块。别名 `matlab-simulink` 也只选择当前 NEP-01..11。
 
 ```sh
 python verification/repository_types.py validate --wrapper . --require-publishable
-python verification/expansion.py --wrapper . --source-map C:/bench/source-map.json --records-root C:/bench/native-records --output C:/bench/expansion-replay.json
-python verification/reference_revisions.py --wrapper . --source-map C:/bench/source-map.json --output C:/bench/revision-replay.json
+python verification/ne_reality.py replay --source-root C:/bench/restored
+python verification/ne_reality.py candidate --source-root C:/bench/restored --id NEP-01 --output C:/candidate/input
 ```
 
-The second command checks source inventories twice, code/model anchors, all 64 expansion leaf calculations, and retained native artifact hashes. The third verifies explicit current reference revisions and FW-14's nine unchanged historical execution inputs. Semantic judgments are reviewed inputs; deterministic replay is not a fresh blind semantic review. Omitting `--records-root` verifies sources and rules only. `--require-publishable` validates all 33 published source entries. The source map contains paths only: the six expansion IDs plus APP-13/FW-14 for revision replay. The small [native-record attachment](docs/EXPANSION_20260909.md#published-native-records) supplies the optional records root without adding binaries to the wrapper.
+新组原独立恢复入口仍可用，产物与默认入口是相同 11 仓；replay/candidate 支持两种目录布局。候选只获得单仓源码、有效合同及明确允许的单仓原始输入，不能访问维护者参考分或其他仓。
 
-Give an evaluation agent only one selected source repository and explicitly allowed raw inputs. Never provide these manifests, standards or evidence judgments as candidate inputs. Use the [current three-type fixed evaluation](docs/CURRENT_EVALUATION.md): source-only eligible APP 79/88, FW 109/121, New Energy MATLAB 133/143; frozen raw inputs give 81/88, 113/121 and 142/143. Missing bands are reported with null recall and unmeasured status. [Population diagnostics](docs/population-diagnostics.json) expose the single New Energy source closure and remaining associations; independent holdout and missing-band sample construction remain open. The preserved [fixed Android evaluation batch](docs/EVALUATION_BATCH.md) remains the original 171-leaf Validation-18 compatibility entry.
+## 评测与限制
 
-## Preserved release compatibility
+[当前三类型评测](docs/CURRENT_EVALUATION.md)已统一覆盖这 33 仓。source_only 可评 APP 79/88、FW 109/121、新能源 143/143；frozen_external 为 81/88、113/121、143/143。旧新能源不再参与集合、分母、切分或统计。
 
-The root `manifest.json`, `STANDARD_SCORES.json`, `SCORECARD.*`, original Android verification attachment and `suites/matlab-simulink` remain the frozen legacy evidence payloads. [legacy-v094.json](suites/legacy-v094.json) binds them. They are not the primary current type registry.
+参考分是维护者裁决，不是候选模型成绩。新组 6 个恒定叶，同集合众数 123/143；一个共同构造族，不是独立 holdout。NEP-10 构建优先级、证据语义与定位完整性仍需后续处理，见 [v0.11.0 Pro 评审核对及本轮范围](docs/REVIEW_V0111.md)。此次入口迁移没有新增 Android、MATLAB、C 或设备执行。
 
-Historical selector aliases `android-validation18` (APP plus FW) and `matlab-simulink` (New Energy MATLAB) remain accepted for compatibility; on this mainline they select the corresponding **current** type populations. Use the immutable [v0.9.4 release](https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.9.4) for the exact original 18/9 restoration and its original behavior. Old refs and tags are not moved.
+历史 wrapper tag 保留原内容；旧 11 源码仓被删除后，旧版相应下载链接将失效。当前主线已移除旧组合同、标准分、专用证据和工具。根 Android Validation-18 文件只保留冻结兼容，由 [legacy-v094.json](suites/legacy-v094.json) 绑定；它们不替代当前三类型入口。

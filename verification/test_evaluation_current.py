@@ -8,7 +8,6 @@ import evaluation_current as ec
 import evaluation_batch as eb
 import evaluation_profile as ep
 import repository_types as rt
-from matlab_recompute import build_independence
 
 W=Path(__file__).resolve().parents[1]
 
@@ -16,7 +15,7 @@ class CurrentEvaluationTests(unittest.TestCase):
     def setUp(self):
         self.sources=rt.select(rt.validate(W),W,'all');self.assign={r['id']:'dev' for r in self.sources}
     def test_separate_current_populations(self):
-        for kind,n,eligible in [('app',88,79),('fw',121,109),('new-energy-matlab',143,133)]:
+        for kind,n,eligible in [('app',88,79),('fw',121,109),('new-energy-matlab',143,143)]:
             b=ec.prepare(W,kind,'source_only',self.assign)
             self.assertEqual((len(b['profile']['requested']),len(b['profile']['eligible'])),(n,eligible))
     def test_saved_summary_and_distribution_match_actual_reference(self):
@@ -28,7 +27,7 @@ class CurrentEvaluationTests(unittest.TestCase):
             self.assertEqual(saved['types'][kind]['canonical_diagnostic']['modal_hits'],d['modal_hits'])
             self.assertEqual([x['gold_counts'] for x in saved['types'][kind]['canonical_diagnostic']['groups']],[{str(k):v for k,v in x['gold_counts'].items()} for x in d['groups']])
     def test_cross_type_dependency_and_construction_closure(self):
-        for rid in ['FW-21','NEM-11','ML-04','APP-14']:
+        for rid in ['FW-21','NEP-11','NEP-04','APP-14']:
             a=dict(self.assign);a[rid]='test'
             with self.assertRaises(ValueError):ec.lineage(self.sources,a)
     def test_incomplete_assignments_rejected(self):
@@ -50,7 +49,7 @@ class CurrentEvaluationTests(unittest.TestCase):
         self.assertEqual(r['evidence_validity']['status'],'not_reviewed')
     def test_illegal_matlab_band_rejected(self):
         b=ec.prepare(W,'new-energy-matlab','source_only',self.assign)
-        with self.assertRaises(ValueError):ec.assess(b,{'profile_sha256':b['profile']['profile_sha256'],'leaves':[{'id':'NEM-10/parameter_management','status':'scored','score':2}]})
+        with self.assertRaises(ValueError):ec.assess(b,{'profile_sha256':b['profile']['profile_sha256'],'leaves':[{'id':'NEP-10/parameter_management','status':'scored','score':2}]})
     def test_equal_json_numeric_representations_have_equal_metrics(self):
         for kind in rt.TYPES:
             with self.subTest(kind=kind):
@@ -70,7 +69,7 @@ class CurrentEvaluationTests(unittest.TestCase):
     def test_raw_packets_and_single_repository_export(self):
         root=os.environ.get('CURRENT_EXTERNAL_INPUTS')
         if not root:self.skipTest('Set CURRENT_EXTERNAL_INPUTS for archived raw-input verification')
-        for kind,n in [('app',81),('fw',113),('new-energy-matlab',142)]:
+        for kind,n in [('app',81),('fw',113),('new-energy-matlab',143)]:
             b=ec.prepare(W,kind,'frozen_external',self.assign,root);self.assertEqual(len(b['profile']['eligible']),n)
         spec=rt.read(W/'docs/current-evaluation.json')['packets']['sdk-repair']
         with tempfile.TemporaryDirectory() as temp:
@@ -124,13 +123,5 @@ class CurrentEvaluationTests(unittest.TestCase):
         self.assertEqual((result['requested'],result['common_eligible'],result['correct']),(2,1,1))
         self.assertEqual(result['exclusions'][0]['reason'],'reference_unresolved')
         self.assertEqual(result['excluded_predictions_ignored'],['A/x'])
-
-class MatlabBuildBands(unittest.TestCase):
-    def dep(self,**kwargs):return dict(delivery='source',version_managed=False,release_baseline=False,version_locked=False,interface_component=False,**kwargs)
-    def test_all_contract_bands_and_mixed_closure(self):
-        source=self.dep();binary=dict(source,delivery='protected_model');interface=dict(source,interface_component=True);stable=dict(source,version_managed=True,release_baseline=True,version_locked=True)
-        self.assertEqual([build_independence(x) for x in [[],[source],[binary],[interface],[stable],[stable,source]]],[3,0,1,2,3,0])
-    def test_unknown_never_fabricates_zero_or_three(self):
-        for x in [None,['unclassified'],[{'delivery':'source'}],[dict(self.dep(),version_locked='yes')]]:self.assertIsNone(build_independence(x))
 
 if __name__=='__main__':unittest.main()

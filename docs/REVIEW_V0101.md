@@ -14,7 +14,7 @@ APP-22 则在本仓 app/video 边界直接选择自有 `final CameraCapture`（R
 
 ## NEM-10：全量范围与单参数动态试验分开
 
-[完整 201 项参数及 SLX 消费者](review-v0101/NEM-10-parameter-scope.json)从两个生产模型的全部 **549 个块实例**出发枚举业务数值槽位，随后才与表格匹配；不把参数表本身当作全集依据。Constant、Gain、Saturate、UnitDelay 和生效的 Switch 阈值均纳入；未知块类型会拒绝审计。
+[完整 201 项参数及 SLX 消费者](https://github.com/cockpit-bench/cockpit-benchmark/blob/ac6ffa46096993853dc7871413a9efe008bec2ec/docs/review-v0101/NEM-10-parameter-scope.json)从两个生产模型的全部 **549 个块实例**出发枚举业务数值槽位，随后才与表格匹配；不把参数表本身当作全集依据。Constant、Gain、Saturate、UnitDelay 和生效的 Switch 阈值均纳入；未知块类型会拒绝审计。
 
 四组参数为 BatteryAcquisition 136、CellPowerEnvelope 41、EnergyAccounting 19、PackProtection 5。201 项的默认值、double 类型、消费者表达式和实际 SLX 路径逐一一致，没有发现未管理的业务标定槽位。其余块属于端口、路由、固定代数/布尔运算或模型引用；端口编号、比较方向、输入数量等为结构配置。79 处 SampleTime 单列，执行周期集中为 model.json 的 0.01 s，不伪计为 201 项中的参数。
 
@@ -24,7 +24,7 @@ APP-22 则在本仓 app/video 边界直接选择自有 `final CameraCapture`（R
 
 ## NEM-11：有复用，但上层仍重复
 
-[四组子图及参数对照](review-v0101/NEM-11-reuse-scope.json)直接定位 SID **62、105、175、218** 的 Max/Min Cell Voltage 和 Max/Min Module Temperature Fault State。四组均为 19 块、相同连线拓扑；各有三层严重度，十二个七块包装子图拓扑也相同。
+[四组子图及参数对照](https://github.com/cockpit-bench/cockpit-benchmark/blob/ac6ffa46096993853dc7871413a9efe008bec2ec/docs/review-v0101/NEM-11-reuse-scope.json)直接定位 SID **62、105、175、218** 的 Max/Min Cell Voltage 和 Max/Min Module Temperature Fault State。四组均为 19 块、相同连线拓扑；各有三层严重度，十二个七块包装子图拓扑也相同。
 
 高/低阈值、比较方向、电压/温度单位、去抖时间与独立状态都是合法业务差异。阈值、方向和时间可以由共享定义的参数表达，各实例仍能独立保存状态；源码中未找到必须独立资格鉴定或隔离维护的分叉要求。共享的是定义，不是把四路状态合并。
 

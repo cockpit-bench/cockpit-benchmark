@@ -1,13 +1,13 @@
 """Verify locally admitted expansion sources and independently replay reviewed facts.
 
-No build or target code is executed by extract/verify. Android rules and the
-MATLAB contract replay consume explicit reviewed observations; this is not a
+No build or target code is executed by extract/verify. Android rules
+consume explicit reviewed observations; this is not a
 second blind semantic judgment. Native run files are verified separately.
 """
 import argparse,collections,hashlib,json,re,subprocess,sys,zipfile,io
 from pathlib import Path
 import xml.etree.ElementTree as ET
-import rules,matlab_recompute
+import rules
 from counting import count_production_lines
 from suites import read,encoded,sha,require,bound,git
 
@@ -54,7 +54,7 @@ def extract(repo,scope):
             'ci_candidates':[x['path'] for x in files if x['path'].startswith('.github/workflows/') or Path(x['path']).name in {'.gitlab-ci.yml','Jenkinsfile','azure-pipelines.yml','APP_BUILD','PREUPLOAD.cfg','TEST_MAPPING'}]}
 
 def recompute(facts):
-    if facts['type_id']=='new-energy-matlab':return matlab_recompute.recompute(facts['rule_inputs'])
+    require(facts['type_id'] in {'app','fw'},'Use ne_reality.py for the current New Energy cohort')
     result={}
     for leaf,values in facts['rule_inputs'].items():
         if leaf in rules.RULES:
@@ -72,7 +72,7 @@ def verify(wrapper,source_map,records_root=None,ids=None):
     wrapper=Path(wrapper);mapping=read(source_map);result=[]
     requested=set(ids) if ids is not None else None
     if ids is not None:require(bool(ids) and len(requested)==len(ids),'Empty or duplicate source selection')
-    for kind in ['app','fw','new-energy-matlab']:
+    for kind in ['app','fw']:
         addition=read(wrapper/'suites'/kind/'additions.json')
         for entry in addition['repositories']:
             source=entry['source']

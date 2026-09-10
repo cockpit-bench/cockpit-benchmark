@@ -1,5 +1,5 @@
 """Current business classification, publication and scoped restore regressions."""
-import copy,json,shutil,subprocess,tempfile,unittest
+import copy,json,shutil,subprocess,tempfile,unittest,os
 from pathlib import Path
 from unittest.mock import patch
 import repository_types as rt
@@ -79,6 +79,23 @@ class TypeRegistryTests(unittest.TestCase):
         self.assertEqual(len(rt.select(r,self.root,'matlab-simulink')),11)
 
 class LocalRestoreTests(unittest.TestCase):
+    def test_reality_restore_preserves_bytes_with_windows_autocrlf(self):
+        expected=rt.git('-C',self.origin,'show','HEAD:logic.txt',binary=True)
+        self.row.update(cohort_id='reality-proxy-20260910',files={'logic.txt':rt.sha(expected)})
+        config=self.base/'global-config';config.write_text('[core]\n autocrlf = true\n')
+        with patch.dict(os.environ,{'GIT_CONFIG_GLOBAL':str(config)}):self.restore()
+        self.assertEqual((self.dest/'sample-app/logic.txt').read_bytes(),expected)
+        self.assertEqual(rt.git('-C',self.dest/'sample-app','config','core.autocrlf'),'false')
+    def test_git_clean_does_not_hide_reality_file_byte_drift(self):
+        expected=rt.git('-C',self.origin,'show','HEAD:logic.txt',binary=True)
+        self.row.update(cohort_id='reality-proxy-20260910',files={'logic.txt':rt.sha(expected)})
+        self.restore();target=self.dest/'sample-app'
+        rt.git('-C',target,'config','core.autocrlf','true')
+        (target/'logic.txt').write_bytes(expected.replace(b'\n',b'\r\n'))
+        # Re-normalizing into the index keeps the committed blob identical.
+        rt.git('-C',target,'add','logic.txt')
+        self.assertFalse(rt.git('-C',target,'status','--porcelain'))
+        with self.assertRaisesRegex(suites.InvalidSuite,'file bytes differ'):self.restore(resume=True)
     def setUp(self):
         self.temp=tempfile.TemporaryDirectory();self.base=Path(self.temp.name);self.origin=self.base/'source';self.origin.mkdir()
         def git(*args):return subprocess.check_output(['git','-C',str(self.origin),*args],stderr=subprocess.STDOUT,text=True).strip()

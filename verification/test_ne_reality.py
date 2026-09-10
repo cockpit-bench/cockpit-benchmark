@@ -5,6 +5,15 @@ from unittest.mock import patch
 
 WRAPPER=Path(__file__).resolve().parents[1]
 class RealityTests(unittest.TestCase):
+    def test_unified_and_original_restore_layouts(self):
+        source={'id':'NEP-01','name':'VcVcuInD','group':'VCU_PROP/NEC_PROP'}
+        for layout in ['VcVcuInD','new-energy-matlab/VcVcuInD','VCU_PROP/NEC_PROP/VcVcuInD']:
+            with tempfile.TemporaryDirectory() as folder:
+                target=Path(folder)/layout;(target/'.git').mkdir(parents=True)
+                self.assertEqual(ne.census.source_path(folder,source),target.resolve())
+        with tempfile.TemporaryDirectory() as folder:
+            for layout in ['VcVcuInD','new-energy-matlab/VcVcuInD']:(Path(folder)/layout/'.git').mkdir(parents=True)
+            with self.assertRaises(ValueError):ne.census.source_path(folder,source)
     def test_public_restore_rejects_local_source_before_side_effects(self):
         manifest={'repositories':[{'name':'VcExample','publication_status':'local-only'}]}
         target=self.root/'must-not-exist'

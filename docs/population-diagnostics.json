@@ -1,5 +1,5 @@
 {
-  "reference_id": "v0.10.3",
+  "reference_id": "v0.11.1",
   "types": {
     "app": {
       "bands": [
@@ -2594,97 +2594,93 @@
     "new-energy-matlab": {
       "bands": [
         {
-          "count": 0,
-          "leaf": "build_independence",
-          "measurement_status": "unmeasured",
-          "repository_ids": [],
-          "score": 0
-        },
-        {
-          "count": 0,
-          "leaf": "build_independence",
-          "measurement_status": "unmeasured",
-          "repository_ids": [],
-          "score": 1
-        },
-        {
-          "count": 0,
-          "leaf": "build_independence",
-          "measurement_status": "unmeasured",
-          "repository_ids": [],
-          "score": 2
-        },
-        {
-          "count": 11,
+          "count": 5,
           "leaf": "build_independence",
           "measurement_status": "represented",
           "repository_ids": [
-            "ML-01",
-            "ML-02",
-            "ML-03",
-            "ML-04",
-            "ML-05",
-            "ML-06",
-            "ML-07",
-            "ML-08",
-            "ML-09",
-            "NEM-10",
-            "NEM-11"
+            "NEP-02",
+            "NEP-04",
+            "NEP-05",
+            "NEP-08",
+            "NEP-09"
           ],
-          "score": 3
+          "score": 0
         },
         {
           "count": 1,
-          "leaf": "dataflow",
+          "leaf": "build_independence",
           "measurement_status": "represented",
           "repository_ids": [
-            "NEM-11"
+            "NEP-07"
           ],
-          "score": 0
+          "score": 1
         },
         {
           "count": 5,
-          "leaf": "dataflow",
+          "leaf": "build_independence",
           "measurement_status": "represented",
           "repository_ids": [
-            "ML-03",
-            "ML-05",
-            "ML-06",
-            "ML-08",
-            "ML-09"
-          ],
-          "score": 1
-        },
-        {
-          "count": 4,
-          "leaf": "dataflow",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-02",
-            "ML-04",
-            "ML-07",
-            "NEM-10"
+            "NEP-01",
+            "NEP-03",
+            "NEP-06",
+            "NEP-10",
+            "NEP-11"
           ],
           "score": 2
         },
         {
-          "count": 1,
-          "leaf": "dataflow",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-01"
-          ],
+          "count": 0,
+          "leaf": "build_independence",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
           "score": 3
         },
         {
-          "count": 3,
-          "leaf": "device_specificity",
+          "count": 0,
+          "leaf": "dataflow",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 9,
+          "leaf": "dataflow",
           "measurement_status": "represented",
           "repository_ids": [
-            "ML-03",
-            "ML-06",
-            "ML-09"
+            "NEP-01",
+            "NEP-02",
+            "NEP-03",
+            "NEP-04",
+            "NEP-06",
+            "NEP-07",
+            "NEP-08",
+            "NEP-09",
+            "NEP-10"
           ],
+          "score": 1
+        },
+        {
+          "count": 2,
+          "leaf": "dataflow",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEP-05",
+            "NEP-11"
+          ],
+          "score": 2
+        },
+        {
+          "count": 0,
+          "leaf": "dataflow",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "device_specificity",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
           "score": 0
         },
         {
@@ -2695,26 +2691,29 @@
           "score": 3
         },
         {
-          "count": 3,
+          "count": 4,
           "leaf": "device_specificity",
           "measurement_status": "represented",
           "repository_ids": [
-            "ML-02",
-            "ML-05",
-            "ML-08"
+            "NEP-01",
+            "NEP-02",
+            "NEP-09",
+            "NEP-10"
           ],
           "score": 8
         },
         {
-          "count": 5,
+          "count": 7,
           "leaf": "device_specificity",
           "measurement_status": "represented",
           "repository_ids": [
-            "ML-01",
-            "ML-04",
-            "ML-07",
-            "NEM-10",
-            "NEM-11"
+            "NEP-03",
+            "NEP-04",
+            "NEP-05",
+            "NEP-06",
+            "NEP-07",
+            "NEP-08",
+            "NEP-11"
           ],
           "score": 10
         },
@@ -2726,291 +2725,278 @@
           "score": 0
         },
         {
-          "count": 4,
+          "count": 0,
+          "leaf": "directory",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 1
+        },
+        {
+          "count": 1,
           "leaf": "directory",
           "measurement_status": "represented",
           "repository_ids": [
-            "ML-03",
-            "ML-06",
-            "ML-09",
-            "NEM-11"
+            "NEP-08"
+          ],
+          "score": 3
+        },
+        {
+          "count": 10,
+          "leaf": "directory",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEP-01",
+            "NEP-02",
+            "NEP-03",
+            "NEP-04",
+            "NEP-05",
+            "NEP-06",
+            "NEP-07",
+            "NEP-09",
+            "NEP-10",
+            "NEP-11"
+          ],
+          "score": 5
+        },
+        {
+          "count": 0,
+          "leaf": "hierarchy",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 0,
+          "leaf": "hierarchy",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 1
+        },
+        {
+          "count": 0,
+          "leaf": "hierarchy",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 2
+        },
+        {
+          "count": 11,
+          "leaf": "hierarchy",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEP-01",
+            "NEP-02",
+            "NEP-03",
+            "NEP-04",
+            "NEP-05",
+            "NEP-06",
+            "NEP-07",
+            "NEP-08",
+            "NEP-09",
+            "NEP-10",
+            "NEP-11"
+          ],
+          "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "interface",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 11,
+          "leaf": "interface",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEP-01",
+            "NEP-02",
+            "NEP-03",
+            "NEP-04",
+            "NEP-05",
+            "NEP-06",
+            "NEP-07",
+            "NEP-08",
+            "NEP-09",
+            "NEP-10",
+            "NEP-11"
           ],
           "score": 1
         },
         {
           "count": 0,
-          "leaf": "directory",
+          "leaf": "interface",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 2
+        },
+        {
+          "count": 0,
+          "leaf": "interface",
           "measurement_status": "unmeasured",
           "repository_ids": [],
           "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "model_version",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 0,
+          "leaf": "model_version",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 1
+        },
+        {
+          "count": 0,
+          "leaf": "model_version",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 2
+        },
+        {
+          "count": 11,
+          "leaf": "model_version",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEP-01",
+            "NEP-02",
+            "NEP-03",
+            "NEP-04",
+            "NEP-05",
+            "NEP-06",
+            "NEP-07",
+            "NEP-08",
+            "NEP-09",
+            "NEP-10",
+            "NEP-11"
+          ],
+          "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "naming",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 0,
+          "leaf": "naming",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 1
+        },
+        {
+          "count": 0,
+          "leaf": "naming",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 11,
+          "leaf": "naming",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEP-01",
+            "NEP-02",
+            "NEP-03",
+            "NEP-04",
+            "NEP-05",
+            "NEP-06",
+            "NEP-07",
+            "NEP-08",
+            "NEP-09",
+            "NEP-10",
+            "NEP-11"
+          ],
+          "score": 5
+        },
+        {
+          "count": 0,
+          "leaf": "parameter_management",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 0
+        },
+        {
+          "count": 11,
+          "leaf": "parameter_management",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEP-01",
+            "NEP-02",
+            "NEP-03",
+            "NEP-04",
+            "NEP-05",
+            "NEP-06",
+            "NEP-07",
+            "NEP-08",
+            "NEP-09",
+            "NEP-10",
+            "NEP-11"
+          ],
+          "score": 1
+        },
+        {
+          "count": 0,
+          "leaf": "parameter_management",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 3
+        },
+        {
+          "count": 0,
+          "leaf": "parameter_management",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 5
         },
         {
           "count": 7,
-          "leaf": "directory",
+          "leaf": "release_branches",
           "measurement_status": "represented",
           "repository_ids": [
-            "ML-01",
-            "ML-02",
-            "ML-04",
-            "ML-05",
-            "ML-07",
-            "ML-08",
-            "NEM-10"
-          ],
-          "score": 5
-        },
-        {
-          "count": 3,
-          "leaf": "hierarchy",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-03",
-            "ML-06",
-            "ML-09"
+            "NEP-03",
+            "NEP-04",
+            "NEP-05",
+            "NEP-06",
+            "NEP-07",
+            "NEP-08",
+            "NEP-11"
           ],
           "score": 0
-        },
-        {
-          "count": 3,
-          "leaf": "hierarchy",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-02",
-            "ML-05",
-            "ML-08"
-          ],
-          "score": 1
-        },
-        {
-          "count": 3,
-          "leaf": "hierarchy",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-04",
-            "ML-07",
-            "NEM-10"
-          ],
-          "score": 2
-        },
-        {
-          "count": 2,
-          "leaf": "hierarchy",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-01",
-            "NEM-11"
-          ],
-          "score": 3
-        },
-        {
-          "count": 1,
-          "leaf": "interface",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "NEM-11"
-          ],
-          "score": 0
-        },
-        {
-          "count": 0,
-          "leaf": "interface",
-          "measurement_status": "unmeasured",
-          "repository_ids": [],
-          "score": 1
-        },
-        {
-          "count": 6,
-          "leaf": "interface",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-02",
-            "ML-03",
-            "ML-05",
-            "ML-06",
-            "ML-08",
-            "ML-09"
-          ],
-          "score": 2
-        },
-        {
-          "count": 4,
-          "leaf": "interface",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-01",
-            "ML-04",
-            "ML-07",
-            "NEM-10"
-          ],
-          "score": 3
-        },
-        {
-          "count": 2,
-          "leaf": "model_version",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-03",
-            "ML-09"
-          ],
-          "score": 0
-        },
-        {
-          "count": 4,
-          "leaf": "model_version",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-02",
-            "ML-05",
-            "ML-06",
-            "ML-08"
-          ],
-          "score": 1
-        },
-        {
-          "count": 1,
-          "leaf": "model_version",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "NEM-11"
-          ],
-          "score": 2
-        },
-        {
-          "count": 4,
-          "leaf": "model_version",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-01",
-            "ML-04",
-            "ML-07",
-            "NEM-10"
-          ],
-          "score": 3
-        },
-        {
-          "count": 3,
-          "leaf": "naming",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-03",
-            "ML-06",
-            "ML-09"
-          ],
-          "score": 0
-        },
-        {
-          "count": 1,
-          "leaf": "naming",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "NEM-11"
-          ],
-          "score": 1
-        },
-        {
-          "count": 3,
-          "leaf": "naming",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-02",
-            "ML-05",
-            "ML-08"
-          ],
-          "score": 3
-        },
-        {
-          "count": 4,
-          "leaf": "naming",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-01",
-            "ML-04",
-            "ML-07",
-            "NEM-10"
-          ],
-          "score": 5
-        },
-        {
-          "count": 5,
-          "leaf": "parameter_management",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-02",
-            "ML-03",
-            "ML-05",
-            "ML-06",
-            "ML-09"
-          ],
-          "score": 0
-        },
-        {
-          "count": 1,
-          "leaf": "parameter_management",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-08"
-          ],
-          "score": 1
-        },
-        {
-          "count": 0,
-          "leaf": "parameter_management",
-          "measurement_status": "unmeasured",
-          "repository_ids": [],
-          "score": 3
-        },
-        {
-          "count": 4,
-          "leaf": "parameter_management",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-01",
-            "ML-04",
-            "ML-07",
-            "NEM-10"
-          ],
-          "score": 5
         },
         {
           "count": 0,
           "leaf": "release_branches",
           "measurement_status": "unmeasured",
           "repository_ids": [],
-          "score": 0
-        },
-        {
-          "count": 3,
-          "leaf": "release_branches",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-03",
-            "ML-06",
-            "ML-09"
-          ],
           "score": 3
         },
         {
-          "count": 3,
+          "count": 4,
           "leaf": "release_branches",
           "measurement_status": "represented",
           "repository_ids": [
-            "ML-02",
-            "ML-05",
-            "ML-08"
+            "NEP-01",
+            "NEP-02",
+            "NEP-09",
+            "NEP-10"
           ],
           "score": 8
         },
         {
-          "count": 5,
+          "count": 0,
           "leaf": "release_branches",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-01",
-            "ML-04",
-            "ML-07",
-            "NEM-10",
-            "NEM-11"
-          ],
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
           "score": 10
         },
         {
@@ -3025,97 +3011,88 @@
           "leaf": "reuse",
           "measurement_status": "represented",
           "repository_ids": [
-            "ML-02",
-            "ML-03",
-            "ML-04",
-            "ML-05",
-            "ML-06",
-            "ML-07",
-            "ML-08",
-            "ML-09",
-            "NEM-10",
-            "NEM-11"
+            "NEP-01",
+            "NEP-02",
+            "NEP-03",
+            "NEP-04",
+            "NEP-05",
+            "NEP-06",
+            "NEP-07",
+            "NEP-08",
+            "NEP-09",
+            "NEP-11"
           ],
           "score": 1
+        },
+        {
+          "count": 0,
+          "leaf": "reuse",
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
+          "score": 2
         },
         {
           "count": 1,
           "leaf": "reuse",
           "measurement_status": "represented",
           "repository_ids": [
-            "ML-01"
+            "NEP-10"
           ],
-          "score": 2
-        },
-        {
-          "count": 0,
-          "leaf": "reuse",
-          "measurement_status": "unmeasured",
-          "repository_ids": [],
           "score": 3
-        },
-        {
-          "count": 0,
-          "leaf": "unit_test",
-          "measurement_status": "unmeasured",
-          "repository_ids": [],
-          "score": 0
         },
         {
           "count": 2,
           "leaf": "unit_test",
           "measurement_status": "represented",
           "repository_ids": [
-            "NEM-10",
-            "NEM-11"
+            "NEP-05",
+            "NEP-10"
+          ],
+          "score": 0
+        },
+        {
+          "count": 9,
+          "leaf": "unit_test",
+          "measurement_status": "represented",
+          "repository_ids": [
+            "NEP-01",
+            "NEP-02",
+            "NEP-03",
+            "NEP-04",
+            "NEP-06",
+            "NEP-07",
+            "NEP-08",
+            "NEP-09",
+            "NEP-11"
           ],
           "score": 1
         },
         {
-          "count": 2,
+          "count": 0,
           "leaf": "unit_test",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-01",
-            "ML-03"
-          ],
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
           "score": 3
         },
         {
-          "count": 7,
+          "count": 0,
           "leaf": "unit_test",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-02",
-            "ML-04",
-            "ML-05",
-            "ML-06",
-            "ML-07",
-            "ML-08",
-            "ML-09"
-          ],
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
           "score": 5
         },
         {
-          "count": 3,
+          "count": 0,
           "leaf": "version_independence",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-03",
-            "ML-06",
-            "ML-09"
-          ],
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
           "score": 0
         },
         {
-          "count": 3,
+          "count": 0,
           "leaf": "version_independence",
-          "measurement_status": "represented",
-          "repository_ids": [
-            "ML-02",
-            "ML-05",
-            "ML-08"
-          ],
+          "measurement_status": "unmeasured",
+          "repository_ids": [],
           "score": 1
         },
         {
@@ -3126,15 +3103,21 @@
           "score": 2
         },
         {
-          "count": 5,
+          "count": 11,
           "leaf": "version_independence",
           "measurement_status": "represented",
           "repository_ids": [
-            "ML-01",
-            "ML-04",
-            "ML-07",
-            "NEM-10",
-            "NEM-11"
+            "NEP-01",
+            "NEP-02",
+            "NEP-03",
+            "NEP-04",
+            "NEP-05",
+            "NEP-06",
+            "NEP-07",
+            "NEP-08",
+            "NEP-09",
+            "NEP-10",
+            "NEP-11"
           ],
           "score": 3
         }
@@ -3142,79 +3125,54 @@
       "conditional_mode_diagnostics": [
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 131,
-          "other_leaf_hits": 106,
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 118,
+          "predictor": "build_independence"
+        },
+        {
+          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 114,
           "predictor": "dataflow"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 131,
-          "other_leaf_hits": 115,
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 120,
           "predictor": "device_specificity"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 131,
-          "other_leaf_hits": 89,
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 114,
           "predictor": "directory"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 131,
-          "other_leaf_hits": 119,
-          "predictor": "hierarchy"
-        },
-        {
-          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 131,
-          "other_leaf_hits": 103,
-          "predictor": "interface"
-        },
-        {
-          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 131,
-          "other_leaf_hits": 117,
-          "predictor": "model_version"
-        },
-        {
-          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 131,
-          "other_leaf_hits": 122,
-          "predictor": "naming"
-        },
-        {
-          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 120,
-          "other_leaf_hits": 99,
-          "predictor": "parameter_management"
-        },
-        {
-          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 131,
-          "other_leaf_hits": 115,
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 120,
           "predictor": "release_branches"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 131,
-          "other_leaf_hits": 73,
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 117,
           "predictor": "reuse"
         },
         {
           "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 131,
-          "other_leaf_hits": 81,
+          "other_leaf_denominator": 132,
+          "other_leaf_hits": 114,
           "predictor": "unit_test"
-        },
-        {
-          "method": "Post-hoc conditional modes fitted and counted on the same repositories; not an experiment.",
-          "other_leaf_denominator": 131,
-          "other_leaf_hits": 115,
-          "predictor": "version_independence"
         }
       ],
       "constant_leaves": [
-        "build_independence"
+        "hierarchy",
+        "interface",
+        "model_version",
+        "naming",
+        "parameter_management",
+        "version_independence"
       ],
       "deterministic_associations": [
         {
@@ -3222,68 +3180,17 @@
           "limits": "Observed categorical association, not causality or candidate accuracy.",
           "pairs": [
             {
-              "count": 3,
-              "left": 0,
-              "right": 3
-            },
-            {
-              "count": 3,
+              "count": 4,
               "left": 8,
               "right": 8
             },
             {
-              "count": 5,
+              "count": 7,
               "left": 10,
-              "right": 10
+              "right": 0
             }
           ],
           "right": "release_branches",
-          "status": "bidirectional_deterministic_in_sample"
-        },
-        {
-          "left": "device_specificity",
-          "limits": "Observed categorical association, not causality or candidate accuracy.",
-          "pairs": [
-            {
-              "count": 3,
-              "left": 0,
-              "right": 0
-            },
-            {
-              "count": 3,
-              "left": 8,
-              "right": 1
-            },
-            {
-              "count": 5,
-              "left": 10,
-              "right": 3
-            }
-          ],
-          "right": "version_independence",
-          "status": "bidirectional_deterministic_in_sample"
-        },
-        {
-          "left": "release_branches",
-          "limits": "Observed categorical association, not causality or candidate accuracy.",
-          "pairs": [
-            {
-              "count": 3,
-              "left": 3,
-              "right": 0
-            },
-            {
-              "count": 3,
-              "left": 8,
-              "right": 1
-            },
-            {
-              "count": 5,
-              "left": 10,
-              "right": 3
-            }
-          ],
-          "right": "version_independence",
           "status": "bidirectional_deterministic_in_sample"
         }
       ],
@@ -3299,32 +3206,30 @@
         "Public current references remain Development/Regression, not a blind holdout."
       ],
       "modal_baseline": {
-        "denominator": 142,
-        "hits": 77,
+        "denominator": 143,
+        "hits": 123,
         "status": "in_sample_only"
       },
-      "observed_band_cells": 39,
+      "observed_band_cells": 21,
       "repository_count": 11,
       "schema": "population-diagnostics-v1",
       "source_group_count": 1,
       "source_groups": [
         [
-          "ML-01",
-          "ML-02",
-          "ML-03",
-          "ML-04",
-          "ML-05",
-          "ML-06",
-          "ML-07",
-          "ML-08",
-          "ML-09",
-          "NEM-10",
-          "NEM-11"
+          "NEP-01",
+          "NEP-02",
+          "NEP-03",
+          "NEP-04",
+          "NEP-05",
+          "NEP-06",
+          "NEP-07",
+          "NEP-08",
+          "NEP-09",
+          "NEP-10",
+          "NEP-11"
         ]
       ],
-      "unresolved_reference_leaves": [
-        "NEM-11/parameter_management"
-      ]
+      "unresolved_reference_leaves": []
     }
   }
 }

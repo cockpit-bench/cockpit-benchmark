@@ -56,10 +56,19 @@ def primary_model(row):
     if len(matches)!=1:raise ValueError('Expected one named primary model: '+row['name'])
     return matches[0]
 
+def source_path(source_root,row):
+    """Accept the unified restore layout and the original cohort layout."""
+    root=Path(source_root).resolve()
+    choices=[root/row['name'],root/'new-energy-matlab'/row['name'],root/row['group']/row['name']]
+    matches=[p for p in choices if (p/'.git').is_dir()]
+    if len(matches)!=1:raise ValueError('Expected one restored source location: '+row['id'])
+    if not matches[0].resolve().is_relative_to(root):raise ValueError('Source path escapes restore root')
+    return matches[0]
+
 def scan(manifest,source_root=None):
     result=[]
     for row in manifest['repositories']:
-        repo=Path(source_root)/row['group']/row['name'] if source_root else Path(row['source_path'])
+        repo=source_path(source_root,row) if source_root else Path(row['source_path'])
         files=git(repo,'-c','core.quotepath=false','ls-files').splitlines()
         binding={x:digest(repo/x) for x in files}; assert binding==row['files']
         head=git(repo,'rev-parse','HEAD'); assert head==row['head']

@@ -51,23 +51,4 @@ class ReferenceRevisionTests(unittest.TestCase):
         self.assertEqual(binding['executed_head'],report['head'])
         self.assertEqual(report['test_count'],25)
 
-class ModelPointerTests(unittest.TestCase):
-    def test_actual_parent_child_bindings_and_swaps(self):
-        facts=rt.read(W/'suites/new-energy-matlab/evidence/NEM-10.json')
-        inventory=rt.read(rt.bound(W,facts['source_inventory']))
-        anchors=next(l for l in facts['reference']['leaves'] if l['name']=='dataflow')['evidence']
-        for a in anchors:
-            if a['evidence_type']!='facts':continue
-            check_model_pointer(inventory,a)
-            swapped=copy.deepcopy(a);i=int(a['json_pointer'].split('/')[2]);swapped['json_pointer']=a['json_pointer'].replace('/models/'+str(i)+'/', '/models/'+str(1-i)+'/')
-            with self.assertRaisesRegex(ValueError,'different model'):check_model_pointer(inventory,swapped)
-            missing=copy.deepcopy(a);del missing['model_path']
-            with self.assertRaises(ValueError):check_model_pointer(inventory,missing)
-    def test_layout_witness_keeps_nested_branch_geometry(self):
-        facts=rt.read(W/'suites/new-energy-matlab/evidence/NEM-10.json');audit=rt.read(rt.bound(W,facts['acquisition_scope_audit']))
-        self.assertEqual(len(audit['blocks']),322);self.assertEqual(len(audit['signature']['edges']),366)
-        route=next(r for r in audit['routes'] if r['properties']['Src']=='214#out:1')
-        self.assertTrue(route['branches'])
-        self.assertIn('-162',str(route));self.assertIn('216#in:2',str(route))
-
 if __name__=='__main__':unittest.main()

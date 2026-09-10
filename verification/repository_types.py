@@ -20,7 +20,7 @@ ALIASES={'android-validation18':['app','fw'],'matlab-simulink':['new-energy-matl
 require=legacy.require;read=legacy.read;bound=legacy.bound;encoded=legacy.encoded;sha=legacy.sha;git=legacy.git
 
 def leaf_values(reference):
-    if 'leaves' in reference:
+    if isinstance(reference.get('leaves'),list):
         return {leaf['name']:(leaf.get('score'),leaf['max_score']) for leaf in reference['leaves']}
     limits=LEAF_LIMITS['new-energy-matlab']
     return {name:(value,limits[name]) for name,value in reference['scores'].items()}
@@ -39,11 +39,11 @@ def validate(wrapper,require_publishable=False):
     require(registry['default_suite']=='all' and registry['integration_status'] in {'local_expansion','published'},'Invalid integration state/default')
     baseline=read(bound(wrapper,registry['legacy_baseline']));legacy.validate_legacy(wrapper,True,baseline)
     entries=registry['suites'];require(len(entries)==3 and {x['id'] for x in entries}==set(TYPES),'APP, FW, and New Energy MATLAB are required separately')
-    old_android=read(wrapper/'STANDARD_SCORES.json')['repositories'];old_matlab=read(wrapper/'suites/matlab-simulink/STANDARD_SCORES.json')['repos']
-    old_refs={r['id']:r for r in old_android+old_matlab};seen=set();preserved=set()
-    old_manifest=read(wrapper/'manifest.json')['repositories'];old_ml_manifest=read(wrapper/'suites/matlab-simulink/manifest.json')['repositories']
+    old_android=read(wrapper/'STANDARD_SCORES.json')['repositories']
+    old_refs={r['id']:r for r in old_android};seen=set();preserved=set()
+    old_manifest=read(wrapper/'manifest.json')['repositories']
     pending={r['id'] for r in old_manifest if r['delivery_status']=='pending'}
-    old_sources={r['id']:r for r in old_manifest if r['delivery_status']=='active'}|{r['id']:r for r in old_ml_manifest}
+    old_sources={r['id']:r for r in old_manifest if r['delivery_status']=='active'}
     for entry in entries:
         required={'id','name','technology','status','contract','manifest','canonical_scores','repository_count','leaf_count','max_score','score','failed_leaves','published_repositories'}
         require(set(entry) in (required,required|{'cohorts'}),'Unsupported type fields')
@@ -59,6 +59,20 @@ def validate(wrapper,require_publishable=False):
         require(entry['name']==name and entry['technology']==technology,'Business type/technology mismatch')
         require(entry['status'] in {'verified_local','published'},'Unverified type cannot be admitted')
         bound(wrapper,entry['contract']);manifest=read(bound(wrapper,entry['manifest']));scores=read(bound(wrapper,entry['canonical_scores']))
+        if type_id=='new-energy-matlab':
+            from ne_reality import load, location
+            root,contract,admitted,gold,_=load(wrapper)
+            require(manifest==admitted and scores==gold,'Current New Energy payload differs')
+            require(entry['contract']=={'path':(root/'contract-index.json').relative_to(wrapper).as_posix(),'sha256':sha((root/'contract-index.json').read_bytes())},'Current New Energy contract differs')
+            ids={r['id'] for r in admitted['repositories']}
+            require(not seen.intersection(ids),'Duplicate/cross-type repository');seen.update(ids)
+            summary=summarize(gold['repositories'])
+            for key,value in summary.items():require(entry[key]==value,'New Energy denominator/score differs: '+key)
+            published=sum(r['publication_status']=='published' for r in admitted['repositories'])
+            require(entry['published_repositories']==published,'New Energy publication count differs')
+            require(entry['status']==('published' if published==len(ids) else 'verified_local'),'New Energy publication state differs')
+            if require_publishable:require(published==len(ids),'New Energy includes unpublished sources')
+            continue
         require(manifest['type_id']==scores['type_id']==type_id,'Cross-type payload')
         sources=manifest['repositories'];rows=scores['repositories'];ids=[r['id'] for r in sources]
         require(len(ids)==len(set(ids)) and not seen.intersection(ids),'Duplicate/cross-type repository')
@@ -130,6 +144,10 @@ def check_source(path,row):
     require(git('-C',path,'rev-parse','--is-shallow-repository')=='false','Main source history is shallow')
     require(not git('-C',path,'status','--porcelain') and not git('-C',path,'remote'),'Source is dirty or has remotes')
     require(not (Path(path)/'.git/objects/info/alternates').exists(),'Source borrows objects through alternates')
+    if row.get('cohort_id')=='reality-proxy-20260910':
+        files=git('-C',path,'ls-files','-z',binary=True).decode('utf-8').split('\0')[:-1]
+        require(set(files)==set(row['files']),'Restored source file set differs')
+        require(all(sha((Path(path)/name).read_bytes())==row['files'][name] for name in files),'Restored source file bytes differ')
     git('-C',path,'fsck','--full','--no-progress','--no-dangling')
     return {'id':row['id'],'type_id':row['type_id'],'head':row['head'],'tree':row['tree'],'full_history':True,'clean':True,'remote_count':0,'execution':'not_run'}
 
@@ -176,6 +194,7 @@ def restore(wrapper,type_id,destination,resume=False,include_submodules=False,so
         if owned:
             require(not git('-C',target,'status','--porcelain') or not any(p.name!='.git' for p in target.iterdir()),'Partial source contains local changes')
             if 'origin' not in git('-C',target,'remote').splitlines():git('-C',target,'remote','add','origin',transports[row['id']])
+            if row.get('cohort_id')=='reality-proxy-20260910':git('-C',target,'config','core.autocrlf','false')
             git('-C',target,'checkout','--detach',row['head']);git('-C',target,'fetch','origin','refs/heads/*:refs/heads/*','refs/tags/*:refs/tags/*')
             git('-C',target,'remote','remove','origin')
         if include_submodules:
