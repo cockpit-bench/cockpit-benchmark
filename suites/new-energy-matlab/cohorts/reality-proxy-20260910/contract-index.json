@@ -1,0 +1,163 @@
+{
+  "schema": "ne-part7-contract-1",
+  "cohort_id": "reality-proxy-20260910",
+  "repository_type": "new-energy-matlab",
+  "max_score": 61,
+  "leaves": [
+    {
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": "hierarchy",
+      "max_score": 3,
+      "name": "层次分解"
+    },
+    {
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": "reuse",
+      "max_score": 3,
+      "name": "复用与标准化"
+    },
+    {
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": "interface",
+      "max_score": 3,
+      "name": "接口设计"
+    },
+    {
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": "dataflow",
+      "max_score": 3,
+      "name": "数据流与信号路由"
+    },
+    {
+      "allowed_scores": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "id": "unit_test",
+      "max_score": 5,
+      "name": "单元测试"
+    },
+    {
+      "allowed_scores": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "id": "naming",
+      "max_score": 5,
+      "name": "命名规范"
+    },
+    {
+      "allowed_scores": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "id": "directory",
+      "max_score": 5,
+      "name": "目录结构"
+    },
+    {
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": "build_independence",
+      "max_score": 3,
+      "name": "构建独立性"
+    },
+    {
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": "model_version",
+      "max_score": 3,
+      "name": "模型版本管理"
+    },
+    {
+      "allowed_scores": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "id": "version_independence",
+      "max_score": 3,
+      "name": "版本独立性"
+    },
+    {
+      "allowed_scores": [
+        0,
+        3,
+        8,
+        10
+      ],
+      "id": "release_branches",
+      "max_score": 10,
+      "name": "release代码分支策略"
+    },
+    {
+      "allowed_scores": [
+        0,
+        3,
+        8,
+        10
+      ],
+      "id": "device_specificity",
+      "max_score": 10,
+      "name": "设备特有"
+    },
+    {
+      "allowed_scores": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "id": "parameter_management",
+      "max_score": 5,
+      "name": "参数管理"
+    }
+  ],
+  "authorities": [
+    {
+      "path": "SCORING_CONTRACT_PART7.md",
+      "sha256": "2bc31dcbbb9c3cc2ea11686a9d3e3cde0225c6213107b92f771303efd059559b"
+    },
+    {
+      "path": "APPROVED_BUILD_CLARIFICATION.md",
+      "sha256": "9519b6a56ba9834f8f2059ebfd4e7e16c612133a2002cf827888c63603ca150c"
+    }
+  ],
+  "scope": "Only the new eleven reality proxies; no retrofit to published legacy references.",
+  "candidate_output": "One object per repo: id, head, scores (13 exact leaf keys; legal numeric tier or null), evidence (leaf-keyed source paths and reasoning)."
+}

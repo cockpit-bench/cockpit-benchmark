@@ -1,0 +1,3273 @@
+{
+  "schema": "ne-reality-reference-1",
+  "cohort_id": "reality-proxy-20260910",
+  "type_id": "new-energy-matlab",
+  "contract_sha256": "0e520a2a41904649c545164fdc8d37abff0588b6c5aa943e9f863c22525b389d",
+  "repositories": [
+    {
+      "id": "NEP-01",
+      "name": "VcVcuInD",
+      "head": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+      "reference": {
+        "id": "NEP-01",
+        "name": "VcVcuInD",
+        "head": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+        "scores": {
+          "hierarchy": 3,
+          "reuse": 1,
+          "interface": 1,
+          "dataflow": 2,
+          "naming": 3,
+          "parameter_management": 5,
+          "build_independence": 2,
+          "version_independence": 3,
+          "model_version": 3,
+          "directory": 5,
+          "unit_test": 1,
+          "release_branches": 8,
+          "device_specificity": 8
+        },
+        "total": 45,
+        "max_score": 61,
+        "leaves": {
+          "hierarchy": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "494 个子系统中，至少 482 个职责明确且单一（逐通道封装及四阶段、经审阅的业务决策/状态模块与诊断快照，97.6%）。分组层/信号层/处理阶段分别采用一致抽象；职责统计不以子系统块数多少单独定分。",
+            "evidence": [
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
+                "location": "system_1035/Block[@SID='1066'] EngineeringConversion"
+              },
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
+                "location": "system_1035/Block[@SID='1046'] RangeAndCommunication"
+              },
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
+                "location": "system_1035/Block[@SID='1073'] SafeSubstitution"
+              },
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
+                "location": "system_1035/Block[@SID='1058'] TemporalQualification"
+              }
+            ],
+            "limitation": "顶层分组仍存在粗粒度命名；该缺陷不推翻已验证的>=90%子系统职责下界。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "reuse": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "各通道的 TemporalQualification/RangeAndCommunication 有相同拓扑逻辑的独立副本；保留单独状态和通道标定是合理需求，但当前没有把共用逻辑定义为库/模型引用。基础块和局部 Mask 的存在不能消除重复实现。",
+            "evidence": [
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
+                "location": "system_1035/Block[@SID='1058'] TemporalQualification"
+              },
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
+                "location": "system_1092/Block[@SID='1115'] TemporalQualification"
+              }
+            ],
+            "limitation": "LibraryLink主要是基础复位比较和部分Bitwise组件；不能据此裁整个业务复用为3。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "interface": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "主要通信有显式 Inport/Outport；外部 XLS 完整描述 290 入/99 出接口，但内部 393/3284 端口仍用 InN/OutN，单位/约束主要依赖外部表，达不到整体端口命名规范的2档。",
+            "evidence": [
+              {
+                "path": "Model/interfaceVcVcuInD.xls",
+                "sha256": "1d543c07cbac3c3fe8a2745be9d43dcec84dd63d919e3b9fd0b611223a26bc85",
+                "location": "IN/OUT; ChangeLog"
+              },
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
+                "location": "system_1001/Block[@SID='1008'] Out1"
+              },
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
+                "location": "system_944/Block[@SID='946'] In2"
+              }
+            ],
+            "limitation": "外部接口材料完整不自动覆盖内部子系统接口质量。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "dataflow": {
+            "score": 2,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "输入网关的主要动作是通道质量汇总；输入到资格确认、安全替代、显式输出可追踪。局部质量跳转成对使用，关键外部信号具语义名；仍有 CheckInputN 和长距离聚合，未达到3。",
+            "evidence": [
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
+                "location": "simulink/systems/system_root.xml; BusinessDecision; RangeAndCommunication"
+              }
+            ],
+            "limitation": "原生制图审阅 evidence/review-diagrams/NEP-01-business.png；From=192, Goto=96，仅为辅助库存。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "naming": {
+            "score": 3,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "命名体系以 scope+模块+成员+后缀为主；块与线共 11057 个可命名元素，按实际语义审阅有 1260 个空名或缺少信号身份/用途的序号名（11.4%）。其余元素风格基本一致；未达到90%准确传意的5档。",
+            "evidence": [
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
+                "location": "system_1001/Block[@SID='1008'] Out1"
+              },
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
+                "location": "CheckInputN lines; BusinessDecision/ValidN ports"
+              }
+            ],
+            "limitation": "该分类来自具体命名和位置语义，不把所有尾随数字都视为缺陷，也不把非默认名等同于准确命名。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "parameter_management": {
+            "score": 5,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "全部 576 个可调通道范围/时效/缩放/偏置/安全替代参数在外部 MAT-File，以 Simulink.Parameter 集中管理；定义类型及 min/max，按模块/信号/用途命名，Git快照与变更表记录约束修订。固定两次资格确认、计数低字节和逻辑常量属于算法定义，不当作漏提取标定。",
+            "evidence": [
+              {
+                "path": "Model/calibrationVcVcuInD.mat",
+                "sha256": "aae68c424b446a734aa82f6d8c35094e2d709a54970bfb844d0e33f30b4428bc",
+                "location": "Simulink.Parameter objects, Value/DataType/Min/Max"
+              },
+              {
+                "path": "Model/interfaceVcVcuInD.xls",
+                "sha256": "1d543c07cbac3c3fe8a2745be9d43dcec84dd63d919e3b9fd0b611223a26bc85",
+                "location": "CAL"
+              },
+              {
+                "path": "Documentation/VcVcuInD_26R1_变更记录.xlsx",
+                "sha256": "65850ed4a13296a20462dcadcd44cb629ffcb2082c6f3856728f99709699db7f",
+                "location": "26R1"
+              }
+            ],
+            "limitation": "硬编码数量含固定算法常量；实际裁决已区分标定与固定逻辑，不凭全部数字比率直接定档。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "build_independence": {
+            "score": 2,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "信号调理业务组件有 Mask，明确暴露 Minimum/Maximum/Timeout，并有 Raw/Age/Status/Reset 输入及物理值/资格输出契约；按已批准的新组补充规则裁2。",
+            "evidence": [
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
+                "location": "Mask/ports and PreLoadFcn; model dependencies"
+              }
+            ],
+            "limitation": "不以成功生码或存在工具库证明业务组件版本锁定。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "version_independence": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "模型当前版本为11.2.1_0；README解释 MAJOR/MINOR/PATCH 的兼容性含义，变更表关联本次业务状态完善及复位/资格修复，末尾为导出序号。语义来自明确递增规则，不由tag数量推导。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "fb4669cf8590db1f0702466f057fc2fac1a0b2bf573a2429f39b4f553d14b0ab",
+                "location": "Model semantic version policy"
+              },
+              {
+                "path": "Documentation/VcVcuInD_26R1_变更记录.xlsx",
+                "sha256": "65850ed4a13296a20462dcadcd44cb629ffcb2082c6f3856728f99709699db7f",
+                "location": "25R3/26R1"
+              },
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
+                "location": "ModelVersionFormat"
+              }
+            ],
+            "limitation": "所有tag只对应一个源码commit，不声称真实多次生产发布。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "model_version": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "实际本地初始构造与后续模型修改有统一15列表格：版本、日期、内容、前后逻辑和信号增减说明均具备；当前外部接口表的ChangeLog能关联同版本。无虚构日期或八个月连续性。",
+            "evidence": [
+              {
+                "path": "Documentation/VcVcuInD_26R1_变更记录.xlsx",
+                "sha256": "65850ed4a13296a20462dcadcd44cb629ffcb2082c6f3856728f99709699db7f",
+                "location": "Cover/25R3/26R1"
+              },
+              {
+                "path": "Model/interfaceVcVcuInD.xls",
+                "sha256": "1d543c07cbac3c3fe8a2745be9d43dcec84dd63d919e3b9fd0b611223a26bc85",
+                "location": "ChangeLog"
+              }
+            ],
+            "limitation": "历史SLX建设快照在维护者材料中保留；候选依据仓内记录，不假定可访问维护者工作区。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "directory": {
+            "score": 5,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "Documentation、Model、Src、UnitTest 按用途分层；SLX、接口/标定/执行组件、生成码、测试与变更材料各归所属目录。仓根README/.gitignore为合理通用文件；单模块包裹层不构成职责混杂。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "fb4669cf8590db1f0702466f057fc2fac1a0b2bf573a2429f39b4f553d14b0ab",
+                "location": "Directory usage; tracked file inventory"
+              }
+            ],
+            "limitation": "分析模型的Src/UnitTest只有明确缺失说明；目录存在不虚称有生成码或仓内测试。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "unit_test": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "仓内有SWUT用例表、逐采样输入预期向量、实际MIL测试报告及覆盖率报告；772个场景/6737采样全部通过。虽然模型Decision/Condition/MC-DC已测量，C Statement未测量，三项同时达标条件不成立，故1分。",
+            "evidence": [
+              {
+                "path": "UnitTest/VcVcuInD_BTC_UT_Report.html",
+                "sha256": "83b66bec66cce035de9aad5ce3588a652eccdb5eec346181c08b9f795c084dd6",
+                "location": "All scenario result rows; runtime source binding"
+              },
+              {
+                "path": "UnitTest/VcVcuInD_BTC_UTCov_Report.html",
+                "sha256": "e8ce13a5250d407e46418ab0ae1d74034aff34ea3c874043e7e4b901a88cf690",
+                "location": "Native model metric names; statement unmeasured"
+              }
+            ],
+            "limitation": "BTC只是文件命名形态，实际工具Simulink/Simulink Coverage；host C harness不是SIL/PIL/HIL。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "release_branches": {
+            "score": 8,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "存在按模块族路由的 Branch-XCU-EEA4.0, XCU, XCUP, XCUP2, XCU_EEA4.0_test 平台分支，无车型代号分支；按Part 7分支名分析为同平台同一分支8档。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                "refs": {
+                  "refs/heads/Branch-XCU-EEA4.0": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                  "refs/heads/XCU": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                  "refs/heads/XCUP": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                  "refs/heads/XCUP2": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                  "refs/heads/XCU_EEA4.0_test": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                  "refs/heads/auto/master/1/d9035ae4-1": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                  "refs/heads/master": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb"
+                }
+              },
+              {
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "05719ec0a531afb0701868f79c2e61699a967a0d29ff498f0fbed9130d1ca649",
+                "location": "Synthetic platform refs"
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "device_specificity": {
+            "score": 8,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "平台分支名表明平台区分，没有单一车型绑定；按Part 7命名证据为8档。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                "refs": {
+                  "refs/heads/Branch-XCU-EEA4.0": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                  "refs/heads/XCU": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                  "refs/heads/XCUP": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                  "refs/heads/XCUP2": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                  "refs/heads/XCU_EEA4.0_test": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                  "refs/heads/auto/master/1/d9035ae4-1": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
+                  "refs/heads/master": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb"
+                }
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          }
+        }
+      }
+    },
+    {
+      "id": "NEP-02",
+      "name": "VcVcuOutQM",
+      "head": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+      "reference": {
+        "id": "NEP-02",
+        "name": "VcVcuOutQM",
+        "head": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+        "scores": {
+          "hierarchy": 3,
+          "reuse": 1,
+          "interface": 1,
+          "dataflow": 1,
+          "naming": 3,
+          "parameter_management": 1,
+          "build_independence": 0,
+          "version_independence": 3,
+          "model_version": 3,
+          "directory": 5,
+          "unit_test": 1,
+          "release_branches": 8,
+          "device_specificity": 8
+        },
+        "total": 38,
+        "max_score": 61,
+        "leaves": {
+          "hierarchy": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "147 个子系统中，至少 143 个职责明确且单一（逐通道封装及四阶段、经审阅的业务决策/状态模块与诊断快照，97.3%）。分组层/信号层/处理阶段分别采用一致抽象；职责统计不以子系统块数多少单独定分。",
+            "evidence": [
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "system_1035/Block[@SID='1066'] EngineeringConversion"
+              },
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "system_1035/Block[@SID='1046'] RangeAndCommunication"
+              },
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "system_1035/Block[@SID='1073'] SafeSubstitution"
+              },
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "system_1035/Block[@SID='1058'] TemporalQualification"
+              }
+            ],
+            "limitation": "顶层分组仍存在粗粒度命名；该缺陷不推翻已验证的>=90%子系统职责下界。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "reuse": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "各通道的 TemporalQualification/RangeAndCommunication 有相同拓扑逻辑的独立副本；保留单独状态和通道标定是合理需求，但当前没有把共用逻辑定义为库/模型引用。基础块和局部 Mask 的存在不能消除重复实现。",
+            "evidence": [
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "system_1035/Block[@SID='1058'] TemporalQualification"
+              },
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "system_1092/Block[@SID='1115'] TemporalQualification"
+              }
+            ],
+            "limitation": "LibraryLink主要是基础复位比较和部分Bitwise组件；不能据此裁整个业务复用为3。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "interface": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "主要通信有显式 Inport/Outport；外部 XLS 完整描述 86 入/31 出接口，但内部 153/974 端口仍用 InN/OutN，单位/约束主要依赖外部表，达不到整体端口命名规范的2档。",
+            "evidence": [
+              {
+                "path": "Model/interfaceVcVcuOutQM.xls",
+                "sha256": "2c0aeb5b8d680208a30ae7f0d6d5792be77cb35ded97d9dd40d222e51b12b7c8",
+                "location": "IN/OUT; ChangeLog"
+              },
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "system_100/Block[@SID='101'] In1"
+              },
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "system_989/Block[@SID='990'] In1"
+              }
+            ],
+            "limitation": "外部接口材料完整不自动覆盖内部子系统接口质量。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "dataflow": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务图中的信号名称能追到端口，但多条输入穿过计算块区域，质量输入长距离折返汇聚；部分名称仅为 CheckInputN/DomainInputN/ValidN，原生图中可见不必要交叉与局部拥挤。故按部分命名且走线影响可读性的1档；不是按 Goto 个数机械扣分。",
+            "evidence": [
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "simulink/systems/system_root.xml; BusinessDecision; RangeAndCommunication"
+              }
+            ],
+            "limitation": "原生制图审阅 evidence/review-diagrams/NEP-02-business.png；From=56, Goto=28，仅为辅助库存。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "naming": {
+            "score": 3,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "命名体系以 scope+模块+成员+后缀为主；块与线共 3259 个可命名元素，按实际语义审阅有 409 个空名或缺少信号身份/用途的序号名（12.5%）。其余元素风格基本一致；未达到90%准确传意的5档。",
+            "evidence": [
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "system_100/Block[@SID='101'] In1"
+              },
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "CheckInputN lines; BusinessDecision/ValidN ports"
+              }
+            ],
+            "limitation": "该分类来自具体命名和位置语义，不把所有尾随数字都视为缺陷，也不把非默认名等同于准确命名。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "parameter_management": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "通道关键参数已变量化，但仍有较多可调业务值/回退值/转换或查表曲线留在块或 MATLAB Function 中；模型内嵌工作区也不能替代外部分类数据源。按新Part 7“部分关键参数提取、仍有较多硬编码”裁1；不是旧合同“多数散落”的套用。",
+            "evidence": [
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "Constant/Gain/Lookup fields; model workspace; stateflow chart scripts where present"
+              },
+              {
+                "path": "Model/interfaceVcVcuOutQM.xls",
+                "sha256": "2c0aeb5b8d680208a30ae7f0d6d5792be77cb35ded97d9dd40d222e51b12b7c8",
+                "location": "CAL; does not claim to inventory all embedded literals"
+              }
+            ],
+            "limitation": "硬编码数量含固定算法常量；实际裁决已区分标定与固定逻辑，不凭全部数字比率直接定档。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "build_independence": {
+            "score": 0,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务仍直接内嵌在一个 SLX，未形成带 Mask/明确契约的独立业务组件边界；按用户批准的新组空档补充裁0。基础复位库块或诊断低字节MEX不代表主体业务已组件化。",
+            "evidence": [
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "Mask/ports and PreLoadFcn; model dependencies"
+              }
+            ],
+            "limitation": "不以成功生码或存在工具库证明业务组件版本锁定。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "version_independence": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "模型当前版本为11.2.1_0；README解释 MAJOR/MINOR/PATCH 的兼容性含义，变更表关联本次业务状态完善及复位/资格修复，末尾为导出序号。语义来自明确递增规则，不由tag数量推导。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "05cf35f492c3ec2d9946068513a354a867928f9c8874e4a113454a363708ebda",
+                "location": "Model semantic version policy"
+              },
+              {
+                "path": "Documentation/VcVcuOutQM_26R1_变更记录.xlsx",
+                "sha256": "a51a75aabe280d73917aae871e48228229b9c9f41005a725bb304bfb97b2798d",
+                "location": "25R3/26R1"
+              },
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
+                "location": "ModelVersionFormat"
+              }
+            ],
+            "limitation": "所有tag只对应一个源码commit，不声称真实多次生产发布。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "model_version": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "实际本地初始构造与后续模型修改有统一15列表格：版本、日期、内容、前后逻辑和信号增减说明均具备；当前外部接口表的ChangeLog能关联同版本。无虚构日期或八个月连续性。",
+            "evidence": [
+              {
+                "path": "Documentation/VcVcuOutQM_26R1_变更记录.xlsx",
+                "sha256": "a51a75aabe280d73917aae871e48228229b9c9f41005a725bb304bfb97b2798d",
+                "location": "Cover/25R3/26R1"
+              },
+              {
+                "path": "Model/interfaceVcVcuOutQM.xls",
+                "sha256": "2c0aeb5b8d680208a30ae7f0d6d5792be77cb35ded97d9dd40d222e51b12b7c8",
+                "location": "ChangeLog"
+              }
+            ],
+            "limitation": "历史SLX建设快照在维护者材料中保留；候选依据仓内记录，不假定可访问维护者工作区。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "directory": {
+            "score": 5,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "Documentation、Model、Src、UnitTest 按用途分层；SLX、接口/标定/执行组件、生成码、测试与变更材料各归所属目录。仓根README/.gitignore为合理通用文件；单模块包裹层不构成职责混杂。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "05cf35f492c3ec2d9946068513a354a867928f9c8874e4a113454a363708ebda",
+                "location": "Directory usage; tracked file inventory"
+              }
+            ],
+            "limitation": "分析模型的Src/UnitTest只有明确缺失说明；目录存在不虚称有生成码或仓内测试。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "unit_test": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "仓内有SWUT用例表、逐采样输入预期向量、实际MIL测试报告及覆盖率报告；228个场景/1977采样全部通过。虽然模型Decision/Condition/MC-DC已测量，C Statement未测量，三项同时达标条件不成立，故1分。",
+            "evidence": [
+              {
+                "path": "UnitTest/VcVcuOutQM_BTC_UT_Report.html",
+                "sha256": "b7858a58638221a111350fbee5a617fb1eeb8eb5417d67482c2685a3a775ae9e",
+                "location": "All scenario result rows; runtime source binding"
+              },
+              {
+                "path": "UnitTest/VcVcuOutQM_BTC_UTCov_Report.html",
+                "sha256": "681a12fa095c06f9379d40a3e4d79ba2fb90510a81cfdb1b19fdae29a336492d",
+                "location": "Native model metric names; statement unmeasured"
+              }
+            ],
+            "limitation": "BTC只是文件命名形态，实际工具Simulink/Simulink Coverage；host C harness不是SIL/PIL/HIL。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "release_branches": {
+            "score": 8,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "存在按模块族路由的 Branch-XCU-EEA4.0, XCU, XCUP, XCUP2, XCU_EEA4.0_test 平台分支，无车型代号分支；按Part 7分支名分析为同平台同一分支8档。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                "refs": {
+                  "refs/heads/Branch-XCU-EEA4.0": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                  "refs/heads/XCU": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                  "refs/heads/XCUP": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                  "refs/heads/XCUP2": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                  "refs/heads/XCU_EEA4.0_test": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                  "refs/heads/auto/master/1/125aeb21-1": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                  "refs/heads/master": "125aeb21bc738192b8713418e12bf8f7ff99b5f0"
+                }
+              },
+              {
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "1f1225d541d7267af911ab8c10b159910514def2f6a813da3657e49ddff15943",
+                "location": "Synthetic platform refs"
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "device_specificity": {
+            "score": 8,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "平台分支名表明平台区分，没有单一车型绑定；按Part 7命名证据为8档。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                "refs": {
+                  "refs/heads/Branch-XCU-EEA4.0": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                  "refs/heads/XCU": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                  "refs/heads/XCUP": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                  "refs/heads/XCUP2": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                  "refs/heads/XCU_EEA4.0_test": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                  "refs/heads/auto/master/1/125aeb21-1": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
+                  "refs/heads/master": "125aeb21bc738192b8713418e12bf8f7ff99b5f0"
+                }
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          }
+        }
+      }
+    },
+    {
+      "id": "NEP-03",
+      "name": "VcVmcTrq",
+      "head": "648cfbcc43c142b82b718491f45b34731dfd9e00",
+      "reference": {
+        "id": "NEP-03",
+        "name": "VcVmcTrq",
+        "head": "648cfbcc43c142b82b718491f45b34731dfd9e00",
+        "scores": {
+          "hierarchy": 3,
+          "reuse": 1,
+          "interface": 1,
+          "dataflow": 1,
+          "naming": 3,
+          "parameter_management": 1,
+          "build_independence": 2,
+          "version_independence": 3,
+          "model_version": 3,
+          "directory": 5,
+          "unit_test": 1,
+          "release_branches": 0,
+          "device_specificity": 10
+        },
+        "total": 34,
+        "max_score": 61,
+        "leaves": {
+          "hierarchy": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "106 个子系统中，至少 102 个职责明确且单一（逐通道封装及四阶段、经审阅的业务决策/状态模块与诊断快照，96.2%）。分组层/信号层/处理阶段分别采用一致抽象；职责统计不以子系统块数多少单独定分。",
+            "evidence": [
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "system_1037/Block[@SID='1068'] EngineeringConversion"
+              },
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "system_1037/Block[@SID='1048'] RangeAndCommunication"
+              },
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "system_1037/Block[@SID='1075'] SafeSubstitution"
+              },
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "system_1037/Block[@SID='1060'] TemporalQualification"
+              }
+            ],
+            "limitation": "顶层分组仍存在粗粒度命名；该缺陷不推翻已验证的>=90%子系统职责下界。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "reuse": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "各通道的 TemporalQualification/RangeAndCommunication 有相同拓扑逻辑的独立副本；保留单独状态和通道标定是合理需求，但当前没有把共用逻辑定义为库/模型引用。基础块和局部 Mask 的存在不能消除重复实现。",
+            "evidence": [
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "system_1037/Block[@SID='1060'] TemporalQualification"
+              },
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "system_1094/Block[@SID='1117'] TemporalQualification"
+              }
+            ],
+            "limitation": "LibraryLink主要是基础复位比较和部分Bitwise组件；不能据此裁整个业务复用为3。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "interface": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "主要通信有显式 Inport/Outport；外部 XLS 完整描述 62 入/24 出接口，但内部 81/700 端口仍用 InN/OutN，单位/约束主要依赖外部表，达不到整体端口命名规范的2档。",
+            "evidence": [
+              {
+                "path": "Model/interfaceVcVmcTrq.xls",
+                "sha256": "b6d5f264b56dbafd9bc6c811724038767aa756240deeda69886aef2d8e58b5f6",
+                "location": "IN/OUT; ChangeLog"
+              },
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "system_1068/Block[@SID='1070'] In2"
+              },
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "system_991/Block[@SID='1002'] Out1"
+              }
+            ],
+            "limitation": "外部接口材料完整不自动覆盖内部子系统接口质量。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "dataflow": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务图中的信号名称能追到端口，但多条输入穿过计算块区域，质量输入长距离折返汇聚；部分名称仅为 CheckInputN/DomainInputN/ValidN，原生图中可见不必要交叉与局部拥挤。故按部分命名且走线影响可读性的1档；不是按 Goto 个数机械扣分。",
+            "evidence": [
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "simulink/systems/system_root.xml; BusinessDecision; RangeAndCommunication"
+              }
+            ],
+            "limitation": "原生制图审阅 evidence/review-diagrams/NEP-03-business.png；From=40, Goto=20，仅为辅助库存。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "naming": {
+            "score": 3,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "命名体系以 scope+模块+成员+后缀为主；块与线共 2351 个可命名元素，按实际语义审阅有 259 个空名或缺少信号身份/用途的序号名（11.0%）。其余元素风格基本一致；未达到90%准确传意的5档。",
+            "evidence": [
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "system_1068/Block[@SID='1070'] In2"
+              },
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "CheckInputN lines; BusinessDecision/ValidN ports"
+              }
+            ],
+            "limitation": "该分类来自具体命名和位置语义，不把所有尾随数字都视为缺陷，也不把非默认名等同于准确命名。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "parameter_management": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "通道关键参数已变量化，但仍有较多可调业务值/回退值/转换或查表曲线留在块或 MATLAB Function 中；模型内嵌工作区也不能替代外部分类数据源。按新Part 7“部分关键参数提取、仍有较多硬编码”裁1；不是旧合同“多数散落”的套用。",
+            "evidence": [
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "Constant/Gain/Lookup fields; model workspace; stateflow chart scripts where present"
+              },
+              {
+                "path": "Model/interfaceVcVmcTrq.xls",
+                "sha256": "b6d5f264b56dbafd9bc6c811724038767aa756240deeda69886aef2d8e58b5f6",
+                "location": "CAL; does not claim to inventory all embedded literals"
+              }
+            ],
+            "limitation": "硬编码数量含固定算法常量；实际裁决已区分标定与固定逻辑，不凭全部数字比率直接定档。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "build_independence": {
+            "score": 2,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "信号调理业务组件有 Mask，明确暴露 Minimum/Maximum/Timeout，并有 Raw/Age/Status/Reset 输入及物理值/资格输出契约；按已批准的新组补充规则裁2。",
+            "evidence": [
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "Mask/ports and PreLoadFcn; model dependencies"
+              }
+            ],
+            "limitation": "不以成功生码或存在工具库证明业务组件版本锁定。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "version_independence": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "模型当前版本为11.2.1_0；README解释 MAJOR/MINOR/PATCH 的兼容性含义，变更表关联本次业务状态完善及复位/资格修复，末尾为导出序号。语义来自明确递增规则，不由tag数量推导。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "afeff9393ce9d3dfe9d6298fcc72f19f484ae4073f82824537e684b8348dfda7",
+                "location": "Model semantic version policy"
+              },
+              {
+                "path": "Documentation/VcVmcTrq_26R1_变更记录.xlsx",
+                "sha256": "1327d78645291dd19149e8ed779ca7374155fa8121f37155801d8a2e6ae1a172",
+                "location": "25R3/26R1"
+              },
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
+                "location": "ModelVersionFormat"
+              }
+            ],
+            "limitation": "所有tag只对应一个源码commit，不声称真实多次生产发布。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "model_version": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "实际本地初始构造与后续模型修改有统一15列表格：版本、日期、内容、前后逻辑和信号增减说明均具备；当前外部接口表的ChangeLog能关联同版本。无虚构日期或八个月连续性。",
+            "evidence": [
+              {
+                "path": "Documentation/VcVmcTrq_26R1_变更记录.xlsx",
+                "sha256": "1327d78645291dd19149e8ed779ca7374155fa8121f37155801d8a2e6ae1a172",
+                "location": "Cover/25R3/26R1"
+              },
+              {
+                "path": "Model/interfaceVcVmcTrq.xls",
+                "sha256": "b6d5f264b56dbafd9bc6c811724038767aa756240deeda69886aef2d8e58b5f6",
+                "location": "ChangeLog"
+              }
+            ],
+            "limitation": "历史SLX建设快照在维护者材料中保留；候选依据仓内记录，不假定可访问维护者工作区。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "directory": {
+            "score": 5,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "Documentation、Model、Src、UnitTest 按用途分层；SLX、接口/标定/执行组件、生成码、测试与变更材料各归所属目录。仓根README/.gitignore为合理通用文件；单模块包裹层不构成职责混杂。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "afeff9393ce9d3dfe9d6298fcc72f19f484ae4073f82824537e684b8348dfda7",
+                "location": "Directory usage; tracked file inventory"
+              }
+            ],
+            "limitation": "分析模型的Src/UnitTest只有明确缺失说明；目录存在不虚称有生成码或仓内测试。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "unit_test": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "仓内有SWUT用例表、逐采样输入预期向量、实际MIL测试报告及覆盖率报告；164个场景/1417采样全部通过。虽然模型Decision/Condition/MC-DC已测量，C Statement未测量，三项同时达标条件不成立，故1分。",
+            "evidence": [
+              {
+                "path": "UnitTest/VcVmcTrq_BTC_UT_Report.html",
+                "sha256": "3f6dbbc810af7d1dd8bcaa77e0946816d13dff0a6ea2f654f07a2a25a0722e1f",
+                "location": "All scenario result rows; runtime source binding"
+              },
+              {
+                "path": "UnitTest/VcVmcTrq_BTC_UTCov_Report.html",
+                "sha256": "1e560f5576454b3904fee80971f9dc18b4807e2aec7071ffabd5d87069679518",
+                "location": "Native model metric names; statement unmeasured"
+              }
+            ],
+            "limitation": "BTC只是文件命名形态，实际工具Simulink/Simulink Coverage；host C harness不是SIL/PIL/HIL。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "release_branches": {
+            "score": 0,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "只有master和可选auto构建分支，没有跨平台配置/变体或平台发布策略，不能凭少分支跳到10；按Part 7“分支数≤1偏向0”，排除CI辅助分支后裁0。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "648cfbcc43c142b82b718491f45b34731dfd9e00",
+                "refs": {
+                  "refs/heads/auto/master/1/648cfbcc-1": "648cfbcc43c142b82b718491f45b34731dfd9e00",
+                  "refs/heads/master": "648cfbcc43c142b82b718491f45b34731dfd9e00"
+                }
+              },
+              {
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "b3137dcc99bd80073d3b9ada629431107c453169cf71c88e442216f4bb25658b",
+                "location": "Synthetic platform refs"
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "device_specificity": {
+            "score": 10,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "master/auto中不含特定车型或平台代号，业务输入通过统一端口表达；按Part 7的命名代理证据裁10。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "648cfbcc43c142b82b718491f45b34731dfd9e00",
+                "refs": {
+                  "refs/heads/auto/master/1/648cfbcc-1": "648cfbcc43c142b82b718491f45b34731dfd9e00",
+                  "refs/heads/master": "648cfbcc43c142b82b718491f45b34731dfd9e00"
+                }
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          }
+        }
+      }
+    },
+    {
+      "id": "NEP-04",
+      "name": "VcErcRgn",
+      "head": "49e818a2ab42384d5de9e49ba8481c832819c772",
+      "reference": {
+        "id": "NEP-04",
+        "name": "VcErcRgn",
+        "head": "49e818a2ab42384d5de9e49ba8481c832819c772",
+        "scores": {
+          "hierarchy": 3,
+          "reuse": 1,
+          "interface": 1,
+          "dataflow": 1,
+          "naming": 3,
+          "parameter_management": 1,
+          "build_independence": 0,
+          "version_independence": 3,
+          "model_version": 3,
+          "directory": 5,
+          "unit_test": 1,
+          "release_branches": 0,
+          "device_specificity": 10
+        },
+        "total": 32,
+        "max_score": 61,
+        "leaves": {
+          "hierarchy": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "96 个子系统中，至少 92 个职责明确且单一（逐通道封装及四阶段、经审阅的业务决策/状态模块与诊断快照，95.8%）。分组层/信号层/处理阶段分别采用一致抽象；职责统计不以子系统块数多少单独定分。",
+            "evidence": [
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "system_119/Block[@SID='150'] EngineeringConversion"
+              },
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "system_119/Block[@SID='130'] RangeAndCommunication"
+              },
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "system_119/Block[@SID='157'] SafeSubstitution"
+              },
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "system_119/Block[@SID='142'] TemporalQualification"
+              }
+            ],
+            "limitation": "顶层分组仍存在粗粒度命名；该缺陷不推翻已验证的>=90%子系统职责下界。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "reuse": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "各通道的 TemporalQualification/RangeAndCommunication 有相同拓扑逻辑的独立副本；保留单独状态和通道标定是合理需求，但当前没有把共用逻辑定义为库/模型引用。基础块和局部 Mask 的存在不能消除重复实现。",
+            "evidence": [
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "system_119/Block[@SID='142'] TemporalQualification"
+              },
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "system_176/Block[@SID='199'] TemporalQualification"
+              }
+            ],
+            "limitation": "LibraryLink主要是基础复位比较和部分Bitwise组件；不能据此裁整个业务复用为3。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "interface": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "主要通信有显式 Inport/Outport；外部 XLS 完整描述 56 入/21 出接口，但内部 99/629 端口仍用 InN/OutN，单位/约束主要依赖外部表，达不到整体端口命名规范的2档。",
+            "evidence": [
+              {
+                "path": "Model/interfaceVcErcRgn.xls",
+                "sha256": "01f62a7292f87a2718a5b78d2adbc3a9ab7208804c8bb55b23f5b82bc9e4e57a",
+                "location": "IN/OUT; ChangeLog"
+              },
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "system_100/Block[@SID='101'] In1"
+              },
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "system_991/Block[@SID='1002'] Out1"
+              }
+            ],
+            "limitation": "外部接口材料完整不自动覆盖内部子系统接口质量。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "dataflow": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务图中的信号名称能追到端口，但多条输入穿过计算块区域，质量输入长距离折返汇聚；部分名称仅为 CheckInputN/DomainInputN/ValidN，原生图中可见不必要交叉与局部拥挤。故按部分命名且走线影响可读性的1档；不是按 Goto 个数机械扣分。",
+            "evidence": [
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "simulink/systems/system_root.xml; BusinessDecision; RangeAndCommunication"
+              }
+            ],
+            "limitation": "原生制图审阅 evidence/review-diagrams/NEP-04-business.png；From=36, Goto=18，仅为辅助库存。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "naming": {
+            "score": 3,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "命名体系以 scope+模块+成员+后缀为主；块与线共 2113 个可命名元素，按实际语义审阅有 259 个空名或缺少信号身份/用途的序号名（12.3%）。其余元素风格基本一致；未达到90%准确传意的5档。",
+            "evidence": [
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "system_100/Block[@SID='101'] In1"
+              },
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "CheckInputN lines; BusinessDecision/ValidN ports"
+              }
+            ],
+            "limitation": "该分类来自具体命名和位置语义，不把所有尾随数字都视为缺陷，也不把非默认名等同于准确命名。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "parameter_management": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "通道关键参数已变量化，但仍有较多可调业务值/回退值/转换或查表曲线留在块或 MATLAB Function 中；模型内嵌工作区也不能替代外部分类数据源。按新Part 7“部分关键参数提取、仍有较多硬编码”裁1；不是旧合同“多数散落”的套用。",
+            "evidence": [
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "Constant/Gain/Lookup fields; model workspace; stateflow chart scripts where present"
+              },
+              {
+                "path": "Model/interfaceVcErcRgn.xls",
+                "sha256": "01f62a7292f87a2718a5b78d2adbc3a9ab7208804c8bb55b23f5b82bc9e4e57a",
+                "location": "CAL; does not claim to inventory all embedded literals"
+              }
+            ],
+            "limitation": "硬编码数量含固定算法常量；实际裁决已区分标定与固定逻辑，不凭全部数字比率直接定档。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "build_independence": {
+            "score": 0,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务仍直接内嵌在一个 SLX，未形成带 Mask/明确契约的独立业务组件边界；按用户批准的新组空档补充裁0。基础复位库块或诊断低字节MEX不代表主体业务已组件化。",
+            "evidence": [
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "Mask/ports and PreLoadFcn; model dependencies"
+              }
+            ],
+            "limitation": "不以成功生码或存在工具库证明业务组件版本锁定。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "version_independence": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "模型当前版本为11.2.1_0；README解释 MAJOR/MINOR/PATCH 的兼容性含义，变更表关联本次业务状态完善及复位/资格修复，末尾为导出序号。语义来自明确递增规则，不由tag数量推导。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "7580bb038d540ceebc2a7efe4b80a0a62725ce1998ced07b12ef40bcf1769402",
+                "location": "Model semantic version policy"
+              },
+              {
+                "path": "Documentation/VcErcRgn_26R1_变更记录.xlsx",
+                "sha256": "9b5ef6ad16202844d26312c5fd5e7160d99a373941dd9a05d5b7e845cda05dbf",
+                "location": "25R3/26R1"
+              },
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
+                "location": "ModelVersionFormat"
+              }
+            ],
+            "limitation": "所有tag只对应一个源码commit，不声称真实多次生产发布。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "model_version": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "实际本地初始构造与后续模型修改有统一15列表格：版本、日期、内容、前后逻辑和信号增减说明均具备；当前外部接口表的ChangeLog能关联同版本。无虚构日期或八个月连续性。",
+            "evidence": [
+              {
+                "path": "Documentation/VcErcRgn_26R1_变更记录.xlsx",
+                "sha256": "9b5ef6ad16202844d26312c5fd5e7160d99a373941dd9a05d5b7e845cda05dbf",
+                "location": "Cover/25R3/26R1"
+              },
+              {
+                "path": "Model/interfaceVcErcRgn.xls",
+                "sha256": "01f62a7292f87a2718a5b78d2adbc3a9ab7208804c8bb55b23f5b82bc9e4e57a",
+                "location": "ChangeLog"
+              }
+            ],
+            "limitation": "历史SLX建设快照在维护者材料中保留；候选依据仓内记录，不假定可访问维护者工作区。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "directory": {
+            "score": 5,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "Documentation、Model、Src、UnitTest 按用途分层；SLX、接口/标定/执行组件、生成码、测试与变更材料各归所属目录。仓根README/.gitignore为合理通用文件；单模块包裹层不构成职责混杂。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "7580bb038d540ceebc2a7efe4b80a0a62725ce1998ced07b12ef40bcf1769402",
+                "location": "Directory usage; tracked file inventory"
+              }
+            ],
+            "limitation": "分析模型的Src/UnitTest只有明确缺失说明；目录存在不虚称有生成码或仓内测试。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "unit_test": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "仓内有SWUT用例表、逐采样输入预期向量、实际MIL测试报告及覆盖率报告；148个场景/1277采样全部通过。虽然模型Decision/Condition/MC-DC已测量，C Statement未测量，三项同时达标条件不成立，故1分。",
+            "evidence": [
+              {
+                "path": "UnitTest/VcErcRgn_BTC_UT_Report.html",
+                "sha256": "ca89dee4d90821e697641aec5cae6bf0fa56069aba1aea5f43b4780d9aba3d3e",
+                "location": "All scenario result rows; runtime source binding"
+              },
+              {
+                "path": "UnitTest/VcErcRgn_BTC_UTCov_Report.html",
+                "sha256": "e3d1b3bfec040a14a5017cbe1ccb57a9a093d76e8cbe973c63dd6875a6f9d102",
+                "location": "Native model metric names; statement unmeasured"
+              }
+            ],
+            "limitation": "BTC只是文件命名形态，实际工具Simulink/Simulink Coverage；host C harness不是SIL/PIL/HIL。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "release_branches": {
+            "score": 0,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "只有master和可选auto构建分支，没有跨平台配置/变体或平台发布策略，不能凭少分支跳到10；按Part 7“分支数≤1偏向0”，排除CI辅助分支后裁0。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "49e818a2ab42384d5de9e49ba8481c832819c772",
+                "refs": {
+                  "refs/heads/auto/master/1/49e818a2-1": "49e818a2ab42384d5de9e49ba8481c832819c772",
+                  "refs/heads/master": "49e818a2ab42384d5de9e49ba8481c832819c772"
+                }
+              },
+              {
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "c11b12535df68aa902ce1468ddf78b703f796c8713cc1e1d5b6b6115f12c67ba",
+                "location": "Synthetic platform refs"
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "device_specificity": {
+            "score": 10,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "master/auto中不含特定车型或平台代号，业务输入通过统一端口表达；按Part 7的命名代理证据裁10。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "49e818a2ab42384d5de9e49ba8481c832819c772",
+                "refs": {
+                  "refs/heads/auto/master/1/49e818a2-1": "49e818a2ab42384d5de9e49ba8481c832819c772",
+                  "refs/heads/master": "49e818a2ab42384d5de9e49ba8481c832819c772"
+                }
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          }
+        }
+      }
+    },
+    {
+      "id": "NEP-05",
+      "name": "VcDmcDrv",
+      "head": "acb2dcf4c0ad4622e1c18c7420e1cc5d67ae3f99",
+      "reference": {
+        "id": "NEP-05",
+        "name": "VcDmcDrv",
+        "head": "acb2dcf4c0ad4622e1c18c7420e1cc5d67ae3f99",
+        "scores": {
+          "hierarchy": 3,
+          "reuse": 1,
+          "interface": 1,
+          "dataflow": 1,
+          "naming": 3,
+          "parameter_management": 1,
+          "build_independence": 0,
+          "version_independence": 3,
+          "model_version": 3,
+          "directory": 5,
+          "unit_test": 0,
+          "release_branches": 0,
+          "device_specificity": 10
+        },
+        "total": 31,
+        "max_score": 61,
+        "leaves": {
+          "hierarchy": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "86 个子系统中，至少 82 个职责明确且单一（逐通道封装及四阶段、经审阅的业务决策/状态模块与诊断快照，95.3%）。分组层/信号层/处理阶段分别采用一致抽象；职责统计不以子系统块数多少单独定分。",
+            "evidence": [
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "system_113/Block[@SID='144'] EngineeringConversion"
+              },
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "system_113/Block[@SID='124'] RangeAndCommunication"
+              },
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "system_113/Block[@SID='151'] SafeSubstitution"
+              },
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "system_113/Block[@SID='136'] TemporalQualification"
+              }
+            ],
+            "limitation": "顶层分组仍存在粗粒度命名；该缺陷不推翻已验证的>=90%子系统职责下界。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "reuse": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "各通道的 TemporalQualification/RangeAndCommunication 有相同拓扑逻辑的独立副本；保留单独状态和通道标定是合理需求，但当前没有把共用逻辑定义为库/模型引用。基础块和局部 Mask 的存在不能消除重复实现。",
+            "evidence": [
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "system_113/Block[@SID='136'] TemporalQualification"
+              },
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "system_167/Block[@SID='190'] TemporalQualification"
+              }
+            ],
+            "limitation": "LibraryLink主要是基础复位比较和部分Bitwise组件；不能据此裁整个业务复用为3。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "interface": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "主要通信有显式 Inport/Outport；外部 XLS 完整描述 50 入/19 出接口，但内部 87/563 端口仍用 InN/OutN，单位/约束主要依赖外部表，达不到整体端口命名规范的2档。",
+            "evidence": [
+              {
+                "path": "Model/interfaceVcDmcDrv.xls",
+                "sha256": "dfb0c94a0ddc1b29491c65322fae56f18c85e7ee679b2fbc26e772c231048945",
+                "location": "IN/OUT; ChangeLog"
+              },
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "system_124/Block[@SID='128'] In4"
+              },
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "system_955/Block[@SID='957'] In1"
+              }
+            ],
+            "limitation": "外部接口材料完整不自动覆盖内部子系统接口质量。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "dataflow": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务图中的信号名称能追到端口，但多条输入穿过计算块区域，质量输入长距离折返汇聚；部分名称仅为 CheckInputN/DomainInputN/ValidN，原生图中可见不必要交叉与局部拥挤。故按部分命名且走线影响可读性的1档；不是按 Goto 个数机械扣分。",
+            "evidence": [
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "simulink/systems/system_root.xml; BusinessDecision; RangeAndCommunication"
+              }
+            ],
+            "limitation": "原生制图审阅 evidence/review-diagrams/NEP-05-business.png；From=0, Goto=0，仅为辅助库存。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "naming": {
+            "score": 3,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "命名体系以 scope+模块+成员+后缀为主；块与线共 1796 个可命名元素，按实际语义审阅有 198 个空名或缺少信号身份/用途的序号名（11.0%）。其余元素风格基本一致；未达到90%准确传意的5档。",
+            "evidence": [
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "system_124/Block[@SID='128'] In4"
+              },
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "CheckInputN lines; BusinessDecision/ValidN ports"
+              }
+            ],
+            "limitation": "该分类来自具体命名和位置语义，不把所有尾随数字都视为缺陷，也不把非默认名等同于准确命名。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "parameter_management": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "通道关键参数已变量化，但仍有较多可调业务值/回退值/转换或查表曲线留在块或 MATLAB Function 中；模型内嵌工作区也不能替代外部分类数据源。按新Part 7“部分关键参数提取、仍有较多硬编码”裁1；不是旧合同“多数散落”的套用。",
+            "evidence": [
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "Constant/Gain/Lookup fields; model workspace; stateflow chart scripts where present"
+              },
+              {
+                "path": "Model/interfaceVcDmcDrv.xls",
+                "sha256": "dfb0c94a0ddc1b29491c65322fae56f18c85e7ee679b2fbc26e772c231048945",
+                "location": "CAL; does not claim to inventory all embedded literals"
+              }
+            ],
+            "limitation": "硬编码数量含固定算法常量；实际裁决已区分标定与固定逻辑，不凭全部数字比率直接定档。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "build_independence": {
+            "score": 0,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务仍直接内嵌在一个 SLX，未形成带 Mask/明确契约的独立业务组件边界；按用户批准的新组空档补充裁0。基础复位库块或诊断低字节MEX不代表主体业务已组件化。",
+            "evidence": [
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "Mask/ports and PreLoadFcn; model dependencies"
+              }
+            ],
+            "limitation": "不以成功生码或存在工具库证明业务组件版本锁定。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "version_independence": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "模型当前版本为11.2.1_0；README解释 MAJOR/MINOR/PATCH 的兼容性含义，变更表关联本次业务状态完善及复位/资格修复，末尾为导出序号。语义来自明确递增规则，不由tag数量推导。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "c3debd3d34b3b7ce3c39623886bd86d347af9ba59ad681afcf067ff6c169958d",
+                "location": "Model semantic version policy"
+              },
+              {
+                "path": "Documentation/VcDmcDrv_26R1_变更记录.xlsx",
+                "sha256": "e34bbf3faf1741be8bc7c833546ac812e40612ab91696dc1491b9de6ff106459",
+                "location": "25R3/26R1"
+              },
+              {
+                "path": "Model/VcDmcDrv.slx",
+                "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
+                "location": "ModelVersionFormat"
+              }
+            ],
+            "limitation": "所有tag只对应一个源码commit，不声称真实多次生产发布。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "model_version": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "实际本地初始构造与后续模型修改有统一15列表格：版本、日期、内容、前后逻辑和信号增减说明均具备；当前外部接口表的ChangeLog能关联同版本。无虚构日期或八个月连续性。",
+            "evidence": [
+              {
+                "path": "Documentation/VcDmcDrv_26R1_变更记录.xlsx",
+                "sha256": "e34bbf3faf1741be8bc7c833546ac812e40612ab91696dc1491b9de6ff106459",
+                "location": "Cover/25R3/26R1"
+              },
+              {
+                "path": "Model/interfaceVcDmcDrv.xls",
+                "sha256": "dfb0c94a0ddc1b29491c65322fae56f18c85e7ee679b2fbc26e772c231048945",
+                "location": "ChangeLog"
+              }
+            ],
+            "limitation": "历史SLX建设快照在维护者材料中保留；候选依据仓内记录，不假定可访问维护者工作区。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "directory": {
+            "score": 5,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "Documentation、Model、Src、UnitTest 按用途分层；SLX、接口/标定/执行组件、生成码、测试与变更材料各归所属目录。仓根README/.gitignore为合理通用文件；单模块包裹层不构成职责混杂。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "c3debd3d34b3b7ce3c39623886bd86d347af9ba59ad681afcf067ff6c169958d",
+                "location": "Directory usage; tracked file inventory"
+              }
+            ],
+            "limitation": "分析模型的Src/UnitTest只有明确缺失说明；目录存在不虚称有生成码或仓内测试。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "unit_test": {
+            "score": 0,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "仓内未提供自主单元测试用例、执行/覆盖率报告，UnitTest说明明确标为无测试。维护者准入仿真不作为仓内测试提分。",
+            "evidence": [
+              {
+                "path": "UnitTest/README.txt",
+                "sha256": "f072b6e6ced3911fc03cb39b76ab217ecd498e5bf048a7a3b4c456a9f47ff454",
+                "location": "No owned automated unit tests"
+              }
+            ],
+            "limitation": "该模型外部准入仿真通过，但候选source-only不依赖该外部记录。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "release_branches": {
+            "score": 0,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "只有master和可选auto构建分支，没有跨平台配置/变体或平台发布策略，不能凭少分支跳到10；按Part 7“分支数≤1偏向0”，排除CI辅助分支后裁0。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "acb2dcf4c0ad4622e1c18c7420e1cc5d67ae3f99",
+                "refs": {
+                  "refs/heads/master": "acb2dcf4c0ad4622e1c18c7420e1cc5d67ae3f99"
+                }
+              },
+              {
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "b7f8c2fcc229e3e5a13e7aa540e4d9c271a82f501a918469254154b9747fefaf",
+                "location": "Synthetic platform refs"
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "device_specificity": {
+            "score": 10,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "master/auto中不含特定车型或平台代号，业务输入通过统一端口表达；按Part 7的命名代理证据裁10。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "acb2dcf4c0ad4622e1c18c7420e1cc5d67ae3f99",
+                "refs": {
+                  "refs/heads/master": "acb2dcf4c0ad4622e1c18c7420e1cc5d67ae3f99"
+                }
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          }
+        }
+      }
+    },
+    {
+      "id": "NEP-06",
+      "name": "VcWrcWhl",
+      "head": "8ed5aeb39d5588fcfb1bb0f81e4878950306be38",
+      "reference": {
+        "id": "NEP-06",
+        "name": "VcWrcWhl",
+        "head": "8ed5aeb39d5588fcfb1bb0f81e4878950306be38",
+        "scores": {
+          "hierarchy": 3,
+          "reuse": 1,
+          "interface": 1,
+          "dataflow": 1,
+          "naming": 3,
+          "parameter_management": 1,
+          "build_independence": 2,
+          "version_independence": 3,
+          "model_version": 3,
+          "directory": 5,
+          "unit_test": 1,
+          "release_branches": 0,
+          "device_specificity": 10
+        },
+        "total": 34,
+        "max_score": 61,
+        "leaves": {
+          "hierarchy": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "106 个子系统中，至少 102 个职责明确且单一（逐通道封装及四阶段、经审阅的业务决策/状态模块与诊断快照，96.2%）。分组层/信号层/处理阶段分别采用一致抽象；职责统计不以子系统块数多少单独定分。",
+            "evidence": [
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "system_1037/Block[@SID='1068'] EngineeringConversion"
+              },
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "system_1037/Block[@SID='1048'] RangeAndCommunication"
+              },
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "system_1037/Block[@SID='1075'] SafeSubstitution"
+              },
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "system_1037/Block[@SID='1060'] TemporalQualification"
+              }
+            ],
+            "limitation": "顶层分组仍存在粗粒度命名；该缺陷不推翻已验证的>=90%子系统职责下界。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "reuse": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "各通道的 TemporalQualification/RangeAndCommunication 有相同拓扑逻辑的独立副本；保留单独状态和通道标定是合理需求，但当前没有把共用逻辑定义为库/模型引用。基础块和局部 Mask 的存在不能消除重复实现。",
+            "evidence": [
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "system_1037/Block[@SID='1060'] TemporalQualification"
+              },
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "system_1094/Block[@SID='1117'] TemporalQualification"
+              }
+            ],
+            "limitation": "LibraryLink主要是基础复位比较和部分Bitwise组件；不能据此裁整个业务复用为3。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "interface": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "主要通信有显式 Inport/Outport；外部 XLS 完整描述 62 入/23 出接口，但内部 82/700 端口仍用 InN/OutN，单位/约束主要依赖外部表，达不到整体端口命名规范的2档。",
+            "evidence": [
+              {
+                "path": "VcWrcWhl/Model/interfaceVcWrcWhl.xls",
+                "sha256": "b153ea13311870e541653719dacc83d36c95054ddddba9f4534401efa9dd4df2",
+                "location": "IN/OUT; ChangeLog"
+              },
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "system_100/Block[@SID='102'] In2"
+              },
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "system_980/Block[@SID='1025'] Out2"
+              }
+            ],
+            "limitation": "外部接口材料完整不自动覆盖内部子系统接口质量。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "dataflow": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务图中的信号名称能追到端口，但多条输入穿过计算块区域，质量输入长距离折返汇聚；部分名称仅为 CheckInputN/DomainInputN/ValidN，原生图中可见不必要交叉与局部拥挤。故按部分命名且走线影响可读性的1档；不是按 Goto 个数机械扣分。",
+            "evidence": [
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "simulink/systems/system_root.xml; BusinessDecision; RangeAndCommunication"
+              }
+            ],
+            "limitation": "原生制图审阅 evidence/review-diagrams/NEP-06-business.png；From=40, Goto=20，仅为辅助库存。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "naming": {
+            "score": 3,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "命名体系以 scope+模块+成员+后缀为主；块与线共 2367 个可命名元素，按实际语义审阅有 262 个空名或缺少信号身份/用途的序号名（11.1%）。其余元素风格基本一致；未达到90%准确传意的5档。",
+            "evidence": [
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "system_100/Block[@SID='102'] In2"
+              },
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "CheckInputN lines; BusinessDecision/ValidN ports"
+              }
+            ],
+            "limitation": "该分类来自具体命名和位置语义，不把所有尾随数字都视为缺陷，也不把非默认名等同于准确命名。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "parameter_management": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "通道关键参数已变量化，但仍有较多可调业务值/回退值/转换或查表曲线留在块或 MATLAB Function 中；模型内嵌工作区也不能替代外部分类数据源。按新Part 7“部分关键参数提取、仍有较多硬编码”裁1；不是旧合同“多数散落”的套用。",
+            "evidence": [
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "Constant/Gain/Lookup fields; model workspace; stateflow chart scripts where present"
+              },
+              {
+                "path": "VcWrcWhl/Model/interfaceVcWrcWhl.xls",
+                "sha256": "b153ea13311870e541653719dacc83d36c95054ddddba9f4534401efa9dd4df2",
+                "location": "CAL; does not claim to inventory all embedded literals"
+              }
+            ],
+            "limitation": "硬编码数量含固定算法常量；实际裁决已区分标定与固定逻辑，不凭全部数字比率直接定档。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "build_independence": {
+            "score": 2,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "信号调理业务组件有 Mask，明确暴露 Minimum/Maximum/Timeout，并有 Raw/Age/Status/Reset 输入及物理值/资格输出契约；按已批准的新组补充规则裁2。",
+            "evidence": [
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "Mask/ports and PreLoadFcn; model dependencies"
+              }
+            ],
+            "limitation": "不以成功生码或存在工具库证明业务组件版本锁定。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "version_independence": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "模型当前版本为11.2.1_0；README解释 MAJOR/MINOR/PATCH 的兼容性含义，变更表关联本次业务状态完善及复位/资格修复，末尾为导出序号。语义来自明确递增规则，不由tag数量推导。",
+            "evidence": [
+              {
+                "path": "VcWrcWhl/README.md",
+                "sha256": "5f703cd5e20bb1376c2ea71a4c49e7aacab56e79392f9bb921b6049931b5249b",
+                "location": "Model semantic version policy"
+              },
+              {
+                "path": "VcWrcWhl/Documentation/VcWrcWhl_26R1_变更记录.xlsx",
+                "sha256": "1b9cf30db48bcb115ac0033108f9c4d51e79f638f1db34d763dc71a73e87e098",
+                "location": "25R3/26R1"
+              },
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
+                "location": "ModelVersionFormat"
+              }
+            ],
+            "limitation": "所有tag只对应一个源码commit，不声称真实多次生产发布。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "model_version": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "实际本地初始构造与后续模型修改有统一15列表格：版本、日期、内容、前后逻辑和信号增减说明均具备；当前外部接口表的ChangeLog能关联同版本。无虚构日期或八个月连续性。",
+            "evidence": [
+              {
+                "path": "VcWrcWhl/Documentation/VcWrcWhl_26R1_变更记录.xlsx",
+                "sha256": "1b9cf30db48bcb115ac0033108f9c4d51e79f638f1db34d763dc71a73e87e098",
+                "location": "Cover/25R3/26R1"
+              },
+              {
+                "path": "VcWrcWhl/Model/interfaceVcWrcWhl.xls",
+                "sha256": "b153ea13311870e541653719dacc83d36c95054ddddba9f4534401efa9dd4df2",
+                "location": "ChangeLog"
+              }
+            ],
+            "limitation": "历史SLX建设快照在维护者材料中保留；候选依据仓内记录，不假定可访问维护者工作区。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "directory": {
+            "score": 5,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "Documentation、Model、Src、UnitTest 按用途分层；SLX、接口/标定/执行组件、生成码、测试与变更材料各归所属目录。仓根README/.gitignore为合理通用文件；单模块包裹层不构成职责混杂。",
+            "evidence": [
+              {
+                "path": "VcWrcWhl/README.md",
+                "sha256": "5f703cd5e20bb1376c2ea71a4c49e7aacab56e79392f9bb921b6049931b5249b",
+                "location": "Directory usage; tracked file inventory"
+              }
+            ],
+            "limitation": "分析模型的Src/UnitTest只有明确缺失说明；目录存在不虚称有生成码或仓内测试。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "unit_test": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "仓内有SWUT用例表、逐采样输入预期向量、实际MIL测试报告及覆盖率报告；164个场景/1417采样全部通过。虽然模型Decision/Condition/MC-DC已测量，C Statement未测量，三项同时达标条件不成立，故1分。",
+            "evidence": [
+              {
+                "path": "VcWrcWhl/UnitTest/VcWrcWhl_BTC_UT_Report.html",
+                "sha256": "c05004bc54347f74fbf16958621ac47d714a7afd64583dc76c2d88e91dc3e21b",
+                "location": "All scenario result rows; runtime source binding"
+              },
+              {
+                "path": "VcWrcWhl/UnitTest/VcWrcWhl_BTC_UTCov_Report.html",
+                "sha256": "21cc7ef9cd2fd38a394bc9e4f3419d012324463d0f926b5e131b38166e95fc8f",
+                "location": "Native model metric names; statement unmeasured"
+              }
+            ],
+            "limitation": "BTC只是文件命名形态，实际工具Simulink/Simulink Coverage；host C harness不是SIL/PIL/HIL。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "release_branches": {
+            "score": 0,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "只有master和可选auto构建分支，没有跨平台配置/变体或平台发布策略，不能凭少分支跳到10；按Part 7“分支数≤1偏向0”，排除CI辅助分支后裁0。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "8ed5aeb39d5588fcfb1bb0f81e4878950306be38",
+                "refs": {
+                  "refs/heads/master": "8ed5aeb39d5588fcfb1bb0f81e4878950306be38"
+                }
+              },
+              {
+                "path": "VcWrcWhl/Documentation/GitSnapshotScope.txt",
+                "sha256": "0ec7638a881d7361580dc706575695082e4c04282bcc131c00b247ab229acc2b",
+                "location": "Synthetic platform refs"
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "device_specificity": {
+            "score": 10,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "master/auto中不含特定车型或平台代号，业务输入通过统一端口表达；按Part 7的命名代理证据裁10。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "8ed5aeb39d5588fcfb1bb0f81e4878950306be38",
+                "refs": {
+                  "refs/heads/master": "8ed5aeb39d5588fcfb1bb0f81e4878950306be38"
+                }
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          }
+        }
+      }
+    },
+    {
+      "id": "NEP-07",
+      "name": "VcDeChg",
+      "head": "482bcd7eac4cba0407b746d5eeb7bee46390bd20",
+      "reference": {
+        "id": "NEP-07",
+        "name": "VcDeChg",
+        "head": "482bcd7eac4cba0407b746d5eeb7bee46390bd20",
+        "scores": {
+          "hierarchy": 3,
+          "reuse": 1,
+          "interface": 1,
+          "dataflow": 1,
+          "naming": 3,
+          "parameter_management": 1,
+          "build_independence": 1,
+          "version_independence": 3,
+          "model_version": 3,
+          "directory": 5,
+          "unit_test": 1,
+          "release_branches": 0,
+          "device_specificity": 10
+        },
+        "total": 33,
+        "max_score": 61,
+        "leaves": {
+          "hierarchy": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "116 个子系统中，至少 112 个职责明确且单一（逐通道封装及四阶段、经审阅的业务决策/状态模块与诊断快照，96.6%）。分组层/信号层/处理阶段分别采用一致抽象；职责统计不以子系统块数多少单独定分。",
+            "evidence": [
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "system_1037/Block[@SID='1068'] EngineeringConversion"
+              },
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "system_1037/Block[@SID='1048'] RangeAndCommunication"
+              },
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "system_1037/Block[@SID='1075'] SafeSubstitution"
+              },
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "system_1037/Block[@SID='1060'] TemporalQualification"
+              }
+            ],
+            "limitation": "顶层分组仍存在粗粒度命名；该缺陷不推翻已验证的>=90%子系统职责下界。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "reuse": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "各通道的 TemporalQualification/RangeAndCommunication 有相同拓扑逻辑的独立副本；保留单独状态和通道标定是合理需求，但当前没有把共用逻辑定义为库/模型引用。基础块和局部 Mask 的存在不能消除重复实现。",
+            "evidence": [
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "system_1037/Block[@SID='1060'] TemporalQualification"
+              },
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "system_1094/Block[@SID='1117'] TemporalQualification"
+              }
+            ],
+            "limitation": "LibraryLink主要是基础复位比较和部分Bitwise组件；不能据此裁整个业务复用为3。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "interface": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "主要通信有显式 Inport/Outport；外部 XLS 完整描述 68 入/26 出接口，但内部 122/770 端口仍用 InN/OutN，单位/约束主要依赖外部表，达不到整体端口命名规范的2档。",
+            "evidence": [
+              {
+                "path": "Model/interfaceVcDeChg.xls",
+                "sha256": "f5bb010b684297a76039629b61b220f4e420e3bfaffd92fcbaa84dfeabbb7755",
+                "location": "IN/OUT; ChangeLog"
+              },
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "system_100/Block[@SID='102'] In2"
+              },
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "system_989/Block[@SID='1000'] Out1"
+              }
+            ],
+            "limitation": "外部接口材料完整不自动覆盖内部子系统接口质量。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "dataflow": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务图中的信号名称能追到端口，但多条输入穿过计算块区域，质量输入长距离折返汇聚；部分名称仅为 CheckInputN/DomainInputN/ValidN，原生图中可见不必要交叉与局部拥挤。故按部分命名且走线影响可读性的1档；不是按 Goto 个数机械扣分。",
+            "evidence": [
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "simulink/systems/system_root.xml; BusinessDecision; RangeAndCommunication"
+              }
+            ],
+            "limitation": "原生制图审阅 evidence/review-diagrams/NEP-07-business.png；From=44, Goto=22，仅为辅助库存。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "naming": {
+            "score": 3,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "命名体系以 scope+模块+成员+后缀为主；块与线共 2580 个可命名元素，按实际语义审阅有 317 个空名或缺少信号身份/用途的序号名（12.3%）。其余元素风格基本一致；未达到90%准确传意的5档。",
+            "evidence": [
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "system_100/Block[@SID='102'] In2"
+              },
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "CheckInputN lines; BusinessDecision/ValidN ports"
+              }
+            ],
+            "limitation": "该分类来自具体命名和位置语义，不把所有尾随数字都视为缺陷，也不把非默认名等同于准确命名。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "parameter_management": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "通道关键参数已变量化，但仍有较多可调业务值/回退值/转换或查表曲线留在块或 MATLAB Function 中；模型内嵌工作区也不能替代外部分类数据源。按新Part 7“部分关键参数提取、仍有较多硬编码”裁1；不是旧合同“多数散落”的套用。",
+            "evidence": [
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "Constant/Gain/Lookup fields; model workspace; stateflow chart scripts where present"
+              },
+              {
+                "path": "Model/interfaceVcDeChg.xls",
+                "sha256": "f5bb010b684297a76039629b61b220f4e420e3bfaffd92fcbaa84dfeabbb7755",
+                "location": "CAL; does not claim to inventory all embedded literals"
+              }
+            ],
+            "limitation": "硬编码数量含固定算法常量；实际裁决已区分标定与固定逻辑，不凭全部数字比率直接定档。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "build_independence": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "模型 PreLoad 回调真实依赖校验标定参数的 .p 保护代码；无需其 .m 源即可从完整恢复副本加载和仿真。未形成版本锁定业务组件库，按保护依赖裁1。",
+            "evidence": [
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "Mask/ports and PreLoadFcn; model dependencies"
+              }
+            ],
+            "limitation": "不以成功生码或存在工具库证明业务组件版本锁定。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "version_independence": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "模型当前版本为11.2.1_0；README解释 MAJOR/MINOR/PATCH 的兼容性含义，变更表关联本次业务状态完善及复位/资格修复，末尾为导出序号。语义来自明确递增规则，不由tag数量推导。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "cb393b2bef7825932b62a54d2a377b60f91627470b80700165324e71009a9208",
+                "location": "Model semantic version policy"
+              },
+              {
+                "path": "Documentation/VcDeChg_26R1_变更记录.xlsx",
+                "sha256": "e7e6135f918590b9588f67b14cc7e95b057e2db43414295fd49177aabfe6f99f",
+                "location": "25R3/26R1"
+              },
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
+                "location": "ModelVersionFormat"
+              }
+            ],
+            "limitation": "所有tag只对应一个源码commit，不声称真实多次生产发布。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "model_version": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "实际本地初始构造与后续模型修改有统一15列表格：版本、日期、内容、前后逻辑和信号增减说明均具备；当前外部接口表的ChangeLog能关联同版本。无虚构日期或八个月连续性。",
+            "evidence": [
+              {
+                "path": "Documentation/VcDeChg_26R1_变更记录.xlsx",
+                "sha256": "e7e6135f918590b9588f67b14cc7e95b057e2db43414295fd49177aabfe6f99f",
+                "location": "Cover/25R3/26R1"
+              },
+              {
+                "path": "Model/interfaceVcDeChg.xls",
+                "sha256": "f5bb010b684297a76039629b61b220f4e420e3bfaffd92fcbaa84dfeabbb7755",
+                "location": "ChangeLog"
+              }
+            ],
+            "limitation": "历史SLX建设快照在维护者材料中保留；候选依据仓内记录，不假定可访问维护者工作区。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "directory": {
+            "score": 5,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "Documentation、Model、Src、UnitTest 按用途分层；SLX、接口/标定/执行组件、生成码、测试与变更材料各归所属目录。仓根README/.gitignore为合理通用文件；单模块包裹层不构成职责混杂。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "cb393b2bef7825932b62a54d2a377b60f91627470b80700165324e71009a9208",
+                "location": "Directory usage; tracked file inventory"
+              }
+            ],
+            "limitation": "分析模型的Src/UnitTest只有明确缺失说明；目录存在不虚称有生成码或仓内测试。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "unit_test": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "仓内有SWUT用例表、逐采样输入预期向量、实际MIL测试报告及覆盖率报告；180个场景/1557采样全部通过。虽然模型Decision/Condition/MC-DC已测量，C Statement未测量，三项同时达标条件不成立，故1分。",
+            "evidence": [
+              {
+                "path": "UnitTest/VcDeChg_BTC_UT_Report.html",
+                "sha256": "17876a8341454d9512e9c5d84718ad2fb6ef364d58ff5d3fc451abf0b483f256",
+                "location": "All scenario result rows; runtime source binding"
+              },
+              {
+                "path": "UnitTest/VcDeChg_BTC_UTCov_Report.html",
+                "sha256": "bf3e1f3dca38db3e30716c293b5d59ab21b9c3d5f3aea9ffa4addd41bfb94a89",
+                "location": "Native model metric names; statement unmeasured"
+              }
+            ],
+            "limitation": "BTC只是文件命名形态，实际工具Simulink/Simulink Coverage；host C harness不是SIL/PIL/HIL。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "release_branches": {
+            "score": 0,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "只有master和可选auto构建分支，没有跨平台配置/变体或平台发布策略，不能凭少分支跳到10；按Part 7“分支数≤1偏向0”，排除CI辅助分支后裁0。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "482bcd7eac4cba0407b746d5eeb7bee46390bd20",
+                "refs": {
+                  "refs/heads/auto/master/1/482bcd7e-1": "482bcd7eac4cba0407b746d5eeb7bee46390bd20",
+                  "refs/heads/master": "482bcd7eac4cba0407b746d5eeb7bee46390bd20"
+                }
+              },
+              {
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "6d03c5129d05cea0b388b4588701f232f29e090de8e55588007f6a6e3896f976",
+                "location": "Synthetic platform refs"
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "device_specificity": {
+            "score": 10,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "master/auto中不含特定车型或平台代号，业务输入通过统一端口表达；按Part 7的命名代理证据裁10。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "482bcd7eac4cba0407b746d5eeb7bee46390bd20",
+                "refs": {
+                  "refs/heads/auto/master/1/482bcd7e-1": "482bcd7eac4cba0407b746d5eeb7bee46390bd20",
+                  "refs/heads/master": "482bcd7eac4cba0407b746d5eeb7bee46390bd20"
+                }
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          }
+        }
+      }
+    },
+    {
+      "id": "NEP-08",
+      "name": "VcPvcThm",
+      "head": "a6c4ad4bcb7fe89f1ee7871e4224c1484000ccd4",
+      "reference": {
+        "id": "NEP-08",
+        "name": "VcPvcThm",
+        "head": "a6c4ad4bcb7fe89f1ee7871e4224c1484000ccd4",
+        "scores": {
+          "hierarchy": 3,
+          "reuse": 1,
+          "interface": 1,
+          "dataflow": 1,
+          "naming": 3,
+          "parameter_management": 1,
+          "build_independence": 0,
+          "version_independence": 3,
+          "model_version": 3,
+          "directory": 3,
+          "unit_test": 1,
+          "release_branches": 0,
+          "device_specificity": 10
+        },
+        "total": 30,
+        "max_score": 61,
+        "leaves": {
+          "hierarchy": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "187 个子系统中，至少 183 个职责明确且单一（逐通道封装及四阶段、经审阅的业务决策/状态模块与诊断快照，97.9%）。分组层/信号层/处理阶段分别采用一致抽象；职责统计不以子系统块数多少单独定分。",
+            "evidence": [
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "system_1035/Block[@SID='1066'] EngineeringConversion"
+              },
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "system_1035/Block[@SID='1046'] RangeAndCommunication"
+              },
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "system_1035/Block[@SID='1073'] SafeSubstitution"
+              },
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "system_1035/Block[@SID='1058'] TemporalQualification"
+              }
+            ],
+            "limitation": "顶层分组仍存在粗粒度命名；该缺陷不推翻已验证的>=90%子系统职责下界。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "reuse": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "各通道的 TemporalQualification/RangeAndCommunication 有相同拓扑逻辑的独立副本；保留单独状态和通道标定是合理需求，但当前没有把共用逻辑定义为库/模型引用。基础块和局部 Mask 的存在不能消除重复实现。",
+            "evidence": [
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "system_1035/Block[@SID='1058'] TemporalQualification"
+              },
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "system_1092/Block[@SID='1115'] TemporalQualification"
+              }
+            ],
+            "limitation": "LibraryLink主要是基础复位比较和部分Bitwise组件；不能据此裁整个业务复用为3。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "interface": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "主要通信有显式 Inport/Outport；外部 XLS 完整描述 110 入/39 出接口，但内部 196/1245 端口仍用 InN/OutN，单位/约束主要依赖外部表，达不到整体端口命名规范的2档。",
+            "evidence": [
+              {
+                "path": "Model/interfaceVcPvcThm.xls",
+                "sha256": "99a7bd1e4c69fd25c55e3e9a04b1260dd07e62c0f105cafb3a04233bd736765d",
+                "location": "IN/OUT; ChangeLog"
+              },
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "system_1014/Block[@SID='1016'] In2"
+              },
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "system_999/Block[@SID='1006'] Out1"
+              }
+            ],
+            "limitation": "外部接口材料完整不自动覆盖内部子系统接口质量。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "dataflow": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务图中的信号名称能追到端口，但多条输入穿过计算块区域，质量输入长距离折返汇聚；部分名称仅为 CheckInputN/DomainInputN/ValidN，原生图中可见不必要交叉与局部拥挤。故按部分命名且走线影响可读性的1档；不是按 Goto 个数机械扣分。",
+            "evidence": [
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "simulink/systems/system_root.xml; BusinessDecision; RangeAndCommunication"
+              }
+            ],
+            "limitation": "原生制图审阅 evidence/review-diagrams/NEP-08-business.png；From=72, Goto=36，仅为辅助库存。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "naming": {
+            "score": 3,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "命名体系以 scope+模块+成员+后缀为主；块与线共 4161 个可命名元素，按实际语义审阅有 521 个空名或缺少信号身份/用途的序号名（12.5%）。其余元素风格基本一致；未达到90%准确传意的5档。",
+            "evidence": [
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "system_1014/Block[@SID='1016'] In2"
+              },
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "CheckInputN lines; BusinessDecision/ValidN ports"
+              }
+            ],
+            "limitation": "该分类来自具体命名和位置语义，不把所有尾随数字都视为缺陷，也不把非默认名等同于准确命名。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "parameter_management": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "通道关键参数已变量化，但仍有较多可调业务值/回退值/转换或查表曲线留在块或 MATLAB Function 中；模型内嵌工作区也不能替代外部分类数据源。按新Part 7“部分关键参数提取、仍有较多硬编码”裁1；不是旧合同“多数散落”的套用。",
+            "evidence": [
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "Constant/Gain/Lookup fields; model workspace; stateflow chart scripts where present"
+              },
+              {
+                "path": "Model/interfaceVcPvcThm.xls",
+                "sha256": "99a7bd1e4c69fd25c55e3e9a04b1260dd07e62c0f105cafb3a04233bd736765d",
+                "location": "CAL; does not claim to inventory all embedded literals"
+              }
+            ],
+            "limitation": "硬编码数量含固定算法常量；实际裁决已区分标定与固定逻辑，不凭全部数字比率直接定档。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "build_independence": {
+            "score": 0,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务仍直接内嵌在一个 SLX，未形成带 Mask/明确契约的独立业务组件边界；按用户批准的新组空档补充裁0。基础复位库块或诊断低字节MEX不代表主体业务已组件化。",
+            "evidence": [
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "Mask/ports and PreLoadFcn; model dependencies"
+              }
+            ],
+            "limitation": "不以成功生码或存在工具库证明业务组件版本锁定。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "version_independence": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "模型当前版本为11.2.1_0；README解释 MAJOR/MINOR/PATCH 的兼容性含义，变更表关联本次业务状态完善及复位/资格修复，末尾为导出序号。语义来自明确递增规则，不由tag数量推导。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "70d950174f41fa41962ac20ccbde60f00348ebd777aca0375213939279874ccb",
+                "location": "Model semantic version policy"
+              },
+              {
+                "path": "Documentation/VcPvcThm_26R1_变更记录.xlsx",
+                "sha256": "fb0ee993d1167dc198a3a0d3848bd0082d07429cacb7e3ed0e03aa5f34f7591c",
+                "location": "25R3/26R1"
+              },
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
+                "location": "ModelVersionFormat"
+              }
+            ],
+            "limitation": "所有tag只对应一个源码commit，不声称真实多次生产发布。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "model_version": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "实际本地初始构造与后续模型修改有统一15列表格：版本、日期、内容、前后逻辑和信号增减说明均具备；当前外部接口表的ChangeLog能关联同版本。无虚构日期或八个月连续性。",
+            "evidence": [
+              {
+                "path": "Documentation/VcPvcThm_26R1_变更记录.xlsx",
+                "sha256": "fb0ee993d1167dc198a3a0d3848bd0082d07429cacb7e3ed0e03aa5f34f7591c",
+                "location": "Cover/25R3/26R1"
+              },
+              {
+                "path": "Model/interfaceVcPvcThm.xls",
+                "sha256": "99a7bd1e4c69fd25c55e3e9a04b1260dd07e62c0f105cafb3a04233bd736765d",
+                "location": "ChangeLog"
+              }
+            ],
+            "limitation": "历史SLX建设快照在维护者材料中保留；候选依据仓内记录，不假定可访问维护者工作区。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "directory": {
+            "score": 3,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "Documentation/Model/Src/UintTest 的职责分离清楚，但 UintTest 拼写不规范，按基本合理3档。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "70d950174f41fa41962ac20ccbde60f00348ebd777aca0375213939279874ccb",
+                "location": "Directory usage; tracked file inventory"
+              }
+            ],
+            "limitation": "分析模型的Src/UnitTest只有明确缺失说明；目录存在不虚称有生成码或仓内测试。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "unit_test": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "仓内有SWUT用例表、逐采样输入预期向量、实际MIL测试报告及覆盖率报告；292个场景/2537采样全部通过。虽然模型Decision/Condition/MC-DC已测量，C Statement未测量，三项同时达标条件不成立，故1分。",
+            "evidence": [
+              {
+                "path": "UintTest/VcPvcThm_BTC_UT_Report.html",
+                "sha256": "6fad965bf937e3f5e79ca85229bd3b7f6f4c0911c7803f577eb7286c67574ce5",
+                "location": "All scenario result rows; runtime source binding"
+              },
+              {
+                "path": "UintTest/VcPvcThm_BTC_UTCov_Report.html",
+                "sha256": "9eb04edb6b263693a70bbd4d96a11070680e7b1ba0d28f6eb47df661f84c7712",
+                "location": "Native model metric names; statement unmeasured"
+              }
+            ],
+            "limitation": "BTC只是文件命名形态，实际工具Simulink/Simulink Coverage；host C harness不是SIL/PIL/HIL。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "release_branches": {
+            "score": 0,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "只有master和可选auto构建分支，没有跨平台配置/变体或平台发布策略，不能凭少分支跳到10；按Part 7“分支数≤1偏向0”，排除CI辅助分支后裁0。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "a6c4ad4bcb7fe89f1ee7871e4224c1484000ccd4",
+                "refs": {
+                  "refs/heads/master": "a6c4ad4bcb7fe89f1ee7871e4224c1484000ccd4"
+                }
+              },
+              {
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "ca3b7f899f8e59623bc67177565cd515a661f625d38d583cf157e7b679a5f1ad",
+                "location": "Synthetic platform refs"
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "device_specificity": {
+            "score": 10,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "master/auto中不含特定车型或平台代号，业务输入通过统一端口表达；按Part 7的命名代理证据裁10。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "a6c4ad4bcb7fe89f1ee7871e4224c1484000ccd4",
+                "refs": {
+                  "refs/heads/master": "a6c4ad4bcb7fe89f1ee7871e4224c1484000ccd4"
+                }
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          }
+        }
+      }
+    },
+    {
+      "id": "NEP-09",
+      "name": "VcSfCPropR",
+      "head": "77c522c76b2d8b17004f074aea5b481faaec501f",
+      "reference": {
+        "id": "NEP-09",
+        "name": "VcSfCPropR",
+        "head": "77c522c76b2d8b17004f074aea5b481faaec501f",
+        "scores": {
+          "hierarchy": 3,
+          "reuse": 1,
+          "interface": 1,
+          "dataflow": 1,
+          "naming": 3,
+          "parameter_management": 1,
+          "build_independence": 0,
+          "version_independence": 3,
+          "model_version": 3,
+          "directory": 5,
+          "unit_test": 1,
+          "release_branches": 8,
+          "device_specificity": 8
+        },
+        "total": 38,
+        "max_score": 61,
+        "leaves": {
+          "hierarchy": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "232 个子系统中，至少 228 个职责明确且单一（逐通道封装及四阶段、经审阅的业务决策/状态模块与诊断快照，98.3%）。分组层/信号层/处理阶段分别采用一致抽象；职责统计不以子系统块数多少单独定分。",
+            "evidence": [
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "system_1033/Block[@SID='1064'] EngineeringConversion"
+              },
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "system_1033/Block[@SID='1044'] RangeAndCommunication"
+              },
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "system_1033/Block[@SID='1071'] SafeSubstitution"
+              },
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "system_1033/Block[@SID='1056'] TemporalQualification"
+              }
+            ],
+            "limitation": "顶层分组仍存在粗粒度命名；该缺陷不推翻已验证的>=90%子系统职责下界。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "reuse": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "各通道的 TemporalQualification/RangeAndCommunication 有相同拓扑逻辑的独立副本；保留单独状态和通道标定是合理需求，但当前没有把共用逻辑定义为库/模型引用。基础块和局部 Mask 的存在不能消除重复实现。",
+            "evidence": [
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "system_1033/Block[@SID='1056'] TemporalQualification"
+              },
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "system_1090/Block[@SID='1113'] TemporalQualification"
+              }
+            ],
+            "limitation": "LibraryLink主要是基础复位比较和部分Bitwise组件；不能据此裁整个业务复用为3。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "interface": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "主要通信有显式 Inport/Outport；外部 XLS 完整描述 137 入/49 出接口，但内部 209/1556 端口仍用 InN/OutN，单位/约束主要依赖外部表，达不到整体端口命名规范的2档。",
+            "evidence": [
+              {
+                "path": "Model/interfaceVcSfCPropR.xls",
+                "sha256": "d7c698147a4da14181f199418d5dbf2bf271bfabd7b7584eb88d138de1bf8edc",
+                "location": "IN/OUT; ChangeLog"
+              },
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "system_100/Block[@SID='102'] In2"
+              },
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "system_999/Block[@SID='1006'] Out1"
+              }
+            ],
+            "limitation": "外部接口材料完整不自动覆盖内部子系统接口质量。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "dataflow": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务图中的信号名称能追到端口，但多条输入穿过计算块区域，质量输入长距离折返汇聚；部分名称仅为 CheckInputN/DomainInputN/ValidN，原生图中可见不必要交叉与局部拥挤。故按部分命名且走线影响可读性的1档；不是按 Goto 个数机械扣分。",
+            "evidence": [
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "simulink/systems/system_root.xml; BusinessDecision; RangeAndCommunication"
+              }
+            ],
+            "limitation": "原生制图审阅 evidence/review-diagrams/NEP-09-business.png；From=90, Goto=45，仅为辅助库存。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "naming": {
+            "score": 3,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "命名体系以 scope+模块+成员+后缀为主；块与线共 5208 个可命名元素，按实际语义审阅有 615 个空名或缺少信号身份/用途的序号名（11.8%）。其余元素风格基本一致；未达到90%准确传意的5档。",
+            "evidence": [
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "system_100/Block[@SID='102'] In2"
+              },
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "CheckInputN lines; BusinessDecision/ValidN ports"
+              }
+            ],
+            "limitation": "该分类来自具体命名和位置语义，不把所有尾随数字都视为缺陷，也不把非默认名等同于准确命名。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "parameter_management": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "通道关键参数已变量化，但仍有较多可调业务值/回退值/转换或查表曲线留在块或 MATLAB Function 中；模型内嵌工作区也不能替代外部分类数据源。按新Part 7“部分关键参数提取、仍有较多硬编码”裁1；不是旧合同“多数散落”的套用。",
+            "evidence": [
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "Constant/Gain/Lookup fields; model workspace; stateflow chart scripts where present"
+              },
+              {
+                "path": "Model/interfaceVcSfCPropR.xls",
+                "sha256": "d7c698147a4da14181f199418d5dbf2bf271bfabd7b7584eb88d138de1bf8edc",
+                "location": "CAL; does not claim to inventory all embedded literals"
+              }
+            ],
+            "limitation": "硬编码数量含固定算法常量；实际裁决已区分标定与固定逻辑，不凭全部数字比率直接定档。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "build_independence": {
+            "score": 0,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务仍直接内嵌在一个 SLX，未形成带 Mask/明确契约的独立业务组件边界；按用户批准的新组空档补充裁0。基础复位库块或诊断低字节MEX不代表主体业务已组件化。",
+            "evidence": [
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "Mask/ports and PreLoadFcn; model dependencies"
+              }
+            ],
+            "limitation": "不以成功生码或存在工具库证明业务组件版本锁定。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "version_independence": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "模型当前版本为11.2.1_0；README解释 MAJOR/MINOR/PATCH 的兼容性含义，变更表关联本次业务状态完善及复位/资格修复，末尾为导出序号。语义来自明确递增规则，不由tag数量推导。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "a9890405723f34ed552807419a9d2c30e42d2027886120cd1d11353de598f1eb",
+                "location": "Model semantic version policy"
+              },
+              {
+                "path": "Documentation/VcSfCPropR_26R1_变更记录.xlsx",
+                "sha256": "3961e8ccf06650691ce358b38ee1ea9dec4f267b7e500d7bf75701d0196d98e9",
+                "location": "25R3/26R1"
+              },
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
+                "location": "ModelVersionFormat"
+              }
+            ],
+            "limitation": "所有tag只对应一个源码commit，不声称真实多次生产发布。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "model_version": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "实际本地初始构造与后续模型修改有统一15列表格：版本、日期、内容、前后逻辑和信号增减说明均具备；当前外部接口表的ChangeLog能关联同版本。无虚构日期或八个月连续性。",
+            "evidence": [
+              {
+                "path": "Documentation/VcSfCPropR_26R1_变更记录.xlsx",
+                "sha256": "3961e8ccf06650691ce358b38ee1ea9dec4f267b7e500d7bf75701d0196d98e9",
+                "location": "Cover/25R3/26R1"
+              },
+              {
+                "path": "Model/interfaceVcSfCPropR.xls",
+                "sha256": "d7c698147a4da14181f199418d5dbf2bf271bfabd7b7584eb88d138de1bf8edc",
+                "location": "ChangeLog"
+              }
+            ],
+            "limitation": "历史SLX建设快照在维护者材料中保留；候选依据仓内记录，不假定可访问维护者工作区。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "directory": {
+            "score": 5,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "Documentation、Model、Src、UnitTest 按用途分层；SLX、接口/标定/执行组件、生成码、测试与变更材料各归所属目录。仓根README/.gitignore为合理通用文件；单模块包裹层不构成职责混杂。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "a9890405723f34ed552807419a9d2c30e42d2027886120cd1d11353de598f1eb",
+                "location": "Directory usage; tracked file inventory"
+              }
+            ],
+            "limitation": "分析模型的Src/UnitTest只有明确缺失说明；目录存在不虚称有生成码或仓内测试。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "unit_test": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "仓内有SWUT用例表、逐采样输入预期向量、实际MIL测试报告及覆盖率报告；364个场景/3167采样全部通过。虽然模型Decision/Condition/MC-DC已测量，C Statement未测量，三项同时达标条件不成立，故1分。",
+            "evidence": [
+              {
+                "path": "UnitTest/VcSfCPropR_BTC_UT_Report.html",
+                "sha256": "f8f8d17808bf436295f18e3041c3d5d9c8f635424803e8cbc07ad4f21b482512",
+                "location": "All scenario result rows; runtime source binding"
+              },
+              {
+                "path": "UnitTest/VcSfCPropR_BTC_UTCov_Report.html",
+                "sha256": "5bd0118ce26a5aed58169edbb598c780db747cb606dedee2ca1e6efd36b68129",
+                "location": "Native model metric names; statement unmeasured"
+              }
+            ],
+            "limitation": "BTC只是文件命名形态，实际工具Simulink/Simulink Coverage；host C harness不是SIL/PIL/HIL。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "release_branches": {
+            "score": 8,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "存在按模块族路由的 Branch-XCM-S, Branch-ZCUH, Branch-ZCUN 平台分支，无车型代号分支；按Part 7分支名分析为同平台同一分支8档。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "77c522c76b2d8b17004f074aea5b481faaec501f",
+                "refs": {
+                  "refs/heads/Branch-XCM-S": "77c522c76b2d8b17004f074aea5b481faaec501f",
+                  "refs/heads/Branch-ZCUH": "77c522c76b2d8b17004f074aea5b481faaec501f",
+                  "refs/heads/Branch-ZCUN": "77c522c76b2d8b17004f074aea5b481faaec501f",
+                  "refs/heads/auto/master/1/77c522c7-1": "77c522c76b2d8b17004f074aea5b481faaec501f",
+                  "refs/heads/master": "77c522c76b2d8b17004f074aea5b481faaec501f"
+                }
+              },
+              {
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "311da3158859121adb08d2aa445b852b0d358203e0d9db294be5e5cddb6644cb",
+                "location": "Synthetic platform refs"
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "device_specificity": {
+            "score": 8,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "平台分支名表明平台区分，没有单一车型绑定；按Part 7命名证据为8档。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "77c522c76b2d8b17004f074aea5b481faaec501f",
+                "refs": {
+                  "refs/heads/Branch-XCM-S": "77c522c76b2d8b17004f074aea5b481faaec501f",
+                  "refs/heads/Branch-ZCUH": "77c522c76b2d8b17004f074aea5b481faaec501f",
+                  "refs/heads/Branch-ZCUN": "77c522c76b2d8b17004f074aea5b481faaec501f",
+                  "refs/heads/auto/master/1/77c522c7-1": "77c522c76b2d8b17004f074aea5b481faaec501f",
+                  "refs/heads/master": "77c522c76b2d8b17004f074aea5b481faaec501f"
+                }
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          }
+        }
+      }
+    },
+    {
+      "id": "NEP-10",
+      "name": "VcSfDPropR",
+      "head": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
+      "reference": {
+        "id": "NEP-10",
+        "name": "VcSfDPropR",
+        "head": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
+        "scores": {
+          "hierarchy": 3,
+          "reuse": 1,
+          "interface": 1,
+          "dataflow": 1,
+          "naming": 3,
+          "parameter_management": 1,
+          "build_independence": 0,
+          "version_independence": 3,
+          "model_version": 3,
+          "directory": 5,
+          "unit_test": 0,
+          "release_branches": 8,
+          "device_specificity": 8
+        },
+        "total": 37,
+        "max_score": 61,
+        "leaves": {
+          "hierarchy": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "822 个子系统中，至少 802 个职责明确且单一（逐通道封装及四阶段、经审阅的业务决策/状态模块与诊断快照，97.6%）。分组层/信号层/处理阶段分别采用一致抽象；职责统计不以子系统块数多少单独定分。",
+            "evidence": [
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "system_1035/Block[@SID='1066'] EngineeringConversion"
+              },
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "system_1035/Block[@SID='1046'] RangeAndCommunication"
+              },
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "system_1035/Block[@SID='1073'] SafeSubstitution"
+              },
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "system_1035/Block[@SID='1058'] TemporalQualification"
+              }
+            ],
+            "limitation": "顶层分组仍存在粗粒度命名；该缺陷不推翻已验证的>=90%子系统职责下界。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "reuse": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "各通道的 TemporalQualification/RangeAndCommunication 有相同拓扑逻辑的独立副本；保留单独状态和通道标定是合理需求，但当前没有把共用逻辑定义为库/模型引用。基础块和局部 Mask 的存在不能消除重复实现。",
+            "evidence": [
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "system_1035/Block[@SID='1058'] TemporalQualification"
+              },
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "system_1092/Block[@SID='1115'] TemporalQualification"
+              }
+            ],
+            "limitation": "LibraryLink主要是基础复位比较和部分Bitwise组件；不能据此裁整个业务复用为3。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "interface": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "主要通信有显式 Inport/Outport；外部 XLS 完整描述 482 入/163 出接口，但内部 886/5580 端口仍用 InN/OutN，单位/约束主要依赖外部表，达不到整体端口命名规范的2档。",
+            "evidence": [
+              {
+                "path": "Model/interfaceVcSfDPropR.xls",
+                "sha256": "c1224fa691796b1125d2654dd79159586d4eba88c0e832ccaff5fe16f7ffe4bd",
+                "location": "IN/OUT; ChangeLog"
+              },
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "system_1016/Block[@SID='1019'] In3"
+              },
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "system_989/Block[@SID='1000'] Out1"
+              }
+            ],
+            "limitation": "外部接口材料完整不自动覆盖内部子系统接口质量。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "dataflow": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务图中的信号名称能追到端口，但多条输入穿过计算块区域，质量输入长距离折返汇聚；部分名称仅为 CheckInputN/DomainInputN/ValidN，原生图中可见不必要交叉与局部拥挤。故按部分命名且走线影响可读性的1档；不是按 Goto 个数机械扣分。",
+            "evidence": [
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "simulink/systems/system_root.xml; BusinessDecision; RangeAndCommunication"
+              }
+            ],
+            "limitation": "原生制图审阅 evidence/review-diagrams/NEP-10-business.png；From=320, Goto=160，仅为辅助库存。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "naming": {
+            "score": 3,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "命名体系以 scope+模块+成员+后缀为主；块与线共 18392 个可命名元素，按实际语义审阅有 2321 个空名或缺少信号身份/用途的序号名（12.6%）。其余元素风格基本一致；未达到90%准确传意的5档。",
+            "evidence": [
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "system_1016/Block[@SID='1019'] In3"
+              },
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "CheckInputN lines; BusinessDecision/ValidN ports"
+              }
+            ],
+            "limitation": "该分类来自具体命名和位置语义，不把所有尾随数字都视为缺陷，也不把非默认名等同于准确命名。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "parameter_management": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "通道关键参数已变量化，但仍有较多可调业务值/回退值/转换或查表曲线留在块或 MATLAB Function 中；模型内嵌工作区也不能替代外部分类数据源。按新Part 7“部分关键参数提取、仍有较多硬编码”裁1；不是旧合同“多数散落”的套用。",
+            "evidence": [
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "Constant/Gain/Lookup fields; model workspace; stateflow chart scripts where present"
+              },
+              {
+                "path": "Model/interfaceVcSfDPropR.xls",
+                "sha256": "c1224fa691796b1125d2654dd79159586d4eba88c0e832ccaff5fe16f7ffe4bd",
+                "location": "CAL; does not claim to inventory all embedded literals"
+              }
+            ],
+            "limitation": "硬编码数量含固定算法常量；实际裁决已区分标定与固定逻辑，不凭全部数字比率直接定档。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "build_independence": {
+            "score": 0,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务仍直接内嵌在一个 SLX，未形成带 Mask/明确契约的独立业务组件边界；按用户批准的新组空档补充裁0。基础复位库块或诊断低字节MEX不代表主体业务已组件化。",
+            "evidence": [
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "Mask/ports and PreLoadFcn; model dependencies"
+              }
+            ],
+            "limitation": "不以成功生码或存在工具库证明业务组件版本锁定。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "version_independence": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "模型当前版本为11.2.1_0；README解释 MAJOR/MINOR/PATCH 的兼容性含义，变更表关联本次业务状态完善及复位/资格修复，末尾为导出序号。语义来自明确递增规则，不由tag数量推导。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "58a15dc96a8649b054f399c075743e4d43494b8abb50a0398ba4cbb48a1fd951",
+                "location": "Model semantic version policy"
+              },
+              {
+                "path": "Documentation/VcSfDPropR_26R1_变更记录.xlsx",
+                "sha256": "9a4d0766733568b2c8671d0b569a315dd0bc4e1ee6074163400793997420c616",
+                "location": "25R3/26R1"
+              },
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
+                "location": "ModelVersionFormat"
+              }
+            ],
+            "limitation": "所有tag只对应一个源码commit，不声称真实多次生产发布。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "model_version": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "实际本地初始构造与后续模型修改有统一15列表格：版本、日期、内容、前后逻辑和信号增减说明均具备；当前外部接口表的ChangeLog能关联同版本。无虚构日期或八个月连续性。",
+            "evidence": [
+              {
+                "path": "Documentation/VcSfDPropR_26R1_变更记录.xlsx",
+                "sha256": "9a4d0766733568b2c8671d0b569a315dd0bc4e1ee6074163400793997420c616",
+                "location": "Cover/25R3/26R1"
+              },
+              {
+                "path": "Model/interfaceVcSfDPropR.xls",
+                "sha256": "c1224fa691796b1125d2654dd79159586d4eba88c0e832ccaff5fe16f7ffe4bd",
+                "location": "ChangeLog"
+              }
+            ],
+            "limitation": "历史SLX建设快照在维护者材料中保留；候选依据仓内记录，不假定可访问维护者工作区。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "directory": {
+            "score": 5,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "Documentation、Model、Src、UnitTest 按用途分层；SLX、接口/标定/执行组件、生成码、测试与变更材料各归所属目录。仓根README/.gitignore为合理通用文件；单模块包裹层不构成职责混杂。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "58a15dc96a8649b054f399c075743e4d43494b8abb50a0398ba4cbb48a1fd951",
+                "location": "Directory usage; tracked file inventory"
+              }
+            ],
+            "limitation": "分析模型的Src/UnitTest只有明确缺失说明；目录存在不虚称有生成码或仓内测试。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "unit_test": {
+            "score": 0,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "仓内未提供自主单元测试用例、执行/覆盖率报告，UnitTest说明明确标为无测试。维护者准入仿真不作为仓内测试提分。",
+            "evidence": [
+              {
+                "path": "UnitTest/README.txt",
+                "sha256": "f072b6e6ced3911fc03cb39b76ab217ecd498e5bf048a7a3b4c456a9f47ff454",
+                "location": "No owned automated unit tests"
+              }
+            ],
+            "limitation": "该模型外部准入仿真通过，但候选source-only不依赖该外部记录。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "release_branches": {
+            "score": 8,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "存在按模块族路由的 Branch-XCM-S, Branch-ZCUH, Branch-ZCUN 平台分支，无车型代号分支；按Part 7分支名分析为同平台同一分支8档。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
+                "refs": {
+                  "refs/heads/Branch-XCM-S": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
+                  "refs/heads/Branch-ZCUH": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
+                  "refs/heads/Branch-ZCUN": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
+                  "refs/heads/auto/master/1/5bed5636-1": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
+                  "refs/heads/master": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a"
+                }
+              },
+              {
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "83e76e95b8e71e236e8008887d5c4c1de736fee8413b1349f8b6772d7b47673c",
+                "location": "Synthetic platform refs"
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "device_specificity": {
+            "score": 8,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "平台分支名表明平台区分，没有单一车型绑定；按Part 7命名证据为8档。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
+                "refs": {
+                  "refs/heads/Branch-XCM-S": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
+                  "refs/heads/Branch-ZCUH": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
+                  "refs/heads/Branch-ZCUN": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
+                  "refs/heads/auto/master/1/5bed5636-1": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
+                  "refs/heads/master": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a"
+                }
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          }
+        }
+      }
+    },
+    {
+      "id": "NEP-11",
+      "name": "VcScHv",
+      "head": "a44a6d59be5b76a9119764ef3cec3947901e042f",
+      "reference": {
+        "id": "NEP-11",
+        "name": "VcScHv",
+        "head": "a44a6d59be5b76a9119764ef3cec3947901e042f",
+        "scores": {
+          "hierarchy": 3,
+          "reuse": 1,
+          "interface": 1,
+          "dataflow": 1,
+          "naming": 3,
+          "parameter_management": 1,
+          "build_independence": 2,
+          "version_independence": 3,
+          "model_version": 3,
+          "directory": 5,
+          "unit_test": 0,
+          "release_branches": 0,
+          "device_specificity": 10
+        },
+        "total": 33,
+        "max_score": 61,
+        "leaves": {
+          "hierarchy": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "46 个子系统中，至少 42 个职责明确且单一（逐通道封装及四阶段、经审阅的业务决策/状态模块与诊断快照，91.3%）。分组层/信号层/处理阶段分别采用一致抽象；职责统计不以子系统块数多少单独定分。",
+            "evidence": [
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "system_115/Block[@SID='146'] EngineeringConversion"
+              },
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "system_115/Block[@SID='126'] RangeAndCommunication"
+              },
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "system_115/Block[@SID='153'] SafeSubstitution"
+              },
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "system_115/Block[@SID='138'] TemporalQualification"
+              }
+            ],
+            "limitation": "顶层分组仍存在粗粒度命名；该缺陷不推翻已验证的>=90%子系统职责下界。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "reuse": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "各通道的 TemporalQualification/RangeAndCommunication 有相同拓扑逻辑的独立副本；保留单独状态和通道标定是合理需求，但当前没有把共用逻辑定义为库/模型引用。基础块和局部 Mask 的存在不能消除重复实现。",
+            "evidence": [
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "system_115/Block[@SID='138'] TemporalQualification"
+              },
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "system_169/Block[@SID='192'] TemporalQualification"
+              }
+            ],
+            "limitation": "LibraryLink主要是基础复位比较和部分Bitwise组件；不能据此裁整个业务复用为3。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "interface": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "主要通信有显式 Inport/Outport；外部 XLS 完整描述 26 入/10 出接口，但内部 33/301 端口仍用 InN/OutN，单位/约束主要依赖外部表，达不到整体端口命名规范的2档。",
+            "evidence": [
+              {
+                "path": "Model/interfaceVcScHv.xls",
+                "sha256": "324b453758ea18d88b927c84ba1d503c3909ece85b70aa73ee64b64751157882",
+                "location": "IN/OUT; ChangeLog"
+              },
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "system_113/Block[@SID='166'] In4"
+              },
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "system_97/Block[@SID='98'] In1"
+              }
+            ],
+            "limitation": "外部接口材料完整不自动覆盖内部子系统接口质量。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "dataflow": {
+            "score": 1,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "业务图中的信号名称能追到端口，但多条输入穿过计算块区域，质量输入长距离折返汇聚；部分名称仅为 CheckInputN/DomainInputN/ValidN，原生图中可见不必要交叉与局部拥挤。故按部分命名且走线影响可读性的1档；不是按 Goto 个数机械扣分。",
+            "evidence": [
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "simulink/systems/system_root.xml; BusinessDecision; RangeAndCommunication"
+              }
+            ],
+            "limitation": "原生制图审阅 evidence/review-diagrams/NEP-11-business.png；From=0, Goto=0，仅为辅助库存。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "naming": {
+            "score": 3,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "命名体系以 scope+模块+成员+后缀为主；块与线共 939 个可命名元素，按实际语义审阅有 110 个空名或缺少信号身份/用途的序号名（11.7%）。其余元素风格基本一致；未达到90%准确传意的5档。",
+            "evidence": [
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "system_113/Block[@SID='166'] In4"
+              },
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "CheckInputN lines; BusinessDecision/ValidN ports"
+              }
+            ],
+            "limitation": "该分类来自具体命名和位置语义，不把所有尾随数字都视为缺陷，也不把非默认名等同于准确命名。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "parameter_management": {
+            "score": 1,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "通道关键参数已变量化，但仍有较多可调业务值/回退值/转换或查表曲线留在块或 MATLAB Function 中；模型内嵌工作区也不能替代外部分类数据源。按新Part 7“部分关键参数提取、仍有较多硬编码”裁1；不是旧合同“多数散落”的套用。",
+            "evidence": [
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "Constant/Gain/Lookup fields; model workspace; stateflow chart scripts where present"
+              },
+              {
+                "path": "Model/interfaceVcScHv.xls",
+                "sha256": "324b453758ea18d88b927c84ba1d503c3909ece85b70aa73ee64b64751157882",
+                "location": "CAL; does not claim to inventory all embedded literals"
+              }
+            ],
+            "limitation": "硬编码数量含固定算法常量；实际裁决已区分标定与固定逻辑，不凭全部数字比率直接定档。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "build_independence": {
+            "score": 2,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "信号调理业务组件有 Mask，明确暴露 Minimum/Maximum/Timeout，并有 Raw/Age/Status/Reset 输入及物理值/资格输出契约；按已批准的新组补充规则裁2。",
+            "evidence": [
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "Mask/ports and PreLoadFcn; model dependencies"
+              }
+            ],
+            "limitation": "不以成功生码或存在工具库证明业务组件版本锁定。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "version_independence": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "模型当前版本为11.2.1_0；README解释 MAJOR/MINOR/PATCH 的兼容性含义，变更表关联本次业务状态完善及复位/资格修复，末尾为导出序号。语义来自明确递增规则，不由tag数量推导。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "50bc12d625b8a1895e9a6e5e0a4abbfc845415018873c3093c1f0927b526952e",
+                "location": "Model semantic version policy"
+              },
+              {
+                "path": "Documentation/VcScHv_26R1_变更记录.xlsx",
+                "sha256": "b73a1285cb7e80977cfcb1c5c8b5be100f8a55fa03f5a925abb8f534dfd5fdde",
+                "location": "25R3/26R1"
+              },
+              {
+                "path": "Model/VcScHv.slx",
+                "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
+                "location": "ModelVersionFormat"
+              }
+            ],
+            "limitation": "所有tag只对应一个源码commit，不声称真实多次生产发布。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "model_version": {
+            "score": 3,
+            "max_score": 3,
+            "status": "supported",
+            "reason": "实际本地初始构造与后续模型修改有统一15列表格：版本、日期、内容、前后逻辑和信号增减说明均具备；当前外部接口表的ChangeLog能关联同版本。无虚构日期或八个月连续性。",
+            "evidence": [
+              {
+                "path": "Documentation/VcScHv_26R1_变更记录.xlsx",
+                "sha256": "b73a1285cb7e80977cfcb1c5c8b5be100f8a55fa03f5a925abb8f534dfd5fdde",
+                "location": "Cover/25R3/26R1"
+              },
+              {
+                "path": "Model/interfaceVcScHv.xls",
+                "sha256": "324b453758ea18d88b927c84ba1d503c3909ece85b70aa73ee64b64751157882",
+                "location": "ChangeLog"
+              }
+            ],
+            "limitation": "历史SLX建设快照在维护者材料中保留；候选依据仓内记录，不假定可访问维护者工作区。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "directory": {
+            "score": 5,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "Documentation、Model、Src、UnitTest 按用途分层；SLX、接口/标定/执行组件、生成码、测试与变更材料各归所属目录。仓根README/.gitignore为合理通用文件；单模块包裹层不构成职责混杂。",
+            "evidence": [
+              {
+                "path": "README.md",
+                "sha256": "50bc12d625b8a1895e9a6e5e0a4abbfc845415018873c3093c1f0927b526952e",
+                "location": "Directory usage; tracked file inventory"
+              }
+            ],
+            "limitation": "分析模型的Src/UnitTest只有明确缺失说明；目录存在不虚称有生成码或仓内测试。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "unit_test": {
+            "score": 0,
+            "max_score": 5,
+            "status": "supported",
+            "reason": "仓内未提供自主单元测试用例、执行/覆盖率报告，UnitTest说明明确标为无测试。维护者准入仿真不作为仓内测试提分。",
+            "evidence": [
+              {
+                "path": "UnitTest/README.txt",
+                "sha256": "f072b6e6ced3911fc03cb39b76ab217ecd498e5bf048a7a3b4c456a9f47ff454",
+                "location": "No owned automated unit tests"
+              }
+            ],
+            "limitation": "该模型外部准入仿真通过，但候选source-only不依赖该外部记录。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "release_branches": {
+            "score": 0,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "只有master和可选auto构建分支，没有跨平台配置/变体或平台发布策略，不能凭少分支跳到10；按Part 7“分支数≤1偏向0”，排除CI辅助分支后裁0。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "a44a6d59be5b76a9119764ef3cec3947901e042f",
+                "refs": {
+                  "refs/heads/master": "a44a6d59be5b76a9119764ef3cec3947901e042f"
+                }
+              },
+              {
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "8c05b19c83c8b23e76316a922312e32fc65d8de601052c9b7eec9b932d9abc45",
+                "location": "Synthetic platform refs"
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          },
+          "device_specificity": {
+            "score": 10,
+            "max_score": 10,
+            "status": "supported",
+            "reason": "master/auto中不含特定车型或平台代号，业务输入通过统一端口表达；按Part 7的命名代理证据裁10。",
+            "evidence": [
+              {
+                "path": "git:refs/heads",
+                "head": "a44a6d59be5b76a9119764ef3cec3947901e042f",
+                "refs": {
+                  "refs/heads/master": "a44a6d59be5b76a9119764ef3cec3947901e042f"
+                }
+              }
+            ],
+            "limitation": "仅为用户指定Part 7的合成分支命名代理标签；全部分支指同一已测源码，未实现或验证真实平台差异，不代表ECU兼容性/跨平台运行。",
+            "method": "source-grounded maintainer semantic adjudication"
+          }
+        }
+      }
+    }
+  ],
+  "leaf_count": 143,
+  "total": 385,
+  "max_score": 671,
+  "reference_status": "maintainer-reviewed non-blind source-grounded reference",
+  "failed_leaves": 0,
+  "candidate_runs": 0
+}

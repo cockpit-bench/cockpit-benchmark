@@ -1,0 +1,257 @@
+{
+  "cohort_id": "reality-proxy-20260910",
+  "basis": {
+    "inputs": [
+      {
+        "path": "E:\\Project\\202608AINP\\NE-MATLAB_参考资料全集_原文.md",
+        "sha256": "db1bb2f79bfbddc2658ef01bc1076370f739dc320355f38794588a561b83e5db",
+        "bytes": 169440
+      },
+      {
+        "path": "E:\\Project\\202608AINP\\NE-MATLAB_benchmark_11仓_真实36仓_差异清单_原文.md",
+        "sha256": "031c549c78e82e559dd477e1d9099387ed45008dcf7b711cea2b9fd1d60b88f3",
+        "bytes": 17039
+      }
+    ],
+    "full_sheet_schema_count": 15,
+    "approved": "Part 7 contract, rebuild 11 reality proxies, preserve prior 11 for integration",
+    "joint_per_repository_profiles": "not provided; optional refinement, not implementation blocker",
+    "unknown": [
+      "38-model distributions cannot recover 36-repository associations",
+      "80 configSet grouping unknown",
+      "tag-to-commit snapshot associations unavailable"
+    ],
+    "no_score_targets": true
+  },
+  "repositories": 11,
+  "models": 11,
+  "file_presence": {
+    ".slx": 11,
+    ".xls": 11,
+    ".xlsx": 11,
+    ".c": 8,
+    ".h": 8,
+    ".a2l": 8,
+    ".html": 8,
+    ".lab": 6,
+    ".mat": 6,
+    ".p": 3,
+    ".mexw64": 2,
+    ".tlc": 2,
+    ".m": 0,
+    ".sldd": 0,
+    ".arxml": 0,
+    ".epp": 0
+  },
+  "block_counts_serialized_xml": {
+    "Inport": {
+      "presence": 11,
+      "min": 225,
+      "median": 566,
+      "max": 4135
+    },
+    "Outport": {
+      "presence": 11,
+      "min": 76,
+      "median": 204,
+      "max": 1445
+    },
+    "Constant": {
+      "presence": 11,
+      "min": 48,
+      "median": 133,
+      "max": 960
+    },
+    "SubSystem": {
+      "presence": 11,
+      "min": 46,
+      "median": 116,
+      "max": 822
+    },
+    "Switch": {
+      "presence": 11,
+      "min": 8,
+      "median": 25,
+      "max": 160
+    },
+    "Logic": {
+      "presence": 11,
+      "min": 41,
+      "median": 112,
+      "max": 804
+    },
+    "From": {
+      "presence": 9,
+      "min": 0,
+      "median": 44,
+      "max": 320
+    },
+    "Goto": {
+      "presence": 9,
+      "min": 0,
+      "median": 22,
+      "max": 160
+    },
+    "Reference": {
+      "presence": 11,
+      "min": 1,
+      "median": 1,
+      "max": 2
+    },
+    "S-Function": {
+      "presence": 5,
+      "min": 0,
+      "median": 0,
+      "max": 2
+    },
+    "TriggerPort": {
+      "presence": 10,
+      "min": 0,
+      "median": 1,
+      "max": 1
+    },
+    "EnablePort": {
+      "presence": 8,
+      "min": 0,
+      "median": 10,
+      "max": 48
+    },
+    "DataStoreMemory": {
+      "presence": 3,
+      "min": 0,
+      "median": 0,
+      "max": 1
+    },
+    "BusCreator": {
+      "presence": 2,
+      "min": 0,
+      "median": 0,
+      "max": 1
+    },
+    "BusSelector": {
+      "presence": 2,
+      "min": 0,
+      "median": 0,
+      "max": 1
+    }
+  },
+  "native_resolved_s_function_repositories": 9,
+  "group_counts": {
+    "VCU_PROP/NEC_PROP": 10,
+    "VCU_TVC/NEC_TVC": 1
+  },
+  "master_commit_counts": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "tags": {
+    "min": 1,
+    "median": 4,
+    "max": 71,
+    "total": 116,
+    "distinct_commit_per_repo": 1,
+    "scope": "synthetic export aliases"
+  },
+  "solver_counts": {
+    "FixedStepDiscrete": 8,
+    "VariableStepAuto": 3
+  },
+  "fixed_step_counts": {
+    "0.001": 4,
+    "0.01": 4,
+    "auto": 3
+  },
+  "score_distribution": {
+    "hierarchy": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 11
+    },
+    "reuse": {
+      "0": 0,
+      "1": 11,
+      "2": 0,
+      "3": 0
+    },
+    "interface": {
+      "0": 0,
+      "1": 11,
+      "2": 0,
+      "3": 0
+    },
+    "dataflow": {
+      "0": 0,
+      "1": 10,
+      "2": 1,
+      "3": 0
+    },
+    "unit_test": {
+      "0": 3,
+      "1": 8,
+      "3": 0,
+      "5": 0
+    },
+    "naming": {
+      "0": 0,
+      "1": 0,
+      "3": 11,
+      "5": 0
+    },
+    "directory": {
+      "0": 0,
+      "1": 0,
+      "3": 1,
+      "5": 10
+    },
+    "build_independence": {
+      "0": 6,
+      "1": 1,
+      "2": 4,
+      "3": 0
+    },
+    "model_version": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 11
+    },
+    "version_independence": {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 11
+    },
+    "release_branches": {
+      "0": 7,
+      "3": 0,
+      "8": 4,
+      "10": 0
+    },
+    "device_specificity": {
+      "0": 0,
+      "3": 0,
+      "8": 4,
+      "10": 7
+    },
+    "parameter_management": {
+      "0": 0,
+      "1": 10,
+      "3": 0,
+      "5": 1
+    }
+  },
+  "observed_bands": 21,
+  "possible_bands": 52,
+  "internal_joint_distribution_reconstructed": false,
+  "candidate_runs": 0
+}

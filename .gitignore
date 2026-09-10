@@ -1,2 +1,5 @@
 __pycache__/
 *.py[cod]
+
+# Local cohort source locations are never a portable/public artifact.
+source-map.local.json

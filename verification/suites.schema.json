@@ -117,6 +117,9 @@
               "null"
             ],
             "minimum": 0
+          },
+          "cohorts": {
+            "$ref": "#/$defs/binding"
           }
         },
         "additionalProperties": false

@@ -79,7 +79,11 @@
       "repository_count": 11,
       "score": null,
       "status": "published",
-      "technology": "MATLAB / Simulink"
+      "technology": "MATLAB / Simulink",
+      "cohorts": {
+        "path": "suites/new-energy-matlab/cohorts.json",
+        "sha256": "616c969fd610b36ba7975b6a4efd8f2b0567765a26bafdaec77123110267424d"
+      }
     }
   ]
 }

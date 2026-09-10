@@ -1,0 +1,30 @@
+{
+  "cohort_id": "reality-proxy-20260910",
+  "groups": [
+    {
+      "id": "ne-reality-generator-20260910",
+      "members": [
+        "NEP-01",
+        "NEP-02",
+        "NEP-03",
+        "NEP-04",
+        "NEP-05",
+        "NEP-06",
+        "NEP-07",
+        "NEP-08",
+        "NEP-09",
+        "NEP-10",
+        "NEP-11"
+      ],
+      "basis": "Shared business generator, calibration scheme, construction process and adjudicator; never split members across train/test."
+    }
+  ],
+  "cross_cohort_relation": {
+    "related_cohort": "legacy-integration",
+    "related_type": "new-energy-matlab",
+    "relation": "same maintainer and prior benchmark feedback informed reconstruction",
+    "policy": "Do not claim cross-cohort independent holdout or split old/new as independent calibration/acceptance without an external independence audit."
+  },
+  "internal_source_joint_profiles_available": false,
+  "independent_candidate_runs": 0
+}

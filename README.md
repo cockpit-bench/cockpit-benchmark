@@ -1,3 +1,7 @@
+## 新能源现实代理组（本地，2026-09-10）
+
+新增11个可运行的Vc*现实代理仓，依据用户提供的内部36仓扫描汇总重建模型、XLS接口及工程材料。新组与原新能源11仓联调组并存、合同和统计独立；APP/FW保持。形态对齐、真实执行和限制见 [重建交付](docs/NE_REALITY_REBUILD_20260910.md)，入口为 [新能源分组目录](suites/new-energy-matlab/cohorts.json)。新组尚未公开，旧默认恢复/评测仍兼容原33仓；新组使用 `verification/ne_reality.py`。
+
 # Benchmark — APP, FW and New Energy MATLAB
 
 [suites.json](suites.json) is the current registry. APP and FW are independent repository types; New Energy MATLAB identifies the business domain. MATLAB/Simulink is technology metadata, not a generic business type. Future MATLAB repositories from other centers require their own business classification.

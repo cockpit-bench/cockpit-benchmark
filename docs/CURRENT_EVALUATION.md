@@ -1,3 +1,5 @@
+新增现实代理组由 `verification/ne_reality.py` 独立评测；本文继续记录原公开33仓联调口径。新组143叶不加入下文旧eligible分母，说明见 [现实代理重建](NE_REALITY_REBUILD_20260910.md)。
+
 # 当前33仓评测入口（v0.10.3）
 
 APP、FW、新能源MATLAB分别注册，352个requested叶保留，其中351个数值参考。NEM-11参数待裁决，以reference_unresolved排除，不记零分。参数合同保持原文。

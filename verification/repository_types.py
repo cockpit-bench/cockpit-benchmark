@@ -46,7 +46,11 @@ def validate(wrapper,require_publishable=False):
     old_sources={r['id']:r for r in old_manifest if r['delivery_status']=='active'}|{r['id']:r for r in old_ml_manifest}
     for entry in entries:
         required={'id','name','technology','status','contract','manifest','canonical_scores','repository_count','leaf_count','max_score','score','failed_leaves','published_repositories'}
-        require(set(entry)==required,'Unsupported type fields')
+        require(set(entry) in (required,required|{'cohorts'}),'Unsupported type fields')
+        if 'cohorts' in entry:
+            require(entry['id']=='new-energy-matlab','Cohort catalogue belongs to New Energy MATLAB')
+            from ne_reality import validate_catalog
+            validate_catalog(wrapper,bound(wrapper,entry['cohorts']))
         type_id=entry['id'];name,technology,leaves,maximum=TYPES[type_id]
         require(entry['name']==name and entry['technology']==technology,'Business type/technology mismatch')
         require(entry['status'] in {'verified_local','published'},'Unverified type cannot be admitted')
