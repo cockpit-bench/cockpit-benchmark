@@ -1,4 +1,4 @@
-本地准备完成，尚未发布。GitHub旧11仓删除已获用户批准，但实际请求因令牌缺少 delete_repo 返回403；设备授权正在等待用户完成。当前远端仍是v0.11.0。
+v0.11.1：旧新能源联调11个GitHub源码仓已按用户确认永久删除，逐仓已登录API与匿名网页均返回404。当前集合为33仓；默认恢复与评测入口已统一。
 
 # v0.11.0 Pro 评审核对与旧组退役
 
@@ -25,7 +25,7 @@
 
 删除旧 ML-01..09、NEM-10/11 在主线的manifest、参考分、合同、独立审阅和专用回放入口。当前源码登记只含APP11、FW11、NEP11；四个私有预留仓不在目标内。旧wrapper历史tag未重写，旧源码URL删除后不再可恢复。
 
-| 旧ID | 已授权删除的GitHub仓 |
+| 旧ID | 已删除并核验404的GitHub仓 |
 |---|---|
 | ML-01 | cockpit-bench/torque-request-controller |
 | ML-02 | cockpit-bench/coolant-fan-controller |

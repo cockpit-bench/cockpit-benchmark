@@ -1,4 +1,4 @@
-本地准备完成，尚未发布。GitHub旧11仓删除已获用户批准，但实际请求因令牌缺少 delete_repo 返回403；设备授权正在等待用户完成。当前远端仍是v0.11.0。
+v0.11.1：旧新能源联调11个GitHub源码仓已按用户确认永久删除，逐仓已登录API与匿名网页均返回404。当前集合为33仓；默认恢复与评测入口已统一。
 
 # Benchmark — APP、FW、新能源 MATLAB
 
@@ -38,4 +38,4 @@ python verification/ne_reality.py candidate --source-root C:/bench/restored --id
 
 参考分是维护者裁决，不是候选模型成绩。新组 6 个恒定叶，同集合众数 123/143；一个共同构造族，不是独立 holdout。NEP-10 构建优先级、证据语义与定位完整性仍需后续处理，见 [v0.11.0 Pro 评审核对及本轮范围](docs/REVIEW_V0111.md)。此次入口迁移没有新增 Android、MATLAB、C 或设备执行。
 
-历史 wrapper tag 保留原内容；旧 11 源码仓被删除后，旧版相应下载链接将失效。当前主线已移除旧组合同、标准分、专用证据和工具。根 Android Validation-18 文件只保留冻结兼容，由 [legacy-v094.json](suites/legacy-v094.json) 绑定；它们不替代当前三类型入口。
+历史 wrapper tag 保留原内容；旧 11 源码仓已删除，旧版相应下载链接已失效。当前主线已移除旧组合同、标准分、专用证据和工具。根 Android Validation-18 文件只保留冻结兼容，由 [legacy-v094.json](suites/legacy-v094.json) 绑定；它们不替代当前三类型入口。
