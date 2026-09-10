@@ -50,6 +50,12 @@ def model_facts(path):
                 'parameter_slots':params,'config':config,'embedded_model_dictionary':'simulink/modelDictionary.xml' in members,
                 'legacy_code_dictionary':any(x.endswith('/codeDictionary.xml') for x in members)}
 
+def primary_model(row):
+    """Select the executable module by name, never the first sorted library file."""
+    matches=[(path,model) for path,model in row['models'].items() if Path(path).stem==row['name']]
+    if len(matches)!=1:raise ValueError('Expected one named primary model: '+row['name'])
+    return matches[0]
+
 def scan(manifest,source_root=None):
     result=[]
     for row in manifest['repositories']:
@@ -70,5 +76,5 @@ if __name__=='__main__':
     result=scan(json.loads(Path(args.manifest).read_text(encoding='utf-8')),args.source_root)
     Path(args.output).write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
     for row in result['repositories']:
-        m=next(iter(row['models'].values()));c=m['block_types']
+        _,m=primary_model(row);c=m['block_types']
         print(row['id'],m['block_count'],c.get('SubSystem',0),c.get('Inport',0),c.get('Outport',0),c.get('Reference',0),c.get('EnablePort',0))

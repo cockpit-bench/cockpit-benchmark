@@ -4,6 +4,10 @@ import ne_reality as ne
 
 WRAPPER=Path(__file__).resolve().parents[1]
 class RealityTests(unittest.TestCase):
+    def test_primary_model_is_not_alphabetical_library(self):
+        row={'name':'VcSfDPropR','models':{'Model/FaultComponentLibrary.slx':{'library':True},'Model/VcSfDPropR.slx':{'library':False}}}
+        path,model=ne.census.primary_model(row)
+        self.assertEqual(path,'Model/VcSfDPropR.slx');self.assertFalse(model['library'])
     def setUp(self):
         self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
         shutil.copytree(ne.location(WRAPPER),ne.location(self.root))

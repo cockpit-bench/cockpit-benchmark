@@ -1,5 +1,5 @@
 {
-  "cohort_id": "reality-proxy-20260910",
+  "revision": "six-issue-repair-20260910",
   "basis": {
     "inputs": [
       {
@@ -24,7 +24,87 @@
     "no_score_targets": true
   },
   "repositories": 11,
-  "models": 11,
+  "executable_models": 11,
+  "library_models": 1,
+  "domain_component_instances": 49,
+  "root_input_types": {
+    "boolean": 717,
+    "uint16": 95,
+    "single": 486,
+    "int16": 111,
+    "uint32": 8,
+    "uint8": 12
+  },
+  "calibration_types": {
+    "uint16": 190,
+    "single": 1196,
+    "int16": 222,
+    "uint32": 16,
+    "boolean": 226,
+    "uint8": 36
+  },
+  "block_counts_native_expanded": {
+    "Inport": {
+      "min": 204,
+      "median": 568,
+      "max": 3317,
+      "presence": 11
+    },
+    "Outport": {
+      "min": 85,
+      "median": 210,
+      "max": 1232,
+      "presence": 11
+    },
+    "SubSystem": {
+      "min": 41,
+      "median": 114,
+      "max": 488,
+      "presence": 11
+    },
+    "Constant": {
+      "min": 37,
+      "median": 135,
+      "max": 595,
+      "presence": 11
+    },
+    "From": {
+      "min": 0,
+      "median": 40,
+      "max": 192,
+      "presence": 8
+    },
+    "Goto": {
+      "min": 0,
+      "median": 20,
+      "max": 96,
+      "presence": 8
+    },
+    "TriggerPort": {
+      "min": 0,
+      "median": 1,
+      "max": 1,
+      "presence": 10
+    },
+    "EnablePort": {
+      "min": 0,
+      "median": 9,
+      "max": 38,
+      "presence": 8
+    },
+    "DataStoreMemory": {
+      "min": 0,
+      "median": 0,
+      "max": 1,
+      "presence": 3
+    },
+    "Reference": {
+      "min": 0,
+      "median": 0,
+      "max": 0,
+      "presence": 0
+    }
+  },
   "file_presence": {
     ".slx": 11,
     ".xls": 11,
@@ -32,144 +112,685 @@
     ".c": 8,
     ".h": 8,
     ".a2l": 8,
-    ".html": 8,
-    ".lab": 6,
+    ".html": 9,
     ".mat": 6,
+    ".lab": 6,
     ".p": 3,
     ".mexw64": 2,
     ".tlc": 2,
-    ".m": 0,
-    ".sldd": 0,
-    ".arxml": 0,
-    ".epp": 0
+    ".m": 0
   },
-  "block_counts_serialized_xml": {
-    "Inport": {
-      "presence": 11,
-      "min": 225,
-      "median": 566,
-      "max": 4135
+  "per_repository": [
+    {
+      "id": "NEP-01",
+      "module": "VcVcuInD",
+      "business": "vehicle_input",
+      "primary_source_blocks": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 594,
+        "DataTypeConversion": 86,
+        "Demux": 9,
+        "EnablePort": 38,
+        "From": 192,
+        "Goto": 96,
+        "Inport": 2350,
+        "Logic": 488,
+        "Outport": 886,
+        "Product": 75,
+        "Reference": 1,
+        "RelationalOperator": 348,
+        "S-Function": 10,
+        "SubSystem": 487,
+        "Sum": 76,
+        "Switch": 96,
+        "Terminator": 9,
+        "TriggerPort": 1,
+        "UnitDelay": 96
+      },
+      "native_expanded_blocks": {
+        "Inport": 2351,
+        "SubSystem": 488,
+        "EnablePort": 38,
+        "Sum": 76,
+        "DataTypeConversion": 86,
+        "Product": 75,
+        "Outport": 887,
+        "Constant": 595,
+        "RelationalOperator": 349,
+        "Logic": 488,
+        "From": 192,
+        "Goto": 96,
+        "Switch": 96,
+        "UnitDelay": 96,
+        "Demux": 9,
+        "S-Function": 10,
+        "Terminator": 9,
+        "TriggerPort": 1,
+        "BusCreator": 1,
+        "BusSelector": 1
+      },
+      "native_subsystems": 488,
+      "root_inputs": 290,
+      "root_outputs": 108,
+      "domain_components": [
+        "BatteryReceptionPlausibility",
+        "FrontMotorReceptionPlausibility",
+        "RearMotorReceptionPlausibility",
+        "ChargerReceptionPlausibility",
+        "DcDcReceptionPlausibility",
+        "ThermalReceptionPlausibility",
+        "BrakeReceptionPlausibility",
+        "ChassisReceptionPlausibility",
+        "CriticalDataAvailability"
+      ],
+      "samples": 11948,
+      "business_properties": 4,
+      "score": 42
     },
-    "Outport": {
-      "presence": 11,
-      "min": 76,
-      "median": 204,
-      "max": 1445
+    {
+      "id": "NEP-02",
+      "module": "VcVcuOutQM",
+      "business": "actuator_output",
+      "primary_source_blocks": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 164,
+        "DataTypeConversion": 31,
+        "Demux": 4,
+        "EnablePort": 10,
+        "From": 56,
+        "Goto": 28,
+        "Inport": 737,
+        "Logic": 143,
+        "Outport": 286,
+        "Product": 19,
+        "Reference": 1,
+        "RelationalOperator": 98,
+        "S-Function": 5,
+        "SubSystem": 146,
+        "Sum": 20,
+        "Switch": 28,
+        "Terminator": 4,
+        "TriggerPort": 1,
+        "UnitDelay": 28
+      },
+      "native_expanded_blocks": {
+        "Inport": 738,
+        "SubSystem": 147,
+        "DataTypeConversion": 31,
+        "Demux": 4,
+        "S-Function": 5,
+        "Terminator": 4,
+        "Outport": 287,
+        "Logic": 143,
+        "TriggerPort": 1,
+        "EnablePort": 10,
+        "Sum": 20,
+        "Product": 19,
+        "Constant": 165,
+        "RelationalOperator": 99,
+        "From": 56,
+        "Goto": 28,
+        "Switch": 28,
+        "UnitDelay": 28,
+        "BusCreator": 1,
+        "BusSelector": 1
+      },
+      "native_subsystems": 147,
+      "root_inputs": 86,
+      "root_outputs": 39,
+      "domain_components": [
+        "FrontTorqueActuator",
+        "RearTorqueActuator",
+        "AxleCommandSum",
+        "AuxiliaryActuatorInterlocks"
+      ],
+      "samples": 3562,
+      "business_properties": 5,
+      "score": 40
     },
-    "Constant": {
-      "presence": 11,
-      "min": 48,
-      "median": 133,
-      "max": 960
+    {
+      "id": "NEP-03",
+      "module": "VcVmcTrq",
+      "business": "traction_torque",
+      "primary_source_blocks": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 134,
+        "DataStoreMemory": 1,
+        "DataStoreRead": 1,
+        "DataStoreWrite": 1,
+        "DataTypeConversion": 26,
+        "Demux": 4,
+        "EnablePort": 9,
+        "From": 40,
+        "Goto": 20,
+        "Inport": 567,
+        "Logic": 104,
+        "Outport": 202,
+        "Product": 18,
+        "Reference": 2,
+        "RelationalOperator": 78,
+        "S-Function": 4,
+        "SubSystem": 113,
+        "Sum": 19,
+        "Switch": 20,
+        "Terminator": 4,
+        "TriggerPort": 1,
+        "UnitDelay": 20
+      },
+      "native_expanded_blocks": {
+        "Inport": 568,
+        "SubSystem": 114,
+        "Demux": 4,
+        "S-Function": 5,
+        "Terminator": 4,
+        "Outport": 203,
+        "DataTypeConversion": 26,
+        "Logic": 104,
+        "TriggerPort": 1,
+        "EnablePort": 9,
+        "Sum": 19,
+        "Product": 18,
+        "Constant": 135,
+        "RelationalOperator": 79,
+        "From": 40,
+        "Goto": 20,
+        "Switch": 20,
+        "UnitDelay": 20,
+        "DataStoreMemory": 1,
+        "BusCreator": 1,
+        "DataStoreRead": 1,
+        "BusSelector": 1,
+        "DataStoreWrite": 1
+      },
+      "native_subsystems": 114,
+      "root_inputs": 62,
+      "root_outputs": 26,
+      "domain_components": [
+        "DriverIntent",
+        "MotorThermalProtection",
+        "DischargePowerEnvelope",
+        "TorqueArbitration"
+      ],
+      "samples": 2647,
+      "business_properties": 12,
+      "score": 36
     },
-    "SubSystem": {
-      "presence": 11,
-      "min": 46,
-      "median": 116,
-      "max": 822
+    {
+      "id": "NEP-04",
+      "module": "VcErcRgn",
+      "business": "regeneration",
+      "primary_source_blocks": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 110,
+        "DataTypeConversion": 18,
+        "Demux": 3,
+        "EnablePort": 7,
+        "From": 36,
+        "Goto": 18,
+        "Inport": 482,
+        "Logic": 93,
+        "Outport": 172,
+        "Product": 13,
+        "Reference": 2,
+        "RelationalOperator": 66,
+        "S-Function": 3,
+        "SubSystem": 98,
+        "Sum": 14,
+        "Switch": 18,
+        "Terminator": 3,
+        "TriggerPort": 1,
+        "UnitDelay": 18
+      },
+      "native_expanded_blocks": {
+        "Inport": 483,
+        "SubSystem": 99,
+        "DataTypeConversion": 18,
+        "Demux": 3,
+        "S-Function": 4,
+        "Terminator": 3,
+        "Outport": 173,
+        "Logic": 93,
+        "TriggerPort": 1,
+        "Constant": 111,
+        "RelationalOperator": 67,
+        "From": 36,
+        "Goto": 18,
+        "Switch": 18,
+        "UnitDelay": 18,
+        "EnablePort": 7,
+        "Sum": 14,
+        "Product": 13,
+        "BusCreator": 1,
+        "BusSelector": 1
+      },
+      "native_subsystems": 99,
+      "root_inputs": 56,
+      "root_outputs": 22,
+      "domain_components": [
+        "BrakeAndCoastDemand",
+        "BatteryRegenAcceptance",
+        "BrakeBlend"
+      ],
+      "samples": 2251,
+      "business_properties": 6,
+      "score": 34
     },
-    "Switch": {
-      "presence": 11,
-      "min": 8,
-      "median": 25,
-      "max": 160
+    {
+      "id": "NEP-05",
+      "module": "VcDmcDrv",
+      "business": "drive_mode",
+      "primary_source_blocks": {
+        "Constant": 84,
+        "DataTypeConversion": 12,
+        "Demux": 1,
+        "Inport": 407,
+        "Logic": 81,
+        "Outport": 155,
+        "Product": 8,
+        "Reference": 1,
+        "RelationalOperator": 52,
+        "S-Function": 1,
+        "SubSystem": 81,
+        "Sum": 9,
+        "Switch": 16,
+        "Terminator": 1,
+        "TriggerPort": 1,
+        "UnitDelay": 16
+      },
+      "native_expanded_blocks": {
+        "Inport": 408,
+        "SubSystem": 82,
+        "DataTypeConversion": 12,
+        "Demux": 1,
+        "S-Function": 1,
+        "Terminator": 1,
+        "Outport": 156,
+        "Logic": 81,
+        "TriggerPort": 1,
+        "Sum": 9,
+        "Product": 8,
+        "Constant": 85,
+        "RelationalOperator": 53,
+        "Switch": 16,
+        "UnitDelay": 16
+      },
+      "native_subsystems": 82,
+      "root_inputs": 50,
+      "root_outputs": 22,
+      "domain_components": [
+        "GearAndDriveModeState"
+      ],
+      "samples": 1899,
+      "business_properties": 7,
+      "score": 34
     },
-    "Logic": {
-      "presence": 11,
-      "min": 41,
-      "median": 112,
-      "max": 804
+    {
+      "id": "NEP-06",
+      "module": "VcWrcWhl",
+      "business": "wheel_traction",
+      "primary_source_blocks": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 128,
+        "DataTypeConversion": 25,
+        "Demux": 3,
+        "EnablePort": 9,
+        "From": 40,
+        "Goto": 20,
+        "Inport": 534,
+        "Logic": 103,
+        "Outport": 204,
+        "Product": 17,
+        "Reference": 2,
+        "RelationalOperator": 74,
+        "S-Function": 3,
+        "SubSystem": 108,
+        "Sum": 18,
+        "Switch": 20,
+        "Terminator": 3,
+        "TriggerPort": 1,
+        "UnitDelay": 20
+      },
+      "native_expanded_blocks": {
+        "Inport": 535,
+        "SubSystem": 109,
+        "Demux": 3,
+        "S-Function": 4,
+        "Terminator": 3,
+        "Outport": 205,
+        "DataTypeConversion": 25,
+        "Logic": 103,
+        "TriggerPort": 1,
+        "Constant": 129,
+        "RelationalOperator": 75,
+        "From": 40,
+        "Goto": 20,
+        "Switch": 20,
+        "UnitDelay": 20,
+        "EnablePort": 9,
+        "Sum": 18,
+        "Product": 17,
+        "BusCreator": 1,
+        "BusSelector": 1
+      },
+      "native_subsystems": 109,
+      "root_inputs": 62,
+      "root_outputs": 27,
+      "domain_components": [
+        "FrontAxleSlip",
+        "RearAxleSlip",
+        "StabilityTorqueAllocation"
+      ],
+      "samples": 2474,
+      "business_properties": 4,
+      "score": 36
     },
-    "From": {
-      "presence": 9,
-      "min": 0,
-      "median": 44,
-      "max": 320
+    {
+      "id": "NEP-07",
+      "module": "VcDeChg",
+      "business": "charge_coordination",
+      "primary_source_blocks": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 126,
+        "DataStoreMemory": 1,
+        "DataStoreRead": 1,
+        "DataStoreWrite": 1,
+        "DataTypeConversion": 20,
+        "Demux": 2,
+        "EnablePort": 8,
+        "From": 44,
+        "Goto": 22,
+        "Inport": 566,
+        "Logic": 112,
+        "Outport": 209,
+        "Product": 15,
+        "Reference": 2,
+        "RelationalOperator": 74,
+        "S-Function": 2,
+        "SubSystem": 113,
+        "Sum": 16,
+        "Switch": 22,
+        "Terminator": 2,
+        "TriggerPort": 1,
+        "UnitDelay": 22
+      },
+      "native_expanded_blocks": {
+        "Inport": 567,
+        "SubSystem": 114,
+        "DataTypeConversion": 20,
+        "Demux": 2,
+        "S-Function": 3,
+        "Terminator": 2,
+        "Outport": 210,
+        "Logic": 112,
+        "TriggerPort": 1,
+        "Constant": 127,
+        "RelationalOperator": 75,
+        "From": 44,
+        "Goto": 22,
+        "Switch": 22,
+        "UnitDelay": 22,
+        "EnablePort": 8,
+        "Sum": 16,
+        "Product": 15,
+        "DataStoreMemory": 1,
+        "BusCreator": 1,
+        "DataStoreRead": 1,
+        "BusSelector": 1,
+        "DataStoreWrite": 1
+      },
+      "native_subsystems": 114,
+      "root_inputs": 68,
+      "root_outputs": 28,
+      "domain_components": [
+        "ConnectionAndChargePermit",
+        "CableAndPowerCurrentLimit"
+      ],
+      "samples": 2640,
+      "business_properties": 9,
+      "score": 35
     },
-    "Goto": {
-      "presence": 9,
-      "min": 0,
-      "median": 22,
-      "max": 160
+    {
+      "id": "NEP-08",
+      "module": "VcPvcThm",
+      "business": "thermal_management",
+      "primary_source_blocks": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 238,
+        "DataTypeConversion": 41,
+        "Demux": 3,
+        "EnablePort": 16,
+        "From": 72,
+        "Goto": 36,
+        "Inport": 936,
+        "Logic": 183,
+        "Outport": 359,
+        "Product": 32,
+        "Reference": 1,
+        "RelationalOperator": 138,
+        "S-Function": 3,
+        "SubSystem": 189,
+        "Sum": 33,
+        "Switch": 36,
+        "Terminator": 3,
+        "TriggerPort": 1,
+        "UnitDelay": 36
+      },
+      "native_expanded_blocks": {
+        "Inport": 937,
+        "SubSystem": 190,
+        "DataTypeConversion": 41,
+        "Demux": 3,
+        "S-Function": 3,
+        "Terminator": 3,
+        "Outport": 360,
+        "Logic": 183,
+        "TriggerPort": 1,
+        "EnablePort": 16,
+        "Sum": 33,
+        "Product": 32,
+        "Constant": 239,
+        "RelationalOperator": 139,
+        "From": 72,
+        "Goto": 36,
+        "Switch": 36,
+        "UnitDelay": 36,
+        "BusCreator": 1,
+        "BusSelector": 1
+      },
+      "native_subsystems": 190,
+      "root_inputs": 110,
+      "root_outputs": 47,
+      "domain_components": [
+        "BatteryCoolingLoop",
+        "MotorCoolingLoop",
+        "ThermalActuatorArbitration"
+      ],
+      "samples": 4696,
+      "business_properties": 7,
+      "score": 32
     },
-    "Reference": {
-      "presence": 11,
-      "min": 1,
-      "median": 1,
-      "max": 2
+    {
+      "id": "NEP-09",
+      "module": "VcSfCPropR",
+      "business": "propulsion_safety",
+      "primary_source_blocks": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 261,
+        "DataStoreMemory": 1,
+        "DataStoreRead": 1,
+        "DataStoreWrite": 1,
+        "DataTypeConversion": 37,
+        "Demux": 2,
+        "EnablePort": 16,
+        "From": 90,
+        "Goto": 45,
+        "Inport": 1084,
+        "Logic": 227,
+        "Outport": 413,
+        "Product": 31,
+        "Reference": 2,
+        "RelationalOperator": 154,
+        "S-Function": 2,
+        "SubSystem": 222,
+        "Sum": 32,
+        "Switch": 45,
+        "Terminator": 2,
+        "TriggerPort": 1,
+        "UnitDelay": 45
+      },
+      "native_expanded_blocks": {
+        "Inport": 1085,
+        "SubSystem": 223,
+        "Demux": 2,
+        "S-Function": 3,
+        "Terminator": 2,
+        "Outport": 414,
+        "DataTypeConversion": 37,
+        "Logic": 227,
+        "TriggerPort": 1,
+        "Constant": 262,
+        "RelationalOperator": 155,
+        "From": 90,
+        "Goto": 45,
+        "Switch": 45,
+        "UnitDelay": 45,
+        "EnablePort": 16,
+        "Sum": 32,
+        "Product": 31,
+        "DataStoreMemory": 1,
+        "BusCreator": 1,
+        "DataStoreRead": 1,
+        "BusSelector": 1,
+        "DataStoreWrite": 1
+      },
+      "native_subsystems": 223,
+      "root_inputs": 137,
+      "root_outputs": 52,
+      "domain_components": [
+        "IndependentTorquePlausibility",
+        "PropulsionFaultLatch"
+      ],
+      "samples": 5493,
+      "business_properties": 12,
+      "score": 40
     },
-    "S-Function": {
-      "presence": 5,
-      "min": 0,
-      "median": 0,
-      "max": 2
+    {
+      "id": "NEP-10",
+      "module": "VcSfDPropR",
+      "business": "fault_supervision",
+      "primary_source_blocks": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "DataTypeConversion": 3,
+        "Demux": 1,
+        "Inport": 1332,
+        "Logic": 176,
+        "Outport": 527,
+        "Reference": 177,
+        "S-Function": 1,
+        "SubSystem": 20,
+        "Sum": 1,
+        "Terminator": 1,
+        "TriggerPort": 1
+      },
+      "native_expanded_blocks": {
+        "Inport": 3317,
+        "SubSystem": 373,
+        "Constant": 321,
+        "Demux": 177,
+        "S-Function": 177,
+        "Terminator": 177,
+        "Outport": 1232,
+        "DataTypeConversion": 35,
+        "Logic": 176,
+        "TriggerPort": 1,
+        "Sum": 1,
+        "RelationalOperator": 1,
+        "BusCreator": 1,
+        "BusSelector": 1
+      },
+      "native_subsystems": 373,
+      "root_inputs": 482,
+      "root_outputs": 181,
+      "domain_components": [
+        "BatterySupervision",
+        "FrontMotorSupervision",
+        "RearMotorSupervision",
+        "FrontInverterSupervision",
+        "RearInverterSupervision",
+        "ChargerSupervision",
+        "DcDcSupervision",
+        "BrakeSupervision",
+        "SteeringSupervision",
+        "ThermalSupervision",
+        "CoolantPumpSupervision",
+        "RadiatorFanSupervision",
+        "CabinHeaterSupervision",
+        "CompressorSupervision",
+        "ContactorSupervision",
+        "GatewaySupervision",
+        "FaultSeverityAggregation"
+      ],
+      "samples": 16433,
+      "business_properties": 25,
+      "score": 43
     },
-    "TriggerPort": {
-      "presence": 10,
-      "min": 0,
-      "median": 1,
-      "max": 1
-    },
-    "EnablePort": {
-      "presence": 8,
-      "min": 0,
-      "median": 10,
-      "max": 48
-    },
-    "DataStoreMemory": {
-      "presence": 3,
-      "min": 0,
-      "median": 0,
-      "max": 1
-    },
-    "BusCreator": {
-      "presence": 2,
-      "min": 0,
-      "median": 0,
-      "max": 1
-    },
-    "BusSelector": {
-      "presence": 2,
-      "min": 0,
-      "median": 0,
-      "max": 1
+    {
+      "id": "NEP-11",
+      "module": "VcScHv",
+      "business": "high_voltage_sequence",
+      "primary_source_blocks": {
+        "Constant": 36,
+        "DataTypeConversion": 7,
+        "Demux": 1,
+        "Inport": 203,
+        "Logic": 41,
+        "Outport": 84,
+        "Product": 3,
+        "Reference": 1,
+        "RelationalOperator": 22,
+        "S-Function": 1,
+        "SubSystem": 40,
+        "Sum": 4,
+        "Switch": 8,
+        "Terminator": 2,
+        "UnitDelay": 8
+      },
+      "native_expanded_blocks": {
+        "Inport": 204,
+        "SubSystem": 41,
+        "DataTypeConversion": 7,
+        "Demux": 1,
+        "S-Function": 1,
+        "Terminator": 2,
+        "Outport": 85,
+        "Logic": 41,
+        "Constant": 37,
+        "RelationalOperator": 23,
+        "Switch": 8,
+        "UnitDelay": 8,
+        "Sum": 4,
+        "Product": 3
+      },
+      "native_subsystems": 41,
+      "root_inputs": 26,
+      "root_outputs": 13,
+      "domain_components": [
+        "HighVoltageSequencer"
+      ],
+      "samples": 1270,
+      "business_properties": 7,
+      "score": 37
     }
-  },
-  "native_resolved_s_function_repositories": 9,
-  "group_counts": {
-    "VCU_PROP/NEC_PROP": 10,
-    "VCU_TVC/NEC_TVC": 1
-  },
-  "master_commit_counts": [
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1
   ],
-  "tags": {
-    "min": 1,
-    "median": 4,
-    "max": 71,
-    "total": 116,
-    "distinct_commit_per_repo": 1,
-    "scope": "synthetic export aliases"
-  },
-  "solver_counts": {
-    "FixedStepDiscrete": 8,
-    "VariableStepAuto": 3
-  },
-  "fixed_step_counts": {
-    "0.001": 4,
-    "0.01": 4,
-    "auto": 3
-  },
   "score_distribution": {
     "hierarchy": {
       "0": 0,
@@ -179,9 +800,9 @@
     },
     "reuse": {
       "0": 0,
-      "1": 11,
+      "1": 10,
       "2": 0,
-      "3": 0
+      "3": 1
     },
     "interface": {
       "0": 0,
@@ -191,21 +812,21 @@
     },
     "dataflow": {
       "0": 0,
-      "1": 10,
-      "2": 1,
+      "1": 9,
+      "2": 2,
       "3": 0
     },
     "unit_test": {
-      "0": 3,
-      "1": 8,
+      "0": 2,
+      "1": 9,
       "3": 0,
       "5": 0
     },
     "naming": {
       "0": 0,
       "1": 0,
-      "3": 11,
-      "5": 0
+      "3": 0,
+      "5": 11
     },
     "directory": {
       "0": 0,
@@ -214,9 +835,9 @@
       "5": 10
     },
     "build_independence": {
-      "0": 6,
+      "0": 5,
       "1": 1,
-      "2": 4,
+      "2": 5,
       "3": 0
     },
     "model_version": {
@@ -245,13 +866,37 @@
     },
     "parameter_management": {
       "0": 0,
-      "1": 10,
+      "1": 11,
       "3": 0,
-      "5": 1
+      "5": 0
     }
   },
   "observed_bands": 21,
   "possible_bands": 52,
+  "same_set_leaf_majority": {
+    "correct": 123,
+    "eligible": 143,
+    "accuracy": 0.8601398601398601,
+    "scope": "Descriptive same-set majority; not a candidate model experiment"
+  },
+  "master_commit_counts": [
+    3,
+    3,
+    3,
+    3,
+    2,
+    3,
+    3,
+    3,
+    3,
+    2,
+    3
+  ],
+  "tags": {
+    "total": 127,
+    "distinct_commit_per_repo": 2,
+    "scope": "116 preserved baseline export aliases plus 11 initial local repair tags; nine repositories have a later workbook-layout-only HEAD."
+  },
   "internal_joint_distribution_reconstructed": false,
   "candidate_runs": 0
 }

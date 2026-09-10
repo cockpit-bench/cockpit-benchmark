@@ -1,497 +1,1178 @@
 {
-  "source_binding": {
-    "NEP-01": {
-      "head": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
-      "tree": "dae725049c854431540c5796a264c385cba41001",
-      "runtime": {
-        "Model/calibrationVcVcuInD.mat": "aae68c424b446a734aa82f6d8c35094e2d709a54970bfb844d0e33f30b4428bc",
-        "Model/VcVcuInD.slx": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
-        "Model/VcVcuInDDiagByte.mexw64": "25c202ecb2b15a2ffc77450371926a390852c73ce9ae2428cb09e3f2b45d9edd",
-        "Model/VcVcuInDDiagByte.tlc": "bb936d752219a9cfc6cc754637853a9544e4e254720678c946235f0c1716816c",
-        "Model/VcVcuInDValidateCalibration.p": "4ba7bc7201842a3a505c849ec8cdeb71028c5131bc32840951d13f8fee471ad6",
-        "Src/ert_main.c": "346fe35fc6396ed364685fc6e59ac9301e42d68654157754bb764b4456f6a5fb",
-        "Src/rt_zcfcn.c": "e334f0097c2f860328b4ceb8885da35eb8f93a86f0c3dce5f786ee634d9a101d",
-        "Src/rt_zcfcn.h": "d4ae625cc1945deea1b4e9098cf8256f9ea44178ee1a7dea473d50812bbeda07",
-        "Src/rtwtypes.h": "a4f9a35d4733e1e23fbede33b9f6b865cbc93c886b5863751e25704d2e32fcf8",
-        "Src/VcVcuInD.c": "abdead8ef5af70888f98eab0fc067ec16ee0e6c9ba8f1147c8405dbf9c430d64",
-        "Src/VcVcuInD.h": "39dd5d3baa22728b8e0a77f2aa9f082f8704a68073bf888a83781d9b5b59a633",
-        "Src/VcVcuInD_data.c": "f9cc53f60f8cb205cb0e87437461c3f11f50ed5bbb91cd782a8999b1c81b07b0",
-        "Src/VcVcuInD_private.h": "7e194d3217a223d852af054bf88bbeb5a2aade0a9629111dd414d2555edb5b97",
-        "Src/VcVcuInD_types.h": "782d472109234e6f690f46795699c283381612cfd15269aab21e707ed8875641",
-        "Src/VcVcuInDDiagByte.c": "eb4f5c69670243e00556a20055cfbfbc62016f3d7957bdc52dc7ce6c1b87c4d4",
-        "Src/zero_crossing_types.h": "dd043c0436b4e5ccd399e12d5878495a784b086af9a0011ce4a879369cfada6b"
+  "revision": "six-issue-repair-20260910",
+  "admission": {
+    "repositories": [
+      {
+        "case_id": "NEP-01",
+        "samples": 11948,
+        "outputs": 108,
+        "comparisons": 1170904,
+        "range_checks": 1290384,
+        "business_property_count": 4,
+        "scenarios": 2811,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "runtime_source_binding": {
+          "Model/calibrationVcVcuInD.mat": "ace45f5d2e9e954145f85e1b0463ae129be7edc988fba7b8a7ac8d16434b52eb",
+          "Model/VcVcuInD.slx": "0422affde0277a2a08d73d27f9f30f35da53825d34b1eaa56b09a75ae056f0ba",
+          "Model/VcVcuInDDiagByte.mexw64": "10371ab30f40e848e61b775f120a1d6561298ce76429e14385fe9b9a986b6ae5",
+          "Model/VcVcuInDDiagByte.tlc": "bb936d752219a9cfc6cc754637853a9544e4e254720678c946235f0c1716816c",
+          "Model/VcVcuInDValidateCalibration.p": "4ba7bc7201842a3a505c849ec8cdeb71028c5131bc32840951d13f8fee471ad6",
+          "Src/ert_main.c": "9326ea44932586cdac58f51861195b14dc1b721bbe4a74d2e446c8a4819755ea",
+          "Src/rt_zcfcn.c": "e334f0097c2f860328b4ceb8885da35eb8f93a86f0c3dce5f786ee634d9a101d",
+          "Src/rt_zcfcn.h": "d4ae625cc1945deea1b4e9098cf8256f9ea44178ee1a7dea473d50812bbeda07",
+          "Src/rtwtypes.h": "6f7da24373ca0fae9cc7c5a93f155b521f1e00faa56c1b5bccedf0059e792f61",
+          "Src/VcVcuInD.c": "088c9c613b208091f1ad835c518c3a4ca721e3c97c6ac95b021120b3a2e4ad7f",
+          "Src/VcVcuInD.h": "1344267ebe7083e8bb6bc7796cc5d0dd71c666d0b576d1cf5dfa5f7066e3f92b",
+          "Src/VcVcuInD_data.c": "944f7c50eb6f2bc03f3728718345a70c8044f57a42e6cf65fac16566d004b9fb",
+          "Src/VcVcuInD_private.h": "68a0568b10802037a0ecabd778be3e9858e6cbcff42331dac8ee22cc4d064e0f",
+          "Src/VcVcuInD_types.h": "814e55779406fa0c8286b9dc438cd6dd79ccfb5d6ecf83376700004fd734f334",
+          "Src/VcVcuInDDiagByte.c": "eb4f5c69670243e00556a20055cfbfbc62016f3d7957bdc52dc7ce6c1b87c4d4",
+          "Src/zero_crossing_types.h": "277ac2f94d6cad8c6523bfb1b61fea9b11d82ec1aafaf87045d5cda8ab1737c3"
+        },
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      {
+        "case_id": "NEP-02",
+        "samples": 3562,
+        "outputs": 39,
+        "comparisons": 106860,
+        "range_checks": 138918,
+        "business_property_count": 5,
+        "scenarios": 801,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "runtime_source_binding": {
+          "Model/VcVcuOutQM.slx": "80a68b88a4d1b0fee6d4c9e5383fe615351778c33e5647976562f0e0f569d39c",
+          "Model/VcVcuOutQMDiagByte.mexw64": "fb21768e2e55ef6fb9671b036d09e4ac53c42c30e116d21a1389fcb6e2083fe2",
+          "Model/VcVcuOutQMDiagByte.tlc": "5f62c0dff2a5742c56e6e9201da83da7ad1c9bb552006912aa0edd91d49fa28e",
+          "Src/ert_main.c": "e38e56556d9c1d47efc2e7db06a27eff6904110085c66e2994d2ba56478d591c",
+          "Src/rt_zcfcn.c": "d97463d3315997b02fd5b294ac8a2082bc1b7f4bb95277808051dae107362bdb",
+          "Src/rt_zcfcn.h": "19767eadb2b3fae1db728b4cf6a50de7617192c5d714ba42153859c8afeb294a",
+          "Src/rtwtypes.h": "85cf3ab47c51b1ba97dedd99ac50bb3680e90aa65e5c8a13aeee30621f4ba95f",
+          "Src/VcVcuOutQM.c": "86e9c44778ae322ac37adf24c1eb47d573033f7cc7d9a7fc5e2978af13b2b5d0",
+          "Src/VcVcuOutQM.h": "4d95fe6c9d8e3ba01f60730013bd61d13744d29dad914d4b53626a321171a5b8",
+          "Src/VcVcuOutQM_data.c": "2cc330a8166c0c00edd7b7d668c4b510d8e7b72fe6498debbca2af3a9d4a72b9",
+          "Src/VcVcuOutQM_private.h": "f4e788d6c7912fe568e6c30dcf055615829c6c297bd43e8974a9d92059a59974",
+          "Src/VcVcuOutQM_types.h": "6618acb303b7f417f5aed3010d3ec9c1e3a17c030454a806c1a17440296d372c",
+          "Src/VcVcuOutQMDiagByte.c": "a3e1bfd3d277b750e33c2463cd6d6fc3a93000d8d9f02b19c114be7a7e332763",
+          "Src/zero_crossing_types.h": "b76ebd2d27279d8a7c9de507a92d741e09b1d14a4c6e2b57486eaff855ad6565"
+        },
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      {
+        "case_id": "NEP-03",
+        "samples": 2647,
+        "outputs": 26,
+        "comparisons": 58234,
+        "range_checks": 68822,
+        "business_property_count": 12,
+        "scenarios": 622,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "runtime_source_binding": {
+          "Model/calibrationVcVmcTrq.mat": "38e571f480659912c3e1b2ea64b21c2d7bf88d201b692c05154605b18bef9550",
+          "Model/VcVmcTrq.slx": "3953d72ddd49fc64ff883e72c2eb3d0a68311be3dcb1b35f90ab2ae2077737aa",
+          "Model/VcVmcTrqValidateCalibration.p": "cec49136a78e72842b50f8c597ae5f983c11c2b6d48a4e993b06e4451e672bbc",
+          "Src/ert_main.c": "944903016b4239d8a94e58e369b963d8e758bf37a4248a7a4b9c98181da98d63",
+          "Src/rt_zcfcn.c": "d112c598a15e37afb94663e43aa82ecc5bc53216ab49263a9ed56d261ac0e9f7",
+          "Src/rt_zcfcn.h": "f3be48d20681c54452bd5fd0c5705b591dd3e5854ca8ce72cdac01dac4495cc1",
+          "Src/rtwtypes.h": "3d8aa22ba85dd64b08cf6927ddebd440991e7d080e728732542764f8527c81d6",
+          "Src/VcVmcTrq.c": "0fe3f5c442580c16ca8d2e7cec0114ddc576d68afb9c437342c3e7180cc900ad",
+          "Src/VcVmcTrq.h": "c288ba2e12b67df2d1edce2a77b66f717600b17ef7cc6abb45bb1bdbdd6eb39c",
+          "Src/VcVmcTrq_data.c": "3b6344e4155334b75a88f5544354b06de1f955046d158dfc7458bdc11555ee70",
+          "Src/VcVmcTrq_private.h": "1d80f7bbb24557e35d9cea1c4099701639dfdefdcdd6f3eff74189c0d6dec141",
+          "Src/VcVmcTrq_types.h": "45403251181bdc784b48e65c6e405a0206eacf406481f92cbc1ac10d4c3b3ba4",
+          "Src/zero_crossing_types.h": "c76c29531c998ed41fb60c34a0ffebf5ba9e5ee353dd03996eff4c9dea138fea"
+        },
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      {
+        "case_id": "NEP-04",
+        "samples": 2251,
+        "outputs": 22,
+        "comparisons": 45020,
+        "range_checks": 49522,
+        "business_property_count": 6,
+        "scenarios": 529,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "runtime_source_binding": {
+          "Model/calibrationVcErcRgn.mat": "75893fbc3071e3648ddf6c47f1e376ab1fc3811c02c550f62243d355a59dd8bd",
+          "Model/VcErcRgn.slx": "1bf1bdf793d9426a0ea7d016d2b967b97b561b483dfc785ff46677b697f66899",
+          "Src/ert_main.c": "7866e9e14debe343557c15a6cf062501748356d0c065208814b7f307ad8de9a8",
+          "Src/rt_zcfcn.c": "94c6759abc527b3d2f72f24abdffabbfaf579dce91b408de58b986ea1db74a2e",
+          "Src/rt_zcfcn.h": "6e7e057563134fad962dc56f59cafe1b6c41c5561b68b656011e1419165f4d73",
+          "Src/rtwtypes.h": "b09a6bd2dd9eb5e22e14f0191b96e7dc58934fae1fc77df83186d4cf71a68865",
+          "Src/VcErcRgn.c": "ae01e5a3424f4508efadd08b20fd6212310cfd66206171d1d44580f9d2ef12c2",
+          "Src/VcErcRgn.h": "1a2918f87387c2ac9ee01f36dd8e686229ea67a1e8ae6a4630c04e7f8dfe0d85",
+          "Src/VcErcRgn_data.c": "1407543be6475d03aceca3f16db408972bf56a2719d2be6feb2747c66f90c5a7",
+          "Src/VcErcRgn_private.h": "c0e44e999f19d1879795335dc45f2d60e5457dcbd1bcdcf5c141a6aa5152ebb6",
+          "Src/VcErcRgn_types.h": "3d438e96140449a1b6a8f59d99eaa1e85acd5fc36cc16aae39224af8dd05b217",
+          "Src/zero_crossing_types.h": "d8d613fdadaed1fc8d3a613e44d25090382bbb9271726e8805ee6d1fbe297346"
+        },
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      {
+        "case_id": "NEP-05",
+        "samples": 1899,
+        "outputs": 22,
+        "comparisons": 34182,
+        "range_checks": 41778,
+        "business_property_count": 7,
+        "scenarios": 446,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "runtime_source_binding": {
+          "Model/VcDmcDrv.slx": "89b842ccca776dae7c705cc7ccac216c1fad1ae87698359756536ff53769a875"
+        },
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": false
+      },
+      {
+        "case_id": "NEP-06",
+        "samples": 2474,
+        "outputs": 27,
+        "comparisons": 54428,
+        "range_checks": 66798,
+        "business_property_count": 4,
+        "scenarios": 582,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "runtime_source_binding": {
+          "Model/VcWrcWhl.slx": "ccf814b6314c2f64fd42abf1cadd8429c76416712daa0fa649591972725dc9d3",
+          "Src/ert_main.c": "76607bd6324ec133c0bdfb775e1c5fddf074df936722d33812e007c896120f91",
+          "Src/rt_zcfcn.c": "965b1ec787bc67dc9eefb831703ed813269df48abdecaa63110fcc7a2a91517f",
+          "Src/rt_zcfcn.h": "b796160f0a76e476557607ddfaf6b71dc6575848531e240e1a80d97dd4071ea0",
+          "Src/rtwtypes.h": "6e86af9f12bf7587033f8e66e9a16fd8efc4026818c38c6a7efb79702cc62b2a",
+          "Src/VcWrcWhl.c": "43f45d6855875d7ef432ff17ae45bdb3a75b6666041dd746783a2dcd768496a5",
+          "Src/VcWrcWhl.h": "8ae2d1f9bd010fe084cbec95f26013bf966c93b5021e38d1c60235bd535f1d25",
+          "Src/VcWrcWhl_data.c": "80e87126c341e740ff8a41533ab670ff3dc739d100447b845a973e8772f63ec4",
+          "Src/VcWrcWhl_private.h": "1a542f408d4f99da7426e879fa014a08d8d3971a0cea0bde45b2382658ed58a9",
+          "Src/VcWrcWhl_types.h": "97c03e011d92230bc84ca9f83614a2f5758c23ce7cdfba5f0f0f74b372f7b64d",
+          "Src/zero_crossing_types.h": "51d71b3121125d6b3860eaf0890106f660bf81961357b8a6ad298ff90ad64ecc"
+        },
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      {
+        "case_id": "NEP-07",
+        "samples": 2640,
+        "outputs": 28,
+        "comparisons": 63360,
+        "range_checks": 73920,
+        "business_property_count": 9,
+        "scenarios": 620,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "runtime_source_binding": {
+          "Model/calibrationVcDeChg.mat": "483dfdd3318e6636df60783b30feaa53d000c3520e8583b20ea5f3b3ca6c0fc4",
+          "Model/VcDeChg.slx": "439df6763c41a3de6732a46e65ef2f679ac720e100644ec378a2c0f5c7bb3790",
+          "Model/VcDeChgValidateCalibration.p": "fc44f8e382d45ce6d9a4d143ea82048af9a3a43884c4fb8b9ea76c26ede8829f",
+          "Src/ert_main.c": "0f3ffa21aff1925b938711e41a978fc663ed8b82a15e25b3f30cb0761ca894f7",
+          "Src/rt_zcfcn.c": "37f637b9f635fe5f6f5c40c2ff87f70ba00dd74f4399813775f4a5d0fe89a3e8",
+          "Src/rt_zcfcn.h": "e74599757e59ce07a25bbec2687bfde653f79435abcbd1f10453aea19b409426",
+          "Src/rtwtypes.h": "11700e4212506b71cadc4e7f57c573d74570c2580104f8d758c65d46a932099d",
+          "Src/VcDeChg.c": "2c503b85b5b67faf60d103f43fce37bd9d0408709560e98c21d260f22af9f295",
+          "Src/VcDeChg.h": "2f1127d34f5c053b097d7490dc3797e3c0c3989320aeff06189b310ea139540b",
+          "Src/VcDeChg_data.c": "cedbfb7e33ef3d5541f1cd3b15e910dfb3c42bab91071ad9cb0e60f335f2d226",
+          "Src/VcDeChg_private.h": "35db14c24fbe1b66d8538cf5b4ce1813282d879e4ebb79a1f27dcb41a5fb1421",
+          "Src/VcDeChg_types.h": "32b566f47bb8af67604e53911eb3191d4aa344300cf4c717ade6deaf22518d50",
+          "Src/zero_crossing_types.h": "da904f7584b02ac6b38ef0cead76a89371331057b88aee24c7328fbc64f1719f"
+        },
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      {
+        "case_id": "NEP-08",
+        "samples": 4696,
+        "outputs": 47,
+        "comparisons": 178448,
+        "range_checks": 220712,
+        "business_property_count": 7,
+        "scenarios": 1083,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "runtime_source_binding": {
+          "Model/calibrationVcPvcThm.mat": "966cb31f3af86632dd8c430b9e6160e3b566d9d4c3954d71d784149eeb517f29",
+          "Model/VcPvcThm.slx": "8b5aa1538b6633cc0c7efec1aa1c01aed15c0b8e7af1117ec3ea7709bf6b476b",
+          "Src/ert_main.c": "c6cd3cc745e4248219d0a422ccfd7cd86d2fa58562aeb7e62ee9be6cf6f6fd65",
+          "Src/rt_zcfcn.c": "65109d6ecc79b99d2d3cdc16ece696cc7173543978a6eff504467df48e38c203",
+          "Src/rt_zcfcn.h": "3775e717053c703e12ee3b8e34c1a2e318f4e0cec4224bacb8273dc0603b238e",
+          "Src/rtwtypes.h": "8fca4a138fd94b627e556d1b30a3ffe06bcd5a024388398f04270a150d08970f",
+          "Src/VcPvcThm.c": "827edd0d7a96e41371435813c300c6afa68b2dcd65ce118e837adfb05f3aa0af",
+          "Src/VcPvcThm.h": "f5fc6fa6acb85cac4946b4f77bb046e07cf8cc92b52bec467a100c7d3078197e",
+          "Src/VcPvcThm_data.c": "68cd0b0c3e778b25a5caa347662798f9957e203b39da744abbec79f43259ce1f",
+          "Src/VcPvcThm_private.h": "58acc77d0b0101931b0a766bd0ef28f55a0f31a3ad42c58b2dad5141fa0e9dce",
+          "Src/VcPvcThm_types.h": "38aa1fa3ebef68690e5c3452efe602079b3d3f648fcff052d1cfd32b3048b90c",
+          "Src/zero_crossing_types.h": "2fb31c6cf41d471bfad9014b1181a951640e338e9a88e96d4ac64c2fa1551610"
+        },
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      {
+        "case_id": "NEP-09",
+        "samples": 5493,
+        "outputs": 52,
+        "comparisons": 258171,
+        "range_checks": 285636,
+        "business_property_count": 12,
+        "scenarios": 1294,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "runtime_source_binding": {
+          "Model/VcSfCPropR.slx": "00649266776657a17961f475552cc16ed4ac15ca3e2bb78d163038200e6011d9",
+          "Src/ert_main.c": "026f1d04d777ccf2529b3f2f54009f686e913a8139e48be046f06581122f8870",
+          "Src/rt_nonfinite.c": "116e8528986d98f566aaa76b0f2f6cd7ead3a66bdd63a04f66b6b8e6edacd863",
+          "Src/rt_nonfinite.h": "0348bf092a7c4cc3703668ac1edb768d11affae019b88306396d67d5f93f58f2",
+          "Src/rt_zcfcn.c": "de2456a6b466d1af8b793972aa0f058cfc15c5b9d4fe06c7a2da2960e25f4174",
+          "Src/rt_zcfcn.h": "b29163a41282555e2943c9d5fb1a5c9f282c2f968f09cb23415465e2f864a553",
+          "Src/rtGetInf.c": "a95db48de1bc5e67a6cf9e2973f5a79b37bdce0ce08551eaa50faa8a7cae8fee",
+          "Src/rtGetInf.h": "8f3d25598c40e3f0210b8fc17f3c660a7a2576898dc5bd9e2384c7b7bcfaaf47",
+          "Src/rtGetNaN.c": "f941c0c72452484f52cfca9f2c4b5e0be72649815bcf8a70f215279864fce384",
+          "Src/rtGetNaN.h": "9fe004cc5bcc32e7c3ca64c7307315a8751a017269153205c74679f932b872a3",
+          "Src/rtwtypes.h": "d6c17fc6f5df37d228dc444f422bfff3cbe6dbe9415efc80f9404c80affb6131",
+          "Src/VcSfCPropR.c": "980f0b3ad0f9280cdece1b4df1786b1fe003191f5db23afa9d24ebe2b28ec687",
+          "Src/VcSfCPropR.h": "327ba54bd7e7f9fad0eca26383b7ca42ccdfe10f24b08ae6130060df26280fa2",
+          "Src/VcSfCPropR_data.c": "1bbcbcf37d8e4f6f155060791a0879406adb842460397c7a2c2be7b83f1151a0",
+          "Src/VcSfCPropR_private.h": "a5e1009e4330671296e6b92e53b885475cec16ac1092323f7e604a89e3cc4556",
+          "Src/VcSfCPropR_types.h": "202a0f6d5992ff6440db41a02687cb59c1df255275f09a720cf5e3898ac967af",
+          "Src/zero_crossing_types.h": "126ea4327c6aae27cd7d4aaf2dc968f0aa6b8acfbdf29ced4e7f172fd9c90430"
+        },
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      {
+        "case_id": "NEP-10",
+        "samples": 16433,
+        "outputs": 181,
+        "comparisons": 2662146,
+        "range_checks": 2974373,
+        "business_property_count": 25,
+        "scenarios": 3869,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "runtime_source_binding": {
+          "Model/calibrationVcSfDPropR.mat": "b0bb613f7b74857a793997a4279fd340782067f20a3ecc129df82d48e6b18762",
+          "Model/FaultComponentLibrary.slx": "053d98c55916ececf78bbe6f1f670a9acf8ada11e75b99c87fca7664eb77f9f7",
+          "Model/VcSfDPropR.slx": "f7c53c6eba6569249831e3bb8047419cb2eff432c2879b936e80ce73f62d571d"
+        },
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": false
+      },
+      {
+        "case_id": "NEP-11",
+        "samples": 1270,
+        "outputs": 13,
+        "comparisons": 11430,
+        "range_checks": 16510,
+        "business_property_count": 7,
+        "scenarios": 273,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "runtime_source_binding": {
+          "Model/VcScHv.slx": "ba394a7420f16636675e276f095334bb02484c76c43ee0ab8068242a8ecdc59f"
+        },
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
       }
-    },
-    "NEP-02": {
-      "head": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
-      "tree": "b4e126a800a35fd935ce2da7ae0590966f1e8fef",
-      "runtime": {
-        "Model/VcVcuOutQM.slx": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
-        "Model/VcVcuOutQMDiagByte.mexw64": "ae070d42a4caa58dcf699c7c33cff74d4bfde5e199032e875ac7a7d68c368c16",
-        "Model/VcVcuOutQMDiagByte.tlc": "5f62c0dff2a5742c56e6e9201da83da7ad1c9bb552006912aa0edd91d49fa28e",
-        "Src/ert_main.c": "723d5544e6f23a6374fb7c628247720b45b6993008cc078f684d87332337f836",
-        "Src/rt_zcfcn.c": "d97463d3315997b02fd5b294ac8a2082bc1b7f4bb95277808051dae107362bdb",
-        "Src/rt_zcfcn.h": "19767eadb2b3fae1db728b4cf6a50de7617192c5d714ba42153859c8afeb294a",
-        "Src/rtwtypes.h": "dff3e7da2c7a6a20c861c52c2b2c33e524a41fbdc11a1b7a827e56553496cb71",
-        "Src/VcVcuOutQM.c": "047dc509c7c9124f61c09ef3b33dca581ef1eaabc026ff33ba86ce11138b4640",
-        "Src/VcVcuOutQM.h": "927e5daaa35c05fb9a1fbdf3135c40a7548806426c35a9643b02a7490f3c3188",
-        "Src/VcVcuOutQM_data.c": "5fb8240a6052c01957d7a8e07071aabc58d71349cb647c8bb4ccefc3a3fc7ee8",
-        "Src/VcVcuOutQM_private.h": "51a4fed4e878d80da397d770daa6295325180b77d6da7cb9e443a8bd5e25b073",
-        "Src/VcVcuOutQM_types.h": "8ed9403443f4715a57dc77aff1399017723a171cd0c57d5022de0feb2e833190",
-        "Src/VcVcuOutQMDiagByte.c": "a3e1bfd3d277b750e33c2463cd6d6fc3a93000d8d9f02b19c114be7a7e332763",
-        "Src/zero_crossing_types.h": "7c421322595abe8c27eb46ea88402eb38a1992edb263449bcb7c08dd6fe945b4"
-      }
-    },
-    "NEP-03": {
-      "head": "648cfbcc43c142b82b718491f45b34731dfd9e00",
-      "tree": "307e6e077669e72c4f55f009d9cfd5724ad3bb90",
-      "runtime": {
-        "Model/calibrationVcVmcTrq.mat": "937246408d7b47795a0079ce602f896f65c4cd16a8af168621e3990ac65c2a38",
-        "Model/VcVmcTrq.slx": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
-        "Model/VcVmcTrqValidateCalibration.p": "cec49136a78e72842b50f8c597ae5f983c11c2b6d48a4e993b06e4451e672bbc",
-        "Src/ert_main.c": "a3d33512129ab69f49a27cf1f3eaa39bcfec44787fcb1476d105cf1c3eaf4aa7",
-        "Src/rt_zcfcn.c": "d112c598a15e37afb94663e43aa82ecc5bc53216ab49263a9ed56d261ac0e9f7",
-        "Src/rt_zcfcn.h": "f3be48d20681c54452bd5fd0c5705b591dd3e5854ca8ce72cdac01dac4495cc1",
-        "Src/rtwtypes.h": "ac4eeeb0dad4968015942322f6a9f043a5faaac7230ec18a81dd98f1567e4aed",
-        "Src/VcVmcTrq.c": "e48ec9c1d450ababfe847e9306b7358a26ad9e43d4ea2fe21a425b6b8a7af6a6",
-        "Src/VcVmcTrq.h": "ab9037aa3e2a8271df6a30d9abf62bfb3b6ce9f352766fe3e604c4f4035cd2f5",
-        "Src/VcVmcTrq_data.c": "59c6efd4c1498bef583f85c0859e2784f06e46c0ab10cc6c3361c128c4b84fcb",
-        "Src/VcVmcTrq_private.h": "3b55f722c5b50333ee738f1a9bc504cca620331e9d8bde3ceaff7ce258a0f9df",
-        "Src/VcVmcTrq_types.h": "6fccb55396fdeef94fdddc41feb579734d4be70da214aaaa897cf97586e6cdb3",
-        "Src/zero_crossing_types.h": "7a8c4d083a9f57b3a640f5b4dccd7f83f749fb2219431863f69e3cc5fc83204d"
-      }
-    },
-    "NEP-04": {
-      "head": "49e818a2ab42384d5de9e49ba8481c832819c772",
-      "tree": "fada3507b1152405529403b871d795f4a9e27ea7",
-      "runtime": {
-        "Model/calibrationVcErcRgn.mat": "99428298b70f856e0863ab3e6b06da3cb80c08452acc3fe5913740cc32c19fbe",
-        "Model/VcErcRgn.slx": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
-        "Src/ert_main.c": "08936f25e4fec5163f65d3983295e68ea9a270b608ec14b3832fae52c6955c99",
-        "Src/rt_zcfcn.c": "94c6759abc527b3d2f72f24abdffabbfaf579dce91b408de58b986ea1db74a2e",
-        "Src/rt_zcfcn.h": "6e7e057563134fad962dc56f59cafe1b6c41c5561b68b656011e1419165f4d73",
-        "Src/rtwtypes.h": "4cfa5e8db04cdcad9a223b8b7de734ad1c4f39b3deed4a20eca3a2bae897b103",
-        "Src/VcErcRgn.c": "136af43ccf58167a18a5a13ffdc95d32b34e9a30a5604a8ed5472f36ae7b3fc7",
-        "Src/VcErcRgn.h": "b59ebe412e12df78a0f53d4d8b562ab6910dfd4ba2c081e54283ff7ee34c0dde",
-        "Src/VcErcRgn_data.c": "18bba3285b4d9a2883ddc09aedbf4e450c3dd92906fbf8b353052b1f89aded38",
-        "Src/VcErcRgn_private.h": "4cb1ffdd7e4c22d1cf0d3eb8479231765f929b19d579c5e74683253b625bfbb6",
-        "Src/VcErcRgn_types.h": "56933e15992a48efe0626381f62e7adcd422aa24ecfc9f5cfaf6a16e6a107b89",
-        "Src/zero_crossing_types.h": "c8d015fc4472685e8b6a5b25c660c743c70329427490e3cb15741d3cfecebc4a"
-      }
-    },
-    "NEP-05": {
-      "head": "acb2dcf4c0ad4622e1c18c7420e1cc5d67ae3f99",
-      "tree": "ef2b23d91a089517b48ee382b507b9a572ed62c9",
-      "runtime": {
-        "Model/VcDmcDrv.slx": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552"
-      }
-    },
-    "NEP-06": {
-      "head": "8ed5aeb39d5588fcfb1bb0f81e4878950306be38",
-      "tree": "11dde076a71fadc67e4d62f5239f7e75a63f0e28",
-      "runtime": {
-        "Model/VcWrcWhl.slx": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
-        "Src/ert_main.c": "53f3251a7cf3018984d2d8e9b8ce44f5dec00ba680db600c1b35fb5af46b1e41",
-        "Src/rt_zcfcn.c": "965b1ec787bc67dc9eefb831703ed813269df48abdecaa63110fcc7a2a91517f",
-        "Src/rt_zcfcn.h": "b796160f0a76e476557607ddfaf6b71dc6575848531e240e1a80d97dd4071ea0",
-        "Src/rtwtypes.h": "ff16320c7afe75edb2317ed203fc0e5091905b24b27971533efa435b0a4ca9bb",
-        "Src/VcWrcWhl.c": "22109a63e86cfe58e74e52305943d4b59eecad6e571f9690aa6c89a542c2b5cd",
-        "Src/VcWrcWhl.h": "2bee40be9fd61863cd674e9fd4908478664e235f06d5a4d0d7b1f5df516f9fd7",
-        "Src/VcWrcWhl_data.c": "98c6c0749be0e9230ad173b8598f2b7bb2414a592f0d7d0a94cea5c18f5f7c0d",
-        "Src/VcWrcWhl_private.h": "d239dff071c3740e3e97abb76ddf388218158274b156774c387547d2e1bfad44",
-        "Src/VcWrcWhl_types.h": "015a893a5281d34a1714e8155bc80333546a07ec9261a1a0ab6c42c8d458f7ae",
-        "Src/zero_crossing_types.h": "7bc955cbe97a5c294810a8f9ea8b54098624ec45959270631268b5b6436bc403"
-      }
-    },
-    "NEP-07": {
-      "head": "482bcd7eac4cba0407b746d5eeb7bee46390bd20",
-      "tree": "d4b3f7fc941333997b0efb36e9c6c7a34b4a32d0",
-      "runtime": {
-        "Model/calibrationVcDeChg.mat": "539bda18995104006f5f4c7424cb563e03f06d83a5859d0275aa12dc9a683894",
-        "Model/VcDeChg.slx": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
-        "Model/VcDeChgValidateCalibration.p": "fc44f8e382d45ce6d9a4d143ea82048af9a3a43884c4fb8b9ea76c26ede8829f",
-        "Src/ert_main.c": "bbdeee824b16f4d8078644b73de7119ecef89e16ef4a67229cbdea91dc0bbc93",
-        "Src/rt_zcfcn.c": "37f637b9f635fe5f6f5c40c2ff87f70ba00dd74f4399813775f4a5d0fe89a3e8",
-        "Src/rt_zcfcn.h": "e74599757e59ce07a25bbec2687bfde653f79435abcbd1f10453aea19b409426",
-        "Src/rtwtypes.h": "63f5a63843037b11be63930b2ea74a35f904c3f8dbc0de494faf84442785a656",
-        "Src/VcDeChg.c": "5df201917c24f653df1ae8b68326043aab048f217fb182dd5b3c37907edfa4d4",
-        "Src/VcDeChg.h": "5eb4544cd57714f8eb49d44d6d5968ea41d6065d17418a4e7bcee5cd48738957",
-        "Src/VcDeChg_data.c": "0eb4cdbc7610ff0fedaa530c08f3b0cc6feac9efa4c91724523f15102b985ec3",
-        "Src/VcDeChg_private.h": "1a6b22ba397ca67811e883ae3692174e8d9eacb6cf34ef7ebc6f76edf8374ce8",
-        "Src/VcDeChg_types.h": "7fd77d4d56b282ee9ab4489519ecc9ba8efa65c81face6681795c7c6b9f7b4fa",
-        "Src/zero_crossing_types.h": "3afda1a87ac2b691cda65ee3c06d299739253600a3b27c0765006988b7032365"
-      }
-    },
-    "NEP-08": {
-      "head": "a6c4ad4bcb7fe89f1ee7871e4224c1484000ccd4",
-      "tree": "ad62d917261963e1f0f5d3a770e8f2c1f044d840",
-      "runtime": {
-        "Model/calibrationVcPvcThm.mat": "97a7485fc5f6582896bdd16c1bd844966e18904a6e0ce816558b0ddd072d72b9",
-        "Model/VcPvcThm.slx": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
-        "Src/ert_main.c": "ee0751a9b13ad52767ef6d7c7a385d1249cfeae41e737556aa738099ca5d08cb",
-        "Src/rt_zcfcn.c": "65109d6ecc79b99d2d3cdc16ece696cc7173543978a6eff504467df48e38c203",
-        "Src/rt_zcfcn.h": "3775e717053c703e12ee3b8e34c1a2e318f4e0cec4224bacb8273dc0603b238e",
-        "Src/rtwtypes.h": "da0be239d5e9de6c04cdb7ed6a1949a67b0b0e8e0b4874c5e5a52e2cd1ee99f8",
-        "Src/VcPvcThm.c": "a3e045261e69a13e36f0d2b053515ab54593067e0c0eb6de3c5abf81849d4101",
-        "Src/VcPvcThm.h": "a361525c7a1128bab794cb28beba61b5464588629bb1996db41d9eeffe9e8617",
-        "Src/VcPvcThm_data.c": "f9a223235aad79921d0a568bd81823f7158f922af2e43ccf5860f99e9182c586",
-        "Src/VcPvcThm_private.h": "289ecc7dbd9bfed08fe1c20bf42a7286d438f2c0954ee86f7699bc8074113bae",
-        "Src/VcPvcThm_types.h": "47e720814342b7d73c8dbf6ac20b74f8e230eaba257bd0b7b22f4d3646b3cc5d",
-        "Src/zero_crossing_types.h": "7c2abc9f8ad52ef8645608af4b0f453bc1a417703c19508d53a25748d73d6e4b"
-      }
-    },
-    "NEP-09": {
-      "head": "77c522c76b2d8b17004f074aea5b481faaec501f",
-      "tree": "159971055ac88273fca090d99b5613abc59fcdac",
-      "runtime": {
-        "Model/VcSfCPropR.slx": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
-        "Src/ert_main.c": "37e225e9dbd1e50a1116c29ef4ca118b390af27f1d50072e77c53a4b3e4036be",
-        "Src/rt_zcfcn.c": "de2456a6b466d1af8b793972aa0f058cfc15c5b9d4fe06c7a2da2960e25f4174",
-        "Src/rt_zcfcn.h": "b29163a41282555e2943c9d5fb1a5c9f282c2f968f09cb23415465e2f864a553",
-        "Src/rtwtypes.h": "84ebf71d4b43119f50289da70dc3a7b13fc0b17bc6e9fa1d2dc3af32502f7f55",
-        "Src/VcSfCPropR.c": "8927becfcb7de1dfc0484eb65e8929584223a1649b7bea6e1e6d17429b006033",
-        "Src/VcSfCPropR.h": "e852084233516a8f233a9814cab4d4acd4955fd778538f1c966355d8a6f7de96",
-        "Src/VcSfCPropR_data.c": "1e3cd3058bf73b20ffe864dbb8681e853366a4c264580288dcfc5d6a335fe29b",
-        "Src/VcSfCPropR_private.h": "d575a3f029fd2c7ac9d8a6f767e5ed9fba3c1b997f53377a89eb368de5635c1b",
-        "Src/VcSfCPropR_types.h": "f5b9c5e73297522ddc656dfed7e031fb3d33c174ad786c838a949ccfc7544bce",
-        "Src/zero_crossing_types.h": "a724d5432cfc39b0b017c958a12e4773ce06e21e559e3d61462aa1beb5c054be"
-      }
-    },
-    "NEP-10": {
-      "head": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
-      "tree": "97368da9731189e1e4cabec603eb0876a2393ab2",
-      "runtime": {
-        "Model/calibrationVcSfDPropR.mat": "1fa07516a834c20b489cca94042b84b00ce5a886d831a9c17f910c00d39d632d",
-        "Model/VcSfDPropR.slx": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f"
-      }
-    },
-    "NEP-11": {
-      "head": "a44a6d59be5b76a9119764ef3cec3947901e042f",
-      "tree": "003d08fd5ff91a0dbeb26af55795d32bb269798a",
-      "runtime": {
-        "Model/VcScHv.slx": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506"
-      }
-    }
+    ],
+    "total_samples": 55313,
+    "total_comparisons": 4643183,
+    "total_range_checks": 5227373,
+    "business_properties": 98,
+    "max_abs_error": 0.0
   },
-  "native": {
-    "engine": "R2023b Simulink normal-mode MIL",
-    "repositories": 11,
-    "samples": 33142,
-    "comparisons": 2973268,
-    "max_abs_error": 0
-  },
+  "native_engine": "MATLAB/Simulink R2023b normal-mode MIL",
   "restored_native": {
     "repositories": [
       {
         "id": "NEP-01",
-        "samples": 6737,
-        "comparisons": 666963,
-        "max_abs_error": 0.0,
-        "same_as_original_native": true
+        "samples": 11948,
+        "outputs": 108,
+        "comparisons": 1170904,
+        "business_properties": 4,
+        "range_checks": 1290384,
+        "source_restored_exact_equal": true,
+        "all_passed": true
       },
       {
         "id": "NEP-02",
-        "samples": 1977,
-        "comparisons": 61287,
-        "max_abs_error": 0.0,
-        "same_as_original_native": true
+        "samples": 3562,
+        "outputs": 39,
+        "comparisons": 106860,
+        "business_properties": 5,
+        "range_checks": 138918,
+        "source_restored_exact_equal": true,
+        "all_passed": true
       },
       {
         "id": "NEP-03",
-        "samples": 1417,
-        "comparisons": 34008,
-        "max_abs_error": 0.0,
-        "same_as_original_native": true
+        "samples": 2647,
+        "outputs": 26,
+        "comparisons": 58234,
+        "business_properties": 12,
+        "range_checks": 68822,
+        "source_restored_exact_equal": true,
+        "all_passed": true
       },
       {
         "id": "NEP-04",
-        "samples": 1277,
-        "comparisons": 26817,
-        "max_abs_error": 0.0,
-        "same_as_original_native": true
+        "samples": 2251,
+        "outputs": 22,
+        "comparisons": 45020,
+        "business_properties": 6,
+        "range_checks": 49522,
+        "source_restored_exact_equal": true,
+        "all_passed": true
       },
       {
         "id": "NEP-05",
-        "samples": 1137,
-        "comparisons": 21603,
-        "max_abs_error": 0.0,
-        "same_as_original_native": true
+        "samples": 1899,
+        "outputs": 22,
+        "comparisons": 34182,
+        "business_properties": 7,
+        "range_checks": 41778,
+        "source_restored_exact_equal": true,
+        "all_passed": true
       },
       {
         "id": "NEP-06",
-        "samples": 1417,
-        "comparisons": 32591,
-        "max_abs_error": 0.0,
-        "same_as_original_native": true
+        "samples": 2474,
+        "outputs": 27,
+        "comparisons": 54428,
+        "business_properties": 4,
+        "range_checks": 66798,
+        "source_restored_exact_equal": true,
+        "all_passed": true
       },
       {
         "id": "NEP-07",
-        "samples": 1557,
-        "comparisons": 40482,
-        "max_abs_error": 0.0,
-        "same_as_original_native": true
+        "samples": 2640,
+        "outputs": 28,
+        "comparisons": 63360,
+        "business_properties": 9,
+        "range_checks": 73920,
+        "source_restored_exact_equal": true,
+        "all_passed": true
       },
       {
         "id": "NEP-08",
-        "samples": 2537,
-        "comparisons": 98943,
-        "max_abs_error": 0.0,
-        "same_as_original_native": true
+        "samples": 4696,
+        "outputs": 47,
+        "comparisons": 178448,
+        "business_properties": 7,
+        "range_checks": 220712,
+        "source_restored_exact_equal": true,
+        "all_passed": true
       },
       {
         "id": "NEP-09",
-        "samples": 3167,
-        "comparisons": 155183,
-        "max_abs_error": 0.0,
-        "same_as_original_native": true
+        "samples": 5493,
+        "outputs": 52,
+        "comparisons": 258171,
+        "business_properties": 12,
+        "range_checks": 285636,
+        "source_restored_exact_equal": true,
+        "all_passed": true
       },
       {
         "id": "NEP-10",
-        "samples": 11217,
-        "comparisons": 1828371,
-        "max_abs_error": 0.0,
-        "same_as_original_native": true
+        "samples": 16433,
+        "outputs": 181,
+        "comparisons": 2662146,
+        "business_properties": 25,
+        "range_checks": 2974373,
+        "source_restored_exact_equal": true,
+        "all_passed": true
       },
       {
         "id": "NEP-11",
-        "samples": 702,
-        "comparisons": 7020,
-        "max_abs_error": 0.0,
-        "same_as_original_native": true
+        "samples": 1270,
+        "outputs": 13,
+        "comparisons": 11430,
+        "business_properties": 7,
+        "range_checks": 16510,
+        "source_restored_exact_equal": true,
+        "all_passed": true
       }
     ],
-    "samples": 33142,
-    "comparisons": 2973268,
-    "passed": true
+    "total_samples": 55313,
+    "total_channel_comparisons": 4643183,
+    "total_full_output_comparisons": 5227373,
+    "all_passed": true
   },
-  "host_c": {
-    "repositories": 8,
-    "samples": 20086,
-    "comparisons": 1116274,
-    "max_abs_error": 0,
-    "compiler": "LCC-win64 via native mex"
+  "final_documentation_only_changes": [
+    {
+      "id": "NEP-01",
+      "native_verified_head": "f18a34a6b690d7d738cc9af38d3f1e751bfcd4ad",
+      "final_head": "367b2ab786de8572c8b0d665de05b5b13983d4ae",
+      "changed_documents": [
+        "Documentation/VcVcuInD_ModelReview.xlsx",
+        "UnitTest/VCU_VcVcuInD_SWUT.xlsx"
+      ],
+      "cell_values_identical": true,
+      "native_artifact_bytes_identical": true
+    },
+    {
+      "id": "NEP-02",
+      "native_verified_head": "2b938001254497b67dc59764744dd3a77d89e356",
+      "final_head": "32d77f24db27d913aa0bfcdcc70dd15b463dfe00",
+      "changed_documents": [
+        "UnitTest/VCU_VcVcuOutQM_SWUT.xlsx"
+      ],
+      "cell_values_identical": true,
+      "native_artifact_bytes_identical": true
+    },
+    {
+      "id": "NEP-03",
+      "native_verified_head": "c32b8b3e860f746e06854a8a9cf193fccbc15045",
+      "final_head": "0902e6c52e3878edd5a1c7de4e2e2ea65ef73300",
+      "changed_documents": [
+        "Documentation/VcVmcTrq_ModelReview.xlsx",
+        "UnitTest/VCU_VcVmcTrq_SWUT.xlsx"
+      ],
+      "cell_values_identical": true,
+      "native_artifact_bytes_identical": true
+    },
+    {
+      "id": "NEP-04",
+      "native_verified_head": "53e579c7c2d5f478f498036546415e6001fd84a3",
+      "final_head": "c30baa42401b4086e57396213c07f7d0fd244099",
+      "changed_documents": [
+        "UnitTest/VCU_VcErcRgn_SWUT.xlsx"
+      ],
+      "cell_values_identical": true,
+      "native_artifact_bytes_identical": true
+    },
+    {
+      "id": "NEP-05",
+      "native_verified_head": "3a5f747d55331682a1ddadc49551f04236e3f958",
+      "final_head": "3a5f747d55331682a1ddadc49551f04236e3f958",
+      "changed_documents": [],
+      "cell_values_identical": true,
+      "native_artifact_bytes_identical": true
+    },
+    {
+      "id": "NEP-06",
+      "native_verified_head": "86dd178fa14c98d6c093d2e3d219b2581da67ff9",
+      "final_head": "61084082b8d60f121303fef0a691b80916cd41dd",
+      "changed_documents": [
+        "VcWrcWhl/Documentation/VcWrcWhl_ModelReview.xlsx",
+        "VcWrcWhl/UnitTest/VCU_VcWrcWhl_SWUT.xlsx"
+      ],
+      "cell_values_identical": true,
+      "native_artifact_bytes_identical": true
+    },
+    {
+      "id": "NEP-07",
+      "native_verified_head": "b5a783e614e9c5d537c6c515f39cf6a2636498cb",
+      "final_head": "e2fd73443c59459a560775405b486624b4b082cf",
+      "changed_documents": [
+        "Documentation/VcDeChg_ModelReview.xlsx",
+        "UnitTest/VCU_VcDeChg_SWUT.xlsx"
+      ],
+      "cell_values_identical": true,
+      "native_artifact_bytes_identical": true
+    },
+    {
+      "id": "NEP-08",
+      "native_verified_head": "010ff96fa15f64fd03091cb9c5e8941b367cf884",
+      "final_head": "a3946da6cca31d88979c55b6d18a64ea33225dbd",
+      "changed_documents": [
+        "UintTest/VCU_VcPvcThm_SWUT.xlsx"
+      ],
+      "cell_values_identical": true,
+      "native_artifact_bytes_identical": true
+    },
+    {
+      "id": "NEP-09",
+      "native_verified_head": "3f7d05306ca5473c9baa98a72a846630fed7ade1",
+      "final_head": "3b60bb33258294e6b8c6d8ba531790af4c98617d",
+      "changed_documents": [
+        "Documentation/VcSfCPropR_ModelReview.xlsx",
+        "UnitTest/VCU_VcSfCPropR_SWUT.xlsx"
+      ],
+      "cell_values_identical": true,
+      "native_artifact_bytes_identical": true
+    },
+    {
+      "id": "NEP-10",
+      "native_verified_head": "dc1dd984ecc2152bb03c7aa8f13dd83f856f6e89",
+      "final_head": "dc1dd984ecc2152bb03c7aa8f13dd83f856f6e89",
+      "changed_documents": [],
+      "cell_values_identical": true,
+      "native_artifact_bytes_identical": true
+    },
+    {
+      "id": "NEP-11",
+      "native_verified_head": "37dcf9eced0b97db240cb4f1632ba0f1fd586bae",
+      "final_head": "27f0538f1d71375e12b02efd470b3e35586fda52",
+      "changed_documents": [
+        "UnitTest/VCU_VcScHv_SWUT.xlsx"
+      ],
+      "cell_values_identical": true,
+      "native_artifact_bytes_identical": true
+    }
+  ],
+  "host_replay": [
+    {
+      "case_id": "NEP-01",
+      "compiler": "Explicit LCC-win64 through mex",
+      "compiled": true,
+      "executed": true,
+      "samples": 11948,
+      "outputs": 108,
+      "max_abs_error": 0,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-02",
+      "compiler": "Explicit LCC-win64 through mex",
+      "compiled": true,
+      "executed": true,
+      "samples": 3562,
+      "outputs": 39,
+      "max_abs_error": 0,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-03",
+      "compiler": "Explicit LCC-win64 through mex",
+      "compiled": true,
+      "executed": true,
+      "samples": 2647,
+      "outputs": 26,
+      "max_abs_error": 0,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-04",
+      "compiler": "Explicit LCC-win64 through mex",
+      "compiled": true,
+      "executed": true,
+      "samples": 2251,
+      "outputs": 22,
+      "max_abs_error": 0,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-06",
+      "compiler": "Explicit LCC-win64 through mex",
+      "compiled": true,
+      "executed": true,
+      "samples": 2474,
+      "outputs": 27,
+      "max_abs_error": 0,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-07",
+      "compiler": "Explicit LCC-win64 through mex",
+      "compiled": true,
+      "executed": true,
+      "samples": 2640,
+      "outputs": 28,
+      "max_abs_error": 0,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-08",
+      "compiler": "Explicit LCC-win64 through mex",
+      "compiled": true,
+      "executed": true,
+      "samples": 4696,
+      "outputs": 47,
+      "max_abs_error": 0,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    },
+    {
+      "case_id": "NEP-09",
+      "compiler": "Explicit LCC-win64 through mex",
+      "compiled": true,
+      "executed": true,
+      "samples": 5493,
+      "outputs": 52,
+      "max_abs_error": 0,
+      "math_compatibility": "LCC fmodf implemented with standard double fmod and float return; source retained in scripts/lcc_float_compat.c",
+      "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
+    }
+  ],
+  "host_samples": 35711,
+  "host_output_comparisons": 2194712,
+  "mutation_detection": [
+    {
+      "id": "NEP-03",
+      "detected": true,
+      "failed_properties": [
+        {
+          "name": "Thermal factor at 180 C",
+          "passed": false,
+          "checked_samples": 3,
+          "minimum": -0.25,
+          "maximum": -0.25,
+          "expected": 0,
+          "op": "equal"
+        }
+      ]
+    },
+    {
+      "id": "NEP-08",
+      "detected": true,
+      "failed_properties": [
+        {
+          "name": "Unsaturated integral accumulates",
+          "passed": false,
+          "checked_samples": 100,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "expected": 0.015,
+          "op": "ramp"
+        },
+        {
+          "name": "Integral after 100 qualified samples",
+          "passed": false,
+          "checked_samples": 1,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "expected": 1.5,
+          "op": "equal"
+        },
+        {
+          "name": "Command includes integral",
+          "passed": false,
+          "checked_samples": 1,
+          "minimum": 10.0,
+          "maximum": 10.0,
+          "expected": 11.5,
+          "op": "equal"
+        }
+      ]
+    },
+    {
+      "id": "NEP-09",
+      "detected": true,
+      "failed_properties": [
+        {
+          "name": "Three sample latch 2",
+          "passed": false,
+          "checked_samples": 2,
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "expected": [
+            0,
+            0
+          ],
+          "op": "sequence"
+        },
+        {
+          "name": "Transient vs latched recovery 2",
+          "passed": false,
+          "checked_samples": 5,
+          "minimum": 0.0,
+          "maximum": 0.0,
+          "expected": 1,
+          "op": "equal"
+        },
+        {
+          "name": "Three sample latch 3",
+          "passed": false,
+          "checked_samples": 3,
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "expected": [
+            0,
+            0,
+            1
+          ],
+          "op": "sequence"
+        }
+      ]
+    },
+    {
+      "id": "NEP-11",
+      "detected": true,
+      "failed_properties": [
+        {
+          "name": "Completion at 510 ms",
+          "passed": false,
+          "checked_samples": 1,
+          "minimum": 2.0,
+          "maximum": 2.0,
+          "expected": 3,
+          "op": "equal"
+        }
+      ]
+    }
+  ],
+  "final_source_binding": {
+    "NEP-01": {
+      "head": "367b2ab786de8572c8b0d665de05b5b13983d4ae",
+      "tree": "a222fe0a241e9b68fec18204f22c0e65e4b85622",
+      "runtime_artifacts": {
+        "Model/calibrationVcVcuInD.mat": "ace45f5d2e9e954145f85e1b0463ae129be7edc988fba7b8a7ac8d16434b52eb",
+        "Model/VcVcuInD.slx": "0422affde0277a2a08d73d27f9f30f35da53825d34b1eaa56b09a75ae056f0ba",
+        "Model/VcVcuInDDiagByte.mexw64": "10371ab30f40e848e61b775f120a1d6561298ce76429e14385fe9b9a986b6ae5",
+        "Model/VcVcuInDDiagByte.tlc": "bb936d752219a9cfc6cc754637853a9544e4e254720678c946235f0c1716816c",
+        "Model/VcVcuInDValidateCalibration.p": "4ba7bc7201842a3a505c849ec8cdeb71028c5131bc32840951d13f8fee471ad6",
+        "Src/ert_main.c": "9326ea44932586cdac58f51861195b14dc1b721bbe4a74d2e446c8a4819755ea",
+        "Src/rt_zcfcn.c": "e334f0097c2f860328b4ceb8885da35eb8f93a86f0c3dce5f786ee634d9a101d",
+        "Src/rt_zcfcn.h": "d4ae625cc1945deea1b4e9098cf8256f9ea44178ee1a7dea473d50812bbeda07",
+        "Src/rtwtypes.h": "6f7da24373ca0fae9cc7c5a93f155b521f1e00faa56c1b5bccedf0059e792f61",
+        "Src/VcVcuInD.c": "088c9c613b208091f1ad835c518c3a4ca721e3c97c6ac95b021120b3a2e4ad7f",
+        "Src/VcVcuInD.h": "1344267ebe7083e8bb6bc7796cc5d0dd71c666d0b576d1cf5dfa5f7066e3f92b",
+        "Src/VcVcuInD_data.c": "944f7c50eb6f2bc03f3728718345a70c8044f57a42e6cf65fac16566d004b9fb",
+        "Src/VcVcuInD_private.h": "68a0568b10802037a0ecabd778be3e9858e6cbcff42331dac8ee22cc4d064e0f",
+        "Src/VcVcuInD_types.h": "814e55779406fa0c8286b9dc438cd6dd79ccfb5d6ecf83376700004fd734f334",
+        "Src/VcVcuInDDiagByte.c": "eb4f5c69670243e00556a20055cfbfbc62016f3d7957bdc52dc7ce6c1b87c4d4",
+        "Src/zero_crossing_types.h": "277ac2f94d6cad8c6523bfb1b61fea9b11d82ec1aafaf87045d5cda8ab1737c3"
+      }
+    },
+    "NEP-02": {
+      "head": "32d77f24db27d913aa0bfcdcc70dd15b463dfe00",
+      "tree": "d626a38c14992feabd1c22df37157bcbf3736d2e",
+      "runtime_artifacts": {
+        "Model/VcVcuOutQM.slx": "80a68b88a4d1b0fee6d4c9e5383fe615351778c33e5647976562f0e0f569d39c",
+        "Model/VcVcuOutQMDiagByte.mexw64": "fb21768e2e55ef6fb9671b036d09e4ac53c42c30e116d21a1389fcb6e2083fe2",
+        "Model/VcVcuOutQMDiagByte.tlc": "5f62c0dff2a5742c56e6e9201da83da7ad1c9bb552006912aa0edd91d49fa28e",
+        "Src/ert_main.c": "e38e56556d9c1d47efc2e7db06a27eff6904110085c66e2994d2ba56478d591c",
+        "Src/rt_zcfcn.c": "d97463d3315997b02fd5b294ac8a2082bc1b7f4bb95277808051dae107362bdb",
+        "Src/rt_zcfcn.h": "19767eadb2b3fae1db728b4cf6a50de7617192c5d714ba42153859c8afeb294a",
+        "Src/rtwtypes.h": "85cf3ab47c51b1ba97dedd99ac50bb3680e90aa65e5c8a13aeee30621f4ba95f",
+        "Src/VcVcuOutQM.c": "86e9c44778ae322ac37adf24c1eb47d573033f7cc7d9a7fc5e2978af13b2b5d0",
+        "Src/VcVcuOutQM.h": "4d95fe6c9d8e3ba01f60730013bd61d13744d29dad914d4b53626a321171a5b8",
+        "Src/VcVcuOutQM_data.c": "2cc330a8166c0c00edd7b7d668c4b510d8e7b72fe6498debbca2af3a9d4a72b9",
+        "Src/VcVcuOutQM_private.h": "f4e788d6c7912fe568e6c30dcf055615829c6c297bd43e8974a9d92059a59974",
+        "Src/VcVcuOutQM_types.h": "6618acb303b7f417f5aed3010d3ec9c1e3a17c030454a806c1a17440296d372c",
+        "Src/VcVcuOutQMDiagByte.c": "a3e1bfd3d277b750e33c2463cd6d6fc3a93000d8d9f02b19c114be7a7e332763",
+        "Src/zero_crossing_types.h": "b76ebd2d27279d8a7c9de507a92d741e09b1d14a4c6e2b57486eaff855ad6565"
+      }
+    },
+    "NEP-03": {
+      "head": "0902e6c52e3878edd5a1c7de4e2e2ea65ef73300",
+      "tree": "71028af67a424fed8c04d2ac070d9834e91d0681",
+      "runtime_artifacts": {
+        "Model/calibrationVcVmcTrq.mat": "38e571f480659912c3e1b2ea64b21c2d7bf88d201b692c05154605b18bef9550",
+        "Model/VcVmcTrq.slx": "3953d72ddd49fc64ff883e72c2eb3d0a68311be3dcb1b35f90ab2ae2077737aa",
+        "Model/VcVmcTrqValidateCalibration.p": "cec49136a78e72842b50f8c597ae5f983c11c2b6d48a4e993b06e4451e672bbc",
+        "Src/ert_main.c": "944903016b4239d8a94e58e369b963d8e758bf37a4248a7a4b9c98181da98d63",
+        "Src/rt_zcfcn.c": "d112c598a15e37afb94663e43aa82ecc5bc53216ab49263a9ed56d261ac0e9f7",
+        "Src/rt_zcfcn.h": "f3be48d20681c54452bd5fd0c5705b591dd3e5854ca8ce72cdac01dac4495cc1",
+        "Src/rtwtypes.h": "3d8aa22ba85dd64b08cf6927ddebd440991e7d080e728732542764f8527c81d6",
+        "Src/VcVmcTrq.c": "0fe3f5c442580c16ca8d2e7cec0114ddc576d68afb9c437342c3e7180cc900ad",
+        "Src/VcVmcTrq.h": "c288ba2e12b67df2d1edce2a77b66f717600b17ef7cc6abb45bb1bdbdd6eb39c",
+        "Src/VcVmcTrq_data.c": "3b6344e4155334b75a88f5544354b06de1f955046d158dfc7458bdc11555ee70",
+        "Src/VcVmcTrq_private.h": "1d80f7bbb24557e35d9cea1c4099701639dfdefdcdd6f3eff74189c0d6dec141",
+        "Src/VcVmcTrq_types.h": "45403251181bdc784b48e65c6e405a0206eacf406481f92cbc1ac10d4c3b3ba4",
+        "Src/zero_crossing_types.h": "c76c29531c998ed41fb60c34a0ffebf5ba9e5ee353dd03996eff4c9dea138fea"
+      }
+    },
+    "NEP-04": {
+      "head": "c30baa42401b4086e57396213c07f7d0fd244099",
+      "tree": "16fa90fc0672115751367c0d4014bf18a63b2290",
+      "runtime_artifacts": {
+        "Model/calibrationVcErcRgn.mat": "75893fbc3071e3648ddf6c47f1e376ab1fc3811c02c550f62243d355a59dd8bd",
+        "Model/VcErcRgn.slx": "1bf1bdf793d9426a0ea7d016d2b967b97b561b483dfc785ff46677b697f66899",
+        "Src/ert_main.c": "7866e9e14debe343557c15a6cf062501748356d0c065208814b7f307ad8de9a8",
+        "Src/rt_zcfcn.c": "94c6759abc527b3d2f72f24abdffabbfaf579dce91b408de58b986ea1db74a2e",
+        "Src/rt_zcfcn.h": "6e7e057563134fad962dc56f59cafe1b6c41c5561b68b656011e1419165f4d73",
+        "Src/rtwtypes.h": "b09a6bd2dd9eb5e22e14f0191b96e7dc58934fae1fc77df83186d4cf71a68865",
+        "Src/VcErcRgn.c": "ae01e5a3424f4508efadd08b20fd6212310cfd66206171d1d44580f9d2ef12c2",
+        "Src/VcErcRgn.h": "1a2918f87387c2ac9ee01f36dd8e686229ea67a1e8ae6a4630c04e7f8dfe0d85",
+        "Src/VcErcRgn_data.c": "1407543be6475d03aceca3f16db408972bf56a2719d2be6feb2747c66f90c5a7",
+        "Src/VcErcRgn_private.h": "c0e44e999f19d1879795335dc45f2d60e5457dcbd1bcdcf5c141a6aa5152ebb6",
+        "Src/VcErcRgn_types.h": "3d438e96140449a1b6a8f59d99eaa1e85acd5fc36cc16aae39224af8dd05b217",
+        "Src/zero_crossing_types.h": "d8d613fdadaed1fc8d3a613e44d25090382bbb9271726e8805ee6d1fbe297346"
+      }
+    },
+    "NEP-05": {
+      "head": "3a5f747d55331682a1ddadc49551f04236e3f958",
+      "tree": "209a2bad7b4bce70a715ce83f31698bf2275ec31",
+      "runtime_artifacts": {
+        "Model/VcDmcDrv.slx": "89b842ccca776dae7c705cc7ccac216c1fad1ae87698359756536ff53769a875"
+      }
+    },
+    "NEP-06": {
+      "head": "61084082b8d60f121303fef0a691b80916cd41dd",
+      "tree": "a3ff3250466cdc639acc1c8c707d387497d9ef48",
+      "runtime_artifacts": {
+        "Model/VcWrcWhl.slx": "ccf814b6314c2f64fd42abf1cadd8429c76416712daa0fa649591972725dc9d3",
+        "Src/ert_main.c": "76607bd6324ec133c0bdfb775e1c5fddf074df936722d33812e007c896120f91",
+        "Src/rt_zcfcn.c": "965b1ec787bc67dc9eefb831703ed813269df48abdecaa63110fcc7a2a91517f",
+        "Src/rt_zcfcn.h": "b796160f0a76e476557607ddfaf6b71dc6575848531e240e1a80d97dd4071ea0",
+        "Src/rtwtypes.h": "6e86af9f12bf7587033f8e66e9a16fd8efc4026818c38c6a7efb79702cc62b2a",
+        "Src/VcWrcWhl.c": "43f45d6855875d7ef432ff17ae45bdb3a75b6666041dd746783a2dcd768496a5",
+        "Src/VcWrcWhl.h": "8ae2d1f9bd010fe084cbec95f26013bf966c93b5021e38d1c60235bd535f1d25",
+        "Src/VcWrcWhl_data.c": "80e87126c341e740ff8a41533ab670ff3dc739d100447b845a973e8772f63ec4",
+        "Src/VcWrcWhl_private.h": "1a542f408d4f99da7426e879fa014a08d8d3971a0cea0bde45b2382658ed58a9",
+        "Src/VcWrcWhl_types.h": "97c03e011d92230bc84ca9f83614a2f5758c23ce7cdfba5f0f0f74b372f7b64d",
+        "Src/zero_crossing_types.h": "51d71b3121125d6b3860eaf0890106f660bf81961357b8a6ad298ff90ad64ecc"
+      }
+    },
+    "NEP-07": {
+      "head": "e2fd73443c59459a560775405b486624b4b082cf",
+      "tree": "a6493cc4040ec1a0f3dace09d581ad08cf425acd",
+      "runtime_artifacts": {
+        "Model/calibrationVcDeChg.mat": "483dfdd3318e6636df60783b30feaa53d000c3520e8583b20ea5f3b3ca6c0fc4",
+        "Model/VcDeChg.slx": "439df6763c41a3de6732a46e65ef2f679ac720e100644ec378a2c0f5c7bb3790",
+        "Model/VcDeChgValidateCalibration.p": "fc44f8e382d45ce6d9a4d143ea82048af9a3a43884c4fb8b9ea76c26ede8829f",
+        "Src/ert_main.c": "0f3ffa21aff1925b938711e41a978fc663ed8b82a15e25b3f30cb0761ca894f7",
+        "Src/rt_zcfcn.c": "37f637b9f635fe5f6f5c40c2ff87f70ba00dd74f4399813775f4a5d0fe89a3e8",
+        "Src/rt_zcfcn.h": "e74599757e59ce07a25bbec2687bfde653f79435abcbd1f10453aea19b409426",
+        "Src/rtwtypes.h": "11700e4212506b71cadc4e7f57c573d74570c2580104f8d758c65d46a932099d",
+        "Src/VcDeChg.c": "2c503b85b5b67faf60d103f43fce37bd9d0408709560e98c21d260f22af9f295",
+        "Src/VcDeChg.h": "2f1127d34f5c053b097d7490dc3797e3c0c3989320aeff06189b310ea139540b",
+        "Src/VcDeChg_data.c": "cedbfb7e33ef3d5541f1cd3b15e910dfb3c42bab91071ad9cb0e60f335f2d226",
+        "Src/VcDeChg_private.h": "35db14c24fbe1b66d8538cf5b4ce1813282d879e4ebb79a1f27dcb41a5fb1421",
+        "Src/VcDeChg_types.h": "32b566f47bb8af67604e53911eb3191d4aa344300cf4c717ade6deaf22518d50",
+        "Src/zero_crossing_types.h": "da904f7584b02ac6b38ef0cead76a89371331057b88aee24c7328fbc64f1719f"
+      }
+    },
+    "NEP-08": {
+      "head": "a3946da6cca31d88979c55b6d18a64ea33225dbd",
+      "tree": "8f623f81ddb0f230caad7cf1d2c077a26c2bd441",
+      "runtime_artifacts": {
+        "Model/calibrationVcPvcThm.mat": "966cb31f3af86632dd8c430b9e6160e3b566d9d4c3954d71d784149eeb517f29",
+        "Model/VcPvcThm.slx": "8b5aa1538b6633cc0c7efec1aa1c01aed15c0b8e7af1117ec3ea7709bf6b476b",
+        "Src/ert_main.c": "c6cd3cc745e4248219d0a422ccfd7cd86d2fa58562aeb7e62ee9be6cf6f6fd65",
+        "Src/rt_zcfcn.c": "65109d6ecc79b99d2d3cdc16ece696cc7173543978a6eff504467df48e38c203",
+        "Src/rt_zcfcn.h": "3775e717053c703e12ee3b8e34c1a2e318f4e0cec4224bacb8273dc0603b238e",
+        "Src/rtwtypes.h": "8fca4a138fd94b627e556d1b30a3ffe06bcd5a024388398f04270a150d08970f",
+        "Src/VcPvcThm.c": "827edd0d7a96e41371435813c300c6afa68b2dcd65ce118e837adfb05f3aa0af",
+        "Src/VcPvcThm.h": "f5fc6fa6acb85cac4946b4f77bb046e07cf8cc92b52bec467a100c7d3078197e",
+        "Src/VcPvcThm_data.c": "68cd0b0c3e778b25a5caa347662798f9957e203b39da744abbec79f43259ce1f",
+        "Src/VcPvcThm_private.h": "58acc77d0b0101931b0a766bd0ef28f55a0f31a3ad42c58b2dad5141fa0e9dce",
+        "Src/VcPvcThm_types.h": "38aa1fa3ebef68690e5c3452efe602079b3d3f648fcff052d1cfd32b3048b90c",
+        "Src/zero_crossing_types.h": "2fb31c6cf41d471bfad9014b1181a951640e338e9a88e96d4ac64c2fa1551610"
+      }
+    },
+    "NEP-09": {
+      "head": "3b60bb33258294e6b8c6d8ba531790af4c98617d",
+      "tree": "60c1ba289ae2953e9b7984bb58339d68ed85e74e",
+      "runtime_artifacts": {
+        "Model/VcSfCPropR.slx": "00649266776657a17961f475552cc16ed4ac15ca3e2bb78d163038200e6011d9",
+        "Src/ert_main.c": "026f1d04d777ccf2529b3f2f54009f686e913a8139e48be046f06581122f8870",
+        "Src/rt_nonfinite.c": "116e8528986d98f566aaa76b0f2f6cd7ead3a66bdd63a04f66b6b8e6edacd863",
+        "Src/rt_nonfinite.h": "0348bf092a7c4cc3703668ac1edb768d11affae019b88306396d67d5f93f58f2",
+        "Src/rt_zcfcn.c": "de2456a6b466d1af8b793972aa0f058cfc15c5b9d4fe06c7a2da2960e25f4174",
+        "Src/rt_zcfcn.h": "b29163a41282555e2943c9d5fb1a5c9f282c2f968f09cb23415465e2f864a553",
+        "Src/rtGetInf.c": "a95db48de1bc5e67a6cf9e2973f5a79b37bdce0ce08551eaa50faa8a7cae8fee",
+        "Src/rtGetInf.h": "8f3d25598c40e3f0210b8fc17f3c660a7a2576898dc5bd9e2384c7b7bcfaaf47",
+        "Src/rtGetNaN.c": "f941c0c72452484f52cfca9f2c4b5e0be72649815bcf8a70f215279864fce384",
+        "Src/rtGetNaN.h": "9fe004cc5bcc32e7c3ca64c7307315a8751a017269153205c74679f932b872a3",
+        "Src/rtwtypes.h": "d6c17fc6f5df37d228dc444f422bfff3cbe6dbe9415efc80f9404c80affb6131",
+        "Src/VcSfCPropR.c": "980f0b3ad0f9280cdece1b4df1786b1fe003191f5db23afa9d24ebe2b28ec687",
+        "Src/VcSfCPropR.h": "327ba54bd7e7f9fad0eca26383b7ca42ccdfe10f24b08ae6130060df26280fa2",
+        "Src/VcSfCPropR_data.c": "1bbcbcf37d8e4f6f155060791a0879406adb842460397c7a2c2be7b83f1151a0",
+        "Src/VcSfCPropR_private.h": "a5e1009e4330671296e6b92e53b885475cec16ac1092323f7e604a89e3cc4556",
+        "Src/VcSfCPropR_types.h": "202a0f6d5992ff6440db41a02687cb59c1df255275f09a720cf5e3898ac967af",
+        "Src/zero_crossing_types.h": "126ea4327c6aae27cd7d4aaf2dc968f0aa6b8acfbdf29ced4e7f172fd9c90430"
+      }
+    },
+    "NEP-10": {
+      "head": "dc1dd984ecc2152bb03c7aa8f13dd83f856f6e89",
+      "tree": "e8c54ecf9b0b679ef1e6d802bdd6b124a112ab88",
+      "runtime_artifacts": {
+        "Model/calibrationVcSfDPropR.mat": "b0bb613f7b74857a793997a4279fd340782067f20a3ecc129df82d48e6b18762",
+        "Model/FaultComponentLibrary.slx": "053d98c55916ececf78bbe6f1f670a9acf8ada11e75b99c87fca7664eb77f9f7",
+        "Model/VcSfDPropR.slx": "f7c53c6eba6569249831e3bb8047419cb2eff432c2879b936e80ce73f62d571d"
+      }
+    },
+    "NEP-11": {
+      "head": "27f0538f1d71375e12b02efd470b3e35586fda52",
+      "tree": "4e67d63c19742b1c62c0dacae3a765807203bf32",
+      "runtime_artifacts": {
+        "Model/VcScHv.slx": "ba394a7420f16636675e276f095334bb02484c76c43ee0ab8068242a8ecdc59f"
+      }
+    }
   },
   "records": [
     {
-      "path": "evidence/candidate-exports.json",
-      "sha256": "3d15e7a3769e0bbc90f5b7eca61e411d2e9b7e0fe3b22a253ad14e80a75714be",
-      "bytes": 2038
+      "path": "evidence/documentation-layout-finalization.json",
+      "sha256": "e24f5eb2f095da6504cf765805967b56dba69b26c9a2ed511a5d5d71087850ae",
+      "bytes": 3767
     },
     {
-      "path": "evidence/component-revision-native.log",
-      "sha256": "613077fea937dbc13bb1ccd23e2642713adc8d7691c245136f8e1e0bdad1b8eb",
-      "bytes": 19556
-    },
-    {
-      "path": "evidence/full-restore.json",
-      "sha256": "1ee647c76459404d3dea21d588daadf63f1de3cc034b5d28ce02cc3cd2287dd0",
-      "bytes": 4350
-    },
-    {
-      "path": "evidence/host-replay-final.log",
-      "sha256": "83a55ba627b77b719f244f3d638a72ebc5eb84aad03fb9f4dc3c881c0fd43329",
-      "bytes": 8909
+      "path": "evidence/mutation-results.json",
+      "sha256": "77cdb419339ae709bc65faf84dcacaaec863ea0932018f1d6855abd545ba7917",
+      "bytes": 2230
     },
     {
       "path": "evidence/NEP-01-admission.json",
-      "sha256": "311c8d9a9062484757eb43cfe050f0cb51b13e2799ae5533cdbb193ebf0f6a47",
-      "bytes": 1757
+      "sha256": "784bf3f9968358604c325f53d43dcfd706b7771ffd3273f50ff06f531ba73035",
+      "bytes": 2069
     },
     {
       "path": "evidence/NEP-01-coverage.json",
-      "sha256": "946fc45e7f5de90e4cd30c9d471d666b1e195f5da7e7f74090499e60ad7c1de7",
-      "bytes": 552
+      "sha256": "90f9b983ed8e56e8b671c675937e00d340439af89b50bd53b056a6a243c0f243",
+      "bytes": 553
     },
     {
       "path": "evidence/NEP-01-host-replay.json",
-      "sha256": "75d51099df937763824e2d06d22a9e1da7bb1aae42fe525de4f856233e0074f4",
-      "bytes": 269
+      "sha256": "d0af9ac2b29b2c4cb5d663040e4e32f105124ba6a2c42d3edafa78eaea8b68a6",
+      "bytes": 410
     },
     {
       "path": "evidence/NEP-01-native-results.json",
-      "sha256": "a5f492cb5dc3e51b96e98da720f67ccb1a1e5b2a3444b1455247ede4f6d6e82e",
-      "bytes": 2042894
+      "sha256": "4157369d50dac8e15623686b87cdba12ff959c8de9f2f433b1f76b9ef6fcba6d",
+      "bytes": 4246237
+    },
+    {
+      "path": "evidence/NEP-01-property-results.json",
+      "sha256": "250c78cd3147470e8c6ab970a76fa14c3bb261141a82d80d14844e6b3455f0fd",
+      "bytes": 1292
     },
     {
       "path": "evidence/NEP-02-admission.json",
-      "sha256": "52b038cbba2d1725b02a0bb8a2ffeb4af071f1365cc2ad8f250301e7bda0fc4b",
-      "bytes": 1556
+      "sha256": "09d0b6c430a56a13c6de4e41580293fd17e703ba861931898c307b8dc1ca5917",
+      "bytes": 1864
     },
     {
       "path": "evidence/NEP-02-coverage.json",
-      "sha256": "2faa2193b047c094f9f991af49f10a0a2900557ea1d5f2d3cb2282acc9c0a752",
+      "sha256": "d24b38b34bd7fa7ad85d010f19a11362b75542206f7c848ce5ed595964aaa168",
       "bytes": 548
     },
     {
       "path": "evidence/NEP-02-host-replay.json",
-      "sha256": "27334eaffca6b613d5548405004b066aa319fa02498c472fe3698f1d93823490",
-      "bytes": 269
+      "sha256": "826032042019344e0b8557a09250800f0b8a4cc5af727121e15ec226ef991cae",
+      "bytes": 408
     },
     {
       "path": "evidence/NEP-02-native-results.json",
-      "sha256": "040b5aebf887063b9ce5bc0b7e50d2a0b9a27b62e370550bf33946d863624294",
-      "bytes": 204566
+      "sha256": "dc91cff7fb6ab2e8742bd0c45d2792ec4992e8fb4b0276e5f9aba6fac3ab44e1",
+      "bytes": 415326
+    },
+    {
+      "path": "evidence/NEP-02-property-results.json",
+      "sha256": "65c3ad9faa5072cb1e8983b41248d708122026ae6dd896d329ed34ce72dc1aec",
+      "bytes": 1474
     },
     {
       "path": "evidence/NEP-03-admission.json",
-      "sha256": "1cbed0ccc78c3cffbfbd1e7aff55ba844715d2b132b2628b644414367a298723",
-      "bytes": 1448
+      "sha256": "7beca9fb29ff8fbe45f1577287262cf32ab2a97977d336c2496b6c3765a410c8",
+      "bytes": 1755
     },
     {
       "path": "evidence/NEP-03-coverage.json",
-      "sha256": "c5b19d0d4d0a1e61164c1fdd507518d9d384aeb66d008fa2c4a2d6cb89f8ba34",
+      "sha256": "44f2f6f0fc1b452c65ec90fa9a5d401ee2f1e36a8562549d516f971fdf262908",
       "bytes": 548
     },
     {
       "path": "evidence/NEP-03-host-replay.json",
-      "sha256": "a2478ce05ce795450f5bdd0dc404358ae4cf3bbc9936bc8946a345c2aa736105",
-      "bytes": 269
+      "sha256": "9329c08b948decf694cbefed09cc20bd7803e0f0dc4a0c44a3f1bfb342737cb6",
+      "bytes": 408
     },
     {
       "path": "evidence/NEP-03-native-results.json",
-      "sha256": "f9735962156f095ba2f3b3af6a8318c3ac79ece7e479faac344bb3225883fd89",
-      "bytes": 114216
+      "sha256": "2515255a2bf12669f7d3410f04984664658cff3ed5e86ce028b30060c832d54b",
+      "bytes": 284646
+    },
+    {
+      "path": "evidence/NEP-03-property-results.json",
+      "sha256": "05ce086a6422029a0c6b36dd40582fc9031d5c6f44718f9b3dc1ef0cccbdd976",
+      "bytes": 2793
     },
     {
       "path": "evidence/NEP-04-admission.json",
-      "sha256": "f12a9c8eb12b51f74f890bbc4672e176ec1e90f28ec07ca5509f08d1226d6386",
-      "bytes": 1336
+      "sha256": "69a628f9d95295a27ada3f61f079658f8da93afb32801987800bd3b28ab8fe9f",
+      "bytes": 1642
     },
     {
       "path": "evidence/NEP-04-coverage.json",
-      "sha256": "5bb690ea5fadef2eaf1c45ca1743276a9b9dd47e3867da405ffba6e9bfb4a976",
+      "sha256": "8a8e9465321d839f7b1ede810b59b983a04eefd4bc5bcbb5c7a41e9c17f8dfdb",
       "bytes": 548
     },
     {
       "path": "evidence/NEP-04-host-replay.json",
-      "sha256": "51e4c22cb0406e418ae87eb078ebf52f13128c9a4161c4124f1c97d7ab380416",
-      "bytes": 269
+      "sha256": "715c93995176f2e4f0401b3996e16b3bb331743841603e8eaa1c31dda0255f53",
+      "bytes": 408
     },
     {
       "path": "evidence/NEP-04-native-results.json",
-      "sha256": "b54d863a87e728980ab5bf43cb655412ab71771d200221c048355a63621a82a1",
-      "bytes": 88215
+      "sha256": "5c163c32bfcf1d0f6617f2448544090dd847f8c3bb9f0d72476d081595740d59",
+      "bytes": 234949
+    },
+    {
+      "path": "evidence/NEP-04-property-results.json",
+      "sha256": "e14b79935c6d287464d75c5b2c7770474f71876337455e44dccf7b92fd2d58f6",
+      "bytes": 1726
     },
     {
       "path": "evidence/NEP-05-admission.json",
-      "sha256": "dee55654f55249aa905ed1d9851a4d35e34e6a6a75665d45b5443dab02ed31c2",
-      "bytes": 290
+      "sha256": "5efa2b2367738503e34428bde3fd84ee4ceb05e09cb17a387132d8d52e9c8f58",
+      "bytes": 597
+    },
+    {
+      "path": "evidence/NEP-05-coverage.json",
+      "sha256": "283ab2d9bd991cedcbf05ed01867c8f0c26be151a6a0e71a037bafa6eedc1c28",
+      "bytes": 548
     },
     {
       "path": "evidence/NEP-05-native-results.json",
-      "sha256": "436e35ffaedf3f579e7e8136672a175e3193354eabe23548d427e20101fbc736",
-      "bytes": 61724
+      "sha256": "385dbc92be470e386ec118ddbbf295f493e928006897b439f46c0206ef160330",
+      "bytes": 112457
+    },
+    {
+      "path": "evidence/NEP-05-property-results.json",
+      "sha256": "a5e8e3781733c477831f4579dd3a3c27add29aa96d545cee4d098f83d987a1e2",
+      "bytes": 1872
     },
     {
       "path": "evidence/NEP-06-admission.json",
-      "sha256": "1177c1f1282cddb6baf691579bd43857d5d352efc56983612641982bd8033cb2",
-      "bytes": 1230
+      "sha256": "5d05a262ecdc2afd8e33e5c51c08c829ee36c275cd2da45b2f479d28f477864e",
+      "bytes": 1536
     },
     {
       "path": "evidence/NEP-06-coverage.json",
-      "sha256": "c5b19d0d4d0a1e61164c1fdd507518d9d384aeb66d008fa2c4a2d6cb89f8ba34",
+      "sha256": "c00abf50354e1a9104b449057273cb148065f33642d0fb6b4b34d1ff4965a2af",
       "bytes": 548
     },
     {
       "path": "evidence/NEP-06-host-replay.json",
-      "sha256": "db999836e10cec6237d4ef8f9122cf75e7ab11dc753d38641ea059085965f42f",
-      "bytes": 269
+      "sha256": "7bdc12627fefd65a1c72e4ec3a2b1286c97afa0bd43bc536a9cb2f50635d93af",
+      "bytes": 408
     },
     {
       "path": "evidence/NEP-06-native-results.json",
-      "sha256": "eea70009a0a66724dadc01313ed187d27947af0e947ba09dc6879d3911243490",
-      "bytes": 94821
+      "sha256": "2a35ce8b58cee44d8052bcc516f8a367906b19e5b7335234a737ac6f1ed7fc9f",
+      "bytes": 350737
+    },
+    {
+      "path": "evidence/NEP-06-property-results.json",
+      "sha256": "e867971a19fa0a7433b6397c45dd0cd235615774442a71856c9839fb5c6718ec",
+      "bytes": 1261
     },
     {
       "path": "evidence/NEP-07-admission.json",
-      "sha256": "1cc0a3a7fc40080cbcfe2b3aa35ce5fb097195707a9a86bc9ab0fee0cc3eef3f",
-      "bytes": 1440
+      "sha256": "a911392aec38f7766af83c03e3d2ae71cc4e626ce6001da2062bba02a8064fa3",
+      "bytes": 1746
     },
     {
       "path": "evidence/NEP-07-coverage.json",
-      "sha256": "de775935a66e48cff2ef5610de95b5cb2e84198f556925bb298d3899840f1d3c",
+      "sha256": "b1048ec1ccf5cb6e8d1bfca90de40a923756a6b7001e062d046fe011b31f25fe",
       "bytes": 548
     },
     {
       "path": "evidence/NEP-07-host-replay.json",
-      "sha256": "95152cfa28b7de860126eac0e3b2e258d92d9ce16ca25e10f39a0ef7a845c122",
-      "bytes": 269
+      "sha256": "08f0fe98e623d8aaa1c0bc5b4f65f607053ebb9b211d7aa330d71dfa74d2a6d4",
+      "bytes": 408
     },
     {
       "path": "evidence/NEP-07-native-results.json",
-      "sha256": "eb882f480dd2e24c6f11641a736ff16d4fe6cdb76d08f97464bdbee43655cc2b",
-      "bytes": 136481
+      "sha256": "e609b7cf9ff38124881d41380b01d6b27ee0cf401a299b4e42d66b7ac7cd409c",
+      "bytes": 227678
+    },
+    {
+      "path": "evidence/NEP-07-property-results.json",
+      "sha256": "30436abaebebd8ddbe37c4e0d2f6932e35e56eeddb855c675dbd1671e8bbe539",
+      "bytes": 2256
     },
     {
       "path": "evidence/NEP-08-admission.json",
-      "sha256": "4c68824862c21c1dc980c4b36f0a97c22b945d51f5f1bc3b0b40282057020b8f",
-      "bytes": 1336
+      "sha256": "f5fa6669837ce2f1446a80a81170a10cc4444c65db99bd17934af4eb955783d6",
+      "bytes": 1645
     },
     {
       "path": "evidence/NEP-08-coverage.json",
-      "sha256": "3592824fa3068b3fa86ef0bac940c722d79fe296d1e5517e0c509160021c8b5d",
+      "sha256": "1fd733f11b52be7e4a7a421d5b18dfe1a612f23ad0c99aaa67dd5270eadb05ae",
       "bytes": 552
     },
     {
       "path": "evidence/NEP-08-host-replay.json",
-      "sha256": "bdbc03a55d77970e96c98686224997291b965977b0f071d10367766031d8342c",
-      "bytes": 269
+      "sha256": "a2b626f35422f47df687c16d9b00a7a0bebc01f2bd2ea3125a2e19ba801509e5",
+      "bytes": 408
     },
     {
       "path": "evidence/NEP-08-native-results.json",
-      "sha256": "86c6a03ed16b055a0c2b6741e3d2d33bbb952c45d68e0c3d294ad226b31fabc9",
-      "bytes": 304650
+      "sha256": "1fc21f70b52a8375ebd38df6a6780b7357e3f02874aefa4995d3a1b89ceaf330",
+      "bytes": 666232
+    },
+    {
+      "path": "evidence/NEP-08-property-results.json",
+      "sha256": "c379dc76ad71fa8f9c21cab9dd9bfafb84b6f0be489ccda32a5eac7faac2bb56",
+      "bytes": 1895
     },
     {
       "path": "evidence/NEP-09-admission.json",
-      "sha256": "30b43767b61ad8ebab0f1de5ecddb5c3957471c058f6b05e10bd8ab37b236b5e",
-      "bytes": 1243
+      "sha256": "b7df9a942605f810928a5f282f895a3d46b6dd2d2da8e9e59d48a4284dd1dbd4",
+      "bytes": 2106
     },
     {
       "path": "evidence/NEP-09-coverage.json",
-      "sha256": "0f1f5880b0ae73bf0256710919dfab7e6ed66dff91977b55d09f484e15d2b221",
+      "sha256": "5705cb37bd21383dd375d3c5fc129a39ce911bd54a76d782a20979a0ade9bda0",
       "bytes": 552
     },
     {
       "path": "evidence/NEP-09-host-replay.json",
-      "sha256": "dbd7a8cd17bb84b67c6e57e27a8fc51d4ed03f4c97247e088b12ac378cba0adc",
-      "bytes": 269
+      "sha256": "1c091bacbce291ec3eb1a9cb2b5ca24628b7930f48d55e148fcd8c60de66ae67",
+      "bytes": 408
     },
     {
       "path": "evidence/NEP-09-native-results.json",
-      "sha256": "be6036c100d1b063d2c8dd65360a88b7483d959692f99f47f105b746bf68e53a",
-      "bytes": 468201
+      "sha256": "a7b186dd6edf70e5a7427666feed23756ff5b75735111c2ed6f7c0086d29c870",
+      "bytes": 811170
+    },
+    {
+      "path": "evidence/NEP-09-property-results.json",
+      "sha256": "f48658b215697bed96de84f399113962144fe11586a82cfa66a1ac78ff85e437",
+      "bytes": 3040
     },
     {
       "path": "evidence/NEP-10-admission.json",
-      "sha256": "9aef333b9412f80c1f54a53b4e5ed29bc1908cdd0092d68261baa285ad2a24cc",
-      "bytes": 405
+      "sha256": "3860e21e4fab7a93a42a5b920c1b34b02b26ecbf09893824f76594792b91918e",
+      "bytes": 823
+    },
+    {
+      "path": "evidence/NEP-10-coverage.json",
+      "sha256": "e0c7a25c60b1908a8076d7476f71dbe2cb1a29d796c85f851809f1827ed2dbc7",
+      "bytes": 554
     },
     {
       "path": "evidence/NEP-10-native-results.json",
-      "sha256": "8c7a0907fcad692388006f0e8ad20b4cd4d464110ac53b372d77b61086be1c33",
-      "bytes": 3752200
+      "sha256": "4bf26798564dec3139b03fcb94e47ffb3ea46ec468f252bf714125b7e0c22bcf",
+      "bytes": 6096649
+    },
+    {
+      "path": "evidence/NEP-10-property-results.json",
+      "sha256": "a531d330f9abc89ae0a8cc7ddabb9ab52d210a7220444e22933326bd365d2b54",
+      "bytes": 5734
     },
     {
       "path": "evidence/NEP-11-admission.json",
-      "sha256": "bfce06aaa8f7e416558737261b66b405f95ba405251d8320c9691fd55824e4fc",
-      "bytes": 285
+      "sha256": "d8e9f0b317c5b8a1f71f7366eb70444673038d0243fc6a83b37e16860ac23c9b",
+      "bytes": 594
+    },
+    {
+      "path": "evidence/NEP-11-coverage.json",
+      "sha256": "1732b9037e8025454818092ff315ec7a8db7f6fad622402b1ec0e183bb3f12fe",
+      "bytes": 546
     },
     {
       "path": "evidence/NEP-11-native-results.json",
-      "sha256": "1933497c87f43380102d2c997a56719fe75c564e505f328c4f98c5dc9eb26112",
-      "bytes": 24992
+      "sha256": "edee96d288b8afaae2bdacc3d5ddc1f646ebdbc64b410a545159984d67d559a6",
+      "bytes": 64448
     },
     {
-      "path": "evidence/restored-native.log",
-      "sha256": "65a20098ff75fd1ec6717bd622ad7eb94be9ee692d11c1207d67880edc831abd",
-      "bytes": 997
+      "path": "evidence/NEP-11-property-results.json",
+      "sha256": "58929b08df6006a5ff7bd040771a07dbea95a044553ba99b09fd729bb46f8a18",
+      "bytes": 1860
     },
     {
-      "path": "evidence/resume-after-native.json",
-      "sha256": "1ee647c76459404d3dea21d588daadf63f1de3cc034b5d28ce02cc3cd2287dd0",
-      "bytes": 4350
+      "path": "evidence/restored-native-verification.json",
+      "sha256": "dca603ae3abc0dd3d1eea791d0edab381c71ae046f2d9d8c812b89a16980d4b4",
+      "bytes": 2892
     }
   ],
-  "scope": "Native inputs/results recorded outside wrapper; digests identify archived maintainer records. Model coverage is not C statement coverage; no BTC/physical device/SIL/PIL/HIL/ECU execution."
+  "scope": "Outputs not covered by independent properties are measured only. Model coverage does not establish C statement coverage. No BTC, physical device, ECU, SIL/PIL/HIL or certification."
 }

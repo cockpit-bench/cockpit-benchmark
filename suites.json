@@ -82,7 +82,7 @@
       "technology": "MATLAB / Simulink",
       "cohorts": {
         "path": "suites/new-energy-matlab/cohorts.json",
-        "sha256": "616c969fd610b36ba7975b6a4efd8f2b0567765a26bafdaec77123110267424d"
+        "sha256": "ca62d2ecff81c0e38f68456f8e28c3adcb7d35e1b74c0b1f0354a527c83a0d4b"
       }
     }
   ]

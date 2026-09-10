@@ -3,2417 +3,1956 @@
   "repositories": [
     {
       "id": "NEP-01",
-      "head": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
-      "tree": "dae725049c854431540c5796a264c385cba41001",
-      "business": "整车输入采集与有效性网关",
-      "census_sha256": "398596d5f4efbb9bb13710292743d95b8c8b489a51b2172c2d59a34b3f15cb54",
-      "block_types": {
+      "head": "367b2ab786de8572c8b0d665de05b5b13983d4ae",
+      "tree": "a222fe0a241e9b68fec18204f22c0e65e4b85622",
+      "business": "vehicle_input",
+      "primary_model": "Model/VcVcuInD.slx",
+      "census_sha256": "6a0ed90b709b703d270dbd4a395a32a555a3596fb8af68d8a10afa57e8eee03f",
+      "static_primary_block_types": {
         "BusCreator": 1,
         "BusSelector": 1,
-        "Constant": 576,
-        "DataTypeConversion": 1,
-        "EnablePort": 48,
+        "Constant": 594,
+        "DataTypeConversion": 86,
+        "Demux": 9,
+        "EnablePort": 38,
         "From": 192,
         "Goto": 96,
-        "Inport": 2415,
-        "Logic": 481,
-        "Outport": 869,
-        "Product": 96,
+        "Inport": 2350,
+        "Logic": 488,
+        "Outport": 886,
+        "Product": 75,
         "Reference": 1,
-        "RelationalOperator": 288,
-        "S-Function": 1,
-        "SubSystem": 494,
-        "Sum": 97,
+        "RelationalOperator": 348,
+        "S-Function": 10,
+        "SubSystem": 487,
+        "Sum": 76,
         "Switch": 96,
+        "Terminator": 9,
         "TriggerPort": 1,
         "UnitDelay": 96
       },
-      "system_xml_count": 495,
-      "native_model_update": true,
-      "hierarchy_responsibility_review": {
-        "clear_subsystems_lower_bound": 482,
-        "total_subsystems": 494,
-        "explanation": "Each channel encloses one signal-quality responsibility; its four stages separately check range/communication, qualify time, convert engineering units, and select safe fallback. The reviewed domain controller/dynamics and diagnostic snapshot have separate single responsibilities. Parent acquisition groups are excluded from the >=90% lower bound.",
-        "examples": [
-          {
-            "path": "Model/VcVcuInD.slx",
-            "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
-            "location": "system_1035/Block[@SID='1066'] EngineeringConversion"
-          },
-          {
-            "path": "Model/VcVcuInD.slx",
-            "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
-            "location": "system_1035/Block[@SID='1046'] RangeAndCommunication"
-          },
-          {
-            "path": "Model/VcVcuInD.slx",
-            "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
-            "location": "system_1035/Block[@SID='1073'] SafeSubstitution"
-          },
-          {
-            "path": "Model/VcVcuInD.slx",
-            "sha256": "0d9beff9b571afb99b6e3d326817b65d36385bcf99c436c200962ebbc119ea66",
-            "location": "system_1035/Block[@SID='1058'] TemporalQualification"
-          }
-        ]
+      "native_expanded_block_types": {
+        "Inport": 2351,
+        "SubSystem": 488,
+        "EnablePort": 38,
+        "Sum": 76,
+        "DataTypeConversion": 86,
+        "Product": 75,
+        "Outport": 887,
+        "Constant": 595,
+        "RelationalOperator": 349,
+        "Logic": 488,
+        "From": 192,
+        "Goto": 96,
+        "Switch": 96,
+        "UnitDelay": 96,
+        "Demux": 9,
+        "S-Function": 10,
+        "Terminator": 9,
+        "TriggerPort": 1,
+        "BusCreator": 1,
+        "BusSelector": 1
       },
-      "naming_review": {
-        "elements": 11057,
-        "ambiguous_or_empty": 1260,
-        "ambiguous_fraction": 0.11395496065840643,
-        "classification": "Ordinal In/Out, ReadQuality, Reject, Valid, CheckInput, DomainInput and Acquisition names omit signal identity/role; classify in their actual local paths. Semantic native names otherwise agree within element classes.",
-        "examples": [
-          {
-            "kind": "block",
-            "sid": "1008",
-            "name": "Out1"
-          },
-          {
-            "kind": "block",
-            "sid": "1011",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1017",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "1037",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1082",
-            "name": "ReadQuality1"
-          },
-          {
-            "kind": "block",
-            "sid": "1083",
-            "name": "ReadQuality2"
-          },
-          {
-            "kind": "block",
-            "sid": "1049",
-            "name": "In3"
-          },
-          {
-            "kind": "block",
-            "sid": "1060",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1139",
-            "name": "ReadQuality1"
-          },
-          {
-            "kind": "block",
-            "sid": "1140",
-            "name": "ReadQuality2"
-          },
-          {
-            "kind": "block",
-            "sid": "1104",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "1114",
-            "name": "Out1"
-          }
-        ]
-      },
+      "native_subsystems": 488,
+      "reviewed_single_responsibility_lower_bound": 479,
+      "domain_components": [
+        "BatteryReceptionPlausibility",
+        "FrontMotorReceptionPlausibility",
+        "RearMotorReceptionPlausibility",
+        "ChargerReceptionPlausibility",
+        "DcDcReceptionPlausibility",
+        "ThermalReceptionPlausibility",
+        "BrakeReceptionPlausibility",
+        "ChassisReceptionPlausibility",
+        "CriticalDataAvailability"
+      ],
       "interface": {
         "inputs": 290,
-        "outputs": 99,
-        "calibration_rows": 576,
-        "default_internal_ports": 393,
-        "total_ports": 3284,
-        "source": {
-          "path": "Model/interfaceVcVcuInD.xls",
-          "sha256": "1d543c07cbac3c3fe8a2745be9d43dcec84dd63d919e3b9fd0b611223a26bc85",
-          "location": "IN/OUT/MP/CAL/FIX/ChangeLog"
-        }
+        "outputs": 108,
+        "calibration_rows": 498,
+        "default_internal_ports": 36
       },
-      "parameter_source": "MAT-File",
-      "parameter_slots": {
-        "checked": 576,
-        "numeric_literals": 0,
-        "examples": [],
-        "caveat": "Counts cover Constant/Gain/lookup fields; Stateflow/MATLAB Function scripts and state constants are also manually reviewed and are not silently omitted from the judgment."
+      "naming_review": {
+        "elements": 12544,
+        "ambiguous_or_empty": 484,
+        "ambiguous_fraction": 0.038584183673469385,
+        "examples": [
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/In16",
+            "sid": "VcVcuInD:302",
+            "name": "In16"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/In18",
+            "sid": "VcVcuInD:360",
+            "name": "In18"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/In20",
+            "sid": "VcVcuInD:418",
+            "name": "In20"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/BatteryChargeLimit/ReadQuality1",
+            "sid": "VcVcuInD:295",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/BatteryChargeLimit/ReadQuality2",
+            "sid": "VcVcuInD:296",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/BatteryCurrent/ReadQuality1",
+            "sid": "VcVcuInD:115",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/BatteryCurrent/ReadQuality2",
+            "sid": "VcVcuInD:116",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/BatteryDischargeLimit/ReadQuality1",
+            "sid": "VcVcuInD:355",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/BatteryDischargeLimit/ReadQuality2",
+            "sid": "VcVcuInD:356",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/BatteryIsolationResistance/ReadQuality1",
+            "sid": "VcVcuInD:415",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/BatteryIsolationResistance/ReadQuality2",
+            "sid": "VcVcuInD:416",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/BatteryMaxCellTemp/ReadQuality1",
+            "sid": "VcVcuInD:595",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/BatteryMaxCellTemp/ReadQuality2",
+            "sid": "VcVcuInD:596",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/BatteryMaxCellVoltage/ReadQuality1",
+            "sid": "VcVcuInD:475",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuInD/BatteryReception/BatteryMaxCellVoltage/ReadQuality2",
+            "sid": "VcVcuInD:476",
+            "name": "ReadQuality2"
+          }
+        ],
+        "method": "Semantic review in parent context: Raw/Age/Status/Qualified/Scale/Offset identify their role inside a named channel; ordinal root rejection/default ports, generic function wrappers and empty signals are conservatively counted as ambiguous. Native expanded counts include linked instances; source definitions are separately inventoried."
       },
       "native_admission": {
         "case_id": "NEP-01",
-        "samples": 6737,
-        "outputs": 99,
-        "comparisons": 666963,
-        "scenarios": 772,
+        "samples": 11948,
+        "outputs": 108,
+        "comparisons": 1170904,
+        "range_checks": 1290384,
+        "business_property_count": 4,
+        "scenarios": 2811,
+        "all_passed": true,
         "max_abs_error": 0.0,
-        "all_passed": true
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
       },
-      "construction_scope": "Synthetic, maintainer-designed and maintainer-adjudicated; non-blind; not an independent internal holdout.",
-      "coverage": {
-        "decision": [
-          290,
-          290
-        ],
-        "condition": [
-          2882,
-          2882
-        ],
-        "mcdc": [
-          960,
-          960
-        ],
-        "statement": []
-      },
-      "host_replay": {
-        "case_id": "NEP-01",
-        "compiler": "Explicit LCC-win64 through mex",
-        "compiled": true,
-        "executed": true,
-        "samples": 6737,
-        "outputs": 99,
-        "max_abs_error": 0,
-        "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-      }
+      "construction_scope": "One maintainer construction family; prior review informed repair; not blind gold or an independent holdout."
     },
     {
       "id": "NEP-02",
-      "head": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
-      "tree": "b4e126a800a35fd935ce2da7ae0590966f1e8fef",
-      "business": "执行器扭矩输出与变化率限制",
-      "census_sha256": "552c2e256f3bd99096a31efa1161aae550ed52f9b61b1990dda8aa3f79ffefc7",
-      "block_types": {
-        "Constant": 169,
-        "DataTypeConversion": 1,
-        "Demux": 1,
-        "EnablePort": 14,
+      "head": "32d77f24db27d913aa0bfcdcc70dd15b463dfe00",
+      "tree": "d626a38c14992feabd1c22df37157bcbf3736d2e",
+      "business": "actuator_output",
+      "primary_model": "Model/VcVcuOutQM.slx",
+      "census_sha256": "c1bb97450de2f124a876fb3d2f04c7451b99eb7550c5be7c30d6a9efe1d87c88",
+      "static_primary_block_types": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 164,
+        "DataTypeConversion": 31,
+        "Demux": 4,
+        "EnablePort": 10,
         "From": 56,
         "Goto": 28,
-        "Inport": 716,
-        "Logic": 141,
-        "Lookup_n-D": 1,
-        "MinMax": 1,
-        "Outport": 258,
-        "Product": 29,
+        "Inport": 737,
+        "Logic": 143,
+        "Outport": 286,
+        "Product": 19,
         "Reference": 1,
-        "RelationalOperator": 84,
-        "S-Function": 2,
-        "SubSystem": 147,
-        "Sum": 30,
-        "Switch": 31,
-        "Terminator": 1,
+        "RelationalOperator": 98,
+        "S-Function": 5,
+        "SubSystem": 146,
+        "Sum": 20,
+        "Switch": 28,
+        "Terminator": 4,
         "TriggerPort": 1,
         "UnitDelay": 28
       },
-      "system_xml_count": 148,
-      "native_model_update": true,
-      "hierarchy_responsibility_review": {
-        "clear_subsystems_lower_bound": 143,
-        "total_subsystems": 147,
-        "explanation": "Each channel encloses one signal-quality responsibility; its four stages separately check range/communication, qualify time, convert engineering units, and select safe fallback. The reviewed domain controller/dynamics and diagnostic snapshot have separate single responsibilities. Parent acquisition groups are excluded from the >=90% lower bound.",
-        "examples": [
-          {
-            "path": "Model/VcVcuOutQM.slx",
-            "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
-            "location": "system_1035/Block[@SID='1066'] EngineeringConversion"
-          },
-          {
-            "path": "Model/VcVcuOutQM.slx",
-            "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
-            "location": "system_1035/Block[@SID='1046'] RangeAndCommunication"
-          },
-          {
-            "path": "Model/VcVcuOutQM.slx",
-            "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
-            "location": "system_1035/Block[@SID='1073'] SafeSubstitution"
-          },
-          {
-            "path": "Model/VcVcuOutQM.slx",
-            "sha256": "efff278242fe746de94d2337ed93b056a79e366b876d74fa16c56062bc4f26e0",
-            "location": "system_1035/Block[@SID='1058'] TemporalQualification"
-          }
-        ]
+      "native_expanded_block_types": {
+        "Inport": 738,
+        "SubSystem": 147,
+        "DataTypeConversion": 31,
+        "Demux": 4,
+        "S-Function": 5,
+        "Terminator": 4,
+        "Outport": 287,
+        "Logic": 143,
+        "TriggerPort": 1,
+        "EnablePort": 10,
+        "Sum": 20,
+        "Product": 19,
+        "Constant": 165,
+        "RelationalOperator": 99,
+        "From": 56,
+        "Goto": 28,
+        "Switch": 28,
+        "UnitDelay": 28,
+        "BusCreator": 1,
+        "BusSelector": 1
       },
-      "naming_review": {
-        "elements": 3259,
-        "ambiguous_or_empty": 409,
-        "ambiguous_fraction": 0.12549861920834612,
-        "classification": "Ordinal In/Out, ReadQuality, Reject, Valid, CheckInput, DomainInput and Acquisition names omit signal identity/role; classify in their actual local paths. Semantic native names otherwise agree within element classes.",
-        "examples": [
-          {
-            "kind": "block",
-            "sid": "101",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "1008",
-            "name": "Out1"
-          },
-          {
-            "kind": "block",
-            "sid": "1017",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "1037",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1082",
-            "name": "ReadQuality1"
-          },
-          {
-            "kind": "block",
-            "sid": "1083",
-            "name": "ReadQuality2"
-          },
-          {
-            "kind": "block",
-            "sid": "1047",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "1065",
-            "name": "Out1"
-          },
-          {
-            "kind": "block",
-            "sid": "1074",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "1094",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1139",
-            "name": "ReadQuality1"
-          },
-          {
-            "kind": "block",
-            "sid": "1140",
-            "name": "ReadQuality2"
-          }
-        ]
-      },
+      "native_subsystems": 147,
+      "reviewed_single_responsibility_lower_bound": 141,
+      "domain_components": [
+        "FrontTorqueActuator",
+        "RearTorqueActuator",
+        "AxleCommandSum",
+        "AuxiliaryActuatorInterlocks"
+      ],
       "interface": {
         "inputs": 86,
-        "outputs": 31,
-        "calibration_rows": 168,
-        "default_internal_ports": 153,
-        "total_ports": 974,
-        "source": {
-          "path": "Model/interfaceVcVcuOutQM.xls",
-          "sha256": "2c0aeb5b8d680208a30ae7f0d6d5792be77cb35ded97d9dd40d222e51b12b7c8",
-          "location": "IN/OUT/MP/CAL/FIX/ChangeLog"
-        }
-      },
-      "parameter_source": "Model File",
-      "parameter_slots": {
-        "checked": 143,
-        "numeric_literals": 59,
-        "examples": [
-          {
-            "sid": "1045",
-            "system": "system_1035",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1044",
-            "system": "system_1035",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1102",
-            "system": "system_1092",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1101",
-            "system": "system_1092",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1159",
-            "system": "system_1149",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1158",
-            "system": "system_1149",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "129",
-            "system": "system_119",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "128",
-            "system": "system_119",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          }
-        ],
-        "caveat": "Counts cover Constant/Gain/lookup fields; Stateflow/MATLAB Function scripts and state constants are also manually reviewed and are not silently omitted from the judgment."
-      },
-      "native_admission": {
-        "case_id": "NEP-02",
-        "samples": 1977,
-        "outputs": 31,
-        "comparisons": 61287,
-        "scenarios": 228,
-        "max_abs_error": 0.0,
-        "all_passed": true
-      },
-      "construction_scope": "Synthetic, maintainer-designed and maintainer-adjudicated; non-blind; not an independent internal holdout.",
-      "coverage": {
-        "decision": [
-          99,
-          99
-        ],
-        "condition": [
-          846,
-          846
-        ],
-        "mcdc": [
-          282,
-          282
-        ],
-        "statement": []
-      },
-      "host_replay": {
-        "case_id": "NEP-02",
-        "compiler": "Explicit LCC-win64 through mex",
-        "compiled": true,
-        "executed": true,
-        "samples": 1977,
-        "outputs": 31,
-        "max_abs_error": 0,
-        "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-      }
-    },
-    {
-      "id": "NEP-03",
-      "head": "648cfbcc43c142b82b718491f45b34731dfd9e00",
-      "tree": "307e6e077669e72c4f55f009d9cfd5724ad3bb90",
-      "business": "驱动扭矩与热/功率包络",
-      "census_sha256": "ed7a2379926c2f1f720f3e0b0138c809502b1471168e17e8afe03ee3e2830965",
-      "block_types": {
-        "Constant": 121,
-        "DataStoreMemory": 1,
-        "DataStoreRead": 1,
-        "DataStoreWrite": 1,
-        "DataTypeConversion": 1,
-        "EnablePort": 10,
-        "From": 40,
-        "Gain": 3,
-        "Goto": 20,
-        "Inport": 514,
-        "Logic": 101,
-        "Lookup_n-D": 1,
-        "MinMax": 3,
-        "Outport": 186,
-        "Product": 21,
-        "Reference": 2,
-        "RelationalOperator": 60,
-        "SubSystem": 106,
-        "Sum": 22,
-        "Switch": 22,
-        "TriggerPort": 1,
-        "UnitDelay": 20
-      },
-      "system_xml_count": 107,
-      "native_model_update": true,
-      "hierarchy_responsibility_review": {
-        "clear_subsystems_lower_bound": 102,
-        "total_subsystems": 106,
-        "explanation": "Each channel encloses one signal-quality responsibility; its four stages separately check range/communication, qualify time, convert engineering units, and select safe fallback. The reviewed domain controller/dynamics and diagnostic snapshot have separate single responsibilities. Parent acquisition groups are excluded from the >=90% lower bound.",
-        "examples": [
-          {
-            "path": "Model/VcVmcTrq.slx",
-            "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
-            "location": "system_1037/Block[@SID='1068'] EngineeringConversion"
-          },
-          {
-            "path": "Model/VcVmcTrq.slx",
-            "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
-            "location": "system_1037/Block[@SID='1048'] RangeAndCommunication"
-          },
-          {
-            "path": "Model/VcVmcTrq.slx",
-            "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
-            "location": "system_1037/Block[@SID='1075'] SafeSubstitution"
-          },
-          {
-            "path": "Model/VcVmcTrq.slx",
-            "sha256": "9349dbb1c332a218735a8fe54e59db67dd8fa20f4a1315e9164914e3f8a3a34f",
-            "location": "system_1037/Block[@SID='1060'] TemporalQualification"
-          }
-        ]
+        "outputs": 39,
+        "calibration_rows": 136,
+        "default_internal_ports": 14
       },
       "naming_review": {
-        "elements": 2351,
-        "ambiguous_or_empty": 259,
-        "ambiguous_fraction": 0.11016588685665674,
-        "classification": "Ordinal In/Out, ReadQuality, Reject, Valid, CheckInput, DomainInput and Acquisition names omit signal identity/role; classify in their actual local paths. Semantic native names otherwise agree within element classes.",
+        "elements": 3848,
+        "ambiguous_or_empty": 183,
+        "ambiguous_fraction": 0.04755717255717256,
         "examples": [
           {
             "kind": "block",
-            "sid": "1084",
-            "name": "ReadQuality1"
+            "path": "VcVcuOutQM/BusinessDecision/AuxiliaryActuatorInterlocks/Implementation",
+            "sid": "VcVcuOutQM:1856",
+            "name": "Implementation"
           },
           {
             "kind": "block",
-            "sid": "1085",
-            "name": "ReadQuality2"
+            "path": "VcVcuOutQM/BusinessDecision/AxleCommandSum/Implementation",
+            "sid": "VcVcuOutQM:1850",
+            "name": "Implementation"
           },
           {
             "kind": "block",
-            "sid": "1070",
-            "name": "In2"
+            "path": "VcVcuOutQM/BusinessDecision/FrontTorqueActuator/Implementation",
+            "sid": "VcVcuOutQM:1816",
+            "name": "Implementation"
           },
           {
             "kind": "block",
-            "sid": "1076",
-            "name": "In1"
+            "path": "VcVcuOutQM/BusinessDecision/RearTorqueActuator/Implementation",
+            "sid": "VcVcuOutQM:1833",
+            "name": "Implementation"
           },
           {
             "kind": "block",
-            "sid": "1141",
-            "name": "ReadQuality1"
-          },
-          {
-            "kind": "block",
-            "sid": "1142",
-            "name": "ReadQuality2"
-          },
-          {
-            "kind": "block",
-            "sid": "1139",
-            "name": "Out2"
-          },
-          {
-            "kind": "block",
-            "sid": "1106",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "1135",
+            "path": "VcVcuOutQM/DriverAndModeInputs/In3",
+            "sid": "VcVcuOutQM:949",
             "name": "In3"
           },
           {
             "kind": "block",
-            "sid": "123",
-            "name": "In4"
+            "path": "VcVcuOutQM/DriverAndModeInputs/In13",
+            "sid": "VcVcuOutQM:1131",
+            "name": "In13"
           },
           {
             "kind": "block",
-            "sid": "166",
-            "name": "ReadQuality1"
+            "path": "VcVcuOutQM/DriverAndModeInputs/In15",
+            "sid": "VcVcuOutQM:1172",
+            "name": "In15"
           },
           {
             "kind": "block",
-            "sid": "167",
-            "name": "ReadQuality2"
-          }
-        ]
-      },
-      "interface": {
-        "inputs": 62,
-        "outputs": 24,
-        "calibration_rows": 120,
-        "default_internal_ports": 81,
-        "total_ports": 700,
-        "source": {
-          "path": "Model/interfaceVcVmcTrq.xls",
-          "sha256": "b6d5f264b56dbafd9bc6c811724038767aa756240deeda69886aef2d8e58b5f6",
-          "location": "IN/OUT/MP/CAL/FIX/ChangeLog"
-        }
-      },
-      "parameter_source": "MAT-File",
-      "parameter_slots": {
-        "checked": 126,
-        "numeric_literals": 6,
-        "examples": [
-          {
-            "sid": "1235",
-            "system": "system_1192",
-            "block": "BrakeTorque",
-            "field": "Gain",
-            "value": "-6",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1234",
-            "system": "system_1192",
-            "block": "PedalTorque",
-            "field": "Gain",
-            "value": "4",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1240",
-            "system": "system_1192",
-            "block": "PowerEnvelope",
-            "field": "Gain",
-            "value": "4",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1238",
-            "system": "system_1192",
-            "block": "ThermalDerate",
-            "field": "BreakpointsForDimension1",
-            "value": "[0 80 120 160]",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1238",
-            "system": "system_1192",
-            "block": "ThermalDerate",
-            "field": "Table",
-            "value": "[1 1 0.5 0]",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1233",
-            "system": "system_1192",
-            "block": "Zero",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          }
-        ],
-        "caveat": "Counts cover Constant/Gain/lookup fields; Stateflow/MATLAB Function scripts and state constants are also manually reviewed and are not silently omitted from the judgment."
-      },
-      "native_admission": {
-        "case_id": "NEP-03",
-        "samples": 1417,
-        "outputs": 24,
-        "comparisons": 34008,
-        "scenarios": 164,
-        "max_abs_error": 0.0,
-        "all_passed": true
-      },
-      "construction_scope": "Synthetic, maintainer-designed and maintainer-adjudicated; non-blind; not an independent internal holdout.",
-      "coverage": {
-        "decision": [
-          72,
-          72
-        ],
-        "condition": [
-          602,
-          602
-        ],
-        "mcdc": [
-          200,
-          200
-        ],
-        "statement": []
-      },
-      "host_replay": {
-        "case_id": "NEP-03",
-        "compiler": "Explicit LCC-win64 through mex",
-        "compiled": true,
-        "executed": true,
-        "samples": 1417,
-        "outputs": 24,
-        "max_abs_error": 0,
-        "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-      }
-    },
-    {
-      "id": "NEP-04",
-      "head": "49e818a2ab42384d5de9e49ba8481c832819c772",
-      "tree": "fada3507b1152405529403b871d795f4a9e27ea7",
-      "business": "制动能量回收协调",
-      "census_sha256": "494ac534a347e0c76bacd3bee9790ccec32bfc9754ebac0598e33c81b29fef82",
-      "block_types": {
-        "Constant": 109,
-        "DataTypeConversion": 1,
-        "EnablePort": 9,
-        "From": 36,
-        "Gain": 3,
-        "Goto": 18,
-        "Inport": 462,
-        "Logic": 91,
-        "Lookup_n-D": 2,
-        "MinMax": 1,
-        "Outport": 167,
-        "Product": 20,
-        "Reference": 2,
-        "RelationalOperator": 54,
-        "SubSystem": 96,
-        "Sum": 19,
-        "Switch": 20,
-        "TriggerPort": 1,
-        "UnitDelay": 18
-      },
-      "system_xml_count": 97,
-      "native_model_update": true,
-      "hierarchy_responsibility_review": {
-        "clear_subsystems_lower_bound": 92,
-        "total_subsystems": 96,
-        "explanation": "Each channel encloses one signal-quality responsibility; its four stages separately check range/communication, qualify time, convert engineering units, and select safe fallback. The reviewed domain controller/dynamics and diagnostic snapshot have separate single responsibilities. Parent acquisition groups are excluded from the >=90% lower bound.",
-        "examples": [
-          {
-            "path": "Model/VcErcRgn.slx",
-            "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
-            "location": "system_119/Block[@SID='150'] EngineeringConversion"
-          },
-          {
-            "path": "Model/VcErcRgn.slx",
-            "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
-            "location": "system_119/Block[@SID='130'] RangeAndCommunication"
-          },
-          {
-            "path": "Model/VcErcRgn.slx",
-            "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
-            "location": "system_119/Block[@SID='157'] SafeSubstitution"
-          },
-          {
-            "path": "Model/VcErcRgn.slx",
-            "sha256": "dba21ce9673a3a757419e7497bcfc8b68e98a68e4a25a4959f220d7d9386b4b0",
-            "location": "system_119/Block[@SID='142'] TemporalQualification"
-          }
-        ]
-      },
-      "naming_review": {
-        "elements": 2113,
-        "ambiguous_or_empty": 259,
-        "ambiguous_fraction": 0.12257453857075248,
-        "classification": "Ordinal In/Out, ReadQuality, Reject, Valid, CheckInput, DomainInput and Acquisition names omit signal identity/role; classify in their actual local paths. Semantic native names otherwise agree within element classes.",
-        "examples": [
-          {
-            "kind": "block",
-            "sid": "101",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "1005",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1013",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1093",
-            "name": "In6"
-          },
-          {
-            "kind": "block",
-            "sid": "1094",
-            "name": "Valid2"
-          },
-          {
-            "kind": "block",
-            "sid": "1095",
-            "name": "Valid3"
-          },
-          {
-            "kind": "block",
-            "sid": "1096",
-            "name": "Valid4"
-          },
-          {
-            "kind": "block",
-            "sid": "1097",
-            "name": "Valid5"
-          },
-          {
-            "kind": "block",
-            "sid": "1098",
-            "name": "Valid6"
-          },
-          {
-            "kind": "block",
-            "sid": "1099",
-            "name": "In12"
-          },
-          {
-            "kind": "block",
-            "sid": "1100",
-            "name": "Valid8"
-          },
-          {
-            "kind": "block",
-            "sid": "1101",
-            "name": "Valid9"
-          }
-        ]
-      },
-      "interface": {
-        "inputs": 56,
-        "outputs": 21,
-        "calibration_rows": 108,
-        "default_internal_ports": 99,
-        "total_ports": 629,
-        "source": {
-          "path": "Model/interfaceVcErcRgn.xls",
-          "sha256": "01f62a7292f87a2718a5b78d2adbc3a9ab7208804c8bb55b23f5b82bc9e4e57a",
-          "location": "IN/OUT/MP/CAL/FIX/ChangeLog"
-        }
-      },
-      "parameter_source": "MAT-File",
-      "parameter_slots": {
-        "checked": 97,
-        "numeric_literals": 43,
-        "examples": [
-          {
-            "sid": "1112",
-            "system": "system_1074",
-            "block": "BrakeRegenDemand",
-            "field": "Gain",
-            "value": "8",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1119",
-            "system": "system_1074",
-            "block": "BrakingSign",
-            "field": "Gain",
-            "value": "-1",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1113",
-            "system": "system_1074",
-            "block": "ChargePowerEnvelope",
-            "field": "Gain",
-            "value": "4",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1114",
-            "system": "system_1074",
-            "block": "LowSpeedFade",
-            "field": "BreakpointsForDimension1",
-            "value": "[0 3 10 250]",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1114",
-            "system": "system_1074",
-            "block": "LowSpeedFade",
-            "field": "Table",
-            "value": "[0 0 1 1]",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1115",
-            "system": "system_1074",
-            "block": "SocAcceptance",
-            "field": "BreakpointsForDimension1",
-            "value": "[0 80 95 100]",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1115",
-            "system": "system_1074",
-            "block": "SocAcceptance",
-            "field": "Table",
-            "value": "[1 1 0.5 0]",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1111",
-            "system": "system_1074",
-            "block": "Zero",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          }
-        ],
-        "caveat": "Counts cover Constant/Gain/lookup fields; Stateflow/MATLAB Function scripts and state constants are also manually reviewed and are not silently omitted from the judgment."
-      },
-      "native_admission": {
-        "case_id": "NEP-04",
-        "samples": 1277,
-        "outputs": 21,
-        "comparisons": 26817,
-        "scenarios": 148,
-        "max_abs_error": 0.0,
-        "all_passed": true
-      },
-      "construction_scope": "Synthetic, maintainer-designed and maintainer-adjudicated; non-blind; not an independent internal holdout.",
-      "coverage": {
-        "decision": [
-          62,
-          62
-        ],
-        "condition": [
-          542,
-          542
-        ],
-        "mcdc": [
-          180,
-          180
-        ],
-        "statement": []
-      },
-      "host_replay": {
-        "case_id": "NEP-04",
-        "compiler": "Explicit LCC-win64 through mex",
-        "compiled": true,
-        "executed": true,
-        "samples": 1277,
-        "outputs": 21,
-        "max_abs_error": 0,
-        "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-      }
-    },
-    {
-      "id": "NEP-05",
-      "head": "acb2dcf4c0ad4622e1c18c7420e1cc5d67ae3f99",
-      "tree": "ef2b23d91a089517b48ee382b507b9a572ed62c9",
-      "business": "驾驶模式及充电/碰撞互锁",
-      "census_sha256": "ada7997028e56f066c2112512f0fc6b207923914a9d5cf35377eb71017297f1b",
-      "block_types": {
-        "Abs": 1,
-        "Constant": 98,
-        "Inport": 414,
-        "Logic": 82,
-        "Outport": 149,
-        "Product": 16,
-        "Reference": 1,
-        "RelationalOperator": 49,
-        "SubSystem": 86,
-        "Sum": 18,
-        "Switch": 20,
-        "TriggerPort": 1,
-        "UnitDelay": 16
-      },
-      "system_xml_count": 87,
-      "native_model_update": true,
-      "hierarchy_responsibility_review": {
-        "clear_subsystems_lower_bound": 82,
-        "total_subsystems": 86,
-        "explanation": "Each channel encloses one signal-quality responsibility; its four stages separately check range/communication, qualify time, convert engineering units, and select safe fallback. The reviewed domain controller/dynamics and diagnostic snapshot have separate single responsibilities. Parent acquisition groups are excluded from the >=90% lower bound.",
-        "examples": [
-          {
-            "path": "Model/VcDmcDrv.slx",
-            "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
-            "location": "system_113/Block[@SID='144'] EngineeringConversion"
-          },
-          {
-            "path": "Model/VcDmcDrv.slx",
-            "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
-            "location": "system_113/Block[@SID='124'] RangeAndCommunication"
-          },
-          {
-            "path": "Model/VcDmcDrv.slx",
-            "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
-            "location": "system_113/Block[@SID='151'] SafeSubstitution"
-          },
-          {
-            "path": "Model/VcDmcDrv.slx",
-            "sha256": "4a739ac920a7a1b3aab80f47b454c56bd792aef6cb422a431d65893558381552",
-            "location": "system_113/Block[@SID='136'] TemporalQualification"
-          }
-        ]
-      },
-      "naming_review": {
-        "elements": 1796,
-        "ambiguous_or_empty": 198,
-        "ambiguous_fraction": 0.11024498886414254,
-        "classification": "Ordinal In/Out, ReadQuality, Reject, Valid, CheckInput, DomainInput and Acquisition names omit signal identity/role; classify in their actual local paths. Semantic native names otherwise agree within element classes.",
-        "examples": [
-          {
-            "kind": "block",
-            "sid": "128",
-            "name": "In4"
-          },
-          {
-            "kind": "block",
-            "sid": "137",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "143",
-            "name": "Out1"
-          },
-          {
-            "kind": "block",
-            "sid": "145",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "20",
-            "name": "In4"
-          },
-          {
-            "kind": "block",
-            "sid": "182",
-            "name": "In4"
-          },
-          {
-            "kind": "block",
-            "sid": "191",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "197",
-            "name": "Out1"
-          },
-          {
-            "kind": "block",
-            "sid": "199",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "270",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "324",
-            "name": "In5"
-          },
-          {
-            "kind": "block",
-            "sid": "432",
-            "name": "In11"
-          }
-        ]
-      },
-      "interface": {
-        "inputs": 50,
-        "outputs": 19,
-        "calibration_rows": 96,
-        "default_internal_ports": 87,
-        "total_ports": 563,
-        "source": {
-          "path": "Model/interfaceVcDmcDrv.xls",
-          "sha256": "dfb0c94a0ddc1b29491c65322fae56f18c85e7ee679b2fbc26e772c231048945",
-          "location": "IN/OUT/MP/CAL/FIX/ChangeLog"
-        }
-      },
-      "parameter_source": "Model File",
-      "parameter_slots": {
-        "checked": 98,
-        "numeric_literals": 7,
-        "examples": [
-          {
-            "sid": "123",
-            "system": "system_113",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "287",
-            "system": "system_277",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "451",
-            "system": "system_441",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "613",
-            "system": "system_603",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "777",
-            "system": "system_767",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "944",
-            "system": "system_908",
-            "block": "PedalTolerance",
-            "field": "Value",
-            "value": "5",
-            "numeric_literal": true
-          },
-          {
-            "sid": "941",
-            "system": "system_908",
-            "block": "Zero",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          }
-        ],
-        "caveat": "Counts cover Constant/Gain/lookup fields; Stateflow/MATLAB Function scripts and state constants are also manually reviewed and are not silently omitted from the judgment."
-      },
-      "native_admission": {
-        "case_id": "NEP-05",
-        "samples": 1137,
-        "outputs": 19,
-        "comparisons": 21603,
-        "scenarios": 132,
-        "max_abs_error": 0.0,
-        "all_passed": true
-      },
-      "construction_scope": "Synthetic, maintainer-designed and maintainer-adjudicated; non-blind; not an independent internal holdout."
-    },
-    {
-      "id": "NEP-06",
-      "head": "8ed5aeb39d5588fcfb1bb0f81e4878950306be38",
-      "tree": "11dde076a71fadc67e4d62f5239f7e75a63f0e28",
-      "business": "车轮滑移与牵引限制",
-      "census_sha256": "bac8cda62082a5c03ffcaaa33bc1646d92b1dd689607c4758d7fced90186fa40",
-      "block_types": {
-        "BusCreator": 1,
-        "BusSelector": 1,
-        "Constant": 121,
-        "DataTypeConversion": 1,
-        "EnablePort": 10,
-        "From": 40,
-        "Goto": 20,
-        "Inport": 515,
-        "Logic": 101,
-        "Lookup_n-D": 1,
-        "MinMax": 3,
-        "Outport": 185,
-        "Product": 21,
-        "Reference": 2,
-        "RelationalOperator": 60,
-        "SubSystem": 106,
-        "Sum": 23,
-        "Switch": 22,
-        "TriggerPort": 1,
-        "UnitDelay": 20
-      },
-      "system_xml_count": 107,
-      "native_model_update": true,
-      "hierarchy_responsibility_review": {
-        "clear_subsystems_lower_bound": 102,
-        "total_subsystems": 106,
-        "explanation": "Each channel encloses one signal-quality responsibility; its four stages separately check range/communication, qualify time, convert engineering units, and select safe fallback. The reviewed domain controller/dynamics and diagnostic snapshot have separate single responsibilities. Parent acquisition groups are excluded from the >=90% lower bound.",
-        "examples": [
-          {
-            "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-            "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
-            "location": "system_1037/Block[@SID='1068'] EngineeringConversion"
-          },
-          {
-            "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-            "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
-            "location": "system_1037/Block[@SID='1048'] RangeAndCommunication"
-          },
-          {
-            "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-            "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
-            "location": "system_1037/Block[@SID='1075'] SafeSubstitution"
-          },
-          {
-            "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-            "sha256": "81951ce323a7d85c25b7a7930d99af74500e696feee94789d8e515fc5ff04867",
-            "location": "system_1037/Block[@SID='1060'] TemporalQualification"
-          }
-        ]
-      },
-      "naming_review": {
-        "elements": 2367,
-        "ambiguous_or_empty": 262,
-        "ambiguous_fraction": 0.1106886354034643,
-        "classification": "Ordinal In/Out, ReadQuality, Reject, Valid, CheckInput, DomainInput and Acquisition names omit signal identity/role; classify in their actual local paths. Semantic native names otherwise agree within element classes.",
-        "examples": [
-          {
-            "kind": "block",
-            "sid": "102",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1014",
-            "name": "In3"
-          },
-          {
-            "kind": "block",
-            "sid": "1020",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1084",
-            "name": "ReadQuality1"
-          },
-          {
-            "kind": "block",
-            "sid": "1085",
-            "name": "ReadQuality2"
-          },
-          {
-            "kind": "block",
-            "sid": "1054",
-            "name": "In6"
-          },
-          {
-            "kind": "block",
-            "sid": "1069",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "1141",
-            "name": "ReadQuality1"
-          },
-          {
-            "kind": "block",
-            "sid": "1142",
-            "name": "ReadQuality2"
-          },
-          {
-            "kind": "block",
-            "sid": "1139",
-            "name": "Out2"
-          },
-          {
-            "kind": "block",
-            "sid": "1128",
-            "name": "In3"
-          },
-          {
-            "kind": "block",
-            "sid": "1134",
-            "name": "In2"
-          }
-        ]
-      },
-      "interface": {
-        "inputs": 62,
-        "outputs": 23,
-        "calibration_rows": 120,
-        "default_internal_ports": 82,
-        "total_ports": 700,
-        "source": {
-          "path": "VcWrcWhl/Model/interfaceVcWrcWhl.xls",
-          "sha256": "b153ea13311870e541653719dacc83d36c95054ddddba9f4534401efa9dd4df2",
-          "location": "IN/OUT/MP/CAL/FIX/ChangeLog"
-        }
-      },
-      "parameter_source": "Model File",
-      "parameter_slots": {
-        "checked": 123,
-        "numeric_literals": 3,
-        "examples": [
-          {
-            "sid": "1238",
-            "system": "system_1192",
-            "block": "SlipTorqueFactor",
-            "field": "BreakpointsForDimension1",
-            "value": "[-250 2 8 250]",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1238",
-            "system": "system_1192",
-            "block": "SlipTorqueFactor",
-            "field": "Table",
-            "value": "[1 1 0.2 0]",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1233",
-            "system": "system_1192",
-            "block": "Zero",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          }
-        ],
-        "caveat": "Counts cover Constant/Gain/lookup fields; Stateflow/MATLAB Function scripts and state constants are also manually reviewed and are not silently omitted from the judgment."
-      },
-      "native_admission": {
-        "case_id": "NEP-06",
-        "samples": 1417,
-        "outputs": 23,
-        "comparisons": 32591,
-        "scenarios": 164,
-        "max_abs_error": 0.0,
-        "all_passed": true
-      },
-      "construction_scope": "Synthetic, maintainer-designed and maintainer-adjudicated; non-blind; not an independent internal holdout.",
-      "coverage": {
-        "decision": [
-          72,
-          72
-        ],
-        "condition": [
-          602,
-          602
-        ],
-        "mcdc": [
-          200,
-          200
-        ],
-        "statement": []
-      },
-      "host_replay": {
-        "case_id": "NEP-06",
-        "compiler": "Explicit LCC-win64 through mex",
-        "compiled": true,
-        "executed": true,
-        "samples": 1417,
-        "outputs": 23,
-        "max_abs_error": 0,
-        "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-      }
-    },
-    {
-      "id": "NEP-07",
-      "head": "482bcd7eac4cba0407b746d5eeb7bee46390bd20",
-      "tree": "d4b3f7fc941333997b0efb36e9c6c7a34b4a32d0",
-      "business": "导引信号与高压充电协调",
-      "census_sha256": "fb26693635cd69546091bcf90d114a56b4513274a30ad2d3942f4f4e4812eb1a",
-      "block_types": {
-        "Constant": 133,
-        "DataStoreMemory": 1,
-        "DataStoreRead": 1,
-        "DataStoreWrite": 1,
-        "DataTypeConversion": 1,
-        "EnablePort": 11,
-        "From": 44,
-        "Gain": 2,
-        "Goto": 22,
-        "Inport": 566,
-        "Logic": 112,
-        "Lookup_n-D": 1,
-        "MinMax": 1,
-        "Outport": 204,
-        "Product": 23,
-        "Reference": 2,
-        "RelationalOperator": 67,
-        "SubSystem": 116,
-        "Sum": 23,
-        "Switch": 25,
-        "TriggerPort": 1,
-        "UnitDelay": 22
-      },
-      "system_xml_count": 117,
-      "native_model_update": true,
-      "hierarchy_responsibility_review": {
-        "clear_subsystems_lower_bound": 112,
-        "total_subsystems": 116,
-        "explanation": "Each channel encloses one signal-quality responsibility; its four stages separately check range/communication, qualify time, convert engineering units, and select safe fallback. The reviewed domain controller/dynamics and diagnostic snapshot have separate single responsibilities. Parent acquisition groups are excluded from the >=90% lower bound.",
-        "examples": [
-          {
-            "path": "Model/VcDeChg.slx",
-            "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
-            "location": "system_1037/Block[@SID='1068'] EngineeringConversion"
-          },
-          {
-            "path": "Model/VcDeChg.slx",
-            "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
-            "location": "system_1037/Block[@SID='1048'] RangeAndCommunication"
-          },
-          {
-            "path": "Model/VcDeChg.slx",
-            "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
-            "location": "system_1037/Block[@SID='1075'] SafeSubstitution"
-          },
-          {
-            "path": "Model/VcDeChg.slx",
-            "sha256": "792c329af48fa8ba2d3f56eece3c3627d9da56a2feeb9fdc17976d19c5c9d32b",
-            "location": "system_1037/Block[@SID='1060'] TemporalQualification"
-          }
-        ]
-      },
-      "naming_review": {
-        "elements": 2580,
-        "ambiguous_or_empty": 317,
-        "ambiguous_fraction": 0.12286821705426357,
-        "classification": "Ordinal In/Out, ReadQuality, Reject, Valid, CheckInput, DomainInput and Acquisition names omit signal identity/role; classify in their actual local paths. Semantic native names otherwise agree within element classes.",
-        "examples": [
-          {
-            "kind": "block",
-            "sid": "102",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1003",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1011",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1087",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1201",
-            "name": "In8"
-          },
-          {
-            "kind": "block",
-            "sid": "1205",
-            "name": "In10"
-          },
-          {
-            "kind": "block",
-            "sid": "1260",
-            "name": "In12"
-          },
-          {
-            "kind": "block",
-            "sid": "1150",
-            "name": "Out4"
-          },
-          {
-            "kind": "block",
-            "sid": "1038",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "1084",
-            "name": "ReadQuality1"
-          },
-          {
-            "kind": "block",
-            "sid": "1085",
-            "name": "ReadQuality2"
-          },
-          {
-            "kind": "block",
-            "sid": "1054",
-            "name": "In6"
-          }
-        ]
-      },
-      "interface": {
-        "inputs": 68,
-        "outputs": 26,
-        "calibration_rows": 132,
-        "default_internal_ports": 122,
-        "total_ports": 770,
-        "source": {
-          "path": "Model/interfaceVcDeChg.xls",
-          "sha256": "f5bb010b684297a76039629b61b220f4e420e3bfaffd92fcbaa84dfeabbb7755",
-          "location": "IN/OUT/MP/CAL/FIX/ChangeLog"
-        }
-      },
-      "parameter_source": "MAT-File",
-      "parameter_slots": {
-        "checked": 137,
-        "numeric_literals": 12,
-        "examples": [
-          {
-            "sid": "1161",
-            "system": "system_1151",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "129",
-            "system": "system_119",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1357",
-            "system": "system_1310",
-            "block": "BatteryCurrentEnvelope",
-            "field": "Gain",
-            "value": "2.5",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1356",
-            "system": "system_1310",
-            "block": "PilotCurrent",
-            "field": "Gain",
-            "value": "0.6",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1359",
-            "system": "system_1310",
-            "block": "TemperatureAcceptance",
-            "field": "BreakpointsForDimension1",
-            "value": "[-40 0 10 40 55 180]",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1359",
-            "system": "system_1310",
-            "block": "TemperatureAcceptance",
-            "field": "Table",
-            "value": "[0 0 1 1 0 0]",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1355",
-            "system": "system_1310",
-            "block": "Zero",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "300",
-            "system": "system_290",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "120",
-            "numeric_literal": true
-          }
-        ],
-        "caveat": "Counts cover Constant/Gain/lookup fields; Stateflow/MATLAB Function scripts and state constants are also manually reviewed and are not silently omitted from the judgment."
-      },
-      "native_admission": {
-        "case_id": "NEP-07",
-        "samples": 1557,
-        "outputs": 26,
-        "comparisons": 40482,
-        "scenarios": 180,
-        "max_abs_error": 0.0,
-        "all_passed": true
-      },
-      "construction_scope": "Synthetic, maintainer-designed and maintainer-adjudicated; non-blind; not an independent internal holdout.",
-      "coverage": {
-        "decision": [
-          76,
-          76
-        ],
-        "condition": [
-          672,
-          672
-        ],
-        "mcdc": [
-          224,
-          224
-        ],
-        "statement": []
-      },
-      "host_replay": {
-        "case_id": "NEP-07",
-        "compiler": "Explicit LCC-win64 through mex",
-        "compiled": true,
-        "executed": true,
-        "samples": 1557,
-        "outputs": 26,
-        "max_abs_error": 0,
-        "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-      }
-    },
-    {
-      "id": "NEP-08",
-      "head": "a6c4ad4bcb7fe89f1ee7871e4224c1484000ccd4",
-      "tree": "ad62d917261963e1f0f5d3a770e8f2c1f044d840",
-      "business": "电池/电机热需求与积分控制",
-      "census_sha256": "2c33f781be786cbdb0c23bd30621d8d3195b7958ed8c2deef941de31e51f728b",
-      "block_types": {
-        "Constant": 217,
-        "Demux": 1,
-        "EnablePort": 18,
-        "From": 72,
-        "Goto": 36,
-        "Inport": 915,
-        "Logic": 181,
-        "Lookup_n-D": 1,
-        "MinMax": 2,
-        "Outport": 330,
-        "Product": 36,
-        "Reference": 1,
-        "RelationalOperator": 108,
-        "S-Function": 1,
-        "SubSystem": 187,
-        "Sum": 40,
-        "Switch": 37,
-        "Terminator": 1,
-        "TriggerPort": 1,
-        "UnitDelay": 36
-      },
-      "system_xml_count": 188,
-      "native_model_update": true,
-      "hierarchy_responsibility_review": {
-        "clear_subsystems_lower_bound": 183,
-        "total_subsystems": 187,
-        "explanation": "Each channel encloses one signal-quality responsibility; its four stages separately check range/communication, qualify time, convert engineering units, and select safe fallback. The reviewed domain controller/dynamics and diagnostic snapshot have separate single responsibilities. Parent acquisition groups are excluded from the >=90% lower bound.",
-        "examples": [
-          {
-            "path": "Model/VcPvcThm.slx",
-            "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
-            "location": "system_1035/Block[@SID='1066'] EngineeringConversion"
-          },
-          {
-            "path": "Model/VcPvcThm.slx",
-            "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
-            "location": "system_1035/Block[@SID='1046'] RangeAndCommunication"
-          },
-          {
-            "path": "Model/VcPvcThm.slx",
-            "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
-            "location": "system_1035/Block[@SID='1073'] SafeSubstitution"
-          },
-          {
-            "path": "Model/VcPvcThm.slx",
-            "sha256": "42ff7c0c59ece9b0a913fc5138de502e3337d94fb598c68d12fc488563cca506",
-            "location": "system_1035/Block[@SID='1058'] TemporalQualification"
-          }
-        ]
-      },
-      "naming_review": {
-        "elements": 4161,
-        "ambiguous_or_empty": 521,
-        "ambiguous_fraction": 0.12521028598894496,
-        "classification": "Ordinal In/Out, ReadQuality, Reject, Valid, CheckInput, DomainInput and Acquisition names omit signal identity/role; classify in their actual local paths. Semantic native names otherwise agree within element classes.",
-        "examples": [
-          {
-            "kind": "block",
-            "sid": "1016",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1142",
-            "name": "In5"
-          },
-          {
-            "kind": "block",
-            "sid": "1203",
-            "name": "In10"
-          },
-          {
-            "kind": "block",
-            "sid": "1256",
-            "name": "In11"
-          },
-          {
-            "kind": "block",
-            "sid": "1258",
-            "name": "In12"
-          },
-          {
-            "kind": "block",
-            "sid": "1313",
-            "name": "In14"
-          },
-          {
-            "kind": "block",
-            "sid": "1370",
+            "path": "VcVcuOutQM/DriverAndModeInputs/In17",
+            "sid": "VcVcuOutQM:1213",
             "name": "In17"
           },
           {
             "kind": "block",
-            "sid": "1484",
+            "path": "VcVcuOutQM/DriverAndModeInputs/In24",
+            "sid": "VcVcuOutQM:1301",
+            "name": "In24"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuOutQM/DriverAndModeInputs/In26",
+            "sid": "VcVcuOutQM:1342",
+            "name": "In26"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuOutQM/DriverAndModeInputs/In36",
+            "sid": "VcVcuOutQM:1487",
+            "name": "In36"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuOutQM/DriverAndModeInputs/BrakePressure/ReadQuality1",
+            "sid": "VcVcuOutQM:944",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuOutQM/DriverAndModeInputs/BrakePressure/ReadQuality2",
+            "sid": "VcVcuOutQM:945",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuOutQM/DriverAndModeInputs/ChargerEnable/ReadQuality1",
+            "sid": "VcVcuOutQM:1167",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcVcuOutQM/DriverAndModeInputs/ChargerEnable/ReadQuality2",
+            "sid": "VcVcuOutQM:1168",
+            "name": "ReadQuality2"
+          }
+        ],
+        "method": "Semantic review in parent context: Raw/Age/Status/Qualified/Scale/Offset identify their role inside a named channel; ordinal root rejection/default ports, generic function wrappers and empty signals are conservatively counted as ambiguous. Native expanded counts include linked instances; source definitions are separately inventoried."
+      },
+      "native_admission": {
+        "case_id": "NEP-02",
+        "samples": 3562,
+        "outputs": 39,
+        "comparisons": 106860,
+        "range_checks": 138918,
+        "business_property_count": 5,
+        "scenarios": 801,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      "construction_scope": "One maintainer construction family; prior review informed repair; not blind gold or an independent holdout."
+    },
+    {
+      "id": "NEP-03",
+      "head": "0902e6c52e3878edd5a1c7de4e2e2ea65ef73300",
+      "tree": "71028af67a424fed8c04d2ac070d9834e91d0681",
+      "business": "traction_torque",
+      "primary_model": "Model/VcVmcTrq.slx",
+      "census_sha256": "1cffd51e9031ec4afdbf8b84b9b085636b8b4cfa7768489283471663a5fbc66e",
+      "static_primary_block_types": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 134,
+        "DataStoreMemory": 1,
+        "DataStoreRead": 1,
+        "DataStoreWrite": 1,
+        "DataTypeConversion": 26,
+        "Demux": 4,
+        "EnablePort": 9,
+        "From": 40,
+        "Goto": 20,
+        "Inport": 567,
+        "Logic": 104,
+        "Outport": 202,
+        "Product": 18,
+        "Reference": 2,
+        "RelationalOperator": 78,
+        "S-Function": 4,
+        "SubSystem": 113,
+        "Sum": 19,
+        "Switch": 20,
+        "Terminator": 4,
+        "TriggerPort": 1,
+        "UnitDelay": 20
+      },
+      "native_expanded_block_types": {
+        "Inport": 568,
+        "SubSystem": 114,
+        "Demux": 4,
+        "S-Function": 5,
+        "Terminator": 4,
+        "Outport": 203,
+        "DataTypeConversion": 26,
+        "Logic": 104,
+        "TriggerPort": 1,
+        "EnablePort": 9,
+        "Sum": 19,
+        "Product": 18,
+        "Constant": 135,
+        "RelationalOperator": 79,
+        "From": 40,
+        "Goto": 20,
+        "Switch": 20,
+        "UnitDelay": 20,
+        "DataStoreMemory": 1,
+        "BusCreator": 1,
+        "DataStoreRead": 1,
+        "BusSelector": 1,
+        "DataStoreWrite": 1
+      },
+      "native_subsystems": 114,
+      "reviewed_single_responsibility_lower_bound": 108,
+      "domain_components": [
+        "DriverIntent",
+        "MotorThermalProtection",
+        "DischargePowerEnvelope",
+        "TorqueArbitration"
+      ],
+      "interface": {
+        "inputs": 62,
+        "outputs": 26,
+        "calibration_rows": 114,
+        "default_internal_ports": 6
+      },
+      "naming_review": {
+        "elements": 2951,
+        "ambiguous_or_empty": 131,
+        "ambiguous_fraction": 0.04439173161640122,
+        "examples": [
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/BusinessDecision/DischargePowerEnvelope/Implementation",
+            "sid": "VcVmcTrq:1413",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/BusinessDecision/DriverIntent/Implementation",
+            "sid": "VcVmcTrq:1391",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/BusinessDecision/MotorThermalProtection/Implementation",
+            "sid": "VcVmcTrq:1405",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/BusinessDecision/TorqueArbitration/Implementation",
+            "sid": "VcVmcTrq:1424",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/DriverAndModeInputs/In13",
+            "sid": "VcVmcTrq:215",
+            "name": "In13"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/DriverAndModeInputs/In15",
+            "sid": "VcVmcTrq:273",
+            "name": "In15"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/DriverAndModeInputs/Accelerator/ReadQuality1",
+            "sid": "VcVmcTrq:55",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/DriverAndModeInputs/Accelerator/ReadQuality2",
+            "sid": "VcVmcTrq:56",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/DriverAndModeInputs/AcceleratorRedundant/ReadQuality1",
+            "sid": "VcVmcTrq:328",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/DriverAndModeInputs/AcceleratorRedundant/ReadQuality2",
+            "sid": "VcVmcTrq:329",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/DriverAndModeInputs/BrakePressure/ReadQuality1",
+            "sid": "VcVmcTrq:115",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/DriverAndModeInputs/BrakePressure/ReadQuality2",
+            "sid": "VcVmcTrq:116",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/DriverAndModeInputs/DriveEnable/ReadQuality1",
+            "sid": "VcVmcTrq:208",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/DriverAndModeInputs/DriveEnable/ReadQuality2",
+            "sid": "VcVmcTrq:209",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcVmcTrq/DriverAndModeInputs/GearSelection/ReadQuality1",
+            "sid": "VcVmcTrq:165",
+            "name": "ReadQuality1"
+          }
+        ],
+        "method": "Semantic review in parent context: Raw/Age/Status/Qualified/Scale/Offset identify their role inside a named channel; ordinal root rejection/default ports, generic function wrappers and empty signals are conservatively counted as ambiguous. Native expanded counts include linked instances; source definitions are separately inventoried."
+      },
+      "native_admission": {
+        "case_id": "NEP-03",
+        "samples": 2647,
+        "outputs": 26,
+        "comparisons": 58234,
+        "range_checks": 68822,
+        "business_property_count": 12,
+        "scenarios": 622,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      "construction_scope": "One maintainer construction family; prior review informed repair; not blind gold or an independent holdout."
+    },
+    {
+      "id": "NEP-04",
+      "head": "c30baa42401b4086e57396213c07f7d0fd244099",
+      "tree": "16fa90fc0672115751367c0d4014bf18a63b2290",
+      "business": "regeneration",
+      "primary_model": "Model/VcErcRgn.slx",
+      "census_sha256": "148aa0f709f2db5866db4300f8927b15e499fa2c202f888cb701e000011e44f5",
+      "static_primary_block_types": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 110,
+        "DataTypeConversion": 18,
+        "Demux": 3,
+        "EnablePort": 7,
+        "From": 36,
+        "Goto": 18,
+        "Inport": 482,
+        "Logic": 93,
+        "Outport": 172,
+        "Product": 13,
+        "Reference": 2,
+        "RelationalOperator": 66,
+        "S-Function": 3,
+        "SubSystem": 98,
+        "Sum": 14,
+        "Switch": 18,
+        "Terminator": 3,
+        "TriggerPort": 1,
+        "UnitDelay": 18
+      },
+      "native_expanded_block_types": {
+        "Inport": 483,
+        "SubSystem": 99,
+        "DataTypeConversion": 18,
+        "Demux": 3,
+        "S-Function": 4,
+        "Terminator": 3,
+        "Outport": 173,
+        "Logic": 93,
+        "TriggerPort": 1,
+        "Constant": 111,
+        "RelationalOperator": 67,
+        "From": 36,
+        "Goto": 18,
+        "Switch": 18,
+        "UnitDelay": 18,
+        "EnablePort": 7,
+        "Sum": 14,
+        "Product": 13,
+        "BusCreator": 1,
+        "BusSelector": 1
+      },
+      "native_subsystems": 99,
+      "reviewed_single_responsibility_lower_bound": 93,
+      "domain_components": [
+        "BrakeAndCoastDemand",
+        "BatteryRegenAcceptance",
+        "BrakeBlend"
+      ],
+      "interface": {
+        "inputs": 56,
+        "outputs": 22,
+        "calibration_rows": 92,
+        "default_internal_ports": 9
+      },
+      "naming_review": {
+        "elements": 2493,
+        "ambiguous_or_empty": 113,
+        "ambiguous_fraction": 0.045326915363016446,
+        "examples": [
+          {
+            "kind": "block",
+            "path": "VcErcRgn/BusinessDecision/BatteryRegenAcceptance/Implementation",
+            "sid": "VcErcRgn:1196",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/BusinessDecision/BrakeAndCoastDemand/Implementation",
+            "sid": "VcErcRgn:1186",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/BusinessDecision/BrakeBlend/Implementation",
+            "sid": "VcErcRgn:1208",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/DriverAndModeInputs/In15",
+            "sid": "VcErcRgn:263",
+            "name": "In15"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/DriverAndModeInputs/In17",
+            "sid": "VcErcRgn:304",
+            "name": "In17"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/DriverAndModeInputs/AbsActive/ReadQuality1",
+            "sid": "VcErcRgn:158",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/DriverAndModeInputs/AbsActive/ReadQuality2",
+            "sid": "VcErcRgn:159",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/DriverAndModeInputs/Accelerator/ReadQuality1",
+            "sid": "VcErcRgn:115",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/DriverAndModeInputs/Accelerator/ReadQuality2",
+            "sid": "VcErcRgn:116",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/DriverAndModeInputs/BrakePressure/ReadQuality1",
+            "sid": "VcErcRgn:55",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/DriverAndModeInputs/BrakePressure/ReadQuality2",
+            "sid": "VcErcRgn:56",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/DriverAndModeInputs/ChargeEnable/ReadQuality1",
+            "sid": "VcErcRgn:344",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/DriverAndModeInputs/ChargeEnable/ReadQuality2",
+            "sid": "VcErcRgn:345",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/DriverAndModeInputs/EmergencyStop/ReadQuality1",
+            "sid": "VcErcRgn:301",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcErcRgn/DriverAndModeInputs/EmergencyStop/ReadQuality2",
+            "sid": "VcErcRgn:302",
+            "name": "ReadQuality2"
+          }
+        ],
+        "method": "Semantic review in parent context: Raw/Age/Status/Qualified/Scale/Offset identify their role inside a named channel; ordinal root rejection/default ports, generic function wrappers and empty signals are conservatively counted as ambiguous. Native expanded counts include linked instances; source definitions are separately inventoried."
+      },
+      "native_admission": {
+        "case_id": "NEP-04",
+        "samples": 2251,
+        "outputs": 22,
+        "comparisons": 45020,
+        "range_checks": 49522,
+        "business_property_count": 6,
+        "scenarios": 529,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      "construction_scope": "One maintainer construction family; prior review informed repair; not blind gold or an independent holdout."
+    },
+    {
+      "id": "NEP-05",
+      "head": "3a5f747d55331682a1ddadc49551f04236e3f958",
+      "tree": "209a2bad7b4bce70a715ce83f31698bf2275ec31",
+      "business": "drive_mode",
+      "primary_model": "Model/VcDmcDrv.slx",
+      "census_sha256": "0fbb97ef64d7f8356b82e98d121e8296cc451fc2de7cda55f422e75a6425fa86",
+      "static_primary_block_types": {
+        "Constant": 84,
+        "DataTypeConversion": 12,
+        "Demux": 1,
+        "Inport": 407,
+        "Logic": 81,
+        "Outport": 155,
+        "Product": 8,
+        "Reference": 1,
+        "RelationalOperator": 52,
+        "S-Function": 1,
+        "SubSystem": 81,
+        "Sum": 9,
+        "Switch": 16,
+        "Terminator": 1,
+        "TriggerPort": 1,
+        "UnitDelay": 16
+      },
+      "native_expanded_block_types": {
+        "Inport": 408,
+        "SubSystem": 82,
+        "DataTypeConversion": 12,
+        "Demux": 1,
+        "S-Function": 1,
+        "Terminator": 1,
+        "Outport": 156,
+        "Logic": 81,
+        "TriggerPort": 1,
+        "Sum": 9,
+        "Product": 8,
+        "Constant": 85,
+        "RelationalOperator": 53,
+        "Switch": 16,
+        "UnitDelay": 16
+      },
+      "native_subsystems": 82,
+      "reviewed_single_responsibility_lower_bound": 76,
+      "domain_components": [
+        "GearAndDriveModeState"
+      ],
+      "interface": {
+        "inputs": 50,
+        "outputs": 22,
+        "calibration_rows": 68,
+        "default_internal_ports": 8
+      },
+      "naming_review": {
+        "elements": 1997,
+        "ambiguous_or_empty": 63,
+        "ambiguous_fraction": 0.031547320981472206,
+        "examples": [
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/BusinessDecision/GearAndDriveModeState/Implementation",
+            "sid": "VcDmcDrv:940",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/DriverAndModeInputs/In10",
+            "sid": "VcDmcDrv:173",
+            "name": "In10"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/DriverAndModeInputs/In11",
+            "sid": "VcDmcDrv:216",
+            "name": "In11"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/DriverAndModeInputs/In25",
+            "sid": "VcDmcDrv:380",
+            "name": "In25"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/DriverAndModeInputs/In27",
+            "sid": "VcDmcDrv:418",
+            "name": "In27"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/DriverAndModeInputs/In29",
+            "sid": "VcDmcDrv:456",
+            "name": "In29"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/ElectricDriveInputs/In4",
+            "sid": "VcDmcDrv:741",
+            "name": "In4"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/Reject1",
+            "sid": "VcDmcDrv:820",
+            "name": "Reject1"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/Reject10",
+            "sid": "VcDmcDrv:829",
+            "name": "Reject10"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/Reject11",
+            "sid": "VcDmcDrv:830",
+            "name": "Reject11"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/Reject12",
+            "sid": "VcDmcDrv:831",
+            "name": "Reject12"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/Reject13",
+            "sid": "VcDmcDrv:832",
+            "name": "Reject13"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/Reject14",
+            "sid": "VcDmcDrv:833",
+            "name": "Reject14"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/Reject15",
+            "sid": "VcDmcDrv:834",
+            "name": "Reject15"
+          },
+          {
+            "kind": "block",
+            "path": "VcDmcDrv/Reject16",
+            "sid": "VcDmcDrv:835",
+            "name": "Reject16"
+          }
+        ],
+        "method": "Semantic review in parent context: Raw/Age/Status/Qualified/Scale/Offset identify their role inside a named channel; ordinal root rejection/default ports, generic function wrappers and empty signals are conservatively counted as ambiguous. Native expanded counts include linked instances; source definitions are separately inventoried."
+      },
+      "native_admission": {
+        "case_id": "NEP-05",
+        "samples": 1899,
+        "outputs": 22,
+        "comparisons": 34182,
+        "range_checks": 41778,
+        "business_property_count": 7,
+        "scenarios": 446,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": false
+      },
+      "construction_scope": "One maintainer construction family; prior review informed repair; not blind gold or an independent holdout."
+    },
+    {
+      "id": "NEP-06",
+      "head": "61084082b8d60f121303fef0a691b80916cd41dd",
+      "tree": "a3ff3250466cdc639acc1c8c707d387497d9ef48",
+      "business": "wheel_traction",
+      "primary_model": "VcWrcWhl/Model/VcWrcWhl.slx",
+      "census_sha256": "33d33e6ebe7f96a5d29614178ba25adfb73bcd3c6e2e28cf4ca78805f4dac7fd",
+      "static_primary_block_types": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 128,
+        "DataTypeConversion": 25,
+        "Demux": 3,
+        "EnablePort": 9,
+        "From": 40,
+        "Goto": 20,
+        "Inport": 534,
+        "Logic": 103,
+        "Outport": 204,
+        "Product": 17,
+        "Reference": 2,
+        "RelationalOperator": 74,
+        "S-Function": 3,
+        "SubSystem": 108,
+        "Sum": 18,
+        "Switch": 20,
+        "Terminator": 3,
+        "TriggerPort": 1,
+        "UnitDelay": 20
+      },
+      "native_expanded_block_types": {
+        "Inport": 535,
+        "SubSystem": 109,
+        "Demux": 3,
+        "S-Function": 4,
+        "Terminator": 3,
+        "Outport": 205,
+        "DataTypeConversion": 25,
+        "Logic": 103,
+        "TriggerPort": 1,
+        "Constant": 129,
+        "RelationalOperator": 75,
+        "From": 40,
+        "Goto": 20,
+        "Switch": 20,
+        "UnitDelay": 20,
+        "EnablePort": 9,
+        "Sum": 18,
+        "Product": 17,
+        "BusCreator": 1,
+        "BusSelector": 1
+      },
+      "native_subsystems": 109,
+      "reviewed_single_responsibility_lower_bound": 105,
+      "domain_components": [
+        "FrontAxleSlip",
+        "RearAxleSlip",
+        "StabilityTorqueAllocation"
+      ],
+      "interface": {
+        "inputs": 62,
+        "outputs": 27,
+        "calibration_rows": 108,
+        "default_internal_ports": 6
+      },
+      "naming_review": {
+        "elements": 2821,
+        "ambiguous_or_empty": 122,
+        "ambiguous_fraction": 0.04324707550514002,
+        "examples": [
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/BusinessDecision/FrontAxleSlip/Implementation",
+            "sid": "VcWrcWhl:1344",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/BusinessDecision/RearAxleSlip/Implementation",
+            "sid": "VcWrcWhl:1356",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/BusinessDecision/StabilityTorqueAllocation/Implementation",
+            "sid": "VcWrcWhl:1368",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/DriverAndModeInputs/In7",
+            "sid": "VcWrcWhl:1069",
+            "name": "In7"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/DriverAndModeInputs/In9",
+            "sid": "VcWrcWhl:1110",
+            "name": "In9"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/DriverAndModeInputs/AbsActive/ReadQuality1",
+            "sid": "VcWrcWhl:1062",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/DriverAndModeInputs/AbsActive/ReadQuality2",
+            "sid": "VcWrcWhl:1063",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/DriverAndModeInputs/BrakePressure/ReadQuality1",
+            "sid": "VcWrcWhl:1019",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/DriverAndModeInputs/BrakePressure/ReadQuality2",
+            "sid": "VcWrcWhl:1020",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/DriverAndModeInputs/DriveEnable/ReadQuality1",
+            "sid": "VcWrcWhl:1148",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/DriverAndModeInputs/DriveEnable/ReadQuality2",
+            "sid": "VcWrcWhl:1149",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/DriverAndModeInputs/EscActive/ReadQuality1",
+            "sid": "VcWrcWhl:1105",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/DriverAndModeInputs/EscActive/ReadQuality2",
+            "sid": "VcWrcWhl:1106",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/ElectricDriveInputs/FrontTorqueRequest/ReadQuality1",
+            "sid": "VcWrcWhl:897",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcWrcWhl/ElectricDriveInputs/FrontTorqueRequest/ReadQuality2",
+            "sid": "VcWrcWhl:898",
+            "name": "ReadQuality2"
+          }
+        ],
+        "method": "Semantic review in parent context: Raw/Age/Status/Qualified/Scale/Offset identify their role inside a named channel; ordinal root rejection/default ports, generic function wrappers and empty signals are conservatively counted as ambiguous. Native expanded counts include linked instances; source definitions are separately inventoried."
+      },
+      "native_admission": {
+        "case_id": "NEP-06",
+        "samples": 2474,
+        "outputs": 27,
+        "comparisons": 54428,
+        "range_checks": 66798,
+        "business_property_count": 4,
+        "scenarios": 582,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      "construction_scope": "One maintainer construction family; prior review informed repair; not blind gold or an independent holdout."
+    },
+    {
+      "id": "NEP-07",
+      "head": "e2fd73443c59459a560775405b486624b4b082cf",
+      "tree": "a6493cc4040ec1a0f3dace09d581ad08cf425acd",
+      "business": "charge_coordination",
+      "primary_model": "Model/VcDeChg.slx",
+      "census_sha256": "d1b4475485034d99d78f4e9686df1edce8b5979328f8793e233a3e792f1a58cf",
+      "static_primary_block_types": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 126,
+        "DataStoreMemory": 1,
+        "DataStoreRead": 1,
+        "DataStoreWrite": 1,
+        "DataTypeConversion": 20,
+        "Demux": 2,
+        "EnablePort": 8,
+        "From": 44,
+        "Goto": 22,
+        "Inport": 566,
+        "Logic": 112,
+        "Outport": 209,
+        "Product": 15,
+        "Reference": 2,
+        "RelationalOperator": 74,
+        "S-Function": 2,
+        "SubSystem": 113,
+        "Sum": 16,
+        "Switch": 22,
+        "Terminator": 2,
+        "TriggerPort": 1,
+        "UnitDelay": 22
+      },
+      "native_expanded_block_types": {
+        "Inport": 567,
+        "SubSystem": 114,
+        "DataTypeConversion": 20,
+        "Demux": 2,
+        "S-Function": 3,
+        "Terminator": 2,
+        "Outport": 210,
+        "Logic": 112,
+        "TriggerPort": 1,
+        "Constant": 127,
+        "RelationalOperator": 75,
+        "From": 44,
+        "Goto": 22,
+        "Switch": 22,
+        "UnitDelay": 22,
+        "EnablePort": 8,
+        "Sum": 16,
+        "Product": 15,
+        "DataStoreMemory": 1,
+        "BusCreator": 1,
+        "DataStoreRead": 1,
+        "BusSelector": 1,
+        "DataStoreWrite": 1
+      },
+      "native_subsystems": 114,
+      "reviewed_single_responsibility_lower_bound": 109,
+      "domain_components": [
+        "ConnectionAndChargePermit",
+        "CableAndPowerCurrentLimit"
+      ],
+      "interface": {
+        "inputs": 68,
+        "outputs": 28,
+        "calibration_rows": 104,
+        "default_internal_ports": 11
+      },
+      "naming_review": {
+        "elements": 2923,
+        "ambiguous_or_empty": 132,
+        "ambiguous_fraction": 0.04515908313376668,
+        "examples": [
+          {
+            "kind": "block",
+            "path": "VcDeChg/BusinessDecision/CableAndPowerCurrentLimit/Implementation",
+            "sid": "VcDeChg:1420",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/BusinessDecision/ConnectionAndChargePermit/Implementation",
+            "sid": "VcDeChg:1401",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/DriverAndModeInputs/In13",
+            "sid": "VcDeChg:174",
+            "name": "In13"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/DriverAndModeInputs/In14",
+            "sid": "VcDeChg:213",
+            "name": "In14"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/DriverAndModeInputs/In21",
+            "sid": "VcDeChg:301",
+            "name": "In21"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/DriverAndModeInputs/ChargeEnable/ReadQuality1",
+            "sid": "VcDeChg:210",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/DriverAndModeInputs/ChargeEnable/ReadQuality2",
+            "sid": "VcDeChg:211",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/DriverAndModeInputs/CrashSignal/ReadQuality1",
+            "sid": "VcDeChg:124",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/DriverAndModeInputs/CrashSignal/ReadQuality2",
+            "sid": "VcDeChg:125",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/DriverAndModeInputs/DoorOpen/ReadQuality1",
+            "sid": "VcDeChg:167",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/DriverAndModeInputs/DoorOpen/ReadQuality2",
+            "sid": "VcDeChg:168",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/DriverAndModeInputs/GroundFault/ReadQuality1",
+            "sid": "VcDeChg:296",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/DriverAndModeInputs/GroundFault/ReadQuality2",
+            "sid": "VcDeChg:297",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/DriverAndModeInputs/HvReady/ReadQuality1",
+            "sid": "VcDeChg:81",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcDeChg/DriverAndModeInputs/HvReady/ReadQuality2",
+            "sid": "VcDeChg:82",
+            "name": "ReadQuality2"
+          }
+        ],
+        "method": "Semantic review in parent context: Raw/Age/Status/Qualified/Scale/Offset identify their role inside a named channel; ordinal root rejection/default ports, generic function wrappers and empty signals are conservatively counted as ambiguous. Native expanded counts include linked instances; source definitions are separately inventoried."
+      },
+      "native_admission": {
+        "case_id": "NEP-07",
+        "samples": 2640,
+        "outputs": 28,
+        "comparisons": 63360,
+        "range_checks": 73920,
+        "business_property_count": 9,
+        "scenarios": 620,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      "construction_scope": "One maintainer construction family; prior review informed repair; not blind gold or an independent holdout."
+    },
+    {
+      "id": "NEP-08",
+      "head": "a3946da6cca31d88979c55b6d18a64ea33225dbd",
+      "tree": "8f623f81ddb0f230caad7cf1d2c077a26c2bd441",
+      "business": "thermal_management",
+      "primary_model": "Model/VcPvcThm.slx",
+      "census_sha256": "c59a3554dade0761c0515354d796516f5b688cce5cb9c7ff2c48437e643f1de7",
+      "static_primary_block_types": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 238,
+        "DataTypeConversion": 41,
+        "Demux": 3,
+        "EnablePort": 16,
+        "From": 72,
+        "Goto": 36,
+        "Inport": 936,
+        "Logic": 183,
+        "Outport": 359,
+        "Product": 32,
+        "Reference": 1,
+        "RelationalOperator": 138,
+        "S-Function": 3,
+        "SubSystem": 189,
+        "Sum": 33,
+        "Switch": 36,
+        "Terminator": 3,
+        "TriggerPort": 1,
+        "UnitDelay": 36
+      },
+      "native_expanded_block_types": {
+        "Inport": 937,
+        "SubSystem": 190,
+        "DataTypeConversion": 41,
+        "Demux": 3,
+        "S-Function": 3,
+        "Terminator": 3,
+        "Outport": 360,
+        "Logic": 183,
+        "TriggerPort": 1,
+        "EnablePort": 16,
+        "Sum": 33,
+        "Product": 32,
+        "Constant": 239,
+        "RelationalOperator": 139,
+        "From": 72,
+        "Goto": 36,
+        "Switch": 36,
+        "UnitDelay": 36,
+        "BusCreator": 1,
+        "BusSelector": 1
+      },
+      "native_subsystems": 190,
+      "reviewed_single_responsibility_lower_bound": 184,
+      "domain_components": [
+        "BatteryCoolingLoop",
+        "MotorCoolingLoop",
+        "ThermalActuatorArbitration"
+      ],
+      "interface": {
+        "inputs": 110,
+        "outputs": 47,
+        "calibration_rows": 202,
+        "default_internal_ports": 18
+      },
+      "naming_review": {
+        "elements": 4971,
+        "ambiguous_or_empty": 207,
+        "ambiguous_fraction": 0.04164152082076041,
+        "examples": [
+          {
+            "kind": "block",
+            "path": "VcPvcThm/BusinessDecision/BatteryCoolingLoop/Implementation",
+            "sid": "VcPvcThm:2391",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcPvcThm/BusinessDecision/MotorCoolingLoop/Implementation",
+            "sid": "VcPvcThm:2403",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcPvcThm/BusinessDecision/ThermalActuatorArbitration/Implementation",
+            "sid": "VcPvcThm:2416",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcPvcThm/DriverAndModeInputs/In10",
+            "sid": "VcPvcThm:1870",
+            "name": "In10"
+          },
+          {
+            "kind": "block",
+            "path": "VcPvcThm/DriverAndModeInputs/In12",
+            "sid": "VcPvcThm:1928",
+            "name": "In12"
+          },
+          {
+            "kind": "block",
+            "path": "VcPvcThm/DriverAndModeInputs/In19",
+            "sid": "VcPvcThm:2016",
+            "name": "In19"
+          },
+          {
+            "kind": "block",
+            "path": "VcPvcThm/DriverAndModeInputs/In21",
+            "sid": "VcPvcThm:2057",
+            "name": "In21"
+          },
+          {
+            "kind": "block",
+            "path": "VcPvcThm/DriverAndModeInputs/In23",
+            "sid": "VcPvcThm:2105",
             "name": "In23"
           },
           {
             "kind": "block",
-            "sid": "1545",
+            "path": "VcPvcThm/DriverAndModeInputs/CompressorRequest/ReadQuality1",
+            "sid": "VcPvcThm:1743",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcPvcThm/DriverAndModeInputs/CompressorRequest/ReadQuality2",
+            "sid": "VcPvcThm:1744",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcPvcThm/DriverAndModeInputs/DefrostRequest/ReadQuality1",
+            "sid": "VcPvcThm:1966",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcPvcThm/DriverAndModeInputs/DefrostRequest/ReadQuality2",
+            "sid": "VcPvcThm:1967",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcPvcThm/DriverAndModeInputs/DriveEnable/ReadQuality1",
+            "sid": "VcPvcThm:2052",
+            "name": "ReadQuality1"
+          },
+          {
+            "kind": "block",
+            "path": "VcPvcThm/DriverAndModeInputs/DriveEnable/ReadQuality2",
+            "sid": "VcPvcThm:2053",
+            "name": "ReadQuality2"
+          },
+          {
+            "kind": "block",
+            "path": "VcPvcThm/DriverAndModeInputs/FanRequest/ReadQuality1",
+            "sid": "VcPvcThm:1863",
+            "name": "ReadQuality1"
+          }
+        ],
+        "method": "Semantic review in parent context: Raw/Age/Status/Qualified/Scale/Offset identify their role inside a named channel; ordinal root rejection/default ports, generic function wrappers and empty signals are conservatively counted as ambiguous. Native expanded counts include linked instances; source definitions are separately inventoried."
+      },
+      "native_admission": {
+        "case_id": "NEP-08",
+        "samples": 4696,
+        "outputs": 47,
+        "comparisons": 178448,
+        "range_checks": 220712,
+        "business_property_count": 7,
+        "scenarios": 1083,
+        "all_passed": true,
+        "max_abs_error": 0.0,
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
+      },
+      "construction_scope": "One maintainer construction family; prior review informed repair; not blind gold or an independent holdout."
+    },
+    {
+      "id": "NEP-09",
+      "head": "3b60bb33258294e6b8c6d8ba531790af4c98617d",
+      "tree": "60c1ba289ae2953e9b7984bb58339d68ed85e74e",
+      "business": "propulsion_safety",
+      "primary_model": "Model/VcSfCPropR.slx",
+      "census_sha256": "8684f169eeed1fd170a4f68c93976c4019b9fafbbeda76567867f8a5bb2cf5fc",
+      "static_primary_block_types": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "Constant": 261,
+        "DataStoreMemory": 1,
+        "DataStoreRead": 1,
+        "DataStoreWrite": 1,
+        "DataTypeConversion": 37,
+        "Demux": 2,
+        "EnablePort": 16,
+        "From": 90,
+        "Goto": 45,
+        "Inport": 1084,
+        "Logic": 227,
+        "Outport": 413,
+        "Product": 31,
+        "Reference": 2,
+        "RelationalOperator": 154,
+        "S-Function": 2,
+        "SubSystem": 222,
+        "Sum": 32,
+        "Switch": 45,
+        "Terminator": 2,
+        "TriggerPort": 1,
+        "UnitDelay": 45
+      },
+      "native_expanded_block_types": {
+        "Inport": 1085,
+        "SubSystem": 223,
+        "Demux": 2,
+        "S-Function": 3,
+        "Terminator": 2,
+        "Outport": 414,
+        "DataTypeConversion": 37,
+        "Logic": 227,
+        "TriggerPort": 1,
+        "Constant": 262,
+        "RelationalOperator": 155,
+        "From": 90,
+        "Goto": 45,
+        "Switch": 45,
+        "UnitDelay": 45,
+        "EnablePort": 16,
+        "Sum": 32,
+        "Product": 31,
+        "DataStoreMemory": 1,
+        "BusCreator": 1,
+        "DataStoreRead": 1,
+        "BusSelector": 1,
+        "DataStoreWrite": 1
+      },
+      "native_subsystems": 223,
+      "reviewed_single_responsibility_lower_bound": 217,
+      "domain_components": [
+        "IndependentTorquePlausibility",
+        "PropulsionFaultLatch"
+      ],
+      "interface": {
+        "inputs": 137,
+        "outputs": 52,
+        "calibration_rows": 216,
+        "default_internal_ports": 18
+      },
+      "naming_review": {
+        "elements": 5699,
+        "ambiguous_or_empty": 233,
+        "ambiguous_fraction": 0.040884365678189157,
+        "examples": [
+          {
+            "kind": "block",
+            "path": "VcSfCPropR/BusinessDecision/IndependentTorquePlausibility/Implementation",
+            "sid": "VcSfCPropR:2778",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcSfCPropR/BusinessDecision/PropulsionFaultLatch/Implementation",
+            "sid": "VcSfCPropR:2794",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcSfCPropR/DriverAndModeInputs/In11",
+            "sid": "VcSfCPropR:221",
+            "name": "In11"
+          },
+          {
+            "kind": "block",
+            "path": "VcSfCPropR/DriverAndModeInputs/In28",
+            "sid": "VcSfCPropR:447",
             "name": "In28"
           },
           {
             "kind": "block",
-            "sid": "1148",
-            "name": "Out4"
+            "path": "VcSfCPropR/DriverAndModeInputs/In30",
+            "sid": "VcSfCPropR:488",
+            "name": "In30"
           },
           {
             "kind": "block",
-            "sid": "1319",
-            "name": "Out10"
+            "path": "VcSfCPropR/DriverAndModeInputs/In32",
+            "sid": "VcSfCPropR:529",
+            "name": "In32"
           },
           {
             "kind": "block",
-            "sid": "1490",
-            "name": "Out16"
-          }
-        ]
-      },
-      "interface": {
-        "inputs": 110,
-        "outputs": 39,
-        "calibration_rows": 216,
-        "default_internal_ports": 196,
-        "total_ports": 1245,
-        "source": {
-          "path": "Model/interfaceVcPvcThm.xls",
-          "sha256": "99a7bd1e4c69fd25c55e3e9a04b1260dd07e62c0f105cafb3a04233bd736765d",
-          "location": "IN/OUT/MP/CAL/FIX/ChangeLog"
-        }
-      },
-      "parameter_source": "MAT-File",
-      "parameter_slots": {
-        "checked": 183,
-        "numeric_literals": 75,
-        "examples": [
-          {
-            "sid": "1045",
-            "system": "system_1035",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1044",
-            "system": "system_1035",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1102",
-            "system": "system_1092",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1101",
-            "system": "system_1092",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1159",
-            "system": "system_1149",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1158",
-            "system": "system_1149",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "129",
-            "system": "system_119",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "120",
-            "numeric_literal": true
-          },
-          {
-            "sid": "128",
-            "system": "system_119",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          }
-        ],
-        "caveat": "Counts cover Constant/Gain/lookup fields; Stateflow/MATLAB Function scripts and state constants are also manually reviewed and are not silently omitted from the judgment."
-      },
-      "native_admission": {
-        "case_id": "NEP-08",
-        "samples": 2537,
-        "outputs": 39,
-        "comparisons": 98943,
-        "scenarios": 292,
-        "max_abs_error": 0.0,
-        "all_passed": true
-      },
-      "construction_scope": "Synthetic, maintainer-designed and maintainer-adjudicated; non-blind; not an independent internal holdout.",
-      "coverage": {
-        "decision": [
-          121,
-          121
-        ],
-        "condition": [
-          1086,
-          1086
-        ],
-        "mcdc": [
-          362,
-          362
-        ],
-        "statement": []
-      },
-      "host_replay": {
-        "case_id": "NEP-08",
-        "compiler": "Explicit LCC-win64 through mex",
-        "compiled": true,
-        "executed": true,
-        "samples": 2537,
-        "outputs": 39,
-        "max_abs_error": 0,
-        "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-      }
-    },
-    {
-      "id": "NEP-09",
-      "head": "77c522c76b2d8b17004f074aea5b481faaec501f",
-      "tree": "159971055ac88273fca090d99b5613abc59fcdac",
-      "business": "推进扭矩偏差监控与故障保持",
-      "census_sha256": "dcf9f8aacd917bf46b96c01d9144318fd247629eda2efd30f6cc3c38687dc9da",
-      "block_types": {
-        "Abs": 2,
-        "Constant": 272,
-        "DataStoreMemory": 1,
-        "DataStoreRead": 1,
-        "DataStoreWrite": 1,
-        "DataTypeConversion": 1,
-        "Demux": 1,
-        "EnablePort": 23,
-        "From": 90,
-        "Goto": 45,
-        "Inport": 1144,
-        "Logic": 227,
-        "MinMax": 1,
-        "Outport": 412,
-        "Product": 45,
-        "Reference": 2,
-        "RelationalOperator": 136,
-        "S-Function": 1,
-        "SubSystem": 232,
-        "Sum": 48,
-        "Switch": 48,
-        "Terminator": 1,
-        "TriggerPort": 1,
-        "UnitDelay": 45
-      },
-      "system_xml_count": 233,
-      "native_model_update": true,
-      "hierarchy_responsibility_review": {
-        "clear_subsystems_lower_bound": 228,
-        "total_subsystems": 232,
-        "explanation": "Each channel encloses one signal-quality responsibility; its four stages separately check range/communication, qualify time, convert engineering units, and select safe fallback. The reviewed domain controller/dynamics and diagnostic snapshot have separate single responsibilities. Parent acquisition groups are excluded from the >=90% lower bound.",
-        "examples": [
-          {
-            "path": "Model/VcSfCPropR.slx",
-            "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
-            "location": "system_1033/Block[@SID='1064'] EngineeringConversion"
-          },
-          {
-            "path": "Model/VcSfCPropR.slx",
-            "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
-            "location": "system_1033/Block[@SID='1044'] RangeAndCommunication"
-          },
-          {
-            "path": "Model/VcSfCPropR.slx",
-            "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
-            "location": "system_1033/Block[@SID='1071'] SafeSubstitution"
-          },
-          {
-            "path": "Model/VcSfCPropR.slx",
-            "sha256": "aecd8c269ec9f657e92812684be7bb27134af6516188868fbd8ac87348b5fb2b",
-            "location": "system_1033/Block[@SID='1056'] TemporalQualification"
-          }
-        ]
-      },
-      "naming_review": {
-        "elements": 5208,
-        "ambiguous_or_empty": 615,
-        "ambiguous_fraction": 0.11808755760368664,
-        "classification": "Ordinal In/Out, ReadQuality, Reject, Valid, CheckInput, DomainInput and Acquisition names omit signal identity/role; classify in their actual local paths. Semantic native names otherwise agree within element classes.",
-        "examples": [
-          {
-            "kind": "block",
-            "sid": "102",
-            "name": "In2"
+            "path": "VcSfCPropR/DriverAndModeInputs/In43",
+            "sid": "VcSfCPropR:662",
+            "name": "In43"
           },
           {
             "kind": "block",
-            "sid": "1017",
-            "name": "In3"
-          },
-          {
-            "kind": "block",
-            "sid": "1080",
+            "path": "VcSfCPropR/DriverAndModeInputs/AbsActive/ReadQuality1",
+            "sid": "VcSfCPropR:483",
             "name": "ReadQuality1"
           },
           {
             "kind": "block",
-            "sid": "1081",
+            "path": "VcSfCPropR/DriverAndModeInputs/AbsActive/ReadQuality2",
+            "sid": "VcSfCPropR:484",
             "name": "ReadQuality2"
           },
           {
             "kind": "block",
-            "sid": "1050",
-            "name": "In6"
-          },
-          {
-            "kind": "block",
-            "sid": "1066",
-            "name": "In2"
-          },
-          {
-            "kind": "block",
-            "sid": "1076",
-            "name": "Out1"
-          },
-          {
-            "kind": "block",
-            "sid": "1093",
-            "name": "In3"
-          },
-          {
-            "kind": "block",
-            "sid": "1137",
+            "path": "VcSfCPropR/DriverAndModeInputs/Accelerator/ReadQuality1",
+            "sid": "VcSfCPropR:55",
             "name": "ReadQuality1"
           },
           {
             "kind": "block",
-            "sid": "1138",
+            "path": "VcSfCPropR/DriverAndModeInputs/Accelerator/ReadQuality2",
+            "sid": "VcSfCPropR:56",
             "name": "ReadQuality2"
           },
           {
             "kind": "block",
-            "sid": "1104",
-            "name": "In3"
+            "path": "VcSfCPropR/DriverAndModeInputs/AcceleratorRedundant/ReadQuality1",
+            "sid": "VcSfCPropR:115",
+            "name": "ReadQuality1"
           },
           {
             "kind": "block",
-            "sid": "1112",
-            "name": "Out1"
-          }
-        ]
-      },
-      "interface": {
-        "inputs": 137,
-        "outputs": 49,
-        "calibration_rows": 270,
-        "default_internal_ports": 209,
-        "total_ports": 1556,
-        "source": {
-          "path": "Model/interfaceVcSfCPropR.xls",
-          "sha256": "d7c698147a4da14181f199418d5dbf2bf271bfabd7b7584eb88d138de1bf8edc",
-          "location": "IN/OUT/MP/CAL/FIX/ChangeLog"
-        }
-      },
-      "parameter_source": "Model File",
-      "parameter_slots": {
-        "checked": 272,
-        "numeric_literals": 17,
-        "examples": [
-          {
-            "sid": "1157",
-            "system": "system_1147",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
+            "path": "VcSfCPropR/DriverAndModeInputs/AcceleratorRedundant/ReadQuality2",
+            "sid": "VcSfCPropR:116",
+            "name": "ReadQuality2"
           },
           {
-            "sid": "129",
-            "system": "system_119",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
+            "kind": "block",
+            "path": "VcSfCPropR/DriverAndModeInputs/BrakePressure/ReadQuality1",
+            "sid": "VcSfCPropR:175",
+            "name": "ReadQuality1"
           },
           {
-            "sid": "1328",
-            "system": "system_1318",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1501",
-            "system": "system_1491",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1672",
-            "system": "system_1662",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "1843",
-            "system": "system_1833",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "2014",
-            "system": "system_2004",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
-          },
-          {
-            "sid": "2187",
-            "system": "system_2177",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
+            "kind": "block",
+            "path": "VcSfCPropR/DriverAndModeInputs/BrakePressure/ReadQuality2",
+            "sid": "VcSfCPropR:176",
+            "name": "ReadQuality2"
           }
         ],
-        "caveat": "Counts cover Constant/Gain/lookup fields; Stateflow/MATLAB Function scripts and state constants are also manually reviewed and are not silently omitted from the judgment."
+        "method": "Semantic review in parent context: Raw/Age/Status/Qualified/Scale/Offset identify their role inside a named channel; ordinal root rejection/default ports, generic function wrappers and empty signals are conservatively counted as ambiguous. Native expanded counts include linked instances; source definitions are separately inventoried."
       },
       "native_admission": {
         "case_id": "NEP-09",
-        "samples": 3167,
-        "outputs": 49,
-        "comparisons": 155183,
-        "scenarios": 364,
+        "samples": 5493,
+        "outputs": 52,
+        "comparisons": 258171,
+        "range_checks": 285636,
+        "business_property_count": 12,
+        "scenarios": 1294,
+        "all_passed": true,
         "max_abs_error": 0.0,
-        "all_passed": true
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
       },
-      "construction_scope": "Synthetic, maintainer-designed and maintainer-adjudicated; non-blind; not an independent internal holdout.",
-      "coverage": {
-        "decision": [
-          159,
-          159
-        ],
-        "condition": [
-          1362,
-          1362
-        ],
-        "mcdc": [
-          454,
-          454
-        ],
-        "statement": []
-      },
-      "host_replay": {
-        "case_id": "NEP-09",
-        "compiler": "Explicit LCC-win64 through mex",
-        "compiled": true,
-        "executed": true,
-        "samples": 3167,
-        "outputs": 49,
-        "max_abs_error": 0,
-        "scope": "Generated production C in host MEX harness; not SIL/PIL/HIL or target ECU execution"
-      }
+      "construction_scope": "One maintainer construction family; prior review informed repair; not blind gold or an independent holdout."
     },
     {
       "id": "NEP-10",
-      "head": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
-      "tree": "97368da9731189e1e4cabec603eb0876a2393ab2",
-      "business": "多部件故障与通信监督",
-      "census_sha256": "48d2470f81b2934de470b1e91d108694993a28170212ce9d1e289521cbc82feb",
-      "block_types": {
-        "Constant": 960,
-        "From": 320,
-        "Goto": 160,
-        "Inport": 4135,
-        "Logic": 804,
-        "Outport": 1445,
-        "Product": 160,
-        "Reference": 1,
-        "RelationalOperator": 480,
-        "SubSystem": 822,
-        "Sum": 161,
-        "Switch": 160,
+      "head": "dc1dd984ecc2152bb03c7aa8f13dd83f856f6e89",
+      "tree": "e8c54ecf9b0b679ef1e6d802bdd6b124a112ab88",
+      "business": "fault_supervision",
+      "primary_model": "Model/VcSfDPropR.slx",
+      "census_sha256": "09dd6b60d1d761ede750578df79a254af6f37d0e1d333d5319618592ad81e56b",
+      "static_primary_block_types": {
+        "BusCreator": 1,
+        "BusSelector": 1,
+        "DataTypeConversion": 3,
+        "Demux": 1,
+        "Inport": 1332,
+        "Logic": 176,
+        "Outport": 527,
+        "Reference": 177,
+        "S-Function": 1,
+        "SubSystem": 20,
+        "Sum": 1,
+        "Terminator": 1,
+        "TriggerPort": 1
+      },
+      "native_expanded_block_types": {
+        "Inport": 3317,
+        "SubSystem": 373,
+        "Constant": 321,
+        "Demux": 177,
+        "S-Function": 177,
+        "Terminator": 177,
+        "Outport": 1232,
+        "DataTypeConversion": 35,
+        "Logic": 176,
         "TriggerPort": 1,
-        "UnitDelay": 160
+        "Sum": 1,
+        "RelationalOperator": 1,
+        "BusCreator": 1,
+        "BusSelector": 1
       },
-      "system_xml_count": 823,
-      "native_model_update": true,
-      "hierarchy_responsibility_review": {
-        "clear_subsystems_lower_bound": 802,
-        "total_subsystems": 822,
-        "explanation": "Each channel encloses one signal-quality responsibility; its four stages separately check range/communication, qualify time, convert engineering units, and select safe fallback. The reviewed domain controller/dynamics and diagnostic snapshot have separate single responsibilities. Parent acquisition groups are excluded from the >=90% lower bound.",
-        "examples": [
-          {
-            "path": "Model/VcSfDPropR.slx",
-            "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
-            "location": "system_1035/Block[@SID='1066'] EngineeringConversion"
-          },
-          {
-            "path": "Model/VcSfDPropR.slx",
-            "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
-            "location": "system_1035/Block[@SID='1046'] RangeAndCommunication"
-          },
-          {
-            "path": "Model/VcSfDPropR.slx",
-            "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
-            "location": "system_1035/Block[@SID='1073'] SafeSubstitution"
-          },
-          {
-            "path": "Model/VcSfDPropR.slx",
-            "sha256": "3d2b8a257c7c5a19c762af4093ceed2263e04a07d2c3d6872e6cf478bec41e9f",
-            "location": "system_1035/Block[@SID='1058'] TemporalQualification"
-          }
-        ]
-      },
-      "naming_review": {
-        "elements": 18392,
-        "ambiguous_or_empty": 2321,
-        "ambiguous_fraction": 0.12619617224880383,
-        "classification": "Ordinal In/Out, ReadQuality, Reject, Valid, CheckInput, DomainInput and Acquisition names omit signal identity/role; classify in their actual local paths. Semantic native names otherwise agree within element classes.",
-        "examples": [
-          {
-            "kind": "block",
-            "sid": "1019",
-            "name": "In3"
-          },
-          {
-            "kind": "block",
-            "sid": "1039",
-            "name": "In4"
-          },
-          {
-            "kind": "block",
-            "sid": "1082",
-            "name": "ReadQuality1"
-          },
-          {
-            "kind": "block",
-            "sid": "1083",
-            "name": "ReadQuality2"
-          },
-          {
-            "kind": "block",
-            "sid": "1049",
-            "name": "In3"
-          },
-          {
-            "kind": "block",
-            "sid": "1057",
-            "name": "Out1"
-          },
-          {
-            "kind": "block",
-            "sid": "1076",
-            "name": "In3"
-          },
-          {
-            "kind": "block",
-            "sid": "1096",
-            "name": "In4"
-          },
-          {
-            "kind": "block",
-            "sid": "1139",
-            "name": "ReadQuality1"
-          },
-          {
-            "kind": "block",
-            "sid": "1140",
-            "name": "ReadQuality2"
-          },
-          {
-            "kind": "block",
-            "sid": "1106",
-            "name": "In3"
-          },
-          {
-            "kind": "block",
-            "sid": "1114",
-            "name": "Out1"
-          }
-        ]
-      },
+      "native_subsystems": 373,
+      "reviewed_single_responsibility_lower_bound": 356,
+      "domain_components": [
+        "BatterySupervision",
+        "FrontMotorSupervision",
+        "RearMotorSupervision",
+        "FrontInverterSupervision",
+        "RearInverterSupervision",
+        "ChargerSupervision",
+        "DcDcSupervision",
+        "BrakeSupervision",
+        "SteeringSupervision",
+        "ThermalSupervision",
+        "CoolantPumpSupervision",
+        "RadiatorFanSupervision",
+        "CabinHeaterSupervision",
+        "CompressorSupervision",
+        "ContactorSupervision",
+        "GatewaySupervision",
+        "FaultSeverityAggregation"
+      ],
       "interface": {
         "inputs": 482,
-        "outputs": 163,
-        "calibration_rows": 960,
-        "default_internal_ports": 886,
-        "total_ports": 5580,
-        "source": {
-          "path": "Model/interfaceVcSfDPropR.xls",
-          "sha256": "c1224fa691796b1125d2654dd79159586d4eba88c0e832ccaff5fe16f7ffe4bd",
-          "location": "IN/OUT/MP/CAL/FIX/ChangeLog"
-        }
+        "outputs": 181,
+        "calibration_rows": 320,
+        "default_internal_ports": 80
       },
-      "parameter_source": "MAT-File",
-      "parameter_slots": {
-        "checked": 688,
-        "numeric_literals": 208,
+      "naming_review": {
+        "elements": 9219,
+        "ambiguous_or_empty": 456,
+        "ambiguous_fraction": 0.04946306540839571,
         "examples": [
           {
-            "sid": "1044",
-            "system": "system_1035",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
+            "kind": "block",
+            "path": "VcSfDPropR/BatteryStatus/In10",
+            "sid": "VcSfDPropR:32",
+            "name": "In10"
           },
           {
-            "sid": "1102",
-            "system": "system_1092",
-            "block": "Fallback",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
+            "kind": "block",
+            "path": "VcSfDPropR/BatteryStatus/In12",
+            "sid": "VcSfDPropR:40",
+            "name": "In12"
           },
           {
-            "sid": "1101",
-            "system": "system_1092",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
+            "kind": "block",
+            "path": "VcSfDPropR/BatteryStatus/In14",
+            "sid": "VcSfDPropR:48",
+            "name": "In14"
           },
           {
-            "sid": "1158",
-            "system": "system_1149",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
+            "kind": "block",
+            "path": "VcSfDPropR/BatteryStatus/In28",
+            "sid": "VcSfDPropR:92",
+            "name": "In28"
           },
           {
-            "sid": "128",
-            "system": "system_119",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
+            "kind": "block",
+            "path": "VcSfDPropR/BatteryStatus/In30",
+            "sid": "VcSfDPropR:100",
+            "name": "In30"
           },
           {
-            "sid": "1215",
-            "system": "system_1206",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
+            "kind": "block",
+            "path": "VcSfDPropR/BrakeStatus/In2",
+            "sid": "VcSfDPropR:722",
+            "name": "In2"
           },
           {
-            "sid": "1272",
-            "system": "system_1263",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
+            "kind": "block",
+            "path": "VcSfDPropR/BrakeStatus/In16",
+            "sid": "VcSfDPropR:766",
+            "name": "In16"
           },
           {
-            "sid": "1329",
-            "system": "system_1320",
-            "block": "Offset",
-            "field": "Value",
-            "value": "0",
-            "numeric_literal": true
+            "kind": "block",
+            "path": "VcSfDPropR/BrakeStatus/In18",
+            "sid": "VcSfDPropR:774",
+            "name": "In18"
+          },
+          {
+            "kind": "block",
+            "path": "VcSfDPropR/BrakeStatus/In20",
+            "sid": "VcSfDPropR:782",
+            "name": "In20"
+          },
+          {
+            "kind": "block",
+            "path": "VcSfDPropR/BusinessDecision/BatterySupervision/Implementation",
+            "sid": "VcSfDPropR:2703:12",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcSfDPropR/BusinessDecision/BrakeSupervision/Implementation",
+            "sid": "VcSfDPropR:2717:12",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcSfDPropR/BusinessDecision/CabinHeaterSupervision/Implementation",
+            "sid": "VcSfDPropR:2727:12",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcSfDPropR/BusinessDecision/ChargerSupervision/Implementation",
+            "sid": "VcSfDPropR:2713:12",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcSfDPropR/BusinessDecision/CompressorSupervision/Implementation",
+            "sid": "VcSfDPropR:2729:12",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcSfDPropR/BusinessDecision/ContactorSupervision/Implementation",
+            "sid": "VcSfDPropR:2731:12",
+            "name": "Implementation"
           }
         ],
-        "caveat": "Counts cover Constant/Gain/lookup fields; Stateflow/MATLAB Function scripts and state constants are also manually reviewed and are not silently omitted from the judgment."
+        "method": "Semantic review in parent context: Raw/Age/Status/Qualified/Scale/Offset identify their role inside a named channel; ordinal root rejection/default ports, generic function wrappers and empty signals are conservatively counted as ambiguous. Native expanded counts include linked instances; source definitions are separately inventoried."
       },
       "native_admission": {
         "case_id": "NEP-10",
-        "samples": 11217,
-        "outputs": 163,
-        "comparisons": 1828371,
-        "scenarios": 1284,
+        "samples": 16433,
+        "outputs": 181,
+        "comparisons": 2662146,
+        "range_checks": 2974373,
+        "business_property_count": 25,
+        "scenarios": 3869,
+        "all_passed": true,
         "max_abs_error": 0.0,
-        "all_passed": true
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": false
       },
-      "construction_scope": "Synthetic, maintainer-designed and maintainer-adjudicated; non-blind; not an independent internal holdout."
+      "construction_scope": "One maintainer construction family; prior review informed repair; not blind gold or an independent holdout."
     },
     {
       "id": "NEP-11",
-      "head": "a44a6d59be5b76a9119764ef3cec3947901e042f",
-      "tree": "003d08fd5ff91a0dbeb26af55795d32bb269798a",
-      "business": "高压预充、合闸、故障保持与复位",
-      "census_sha256": "6aa224c1ca0648f368c37ea3b97b3141ac6a2a1dfeceb5ed64347d7e3e38b152",
-      "block_types": {
-        "Constant": 48,
+      "head": "27f0538f1d71375e12b02efd470b3e35586fda52",
+      "tree": "4e67d63c19742b1c62c0dacae3a765807203bf32",
+      "business": "high_voltage_sequence",
+      "primary_model": "Model/VcScHv.slx",
+      "census_sha256": "a703f01c26d31e380cd93e107564524850bbc915df0db7be165803f690558fb2",
+      "static_primary_block_types": {
+        "Constant": 36,
+        "DataTypeConversion": 7,
         "Demux": 1,
-        "Inport": 225,
+        "Inport": 203,
         "Logic": 41,
-        "Outport": 76,
-        "Product": 8,
+        "Outport": 84,
+        "Product": 3,
         "Reference": 1,
-        "RelationalOperator": 24,
+        "RelationalOperator": 22,
         "S-Function": 1,
-        "SubSystem": 46,
-        "Sum": 9,
+        "SubSystem": 40,
+        "Sum": 4,
         "Switch": 8,
         "Terminator": 2,
         "UnitDelay": 8
       },
-      "system_xml_count": 47,
-      "native_model_update": true,
-      "hierarchy_responsibility_review": {
-        "clear_subsystems_lower_bound": 42,
-        "total_subsystems": 46,
-        "explanation": "Each channel encloses one signal-quality responsibility; its four stages separately check range/communication, qualify time, convert engineering units, and select safe fallback. The reviewed domain controller/dynamics and diagnostic snapshot have separate single responsibilities. Parent acquisition groups are excluded from the >=90% lower bound.",
-        "examples": [
-          {
-            "path": "Model/VcScHv.slx",
-            "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
-            "location": "system_115/Block[@SID='146'] EngineeringConversion"
-          },
-          {
-            "path": "Model/VcScHv.slx",
-            "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
-            "location": "system_115/Block[@SID='126'] RangeAndCommunication"
-          },
-          {
-            "path": "Model/VcScHv.slx",
-            "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
-            "location": "system_115/Block[@SID='153'] SafeSubstitution"
-          },
-          {
-            "path": "Model/VcScHv.slx",
-            "sha256": "bb9b031181817ec8527e54ed1bbd823a9c3b43699c14970f90bd892af4901506",
-            "location": "system_115/Block[@SID='138'] TemporalQualification"
-          }
-        ]
+      "native_expanded_block_types": {
+        "Inport": 204,
+        "SubSystem": 41,
+        "DataTypeConversion": 7,
+        "Demux": 1,
+        "S-Function": 1,
+        "Terminator": 2,
+        "Outport": 85,
+        "Logic": 41,
+        "Constant": 37,
+        "RelationalOperator": 23,
+        "Switch": 8,
+        "UnitDelay": 8,
+        "Sum": 4,
+        "Product": 3
       },
-      "naming_review": {
-        "elements": 939,
-        "ambiguous_or_empty": 110,
-        "ambiguous_fraction": 0.11714589989350373,
-        "classification": "Ordinal In/Out, ReadQuality, Reject, Valid, CheckInput, DomainInput and Acquisition names omit signal identity/role; classify in their actual local paths. Semantic native names otherwise agree within element classes.",
-        "examples": [
-          {
-            "kind": "block",
-            "sid": "166",
-            "name": "In4"
-          },
-          {
-            "kind": "block",
-            "sid": "221",
-            "name": "Out3"
-          },
-          {
-            "kind": "block",
-            "sid": "118",
-            "name": "In3"
-          },
-          {
-            "kind": "block",
-            "sid": "130",
-            "name": "In4"
-          },
-          {
-            "kind": "block",
-            "sid": "152",
-            "name": "Out1"
-          },
-          {
-            "kind": "block",
-            "sid": "17",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "186",
-            "name": "In6"
-          },
-          {
-            "kind": "block",
-            "sid": "201",
-            "name": "In1"
-          },
-          {
-            "kind": "block",
-            "sid": "276",
-            "name": "In4"
-          },
-          {
-            "kind": "block",
-            "sid": "328",
-            "name": "In6"
-          },
-          {
-            "kind": "block",
-            "sid": "331",
-            "name": "Out3"
-          },
-          {
-            "kind": "block",
-            "sid": "242",
-            "name": "In6"
-          }
-        ]
-      },
+      "native_subsystems": 41,
+      "reviewed_single_responsibility_lower_bound": 38,
+      "domain_components": [
+        "HighVoltageSequencer"
+      ],
       "interface": {
         "inputs": 26,
-        "outputs": 10,
-        "calibration_rows": 48,
-        "default_internal_ports": 33,
-        "total_ports": 301,
-        "source": {
-          "path": "Model/interfaceVcScHv.xls",
-          "sha256": "324b453758ea18d88b927c84ba1d503c3909ece85b70aa73ee64b64751157882",
-          "location": "IN/OUT/MP/CAL/FIX/ChangeLog"
-        }
+        "outputs": 13,
+        "calibration_rows": 28,
+        "default_internal_ports": 3
       },
-      "parameter_source": "Model File",
-      "parameter_slots": {
-        "checked": 48,
-        "numeric_literals": 0,
-        "examples": [],
-        "caveat": "Counts cover Constant/Gain/lookup fields; Stateflow/MATLAB Function scripts and state constants are also manually reviewed and are not silently omitted from the judgment."
+      "naming_review": {
+        "elements": 995,
+        "ambiguous_or_empty": 36,
+        "ambiguous_fraction": 0.036180904522613064,
+        "examples": [
+          {
+            "kind": "block",
+            "path": "VcScHv/BusinessDecision/HighVoltageSequencer/Implementation",
+            "sid": "VcScHv:464",
+            "name": "Implementation"
+          },
+          {
+            "kind": "block",
+            "path": "VcScHv/DriverAndModeInputs/In7",
+            "sid": "VcScHv:255",
+            "name": "In7"
+          },
+          {
+            "kind": "block",
+            "path": "VcScHv/DriverAndModeInputs/In9",
+            "sid": "VcScHv:293",
+            "name": "In9"
+          },
+          {
+            "kind": "block",
+            "path": "VcScHv/DriverAndModeInputs/In11",
+            "sid": "VcScHv:331",
+            "name": "In11"
+          },
+          {
+            "kind": "block",
+            "path": "VcScHv/Reject1",
+            "sid": "VcScHv:387",
+            "name": "Reject1"
+          },
+          {
+            "kind": "block",
+            "path": "VcScHv/Reject2",
+            "sid": "VcScHv:388",
+            "name": "Reject2"
+          },
+          {
+            "kind": "block",
+            "path": "VcScHv/Reject3",
+            "sid": "VcScHv:389",
+            "name": "Reject3"
+          },
+          {
+            "kind": "block",
+            "path": "VcScHv/Reject4",
+            "sid": "VcScHv:390",
+            "name": "Reject4"
+          },
+          {
+            "kind": "block",
+            "path": "VcScHv/Reject5",
+            "sid": "VcScHv:391",
+            "name": "Reject5"
+          },
+          {
+            "kind": "block",
+            "path": "VcScHv/Reject6",
+            "sid": "VcScHv:392",
+            "name": "Reject6"
+          },
+          {
+            "kind": "block",
+            "path": "VcScHv/Reject7",
+            "sid": "VcScHv:393",
+            "name": "Reject7"
+          },
+          {
+            "kind": "block",
+            "path": "VcScHv/Reject8",
+            "sid": "VcScHv:394",
+            "name": "Reject8"
+          },
+          {
+            "kind": "line",
+            "parent": "VcScHv/BusinessDecision/HighVoltageSequencer/Implementation",
+            "name": ""
+          },
+          {
+            "kind": "line",
+            "parent": "VcScHv/BusinessDecision/HighVoltageSequencer/Implementation",
+            "name": ""
+          },
+          {
+            "kind": "line",
+            "parent": "VcScHv/BusinessDecision/HighVoltageSequencer/Implementation",
+            "name": ""
+          }
+        ],
+        "method": "Semantic review in parent context: Raw/Age/Status/Qualified/Scale/Offset identify their role inside a named channel; ordinal root rejection/default ports, generic function wrappers and empty signals are conservatively counted as ambiguous. Native expanded counts include linked instances; source definitions are separately inventoried."
       },
       "native_admission": {
         "case_id": "NEP-11",
-        "samples": 702,
-        "outputs": 10,
-        "comparisons": 7020,
-        "scenarios": 76,
+        "samples": 1270,
+        "outputs": 13,
+        "comparisons": 11430,
+        "range_checks": 16510,
+        "business_property_count": 7,
+        "scenarios": 273,
+        "all_passed": true,
         "max_abs_error": 0.0,
-        "all_passed": true
+        "oracle_scope": "Independent channel qualification/conversion/capture calculation plus explicit business point and temporal properties. Unconstrained business outputs are measured, not labelled independently expected.",
+        "owned_tests": true
       },
-      "construction_scope": "Synthetic, maintainer-designed and maintainer-adjudicated; non-blind; not an independent internal holdout."
+      "construction_scope": "One maintainer construction family; prior review informed repair; not blind gold or an independent holdout."
     }
   ]
 }

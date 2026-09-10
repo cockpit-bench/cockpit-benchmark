@@ -29,11 +29,11 @@
       "status": "verified_local",
       "manifest": {
         "path": "suites/new-energy-matlab/cohorts/reality-proxy-20260910/manifest.json",
-        "sha256": "eb18e6c9052d09cbab04ca7bb0f44d44023ce8d441eedc2d80e009357804fb5b"
+        "sha256": "ddaed0949885d8e46584784af21c0762325612edafe3dcd22eec15dc2c8e1bed"
       },
       "canonical_scores": {
         "path": "suites/new-energy-matlab/cohorts/reality-proxy-20260910/STANDARD_SCORES.json",
-        "sha256": "d0cf30efe528077cad612954e641619013057613b20ab14b45ce31341fc53e04"
+        "sha256": "538c95b3bd1e4e6627ed398c2a450a2f0b332a956e3a8b1e75ed2e4d3142545f"
       },
       "contract": {
         "path": "suites/new-energy-matlab/cohorts/reality-proxy-20260910/contract-index.json",
