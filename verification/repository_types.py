@@ -50,7 +50,11 @@ def validate(wrapper,require_publishable=False):
         if 'cohorts' in entry:
             require(entry['id']=='new-energy-matlab','Cohort catalogue belongs to New Energy MATLAB')
             from ne_reality import validate_catalog
-            validate_catalog(wrapper,bound(wrapper,entry['cohorts']))
+            cohort_path=bound(wrapper,entry['cohorts'])
+            validate_catalog(wrapper,cohort_path)
+            if require_publishable:
+                require(all(c['status']=='published' for c in read(cohort_path)['cohorts']),
+                        'An unpublished local cohort is included; wrapper is not wholly publishable')
         type_id=entry['id'];name,technology,leaves,maximum=TYPES[type_id]
         require(entry['name']==name and entry['technology']==technology,'Business type/technology mismatch')
         require(entry['status'] in {'verified_local','published'},'Unverified type cannot be admitted')

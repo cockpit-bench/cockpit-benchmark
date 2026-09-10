@@ -25,6 +25,14 @@ class TypeRegistryTests(unittest.TestCase):
         self.assertEqual([s['repository_count'] for s in r['suites']],[11,11,11])
         self.assertEqual([s['leaf_count'] for s in r['suites']],[88,121,143])
         self.assertEqual([s['published_repositories'] for s in r['suites']],[11,11,11])
+        if any('cohorts' in entry for entry in r['suites']):
+            with self.assertRaisesRegex(suites.InvalidSuite,'unpublished local cohort'):
+                rt.validate(self.root,True)
+        else:self.assertEqual(rt.validate(self.root,True)['integration_status'],'published')
+    def test_legacy_registry_remains_publishable_without_local_cohort(self):
+        r=self.registry()
+        for entry in r['suites']:entry.pop('cohorts',None)
+        self.save(r)
         self.assertEqual(rt.validate(self.root,True)['integration_status'],'published')
     def test_no_combined_score_or_generic_matlab_type(self):
         r=self.registry();r['score']=999;self.save(r)
