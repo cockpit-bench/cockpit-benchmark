@@ -26,10 +26,10 @@
     {
       "id": "reality-proxy-20260910",
       "role": "new model-centered synthetic reality proxies",
-      "status": "verified_local",
+      "status": "published",
       "manifest": {
         "path": "suites/new-energy-matlab/cohorts/reality-proxy-20260910/manifest.json",
-        "sha256": "ddaed0949885d8e46584784af21c0762325612edafe3dcd22eec15dc2c8e1bed"
+        "sha256": "501802f32c9b94c47564e41ce018e4421bfe3660a751552199ce8f22b53f49ee"
       },
       "canonical_scores": {
         "path": "suites/new-energy-matlab/cohorts/reality-proxy-20260910/STANDARD_SCORES.json",

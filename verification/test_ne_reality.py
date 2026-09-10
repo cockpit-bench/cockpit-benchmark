@@ -1,9 +1,29 @@
 import copy,json,tempfile,unittest,shutil
 from pathlib import Path
 import ne_reality as ne
+from unittest.mock import patch
 
 WRAPPER=Path(__file__).resolve().parents[1]
 class RealityTests(unittest.TestCase):
+    def test_public_restore_rejects_local_source_before_side_effects(self):
+        manifest={'repositories':[{'name':'VcExample','publication_status':'local-only'}]}
+        target=self.root/'must-not-exist'
+        with patch.object(ne.bundle_restore.subprocess,'run') as call:
+            with self.assertRaises(AssertionError):ne.bundle_restore.restore_public(manifest,target)
+            call.assert_not_called()
+        self.assertFalse(target.exists())
+    def test_public_restore_rejects_wrong_owner_before_side_effects(self):
+        row={'name':'VcExample','publication_status':'published','repository_url':'https://github.com/other/VcExample.git'}
+        with self.assertRaises(AssertionError):ne.bundle_restore.public_source_url(row)
+    def test_public_restore_validates_all_sources_before_creating_destination(self):
+        good={'name':'VcExample','publication_status':'published','repository_url':'https://github.com/cockpit-bench/VcExample.git','group':'VCU_PROP/NEC_PROP'}
+        bad=dict(good,publication_status='local-only');target=self.root/'not-created'
+        with self.assertRaises(AssertionError):ne.bundle_restore.restore_public({'repositories':[good,bad]},target)
+        self.assertFalse(target.exists())
+    def test_candidate_missing_source_rejected_before_output_creation(self):
+        target=self.root/'candidate'
+        with self.assertRaisesRegex(ValueError,'source-root'):ne.candidate(self.root,None,'NEP-01',target)
+        self.assertFalse(target.exists())
     def test_primary_model_is_not_alphabetical_library(self):
         row={'name':'VcSfDPropR','models':{'Model/FaultComponentLibrary.slx':{'library':True},'Model/VcSfDPropR.slx':{'library':False}}}
         path,model=ne.census.primary_model(row)

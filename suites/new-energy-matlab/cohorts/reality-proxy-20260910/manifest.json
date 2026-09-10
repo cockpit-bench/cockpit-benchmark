@@ -28,8 +28,8 @@
         "refs/tags/VcVcuInD_11.2.1_3": "19a3f53193e43022fb5a01721ddb7d3caf0802cf",
         "refs/tags/VcVcuInD_12.0.0_0": "a4e15a942dade572a5151aa30d685b504872db0d"
       },
-      "publication_status": "local-only",
-      "repository_url": null,
+      "publication_status": "published",
+      "repository_url": "https://github.com/cockpit-bench/VcVcuInD.git",
       "proposed_repository_url": "https://github.com/cockpit-bench/VcVcuInD.git",
       "bundle": {
         "path": "bundles/VcVcuInD.bundle",
@@ -108,8 +108,8 @@
         "refs/tags/VcVcuOutQM_11.2.1_6": "1421cc8d9e28c3f6ff69936be80ad145ebeff89e",
         "refs/tags/VcVcuOutQM_12.0.0_0": "14f7611196396e9ad87543f6a58b2f2bcc4c176a"
       },
-      "publication_status": "local-only",
-      "repository_url": null,
+      "publication_status": "published",
+      "repository_url": "https://github.com/cockpit-bench/VcVcuOutQM.git",
       "proposed_repository_url": "https://github.com/cockpit-bench/VcVcuOutQM.git",
       "bundle": {
         "path": "bundles/VcVcuOutQM.bundle",
@@ -177,8 +177,8 @@
         "refs/tags/VcVmcTrq_11.2.1_3": "e30852f72ef5d34cc6320304ee41094e37f2bd3f",
         "refs/tags/VcVmcTrq_12.0.0_0": "1e3a4c18dd2c34eadfa471cda5eafa83f052a3f8"
       },
-      "publication_status": "local-only",
-      "repository_url": null,
+      "publication_status": "published",
+      "repository_url": "https://github.com/cockpit-bench/VcVmcTrq.git",
       "proposed_repository_url": "https://github.com/cockpit-bench/VcVmcTrq.git",
       "bundle": {
         "path": "bundles/VcVmcTrq.bundle",
@@ -245,8 +245,8 @@
         "refs/tags/VcErcRgn_11.2.1_2": "8ac4146fb90f5c215287482a81df25bc806d8cac",
         "refs/tags/VcErcRgn_12.0.0_0": "f63a19ab8f6c5c60ff1a688b52f0b880f2d39a1a"
       },
-      "publication_status": "local-only",
-      "repository_url": null,
+      "publication_status": "published",
+      "repository_url": "https://github.com/cockpit-bench/VcErcRgn.git",
       "proposed_repository_url": "https://github.com/cockpit-bench/VcErcRgn.git",
       "bundle": {
         "path": "bundles/VcErcRgn.bundle",
@@ -308,8 +308,8 @@
         "refs/tags/VcDmcDrv_11.2.1_0": "0e036d8fa574e0f234ee4f426efa0e0841396bfc",
         "refs/tags/VcDmcDrv_12.0.0_0": "e9aa6ef9c1ee35f12e07e2b312198ff909c6b367"
       },
-      "publication_status": "local-only",
-      "repository_url": null,
+      "publication_status": "published",
+      "repository_url": "https://github.com/cockpit-bench/VcDmcDrv.git",
       "proposed_repository_url": "https://github.com/cockpit-bench/VcDmcDrv.git",
       "bundle": {
         "path": "bundles/VcDmcDrv.bundle",
@@ -354,8 +354,8 @@
         "refs/tags/VcWrcWhl_11.2.1_1": "d08e35118ca38aa5df576fab9d5a000d19b1289c",
         "refs/tags/VcWrcWhl_12.0.0_0": "ff6617b08f6eaf28705e7502b02cf292686b72a6"
       },
-      "publication_status": "local-only",
-      "repository_url": null,
+      "publication_status": "published",
+      "repository_url": "https://github.com/cockpit-bench/VcWrcWhl.git",
       "proposed_repository_url": "https://github.com/cockpit-bench/VcWrcWhl.git",
       "bundle": {
         "path": "bundles/VcWrcWhl.bundle",
@@ -421,8 +421,8 @@
         "refs/tags/VcDeChg_11.2.1_4": "9166afdbe8f0d54fd9133d62dd40fe350f54e3b1",
         "refs/tags/VcDeChg_12.0.0_0": "b126ab1f73f779c6013ce413455c8cf1d492f296"
       },
-      "publication_status": "local-only",
-      "repository_url": null,
+      "publication_status": "published",
+      "repository_url": "https://github.com/cockpit-bench/VcDeChg.git",
       "proposed_repository_url": "https://github.com/cockpit-bench/VcDeChg.git",
       "bundle": {
         "path": "bundles/VcDeChg.bundle",
@@ -498,8 +498,8 @@
         "refs/tags/VcPvcThm_11.2.1_9": "ceea69c63804b205dfd9a58456b979dd67e5893e",
         "refs/tags/VcPvcThm_12.0.0_0": "0e15b1e8b3e9ebec9c0794ebfa43f2931e0751d5"
       },
-      "publication_status": "local-only",
-      "repository_url": null,
+      "publication_status": "published",
+      "repository_url": "https://github.com/cockpit-bench/VcPvcThm.git",
       "proposed_repository_url": "https://github.com/cockpit-bench/VcPvcThm.git",
       "bundle": {
         "path": "bundles/VcPvcThm.bundle",
@@ -635,8 +635,8 @@
         "refs/tags/VcSfCPropR_11.2.1_9": "d317435c5bc27ea1d69c24f2111a5d304a9d1978",
         "refs/tags/VcSfCPropR_12.0.0_0": "1b52ae0448dec775c784f397fcfa62a0ae4d24ee"
       },
-      "publication_status": "local-only",
-      "repository_url": null,
+      "publication_status": "published",
+      "repository_url": "https://github.com/cockpit-bench/VcSfCPropR.git",
       "proposed_repository_url": "https://github.com/cockpit-bench/VcSfCPropR.git",
       "bundle": {
         "path": "bundles/VcSfCPropR.bundle",
@@ -710,8 +710,8 @@
         "refs/tags/VcSfDPropR_11.2.1_3": "94b5875517dccd86def2467f3a2742945afb7779",
         "refs/tags/VcSfDPropR_12.0.0_0": "98f3daf9c9ca215fad5f24516cee36f2009059eb"
       },
-      "publication_status": "local-only",
-      "repository_url": null,
+      "publication_status": "published",
+      "repository_url": "https://github.com/cockpit-bench/VcSfDPropR.git",
       "proposed_repository_url": "https://github.com/cockpit-bench/VcSfDPropR.git",
       "bundle": {
         "path": "bundles/VcSfDPropR.bundle",
@@ -758,8 +758,8 @@
         "refs/tags/VcScHv_11.2.1_1": "1446c587dcb3058b142b6b53404e97070262e656",
         "refs/tags/VcScHv_12.0.0_0": "bda3e4de01433bb20bf81cecd36e746ee75bf6c6"
       },
-      "publication_status": "local-only",
-      "repository_url": null,
+      "publication_status": "published",
+      "repository_url": "https://github.com/cockpit-bench/VcScHv.git",
       "proposed_repository_url": "https://github.com/cockpit-bench/VcScHv.git",
       "bundle": {
         "path": "bundles/VcScHv.bundle",
@@ -794,6 +794,6 @@
       "repair_version": "12.0.0_0"
     }
   ],
-  "status": "local-only",
+  "status": "published",
   "revision": "six-issue-repair-20260910"
 }

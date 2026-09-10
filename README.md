@@ -1,18 +1,20 @@
-## 新能源现实代理组（本地，2026-09-10）
+## v0.11.0：新能源现实代理11仓发布
 
-新增11个可运行的Vc*现实代理仓，依据用户提供的内部36仓扫描汇总重建模型、XLS接口及工程材料。新组与原新能源11仓联调组并存、合同和统计独立；APP/FW保持。形态对齐、真实执行和限制见 [重建交付](docs/NE_REALITY_REBUILD_20260910.md)，入口为 [新能源分组目录](suites/new-energy-matlab/cohorts.json)。新组尚未公开，旧默认恢复/评测仍兼容原33仓；新组使用 `verification/ne_reality.py`。
+新增公开11个Vc*模型仓，六项业务/类型/测试/变更记录问题已修复。当前公开44仓：APP11、FW11、新能源22；新能源旧联调组与新现实代理组各11仓，合同和分数分别报告。新组143叶409/671；原33仓及四个私有预留仓保持。见[现实代理入口与验证](docs/NE_REALITY_REBUILD_20260910.md)。
+
+新11仓：`python verification/ne_reality.py restore --destination <目录> --output <回执.json>`。旧默认恢复/评测继续兼容原33仓。
 
 # Benchmark — APP, FW and New Energy MATLAB
 
 [suites.json](suites.json) is the current registry. APP and FW are independent repository types; New Energy MATLAB identifies the business domain. MATLAB/Simulink is technology metadata, not a generic business type. Future MATLAB repositories from other centers require their own business classification.
 
-| Repository type | Published repositories / leaves | Score | Published sources |
+| Legacy integration repository type | Published repositories / leaves | Score | Published sources |
 |---|---:|---:|---:|
 | [APP](suites/app/SCORECARD.md) | 11 / 88 | 142 / 440 | 11 |
 | [FW](suites/fw/SCORECARD.md) | 11 / 121 | 194 / 572 | 11 |
 | [New Energy MATLAB](suites/new-energy-matlab/SCORECARD.md) | 11 / 143 | 142 scored; 1 unresolved; total null | 11 |
 
-Version **v0.10.3** repairs scoring guards and candidate SDK inputs over the same 33 public sources. NEM-11 hierarchy changes 1→3; its parameter reference changes 3→failed/null while the approved contract stays unchanged. The other 350 leaf values and all source HEADs/trees/refs remain unchanged. New Energy has 142 scored leaves totaling 426/666, plus one unresolved leaf worth 5; its full total is null. The old 22 pending slots and unpublished reserved material remain outside this release. See [changes, evidence and remaining limits](docs/REVIEW_V0103.md).
+The retained **v0.10.3** baseline repairs scoring guards and candidate SDK inputs over the same 33 public sources. NEM-11 hierarchy changes 1→3; its parameter reference changes 3→failed/null while the approved contract stays unchanged. The other 350 leaf values and all source HEADs/trees/refs remain unchanged. New Energy has 142 scored leaves totaling 426/666, plus one unresolved leaf worth 5; its full total is null. The old 22 pending slots and unpublished reserved material remain outside this release. See [changes, evidence and remaining limits](docs/REVIEW_V0103.md).
 
 See [the six business profiles, evidence and limits](docs/EXPANSION_20260909.md). The approved contracts are unchanged: [APP/FW v3.5.1](SCORE_RULES.md) and [the independent MATLAB effective contract](suites/matlab-simulink/EFFECTIVE_CONTRACT.md). New scores are observed outcomes, not construction targets. This is a development/regression collection, not an independent holdout or measured model accuracy.
 

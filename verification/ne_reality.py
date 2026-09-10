@@ -32,6 +32,8 @@ def load(wrapper):
     require(len(sources)==len(manifest['repositories'])==len(gold['repositories'])==len(observations['repositories'])==11,'Duplicate/wrong repository count')
     require(set(sources)==set(refs)==set(obs)=={f'NEP-{i:02d}' for i in range(1,12)},'Wrong frozen repository set')
     for rid,source in sources.items():
+        require(source.get('publication_status') in {'local-only','published'},'Invalid publication state')
+        if source['publication_status']=='published':bundle_restore.public_source_url(source)
         ref=refs[rid]['reference'];require(refs[rid]['head']==ref['head']==obs[rid]['head']==source['head'],'Stale source/reference binding')
         require(refs[rid]['name']==ref['name']==source['name'],'Name mismatch')
         require(set(ref['scores'])==set(ref['leaves'])==set(leaves),'Missing/extra reference leaf')
@@ -54,7 +56,9 @@ def validate_catalog(wrapper,path=None):
     require({x['id'] for x in catalog['cohorts']}=={'legacy-integration',COHORT} and len(catalog['cohorts'])==2,'Cohorts must remain separate')
     for entry in catalog['cohorts']:
         for key in ['manifest','canonical_scores','contract']:bound(wrapper,entry[key])
-    load(wrapper)
+    _,_,manifest,_,_=load(wrapper)
+    current=next(c for c in catalog['cohorts'] if c['id']==COHORT)
+    if current['status']=='published':require(all(s['publication_status']=='published' for s in manifest['repositories']),'Published cohort contains a local source')
     return {'cohorts':2,'repository_type':'new-energy-matlab','new_cohort_repositories':11,'new_cohort_leaves':143,'legacy_bindings_verified':True}
 
 def check_split(wrapper,assignments):
@@ -73,10 +77,18 @@ def replay(wrapper,source_root):
             'score_semantics':'Replays maintainer adjudications after source+census checks; not independent semantic scoring or new native execution.'}
 
 def restore(wrapper,bundle_root,destination,receipt):
-    _,_,manifest,_,_=load(wrapper);bundles=Path(bundle_root)
+    _,_,manifest,_,_=load(wrapper)
+    if bundle_root is None:
+        result=bundle_restore.restore_public(manifest,destination);write(receipt,result);return result
+    bundles=Path(bundle_root)
     # Bundle manifest must have precisely the admitted Git/file identities.
     supplied=read(bundles/'sources.json')
     for source in supplied['repositories']:source.pop('source_path',None)
+    # Publication metadata may advance while the admitted source/bundle identity stays fixed.
+    for value in (supplied,manifest):
+        value.pop('status',None)
+        for source in value['repositories']:
+            for key in ['publication_status','repository_url']:source.pop(key,None)
     require(supplied==manifest,'Bundle manifest differs from admitted cohort')
     result=bundle_restore.restore(bundles/'sources.json',destination);write(receipt,result);return result
 
@@ -103,12 +115,17 @@ def evaluate(wrapper,predictions):
             'evidence_status':'Presence is counted only; semantic evidence correctness requires human review.',
             'independence':'One construction family. No within-cohort train/test split or independent holdout claim.'}
 
-def candidate(wrapper,bundle_root,rid,output):
+def candidate(wrapper,bundle_root,rid,output,source_root=None):
     root,contract,manifest,_,_=load(wrapper);source=next((s for s in manifest['repositories'] if s['id']==rid),None);require(source is not None,'Unknown repository')
-    out=Path(output);require(not out.exists(),'Candidate output already exists');out.mkdir(parents=True)
-    bundle=Path(bundle_root)/source['bundle']['path'];require(sha(bundle)==source['bundle']['sha256'],'Bad candidate bundle')
-    # Each candidate receives one standalone bundle and the effective contract only.
-    shutil.copy2(bundle,out/bundle.name)
+    out=Path(output);require(not out.exists(),'Candidate output already exists')
+    if bundle_root is not None:
+        bundle=Path(bundle_root)/source['bundle']['path'];require(sha(bundle)==source['bundle']['sha256'],'Bad candidate bundle')
+        out.mkdir(parents=True);shutil.copy2(bundle,out/bundle.name)
+    else:
+        require(source_root is not None,'Provide --source-root with restored public sources, or --bundle-root')
+        repo=safe(Path(source_root),source['group']+'/'+source['name']);bundle_restore.verify_repository(repo,source)
+        out.mkdir(parents=True);bundle=out/Path(source['bundle']['path']).name
+        bundle_restore.git(repo,'bundle','create',str(bundle.resolve()),'--all')
     for e in contract['authorities']:shutil.copy2(bound(root,e),out/e['path'])
     shutil.copy2(root/'contract-index.json',out/'contract-index.json')
     bindings={p.name:{'sha256':sha(p),'bytes':p.stat().st_size} for p in out.iterdir() if p.is_file()}
@@ -124,7 +141,7 @@ def main():
     elif args.command=='replay':result=replay(args.wrapper,args.source_root)
     elif args.command=='restore':result=restore(args.wrapper,args.bundle_root,args.destination,args.output)
     elif args.command=='evaluate':result=evaluate(args.wrapper,read(args.input))
-    else:result=candidate(args.wrapper,args.bundle_root,args.id,args.output)
+    else:result=candidate(args.wrapper,args.bundle_root,args.id,args.output,args.source_root)
     if args.output and args.command not in {'candidate','restore'}:write(args.output,result)
     print(json.dumps(result,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()

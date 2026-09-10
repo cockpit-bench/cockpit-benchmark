@@ -25,10 +25,15 @@ class TypeRegistryTests(unittest.TestCase):
         self.assertEqual([s['repository_count'] for s in r['suites']],[11,11,11])
         self.assertEqual([s['leaf_count'] for s in r['suites']],[88,121,143])
         self.assertEqual([s['published_repositories'] for s in r['suites']],[11,11,11])
-        if any('cohorts' in entry for entry in r['suites']):
+        has_local=any(any(c['status']!='published' for c in suites.read(self.root/entry['cohorts']['path'])['cohorts']) for entry in r['suites'] if 'cohorts' in entry)
+        if has_local:
             with self.assertRaisesRegex(suites.InvalidSuite,'unpublished local cohort'):
                 rt.validate(self.root,True)
         else:self.assertEqual(rt.validate(self.root,True)['integration_status'],'published')
+    def test_unpublished_cohort_still_blocks_publication(self):
+        r=self.registry();entry=next(e for e in r['suites'] if 'cohorts' in e);binding=entry['cohorts'];p=self.root/binding['path']
+        catalog=suites.read(p);catalog['cohorts'][-1]['status']='verified_local';p.write_bytes(suites.encoded(catalog));binding['sha256']=suites.sha(p.read_bytes());self.save(r)
+        with self.assertRaisesRegex(suites.InvalidSuite,'unpublished local cohort'):rt.validate(self.root,True)
     def test_legacy_registry_remains_publishable_without_local_cohort(self):
         r=self.registry()
         for entry in r['suites']:entry.pop('cohorts',None)

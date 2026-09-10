@@ -1,6 +1,6 @@
-# 新能源现实代理 11 仓：六项修复本地交付
+# 新能源现实代理 11 仓：v0.11.0 发布
 
-六项具体审阅问题已完成本地修复、原生验证和参考重审。11 仓保持独立于原公开 33 仓；未发布、未上传，四个私有预留仓不纳入本轮。修复从既有新组前向提交，原源和旧包保留。
+六项具体审阅问题已完成修复、原生验证和参考重审，本版公开11个Vc*源码仓。公开集合共44仓：APP11、FW11、新能源22（旧联调11与现实代理11分别统计）。四个私有预留仓不纳入发布；原33源码历史和参考不变。
 
 ## 六项修复与证据
 
@@ -67,17 +67,28 @@ NEP-01增加跨信号合理性；NEP-02分别控制驱动和辅助执行器；NE
 
 原新能源联调组、APP、FW各自分母与合同保持；原evaluation_current.py和默认restore仍对应公开33仓，新组入口为verification/ne_reality.py。
 
-## 本地入口
+## 公开入口与恢复
 
-源码：`D:/Project/Git.temp/matlab-benchmark/realism-repair-20260910/sources`；最终恢复：同根`restored-final`；单仓候选输入：`candidate-inputs-final`；源bundle：`delivery`。维护者材料：`E:/Project/202608AINP/matlab-benchmark/realism-repair-20260910`。
+- NEP-01 [VcVcuInD](https://github.com/cockpit-bench/VcVcuInD) — `367b2ab786de8572c8b0d665de05b5b13983d4ae`
+- NEP-02 [VcVcuOutQM](https://github.com/cockpit-bench/VcVcuOutQM) — `32d77f24db27d913aa0bfcdcc70dd15b463dfe00`
+- NEP-03 [VcVmcTrq](https://github.com/cockpit-bench/VcVmcTrq) — `0902e6c52e3878edd5a1c7de4e2e2ea65ef73300`
+- NEP-04 [VcErcRgn](https://github.com/cockpit-bench/VcErcRgn) — `c30baa42401b4086e57396213c07f7d0fd244099`
+- NEP-05 [VcDmcDrv](https://github.com/cockpit-bench/VcDmcDrv) — `3a5f747d55331682a1ddadc49551f04236e3f958`
+- NEP-06 [VcWrcWhl](https://github.com/cockpit-bench/VcWrcWhl) — `61084082b8d60f121303fef0a691b80916cd41dd`
+- NEP-07 [VcDeChg](https://github.com/cockpit-bench/VcDeChg) — `e2fd73443c59459a560775405b486624b4b082cf`
+- NEP-08 [VcPvcThm](https://github.com/cockpit-bench/VcPvcThm) — `a3946da6cca31d88979c55b6d18a64ea33225dbd`
+- NEP-09 [VcSfCPropR](https://github.com/cockpit-bench/VcSfCPropR) — `3b60bb33258294e6b8c6d8ba531790af4c98617d`
+- NEP-10 [VcSfDPropR](https://github.com/cockpit-bench/VcSfDPropR) — `dc1dd984ecc2152bb03c7aa8f13dd83f856f6e89`
+- NEP-11 [VcScHv](https://github.com/cockpit-bench/VcScHv) — `27f0538f1d71375e12b02efd470b3e35586fda52`
 
 ```text
-python verification/ne_reality.py validate
-python verification/ne_reality.py restore --bundle-root <delivery目录> --destination <全新恢复目录> --output <回执.json>
+python verification/ne_reality.py restore --destination <全新目录> --output <回执.json>
 python verification/ne_reality.py replay --source-root <恢复目录> --output <重放.json>
-python verification/ne_reality.py candidate --bundle-root <delivery目录> --id NEP-01 --output <全新候选目录>
+python verification/ne_reality.py candidate --source-root <恢复目录> --id NEP-01 --output <全新单仓目录>
 ```
 
-身份及逐叶证据见manifest.json、STANDARD_SCORES.json、OBSERVATIONS.json；执行绑定见EXECUTION.json；结构/类型/分数分布见PROFILE_COMPARISON.json。源、恢复、测试和候选导出记录见维护者evidence目录；完整本地交付与最终检查回执见delivery-receipt.json。
+重复restore对已完成仓重新验证，不重置用户修改。离线既有bundle可继续通过--bundle-root使用；在线恢复不依赖本机source-map。默认restore.ps1与evaluation_current.py继续对应原33仓。
 
-没有新的物理设备、BTC执行、ECU、SIL/PIL/HIL、ISO26262认证或公开发布；这些不在本次六项修复完成声明内。
+原始执行附件：[下载](https://github.com/cockpit-bench/cockpit-benchmark/releases/download/v0.11.0/ne-reality-native-inputs-v0.11.0.zip)，2393479字节，SHA256 `c66e279b2e97e0e356a397b4d6622d814a538302ff93e35596f9be7b88aa49aa`。附件为维护者原始输入/记录，不向候选提供。EXECUTION.json绑定的记录可直接核对；发布本身没有新增MATLAB、host C或设备执行，沿用已绑定修复验证。
+
+身份与逐叶参考见manifest.json、STANDARD_SCORES.json、OBSERVATIONS.json；分布见PROFILE_COMPARISON.json。无物理设备、BTC、ECU、SIL/PIL/HIL、C语句覆盖或ISO26262认证。

@@ -1174,5 +1174,13 @@
       "bytes": 2892
     }
   ],
-  "scope": "Outputs not covered by independent properties are measured only. Model coverage does not establish C statement coverage. No BTC, physical device, ECU, SIL/PIL/HIL or certification."
+  "scope": "Outputs not covered by independent properties are measured only. Model coverage does not establish C statement coverage. No BTC, physical device, ECU, SIL/PIL/HIL or certification.",
+  "public_raw_attachment": {
+    "name": "ne-reality-native-inputs-v0.11.0.zip",
+    "url": "https://github.com/cockpit-bench/cockpit-benchmark/releases/download/v0.11.0/ne-reality-native-inputs-v0.11.0.zip",
+    "bytes": 2393479,
+    "sha256": "c66e279b2e97e0e356a397b4d6622d814a538302ff93e35596f9be7b88aa49aa",
+    "records": 106,
+    "scope": "Native raw inputs and records only; no source transport"
+  }
 }
