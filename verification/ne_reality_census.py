@@ -28,7 +28,11 @@ def model_facts(path):
         defaults=[b for b in blocks if re.fullmatch(r'(?:In|Out)\d+',b['name'] or '')]
         params=[]
         for b in blocks:
-            for key in {'Constant':['Value'],'Gain':['Gain'],'Lookup_n-D':['BreakpointsForDimension1','Table']}.get(b['type'],[]):
+            fields={'Constant':['Value'],'Gain':['Gain']}.get(b['type'],[])
+            if b['type']=='Lookup_n-D':
+                fields=sorted((k for k in b['parameters'] if re.fullmatch(r'BreakpointsForDimension\d+',k)),
+                              key=lambda k:int(k.removeprefix('BreakpointsForDimension')))+['Table']
+            for key in fields:
                 value=b['parameters'].get(key)
                 if value is not None:params.append({'sid':b['sid'],'system':b['system'],'block':b['name'],'field':key,'value':value,
                                                     'numeric_literal':bool(re.fullmatch(r'[\s\[\]0-9eE+.,;\-]+',value))})

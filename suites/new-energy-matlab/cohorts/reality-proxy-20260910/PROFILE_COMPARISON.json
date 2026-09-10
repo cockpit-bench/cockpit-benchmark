@@ -1,5 +1,5 @@
 {
-  "revision": "six-issue-repair-20260910",
+  "revision": "fidelity-repair-20260910",
   "basis": {
     "inputs": [
       {
@@ -41,56 +41,27 @@
     "int16": 222,
     "uint32": 16,
     "boolean": 226,
-    "uint8": 36
+    "uint8": 36,
+    "double": 17
   },
   "block_counts_native_expanded": {
-    "Inport": {
-      "min": 204,
-      "median": 568,
-      "max": 3317,
-      "presence": 11
-    },
-    "Outport": {
-      "min": 85,
-      "median": 210,
-      "max": 1232,
-      "presence": 11
-    },
-    "SubSystem": {
-      "min": 41,
-      "median": 114,
-      "max": 488,
-      "presence": 11
-    },
-    "Constant": {
-      "min": 37,
-      "median": 135,
-      "max": 595,
-      "presence": 11
-    },
-    "From": {
-      "min": 0,
-      "median": 40,
-      "max": 192,
-      "presence": 8
-    },
-    "Goto": {
-      "min": 0,
-      "median": 20,
-      "max": 96,
-      "presence": 8
-    },
-    "TriggerPort": {
+    "BusCreator": {
       "min": 0,
       "median": 1,
       "max": 1,
-      "presence": 10
+      "presence": 9
     },
-    "EnablePort": {
+    "BusSelector": {
       "min": 0,
-      "median": 9,
-      "max": 38,
-      "presence": 8
+      "median": 1,
+      "max": 1,
+      "presence": 9
+    },
+    "Constant": {
+      "min": 37,
+      "median": 127,
+      "max": 595,
+      "presence": 11
     },
     "DataStoreMemory": {
       "min": 0,
@@ -98,11 +69,143 @@
       "max": 1,
       "presence": 3
     },
-    "Reference": {
+    "DataStoreRead": {
       "min": 0,
       "median": 0,
-      "max": 0,
-      "presence": 0
+      "max": 1,
+      "presence": 3
+    },
+    "DataStoreWrite": {
+      "min": 0,
+      "median": 0,
+      "max": 1,
+      "presence": 3
+    },
+    "DataTypeConversion": {
+      "min": 7,
+      "median": 22,
+      "max": 86,
+      "presence": 11
+    },
+    "Demux": {
+      "min": 1,
+      "median": 3,
+      "max": 177,
+      "presence": 11
+    },
+    "EnablePort": {
+      "min": 0,
+      "median": 7,
+      "max": 38,
+      "presence": 6
+    },
+    "From": {
+      "min": 0,
+      "median": 36,
+      "max": 192,
+      "presence": 6
+    },
+    "Gain": {
+      "min": 0,
+      "median": 0,
+      "max": 2,
+      "presence": 1
+    },
+    "Goto": {
+      "min": 0,
+      "median": 18,
+      "max": 96,
+      "presence": 6
+    },
+    "Inport": {
+      "min": 204,
+      "median": 535,
+      "max": 2997,
+      "presence": 11
+    },
+    "Logic": {
+      "min": 23,
+      "median": 112,
+      "max": 488,
+      "presence": 11
+    },
+    "Lookup_n-D": {
+      "min": 0,
+      "median": 1,
+      "max": 2,
+      "presence": 6
+    },
+    "MinMax": {
+      "min": 0,
+      "median": 0,
+      "max": 4,
+      "presence": 4
+    },
+    "Outport": {
+      "min": 85,
+      "median": 210,
+      "max": 1232,
+      "presence": 11
+    },
+    "Product": {
+      "min": 0,
+      "median": 13,
+      "max": 75,
+      "presence": 9
+    },
+    "RelationalOperator": {
+      "min": 1,
+      "median": 67,
+      "max": 349,
+      "presence": 11
+    },
+    "S-Function": {
+      "min": 1,
+      "median": 4,
+      "max": 177,
+      "presence": 11
+    },
+    "Saturate": {
+      "min": 0,
+      "median": 0,
+      "max": 4,
+      "presence": 2
+    },
+    "SubSystem": {
+      "min": 41,
+      "median": 114,
+      "max": 488,
+      "presence": 11
+    },
+    "Sum": {
+      "min": 1,
+      "median": 14,
+      "max": 76,
+      "presence": 11
+    },
+    "Switch": {
+      "min": 0,
+      "median": 18,
+      "max": 96,
+      "presence": 10
+    },
+    "Terminator": {
+      "min": 1,
+      "median": 3,
+      "max": 177,
+      "presence": 11
+    },
+    "TriggerPort": {
+      "min": 0,
+      "median": 1,
+      "max": 1,
+      "presence": 10
+    },
+    "UnitDelay": {
+      "min": 0,
+      "median": 18,
+      "max": 96,
+      "presence": 8
     }
   },
   "file_presence": {
@@ -134,7 +237,7 @@
         "EnablePort": 38,
         "From": 192,
         "Goto": 96,
-        "Inport": 2350,
+        "Inport": 2247,
         "Logic": 488,
         "Outport": 886,
         "Product": 75,
@@ -149,7 +252,8 @@
         "UnitDelay": 96
       },
       "native_expanded_blocks": {
-        "Inport": 2351,
+        "Inport": 2248,
+        "BusCreator": 1,
         "SubSystem": 488,
         "EnablePort": 38,
         "Sum": 76,
@@ -166,9 +270,8 @@
         "Demux": 9,
         "S-Function": 10,
         "Terminator": 9,
-        "TriggerPort": 1,
-        "BusCreator": 1,
-        "BusSelector": 1
+        "BusSelector": 1,
+        "TriggerPort": 1
       },
       "native_subsystems": 488,
       "root_inputs": 290,
@@ -196,13 +299,14 @@
         "BusCreator": 1,
         "BusSelector": 1,
         "Constant": 164,
-        "DataTypeConversion": 31,
+        "DataTypeConversion": 33,
         "Demux": 4,
         "EnablePort": 10,
         "From": 56,
         "Goto": 28,
-        "Inport": 737,
+        "Inport": 699,
         "Logic": 143,
+        "Lookup_n-D": 2,
         "Outport": 286,
         "Product": 19,
         "Reference": 1,
@@ -216,14 +320,17 @@
         "UnitDelay": 28
       },
       "native_expanded_blocks": {
-        "Inport": 738,
+        "Inport": 700,
+        "BusCreator": 1,
         "SubSystem": 147,
-        "DataTypeConversion": 31,
+        "DataTypeConversion": 33,
         "Demux": 4,
         "S-Function": 5,
         "Terminator": 4,
         "Outport": 287,
         "Logic": 143,
+        "Lookup_n-D": 2,
+        "BusSelector": 1,
         "TriggerPort": 1,
         "EnablePort": 10,
         "Sum": 20,
@@ -233,9 +340,7 @@
         "From": 56,
         "Goto": 28,
         "Switch": 28,
-        "UnitDelay": 28,
-        "BusCreator": 1,
-        "BusSelector": 1
+        "UnitDelay": 28
       },
       "native_subsystems": 147,
       "root_inputs": 86,
@@ -246,8 +351,8 @@
         "AxleCommandSum",
         "AuxiliaryActuatorInterlocks"
       ],
-      "samples": 3562,
-      "business_properties": 5,
+      "samples": 4002,
+      "business_properties": 10,
       "score": 40
     },
     {
@@ -257,55 +362,48 @@
       "primary_source_blocks": {
         "BusCreator": 1,
         "BusSelector": 1,
-        "Constant": 134,
+        "Constant": 115,
         "DataStoreMemory": 1,
         "DataStoreRead": 1,
         "DataStoreWrite": 1,
-        "DataTypeConversion": 26,
-        "Demux": 4,
-        "EnablePort": 9,
-        "From": 40,
-        "Goto": 20,
-        "Inport": 567,
-        "Logic": 104,
-        "Outport": 202,
-        "Product": 18,
+        "DataTypeConversion": 11,
+        "Demux": 23,
+        "Inport": 452,
+        "Logic": 24,
+        "Lookup_n-D": 1,
+        "MinMax": 1,
+        "Outport": 163,
         "Reference": 2,
-        "RelationalOperator": 78,
-        "S-Function": 4,
-        "SubSystem": 113,
-        "Sum": 19,
-        "Switch": 20,
-        "Terminator": 4,
-        "TriggerPort": 1,
-        "UnitDelay": 20
+        "S-Function": 23,
+        "SubSystem": 54,
+        "Sum": 1,
+        "Switch": 1,
+        "Terminator": 23,
+        "TriggerPort": 1
       },
       "native_expanded_blocks": {
-        "Inport": 568,
-        "SubSystem": 114,
-        "Demux": 4,
-        "S-Function": 5,
-        "Terminator": 4,
-        "Outport": 203,
-        "DataTypeConversion": 26,
-        "Logic": 104,
-        "TriggerPort": 1,
-        "EnablePort": 9,
-        "Sum": 19,
-        "Product": 18,
-        "Constant": 135,
-        "RelationalOperator": 79,
-        "From": 40,
-        "Goto": 20,
-        "Switch": 20,
-        "UnitDelay": 20,
-        "DataStoreMemory": 1,
+        "Inport": 453,
         "BusCreator": 1,
-        "DataStoreRead": 1,
+        "SubSystem": 55,
+        "Demux": 23,
+        "S-Function": 24,
+        "Terminator": 23,
+        "Outport": 164,
+        "DataTypeConversion": 11,
+        "Logic": 24,
+        "Switch": 1,
+        "Constant": 116,
+        "MinMax": 1,
+        "Lookup_n-D": 1,
         "BusSelector": 1,
+        "TriggerPort": 1,
+        "Sum": 1,
+        "DataStoreMemory": 1,
+        "RelationalOperator": 1,
+        "DataStoreRead": 1,
         "DataStoreWrite": 1
       },
-      "native_subsystems": 114,
+      "native_subsystems": 55,
       "root_inputs": 62,
       "root_outputs": 26,
       "domain_components": [
@@ -314,8 +412,8 @@
         "DischargePowerEnvelope",
         "TorqueArbitration"
       ],
-      "samples": 2647,
-      "business_properties": 12,
+      "samples": 2679,
+      "business_properties": 20,
       "score": 36
     },
     {
@@ -326,13 +424,15 @@
         "BusCreator": 1,
         "BusSelector": 1,
         "Constant": 110,
-        "DataTypeConversion": 18,
+        "DataTypeConversion": 22,
         "Demux": 3,
         "EnablePort": 7,
         "From": 36,
         "Goto": 18,
-        "Inport": 482,
+        "Inport": 453,
         "Logic": 93,
+        "Lookup_n-D": 1,
+        "MinMax": 1,
         "Outport": 172,
         "Product": 13,
         "Reference": 2,
@@ -346,14 +446,18 @@
         "UnitDelay": 18
       },
       "native_expanded_blocks": {
-        "Inport": 483,
+        "Inport": 454,
+        "BusCreator": 1,
         "SubSystem": 99,
-        "DataTypeConversion": 18,
+        "DataTypeConversion": 22,
+        "MinMax": 1,
         "Demux": 3,
         "S-Function": 4,
         "Terminator": 3,
         "Outport": 173,
+        "Lookup_n-D": 1,
         "Logic": 93,
+        "BusSelector": 1,
         "TriggerPort": 1,
         "Constant": 111,
         "RelationalOperator": 67,
@@ -363,9 +467,7 @@
         "UnitDelay": 18,
         "EnablePort": 7,
         "Sum": 14,
-        "Product": 13,
-        "BusCreator": 1,
-        "BusSelector": 1
+        "Product": 13
       },
       "native_subsystems": 99,
       "root_inputs": 56,
@@ -375,8 +477,8 @@
         "BatteryRegenAcceptance",
         "BrakeBlend"
       ],
-      "samples": 2251,
-      "business_properties": 6,
+      "samples": 2283,
+      "business_properties": 10,
       "score": 34
     },
     {
@@ -435,49 +537,46 @@
       "primary_source_blocks": {
         "BusCreator": 1,
         "BusSelector": 1,
-        "Constant": 128,
-        "DataTypeConversion": 25,
-        "Demux": 3,
-        "EnablePort": 9,
-        "From": 40,
-        "Goto": 20,
-        "Inport": 534,
-        "Logic": 103,
-        "Outport": 204,
-        "Product": 17,
+        "Constant": 112,
+        "DataTypeConversion": 20,
+        "Demux": 21,
+        "Inport": 425,
+        "Logic": 23,
+        "Lookup_n-D": 2,
+        "MinMax": 4,
+        "Outport": 163,
+        "Product": 2,
         "Reference": 2,
-        "RelationalOperator": 74,
-        "S-Function": 3,
-        "SubSystem": 108,
-        "Sum": 18,
-        "Switch": 20,
-        "Terminator": 3,
-        "TriggerPort": 1,
-        "UnitDelay": 20
+        "S-Function": 21,
+        "Saturate": 2,
+        "SubSystem": 49,
+        "Sum": 3,
+        "Switch": 2,
+        "Terminator": 21,
+        "TriggerPort": 1
       },
       "native_expanded_blocks": {
-        "Inport": 535,
-        "SubSystem": 109,
-        "Demux": 3,
-        "S-Function": 4,
-        "Terminator": 3,
-        "Outport": 205,
-        "DataTypeConversion": 25,
-        "Logic": 103,
-        "TriggerPort": 1,
-        "Constant": 129,
-        "RelationalOperator": 75,
-        "From": 40,
-        "Goto": 20,
-        "Switch": 20,
-        "UnitDelay": 20,
-        "EnablePort": 9,
-        "Sum": 18,
-        "Product": 17,
+        "Inport": 426,
         "BusCreator": 1,
-        "BusSelector": 1
+        "SubSystem": 50,
+        "Sum": 3,
+        "MinMax": 4,
+        "DataTypeConversion": 20,
+        "Saturate": 2,
+        "Product": 2,
+        "Lookup_n-D": 2,
+        "Constant": 113,
+        "Switch": 2,
+        "Outport": 164,
+        "Logic": 23,
+        "BusSelector": 1,
+        "Demux": 21,
+        "S-Function": 22,
+        "Terminator": 21,
+        "TriggerPort": 1,
+        "RelationalOperator": 1
       },
-      "native_subsystems": 109,
+      "native_subsystems": 50,
       "root_inputs": 62,
       "root_outputs": 27,
       "domain_components": [
@@ -485,8 +584,8 @@
         "RearAxleSlip",
         "StabilityTorqueAllocation"
       ],
-      "samples": 2474,
-      "business_properties": 4,
+      "samples": 2514,
+      "business_properties": 14,
       "score": 36
     },
     {
@@ -500,13 +599,14 @@
         "DataStoreMemory": 1,
         "DataStoreRead": 1,
         "DataStoreWrite": 1,
-        "DataTypeConversion": 20,
+        "DataTypeConversion": 21,
         "Demux": 2,
         "EnablePort": 8,
         "From": 44,
         "Goto": 22,
-        "Inport": 566,
+        "Inport": 534,
         "Logic": 112,
+        "Lookup_n-D": 1,
         "Outport": 209,
         "Product": 15,
         "Reference": 2,
@@ -520,14 +620,17 @@
         "UnitDelay": 22
       },
       "native_expanded_blocks": {
-        "Inport": 567,
+        "Inport": 535,
+        "BusCreator": 1,
         "SubSystem": 114,
-        "DataTypeConversion": 20,
+        "Lookup_n-D": 1,
+        "DataTypeConversion": 21,
         "Demux": 2,
         "S-Function": 3,
         "Terminator": 2,
         "Outport": 210,
         "Logic": 112,
+        "BusSelector": 1,
         "TriggerPort": 1,
         "Constant": 127,
         "RelationalOperator": 75,
@@ -539,9 +642,7 @@
         "Sum": 16,
         "Product": 15,
         "DataStoreMemory": 1,
-        "BusCreator": 1,
         "DataStoreRead": 1,
-        "BusSelector": 1,
         "DataStoreWrite": 1
       },
       "native_subsystems": 114,
@@ -551,8 +652,8 @@
         "ConnectionAndChargePermit",
         "CableAndPowerCurrentLimit"
       ],
-      "samples": 2640,
-      "business_properties": 9,
+      "samples": 2680,
+      "business_properties": 14,
       "score": 35
     },
     {
@@ -562,49 +663,57 @@
       "primary_source_blocks": {
         "BusCreator": 1,
         "BusSelector": 1,
-        "Constant": 238,
-        "DataTypeConversion": 41,
-        "Demux": 3,
+        "Constant": 244,
+        "DataTypeConversion": 45,
+        "Demux": 1,
         "EnablePort": 16,
         "From": 72,
+        "Gain": 2,
         "Goto": 36,
-        "Inport": 936,
-        "Logic": 183,
-        "Outport": 359,
+        "Inport": 891,
+        "Logic": 187,
+        "Lookup_n-D": 2,
+        "MinMax": 1,
+        "Outport": 355,
         "Product": 32,
         "Reference": 1,
-        "RelationalOperator": 138,
-        "S-Function": 3,
-        "SubSystem": 189,
-        "Sum": 33,
-        "Switch": 36,
-        "Terminator": 3,
+        "RelationalOperator": 142,
+        "S-Function": 1,
+        "Saturate": 4,
+        "SubSystem": 187,
+        "Sum": 39,
+        "Switch": 46,
+        "Terminator": 1,
         "TriggerPort": 1,
-        "UnitDelay": 36
+        "UnitDelay": 38
       },
       "native_expanded_blocks": {
-        "Inport": 937,
-        "SubSystem": 190,
-        "DataTypeConversion": 41,
-        "Demux": 3,
-        "S-Function": 3,
-        "Terminator": 3,
-        "Outport": 360,
-        "Logic": 183,
+        "Inport": 892,
+        "BusCreator": 1,
+        "SubSystem": 188,
+        "Sum": 39,
+        "Logic": 187,
+        "DataTypeConversion": 45,
+        "Switch": 46,
+        "Saturate": 4,
+        "Constant": 245,
+        "Gain": 2,
+        "UnitDelay": 38,
+        "RelationalOperator": 143,
+        "Lookup_n-D": 2,
+        "Outport": 356,
+        "MinMax": 1,
+        "BusSelector": 1,
+        "Demux": 1,
+        "S-Function": 1,
+        "Terminator": 1,
         "TriggerPort": 1,
         "EnablePort": 16,
-        "Sum": 33,
         "Product": 32,
-        "Constant": 239,
-        "RelationalOperator": 139,
         "From": 72,
-        "Goto": 36,
-        "Switch": 36,
-        "UnitDelay": 36,
-        "BusCreator": 1,
-        "BusSelector": 1
+        "Goto": 36
       },
-      "native_subsystems": 190,
+      "native_subsystems": 188,
       "root_inputs": 110,
       "root_outputs": 47,
       "domain_components": [
@@ -612,8 +721,8 @@
         "MotorCoolingLoop",
         "ThermalActuatorArbitration"
       ],
-      "samples": 4696,
-      "business_properties": 7,
+      "samples": 4748,
+      "business_properties": 15,
       "score": 32
     },
     {
@@ -632,7 +741,7 @@
         "EnablePort": 16,
         "From": 90,
         "Goto": 45,
-        "Inport": 1084,
+        "Inport": 1050,
         "Logic": 227,
         "Outport": 413,
         "Product": 31,
@@ -647,7 +756,8 @@
         "UnitDelay": 45
       },
       "native_expanded_blocks": {
-        "Inport": 1085,
+        "Inport": 1051,
+        "BusCreator": 1,
         "SubSystem": 223,
         "Demux": 2,
         "S-Function": 3,
@@ -655,6 +765,7 @@
         "Outport": 414,
         "DataTypeConversion": 37,
         "Logic": 227,
+        "BusSelector": 1,
         "TriggerPort": 1,
         "Constant": 262,
         "RelationalOperator": 155,
@@ -666,9 +777,7 @@
         "Sum": 32,
         "Product": 31,
         "DataStoreMemory": 1,
-        "BusCreator": 1,
         "DataStoreRead": 1,
-        "BusSelector": 1,
         "DataStoreWrite": 1
       },
       "native_subsystems": 223,
@@ -691,7 +800,7 @@
         "BusSelector": 1,
         "DataTypeConversion": 3,
         "Demux": 1,
-        "Inport": 1332,
+        "Inport": 1012,
         "Logic": 176,
         "Outport": 527,
         "Reference": 177,
@@ -702,7 +811,8 @@
         "TriggerPort": 1
       },
       "native_expanded_blocks": {
-        "Inport": 3317,
+        "Inport": 2997,
+        "BusCreator": 1,
         "SubSystem": 373,
         "Constant": 321,
         "Demux": 177,
@@ -711,11 +821,10 @@
         "Outport": 1232,
         "DataTypeConversion": 35,
         "Logic": 176,
+        "BusSelector": 1,
         "TriggerPort": 1,
         "Sum": 1,
-        "RelationalOperator": 1,
-        "BusCreator": 1,
-        "BusSelector": 1
+        "RelationalOperator": 1
       },
       "native_subsystems": 373,
       "root_inputs": 482,
@@ -879,24 +988,40 @@
     "accuracy": 0.8601398601398601,
     "scope": "Descriptive same-set majority; not a candidate model experiment"
   },
-  "master_commit_counts": [
-    3,
-    3,
-    3,
-    3,
-    2,
-    3,
-    3,
-    3,
-    3,
-    2,
-    3
-  ],
+  "master_commit_counts": {
+    "NEP-01": 4,
+    "NEP-02": 4,
+    "NEP-03": 4,
+    "NEP-04": 4,
+    "NEP-05": 2,
+    "NEP-06": 4,
+    "NEP-07": 4,
+    "NEP-08": 4,
+    "NEP-09": 4,
+    "NEP-10": 3,
+    "NEP-11": 4
+  },
   "tags": {
     "total": 127,
     "distinct_commit_per_repo": 2,
     "scope": "116 preserved baseline export aliases plus 11 initial local repair tags; nine repositories have a later workbook-layout-only HEAD."
   },
   "internal_joint_distribution_reconstructed": false,
-  "candidate_runs": 0
+  "candidate_runs": 0,
+  "engineering_repair": {
+    "typed_business_buses": 9,
+    "lookup_models": 6,
+    "lookup_blocks": 9,
+    "array_calibrations": 14,
+    "scalar_calibrations": 3,
+    "integral_mp_signals": 2,
+    "fixed_sample_period": 1,
+    "compacted_qualification_models": [
+      "NEP-03",
+      "NEP-06"
+    ],
+    "lab_exact_a2l_labels": 6,
+    "swut_exact_property_expectations": 9,
+    "full_joint_profile_reconstructed": false
+  }
 }

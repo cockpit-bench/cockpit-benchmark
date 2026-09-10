@@ -24,7 +24,9 @@ class TypeRegistryTests(unittest.TestCase):
         self.assertEqual([s['id'] for s in r['suites']],['app','fw','new-energy-matlab'])
         self.assertEqual([s['repository_count'] for s in r['suites']],[11,11,11])
         self.assertEqual([s['leaf_count'] for s in r['suites']],[88,121,143])
-        self.assertEqual([s['published_repositories'] for s in r['suites']],[11,11,11])
+        for entry in r['suites']:
+            sources=suites.read(self.root/entry['manifest']['path'])['repositories']
+            self.assertEqual(entry['published_repositories'],sum(s['publication_status']=='published' for s in sources))
         has_local=any(any(c['status']!='published' for c in suites.read(self.root/entry['cohorts']['path'])['cohorts']) for entry in r['suites'] if 'cohorts' in entry)
         if has_local:
             with self.assertRaisesRegex(suites.InvalidSuite,'unpublished local cohort'):
@@ -36,6 +38,14 @@ class TypeRegistryTests(unittest.TestCase):
         with self.assertRaisesRegex(suites.InvalidSuite,'unpublished local cohort'):rt.validate(self.root,True)
     def test_legacy_registry_remains_publishable_without_local_cohort(self):
         r=self.registry()
+        # Exercise a published fixture independently of the current local
+        # repair snapshot; do not treat its new source commits as published.
+        entry=next(e for e in r['suites'] if e['id']=='new-energy-matlab')
+        p=self.root/entry['manifest']['path'];manifest=suites.read(p)
+        for source in manifest['repositories']:source['publication_status']='published'
+        p.write_bytes(suites.encoded(manifest));entry['manifest']['sha256']=suites.sha(p.read_bytes())
+        entry.update(status='published',published_repositories=len(manifest['repositories']))
+        r['integration_status']='published'
         for entry in r['suites']:entry.pop('cohorts',None)
         self.save(r)
         self.assertEqual(rt.validate(self.root,True)['integration_status'],'published')

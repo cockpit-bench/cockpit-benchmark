@@ -1,43 +1,39 @@
-v0.11.2 补丁：恢复测试夹具显式设置 LF 和 Git autocrlf，不再依赖本机全局设置；实际恢复逻辑、源码、合同和参考分均保持。
-
-v0.11.1：旧新能源联调11个GitHub源码仓已按用户确认永久删除，逐仓已登录API与匿名网页均返回404。当前集合为33仓；默认恢复与评测入口已统一。
-
 # Benchmark — APP、FW、新能源 MATLAB
 
-v0.11.1 将旧新能源联调 11 仓移出当前集合，并按用户指令删除对应 GitHub 源码仓。当前只有三类各 11 仓，共 33 仓、352 个参考叶；不跨类型合计健康度分数。
+当前是基于v0.11.2的本地工程修复分支，尚未发布。新新能源源码提交只能通过本地包恢复；GitHub仍对应原公开版本。APP/FW及其参考对象保持，四个私有预留仓继续保密。
 
-| 类型 | 仓数 / 参考叶 | 参考分 | 有效合同 |
+| 类型 | 仓 / 参考叶 | 参考分 | 状态 |
 |---|---:|---:|---|
-| [APP](suites/app/SCORECARD.md) | 11 / 88 | 142/440 | [Android v3.5.1](SCORE_RULES.md) |
-| [FW](suites/fw/SCORECARD.md) | 11 / 121 | 194/572 | [Android v3.5.1](SCORE_RULES.md) |
-| [新能源现实代理](suites/new-energy-matlab/cohorts/reality-proxy-20260910/README.md) | 11 / 143 | 409/671 | [Part 7 及已批准补充](suites/new-energy-matlab/cohorts/reality-proxy-20260910/contract-index.json) |
+| APP | 11 / 88 | 142/440 | 原公开快照保持 |
+| FW | 11 / 121 | 194/572 | 原公开快照保持 |
+| 新能源现实代理 | 11 / 143 | 409/671 | 本地修复，构建裁决暂停 |
 
-[suites.json](suites.json) 是唯一当前注册入口。新能源仅 NEP-01..11；旧 ML-01..09、NEM-10、NEM-11 已退出，旧 ID 会被恢复入口拒绝。APP/FW 和现实代理源码、参考叶值及有效合同未改变。四个私有预留仓保持保密。
+修复了六份LAB标签、真实查表/数组标定组合、九仓类型化业务Bus，以及SWUT断言/容差。根接口和有效合同保持；详细实现、验证和限制见[工程修复报告](docs/FIDELITY_REPAIR_20260910.md)。
 
-## 恢复
+`suites.json`为当前三类型登记，新能源仅NEP-01..11。旧ML-01..09、NEM-10/11不参与当前评测。三类分别统计，不合计原始分。
 
-需要 Python 3.11+、Git、PowerShell。公开恢复无需 GitHub 凭据；验证完整主仓历史、HEAD/tree/refs、干净状态和零 remotes，不执行源码。
+## 本地恢复
 
-```powershell
-./restore.ps1 -Destination C:/bench/restored
-./restore.ps1 -Suite new-energy-matlab -Destination C:/bench/energy
-./restore.ps1 -Suite app -RepositoryIds APP-21,APP-22 -Destination C:/bench/apps
-```
-
-默认 `all` 恢复当前 33 仓，按 app、fw、new-energy-matlab 分目录；单类型直接放入目的地。`-Resume` 复核已有仓，`-IncludeSubmodules` 检查固定子模块。别名 `matlab-simulink` 也只选择当前 NEP-01..11。
+需要Python 3.11+、Git、PowerShell。将本地交付目录作为`--bundle-root`；其中包含sources.json及bundles。
 
 ```sh
-python verification/repository_types.py validate --wrapper . --require-publishable
-python verification/ne_reality.py replay --source-root C:/bench/restored
-python verification/ne_reality.py candidate --source-root C:/bench/restored --id NEP-01 --output C:/candidate/input
+python verification/ne_reality.py restore --bundle-root C:/bench/delivery --destination C:/bench/sources --output C:/bench/restore.json
+python verification/ne_reality.py replay --source-root C:/bench/sources
+python verification/ne_reality.py candidate --bundle-root C:/bench/delivery --id NEP-01 --output C:/candidate/input
+python verification/repository_types.py validate --wrapper .
 ```
 
-新组原独立恢复入口仍可用，产物与默认入口是相同 11 仓；replay/candidate 支持两种目录布局。候选只获得单仓源码、有效合同及明确允许的单仓原始输入，不能访问维护者参考分或其他仓。
+PowerShell恢复入口可用`-SourceMap`将NEP ID映射到上一步恢复出的完整Git仓，再执行：
 
-## 评测与限制
+```powershell
+./restore.ps1 -Suite new-energy-matlab -SourceMap C:/bench/source-map.json -Destination C:/bench/powershell-restored
+./restore.ps1 -Suite new-energy-matlab -SourceMap C:/bench/source-map.json -Destination C:/bench/powershell-restored -Resume -IncludeSubmodules
+```
 
-[当前三类型评测](docs/CURRENT_EVALUATION.md)已统一覆盖这 33 仓。source_only 可评 APP 79/88、FW 109/121、新能源 143/143；frozen_external 为 81/88、113/121、143/143。旧新能源不再参与集合、分母、切分或统计。
+不提供SourceMap的公开恢复以及`--require-publishable`会拒绝本地新源码。恢复只校验完整历史、HEAD/tree/refs/文件字节、干净状态及零remote，不执行模型。
 
-参考分是维护者裁决，不是候选模型成绩。新组 6 个恒定叶，同集合众数 123/143；一个共同构造族，不是独立 holdout。NEP-10 构建优先级、证据语义与定位完整性仍需后续处理，见 [v0.11.0 Pro 评审核对及本轮范围](docs/REVIEW_V0111.md)。此次入口迁移没有新增 Android、MATLAB、C 或设备执行。
+## 评测
 
-历史 wrapper tag 保留原内容；旧 11 源码仓已删除，旧版相应下载链接已失效。当前主线已移除旧组合同、标准分、专用证据和工具。根 Android Validation-18 文件只保留冻结兼容，由 [legacy-v094.json](suites/legacy-v094.json) 绑定；它们不替代当前三类型入口。
+[当前评测说明](docs/CURRENT_EVALUATION.md)保留三类型、单仓输入和外部证据边界。各候选只获得一个源码bundle、有效合同与允许的单仓原始输入；不能访问维护者wrapper、参考分或其他仓。独立进程/网络隔离由运行器承担。
+
+原合同逐字节保持。143个数值参考已重绑当前源码；构建独立性叶只是沿用暂停前的值，不表示争议已经解决。当前一个构造族，候选运行0；没有独立留出或内部真实分布完整复原证明。

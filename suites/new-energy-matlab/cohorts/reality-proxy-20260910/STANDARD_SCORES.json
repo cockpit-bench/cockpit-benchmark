@@ -7,11 +7,11 @@
     {
       "id": "NEP-01",
       "name": "VcVcuInD",
-      "head": "367b2ab786de8572c8b0d665de05b5b13983d4ae",
+      "head": "8bc46b4f9b0e8d556750c6e894628c9961ddb661",
       "reference": {
         "id": "NEP-01",
         "name": "VcVcuInD",
-        "head": "367b2ab786de8572c8b0d665de05b5b13983d4ae",
+        "head": "8bc46b4f9b0e8d556750c6e894628c9961ddb661",
         "scores": {
           "hierarchy": 3,
           "reuse": 1,
@@ -34,17 +34,22 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "按实际责任核对分组输入、类型调理、业务组件与诊断层。展开后 488 个子系统中，至少 479 个有明确单一职责（98.2%）；分组层不计入该下界。模拟量转换、数字资格、业务状态分别封装，不能由相近块数单独推导结论。",
+            "reason": "当前原生展开 488 个子系统；保守排除 8 个根采集分组后，480 个调理、业务或诊断单元职责可独立描述（98.4%）。03/06紧凑调理仍保留两采样资格状态，08积分反馈单独呈现；层级裁3。",
             "evidence": [
               {
                 "path": "Model/VcVcuInD.slx",
-                "sha256": "0422affde0277a2a08d73d27f9f30f35da53825d34b1eaa56b09a75ae056f0ba",
-                "location": "system_root/Block[@SID='5970'] (BusinessDecision)"
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
+                "location": "simulink/systems/system_root.xml/Block[@SID='5970'] (BusinessDecision)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "e35478cc425bd8e256047f2e11d821812b121c8298e70afae15d9595cd81efdc",
+                "location": "buses, compact_channels, parameters and layout_scope"
               },
               {
                 "path": "Documentation/BusinessBehavior.md",
-                "sha256": "ad88b052eae04a8465ce4be15976c29d920a614bd03ac124cd8e9d90e78a5ab9",
-                "location": "Responsibilities and independently checked behavior"
+                "sha256": "4cd476daa883e24c5b35a61ec6e8ef8bd178396ce26c57288e3bff788dc93613",
+                "location": "Responsibilities and engineering implementation"
               }
             ],
             "limitation": "同源构造与共享调理模式仍存在；这是当前结构裁决，不是内部逐仓架构复原证明。",
@@ -58,12 +63,12 @@
             "evidence": [
               {
                 "path": "Model/VcVcuInD.slx",
-                "sha256": "0422affde0277a2a08d73d27f9f30f35da53825d34b1eaa56b09a75ae056f0ba",
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
                 "location": "system_1010/Block[@SID='1035'] (TemporalQualification)"
               },
               {
                 "path": "Model/VcVcuInD.slx",
-                "sha256": "0422affde0277a2a08d73d27f9f30f35da53825d34b1eaa56b09a75ae056f0ba",
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
                 "location": "system_1010/Block[@SID='1021'] (RangeAndCommunication)"
               }
             ],
@@ -74,17 +79,22 @@
             "score": 1,
             "max_score": 3,
             "status": "supported",
-            "reason": "外部 290 入/108 出已按编译类型和实际物理编码对齐，变更明细可追踪；内部仍有 36 个 InN/OutN 默认端口，例如 VcVcuInD/BatteryReception/In16，未满足整体端口规范的2档。",
+            "reason": "根 290 入/108 出保持。VcVcuInD_DomainInputs_Bus 含 104 个实际类型/维度字段并穿越业务边界；仍有 36 个默认内部端口，整体规范未达2档，保持1。",
             "evidence": [
               {
-                "path": "Model/interfaceVcVcuInD.xls",
-                "sha256": "292fb957d86ad39fe94995b035d61eac8a90012f60af91313ce9ed66e6435c3e",
-                "location": "IN/OUT: Name, DataType, Unit, Min, Max and raw decoding description"
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
+                "location": "simulink/systems/system_root.xml/Block[@SID='6157'] (AssembleDomainInputs)"
               },
               {
                 "path": "Model/VcVcuInD.slx",
-                "sha256": "0422affde0277a2a08d73d27f9f30f35da53825d34b1eaa56b09a75ae056f0ba",
-                "location": "VcVcuInD/BatteryReception/In16 SID VcVcuInD:302"
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
+                "location": "simulink/systems/system_5970.xml/Block[@SID='6155'] (DomainInputs)"
+              },
+              {
+                "path": "Model/interfaceVcVcuInD.xls",
+                "sha256": "7b9c1887180a9e96870efe8318fc75f921a0b91b08d3c6a4d57b0b7aee82c730",
+                "location": "IN!A1; OUT!A1; BUS!A1: typed fields, dimensions, producer and consumer"
               }
             ],
             "limitation": "外部表格完整不能自动替代内部接口命名质量；raw unit=1 表示编码计数，工程单位与比例见对应描述/物理输出。",
@@ -98,13 +108,18 @@
             "evidence": [
               {
                 "path": "Model/VcVcuInD.slx",
-                "sha256": "0422affde0277a2a08d73d27f9f30f35da53825d34b1eaa56b09a75ae056f0ba",
-                "location": "system_root/Block[@SID='5970'] (BusinessDecision)"
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
+                "location": "simulink/systems/system_root.xml/Block[@SID='5970'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "ad88b052eae04a8465ce4be15976c29d920a614bd03ac124cd8e9d90e78a5ab9",
-                "location": "Responsibilities and independently checked behavior"
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
+                "location": "simulink/systems/system_5970.xml/Block[@SID='6155'] (DomainInputs)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "e35478cc425bd8e256047f2e11d821812b121c8298e70afae15d9595cd81efdc",
+                "location": "layout_scope; root acquisition/quality fan-in remains dense"
               }
             ],
             "limitation": "依据当前原生图与连接关系；不按 Goto 数量或块数机械扣分。",
@@ -114,17 +129,27 @@
             "score": 5,
             "max_score": 5,
             "status": "supported",
-            "reason": "在父级业务/信号上下文中逐类核对，命名风格按角色一致。12544 个块/线元素中，保守计入默认端口、序号拒绝/读取、通用函数包装及空线名 484 个（3.9%）；其余名称准确标示局部信号、运算或状态责任，超过90%门槛。",
+            "reason": "按父业务上下文审阅同类命名。原生 12530 块/线中机械筛出 195 个通用名或空名；其中 0 条为 MATLAB Function 生成包装内部连线，角色由具名函数形参与返回值明确。其余保守未消歧 195 个（1.6%）；明确且风格协调的元素仍超过90%，保持5。这是当前源码语义裁决，不新增候选可见规则。",
             "evidence": [
               {
                 "path": "Model/VcVcuInD.slx",
-                "sha256": "0422affde0277a2a08d73d27f9f30f35da53825d34b1eaa56b09a75ae056f0ba",
-                "location": "Named channel/stage/controller hierarchy and signal lines"
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
+                "location": "simulink/systems/system_root.xml/Block[@SID='5970'] (BusinessDecision)"
               },
               {
-                "path": "Model/interfaceVcVcuInD.xls",
-                "sha256": "292fb957d86ad39fe94995b035d61eac8a90012f60af91313ce9ed66e6435c3e",
-                "location": "IN/OUT/CAL names"
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
+                "location": "simulink/systems/system_5970.xml/Block[@SID='6155'] (DomainInputs)"
+              },
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
+                "location": "simulink/stateflow/chart_15.xml / P[@Name=script], named function arguments and returns"
+              },
+              {
+                "path": "Model/VcVcuInD.slx",
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
+                "location": "simulink/stateflow/chart_24.xml / P[@Name=script], named function arguments and returns"
               }
             ],
             "limitation": "Raw、Age、Qualified 等在具名通道内有明确意义，不因不同通道重复使用就判无意义；少量默认端口仍影响接口叶。",
@@ -138,18 +163,23 @@
             "evidence": [
               {
                 "path": "Model/interfaceVcVcuInD.xls",
-                "sha256": "292fb957d86ad39fe94995b035d61eac8a90012f60af91313ce9ed66e6435c3e",
-                "location": "CAL; channel parameters"
+                "sha256": "7b9c1887180a9e96870efe8318fc75f921a0b91b08d3c6a4d57b0b7aee82c730",
+                "location": "CAL!A1 onward; MP/FIX for NEP-08"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "e35478cc425bd8e256047f2e11d821812b121c8298e70afae15d9595cd81efdc",
+                "location": "parameters: values, dimensions, storage and bounds"
               },
               {
                 "path": "Model/VcVcuInD.slx",
-                "sha256": "0422affde0277a2a08d73d27f9f30f35da53825d34b1eaa56b09a75ae056f0ba",
-                "location": "simulink/stateflow/chart_15.xml / script"
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
+                "location": "simulink/stateflow/chart_15.xml / P[@Name=script]"
               },
               {
                 "path": "Model/VcVcuInD.slx",
-                "sha256": "0422affde0277a2a08d73d27f9f30f35da53825d34b1eaa56b09a75ae056f0ba",
-                "location": "simulink/stateflow/chart_24.xml / script"
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
+                "location": "simulink/stateflow/chart_24.xml / P[@Name=script]"
               }
             ],
             "limitation": "本次重新核对新增业务常量；NEP-01不再沿用旧纯质量网关的参数管理5。固定逻辑0/1本身不当作缺失标定。",
@@ -159,42 +189,37 @@
             "score": 2,
             "max_score": 3,
             "status": "supported",
-            "reason": "业务调理组件具有 Mask 参数与明确输入/输出或 Bus 契约，按已批准的新组补充规则为2；没有独立发布且锁定版本的业务组件库。",
+            "reason": "沿用 v0.11.2 数值 2；本轮构建独立性争议暂停，未重新裁决。旧裁决依据：业务调理组件具有 Mask 参数与明确输入/输出或 Bus 契约，按已批准的新组补充规则为2；没有独立发布且锁定版本的业务组件库。",
             "evidence": [
               {
                 "path": "Model/VcVcuInD.slx",
-                "sha256": "0422affde0277a2a08d73d27f9f30f35da53825d34b1eaa56b09a75ae056f0ba",
-                "location": "Mask / PreLoadFcn / dependency references"
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
+                "location": "simulink/systems/system_root.xml/Block[@SID='5970'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "ad88b052eae04a8465ce4be15976c29d920a614bd03ac124cd8e9d90e78a5ab9",
-                "location": "Component boundaries"
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "54300b2b0d1aff82cfdc42b828ac8fe77c1a39087affc1eb77ca9d7a541296b2",
+                "location": "Scope of local library, platform branches and aliases"
               }
             ],
-            "limitation": "NEP-10的库与主模型同仓同快照，不能把普通LibraryVersion或工具版本当成稳定发布与依赖锁定。",
-            "method": "source-grounded maintainer semantic re-adjudication after native/property verification"
+            "limitation": "HOLD: effective contract and prior numeric value preserved pending explicit adjudication; new typed Bus is not treated as approval of a new build rule.",
+            "method": "prior value carried forward; source identity rebound only; disputed adjudication paused"
           },
           "version_independence": {
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "当前模型12.0.0_0；README明确定义MAJOR/MINOR/PATCH兼容性含义。本次类型/新增输出为不兼容接口修订，版本递增与实际前后差异相符。",
+            "reason": "当前模型12.1.0_0；根输入/输出保持，兼容增加业务标定和类型化内部接口，README定义的MINOR语义与这次实际变化一致；旧12.0.0_0记录及标签保留。",
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "7d66b900b5317c35f00c70f9d36255de35faae31048ad5f21792f7e08cdeac6f",
-                "location": "Semantic version policy"
-              },
-              {
-                "path": "Documentation/VcVcuInD_26R1_变更记录.xlsx",
-                "sha256": "b57fb1b24933bb5ae370add45d04e8b81f52a3bf82e7b1e3b4b624fd250abae6",
-                "location": "Cover/26R1"
+                "sha256": "a062aa2559bd57029a60efaaa8f9ce23b788ba6c00d4b347e0b529ec90394274",
+                "location": "Current version, compatibility meanings and engineering repair supplement"
               },
               {
                 "path": "Model/VcVcuInD.slx",
-                "sha256": "0422affde0277a2a08d73d27f9f30f35da53825d34b1eaa56b09a75ae056f0ba",
-                "location": "ModelVersionFormat"
+                "sha256": "fb0b53baaf446a904868b000ebf2df4f79b02fbb15270dbb7b166956b3e953fd",
+                "location": "simulink/blockdiagram.xml ModelVersion"
               }
             ],
             "limitation": "旧导出别名仍是旧快照，不宣称八个月真实发布史。",
@@ -204,22 +229,17 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "已逐仓重写当前变更记录：12.0.0_0、实际日期、具体业务前后逻辑、接口增删和类型/单位/范围变化均可由Git父提交及InterfaceChanges.json核对；跨仓TargetSoc复制声明已删除。",
+            "reason": "26R1变更表追加2026-09-10的CHG004，与当前12.1.0_0工程变化对应；既有记录逐单元格保持，模型/Bus/标定差异可由Git父提交及EngineeringRepair.json核验。",
             "evidence": [
               {
                 "path": "Documentation/VcVcuInD_26R1_变更记录.xlsx",
-                "sha256": "b57fb1b24933bb5ae370add45d04e8b81f52a3bf82e7b1e3b4b624fd250abae6",
-                "location": "26R1!B2,H2,I2,J2,L2"
+                "sha256": "0852c885ac0d52ae3103c0977731f73214f17b16dc9a3b318befa0f9f08ace92",
+                "location": "Cover!B4; 26R1 last appended CHG004 row"
               },
               {
-                "path": "Documentation/InterfaceChanges.json",
-                "sha256": "1c88624fe3635c4e170f199299afd30df04ae66d3c855559b25773bd4b7b101d",
-                "location": "Actual before/after per-signal records"
-              },
-              {
-                "path": "Model/interfaceVcVcuInD.xls",
-                "sha256": "292fb957d86ad39fe94995b035d61eac8a90012f60af91313ce9ed66e6435c3e",
-                "location": "ChangeLog"
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "e35478cc425bd8e256047f2e11d821812b121c8298e70afae15d9595cd81efdc",
+                "location": "Current engineering change details"
               }
             ],
             "limitation": "列齐全不是充分理由；当前裁决依赖实际模型/接口差异。保留的历史导出材料不代表生产发布史。",
@@ -233,7 +253,7 @@
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "7d66b900b5317c35f00c70f9d36255de35faae31048ad5f21792f7e08cdeac6f",
+                "sha256": "a062aa2559bd57029a60efaaa8f9ce23b788ba6c00d4b347e0b529ec90394274",
                 "location": "Directory roles"
               }
             ],
@@ -244,22 +264,22 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "仓内包含独立属性定义、输入/期望向量、实测输出及原生报告。11948个采样、4条业务属性与1170904个独立通道/诊断比较全部通过；C语句覆盖未测，不能满足三项同时达标的3/5条件，裁1。",
+            "reason": "仓内独立属性、输入期望及原生报告：11948 采样、4 条业务属性、1170904 个独立通道/诊断比较通过。SWUT Properties逐条绑定输出、算子、期望、采样与容差；C语句覆盖未测，保持1。",
             "evidence": [
               {
                 "path": "UnitTest/test-properties.json",
-                "sha256": "1791a0e38a193d0a8c83ac02a34b2b1e909abbf4a172c787c454e83c41c4c4a5",
-                "location": "Independent point and temporal assertions"
+                "sha256": "f5c2b14e0b9f25a13dce362efde837199c4a729c31cd1c9144006b2ec9736c6c",
+                "location": "checks[*]: name/output/op/value/indices/tolerance"
+              },
+              {
+                "path": "UnitTest/VCU_VcVcuInD_SWUT.xlsx",
+                "sha256": "14dc2e0874bb7f2bd3eefe1debe9c96a2a9b65ca9287e08503c1adf3bf8a6b59",
+                "location": "Properties!A1 onward; TCSDM points to exact assertion rows"
               },
               {
                 "path": "UnitTest/VcVcuInD_BTC_UT_Report.html",
-                "sha256": "94d52690974ccde0abf893901400866777a817f144ccdfb96255f56d83ba7fa5",
-                "location": "Native checks and runtime binding"
-              },
-              {
-                "path": "UnitTest/VcVcuInD_BTC_UTCov_Report.html",
-                "sha256": "7ee05e1a829edf704ddad19b57407b7cc3a54f4cb5909844364de827cda37a04",
-                "location": "Measured model metrics; C statement unmeasured"
+                "sha256": "cb59969089304616cd9f30083875f1662b2a29c0630e00983faf847404942a86",
+                "location": "Actual engine, measured counts and runtime SHA256 bindings"
               }
             ],
             "limitation": "实测输出仅作回放，不冒充独立预期；BTC只是命名，host C不是SIL/PIL/HIL。",
@@ -273,7 +293,7 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "367b2ab786de8572c8b0d665de05b5b13983d4ae",
+                "head": "8bc46b4f9b0e8d556750c6e894628c9961ddb661",
                 "refs": {
                   "refs/heads/Branch-XCU-EEA4.0": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
                   "refs/heads/XCU": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
@@ -281,7 +301,7 @@
                   "refs/heads/XCUP2": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
                   "refs/heads/XCU_EEA4.0_test": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
                   "refs/heads/auto/master/1/d9035ae4-1": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
-                  "refs/heads/master": "367b2ab786de8572c8b0d665de05b5b13983d4ae"
+                  "refs/heads/master": "8bc46b4f9b0e8d556750c6e894628c9961ddb661"
                 }
               },
               {
@@ -301,7 +321,7 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "367b2ab786de8572c8b0d665de05b5b13983d4ae",
+                "head": "8bc46b4f9b0e8d556750c6e894628c9961ddb661",
                 "refs": {
                   "refs/heads/Branch-XCU-EEA4.0": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
                   "refs/heads/XCU": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
@@ -309,7 +329,7 @@
                   "refs/heads/XCUP2": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
                   "refs/heads/XCU_EEA4.0_test": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
                   "refs/heads/auto/master/1/d9035ae4-1": "d9035ae422e1a1dd0303c65b8bd5377bbc87a0fb",
-                  "refs/heads/master": "367b2ab786de8572c8b0d665de05b5b13983d4ae"
+                  "refs/heads/master": "8bc46b4f9b0e8d556750c6e894628c9961ddb661"
                 }
               }
             ],
@@ -322,11 +342,11 @@
     {
       "id": "NEP-02",
       "name": "VcVcuOutQM",
-      "head": "32d77f24db27d913aa0bfcdcc70dd15b463dfe00",
+      "head": "f7abfddcd039fb28bd70b0362300fe0c6f406a81",
       "reference": {
         "id": "NEP-02",
         "name": "VcVcuOutQM",
-        "head": "32d77f24db27d913aa0bfcdcc70dd15b463dfe00",
+        "head": "f7abfddcd039fb28bd70b0362300fe0c6f406a81",
         "scores": {
           "hierarchy": 3,
           "reuse": 1,
@@ -349,17 +369,22 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "按实际责任核对分组输入、类型调理、业务组件与诊断层。展开后 147 个子系统中，至少 141 个有明确单一职责（95.9%）；分组层不计入该下界。模拟量转换、数字资格、业务状态分别封装，不能由相近块数单独推导结论。",
+            "reason": "当前原生展开 147 个子系统；保守排除 5 个根采集分组后，142 个调理、业务或诊断单元职责可独立描述（96.6%）。03/06紧凑调理仍保留两采样资格状态，08积分反馈单独呈现；层级裁3。",
             "evidence": [
               {
                 "path": "Model/VcVcuOutQM.slx",
-                "sha256": "80a68b88a4d1b0fee6d4c9e5383fe615351778c33e5647976562f0e0f569d39c",
-                "location": "system_root/Block[@SID='1775'] (BusinessDecision)"
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1775'] (BusinessDecision)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "11056b0fd367685b2fe055b841a1108456f5bced31faacd21bcd83df999de006",
+                "location": "buses, compact_channels, parameters and layout_scope"
               },
               {
                 "path": "Documentation/BusinessBehavior.md",
-                "sha256": "1f7564333f8187ff5317ade0d0a459ddd060e42a698f0581a850dedd902bcc69",
-                "location": "Responsibilities and independently checked behavior"
+                "sha256": "e8846557fff4121bef3ae9e3c43573ca3920206353e02b50f6e43d45c103b920",
+                "location": "Responsibilities and engineering implementation"
               }
             ],
             "limitation": "同源构造与共享调理模式仍存在；这是当前结构裁决，不是内部逐仓架构复原证明。",
@@ -373,12 +398,12 @@
             "evidence": [
               {
                 "path": "Model/VcVcuOutQM.slx",
-                "sha256": "80a68b88a4d1b0fee6d4c9e5383fe615351778c33e5647976562f0e0f569d39c",
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
                 "location": "system_1014/Block[@SID='1039'] (TemporalQualification)"
               },
               {
                 "path": "Model/VcVcuOutQM.slx",
-                "sha256": "80a68b88a4d1b0fee6d4c9e5383fe615351778c33e5647976562f0e0f569d39c",
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
                 "location": "system_1014/Block[@SID='1025'] (RangeAndCommunication)"
               }
             ],
@@ -389,17 +414,22 @@
             "score": 1,
             "max_score": 3,
             "status": "supported",
-            "reason": "外部 86 入/39 出已按编译类型和实际物理编码对齐，变更明细可追踪；内部仍有 14 个 InN/OutN 默认端口，例如 VcVcuOutQM/DriverAndModeInputs/In3，未满足整体端口规范的2档。",
+            "reason": "根 86 入/39 出保持。VcVcuOutQM_DomainInputs_Bus 含 39 个实际类型/维度字段并穿越业务边界；仍有 14 个默认内部端口，整体规范未达2档，保持1。",
             "evidence": [
               {
-                "path": "Model/interfaceVcVcuOutQM.xls",
-                "sha256": "4ead344070cdb01342194fa5f30186556aa72dcd28432156bdba9d5c78f9acaf",
-                "location": "IN/OUT: Name, DataType, Unit, Min, Max and raw decoding description"
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1896'] (AssembleDomainInputs)"
               },
               {
                 "path": "Model/VcVcuOutQM.slx",
-                "sha256": "80a68b88a4d1b0fee6d4c9e5383fe615351778c33e5647976562f0e0f569d39c",
-                "location": "VcVcuOutQM/DriverAndModeInputs/In3 SID VcVcuOutQM:949"
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
+                "location": "simulink/systems/system_1775.xml/Block[@SID='1894'] (DomainInputs)"
+              },
+              {
+                "path": "Model/interfaceVcVcuOutQM.xls",
+                "sha256": "b5c137c4f0db5b6d7dd1a7f9abda576ac058585d7ad5e447c3dec05d79e9d966",
+                "location": "IN!A1; OUT!A1; BUS!A1: typed fields, dimensions, producer and consumer"
               }
             ],
             "limitation": "外部表格完整不能自动替代内部接口命名质量；raw unit=1 表示编码计数，工程单位与比例见对应描述/物理输出。",
@@ -413,13 +443,18 @@
             "evidence": [
               {
                 "path": "Model/VcVcuOutQM.slx",
-                "sha256": "80a68b88a4d1b0fee6d4c9e5383fe615351778c33e5647976562f0e0f569d39c",
-                "location": "system_root/Block[@SID='1775'] (BusinessDecision)"
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1775'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "1f7564333f8187ff5317ade0d0a459ddd060e42a698f0581a850dedd902bcc69",
-                "location": "Responsibilities and independently checked behavior"
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
+                "location": "simulink/systems/system_1775.xml/Block[@SID='1894'] (DomainInputs)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "11056b0fd367685b2fe055b841a1108456f5bced31faacd21bcd83df999de006",
+                "location": "layout_scope; root acquisition/quality fan-in remains dense"
               }
             ],
             "limitation": "依据当前原生图与连接关系；不按 Goto 数量或块数机械扣分。",
@@ -429,17 +464,27 @@
             "score": 5,
             "max_score": 5,
             "status": "supported",
-            "reason": "在父级业务/信号上下文中逐类核对，命名风格按角色一致。3848 个块/线元素中，保守计入默认端口、序号拒绝/读取、通用函数包装及空线名 183 个（4.8%）；其余名称准确标示局部信号、运算或状态责任，超过90%门槛。",
+            "reason": "按父业务上下文审阅同类命名。原生 3828 块/线中机械筛出 98 个通用名或空名；其中 0 条为 MATLAB Function 生成包装内部连线，角色由具名函数形参与返回值明确。其余保守未消歧 98 个（2.6%）；明确且风格协调的元素仍超过90%，保持5。这是当前源码语义裁决，不新增候选可见规则。",
             "evidence": [
               {
                 "path": "Model/VcVcuOutQM.slx",
-                "sha256": "80a68b88a4d1b0fee6d4c9e5383fe615351778c33e5647976562f0e0f569d39c",
-                "location": "Named channel/stage/controller hierarchy and signal lines"
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1775'] (BusinessDecision)"
               },
               {
-                "path": "Model/interfaceVcVcuOutQM.xls",
-                "sha256": "4ead344070cdb01342194fa5f30186556aa72dcd28432156bdba9d5c78f9acaf",
-                "location": "IN/OUT/CAL names"
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
+                "location": "simulink/systems/system_1775.xml/Block[@SID='1894'] (DomainInputs)"
+              },
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
+                "location": "simulink/stateflow/chart_22.xml / P[@Name=script], named function arguments and returns"
+              },
+              {
+                "path": "Model/VcVcuOutQM.slx",
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
+                "location": "simulink/stateflow/chart_39.xml / P[@Name=script], named function arguments and returns"
               }
             ],
             "limitation": "Raw、Age、Qualified 等在具名通道内有明确意义，不因不同通道重复使用就判无意义；少量默认端口仍影响接口叶。",
@@ -449,22 +494,27 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "通道范围、时效和物理编码已有类型/约束参数，但2000 N*m/s变化率、180/90度热降额与辅助执行器互锁阈值尚未以独立外部数据源系统管理，未满足可调参数均外部变量化的3/5条件，裁部分变量化1。",
+            "reason": "已增加 2 个实际标定对象并用于模型，数组在CAL记录维度/单位/上下界；但变化率2000 N*m/s与辅助执行器互锁阈值仍内嵌，未满足全部可调量外部化和系统管理，保持部分变量化1。Auto/Default不冒充目标内存映射。",
             "evidence": [
               {
                 "path": "Model/interfaceVcVcuOutQM.xls",
-                "sha256": "4ead344070cdb01342194fa5f30186556aa72dcd28432156bdba9d5c78f9acaf",
-                "location": "CAL; channel parameters"
+                "sha256": "b5c137c4f0db5b6d7dd1a7f9abda576ac058585d7ad5e447c3dec05d79e9d966",
+                "location": "CAL!A1 onward; MP/FIX for NEP-08"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "11056b0fd367685b2fe055b841a1108456f5bced31faacd21bcd83df999de006",
+                "location": "parameters: values, dimensions, storage and bounds"
               },
               {
                 "path": "Model/VcVcuOutQM.slx",
-                "sha256": "80a68b88a4d1b0fee6d4c9e5383fe615351778c33e5647976562f0e0f569d39c",
-                "location": "simulink/stateflow/chart_22.xml / script"
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
+                "location": "simulink/stateflow/chart_22.xml / P[@Name=script]"
               },
               {
                 "path": "Model/VcVcuOutQM.slx",
-                "sha256": "80a68b88a4d1b0fee6d4c9e5383fe615351778c33e5647976562f0e0f569d39c",
-                "location": "simulink/stateflow/chart_39.xml / script"
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
+                "location": "simulink/stateflow/chart_39.xml / P[@Name=script]"
               }
             ],
             "limitation": "本次重新核对新增业务常量；NEP-01不再沿用旧纯质量网关的参数管理5。固定逻辑0/1本身不当作缺失标定。",
@@ -474,42 +524,37 @@
             "score": 0,
             "max_score": 3,
             "status": "supported",
-            "reason": "主体业务仍内嵌于单个SLX；具名子系统和成功生码没有形成已批准规则所需的 Mask/独立组件契约，裁0。",
+            "reason": "沿用 v0.11.2 数值 0；本轮构建独立性争议暂停，未重新裁决。旧裁决依据：主体业务仍内嵌于单个SLX；具名子系统和成功生码没有形成已批准规则所需的 Mask/独立组件契约，裁0。",
             "evidence": [
               {
                 "path": "Model/VcVcuOutQM.slx",
-                "sha256": "80a68b88a4d1b0fee6d4c9e5383fe615351778c33e5647976562f0e0f569d39c",
-                "location": "Mask / PreLoadFcn / dependency references"
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1775'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "1f7564333f8187ff5317ade0d0a459ddd060e42a698f0581a850dedd902bcc69",
-                "location": "Component boundaries"
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "56a458cf3918c8120167d4290ff2ddf2050e47f7724a4e8578937263c295429d",
+                "location": "Scope of local library, platform branches and aliases"
               }
             ],
-            "limitation": "NEP-10的库与主模型同仓同快照，不能把普通LibraryVersion或工具版本当成稳定发布与依赖锁定。",
-            "method": "source-grounded maintainer semantic re-adjudication after native/property verification"
+            "limitation": "HOLD: effective contract and prior numeric value preserved pending explicit adjudication; new typed Bus is not treated as approval of a new build rule.",
+            "method": "prior value carried forward; source identity rebound only; disputed adjudication paused"
           },
           "version_independence": {
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "当前模型12.0.0_0；README明确定义MAJOR/MINOR/PATCH兼容性含义。本次类型/新增输出为不兼容接口修订，版本递增与实际前后差异相符。",
+            "reason": "当前模型12.1.0_0；根输入/输出保持，兼容增加业务标定和类型化内部接口，README定义的MINOR语义与这次实际变化一致；旧12.0.0_0记录及标签保留。",
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "f666692f822ff4beec814c763718c3f6d3b1dfd1caf742c871820a5f21164c1b",
-                "location": "Semantic version policy"
-              },
-              {
-                "path": "Documentation/VcVcuOutQM_26R1_变更记录.xlsx",
-                "sha256": "fd975da2a53daa6c2b2a1c1974ac9a0fcba9687d15da0da6d3e2c7efd1076182",
-                "location": "Cover/26R1"
+                "sha256": "c2e23da675f3d6828f366ab03948a616510347b338c6a9211f98728acf0b3153",
+                "location": "Current version, compatibility meanings and engineering repair supplement"
               },
               {
                 "path": "Model/VcVcuOutQM.slx",
-                "sha256": "80a68b88a4d1b0fee6d4c9e5383fe615351778c33e5647976562f0e0f569d39c",
-                "location": "ModelVersionFormat"
+                "sha256": "c2a0ae4f0b69e3a5d73127c5c901039e242f97805a132bf6c7d6203c74eb9b30",
+                "location": "simulink/blockdiagram.xml ModelVersion"
               }
             ],
             "limitation": "旧导出别名仍是旧快照，不宣称八个月真实发布史。",
@@ -519,22 +564,17 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "已逐仓重写当前变更记录：12.0.0_0、实际日期、具体业务前后逻辑、接口增删和类型/单位/范围变化均可由Git父提交及InterfaceChanges.json核对；跨仓TargetSoc复制声明已删除。",
+            "reason": "26R1变更表追加2026-09-10的CHG004，与当前12.1.0_0工程变化对应；既有记录逐单元格保持，模型/Bus/标定差异可由Git父提交及EngineeringRepair.json核验。",
             "evidence": [
               {
                 "path": "Documentation/VcVcuOutQM_26R1_变更记录.xlsx",
-                "sha256": "fd975da2a53daa6c2b2a1c1974ac9a0fcba9687d15da0da6d3e2c7efd1076182",
-                "location": "26R1!B2,H2,I2,J2,L2"
+                "sha256": "4e83405233e00902399f685eb7f4314ad3dcb85791a94864cb20d467ec3fd343",
+                "location": "Cover!B4; 26R1 last appended CHG004 row"
               },
               {
-                "path": "Documentation/InterfaceChanges.json",
-                "sha256": "01beb20d45fbfc879ffeab4e02b92a3f191ecccebcb2d5b8e549a8d15e65c2e3",
-                "location": "Actual before/after per-signal records"
-              },
-              {
-                "path": "Model/interfaceVcVcuOutQM.xls",
-                "sha256": "4ead344070cdb01342194fa5f30186556aa72dcd28432156bdba9d5c78f9acaf",
-                "location": "ChangeLog"
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "11056b0fd367685b2fe055b841a1108456f5bced31faacd21bcd83df999de006",
+                "location": "Current engineering change details"
               }
             ],
             "limitation": "列齐全不是充分理由；当前裁决依赖实际模型/接口差异。保留的历史导出材料不代表生产发布史。",
@@ -548,7 +588,7 @@
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "f666692f822ff4beec814c763718c3f6d3b1dfd1caf742c871820a5f21164c1b",
+                "sha256": "c2e23da675f3d6828f366ab03948a616510347b338c6a9211f98728acf0b3153",
                 "location": "Directory roles"
               }
             ],
@@ -559,22 +599,22 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "仓内包含独立属性定义、输入/期望向量、实测输出及原生报告。3562个采样、5条业务属性与106860个独立通道/诊断比较全部通过；C语句覆盖未测，不能满足三项同时达标的3/5条件，裁1。",
+            "reason": "仓内独立属性、输入期望及原生报告：4002 采样、10 条业务属性、120060 个独立通道/诊断比较通过。SWUT Properties逐条绑定输出、算子、期望、采样与容差；C语句覆盖未测，保持1。",
             "evidence": [
               {
                 "path": "UnitTest/test-properties.json",
-                "sha256": "62f752724083c4b7b4d3591fe2ce9133a99b16a2a8770b904b7fd1f64366f2f2",
-                "location": "Independent point and temporal assertions"
+                "sha256": "5e7af5a49d0d0fe3600aaf5d096199becf1275c9673e6642187f6d16e16ad27e",
+                "location": "checks[*]: name/output/op/value/indices/tolerance"
+              },
+              {
+                "path": "UnitTest/VCU_VcVcuOutQM_SWUT.xlsx",
+                "sha256": "beadb87872101d85215e43dab515e9d94b5db27b71cd21134a063f1aee9ec295",
+                "location": "Properties!A1 onward; TCSDM points to exact assertion rows"
               },
               {
                 "path": "UnitTest/VcVcuOutQM_BTC_UT_Report.html",
-                "sha256": "f76ebb2a02785d562d86621f3494cdd897edd1d3835cb725f0e179b31f46a8d1",
-                "location": "Native checks and runtime binding"
-              },
-              {
-                "path": "UnitTest/VcVcuOutQM_BTC_UTCov_Report.html",
-                "sha256": "cfb60e125987a60f8e1245b51cb40834e6fe9b60c8cd75717074f175a082a069",
-                "location": "Measured model metrics; C statement unmeasured"
+                "sha256": "466740459f97ce3c25916da19fea86d21526d1fc81a11949d12cfbd1d98f33ca",
+                "location": "Actual engine, measured counts and runtime SHA256 bindings"
               }
             ],
             "limitation": "实测输出仅作回放，不冒充独立预期；BTC只是命名，host C不是SIL/PIL/HIL。",
@@ -588,7 +628,7 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "32d77f24db27d913aa0bfcdcc70dd15b463dfe00",
+                "head": "f7abfddcd039fb28bd70b0362300fe0c6f406a81",
                 "refs": {
                   "refs/heads/Branch-XCU-EEA4.0": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
                   "refs/heads/XCU": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
@@ -596,7 +636,7 @@
                   "refs/heads/XCUP2": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
                   "refs/heads/XCU_EEA4.0_test": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
                   "refs/heads/auto/master/1/125aeb21-1": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
-                  "refs/heads/master": "32d77f24db27d913aa0bfcdcc70dd15b463dfe00"
+                  "refs/heads/master": "f7abfddcd039fb28bd70b0362300fe0c6f406a81"
                 }
               },
               {
@@ -616,7 +656,7 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "32d77f24db27d913aa0bfcdcc70dd15b463dfe00",
+                "head": "f7abfddcd039fb28bd70b0362300fe0c6f406a81",
                 "refs": {
                   "refs/heads/Branch-XCU-EEA4.0": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
                   "refs/heads/XCU": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
@@ -624,7 +664,7 @@
                   "refs/heads/XCUP2": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
                   "refs/heads/XCU_EEA4.0_test": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
                   "refs/heads/auto/master/1/125aeb21-1": "125aeb21bc738192b8713418e12bf8f7ff99b5f0",
-                  "refs/heads/master": "32d77f24db27d913aa0bfcdcc70dd15b463dfe00"
+                  "refs/heads/master": "f7abfddcd039fb28bd70b0362300fe0c6f406a81"
                 }
               }
             ],
@@ -637,11 +677,11 @@
     {
       "id": "NEP-03",
       "name": "VcVmcTrq",
-      "head": "0902e6c52e3878edd5a1c7de4e2e2ea65ef73300",
+      "head": "eb9ef33fe5ea2b8f5d6efef5cee297d004e6f152",
       "reference": {
         "id": "NEP-03",
         "name": "VcVmcTrq",
-        "head": "0902e6c52e3878edd5a1c7de4e2e2ea65ef73300",
+        "head": "eb9ef33fe5ea2b8f5d6efef5cee297d004e6f152",
         "scores": {
           "hierarchy": 3,
           "reuse": 1,
@@ -664,17 +704,22 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "按实际责任核对分组输入、类型调理、业务组件与诊断层。展开后 114 个子系统中，至少 108 个有明确单一职责（94.7%）；分组层不计入该下界。模拟量转换、数字资格、业务状态分别封装，不能由相近块数单独推导结论。",
+            "reason": "当前原生展开 55 个子系统；保守排除 5 个根采集分组后，50 个调理、业务或诊断单元职责可独立描述（90.9%）。03/06紧凑调理仍保留两采样资格状态，08积分反馈单独呈现；层级裁3。",
             "evidence": [
               {
                 "path": "Model/VcVmcTrq.slx",
-                "sha256": "3953d72ddd49fc64ff883e72c2eb3d0a68311be3dcb1b35f90ab2ae2077737aa",
-                "location": "system_root/Block[@SID='1353'] (BusinessDecision)"
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1353'] (BusinessDecision)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "1f7eada94a76b9b95ce4eb38144d2cda86ca81f7a1de8f9bfadda5a1aefce972",
+                "location": "buses, compact_channels, parameters and layout_scope"
               },
               {
                 "path": "Documentation/BusinessBehavior.md",
-                "sha256": "61945a5e1e7c32712265d254316c98ccd71874e9e21b019455a3c997c6385688",
-                "location": "Responsibilities and independently checked behavior"
+                "sha256": "cc27536e341ef04733f85e3ecfa210c512ad776b562ecbc2b263dc0b338680c2",
+                "location": "Responsibilities and engineering implementation"
               }
             ],
             "limitation": "同源构造与共享调理模式仍存在；这是当前结构裁决，不是内部逐仓架构复原证明。",
@@ -684,17 +729,17 @@
             "score": 1,
             "max_score": 3,
             "status": "supported",
-            "reason": "TemporalQualification、RangeAndCommunication 等调理逻辑在通道中仍有独立副本；各仓新增了不同的真实业务责任，但没有把这些公共调理实现提取为库/模型引用。",
+            "reason": "每通道资格校验已压缩为具名状态函数，但20个函数仍为独立源码副本；没有共享库或模型引用来复用这一公共实现，保持1。",
             "evidence": [
               {
                 "path": "Model/VcVmcTrq.slx",
-                "sha256": "3953d72ddd49fc64ff883e72c2eb3d0a68311be3dcb1b35f90ab2ae2077737aa",
-                "location": "system_1006/Block[@SID='1031'] (TemporalQualification)"
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/systems/system_1006.xml/Block[@SID='1453'] (QualifiedSignal)"
               },
               {
-                "path": "Model/VcVmcTrq.slx",
-                "sha256": "3953d72ddd49fc64ff883e72c2eb3d0a68311be3dcb1b35f90ab2ae2077737aa",
-                "location": "system_1006/Block[@SID='1017'] (RangeAndCommunication)"
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "1f7eada94a76b9b95ce4eb38144d2cda86ca81f7a1de8f9bfadda5a1aefce972",
+                "location": "compact_channels=20"
               }
             ],
             "limitation": "业务差异化、类型区别与单独状态不能消除实际源码重复。",
@@ -704,17 +749,22 @@
             "score": 1,
             "max_score": 3,
             "status": "supported",
-            "reason": "外部 62 入/26 出已按编译类型和实际物理编码对齐，变更明细可追踪；内部仍有 6 个 InN/OutN 默认端口，例如 VcVmcTrq/DriverAndModeInputs/In13，未满足整体端口规范的2档。",
+            "reason": "根 62 入/26 出保持。VcVmcTrq_DomainInputs_Bus 含 36 个实际类型/维度字段并穿越业务边界；仍有 6 个默认内部端口，整体规范未达2档，保持1。",
             "evidence": [
               {
-                "path": "Model/interfaceVcVmcTrq.xls",
-                "sha256": "20075427d177c77d68559f1ed97e3181ef139ebdb935442835bd64daaa94cf8d",
-                "location": "IN/OUT: Name, DataType, Unit, Min, Max and raw decoding description"
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1475'] (AssembleDomainInputs)"
               },
               {
                 "path": "Model/VcVmcTrq.slx",
-                "sha256": "3953d72ddd49fc64ff883e72c2eb3d0a68311be3dcb1b35f90ab2ae2077737aa",
-                "location": "VcVmcTrq/DriverAndModeInputs/In13 SID VcVmcTrq:215"
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/systems/system_1353.xml/Block[@SID='1473'] (DomainInputs)"
+              },
+              {
+                "path": "Model/interfaceVcVmcTrq.xls",
+                "sha256": "af4c40c0c50186d814ce48837c391069513efdbbce8a1e09556453b992efeed1",
+                "location": "IN!A1; OUT!A1; BUS!A1: typed fields, dimensions, producer and consumer"
               }
             ],
             "limitation": "外部表格完整不能自动替代内部接口命名质量；raw unit=1 表示编码计数，工程单位与比例见对应描述/物理输出。",
@@ -728,13 +778,18 @@
             "evidence": [
               {
                 "path": "Model/VcVmcTrq.slx",
-                "sha256": "3953d72ddd49fc64ff883e72c2eb3d0a68311be3dcb1b35f90ab2ae2077737aa",
-                "location": "system_root/Block[@SID='1353'] (BusinessDecision)"
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1353'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "61945a5e1e7c32712265d254316c98ccd71874e9e21b019455a3c997c6385688",
-                "location": "Responsibilities and independently checked behavior"
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/systems/system_1353.xml/Block[@SID='1473'] (DomainInputs)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "1f7eada94a76b9b95ce4eb38144d2cda86ca81f7a1de8f9bfadda5a1aefce972",
+                "location": "layout_scope; root acquisition/quality fan-in remains dense"
               }
             ],
             "limitation": "依据当前原生图与连接关系；不按 Goto 数量或块数机械扣分。",
@@ -744,17 +799,27 @@
             "score": 5,
             "max_score": 5,
             "status": "supported",
-            "reason": "在父级业务/信号上下文中逐类核对，命名风格按角色一致。2951 个块/线元素中，保守计入默认端口、序号拒绝/读取、通用函数包装及空线名 131 个（4.4%）；其余名称准确标示局部信号、运算或状态责任，超过90%门槛。",
+            "reason": "按父业务上下文审阅同类命名。原生 1903 块/线中机械筛出 298 个通用名或空名；其中 263 条为 MATLAB Function 生成包装内部连线，角色由具名函数形参与返回值明确。其余保守未消歧 35 个（1.8%）；明确且风格协调的元素仍超过90%，保持5。这是当前源码语义裁决，不新增候选可见规则。",
             "evidence": [
               {
                 "path": "Model/VcVmcTrq.slx",
-                "sha256": "3953d72ddd49fc64ff883e72c2eb3d0a68311be3dcb1b35f90ab2ae2077737aa",
-                "location": "Named channel/stage/controller hierarchy and signal lines"
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1353'] (BusinessDecision)"
               },
               {
-                "path": "Model/interfaceVcVmcTrq.xls",
-                "sha256": "20075427d177c77d68559f1ed97e3181ef139ebdb935442835bd64daaa94cf8d",
-                "location": "IN/OUT/CAL names"
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/systems/system_1006.xml/Block[@SID='1453'] (QualifiedSignal)"
+              },
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/stateflow/chart_113.xml / P[@Name=script], named function arguments and returns"
+              },
+              {
+                "path": "Model/VcVmcTrq.slx",
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/stateflow/chart_130.xml / P[@Name=script], named function arguments and returns"
               }
             ],
             "limitation": "Raw、Age、Qualified 等在具名通道内有明确意义，不因不同通道重复使用就判无意义；少量默认端口仍影响接口叶。",
@@ -764,22 +829,27 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "通道范围、时效和物理编码已有类型/约束参数，但踏板/制动增益4/6、5%踏板偏差与160/80度热包络尚未以独立外部数据源系统管理，未满足可调参数均外部变量化的3/5条件，裁部分变量化1。",
+            "reason": "已增加 2 个实际标定对象并用于模型，数组在CAL记录维度/单位/上下界；但踏板/制动增益4/6与5%踏板偏差仍内嵌，未满足全部可调量外部化和系统管理，保持部分变量化1。Auto/Default不冒充目标内存映射。",
             "evidence": [
               {
                 "path": "Model/interfaceVcVmcTrq.xls",
-                "sha256": "20075427d177c77d68559f1ed97e3181ef139ebdb935442835bd64daaa94cf8d",
-                "location": "CAL; channel parameters"
+                "sha256": "af4c40c0c50186d814ce48837c391069513efdbbce8a1e09556453b992efeed1",
+                "location": "CAL!A1 onward; MP/FIX for NEP-08"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "1f7eada94a76b9b95ce4eb38144d2cda86ca81f7a1de8f9bfadda5a1aefce972",
+                "location": "parameters: values, dimensions, storage and bounds"
               },
               {
                 "path": "Model/VcVmcTrq.slx",
-                "sha256": "3953d72ddd49fc64ff883e72c2eb3d0a68311be3dcb1b35f90ab2ae2077737aa",
-                "location": "simulink/stateflow/chart_18.xml / script"
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/stateflow/chart_113.xml / P[@Name=script]"
               },
               {
                 "path": "Model/VcVmcTrq.slx",
-                "sha256": "3953d72ddd49fc64ff883e72c2eb3d0a68311be3dcb1b35f90ab2ae2077737aa",
-                "location": "simulink/stateflow/chart_27.xml / script"
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/stateflow/chart_130.xml / P[@Name=script]"
               }
             ],
             "limitation": "本次重新核对新增业务常量；NEP-01不再沿用旧纯质量网关的参数管理5。固定逻辑0/1本身不当作缺失标定。",
@@ -789,42 +859,37 @@
             "score": 2,
             "max_score": 3,
             "status": "supported",
-            "reason": "业务调理组件具有 Mask 参数与明确输入/输出或 Bus 契约，按已批准的新组补充规则为2；没有独立发布且锁定版本的业务组件库。",
+            "reason": "沿用 v0.11.2 数值 2；本轮构建独立性争议暂停，未重新裁决。旧裁决依据：业务调理组件具有 Mask 参数与明确输入/输出或 Bus 契约，按已批准的新组补充规则为2；没有独立发布且锁定版本的业务组件库。",
             "evidence": [
               {
                 "path": "Model/VcVmcTrq.slx",
-                "sha256": "3953d72ddd49fc64ff883e72c2eb3d0a68311be3dcb1b35f90ab2ae2077737aa",
-                "location": "Mask / PreLoadFcn / dependency references"
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1353'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "61945a5e1e7c32712265d254316c98ccd71874e9e21b019455a3c997c6385688",
-                "location": "Component boundaries"
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "b77d27d75d459ca6cf466076215d2854464bebfc5c434fcb87cf0adfe87f1c4c",
+                "location": "Scope of local library, platform branches and aliases"
               }
             ],
-            "limitation": "NEP-10的库与主模型同仓同快照，不能把普通LibraryVersion或工具版本当成稳定发布与依赖锁定。",
-            "method": "source-grounded maintainer semantic re-adjudication after native/property verification"
+            "limitation": "HOLD: effective contract and prior numeric value preserved pending explicit adjudication; new typed Bus is not treated as approval of a new build rule.",
+            "method": "prior value carried forward; source identity rebound only; disputed adjudication paused"
           },
           "version_independence": {
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "当前模型12.0.0_0；README明确定义MAJOR/MINOR/PATCH兼容性含义。本次类型/新增输出为不兼容接口修订，版本递增与实际前后差异相符。",
+            "reason": "当前模型12.1.0_0；根输入/输出保持，兼容增加业务标定和类型化内部接口，README定义的MINOR语义与这次实际变化一致；旧12.0.0_0记录及标签保留。",
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "819269243ab467279ff37c08ede3a2da0e5c8439b0755487cd6c43d6acb2603a",
-                "location": "Semantic version policy"
-              },
-              {
-                "path": "Documentation/VcVmcTrq_26R1_变更记录.xlsx",
-                "sha256": "b62b37ac07f31233868835e46267e6fdb260ec66ddbd9b48522addab5567bb05",
-                "location": "Cover/26R1"
+                "sha256": "0562edaa71c21b98cac19ba1772d73dde67b3d3db9ad3b7ba2d4cff3aa6a5c0c",
+                "location": "Current version, compatibility meanings and engineering repair supplement"
               },
               {
                 "path": "Model/VcVmcTrq.slx",
-                "sha256": "3953d72ddd49fc64ff883e72c2eb3d0a68311be3dcb1b35f90ab2ae2077737aa",
-                "location": "ModelVersionFormat"
+                "sha256": "0297a28f973159fdbf8d0645adc6dc86566d2e7bcdb5de0d1d1c55bcb6db896b",
+                "location": "simulink/blockdiagram.xml ModelVersion"
               }
             ],
             "limitation": "旧导出别名仍是旧快照，不宣称八个月真实发布史。",
@@ -834,22 +899,17 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "已逐仓重写当前变更记录：12.0.0_0、实际日期、具体业务前后逻辑、接口增删和类型/单位/范围变化均可由Git父提交及InterfaceChanges.json核对；跨仓TargetSoc复制声明已删除。",
+            "reason": "26R1变更表追加2026-09-10的CHG004，与当前12.1.0_0工程变化对应；既有记录逐单元格保持，模型/Bus/标定差异可由Git父提交及EngineeringRepair.json核验。",
             "evidence": [
               {
                 "path": "Documentation/VcVmcTrq_26R1_变更记录.xlsx",
-                "sha256": "b62b37ac07f31233868835e46267e6fdb260ec66ddbd9b48522addab5567bb05",
-                "location": "26R1!B2,H2,I2,J2,L2"
+                "sha256": "736c95fb03e58e98ec801faa9226f9f780724adb2c0d7b296955d413dce829b1",
+                "location": "Cover!B4; 26R1 last appended CHG004 row"
               },
               {
-                "path": "Documentation/InterfaceChanges.json",
-                "sha256": "8fdb5dafb659cf1bd39a448265181ff79b8c7220b047d58957ae92288af18a93",
-                "location": "Actual before/after per-signal records"
-              },
-              {
-                "path": "Model/interfaceVcVmcTrq.xls",
-                "sha256": "20075427d177c77d68559f1ed97e3181ef139ebdb935442835bd64daaa94cf8d",
-                "location": "ChangeLog"
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "1f7eada94a76b9b95ce4eb38144d2cda86ca81f7a1de8f9bfadda5a1aefce972",
+                "location": "Current engineering change details"
               }
             ],
             "limitation": "列齐全不是充分理由；当前裁决依赖实际模型/接口差异。保留的历史导出材料不代表生产发布史。",
@@ -863,7 +923,7 @@
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "819269243ab467279ff37c08ede3a2da0e5c8439b0755487cd6c43d6acb2603a",
+                "sha256": "0562edaa71c21b98cac19ba1772d73dde67b3d3db9ad3b7ba2d4cff3aa6a5c0c",
                 "location": "Directory roles"
               }
             ],
@@ -874,22 +934,22 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "仓内包含独立属性定义、输入/期望向量、实测输出及原生报告。2647个采样、12条业务属性与58234个独立通道/诊断比较全部通过；C语句覆盖未测，不能满足三项同时达标的3/5条件，裁1。",
+            "reason": "仓内独立属性、输入期望及原生报告：2679 采样、20 条业务属性、58938 个独立通道/诊断比较通过。SWUT Properties逐条绑定输出、算子、期望、采样与容差；C语句覆盖未测，保持1。",
             "evidence": [
               {
                 "path": "UnitTest/test-properties.json",
-                "sha256": "634f1c4b83a9590e1fbea1e6cb03087768872a47a45c020e14c849af73c92a6f",
-                "location": "Independent point and temporal assertions"
+                "sha256": "0f85bb23dce04881b0872e3bb435318fa9fdaf29074e5266aa800aef51b19a19",
+                "location": "checks[*]: name/output/op/value/indices/tolerance"
+              },
+              {
+                "path": "UnitTest/VCU_VcVmcTrq_SWUT.xlsx",
+                "sha256": "44989c47aa69fad447c559eb2930d12e07df247ad906856225b0a2284ede5c95",
+                "location": "Properties!A1 onward; TCSDM points to exact assertion rows"
               },
               {
                 "path": "UnitTest/VcVmcTrq_BTC_UT_Report.html",
-                "sha256": "e1929b87afac68e0c7d70ac058d03afa4de6a4196bda5c984e018ea8577a4740",
-                "location": "Native checks and runtime binding"
-              },
-              {
-                "path": "UnitTest/VcVmcTrq_BTC_UTCov_Report.html",
-                "sha256": "f5dbc58c92e50ea582b81464ed510ced10fe81ee5f35d824b7ac6152f0cdfc12",
-                "location": "Measured model metrics; C statement unmeasured"
+                "sha256": "4a0d6eb1594a7d723081c6abe3c0f1a9a30be3b638fb0cbfec047f46bed4e7c2",
+                "location": "Actual engine, measured counts and runtime SHA256 bindings"
               }
             ],
             "limitation": "实测输出仅作回放，不冒充独立预期；BTC只是命名，host C不是SIL/PIL/HIL。",
@@ -903,10 +963,10 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "0902e6c52e3878edd5a1c7de4e2e2ea65ef73300",
+                "head": "eb9ef33fe5ea2b8f5d6efef5cee297d004e6f152",
                 "refs": {
                   "refs/heads/auto/master/1/648cfbcc-1": "648cfbcc43c142b82b718491f45b34731dfd9e00",
-                  "refs/heads/master": "0902e6c52e3878edd5a1c7de4e2e2ea65ef73300"
+                  "refs/heads/master": "eb9ef33fe5ea2b8f5d6efef5cee297d004e6f152"
                 }
               },
               {
@@ -926,10 +986,10 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "0902e6c52e3878edd5a1c7de4e2e2ea65ef73300",
+                "head": "eb9ef33fe5ea2b8f5d6efef5cee297d004e6f152",
                 "refs": {
                   "refs/heads/auto/master/1/648cfbcc-1": "648cfbcc43c142b82b718491f45b34731dfd9e00",
-                  "refs/heads/master": "0902e6c52e3878edd5a1c7de4e2e2ea65ef73300"
+                  "refs/heads/master": "eb9ef33fe5ea2b8f5d6efef5cee297d004e6f152"
                 }
               }
             ],
@@ -942,11 +1002,11 @@
     {
       "id": "NEP-04",
       "name": "VcErcRgn",
-      "head": "c30baa42401b4086e57396213c07f7d0fd244099",
+      "head": "1b3adf266528202a746899c2dddb3e1bc9569459",
       "reference": {
         "id": "NEP-04",
         "name": "VcErcRgn",
-        "head": "c30baa42401b4086e57396213c07f7d0fd244099",
+        "head": "1b3adf266528202a746899c2dddb3e1bc9569459",
         "scores": {
           "hierarchy": 3,
           "reuse": 1,
@@ -969,17 +1029,22 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "按实际责任核对分组输入、类型调理、业务组件与诊断层。展开后 99 个子系统中，至少 93 个有明确单一职责（93.9%）；分组层不计入该下界。模拟量转换、数字资格、业务状态分别封装，不能由相近块数单独推导结论。",
+            "reason": "当前原生展开 99 个子系统；保守排除 5 个根采集分组后，94 个调理、业务或诊断单元职责可独立描述（94.9%）。03/06紧凑调理仍保留两采样资格状态，08积分反馈单独呈现；层级裁3。",
             "evidence": [
               {
                 "path": "Model/VcErcRgn.slx",
-                "sha256": "1bf1bdf793d9426a0ea7d016d2b967b97b561b483dfc785ff46677b697f66899",
-                "location": "system_root/Block[@SID='1156'] (BusinessDecision)"
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1156'] (BusinessDecision)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "68206c578e4744f816ebedf72b0145dcc063e820231c42a2c5a10303cc8fa30a",
+                "location": "buses, compact_channels, parameters and layout_scope"
               },
               {
                 "path": "Documentation/BusinessBehavior.md",
-                "sha256": "3a7c17a70a9dc38edefa3bce94ce355134a3ec37c6dff367d1a2c6a48472edb4",
-                "location": "Responsibilities and independently checked behavior"
+                "sha256": "d27efebc7357f359bda48a7836c7f4347cf010b230dac3836d96f5b977916094",
+                "location": "Responsibilities and engineering implementation"
               }
             ],
             "limitation": "同源构造与共享调理模式仍存在；这是当前结构裁决，不是内部逐仓架构复原证明。",
@@ -993,12 +1058,12 @@
             "evidence": [
               {
                 "path": "Model/VcErcRgn.slx",
-                "sha256": "1bf1bdf793d9426a0ea7d016d2b967b97b561b483dfc785ff46677b697f66899",
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
                 "location": "system_125/Block[@SID='141'] (TemporalQualification)"
               },
               {
                 "path": "Model/VcErcRgn.slx",
-                "sha256": "1bf1bdf793d9426a0ea7d016d2b967b97b561b483dfc785ff46677b697f66899",
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
                 "location": "system_125/Block[@SID='132'] (RangeAndCommunication)"
               }
             ],
@@ -1009,17 +1074,22 @@
             "score": 1,
             "max_score": 3,
             "status": "supported",
-            "reason": "外部 56 入/22 出已按编译类型和实际物理编码对齐，变更明细可追踪；内部仍有 9 个 InN/OutN 默认端口，例如 VcErcRgn/DriverAndModeInputs/In15，未满足整体端口规范的2档。",
+            "reason": "根 56 入/22 出保持。VcErcRgn_DomainInputs_Bus 含 28 个实际类型/维度字段并穿越业务边界；仍有 9 个默认内部端口，整体规范未达2档，保持1。",
             "evidence": [
               {
-                "path": "Model/interfaceVcErcRgn.xls",
-                "sha256": "72d9b9def32f74a3ca55f9f4f6e7f0688acb54067b2ec25edede90d210c586d8",
-                "location": "IN/OUT: Name, DataType, Unit, Min, Max and raw decoding description"
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1231'] (AssembleDomainInputs)"
               },
               {
                 "path": "Model/VcErcRgn.slx",
-                "sha256": "1bf1bdf793d9426a0ea7d016d2b967b97b561b483dfc785ff46677b697f66899",
-                "location": "VcErcRgn/DriverAndModeInputs/In15 SID VcErcRgn:263"
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
+                "location": "simulink/systems/system_1156.xml/Block[@SID='1229'] (DomainInputs)"
+              },
+              {
+                "path": "Model/interfaceVcErcRgn.xls",
+                "sha256": "47ca9401cb658b78cf3b3a76001c2452589e5f9b2093181a24ed791e2e704314",
+                "location": "IN!A1; OUT!A1; BUS!A1: typed fields, dimensions, producer and consumer"
               }
             ],
             "limitation": "外部表格完整不能自动替代内部接口命名质量；raw unit=1 表示编码计数，工程单位与比例见对应描述/物理输出。",
@@ -1033,13 +1103,18 @@
             "evidence": [
               {
                 "path": "Model/VcErcRgn.slx",
-                "sha256": "1bf1bdf793d9426a0ea7d016d2b967b97b561b483dfc785ff46677b697f66899",
-                "location": "system_root/Block[@SID='1156'] (BusinessDecision)"
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1156'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "3a7c17a70a9dc38edefa3bce94ce355134a3ec37c6dff367d1a2c6a48472edb4",
-                "location": "Responsibilities and independently checked behavior"
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
+                "location": "simulink/systems/system_1156.xml/Block[@SID='1229'] (DomainInputs)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "68206c578e4744f816ebedf72b0145dcc063e820231c42a2c5a10303cc8fa30a",
+                "location": "layout_scope; root acquisition/quality fan-in remains dense"
               }
             ],
             "limitation": "依据当前原生图与连接关系；不按 Goto 数量或块数机械扣分。",
@@ -1049,17 +1124,27 @@
             "score": 5,
             "max_score": 5,
             "status": "supported",
-            "reason": "在父级业务/信号上下文中逐类核对，命名风格按角色一致。2493 个块/线元素中，保守计入默认端口、序号拒绝/读取、通用函数包装及空线名 113 个（4.5%）；其余名称准确标示局部信号、运算或状态责任，超过90%门槛。",
+            "reason": "按父业务上下文审阅同类命名。原生 2479 块/线中机械筛出 56 个通用名或空名；其中 0 条为 MATLAB Function 生成包装内部连线，角色由具名函数形参与返回值明确。其余保守未消歧 56 个（2.3%）；明确且风格协调的元素仍超过90%，保持5。这是当前源码语义裁决，不新增候选可见规则。",
             "evidence": [
               {
                 "path": "Model/VcErcRgn.slx",
-                "sha256": "1bf1bdf793d9426a0ea7d016d2b967b97b561b483dfc785ff46677b697f66899",
-                "location": "Named channel/stage/controller hierarchy and signal lines"
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1156'] (BusinessDecision)"
               },
               {
-                "path": "Model/interfaceVcErcRgn.xls",
-                "sha256": "72d9b9def32f74a3ca55f9f4f6e7f0688acb54067b2ec25edede90d210c586d8",
-                "location": "IN/OUT/CAL names"
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
+                "location": "simulink/systems/system_1156.xml/Block[@SID='1229'] (DomainInputs)"
+              },
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
+                "location": "simulink/stateflow/chart_14.xml / P[@Name=script], named function arguments and returns"
+              },
+              {
+                "path": "Model/VcErcRgn.slx",
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
+                "location": "simulink/stateflow/chart_25.xml / P[@Name=script], named function arguments and returns"
               }
             ],
             "limitation": "Raw、Age、Qualified 等在具名通道内有明确意义，不因不同通道重复使用就判无意义；少量默认端口仍影响接口叶。",
@@ -1069,22 +1154,27 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "通道范围、时效和物理编码已有类型/约束参数，但制动增益8、低速3/7区间及SOC/温度接受包络尚未以独立外部数据源系统管理，未满足可调参数均外部变量化的3/5条件，裁部分变量化1。",
+            "reason": "已增加 3 个实际标定对象并用于模型，数组在CAL记录维度/单位/上下界；但制动增益8和低速3/7区间仍内嵌，未满足全部可调量外部化和系统管理，保持部分变量化1。Auto/Default不冒充目标内存映射。",
             "evidence": [
               {
                 "path": "Model/interfaceVcErcRgn.xls",
-                "sha256": "72d9b9def32f74a3ca55f9f4f6e7f0688acb54067b2ec25edede90d210c586d8",
-                "location": "CAL; channel parameters"
+                "sha256": "47ca9401cb658b78cf3b3a76001c2452589e5f9b2093181a24ed791e2e704314",
+                "location": "CAL!A1 onward; MP/FIX for NEP-08"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "68206c578e4744f816ebedf72b0145dcc063e820231c42a2c5a10303cc8fa30a",
+                "location": "parameters: values, dimensions, storage and bounds"
               },
               {
                 "path": "Model/VcErcRgn.slx",
-                "sha256": "1bf1bdf793d9426a0ea7d016d2b967b97b561b483dfc785ff46677b697f66899",
-                "location": "simulink/stateflow/chart_14.xml / script"
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
+                "location": "simulink/stateflow/chart_14.xml / P[@Name=script]"
               },
               {
                 "path": "Model/VcErcRgn.slx",
-                "sha256": "1bf1bdf793d9426a0ea7d016d2b967b97b561b483dfc785ff46677b697f66899",
-                "location": "simulink/stateflow/chart_27.xml / script"
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
+                "location": "simulink/stateflow/chart_25.xml / P[@Name=script]"
               }
             ],
             "limitation": "本次重新核对新增业务常量；NEP-01不再沿用旧纯质量网关的参数管理5。固定逻辑0/1本身不当作缺失标定。",
@@ -1094,42 +1184,37 @@
             "score": 0,
             "max_score": 3,
             "status": "supported",
-            "reason": "主体业务仍内嵌于单个SLX；具名子系统和成功生码没有形成已批准规则所需的 Mask/独立组件契约，裁0。",
+            "reason": "沿用 v0.11.2 数值 0；本轮构建独立性争议暂停，未重新裁决。旧裁决依据：主体业务仍内嵌于单个SLX；具名子系统和成功生码没有形成已批准规则所需的 Mask/独立组件契约，裁0。",
             "evidence": [
               {
                 "path": "Model/VcErcRgn.slx",
-                "sha256": "1bf1bdf793d9426a0ea7d016d2b967b97b561b483dfc785ff46677b697f66899",
-                "location": "Mask / PreLoadFcn / dependency references"
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1156'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "3a7c17a70a9dc38edefa3bce94ce355134a3ec37c6dff367d1a2c6a48472edb4",
-                "location": "Component boundaries"
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "b9f9ba505242531bcfb144b3b41c93f4da0eb2385859147cc81c1c4cd263a40c",
+                "location": "Scope of local library, platform branches and aliases"
               }
             ],
-            "limitation": "NEP-10的库与主模型同仓同快照，不能把普通LibraryVersion或工具版本当成稳定发布与依赖锁定。",
-            "method": "source-grounded maintainer semantic re-adjudication after native/property verification"
+            "limitation": "HOLD: effective contract and prior numeric value preserved pending explicit adjudication; new typed Bus is not treated as approval of a new build rule.",
+            "method": "prior value carried forward; source identity rebound only; disputed adjudication paused"
           },
           "version_independence": {
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "当前模型12.0.0_0；README明确定义MAJOR/MINOR/PATCH兼容性含义。本次类型/新增输出为不兼容接口修订，版本递增与实际前后差异相符。",
+            "reason": "当前模型12.1.0_0；根输入/输出保持，兼容增加业务标定和类型化内部接口，README定义的MINOR语义与这次实际变化一致；旧12.0.0_0记录及标签保留。",
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "ea96b4e2f87ee9693716e63b24a8911b0bf327b044f7b6f33bd37bd6fb203abd",
-                "location": "Semantic version policy"
-              },
-              {
-                "path": "Documentation/VcErcRgn_26R1_变更记录.xlsx",
-                "sha256": "db6d6a15b4d6fa6b057384b3858eb6208bd7d272ad904860373c9686dcb38447",
-                "location": "Cover/26R1"
+                "sha256": "a2d27e3d3c1f5e1b64cc2292f62ff97885378415e98b32322d27e9bd1697b29b",
+                "location": "Current version, compatibility meanings and engineering repair supplement"
               },
               {
                 "path": "Model/VcErcRgn.slx",
-                "sha256": "1bf1bdf793d9426a0ea7d016d2b967b97b561b483dfc785ff46677b697f66899",
-                "location": "ModelVersionFormat"
+                "sha256": "c12eea0bf6c56ea40a6305c05546015cfc91cf26e35afd864c3499ce0cac7036",
+                "location": "simulink/blockdiagram.xml ModelVersion"
               }
             ],
             "limitation": "旧导出别名仍是旧快照，不宣称八个月真实发布史。",
@@ -1139,22 +1224,17 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "已逐仓重写当前变更记录：12.0.0_0、实际日期、具体业务前后逻辑、接口增删和类型/单位/范围变化均可由Git父提交及InterfaceChanges.json核对；跨仓TargetSoc复制声明已删除。",
+            "reason": "26R1变更表追加2026-09-10的CHG004，与当前12.1.0_0工程变化对应；既有记录逐单元格保持，模型/Bus/标定差异可由Git父提交及EngineeringRepair.json核验。",
             "evidence": [
               {
                 "path": "Documentation/VcErcRgn_26R1_变更记录.xlsx",
-                "sha256": "db6d6a15b4d6fa6b057384b3858eb6208bd7d272ad904860373c9686dcb38447",
-                "location": "26R1!B2,H2,I2,J2,L2"
+                "sha256": "6e9972225d6f477ef5d89642577ec2c248d4f48a3c20ad9125c351a59ccd9477",
+                "location": "Cover!B4; 26R1 last appended CHG004 row"
               },
               {
-                "path": "Documentation/InterfaceChanges.json",
-                "sha256": "eb8d2ed853e2552e1ff092bc2dd295b16081c5752afd5736573d5c073bfc6a98",
-                "location": "Actual before/after per-signal records"
-              },
-              {
-                "path": "Model/interfaceVcErcRgn.xls",
-                "sha256": "72d9b9def32f74a3ca55f9f4f6e7f0688acb54067b2ec25edede90d210c586d8",
-                "location": "ChangeLog"
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "68206c578e4744f816ebedf72b0145dcc063e820231c42a2c5a10303cc8fa30a",
+                "location": "Current engineering change details"
               }
             ],
             "limitation": "列齐全不是充分理由；当前裁决依赖实际模型/接口差异。保留的历史导出材料不代表生产发布史。",
@@ -1168,7 +1248,7 @@
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "ea96b4e2f87ee9693716e63b24a8911b0bf327b044f7b6f33bd37bd6fb203abd",
+                "sha256": "a2d27e3d3c1f5e1b64cc2292f62ff97885378415e98b32322d27e9bd1697b29b",
                 "location": "Directory roles"
               }
             ],
@@ -1179,22 +1259,22 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "仓内包含独立属性定义、输入/期望向量、实测输出及原生报告。2251个采样、6条业务属性与45020个独立通道/诊断比较全部通过；C语句覆盖未测，不能满足三项同时达标的3/5条件，裁1。",
+            "reason": "仓内独立属性、输入期望及原生报告：2283 采样、10 条业务属性、45660 个独立通道/诊断比较通过。SWUT Properties逐条绑定输出、算子、期望、采样与容差；C语句覆盖未测，保持1。",
             "evidence": [
               {
                 "path": "UnitTest/test-properties.json",
-                "sha256": "9e8d89488a4c8105c65a5c74bfc59869fb2df43eec5a16db5c81c63bbcb01835",
-                "location": "Independent point and temporal assertions"
+                "sha256": "14c11f2ddd59a9066617ce095415b4d6c517e07bd7e4b6cf0d9ea25afebf71b6",
+                "location": "checks[*]: name/output/op/value/indices/tolerance"
+              },
+              {
+                "path": "UnitTest/VCU_VcErcRgn_SWUT.xlsx",
+                "sha256": "31a8f9e6e59e08e59291acf18da76be64cdd647cdf6048f9659cf9c45611e3ea",
+                "location": "Properties!A1 onward; TCSDM points to exact assertion rows"
               },
               {
                 "path": "UnitTest/VcErcRgn_BTC_UT_Report.html",
-                "sha256": "c2e6de3bf314204ea502407d8ce0cd8452147d67e89563d8155961ed3bdcc969",
-                "location": "Native checks and runtime binding"
-              },
-              {
-                "path": "UnitTest/VcErcRgn_BTC_UTCov_Report.html",
-                "sha256": "c48cd1bee729dfcf100eeff1baa22e4c6e7f716339b367b10c033a681aa182c9",
-                "location": "Measured model metrics; C statement unmeasured"
+                "sha256": "f8f34081782fc7b7adeaa439fb75ac3f34316c6467c30682fbdf75f03c1f3ac0",
+                "location": "Actual engine, measured counts and runtime SHA256 bindings"
               }
             ],
             "limitation": "实测输出仅作回放，不冒充独立预期；BTC只是命名，host C不是SIL/PIL/HIL。",
@@ -1208,10 +1288,10 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "c30baa42401b4086e57396213c07f7d0fd244099",
+                "head": "1b3adf266528202a746899c2dddb3e1bc9569459",
                 "refs": {
                   "refs/heads/auto/master/1/49e818a2-1": "49e818a2ab42384d5de9e49ba8481c832819c772",
-                  "refs/heads/master": "c30baa42401b4086e57396213c07f7d0fd244099"
+                  "refs/heads/master": "1b3adf266528202a746899c2dddb3e1bc9569459"
                 }
               },
               {
@@ -1231,10 +1311,10 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "c30baa42401b4086e57396213c07f7d0fd244099",
+                "head": "1b3adf266528202a746899c2dddb3e1bc9569459",
                 "refs": {
                   "refs/heads/auto/master/1/49e818a2-1": "49e818a2ab42384d5de9e49ba8481c832819c772",
-                  "refs/heads/master": "c30baa42401b4086e57396213c07f7d0fd244099"
+                  "refs/heads/master": "1b3adf266528202a746899c2dddb3e1bc9569459"
                 }
               }
             ],
@@ -1394,21 +1474,21 @@
             "score": 0,
             "max_score": 3,
             "status": "supported",
-            "reason": "主体业务仍内嵌于单个SLX；具名子系统和成功生码没有形成已批准规则所需的 Mask/独立组件契约，裁0。",
+            "reason": "沿用 v0.11.2 数值 0；本轮构建独立性争议暂停，未重新裁决。旧裁决依据：主体业务仍内嵌于单个SLX；具名子系统和成功生码没有形成已批准规则所需的 Mask/独立组件契约，裁0。",
             "evidence": [
               {
                 "path": "Model/VcDmcDrv.slx",
                 "sha256": "89b842ccca776dae7c705cc7ccac216c1fad1ae87698359756536ff53769a875",
-                "location": "Mask / PreLoadFcn / dependency references"
+                "location": "simulink/systems/system_root.xml/Block[@SID='911'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "f661950cecedde2eef384460e4c23a694c800fe19b17fe2b224c9fdaf7eb9665",
-                "location": "Component boundaries"
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "6726c1e20f6b14b25a9976dc2359251ffe2155ecc429d6747c7da56338b47bff",
+                "location": "Scope of local library, platform branches and aliases"
               }
             ],
-            "limitation": "NEP-10的库与主模型同仓同快照，不能把普通LibraryVersion或工具版本当成稳定发布与依赖锁定。",
-            "method": "source-grounded maintainer semantic re-adjudication after native/property verification"
+            "limitation": "HOLD: effective contract and prior numeric value preserved pending explicit adjudication; new typed Bus is not treated as approval of a new build rule.",
+            "method": "prior value carried forward; source identity rebound only; disputed adjudication paused"
           },
           "version_independence": {
             "score": 3,
@@ -1535,11 +1615,11 @@
     {
       "id": "NEP-06",
       "name": "VcWrcWhl",
-      "head": "61084082b8d60f121303fef0a691b80916cd41dd",
+      "head": "a538de0bb86968d4a21e1b8583ed322a3c5da44b",
       "reference": {
         "id": "NEP-06",
         "name": "VcWrcWhl",
-        "head": "61084082b8d60f121303fef0a691b80916cd41dd",
+        "head": "a538de0bb86968d4a21e1b8583ed322a3c5da44b",
         "scores": {
           "hierarchy": 3,
           "reuse": 1,
@@ -1562,17 +1642,22 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "按实际责任核对分组输入、类型调理、业务组件与诊断层。展开后 109 个子系统中，至少 105 个有明确单一职责（96.3%）；分组层不计入该下界。模拟量转换、数字资格、业务状态分别封装，不能由相近块数单独推导结论。",
+            "reason": "当前原生展开 50 个子系统；保守排除 3 个根采集分组后，47 个调理、业务或诊断单元职责可独立描述（94.0%）。03/06紧凑调理仍保留两采样资格状态，08积分反馈单独呈现；层级裁3。",
             "evidence": [
               {
                 "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-                "sha256": "ccf814b6314c2f64fd42abf1cadd8429c76416712daa0fa649591972725dc9d3",
-                "location": "system_root/Block[@SID='1316'] (BusinessDecision)"
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1316'] (BusinessDecision)"
+              },
+              {
+                "path": "VcWrcWhl/Documentation/EngineeringRepair.json",
+                "sha256": "8e2dbde7d53e5016d754bc558a530f4420c150797dbc8193c7ebbcf81c6b9d41",
+                "location": "buses, compact_channels, parameters and layout_scope"
               },
               {
                 "path": "VcWrcWhl/Documentation/BusinessBehavior.md",
-                "sha256": "f77d4d20d2fd68a48d98cec2fca7db4a8ce2d81413c9faf54b4189e7cc337a52",
-                "location": "Responsibilities and independently checked behavior"
+                "sha256": "cb6fc4169d99baf405eb2d7c68c6b39718aef5776caa43ff4a87565254bb904c",
+                "location": "Responsibilities and engineering implementation"
               }
             ],
             "limitation": "同源构造与共享调理模式仍存在；这是当前结构裁决，不是内部逐仓架构复原证明。",
@@ -1582,17 +1667,17 @@
             "score": 1,
             "max_score": 3,
             "status": "supported",
-            "reason": "TemporalQualification、RangeAndCommunication 等调理逻辑在通道中仍有独立副本；各仓新增了不同的真实业务责任，但没有把这些公共调理实现提取为库/模型引用。",
+            "reason": "每通道资格校验已压缩为具名状态函数，但20个函数仍为独立源码副本；没有共享库或模型引用来复用这一公共实现，保持1。",
             "evidence": [
               {
                 "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-                "sha256": "ccf814b6314c2f64fd42abf1cadd8429c76416712daa0fa649591972725dc9d3",
-                "location": "system_1029/Block[@SID='1045'] (TemporalQualification)"
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/systems/system_1029.xml/Block[@SID='1403'] (QualifiedSignal)"
               },
               {
-                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-                "sha256": "ccf814b6314c2f64fd42abf1cadd8429c76416712daa0fa649591972725dc9d3",
-                "location": "system_1029/Block[@SID='1036'] (RangeAndCommunication)"
+                "path": "VcWrcWhl/Documentation/EngineeringRepair.json",
+                "sha256": "8e2dbde7d53e5016d754bc558a530f4420c150797dbc8193c7ebbcf81c6b9d41",
+                "location": "compact_channels=20"
               }
             ],
             "limitation": "业务差异化、类型区别与单独状态不能消除实际源码重复。",
@@ -1602,17 +1687,22 @@
             "score": 1,
             "max_score": 3,
             "status": "supported",
-            "reason": "外部 62 入/27 出已按编译类型和实际物理编码对齐，变更明细可追踪；内部仍有 6 个 InN/OutN 默认端口，例如 VcWrcWhl/DriverAndModeInputs/In7，未满足整体端口规范的2档。",
+            "reason": "根 62 入/27 出保持。VcWrcWhl_DomainInputs_Bus 含 26 个实际类型/维度字段并穿越业务边界；仍有 6 个默认内部端口，整体规范未达2档，保持1。",
             "evidence": [
               {
-                "path": "VcWrcWhl/Model/interfaceVcWrcWhl.xls",
-                "sha256": "6c44be9a42741880b12bfcc38c35733414986444733a80c7b5e61af01a6d5190",
-                "location": "IN/OUT: Name, DataType, Unit, Min, Max and raw decoding description"
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1447'] (AssembleDomainInputs)"
               },
               {
                 "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-                "sha256": "ccf814b6314c2f64fd42abf1cadd8429c76416712daa0fa649591972725dc9d3",
-                "location": "VcWrcWhl/DriverAndModeInputs/In7 SID VcWrcWhl:1069"
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/systems/system_1316.xml/Block[@SID='1445'] (DomainInputs)"
+              },
+              {
+                "path": "VcWrcWhl/Model/interfaceVcWrcWhl.xls",
+                "sha256": "08054c5d502a770a950eb8bc8f8a863561ff00e67d408a74138703d5afb270c7",
+                "location": "IN!A1; OUT!A1; BUS!A1: typed fields, dimensions, producer and consumer"
               }
             ],
             "limitation": "外部表格完整不能自动替代内部接口命名质量；raw unit=1 表示编码计数，工程单位与比例见对应描述/物理输出。",
@@ -1626,13 +1716,18 @@
             "evidence": [
               {
                 "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-                "sha256": "ccf814b6314c2f64fd42abf1cadd8429c76416712daa0fa649591972725dc9d3",
-                "location": "system_root/Block[@SID='1316'] (BusinessDecision)"
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1316'] (BusinessDecision)"
               },
               {
-                "path": "VcWrcWhl/Documentation/BusinessBehavior.md",
-                "sha256": "f77d4d20d2fd68a48d98cec2fca7db4a8ce2d81413c9faf54b4189e7cc337a52",
-                "location": "Responsibilities and independently checked behavior"
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/systems/system_1316.xml/Block[@SID='1445'] (DomainInputs)"
+              },
+              {
+                "path": "VcWrcWhl/Documentation/EngineeringRepair.json",
+                "sha256": "8e2dbde7d53e5016d754bc558a530f4420c150797dbc8193c7ebbcf81c6b9d41",
+                "location": "layout_scope; root acquisition/quality fan-in remains dense"
               }
             ],
             "limitation": "依据当前原生图与连接关系；不按 Goto 数量或块数机械扣分。",
@@ -1642,17 +1737,27 @@
             "score": 5,
             "max_score": 5,
             "status": "supported",
-            "reason": "在父级业务/信号上下文中逐类核对，命名风格按角色一致。2821 个块/线元素中，保守计入默认端口、序号拒绝/读取、通用函数包装及空线名 122 个（4.3%）；其余名称准确标示局部信号、运算或状态责任，超过90%门槛。",
+            "reason": "按父业务上下文审阅同类命名。原生 1844 块/线中机械筛出 273 个通用名或空名；其中 240 条为 MATLAB Function 生成包装内部连线，角色由具名函数形参与返回值明确。其余保守未消歧 33 个（1.8%）；明确且风格协调的元素仍超过90%，保持5。这是当前源码语义裁决，不新增候选可见规则。",
             "evidence": [
               {
                 "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-                "sha256": "ccf814b6314c2f64fd42abf1cadd8429c76416712daa0fa649591972725dc9d3",
-                "location": "Named channel/stage/controller hierarchy and signal lines"
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1316'] (BusinessDecision)"
               },
               {
-                "path": "VcWrcWhl/Model/interfaceVcWrcWhl.xls",
-                "sha256": "6c44be9a42741880b12bfcc38c35733414986444733a80c7b5e61af01a6d5190",
-                "location": "IN/OUT/CAL names"
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/systems/system_1029.xml/Block[@SID='1403'] (QualifiedSignal)"
+              },
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/stateflow/chart_104.xml / P[@Name=script], named function arguments and returns"
+              },
+              {
+                "path": "VcWrcWhl/Model/VcWrcWhl.slx",
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/stateflow/chart_121.xml / P[@Name=script], named function arguments and returns"
               }
             ],
             "limitation": "Raw、Age、Qualified 等在具名通道内有明确意义，不因不同通道重复使用就判无意义；少量默认端口仍影响接口叶。",
@@ -1662,22 +1767,27 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "通道范围、时效和物理编码已有类型/约束参数，但滑移阈值0.05、滑移增益4与横向/横摆稳定性系数尚未以独立外部数据源系统管理，未满足可调参数均外部变量化的3/5条件，裁部分变量化1。",
+            "reason": "已增加 3 个实际标定对象并用于模型，数组在CAL记录维度/单位/上下界；但横向/横摆稳定性系数仍内嵌，未满足全部可调量外部化和系统管理，保持部分变量化1。Auto/Default不冒充目标内存映射。",
             "evidence": [
               {
                 "path": "VcWrcWhl/Model/interfaceVcWrcWhl.xls",
-                "sha256": "6c44be9a42741880b12bfcc38c35733414986444733a80c7b5e61af01a6d5190",
-                "location": "CAL; channel parameters"
+                "sha256": "08054c5d502a770a950eb8bc8f8a863561ff00e67d408a74138703d5afb270c7",
+                "location": "CAL!A1 onward; MP/FIX for NEP-08"
+              },
+              {
+                "path": "VcWrcWhl/Documentation/EngineeringRepair.json",
+                "sha256": "8e2dbde7d53e5016d754bc558a530f4420c150797dbc8193c7ebbcf81c6b9d41",
+                "location": "parameters: values, dimensions, storage and bounds"
               },
               {
                 "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-                "sha256": "ccf814b6314c2f64fd42abf1cadd8429c76416712daa0fa649591972725dc9d3",
-                "location": "simulink/stateflow/chart_18.xml / script"
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/stateflow/chart_104.xml / P[@Name=script]"
               },
               {
                 "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-                "sha256": "ccf814b6314c2f64fd42abf1cadd8429c76416712daa0fa649591972725dc9d3",
-                "location": "simulink/stateflow/chart_30.xml / script"
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/stateflow/chart_121.xml / P[@Name=script]"
               }
             ],
             "limitation": "本次重新核对新增业务常量；NEP-01不再沿用旧纯质量网关的参数管理5。固定逻辑0/1本身不当作缺失标定。",
@@ -1687,42 +1797,37 @@
             "score": 2,
             "max_score": 3,
             "status": "supported",
-            "reason": "业务调理组件具有 Mask 参数与明确输入/输出或 Bus 契约，按已批准的新组补充规则为2；没有独立发布且锁定版本的业务组件库。",
+            "reason": "沿用 v0.11.2 数值 2；本轮构建独立性争议暂停，未重新裁决。旧裁决依据：业务调理组件具有 Mask 参数与明确输入/输出或 Bus 契约，按已批准的新组补充规则为2；没有独立发布且锁定版本的业务组件库。",
             "evidence": [
               {
                 "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-                "sha256": "ccf814b6314c2f64fd42abf1cadd8429c76416712daa0fa649591972725dc9d3",
-                "location": "Mask / PreLoadFcn / dependency references"
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1316'] (BusinessDecision)"
               },
               {
-                "path": "VcWrcWhl/Documentation/BusinessBehavior.md",
-                "sha256": "f77d4d20d2fd68a48d98cec2fca7db4a8ce2d81413c9faf54b4189e7cc337a52",
-                "location": "Component boundaries"
+                "path": "VcWrcWhl/Documentation/GitSnapshotScope.txt",
+                "sha256": "281c510c8fc5d60f31c26b9725601b76b37c5f2009069ad04a9069c790a85c4c",
+                "location": "Scope of local library, platform branches and aliases"
               }
             ],
-            "limitation": "NEP-10的库与主模型同仓同快照，不能把普通LibraryVersion或工具版本当成稳定发布与依赖锁定。",
-            "method": "source-grounded maintainer semantic re-adjudication after native/property verification"
+            "limitation": "HOLD: effective contract and prior numeric value preserved pending explicit adjudication; new typed Bus is not treated as approval of a new build rule.",
+            "method": "prior value carried forward; source identity rebound only; disputed adjudication paused"
           },
           "version_independence": {
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "当前模型12.0.0_0；README明确定义MAJOR/MINOR/PATCH兼容性含义。本次类型/新增输出为不兼容接口修订，版本递增与实际前后差异相符。",
+            "reason": "当前模型12.1.0_0；根输入/输出保持，兼容增加业务标定和类型化内部接口，README定义的MINOR语义与这次实际变化一致；旧12.0.0_0记录及标签保留。",
             "evidence": [
               {
                 "path": "VcWrcWhl/README.md",
-                "sha256": "4e3f666b302ac4e0849f562d99aefd1e76e39260acdd5f12d5468ede09207ba3",
-                "location": "Semantic version policy"
-              },
-              {
-                "path": "VcWrcWhl/Documentation/VcWrcWhl_26R1_变更记录.xlsx",
-                "sha256": "f86dadf5369801cf1ec453293a49f51a2e00cb897853d47bb0f99d64a7c43350",
-                "location": "Cover/26R1"
+                "sha256": "5ca0225fa97650d985bff7eb890902bbdc6be50d05d1b30faefac9cdbd0cb777",
+                "location": "Current version, compatibility meanings and engineering repair supplement"
               },
               {
                 "path": "VcWrcWhl/Model/VcWrcWhl.slx",
-                "sha256": "ccf814b6314c2f64fd42abf1cadd8429c76416712daa0fa649591972725dc9d3",
-                "location": "ModelVersionFormat"
+                "sha256": "7dd65108d261e010132707baba886509d0200aac67af02f9133b05f50ceb1f8c",
+                "location": "simulink/blockdiagram.xml ModelVersion"
               }
             ],
             "limitation": "旧导出别名仍是旧快照，不宣称八个月真实发布史。",
@@ -1732,22 +1837,17 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "已逐仓重写当前变更记录：12.0.0_0、实际日期、具体业务前后逻辑、接口增删和类型/单位/范围变化均可由Git父提交及InterfaceChanges.json核对；跨仓TargetSoc复制声明已删除。",
+            "reason": "26R1变更表追加2026-09-10的CHG004，与当前12.1.0_0工程变化对应；既有记录逐单元格保持，模型/Bus/标定差异可由Git父提交及EngineeringRepair.json核验。",
             "evidence": [
               {
                 "path": "VcWrcWhl/Documentation/VcWrcWhl_26R1_变更记录.xlsx",
-                "sha256": "f86dadf5369801cf1ec453293a49f51a2e00cb897853d47bb0f99d64a7c43350",
-                "location": "26R1!B2,H2,I2,J2,L2"
+                "sha256": "a013fd6d08f4dfe0c65cfc96c4faad2863a691dc9e2c52b48906ff6025e0b37f",
+                "location": "Cover!B4; 26R1 last appended CHG004 row"
               },
               {
-                "path": "VcWrcWhl/Documentation/InterfaceChanges.json",
-                "sha256": "608f1a41a6b9b3ee204edc689f37ed72c321097a86e51f03dad009d36d053ed9",
-                "location": "Actual before/after per-signal records"
-              },
-              {
-                "path": "VcWrcWhl/Model/interfaceVcWrcWhl.xls",
-                "sha256": "6c44be9a42741880b12bfcc38c35733414986444733a80c7b5e61af01a6d5190",
-                "location": "ChangeLog"
+                "path": "VcWrcWhl/Documentation/EngineeringRepair.json",
+                "sha256": "8e2dbde7d53e5016d754bc558a530f4420c150797dbc8193c7ebbcf81c6b9d41",
+                "location": "Current engineering change details"
               }
             ],
             "limitation": "列齐全不是充分理由；当前裁决依赖实际模型/接口差异。保留的历史导出材料不代表生产发布史。",
@@ -1761,7 +1861,7 @@
             "evidence": [
               {
                 "path": "VcWrcWhl/README.md",
-                "sha256": "4e3f666b302ac4e0849f562d99aefd1e76e39260acdd5f12d5468ede09207ba3",
+                "sha256": "5ca0225fa97650d985bff7eb890902bbdc6be50d05d1b30faefac9cdbd0cb777",
                 "location": "Directory roles"
               }
             ],
@@ -1772,22 +1872,22 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "仓内包含独立属性定义、输入/期望向量、实测输出及原生报告。2474个采样、4条业务属性与54428个独立通道/诊断比较全部通过；C语句覆盖未测，不能满足三项同时达标的3/5条件，裁1。",
+            "reason": "仓内独立属性、输入期望及原生报告：2514 采样、14 条业务属性、55308 个独立通道/诊断比较通过。SWUT Properties逐条绑定输出、算子、期望、采样与容差；C语句覆盖未测，保持1。",
             "evidence": [
               {
                 "path": "VcWrcWhl/UnitTest/test-properties.json",
-                "sha256": "3505672a0a9eebb78aabb2a8a9805ec96f5fa2cf268120aeaf113358a0f32630",
-                "location": "Independent point and temporal assertions"
+                "sha256": "42e0788ec8cd11de5e34d5b4db1c7d3e155169b5ad11d87028b33f2288365ddf",
+                "location": "checks[*]: name/output/op/value/indices/tolerance"
+              },
+              {
+                "path": "VcWrcWhl/UnitTest/VCU_VcWrcWhl_SWUT.xlsx",
+                "sha256": "d2044235d9c35ac1a5f67209e25a3e953521649cb2fac69ec0ff64084f9b021b",
+                "location": "Properties!A1 onward; TCSDM points to exact assertion rows"
               },
               {
                 "path": "VcWrcWhl/UnitTest/VcWrcWhl_BTC_UT_Report.html",
-                "sha256": "b6362af9b26050a0d9b037923765d86a4727410078d5d697da20ca151ac1eed1",
-                "location": "Native checks and runtime binding"
-              },
-              {
-                "path": "VcWrcWhl/UnitTest/VcWrcWhl_BTC_UTCov_Report.html",
-                "sha256": "021c8e56cd6b743cc1ec44ce550f5afb2e14fd1920a98ddd9b20c567a360cc91",
-                "location": "Measured model metrics; C statement unmeasured"
+                "sha256": "25a8db3e92d9054eda8a545629a4e38e154bad9a4a365d89d6587b8aca82463c",
+                "location": "Actual engine, measured counts and runtime SHA256 bindings"
               }
             ],
             "limitation": "实测输出仅作回放，不冒充独立预期；BTC只是命名，host C不是SIL/PIL/HIL。",
@@ -1801,9 +1901,9 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "61084082b8d60f121303fef0a691b80916cd41dd",
+                "head": "a538de0bb86968d4a21e1b8583ed322a3c5da44b",
                 "refs": {
-                  "refs/heads/master": "61084082b8d60f121303fef0a691b80916cd41dd"
+                  "refs/heads/master": "a538de0bb86968d4a21e1b8583ed322a3c5da44b"
                 }
               },
               {
@@ -1823,9 +1923,9 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "61084082b8d60f121303fef0a691b80916cd41dd",
+                "head": "a538de0bb86968d4a21e1b8583ed322a3c5da44b",
                 "refs": {
-                  "refs/heads/master": "61084082b8d60f121303fef0a691b80916cd41dd"
+                  "refs/heads/master": "a538de0bb86968d4a21e1b8583ed322a3c5da44b"
                 }
               }
             ],
@@ -1838,11 +1938,11 @@
     {
       "id": "NEP-07",
       "name": "VcDeChg",
-      "head": "e2fd73443c59459a560775405b486624b4b082cf",
+      "head": "591ba778755c00c6d1586fe8128616ec82a52702",
       "reference": {
         "id": "NEP-07",
         "name": "VcDeChg",
-        "head": "e2fd73443c59459a560775405b486624b4b082cf",
+        "head": "591ba778755c00c6d1586fe8128616ec82a52702",
         "scores": {
           "hierarchy": 3,
           "reuse": 1,
@@ -1865,17 +1965,22 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "按实际责任核对分组输入、类型调理、业务组件与诊断层。展开后 114 个子系统中，至少 109 个有明确单一职责（95.6%）；分组层不计入该下界。模拟量转换、数字资格、业务状态分别封装，不能由相近块数单独推导结论。",
+            "reason": "当前原生展开 114 个子系统；保守排除 4 个根采集分组后，110 个调理、业务或诊断单元职责可独立描述（96.5%）。03/06紧凑调理仍保留两采样资格状态，08积分反馈单独呈现；层级裁3。",
             "evidence": [
               {
                 "path": "Model/VcDeChg.slx",
-                "sha256": "439df6763c41a3de6732a46e65ef2f679ac720e100644ec378a2c0f5c7bb3790",
-                "location": "system_root/Block[@SID='1366'] (BusinessDecision)"
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1366'] (BusinessDecision)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "cd99d2b3504319ac895b4e7d07fa7d51539a24784d86b781c8ee6c7a04b8f35d",
+                "location": "buses, compact_channels, parameters and layout_scope"
               },
               {
                 "path": "Documentation/BusinessBehavior.md",
-                "sha256": "723e699797197c72a4e2302f44222d7feb74c562551322f546630a3cc7a6d0d8",
-                "location": "Responsibilities and independently checked behavior"
+                "sha256": "ad42eac6370838708e6ce5bcd75636f22f74706a9bed306cfa76cd1856c06742",
+                "location": "Responsibilities and engineering implementation"
               }
             ],
             "limitation": "同源构造与共享调理模式仍存在；这是当前结构裁决，不是内部逐仓架构复原证明。",
@@ -1889,12 +1994,12 @@
             "evidence": [
               {
                 "path": "Model/VcDeChg.slx",
-                "sha256": "439df6763c41a3de6732a46e65ef2f679ac720e100644ec378a2c0f5c7bb3790",
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
                 "location": "system_1030/Block[@SID='1055'] (TemporalQualification)"
               },
               {
                 "path": "Model/VcDeChg.slx",
-                "sha256": "439df6763c41a3de6732a46e65ef2f679ac720e100644ec378a2c0f5c7bb3790",
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
                 "location": "system_1030/Block[@SID='1041'] (RangeAndCommunication)"
               }
             ],
@@ -1905,17 +2010,22 @@
             "score": 1,
             "max_score": 3,
             "status": "supported",
-            "reason": "外部 68 入/28 出已按编译类型和实际物理编码对齐，变更明细可追踪；内部仍有 11 个 InN/OutN 默认端口，例如 VcDeChg/DriverAndModeInputs/In13，未满足整体端口规范的2档。",
+            "reason": "根 68 入/28 出保持。VcDeChg_DomainInputs_Bus 含 33 个实际类型/维度字段并穿越业务边界；仍有 11 个默认内部端口，整体规范未达2档，保持1。",
             "evidence": [
               {
-                "path": "Model/interfaceVcDeChg.xls",
-                "sha256": "31a5d090427c8452cc426fd416de75cfd9d2d0ad11a2f7daf1856f2abd44d84a",
-                "location": "IN/OUT: Name, DataType, Unit, Min, Max and raw decoding description"
+                "path": "Model/VcDeChg.slx",
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1441'] (AssembleDomainInputs)"
               },
               {
                 "path": "Model/VcDeChg.slx",
-                "sha256": "439df6763c41a3de6732a46e65ef2f679ac720e100644ec378a2c0f5c7bb3790",
-                "location": "VcDeChg/DriverAndModeInputs/In13 SID VcDeChg:174"
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
+                "location": "simulink/systems/system_1366.xml/Block[@SID='1439'] (DomainInputs)"
+              },
+              {
+                "path": "Model/interfaceVcDeChg.xls",
+                "sha256": "789bf367e936ac1272de608748e392ada7b0269389173c9c2cfc40380a19e463",
+                "location": "IN!A1; OUT!A1; BUS!A1: typed fields, dimensions, producer and consumer"
               }
             ],
             "limitation": "外部表格完整不能自动替代内部接口命名质量；raw unit=1 表示编码计数，工程单位与比例见对应描述/物理输出。",
@@ -1929,13 +2039,18 @@
             "evidence": [
               {
                 "path": "Model/VcDeChg.slx",
-                "sha256": "439df6763c41a3de6732a46e65ef2f679ac720e100644ec378a2c0f5c7bb3790",
-                "location": "system_root/Block[@SID='1366'] (BusinessDecision)"
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1366'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "723e699797197c72a4e2302f44222d7feb74c562551322f546630a3cc7a6d0d8",
-                "location": "Responsibilities and independently checked behavior"
+                "path": "Model/VcDeChg.slx",
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
+                "location": "simulink/systems/system_1366.xml/Block[@SID='1439'] (DomainInputs)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "cd99d2b3504319ac895b4e7d07fa7d51539a24784d86b781c8ee6c7a04b8f35d",
+                "location": "layout_scope; root acquisition/quality fan-in remains dense"
               }
             ],
             "limitation": "依据当前原生图与连接关系；不按 Goto 数量或块数机械扣分。",
@@ -1945,17 +2060,27 @@
             "score": 5,
             "max_score": 5,
             "status": "supported",
-            "reason": "在父级业务/信号上下文中逐类核对，命名风格按角色一致。2923 个块/线元素中，保守计入默认端口、序号拒绝/读取、通用函数包装及空线名 132 个（4.5%）；其余名称准确标示局部信号、运算或状态责任，超过90%门槛。",
+            "reason": "按父业务上下文审阅同类命名。原生 2902 块/线中机械筛出 65 个通用名或空名；其中 0 条为 MATLAB Function 生成包装内部连线，角色由具名函数形参与返回值明确。其余保守未消歧 65 个（2.2%）；明确且风格协调的元素仍超过90%，保持5。这是当前源码语义裁决，不新增候选可见规则。",
             "evidence": [
               {
                 "path": "Model/VcDeChg.slx",
-                "sha256": "439df6763c41a3de6732a46e65ef2f679ac720e100644ec378a2c0f5c7bb3790",
-                "location": "Named channel/stage/controller hierarchy and signal lines"
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1366'] (BusinessDecision)"
               },
               {
-                "path": "Model/interfaceVcDeChg.xls",
-                "sha256": "31a5d090427c8452cc426fd416de75cfd9d2d0ad11a2f7daf1856f2abd44d84a",
-                "location": "IN/OUT/CAL names"
+                "path": "Model/VcDeChg.slx",
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
+                "location": "simulink/systems/system_1366.xml/Block[@SID='1439'] (DomainInputs)"
+              },
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
+                "location": "simulink/stateflow/chart_19.xml / P[@Name=script], named function arguments and returns"
+              },
+              {
+                "path": "Model/VcDeChg.slx",
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
+                "location": "simulink/stateflow/chart_34.xml / P[@Name=script], named function arguments and returns"
               }
             ],
             "limitation": "Raw、Age、Qualified 等在具名通道内有明确意义，不因不同通道重复使用就判无意义；少量默认端口仍影响接口叶。",
@@ -1965,22 +2090,27 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "通道范围、时效和物理编码已有类型/约束参数，但电缆100/500/1500 ohm分档、32/16 A限制与温度/电网包络尚未以独立外部数据源系统管理，未满足可调参数均外部变量化的3/5条件，裁部分变量化1。",
+            "reason": "已增加 2 个实际标定对象并用于模型，数组在CAL记录维度/单位/上下界；但电缆100/500/1500 ohm分档与32/16 A限制仍内嵌，未满足全部可调量外部化和系统管理，保持部分变量化1。Auto/Default不冒充目标内存映射。",
             "evidence": [
               {
                 "path": "Model/interfaceVcDeChg.xls",
-                "sha256": "31a5d090427c8452cc426fd416de75cfd9d2d0ad11a2f7daf1856f2abd44d84a",
-                "location": "CAL; channel parameters"
+                "sha256": "789bf367e936ac1272de608748e392ada7b0269389173c9c2cfc40380a19e463",
+                "location": "CAL!A1 onward; MP/FIX for NEP-08"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "cd99d2b3504319ac895b4e7d07fa7d51539a24784d86b781c8ee6c7a04b8f35d",
+                "location": "parameters: values, dimensions, storage and bounds"
               },
               {
                 "path": "Model/VcDeChg.slx",
-                "sha256": "439df6763c41a3de6732a46e65ef2f679ac720e100644ec378a2c0f5c7bb3790",
-                "location": "simulink/stateflow/chart_19.xml / script"
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
+                "location": "simulink/stateflow/chart_19.xml / P[@Name=script]"
               },
               {
                 "path": "Model/VcDeChg.slx",
-                "sha256": "439df6763c41a3de6732a46e65ef2f679ac720e100644ec378a2c0f5c7bb3790",
-                "location": "simulink/stateflow/chart_34.xml / script"
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
+                "location": "simulink/stateflow/chart_34.xml / P[@Name=script]"
               }
             ],
             "limitation": "本次重新核对新增业务常量；NEP-01不再沿用旧纯质量网关的参数管理5。固定逻辑0/1本身不当作缺失标定。",
@@ -1990,42 +2120,37 @@
             "score": 1,
             "max_score": 3,
             "status": "supported",
-            "reason": "模型真实依赖 PreLoad 中的 .p 标定校验组件，恢复后无需其 .m 源即可加载/运行；未达到接口化独立业务组件库条件，裁1。",
+            "reason": "沿用 v0.11.2 数值 1；本轮构建独立性争议暂停，未重新裁决。旧裁决依据：模型真实依赖 PreLoad 中的 .p 标定校验组件，恢复后无需其 .m 源即可加载/运行；未达到接口化独立业务组件库条件，裁1。",
             "evidence": [
               {
                 "path": "Model/VcDeChg.slx",
-                "sha256": "439df6763c41a3de6732a46e65ef2f679ac720e100644ec378a2c0f5c7bb3790",
-                "location": "Mask / PreLoadFcn / dependency references"
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
+                "location": "simulink/systems/system_root.xml/Block[@SID='1366'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "723e699797197c72a4e2302f44222d7feb74c562551322f546630a3cc7a6d0d8",
-                "location": "Component boundaries"
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "348760f8b900196ebfe8b8fd76de5722455821bc6125317b3b1dc89caa284c4f",
+                "location": "Scope of local library, platform branches and aliases"
               }
             ],
-            "limitation": "NEP-10的库与主模型同仓同快照，不能把普通LibraryVersion或工具版本当成稳定发布与依赖锁定。",
-            "method": "source-grounded maintainer semantic re-adjudication after native/property verification"
+            "limitation": "HOLD: effective contract and prior numeric value preserved pending explicit adjudication; new typed Bus is not treated as approval of a new build rule.",
+            "method": "prior value carried forward; source identity rebound only; disputed adjudication paused"
           },
           "version_independence": {
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "当前模型12.0.0_0；README明确定义MAJOR/MINOR/PATCH兼容性含义。本次类型/新增输出为不兼容接口修订，版本递增与实际前后差异相符。",
+            "reason": "当前模型12.1.0_0；根输入/输出保持，兼容增加业务标定和类型化内部接口，README定义的MINOR语义与这次实际变化一致；旧12.0.0_0记录及标签保留。",
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "fe59dde2e6b82290be0287a1163f7bc1359128083b85a405fce1f657a980f4cf",
-                "location": "Semantic version policy"
-              },
-              {
-                "path": "Documentation/VcDeChg_26R1_变更记录.xlsx",
-                "sha256": "e4c994d5a749c3f435a7229744f6b16baa06b8a87b938c16fa667f92f31969f7",
-                "location": "Cover/26R1"
+                "sha256": "c61cb4c735facbaca62d7f06108d44d7950350d813d77e0a9c982e8e945113d0",
+                "location": "Current version, compatibility meanings and engineering repair supplement"
               },
               {
                 "path": "Model/VcDeChg.slx",
-                "sha256": "439df6763c41a3de6732a46e65ef2f679ac720e100644ec378a2c0f5c7bb3790",
-                "location": "ModelVersionFormat"
+                "sha256": "582f1f03a0cf530c74fa674263a98916edeedaa77197887b7d4deeefce4b8628",
+                "location": "simulink/blockdiagram.xml ModelVersion"
               }
             ],
             "limitation": "旧导出别名仍是旧快照，不宣称八个月真实发布史。",
@@ -2035,22 +2160,17 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "已逐仓重写当前变更记录：12.0.0_0、实际日期、具体业务前后逻辑、接口增删和类型/单位/范围变化均可由Git父提交及InterfaceChanges.json核对；跨仓TargetSoc复制声明已删除。",
+            "reason": "26R1变更表追加2026-09-10的CHG004，与当前12.1.0_0工程变化对应；既有记录逐单元格保持，模型/Bus/标定差异可由Git父提交及EngineeringRepair.json核验。",
             "evidence": [
               {
                 "path": "Documentation/VcDeChg_26R1_变更记录.xlsx",
-                "sha256": "e4c994d5a749c3f435a7229744f6b16baa06b8a87b938c16fa667f92f31969f7",
-                "location": "26R1!B2,H2,I2,J2,L2"
+                "sha256": "b3aaf39fca0572c198f4948071c16fd0380aed957f01d66eeb8a5f67f9612eee",
+                "location": "Cover!B4; 26R1 last appended CHG004 row"
               },
               {
-                "path": "Documentation/InterfaceChanges.json",
-                "sha256": "3c6d0c294051c925b15508cced7bda5db3bc963b9e0147d11e4bca380f4db30e",
-                "location": "Actual before/after per-signal records"
-              },
-              {
-                "path": "Model/interfaceVcDeChg.xls",
-                "sha256": "31a5d090427c8452cc426fd416de75cfd9d2d0ad11a2f7daf1856f2abd44d84a",
-                "location": "ChangeLog"
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "cd99d2b3504319ac895b4e7d07fa7d51539a24784d86b781c8ee6c7a04b8f35d",
+                "location": "Current engineering change details"
               }
             ],
             "limitation": "列齐全不是充分理由；当前裁决依赖实际模型/接口差异。保留的历史导出材料不代表生产发布史。",
@@ -2064,7 +2184,7 @@
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "fe59dde2e6b82290be0287a1163f7bc1359128083b85a405fce1f657a980f4cf",
+                "sha256": "c61cb4c735facbaca62d7f06108d44d7950350d813d77e0a9c982e8e945113d0",
                 "location": "Directory roles"
               }
             ],
@@ -2075,22 +2195,22 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "仓内包含独立属性定义、输入/期望向量、实测输出及原生报告。2640个采样、9条业务属性与63360个独立通道/诊断比较全部通过；C语句覆盖未测，不能满足三项同时达标的3/5条件，裁1。",
+            "reason": "仓内独立属性、输入期望及原生报告：2680 采样、14 条业务属性、64320 个独立通道/诊断比较通过。SWUT Properties逐条绑定输出、算子、期望、采样与容差；C语句覆盖未测，保持1。",
             "evidence": [
               {
                 "path": "UnitTest/test-properties.json",
-                "sha256": "bc904d1d734b47597e2596016f86154874b100521bd5ed45e7bd5dde205efba4",
-                "location": "Independent point and temporal assertions"
+                "sha256": "26c74eb93904495728899d48c073ae886bb85669ba29c0d6f0b2946b68f13d84",
+                "location": "checks[*]: name/output/op/value/indices/tolerance"
+              },
+              {
+                "path": "UnitTest/VCU_VcDeChg_SWUT.xlsx",
+                "sha256": "081a0596e47c013efbab82755ae857db3ad6b81fd46f0f5e530e1ce71c878065",
+                "location": "Properties!A1 onward; TCSDM points to exact assertion rows"
               },
               {
                 "path": "UnitTest/VcDeChg_BTC_UT_Report.html",
-                "sha256": "52fe29f6136e8165bebc2b96026a23c4c5ffd9d6d63a6096738c982b7e1f4b03",
-                "location": "Native checks and runtime binding"
-              },
-              {
-                "path": "UnitTest/VcDeChg_BTC_UTCov_Report.html",
-                "sha256": "6821a309558ebc84877fd1e746cfc8f85b36ce7279362346a5716a5a852436c2",
-                "location": "Measured model metrics; C statement unmeasured"
+                "sha256": "742826ea947148f43c5674b58da616475644767abc56df3ca0891406ceb8adc2",
+                "location": "Actual engine, measured counts and runtime SHA256 bindings"
               }
             ],
             "limitation": "实测输出仅作回放，不冒充独立预期；BTC只是命名，host C不是SIL/PIL/HIL。",
@@ -2104,10 +2224,10 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "e2fd73443c59459a560775405b486624b4b082cf",
+                "head": "591ba778755c00c6d1586fe8128616ec82a52702",
                 "refs": {
                   "refs/heads/auto/master/1/482bcd7e-1": "482bcd7eac4cba0407b746d5eeb7bee46390bd20",
-                  "refs/heads/master": "e2fd73443c59459a560775405b486624b4b082cf"
+                  "refs/heads/master": "591ba778755c00c6d1586fe8128616ec82a52702"
                 }
               },
               {
@@ -2127,10 +2247,10 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "e2fd73443c59459a560775405b486624b4b082cf",
+                "head": "591ba778755c00c6d1586fe8128616ec82a52702",
                 "refs": {
                   "refs/heads/auto/master/1/482bcd7e-1": "482bcd7eac4cba0407b746d5eeb7bee46390bd20",
-                  "refs/heads/master": "e2fd73443c59459a560775405b486624b4b082cf"
+                  "refs/heads/master": "591ba778755c00c6d1586fe8128616ec82a52702"
                 }
               }
             ],
@@ -2143,11 +2263,11 @@
     {
       "id": "NEP-08",
       "name": "VcPvcThm",
-      "head": "a3946da6cca31d88979c55b6d18a64ea33225dbd",
+      "head": "47cf4cc68507f956e909799b6a162fa121a227ce",
       "reference": {
         "id": "NEP-08",
         "name": "VcPvcThm",
-        "head": "a3946da6cca31d88979c55b6d18a64ea33225dbd",
+        "head": "47cf4cc68507f956e909799b6a162fa121a227ce",
         "scores": {
           "hierarchy": 3,
           "reuse": 1,
@@ -2170,17 +2290,22 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "按实际责任核对分组输入、类型调理、业务组件与诊断层。展开后 190 个子系统中，至少 184 个有明确单一职责（96.8%）；分组层不计入该下界。模拟量转换、数字资格、业务状态分别封装，不能由相近块数单独推导结论。",
+            "reason": "当前原生展开 188 个子系统；保守排除 5 个根采集分组后，183 个调理、业务或诊断单元职责可独立描述（97.3%）。03/06紧凑调理仍保留两采样资格状态，08积分反馈单独呈现；层级裁3。",
             "evidence": [
               {
                 "path": "Model/VcPvcThm.slx",
-                "sha256": "8b5aa1538b6633cc0c7efec1aa1c01aed15c0b8e7af1117ec3ea7709bf6b476b",
-                "location": "system_root/Block[@SID='2354'] (BusinessDecision)"
+                "sha256": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2354'] (BusinessDecision)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "519adbfd1df8403937f863a6fd496b4bbe798b8ce7a4a6f0f77d32489c5532b9",
+                "location": "buses, compact_channels, parameters and layout_scope"
               },
               {
                 "path": "Documentation/BusinessBehavior.md",
-                "sha256": "57d348ed3829f4e556d3fc8940ffb69e130a2eefe63ec17a7d0be2557a72cc20",
-                "location": "Responsibilities and independently checked behavior"
+                "sha256": "46ea8790d2b93cf0fd41034d75caadfb6b6d75a60528e6aa6c68d08f3b7c66f8",
+                "location": "Responsibilities and engineering implementation"
               }
             ],
             "limitation": "同源构造与共享调理模式仍存在；这是当前结构裁决，不是内部逐仓架构复原证明。",
@@ -2194,12 +2319,12 @@
             "evidence": [
               {
                 "path": "Model/VcPvcThm.slx",
-                "sha256": "8b5aa1538b6633cc0c7efec1aa1c01aed15c0b8e7af1117ec3ea7709bf6b476b",
+                "sha256": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
                 "location": "system_1025/Block[@SID='1050'] (TemporalQualification)"
               },
               {
                 "path": "Model/VcPvcThm.slx",
-                "sha256": "8b5aa1538b6633cc0c7efec1aa1c01aed15c0b8e7af1117ec3ea7709bf6b476b",
+                "sha256": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
                 "location": "system_1025/Block[@SID='1036'] (RangeAndCommunication)"
               }
             ],
@@ -2210,17 +2335,22 @@
             "score": 1,
             "max_score": 3,
             "status": "supported",
-            "reason": "外部 110 入/47 出已按编译类型和实际物理编码对齐，变更明细可追踪；内部仍有 18 个 InN/OutN 默认端口，例如 VcPvcThm/DriverAndModeInputs/In10，未满足整体端口规范的2档。",
+            "reason": "根 110 入/47 出保持。VcPvcThm_DomainInputs_Bus 含 35 个实际类型/维度字段并穿越业务边界；仍有 18 个默认内部端口，整体规范未达2档，保持1。",
             "evidence": [
               {
-                "path": "Model/interfaceVcPvcThm.xls",
-                "sha256": "dcd39a9a75f8df5c63c90a0e5d0878bea589d40dc38d6319824ed22d5e06474b",
-                "location": "IN/OUT: Name, DataType, Unit, Min, Max and raw decoding description"
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2502'] (AssembleDomainInputs)"
               },
               {
                 "path": "Model/VcPvcThm.slx",
-                "sha256": "8b5aa1538b6633cc0c7efec1aa1c01aed15c0b8e7af1117ec3ea7709bf6b476b",
-                "location": "VcPvcThm/DriverAndModeInputs/In10 SID VcPvcThm:1870"
+                "sha256": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
+                "location": "simulink/systems/system_2354.xml/Block[@SID='2500'] (DomainInputs)"
+              },
+              {
+                "path": "Model/interfaceVcPvcThm.xls",
+                "sha256": "447691b4d83472e1fc3e8fa82a9277263a9c14cdc8c71e1bc0628c4dd0a6f62b",
+                "location": "IN!A1; OUT!A1; BUS!A1: typed fields, dimensions, producer and consumer"
               }
             ],
             "limitation": "外部表格完整不能自动替代内部接口命名质量；raw unit=1 表示编码计数，工程单位与比例见对应描述/物理输出。",
@@ -2234,13 +2364,18 @@
             "evidence": [
               {
                 "path": "Model/VcPvcThm.slx",
-                "sha256": "8b5aa1538b6633cc0c7efec1aa1c01aed15c0b8e7af1117ec3ea7709bf6b476b",
-                "location": "system_root/Block[@SID='2354'] (BusinessDecision)"
+                "sha256": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2354'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "57d348ed3829f4e556d3fc8940ffb69e130a2eefe63ec17a7d0be2557a72cc20",
-                "location": "Responsibilities and independently checked behavior"
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
+                "location": "simulink/systems/system_2354.xml/Block[@SID='2500'] (DomainInputs)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "519adbfd1df8403937f863a6fd496b4bbe798b8ce7a4a6f0f77d32489c5532b9",
+                "location": "layout_scope; root acquisition/quality fan-in remains dense"
               }
             ],
             "limitation": "依据当前原生图与连接关系；不按 Goto 数量或块数机械扣分。",
@@ -2250,17 +2385,22 @@
             "score": 5,
             "max_score": 5,
             "status": "supported",
-            "reason": "在父级业务/信号上下文中逐类核对，命名风格按角色一致。4971 个块/线元素中，保守计入默认端口、序号拒绝/读取、通用函数包装及空线名 207 个（4.2%）；其余名称准确标示局部信号、运算或状态责任，超过90%门槛。",
+            "reason": "按父业务上下文审阅同类命名。原生 5037 块/线中机械筛出 81 个通用名或空名；其中 0 条为 MATLAB Function 生成包装内部连线，角色由具名函数形参与返回值明确。其余保守未消歧 81 个（1.6%）；明确且风格协调的元素仍超过90%，保持5。这是当前源码语义裁决，不新增候选可见规则。",
             "evidence": [
               {
                 "path": "Model/VcPvcThm.slx",
-                "sha256": "8b5aa1538b6633cc0c7efec1aa1c01aed15c0b8e7af1117ec3ea7709bf6b476b",
-                "location": "Named channel/stage/controller hierarchy and signal lines"
+                "sha256": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2354'] (BusinessDecision)"
               },
               {
-                "path": "Model/interfaceVcPvcThm.xls",
-                "sha256": "dcd39a9a75f8df5c63c90a0e5d0878bea589d40dc38d6319824ed22d5e06474b",
-                "location": "IN/OUT/CAL names"
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
+                "location": "simulink/systems/system_2354.xml/Block[@SID='2500'] (DomainInputs)"
+              },
+              {
+                "path": "Model/VcPvcThm.slx",
+                "sha256": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
+                "location": "simulink/stateflow/chart_24.xml / P[@Name=script], named function arguments and returns"
               }
             ],
             "limitation": "Raw、Age、Qualified 等在具名通道内有明确意义，不因不同通道重复使用就判无意义；少量默认端口仍影响接口叶。",
@@ -2270,22 +2410,22 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "通道范围、时效和物理编码已有类型/约束参数，但PI增益0.15、15度比例区间、积分上限30与流量阈值2尚未以独立外部数据源系统管理，未满足可调参数均外部变量化的3/5条件，裁部分变量化1。",
+            "reason": "已增加 5 个实际标定对象并用于模型，数组在CAL记录维度/单位/上下界；但舱温误差比例2/3/5与压缩机命令耦合常数仍内嵌，未满足全部可调量外部化和系统管理，保持部分变量化1。Auto/Default不冒充目标内存映射。",
             "evidence": [
               {
                 "path": "Model/interfaceVcPvcThm.xls",
-                "sha256": "dcd39a9a75f8df5c63c90a0e5d0878bea589d40dc38d6319824ed22d5e06474b",
-                "location": "CAL; channel parameters"
+                "sha256": "447691b4d83472e1fc3e8fa82a9277263a9c14cdc8c71e1bc0628c4dd0a6f62b",
+                "location": "CAL!A1 onward; MP/FIX for NEP-08"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "519adbfd1df8403937f863a6fd496b4bbe798b8ce7a4a6f0f77d32489c5532b9",
+                "location": "parameters: values, dimensions, storage and bounds"
               },
               {
                 "path": "Model/VcPvcThm.slx",
-                "sha256": "8b5aa1538b6633cc0c7efec1aa1c01aed15c0b8e7af1117ec3ea7709bf6b476b",
-                "location": "simulink/stateflow/chart_24.xml / script"
-              },
-              {
-                "path": "Model/VcPvcThm.slx",
-                "sha256": "8b5aa1538b6633cc0c7efec1aa1c01aed15c0b8e7af1117ec3ea7709bf6b476b",
-                "location": "simulink/stateflow/chart_37.xml / script"
+                "sha256": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
+                "location": "simulink/stateflow/chart_24.xml / P[@Name=script]"
               }
             ],
             "limitation": "本次重新核对新增业务常量；NEP-01不再沿用旧纯质量网关的参数管理5。固定逻辑0/1本身不当作缺失标定。",
@@ -2295,42 +2435,37 @@
             "score": 0,
             "max_score": 3,
             "status": "supported",
-            "reason": "主体业务仍内嵌于单个SLX；具名子系统和成功生码没有形成已批准规则所需的 Mask/独立组件契约，裁0。",
+            "reason": "沿用 v0.11.2 数值 0；本轮构建独立性争议暂停，未重新裁决。旧裁决依据：主体业务仍内嵌于单个SLX；具名子系统和成功生码没有形成已批准规则所需的 Mask/独立组件契约，裁0。",
             "evidence": [
               {
                 "path": "Model/VcPvcThm.slx",
-                "sha256": "8b5aa1538b6633cc0c7efec1aa1c01aed15c0b8e7af1117ec3ea7709bf6b476b",
-                "location": "Mask / PreLoadFcn / dependency references"
+                "sha256": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2354'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "57d348ed3829f4e556d3fc8940ffb69e130a2eefe63ec17a7d0be2557a72cc20",
-                "location": "Component boundaries"
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "de93a2f1a4ba6f8dc727831850c36ceea20432439b5a144cc5b745bd776ff595",
+                "location": "Scope of local library, platform branches and aliases"
               }
             ],
-            "limitation": "NEP-10的库与主模型同仓同快照，不能把普通LibraryVersion或工具版本当成稳定发布与依赖锁定。",
-            "method": "source-grounded maintainer semantic re-adjudication after native/property verification"
+            "limitation": "HOLD: effective contract and prior numeric value preserved pending explicit adjudication; new typed Bus is not treated as approval of a new build rule.",
+            "method": "prior value carried forward; source identity rebound only; disputed adjudication paused"
           },
           "version_independence": {
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "当前模型12.0.0_0；README明确定义MAJOR/MINOR/PATCH兼容性含义。本次类型/新增输出为不兼容接口修订，版本递增与实际前后差异相符。",
+            "reason": "当前模型12.1.0_0；根输入/输出保持，兼容增加业务标定和类型化内部接口，README定义的MINOR语义与这次实际变化一致；旧12.0.0_0记录及标签保留。",
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "8f767dc241e46900bc2373409dd863d8ea4de8c648a1e005a2c0f61413a6faf4",
-                "location": "Semantic version policy"
-              },
-              {
-                "path": "Documentation/VcPvcThm_26R1_变更记录.xlsx",
-                "sha256": "4dbc2ae45cc3b02718a83d3591fe8366567c9d4ec03db6d0e5e014ff1bea699d",
-                "location": "Cover/26R1"
+                "sha256": "d4e3c9af43cfbdaefdb85b2b82836c033991c51d1805162749eb60357c5ee3b6",
+                "location": "Current version, compatibility meanings and engineering repair supplement"
               },
               {
                 "path": "Model/VcPvcThm.slx",
-                "sha256": "8b5aa1538b6633cc0c7efec1aa1c01aed15c0b8e7af1117ec3ea7709bf6b476b",
-                "location": "ModelVersionFormat"
+                "sha256": "bad4ed13231f659f92dd4694b2dd22bbda44df9e18ebf7fbd882d310bcf24b70",
+                "location": "simulink/blockdiagram.xml ModelVersion"
               }
             ],
             "limitation": "旧导出别名仍是旧快照，不宣称八个月真实发布史。",
@@ -2340,22 +2475,17 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "已逐仓重写当前变更记录：12.0.0_0、实际日期、具体业务前后逻辑、接口增删和类型/单位/范围变化均可由Git父提交及InterfaceChanges.json核对；跨仓TargetSoc复制声明已删除。",
+            "reason": "26R1变更表追加2026-09-10的CHG004，与当前12.1.0_0工程变化对应；既有记录逐单元格保持，模型/Bus/标定差异可由Git父提交及EngineeringRepair.json核验。",
             "evidence": [
               {
                 "path": "Documentation/VcPvcThm_26R1_变更记录.xlsx",
-                "sha256": "4dbc2ae45cc3b02718a83d3591fe8366567c9d4ec03db6d0e5e014ff1bea699d",
-                "location": "26R1!B2,H2,I2,J2,L2"
+                "sha256": "380579f5dd25fa094ca18af33126a42620d063b73b9cc026cd1133fde3610710",
+                "location": "Cover!B4; 26R1 last appended CHG004 row"
               },
               {
-                "path": "Documentation/InterfaceChanges.json",
-                "sha256": "00724feec2c040f2f8c71fb8f42b40996616145448100015e2bf267fe64ace9c",
-                "location": "Actual before/after per-signal records"
-              },
-              {
-                "path": "Model/interfaceVcPvcThm.xls",
-                "sha256": "dcd39a9a75f8df5c63c90a0e5d0878bea589d40dc38d6319824ed22d5e06474b",
-                "location": "ChangeLog"
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "519adbfd1df8403937f863a6fd496b4bbe798b8ce7a4a6f0f77d32489c5532b9",
+                "location": "Current engineering change details"
               }
             ],
             "limitation": "列齐全不是充分理由；当前裁决依赖实际模型/接口差异。保留的历史导出材料不代表生产发布史。",
@@ -2369,7 +2499,7 @@
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "8f767dc241e46900bc2373409dd863d8ea4de8c648a1e005a2c0f61413a6faf4",
+                "sha256": "d4e3c9af43cfbdaefdb85b2b82836c033991c51d1805162749eb60357c5ee3b6",
                 "location": "Directory roles"
               }
             ],
@@ -2380,22 +2510,22 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "仓内包含独立属性定义、输入/期望向量、实测输出及原生报告。4696个采样、7条业务属性与178448个独立通道/诊断比较全部通过；C语句覆盖未测，不能满足三项同时达标的3/5条件，裁1。",
+            "reason": "仓内独立属性、输入期望及原生报告：4748 采样、15 条业务属性、180424 个独立通道/诊断比较通过。SWUT Properties逐条绑定输出、算子、期望、采样与容差；C语句覆盖未测，保持1。",
             "evidence": [
               {
                 "path": "UintTest/test-properties.json",
-                "sha256": "f04705f0b169f57a4bff90b65ffbd69f1e57718f72b84b17cc35472d2f2ed52e",
-                "location": "Independent point and temporal assertions"
+                "sha256": "6b11bb12ac055e0185a0a5085ec214f2fa87d952aa75c94033feec45f3aeea15",
+                "location": "checks[*]: name/output/op/value/indices/tolerance"
+              },
+              {
+                "path": "UintTest/VCU_VcPvcThm_SWUT.xlsx",
+                "sha256": "031c872e2d40a610ca7f73bceff66df68dada645ea3b646b97602ac0b11f0155",
+                "location": "Properties!A1 onward; TCSDM points to exact assertion rows"
               },
               {
                 "path": "UintTest/VcPvcThm_BTC_UT_Report.html",
-                "sha256": "f1974d2a625daa9347715fa6a0a4183a92110f47f316a77024db12f9bb952145",
-                "location": "Native checks and runtime binding"
-              },
-              {
-                "path": "UintTest/VcPvcThm_BTC_UTCov_Report.html",
-                "sha256": "eb94cadcb6b2a5b2bfc17f116db9843bd15c76cdee45b9066712305301b25799",
-                "location": "Measured model metrics; C statement unmeasured"
+                "sha256": "b6dcbeb9ba4a9c3fc908bba63c6a869f618aa37e44504da93603494f4ba95aa6",
+                "location": "Actual engine, measured counts and runtime SHA256 bindings"
               }
             ],
             "limitation": "实测输出仅作回放，不冒充独立预期；BTC只是命名，host C不是SIL/PIL/HIL。",
@@ -2409,9 +2539,9 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "a3946da6cca31d88979c55b6d18a64ea33225dbd",
+                "head": "47cf4cc68507f956e909799b6a162fa121a227ce",
                 "refs": {
-                  "refs/heads/master": "a3946da6cca31d88979c55b6d18a64ea33225dbd"
+                  "refs/heads/master": "47cf4cc68507f956e909799b6a162fa121a227ce"
                 }
               },
               {
@@ -2431,9 +2561,9 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "a3946da6cca31d88979c55b6d18a64ea33225dbd",
+                "head": "47cf4cc68507f956e909799b6a162fa121a227ce",
                 "refs": {
-                  "refs/heads/master": "a3946da6cca31d88979c55b6d18a64ea33225dbd"
+                  "refs/heads/master": "47cf4cc68507f956e909799b6a162fa121a227ce"
                 }
               }
             ],
@@ -2446,11 +2576,11 @@
     {
       "id": "NEP-09",
       "name": "VcSfCPropR",
-      "head": "3b60bb33258294e6b8c6d8ba531790af4c98617d",
+      "head": "90865f70529fa91acaf339ac227f61c1d11ccac3",
       "reference": {
         "id": "NEP-09",
         "name": "VcSfCPropR",
-        "head": "3b60bb33258294e6b8c6d8ba531790af4c98617d",
+        "head": "90865f70529fa91acaf339ac227f61c1d11ccac3",
         "scores": {
           "hierarchy": 3,
           "reuse": 1,
@@ -2473,17 +2603,22 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "按实际责任核对分组输入、类型调理、业务组件与诊断层。展开后 223 个子系统中，至少 217 个有明确单一职责（97.3%）；分组层不计入该下界。模拟量转换、数字资格、业务状态分别封装，不能由相近块数单独推导结论。",
+            "reason": "当前原生展开 223 个子系统；保守排除 5 个根采集分组后，218 个调理、业务或诊断单元职责可独立描述（97.8%）。03/06紧凑调理仍保留两采样资格状态，08积分反馈单独呈现；层级裁3。",
             "evidence": [
               {
                 "path": "Model/VcSfCPropR.slx",
-                "sha256": "00649266776657a17961f475552cc16ed4ac15ca3e2bb78d163038200e6011d9",
-                "location": "system_root/Block[@SID='2741'] (BusinessDecision)"
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2741'] (BusinessDecision)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "4dfe63ab404326743a82b993975faaf056feb776f3a732f28d5246897ead4e0f",
+                "location": "buses, compact_channels, parameters and layout_scope"
               },
               {
                 "path": "Documentation/BusinessBehavior.md",
-                "sha256": "102dd67f375e0fb092a21699feec86bbfb4a2db7feba9e980f5f58f633ca7f58",
-                "location": "Responsibilities and independently checked behavior"
+                "sha256": "876265ba52f0266780e9ab9c05d4ebe7746b8c444171a3ce4529fc4dff3ba278",
+                "location": "Responsibilities and engineering implementation"
               }
             ],
             "limitation": "同源构造与共享调理模式仍存在；这是当前结构裁决，不是内部逐仓架构复原证明。",
@@ -2497,12 +2632,12 @@
             "evidence": [
               {
                 "path": "Model/VcSfCPropR.slx",
-                "sha256": "00649266776657a17961f475552cc16ed4ac15ca3e2bb78d163038200e6011d9",
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
                 "location": "system_1010/Block[@SID='1035'] (TemporalQualification)"
               },
               {
                 "path": "Model/VcSfCPropR.slx",
-                "sha256": "00649266776657a17961f475552cc16ed4ac15ca3e2bb78d163038200e6011d9",
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
                 "location": "system_1010/Block[@SID='1021'] (RangeAndCommunication)"
               }
             ],
@@ -2513,17 +2648,22 @@
             "score": 1,
             "max_score": 3,
             "status": "supported",
-            "reason": "外部 137 入/52 出已按编译类型和实际物理编码对齐，变更明细可追踪；内部仍有 18 个 InN/OutN 默认端口，例如 VcSfCPropR/DriverAndModeInputs/In11，未满足整体端口规范的2档。",
+            "reason": "根 137 入/52 出保持。VcSfCPropR_DomainInputs_Bus 含 35 个实际类型/维度字段并穿越业务边界；仍有 18 个默认内部端口，整体规范未达2档，保持1。",
             "evidence": [
               {
-                "path": "Model/interfaceVcSfCPropR.xls",
-                "sha256": "d9dc3f613343f02d55ee1bfb48e58dddcc1079a7e18c61d71925c9bdf5470912",
-                "location": "IN/OUT: Name, DataType, Unit, Min, Max and raw decoding description"
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2820'] (AssembleDomainInputs)"
               },
               {
                 "path": "Model/VcSfCPropR.slx",
-                "sha256": "00649266776657a17961f475552cc16ed4ac15ca3e2bb78d163038200e6011d9",
-                "location": "VcSfCPropR/DriverAndModeInputs/In11 SID VcSfCPropR:221"
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
+                "location": "simulink/systems/system_2741.xml/Block[@SID='2818'] (DomainInputs)"
+              },
+              {
+                "path": "Model/interfaceVcSfCPropR.xls",
+                "sha256": "7c7e296d138c709b520fb40937e3ae98319af1ce16a46d8cef6abe67f5b0d501",
+                "location": "IN!A1; OUT!A1; BUS!A1: typed fields, dimensions, producer and consumer"
               }
             ],
             "limitation": "外部表格完整不能自动替代内部接口命名质量；raw unit=1 表示编码计数，工程单位与比例见对应描述/物理输出。",
@@ -2537,13 +2677,18 @@
             "evidence": [
               {
                 "path": "Model/VcSfCPropR.slx",
-                "sha256": "00649266776657a17961f475552cc16ed4ac15ca3e2bb78d163038200e6011d9",
-                "location": "system_root/Block[@SID='2741'] (BusinessDecision)"
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2741'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "102dd67f375e0fb092a21699feec86bbfb4a2db7feba9e980f5f58f633ca7f58",
-                "location": "Responsibilities and independently checked behavior"
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
+                "location": "simulink/systems/system_2741.xml/Block[@SID='2818'] (DomainInputs)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "4dfe63ab404326743a82b993975faaf056feb776f3a732f28d5246897ead4e0f",
+                "location": "layout_scope; root acquisition/quality fan-in remains dense"
               }
             ],
             "limitation": "依据当前原生图与连接关系；不按 Goto 数量或块数机械扣分。",
@@ -2553,17 +2698,27 @@
             "score": 5,
             "max_score": 5,
             "status": "supported",
-            "reason": "在父级业务/信号上下文中逐类核对，命名风格按角色一致。5699 个块/线元素中，保守计入默认端口、序号拒绝/读取、通用函数包装及空线名 233 个（4.1%）；其余名称准确标示局部信号、运算或状态责任，超过90%门槛。",
+            "reason": "按父业务上下文审阅同类命名。原生 5694 块/线中机械筛出 97 个通用名或空名；其中 0 条为 MATLAB Function 生成包装内部连线，角色由具名函数形参与返回值明确。其余保守未消歧 97 个（1.7%）；明确且风格协调的元素仍超过90%，保持5。这是当前源码语义裁决，不新增候选可见规则。",
             "evidence": [
               {
                 "path": "Model/VcSfCPropR.slx",
-                "sha256": "00649266776657a17961f475552cc16ed4ac15ca3e2bb78d163038200e6011d9",
-                "location": "Named channel/stage/controller hierarchy and signal lines"
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2741'] (BusinessDecision)"
               },
               {
-                "path": "Model/interfaceVcSfCPropR.xls",
-                "sha256": "d9dc3f613343f02d55ee1bfb48e58dddcc1079a7e18c61d71925c9bdf5470912",
-                "location": "IN/OUT/CAL names"
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
+                "location": "simulink/systems/system_2741.xml/Block[@SID='2818'] (DomainInputs)"
+              },
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
+                "location": "simulink/stateflow/chart_20.xml / P[@Name=script], named function arguments and returns"
+              },
+              {
+                "path": "Model/VcSfCPropR.slx",
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
+                "location": "simulink/stateflow/chart_40.xml / P[@Name=script], named function arguments and returns"
               }
             ],
             "limitation": "Raw、Age、Qualified 等在具名通道内有明确意义，不因不同通道重复使用就判无意义；少量默认端口仍影响接口叶。",
@@ -2577,18 +2732,23 @@
             "evidence": [
               {
                 "path": "Model/interfaceVcSfCPropR.xls",
-                "sha256": "d9dc3f613343f02d55ee1bfb48e58dddcc1079a7e18c61d71925c9bdf5470912",
-                "location": "CAL; channel parameters"
+                "sha256": "7c7e296d138c709b520fb40937e3ae98319af1ce16a46d8cef6abe67f5b0d501",
+                "location": "CAL!A1 onward; MP/FIX for NEP-08"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "4dfe63ab404326743a82b993975faaf056feb776f3a732f28d5246897ead4e0f",
+                "location": "parameters: values, dimensions, storage and bounds"
               },
               {
                 "path": "Model/VcSfCPropR.slx",
-                "sha256": "00649266776657a17961f475552cc16ed4ac15ca3e2bb78d163038200e6011d9",
-                "location": "simulink/stateflow/chart_20.xml / script"
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
+                "location": "simulink/stateflow/chart_20.xml / P[@Name=script]"
               },
               {
                 "path": "Model/VcSfCPropR.slx",
-                "sha256": "00649266776657a17961f475552cc16ed4ac15ca3e2bb78d163038200e6011d9",
-                "location": "simulink/stateflow/chart_40.xml / script"
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
+                "location": "simulink/stateflow/chart_40.xml / P[@Name=script]"
               }
             ],
             "limitation": "本次重新核对新增业务常量；NEP-01不再沿用旧纯质量网关的参数管理5。固定逻辑0/1本身不当作缺失标定。",
@@ -2598,42 +2758,37 @@
             "score": 0,
             "max_score": 3,
             "status": "supported",
-            "reason": "主体业务仍内嵌于单个SLX；具名子系统和成功生码没有形成已批准规则所需的 Mask/独立组件契约，裁0。",
+            "reason": "沿用 v0.11.2 数值 0；本轮构建独立性争议暂停，未重新裁决。旧裁决依据：主体业务仍内嵌于单个SLX；具名子系统和成功生码没有形成已批准规则所需的 Mask/独立组件契约，裁0。",
             "evidence": [
               {
                 "path": "Model/VcSfCPropR.slx",
-                "sha256": "00649266776657a17961f475552cc16ed4ac15ca3e2bb78d163038200e6011d9",
-                "location": "Mask / PreLoadFcn / dependency references"
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2741'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "102dd67f375e0fb092a21699feec86bbfb4a2db7feba9e980f5f58f633ca7f58",
-                "location": "Component boundaries"
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "0eb8407020d2dc5fe9a7d5c8cfb8e90ccd904eb8bbc23f52cc7c2d0b51118dc8",
+                "location": "Scope of local library, platform branches and aliases"
               }
             ],
-            "limitation": "NEP-10的库与主模型同仓同快照，不能把普通LibraryVersion或工具版本当成稳定发布与依赖锁定。",
-            "method": "source-grounded maintainer semantic re-adjudication after native/property verification"
+            "limitation": "HOLD: effective contract and prior numeric value preserved pending explicit adjudication; new typed Bus is not treated as approval of a new build rule.",
+            "method": "prior value carried forward; source identity rebound only; disputed adjudication paused"
           },
           "version_independence": {
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "当前模型12.0.0_0；README明确定义MAJOR/MINOR/PATCH兼容性含义。本次类型/新增输出为不兼容接口修订，版本递增与实际前后差异相符。",
+            "reason": "当前模型12.1.0_0；根输入/输出保持，兼容增加业务标定和类型化内部接口，README定义的MINOR语义与这次实际变化一致；旧12.0.0_0记录及标签保留。",
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "2d4ff385413ded3d2d0f52ed38d817a706f6c200ef3088d2ef6e32dadd300d6b",
-                "location": "Semantic version policy"
-              },
-              {
-                "path": "Documentation/VcSfCPropR_26R1_变更记录.xlsx",
-                "sha256": "6a14af67505f7aecf84a98d1e9645fb8009fc76442636390a010478e60014cf3",
-                "location": "Cover/26R1"
+                "sha256": "fde1e5bf94a53a1a219cc12dd1419dc9fcca5b163bf4817c0b99861685610f36",
+                "location": "Current version, compatibility meanings and engineering repair supplement"
               },
               {
                 "path": "Model/VcSfCPropR.slx",
-                "sha256": "00649266776657a17961f475552cc16ed4ac15ca3e2bb78d163038200e6011d9",
-                "location": "ModelVersionFormat"
+                "sha256": "d2f5c9eff7ff2b8fffcc00fbec1a33dc2c813140ed56e62b8f47b025302e85b5",
+                "location": "simulink/blockdiagram.xml ModelVersion"
               }
             ],
             "limitation": "旧导出别名仍是旧快照，不宣称八个月真实发布史。",
@@ -2643,22 +2798,17 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "已逐仓重写当前变更记录：12.0.0_0、实际日期、具体业务前后逻辑、接口增删和类型/单位/范围变化均可由Git父提交及InterfaceChanges.json核对；跨仓TargetSoc复制声明已删除。",
+            "reason": "26R1变更表追加2026-09-10的CHG004，与当前12.1.0_0工程变化对应；既有记录逐单元格保持，模型/Bus/标定差异可由Git父提交及EngineeringRepair.json核验。",
             "evidence": [
               {
                 "path": "Documentation/VcSfCPropR_26R1_变更记录.xlsx",
-                "sha256": "6a14af67505f7aecf84a98d1e9645fb8009fc76442636390a010478e60014cf3",
-                "location": "26R1!B2,H2,I2,J2,L2"
+                "sha256": "0a24deb725ca3b3aed313a1175d64faf50eb5dab64287e7072d7d3e27b692066",
+                "location": "Cover!B4; 26R1 last appended CHG004 row"
               },
               {
-                "path": "Documentation/InterfaceChanges.json",
-                "sha256": "c3d9796e2637b89e6be7080cbe0f961692ec4a101a39b2d9a0d9abb2be1a1d80",
-                "location": "Actual before/after per-signal records"
-              },
-              {
-                "path": "Model/interfaceVcSfCPropR.xls",
-                "sha256": "d9dc3f613343f02d55ee1bfb48e58dddcc1079a7e18c61d71925c9bdf5470912",
-                "location": "ChangeLog"
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "4dfe63ab404326743a82b993975faaf056feb776f3a732f28d5246897ead4e0f",
+                "location": "Current engineering change details"
               }
             ],
             "limitation": "列齐全不是充分理由；当前裁决依赖实际模型/接口差异。保留的历史导出材料不代表生产发布史。",
@@ -2672,7 +2822,7 @@
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "2d4ff385413ded3d2d0f52ed38d817a706f6c200ef3088d2ef6e32dadd300d6b",
+                "sha256": "fde1e5bf94a53a1a219cc12dd1419dc9fcca5b163bf4817c0b99861685610f36",
                 "location": "Directory roles"
               }
             ],
@@ -2683,22 +2833,22 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "仓内包含独立属性定义、输入/期望向量、实测输出及原生报告。5493个采样、12条业务属性与258171个独立通道/诊断比较全部通过；C语句覆盖未测，不能满足三项同时达标的3/5条件，裁1。",
+            "reason": "仓内独立属性、输入期望及原生报告：5493 采样、12 条业务属性、258171 个独立通道/诊断比较通过。SWUT Properties逐条绑定输出、算子、期望、采样与容差；C语句覆盖未测，保持1。",
             "evidence": [
               {
                 "path": "UnitTest/test-properties.json",
-                "sha256": "4af185f36de98c87503d676390949c6ab805cb7cf9f99969c8db7ae34a085a5e",
-                "location": "Independent point and temporal assertions"
+                "sha256": "1dbd50657e5da9c788100d28ea78fcac6430aa47afba2ce94fe2d6cff00b6430",
+                "location": "checks[*]: name/output/op/value/indices/tolerance"
+              },
+              {
+                "path": "UnitTest/VCU_VcSfCPropR_SWUT.xlsx",
+                "sha256": "45d933555543b0a39c9557ecb3608c4ea6020a324c4ec38cb3484d75a3f742bd",
+                "location": "Properties!A1 onward; TCSDM points to exact assertion rows"
               },
               {
                 "path": "UnitTest/VcSfCPropR_BTC_UT_Report.html",
-                "sha256": "4e7eaa8ba511fc0fe9179135403d05bbb213848550c4866df7f0d2e3db78aed7",
-                "location": "Native checks and runtime binding"
-              },
-              {
-                "path": "UnitTest/VcSfCPropR_BTC_UTCov_Report.html",
-                "sha256": "452f546275d26df25707e83797b4a3d4485183eef2a3674c1e5f0775d142bb89",
-                "location": "Measured model metrics; C statement unmeasured"
+                "sha256": "145944d26079b6f8a8c588ccc5eafc2625a4229b42f5aaee455d8497d488c246",
+                "location": "Actual engine, measured counts and runtime SHA256 bindings"
               }
             ],
             "limitation": "实测输出仅作回放，不冒充独立预期；BTC只是命名，host C不是SIL/PIL/HIL。",
@@ -2712,13 +2862,13 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "3b60bb33258294e6b8c6d8ba531790af4c98617d",
+                "head": "90865f70529fa91acaf339ac227f61c1d11ccac3",
                 "refs": {
                   "refs/heads/Branch-XCM-S": "77c522c76b2d8b17004f074aea5b481faaec501f",
                   "refs/heads/Branch-ZCUH": "77c522c76b2d8b17004f074aea5b481faaec501f",
                   "refs/heads/Branch-ZCUN": "77c522c76b2d8b17004f074aea5b481faaec501f",
                   "refs/heads/auto/master/1/77c522c7-1": "77c522c76b2d8b17004f074aea5b481faaec501f",
-                  "refs/heads/master": "3b60bb33258294e6b8c6d8ba531790af4c98617d"
+                  "refs/heads/master": "90865f70529fa91acaf339ac227f61c1d11ccac3"
                 }
               },
               {
@@ -2738,13 +2888,13 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "3b60bb33258294e6b8c6d8ba531790af4c98617d",
+                "head": "90865f70529fa91acaf339ac227f61c1d11ccac3",
                 "refs": {
                   "refs/heads/Branch-XCM-S": "77c522c76b2d8b17004f074aea5b481faaec501f",
                   "refs/heads/Branch-ZCUH": "77c522c76b2d8b17004f074aea5b481faaec501f",
                   "refs/heads/Branch-ZCUN": "77c522c76b2d8b17004f074aea5b481faaec501f",
                   "refs/heads/auto/master/1/77c522c7-1": "77c522c76b2d8b17004f074aea5b481faaec501f",
-                  "refs/heads/master": "3b60bb33258294e6b8c6d8ba531790af4c98617d"
+                  "refs/heads/master": "90865f70529fa91acaf339ac227f61c1d11ccac3"
                 }
               }
             ],
@@ -2757,11 +2907,11 @@
     {
       "id": "NEP-10",
       "name": "VcSfDPropR",
-      "head": "dc1dd984ecc2152bb03c7aa8f13dd83f856f6e89",
+      "head": "a9ede4539f091a1809913432d18f69b896f9059f",
       "reference": {
         "id": "NEP-10",
         "name": "VcSfDPropR",
-        "head": "dc1dd984ecc2152bb03c7aa8f13dd83f856f6e89",
+        "head": "a9ede4539f091a1809913432d18f69b896f9059f",
         "scores": {
           "hierarchy": 3,
           "reuse": 3,
@@ -2784,17 +2934,22 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "按实际责任核对分组输入、类型调理、业务组件与诊断层。展开后 373 个子系统中，至少 356 个有明确单一职责（95.4%）；分组层不计入该下界。模拟量转换、数字资格、业务状态分别封装，不能由相近块数单独推导结论。",
+            "reason": "当前原生展开 373 个子系统；保守排除 16 个根采集分组后，357 个调理、业务或诊断单元职责可独立描述（95.7%）。03/06紧凑调理仍保留两采样资格状态，08积分反馈单独呈现；层级裁3。",
             "evidence": [
               {
                 "path": "Model/VcSfDPropR.slx",
-                "sha256": "f7c53c6eba6569249831e3bb8047419cb2eff432c2879b936e80ce73f62d571d",
-                "location": "system_root/Block[@SID='2381'] (BusinessDecision)"
+                "sha256": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2381'] (BusinessDecision)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "30ddcc8bf655108d62e17ebecf63e4e5404e9d0e582b3d1f06f81f3474792aa7",
+                "location": "buses, compact_channels, parameters and layout_scope"
               },
               {
                 "path": "Documentation/BusinessBehavior.md",
-                "sha256": "5108a0ed4ba7a4407d7bb6d2317b04b149501891aff50388e076bb9a6898e52b",
-                "location": "Responsibilities and independently checked behavior"
+                "sha256": "37a4280c8b727837a6a86c9bc2e9b7b9b170fbb9b2f6e214102671e8c8e6a596",
+                "location": "Responsibilities and engineering implementation"
               }
             ],
             "limitation": "同源构造与共享调理模式仍存在；这是当前结构裁决，不是内部逐仓架构复原证明。",
@@ -2813,7 +2968,7 @@
               },
               {
                 "path": "Model/VcSfDPropR.slx",
-                "sha256": "f7c53c6eba6569249831e3bb8047419cb2eff432c2879b936e80ce73f62d571d",
+                "sha256": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5",
                 "location": "system_root/Block[@SID='2381'] (BusinessDecision)"
               }
             ],
@@ -2824,17 +2979,22 @@
             "score": 1,
             "max_score": 3,
             "status": "supported",
-            "reason": "外部 482 入/181 出已按编译类型和实际物理编码对齐，变更明细可追踪；内部仍有 80 个 InN/OutN 默认端口，例如 VcSfDPropR/BatteryStatus/In10，未满足整体端口规范的2档。",
+            "reason": "根 482 入/181 出保持。VcSfDPropR_DomainInputs_Bus 含 321 个实际类型/维度字段并穿越业务边界；仍有 80 个默认内部端口，整体规范未达2档，保持1。",
             "evidence": [
               {
-                "path": "Model/interfaceVcSfDPropR.xls",
-                "sha256": "e588410fbe59dac401237544bcd9b74c20a221092150c6cf89399921ed5cf939",
-                "location": "IN/OUT: Name, DataType, Unit, Min, Max and raw decoding description"
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2780'] (AssembleDomainInputs)"
               },
               {
                 "path": "Model/VcSfDPropR.slx",
-                "sha256": "f7c53c6eba6569249831e3bb8047419cb2eff432c2879b936e80ce73f62d571d",
-                "location": "VcSfDPropR/BatteryStatus/In10 SID VcSfDPropR:32"
+                "sha256": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5",
+                "location": "simulink/systems/system_2381.xml/Block[@SID='2778'] (DomainInputs)"
+              },
+              {
+                "path": "Model/interfaceVcSfDPropR.xls",
+                "sha256": "5c697e015513bc859ef23ac251a4ec45302cee16469b9cf71285db007cfe3e2f",
+                "location": "IN!A1; OUT!A1; BUS!A1: typed fields, dimensions, producer and consumer"
               }
             ],
             "limitation": "外部表格完整不能自动替代内部接口命名质量；raw unit=1 表示编码计数，工程单位与比例见对应描述/物理输出。",
@@ -2848,13 +3008,18 @@
             "evidence": [
               {
                 "path": "Model/VcSfDPropR.slx",
-                "sha256": "f7c53c6eba6569249831e3bb8047419cb2eff432c2879b936e80ce73f62d571d",
-                "location": "system_root/Block[@SID='2381'] (BusinessDecision)"
+                "sha256": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2381'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "5108a0ed4ba7a4407d7bb6d2317b04b149501891aff50388e076bb9a6898e52b",
-                "location": "Responsibilities and independently checked behavior"
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5",
+                "location": "simulink/systems/system_2381.xml/Block[@SID='2778'] (DomainInputs)"
+              },
+              {
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "30ddcc8bf655108d62e17ebecf63e4e5404e9d0e582b3d1f06f81f3474792aa7",
+                "location": "layout_scope; root acquisition/quality fan-in remains dense"
               }
             ],
             "limitation": "依据当前原生图与连接关系；不按 Goto 数量或块数机械扣分。",
@@ -2864,17 +3029,22 @@
             "score": 5,
             "max_score": 5,
             "status": "supported",
-            "reason": "在父级业务/信号上下文中逐类核对，命名风格按角色一致。9219 个块/线元素中，保守计入默认端口、序号拒绝/读取、通用函数包装及空线名 456 个（4.9%）；其余名称准确标示局部信号、运算或状态责任，超过90%门槛。",
+            "reason": "按父业务上下文审阅同类命名。原生 8900 块/线中机械筛出 295 个通用名或空名；其中 0 条为 MATLAB Function 生成包装内部连线，角色由具名函数形参与返回值明确。其余保守未消歧 295 个（3.3%）；明确且风格协调的元素仍超过90%，保持5。这是当前源码语义裁决，不新增候选可见规则。",
             "evidence": [
               {
                 "path": "Model/VcSfDPropR.slx",
-                "sha256": "f7c53c6eba6569249831e3bb8047419cb2eff432c2879b936e80ce73f62d571d",
-                "location": "Named channel/stage/controller hierarchy and signal lines"
+                "sha256": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2381'] (BusinessDecision)"
               },
               {
-                "path": "Model/interfaceVcSfDPropR.xls",
-                "sha256": "e588410fbe59dac401237544bcd9b74c20a221092150c6cf89399921ed5cf939",
-                "location": "IN/OUT/CAL names"
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5",
+                "location": "simulink/systems/system_2381.xml/Block[@SID='2778'] (DomainInputs)"
+              },
+              {
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5",
+                "location": "simulink/stateflow/chart_24.xml / P[@Name=script], named function arguments and returns"
               }
             ],
             "limitation": "Raw、Age、Qualified 等在具名通道内有明确意义，不因不同通道重复使用就判无意义；少量默认端口仍影响接口叶。",
@@ -2888,18 +3058,18 @@
             "evidence": [
               {
                 "path": "Model/interfaceVcSfDPropR.xls",
-                "sha256": "e588410fbe59dac401237544bcd9b74c20a221092150c6cf89399921ed5cf939",
-                "location": "CAL; channel parameters"
+                "sha256": "5c697e015513bc859ef23ac251a4ec45302cee16469b9cf71285db007cfe3e2f",
+                "location": "CAL!A1 onward; MP/FIX for NEP-08"
               },
               {
-                "path": "Model/FaultComponentLibrary.slx",
-                "sha256": "053d98c55916ececf78bbe6f1f670a9acf8ada11e75b99c87fca7664eb77f9f7",
-                "location": "simulink/stateflow/chart_19.xml / script"
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "30ddcc8bf655108d62e17ebecf63e4e5404e9d0e582b3d1f06f81f3474792aa7",
+                "location": "parameters: values, dimensions, storage and bounds"
               },
               {
-                "path": "Model/FaultComponentLibrary.slx",
-                "sha256": "053d98c55916ececf78bbe6f1f670a9acf8ada11e75b99c87fca7664eb77f9f7",
-                "location": "simulink/stateflow/chart_38.xml / script"
+                "path": "Model/VcSfDPropR.slx",
+                "sha256": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5",
+                "location": "simulink/stateflow/chart_24.xml / P[@Name=script]"
               }
             ],
             "limitation": "本次重新核对新增业务常量；NEP-01不再沿用旧纯质量网关的参数管理5。固定逻辑0/1本身不当作缺失标定。",
@@ -2909,42 +3079,37 @@
             "score": 2,
             "max_score": 3,
             "status": "supported",
-            "reason": "业务调理组件具有 Mask 参数与明确输入/输出或 Bus 契约，按已批准的新组补充规则为2；没有独立发布且锁定版本的业务组件库。",
+            "reason": "沿用 v0.11.2 数值 2；本轮构建独立性争议暂停，未重新裁决。旧裁决依据：业务调理组件具有 Mask 参数与明确输入/输出或 Bus 契约，按已批准的新组补充规则为2；没有独立发布且锁定版本的业务组件库。",
             "evidence": [
               {
                 "path": "Model/VcSfDPropR.slx",
-                "sha256": "f7c53c6eba6569249831e3bb8047419cb2eff432c2879b936e80ce73f62d571d",
-                "location": "Mask / PreLoadFcn / dependency references"
+                "sha256": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5",
+                "location": "simulink/systems/system_root.xml/Block[@SID='2381'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "5108a0ed4ba7a4407d7bb6d2317b04b149501891aff50388e076bb9a6898e52b",
-                "location": "Component boundaries"
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "b825b5edfa18078839fe3cbce4a05d79e36459cd4fe048656550872fdc3cffdf",
+                "location": "Scope of local library, platform branches and aliases"
               }
             ],
-            "limitation": "NEP-10的库与主模型同仓同快照，不能把普通LibraryVersion或工具版本当成稳定发布与依赖锁定。",
-            "method": "source-grounded maintainer semantic re-adjudication after native/property verification"
+            "limitation": "HOLD: effective contract and prior numeric value preserved pending explicit adjudication; new typed Bus is not treated as approval of a new build rule.",
+            "method": "prior value carried forward; source identity rebound only; disputed adjudication paused"
           },
           "version_independence": {
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "当前模型12.0.0_0；README明确定义MAJOR/MINOR/PATCH兼容性含义。本次类型/新增输出为不兼容接口修订，版本递增与实际前后差异相符。",
+            "reason": "当前模型12.1.0_0；根输入/输出保持，兼容增加业务标定和类型化内部接口，README定义的MINOR语义与这次实际变化一致；旧12.0.0_0记录及标签保留。",
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "17a9c84bdb3c83b1954918f72f6a2991f93d6867a5073548f8b7aac422998231",
-                "location": "Semantic version policy"
-              },
-              {
-                "path": "Documentation/VcSfDPropR_26R1_变更记录.xlsx",
-                "sha256": "450af3b83fc8517313f17a717fd20e1ef3bc43f8c1b874c651a6a14c91268687",
-                "location": "Cover/26R1"
+                "sha256": "05985a57c6dffac28f64e60fff0b4382423abe9d2e37c9b25173785b41d308c6",
+                "location": "Current version, compatibility meanings and engineering repair supplement"
               },
               {
                 "path": "Model/VcSfDPropR.slx",
-                "sha256": "f7c53c6eba6569249831e3bb8047419cb2eff432c2879b936e80ce73f62d571d",
-                "location": "ModelVersionFormat"
+                "sha256": "8d5d44c3b940a5613b35ed97b55ddb8032e04d90b13a9438e13c65d7546474d5",
+                "location": "simulink/blockdiagram.xml ModelVersion"
               }
             ],
             "limitation": "旧导出别名仍是旧快照，不宣称八个月真实发布史。",
@@ -2954,22 +3119,17 @@
             "score": 3,
             "max_score": 3,
             "status": "supported",
-            "reason": "已逐仓重写当前变更记录：12.0.0_0、实际日期、具体业务前后逻辑、接口增删和类型/单位/范围变化均可由Git父提交及InterfaceChanges.json核对；跨仓TargetSoc复制声明已删除。",
+            "reason": "26R1变更表追加2026-09-10的CHG004，与当前12.1.0_0工程变化对应；既有记录逐单元格保持，模型/Bus/标定差异可由Git父提交及EngineeringRepair.json核验。",
             "evidence": [
               {
                 "path": "Documentation/VcSfDPropR_26R1_变更记录.xlsx",
-                "sha256": "450af3b83fc8517313f17a717fd20e1ef3bc43f8c1b874c651a6a14c91268687",
-                "location": "26R1!B2,H2,I2,J2,L2"
+                "sha256": "db17f7ebc98612a8fb3622117410e9b21d1170dc89effba86181c0e4e055ab9a",
+                "location": "Cover!B4; 26R1 last appended CHG004 row"
               },
               {
-                "path": "Documentation/InterfaceChanges.json",
-                "sha256": "56467ab75e1cd5fd3c7e0eb361dcb72434308968e78d9a920a26a2adbe752ece",
-                "location": "Actual before/after per-signal records"
-              },
-              {
-                "path": "Model/interfaceVcSfDPropR.xls",
-                "sha256": "e588410fbe59dac401237544bcd9b74c20a221092150c6cf89399921ed5cf939",
-                "location": "ChangeLog"
+                "path": "Documentation/EngineeringRepair.json",
+                "sha256": "30ddcc8bf655108d62e17ebecf63e4e5404e9d0e582b3d1f06f81f3474792aa7",
+                "location": "Current engineering change details"
               }
             ],
             "limitation": "列齐全不是充分理由；当前裁决依赖实际模型/接口差异。保留的历史导出材料不代表生产发布史。",
@@ -2983,7 +3143,7 @@
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "17a9c84bdb3c83b1954918f72f6a2991f93d6867a5073548f8b7aac422998231",
+                "sha256": "05985a57c6dffac28f64e60fff0b4382423abe9d2e37c9b25173785b41d308c6",
                 "location": "Directory roles"
               }
             ],
@@ -3013,13 +3173,13 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "dc1dd984ecc2152bb03c7aa8f13dd83f856f6e89",
+                "head": "a9ede4539f091a1809913432d18f69b896f9059f",
                 "refs": {
                   "refs/heads/Branch-XCM-S": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
                   "refs/heads/Branch-ZCUH": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
                   "refs/heads/Branch-ZCUN": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
                   "refs/heads/auto/master/1/5bed5636-1": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
-                  "refs/heads/master": "dc1dd984ecc2152bb03c7aa8f13dd83f856f6e89"
+                  "refs/heads/master": "a9ede4539f091a1809913432d18f69b896f9059f"
                 }
               },
               {
@@ -3039,13 +3199,13 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "dc1dd984ecc2152bb03c7aa8f13dd83f856f6e89",
+                "head": "a9ede4539f091a1809913432d18f69b896f9059f",
                 "refs": {
                   "refs/heads/Branch-XCM-S": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
                   "refs/heads/Branch-ZCUH": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
                   "refs/heads/Branch-ZCUN": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
                   "refs/heads/auto/master/1/5bed5636-1": "5bed5636e371f37c7f3d22a30eeb08fe8a09266a",
-                  "refs/heads/master": "dc1dd984ecc2152bb03c7aa8f13dd83f856f6e89"
+                  "refs/heads/master": "a9ede4539f091a1809913432d18f69b896f9059f"
                 }
               }
             ],
@@ -3058,11 +3218,11 @@
     {
       "id": "NEP-11",
       "name": "VcScHv",
-      "head": "27f0538f1d71375e12b02efd470b3e35586fda52",
+      "head": "1355172665a7af21e594a15ce9e5b90c4d3c172b",
       "reference": {
         "id": "NEP-11",
         "name": "VcScHv",
-        "head": "27f0538f1d71375e12b02efd470b3e35586fda52",
+        "head": "1355172665a7af21e594a15ce9e5b90c4d3c172b",
         "scores": {
           "hierarchy": 3,
           "reuse": 1,
@@ -3205,21 +3365,21 @@
             "score": 2,
             "max_score": 3,
             "status": "supported",
-            "reason": "业务调理组件具有 Mask 参数与明确输入/输出或 Bus 契约，按已批准的新组补充规则为2；没有独立发布且锁定版本的业务组件库。",
+            "reason": "沿用 v0.11.2 数值 2；本轮构建独立性争议暂停，未重新裁决。旧裁决依据：业务调理组件具有 Mask 参数与明确输入/输出或 Bus 契约，按已批准的新组补充规则为2；没有独立发布且锁定版本的业务组件库。",
             "evidence": [
               {
                 "path": "Model/VcScHv.slx",
                 "sha256": "ba394a7420f16636675e276f095334bb02484c76c43ee0ab8068242a8ecdc59f",
-                "location": "Mask / PreLoadFcn / dependency references"
+                "location": "simulink/systems/system_root.xml/Block[@SID='445'] (BusinessDecision)"
               },
               {
-                "path": "Documentation/BusinessBehavior.md",
-                "sha256": "176840607f5072ee7347b5a0f5c114b2846ed59b86c7ec29ba0f8741bb971a67",
-                "location": "Component boundaries"
+                "path": "Documentation/GitSnapshotScope.txt",
+                "sha256": "76e9bab1529b5f540f984a1840ef150964047f4ad0dea87f44344a4a6090716e",
+                "location": "Scope of local library, platform branches and aliases"
               }
             ],
-            "limitation": "NEP-10的库与主模型同仓同快照，不能把普通LibraryVersion或工具版本当成稳定发布与依赖锁定。",
-            "method": "source-grounded maintainer semantic re-adjudication after native/property verification"
+            "limitation": "HOLD: effective contract and prior numeric value preserved pending explicit adjudication; new typed Bus is not treated as approval of a new build rule.",
+            "method": "prior value carried forward; source identity rebound only; disputed adjudication paused"
           },
           "version_independence": {
             "score": 3,
@@ -3229,12 +3389,12 @@
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "9b7e00fb95f8e546810b03a6adfa8cf02cbec7d68aba71abd30ef38204681267",
+                "sha256": "c59af85e26140572bd5b9d0dd68e4d11e7ce14e83718a94447bd80e1613e81b2",
                 "location": "Semantic version policy"
               },
               {
                 "path": "Documentation/VcScHv_26R1_变更记录.xlsx",
-                "sha256": "fafc0a00161e17c65fcfb4aabac6d3a29f527e23332903b4d4ce73ba89691ceb",
+                "sha256": "cc5564897dbde84a4428345587f10db80cd43f0b32ac91305310fb206395d3ef",
                 "location": "Cover/26R1"
               },
               {
@@ -3254,7 +3414,7 @@
             "evidence": [
               {
                 "path": "Documentation/VcScHv_26R1_变更记录.xlsx",
-                "sha256": "fafc0a00161e17c65fcfb4aabac6d3a29f527e23332903b4d4ce73ba89691ceb",
+                "sha256": "cc5564897dbde84a4428345587f10db80cd43f0b32ac91305310fb206395d3ef",
                 "location": "26R1!B2,H2,I2,J2,L2"
               },
               {
@@ -3279,7 +3439,7 @@
             "evidence": [
               {
                 "path": "README.md",
-                "sha256": "9b7e00fb95f8e546810b03a6adfa8cf02cbec7d68aba71abd30ef38204681267",
+                "sha256": "c59af85e26140572bd5b9d0dd68e4d11e7ce14e83718a94447bd80e1613e81b2",
                 "location": "Directory roles"
               }
             ],
@@ -3290,22 +3450,22 @@
             "score": 1,
             "max_score": 5,
             "status": "supported",
-            "reason": "仓内包含独立属性定义、输入/期望向量、实测输出及原生报告。1270个采样、7条业务属性与11430个独立通道/诊断比较全部通过；C语句覆盖未测，不能满足三项同时达标的3/5条件，裁1。",
+            "reason": "仓内独立属性、输入期望及原生报告：1270 采样、7 条业务属性、11430 个独立通道/诊断比较通过。SWUT Properties逐条绑定输出、算子、期望、采样与容差；C语句覆盖未测，保持1。",
             "evidence": [
               {
                 "path": "UnitTest/test-properties.json",
                 "sha256": "a15ea4fc2ea98b77e71b246fb0944b60900564b9f188794103399326ba367e9f",
-                "location": "Independent point and temporal assertions"
+                "location": "checks[*]: name/output/op/value/indices/tolerance"
+              },
+              {
+                "path": "UnitTest/VCU_VcScHv_SWUT.xlsx",
+                "sha256": "05e36e3859927d3edcdb7ae676a57fe0e8a8934448f5277863005ada8dbca11b",
+                "location": "Properties!A1 onward; TCSDM points to exact assertion rows"
               },
               {
                 "path": "UnitTest/VcScHv_BTC_UT_Report.html",
                 "sha256": "b4a41967893f1764d17b67ad4ff508301d626c9c9a55adc317ffcacaebd7c181",
-                "location": "Native checks and runtime binding"
-              },
-              {
-                "path": "UnitTest/VcScHv_BTC_UTCov_Report.html",
-                "sha256": "ba7dd62e097f1087cf1eb840b580d95e78c6dcbdba3ca9af6a839cb3de5aa3ef",
-                "location": "Measured model metrics; C statement unmeasured"
+                "location": "Actual engine, measured counts and runtime SHA256 bindings"
               }
             ],
             "limitation": "实测输出仅作回放，不冒充独立预期；BTC只是命名，host C不是SIL/PIL/HIL。",
@@ -3319,9 +3479,9 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "27f0538f1d71375e12b02efd470b3e35586fda52",
+                "head": "1355172665a7af21e594a15ce9e5b90c4d3c172b",
                 "refs": {
-                  "refs/heads/master": "27f0538f1d71375e12b02efd470b3e35586fda52"
+                  "refs/heads/master": "1355172665a7af21e594a15ce9e5b90c4d3c172b"
                 }
               },
               {
@@ -3341,9 +3501,9 @@
             "evidence": [
               {
                 "path": "git:refs/heads",
-                "head": "27f0538f1d71375e12b02efd470b3e35586fda52",
+                "head": "1355172665a7af21e594a15ce9e5b90c4d3c172b",
                 "refs": {
-                  "refs/heads/master": "27f0538f1d71375e12b02efd470b3e35586fda52"
+                  "refs/heads/master": "1355172665a7af21e594a15ce9e5b90c4d3c172b"
                 }
               }
             ],

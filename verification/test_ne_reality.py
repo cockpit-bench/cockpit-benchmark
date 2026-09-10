@@ -1,9 +1,26 @@
-import copy,json,tempfile,unittest,shutil
+import copy,json,tempfile,unittest,shutil,zipfile
 from pathlib import Path
 import ne_reality as ne
 from unittest.mock import patch
 
 WRAPPER=Path(__file__).resolve().parents[1]
+class LookupCensusTests(unittest.TestCase):
+    def test_joint_lookup_records_every_axis_and_table(self):
+        with tempfile.TemporaryDirectory() as folder:
+            model=Path(folder)/'JointMap.slx'
+            with zipfile.ZipFile(model,'w') as archive:
+                archive.writestr('simulink/systems/system_root.xml','''<System>
+                <Block BlockType="Lookup_n-D" Name="AcceptanceMap" SID="1">
+                  <P Name="NumberOfTableDimensions">2</P>
+                  <P Name="BreakpointsForDimension2">TemperatureAxis</P>
+                  <P Name="BreakpointsForDimension1">[0 80 100]</P>
+                  <P Name="Table">AcceptanceCalibration</P>
+                </Block></System>''')
+            slots=ne.census.model_facts(model)['parameter_slots']
+            self.assertEqual([r['field'] for r in slots],['BreakpointsForDimension1','BreakpointsForDimension2','Table'])
+            self.assertEqual([r['value'] for r in slots],['[0 80 100]','TemperatureAxis','AcceptanceCalibration'])
+            self.assertEqual([r['numeric_literal'] for r in slots],[True,False,False])
+
 class RealityTests(unittest.TestCase):
     def test_unified_and_original_restore_layouts(self):
         source={'id':'NEP-01','name':'VcVcuInD','group':'VCU_PROP/NEC_PROP'}
