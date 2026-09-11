@@ -21,7 +21,7 @@ $expectedHashes = [ordered]@{
     "docs/CONTRACT_DECISION.md" = "d3352916f9ec02b48ae7ea4903e1a09ed65911e944da205aab4b7d3f8f851f79"
     "docs/COVERAGE.json" = "27dd09488e68cc71630a9223f2d5a0ac9cb9bb52d5a5a6390bd39708b53b8f79"
     "docs/COVERAGE.md" = "694fc888f1f4b915ced2b72edac7f49d92b03030ce97ce3faf5d6e14e4073b1e"
-    "docs/CURRENT_EVALUATION.md" = "c31fccd832e07717f8b713f3b29025c8dad9ca4e0072310babb86e4670817cf4"
+    "docs/CURRENT_EVALUATION.md" = "aee2a4a66e6b50514fcccab64d189d5283f2d68418f6a05ea910642b81ebba01"
     "docs/DISCRIMINATION_FIXES.md" = "8b2e528e8ab652140344513c690a7f15100b08abcfd34e31363e92ab40048cc1"
     "docs/EVALUATION_BATCH.md" = "97835bee70c140cb381707737f27ac4708c97a7a70a1562f3dcacdf6768bd107"
     "docs/EVIDENCE_AVAILABILITY.md" = "48661c71c76d3afa5c0c6e321e5993b244cb9fcba3423d1fa8b5804fae9cc5d2"
@@ -141,7 +141,7 @@ $expectedHashes = [ordered]@{
     "verification/evaluation_current.py" = "29a2a82febf4ef1f38311acd7f0e5e5229caa3fd5d619314585c7b57aca2edc9"
     "verification/evaluation_profile.py" = "bb7ee5bc285526adbebf22afaee3357e1ce0e7df6eba96f5ff6d0b208ff9797c"
     "verification/examples/build_boundary_prototypes.py" = "5c802e00142f1815b67271210f51b3dc824e3598e84027667b64f02a81794394"
-    "verification/examples/current-assignments.json" = "fbd504cd7284bbc0f54dbe0948fbba61aac0568cd107a0cf48a256efd3156e02"
+    "verification/examples/current-assignments.json" = "5b10ea0995a1002a2dc6e55dfb1384722b7ea2a2fb7bd7e715f302e553b76cb4"
     "verification/expansion.py" = "0dd4a109a8d77a0615313ac55ecd11ec8f68ca980ab560681b746661e5c210ff"
     "verification/external_inputs.py" = "54882587f5cad6dd75be0b5b1feca9ac3c4dbe252667bc3b17dffd654b232b5d"
     "verification/ne_reality.py" = "3c449793c0065ae13d04fb3c4247702e77ba14e09c86330cefc5ffd0ae44c47c"
@@ -172,7 +172,7 @@ $expectedHashes = [ordered]@{
     "verification/test_reference_revisions.py" = "9c39b471dd82e9b17b6626c5688698c5f6fac5c65f2b3251251673853a92b0ed"
     "verification/test_repository_types.py" = "c1b0f69f453eb98cf3f726a1e8bf6d3705e8aaa66e70ac23f215215c1acd70a5"
     "verification/test_rule_boundaries.py" = "9d61d0c5ce9a5fc20e8e38c63c8998fe136084b8d72855383792814484b12517"
-    "verification/test_suites.py" = "cece96fc4131609ba48ee3cefff9765163364028cac043642c49ac6e5d9e2df0"
+    "verification/test_suites.py" = "7b591e6fa5344e8c147451e6ebf5e7a15195b94b3cf58680ac113653d5274b04"
     "verification/verify.py" = "ee47327357e008a659750b7bc42a10796973650987a7e9989f1e29092f322d4c"
 }
 function Invoke-CheckedGit {

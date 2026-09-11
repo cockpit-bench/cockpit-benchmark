@@ -10,7 +10,7 @@ NEP修复HEAD已公开，参考绑定已刷新；四项工程修复见[FIDELITY_
 | FW | 109 | 113 | 121 |
 | 新能源现实代理 | 143 | 143 | 143 |
 
-`evaluation_current.py prepare --type new-energy-matlab` 现在绑定 reality-proxy-20260910 的原 Part 7 合同、源码清单和 143 叶参考。全局 assignments 必须恰好覆盖当前 33 ID；来源/依赖/构造闭包不能跨 split。旧 ID 或旧批次不自动映射到 NEP。
+`evaluation_current.py prepare --type new-energy-matlab` 现在绑定 reality-proxy-20260910 的原 Part 7 合同、源码清单和 143 叶参考。可直接使用 [当前 assignments 示例](../verification/examples/current-assignments.json)。全局 assignments 必须恰好覆盖当前 33 ID；来源/依赖/构造闭包不能跨 split。旧 ID 或旧批次不自动映射到 NEP。
 
 `ne_reality.py evaluate` 保留原新组格式；两个入口的数值参考一致。其 evidence_submitted 仅表示非空，不能当作证据正确率；统一入口的证据审阅亦须提供独立 review-plan/adjudications，未审阅时结果为 not_reviewed，不冒称联合正确。NEP-10 构建规则争议见 [评审核对](REVIEW_V0111.md)，本次不改合同或参考值。
 

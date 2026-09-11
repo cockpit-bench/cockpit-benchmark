@@ -1,7 +1,7 @@
 import unittest
 from pathlib import Path
 from unittest.mock import patch
-import suites,repository_types as rt
+import suites,repository_types as rt,evaluation_current as ec
 W=Path(__file__).resolve().parents[1]
 class SuiteTests(unittest.TestCase):
  def test_current_entry_and_publication_gate(self):
@@ -19,3 +19,11 @@ class SuiteTests(unittest.TestCase):
   self.assertEqual({r['id'] for r in rows},{f'NEP-{i:02d}' for i in range(1,12)})
  def test_android_frozen_reference_still_valid(self):
   self.assertEqual(len(suites.validate_legacy(W,True,suites.legacy_registry(W))['suites']),1)
+
+ def test_shipped_assignments_match_current_sources_and_prepare(self):
+  assignments=rt.read(W/'verification/examples/current-assignments.json')
+  rows=rt.select(suites.validate(W),W,'all')
+  self.assertEqual(set(assignments),{r['id'] for r in rows})
+  for kind,count in [('app',88),('fw',121),('new-energy-matlab',143)]:
+   batch=ec.prepare(W,kind,'source_only',assignments)
+   self.assertEqual(len(batch['profile']['requested']),count)
