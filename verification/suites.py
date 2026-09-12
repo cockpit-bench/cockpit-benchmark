@@ -75,14 +75,14 @@ def validate_legacy(wrapper,require_publishable=False,registry=None):
 
 def validate(wrapper,require_publishable=False):
     registry=read(Path(wrapper)/'suites.json')
-    if registry.get('schema_version')=='benchmark-repository-types-2':
+    if registry.get('schema_version') in {'benchmark-repository-types-2','benchmark-reporting-groups-3'}:
         from repository_types import validate as validate_types
         return validate_types(wrapper,require_publishable)
     return validate_legacy(wrapper,require_publishable,registry)
 
 def legacy_registry(wrapper):
     registry=read(Path(wrapper)/'suites.json')
-    if registry.get('schema_version')=='benchmark-repository-types-2':
+    if registry.get('schema_version') in {'benchmark-repository-types-2','benchmark-reporting-groups-3'}:
         return read(bound(wrapper,registry['legacy_baseline']))
     return registry
 
@@ -95,7 +95,7 @@ def git(*args,binary=False):
 
 def restore(wrapper,suite_id,destination,resume=False,include_submodules=False,source_map=None,ids=None):
     wrapper=Path(wrapper).resolve();registry=validate(wrapper)
-    if registry.get('schema_version')=='benchmark-repository-types-2':
+    if registry.get('schema_version') in {'benchmark-repository-types-2','benchmark-reporting-groups-3'}:
         from repository_types import restore as restore_types
         return restore_types(wrapper,suite_id,destination,resume,include_submodules,source_map,ids)
     raise InvalidSuite('Legacy restoration is retired; use the current repository-type registry')
@@ -105,7 +105,7 @@ def main():
     check=sub.add_parser('validate');check.add_argument('--wrapper',type=Path,required=True)
     check.add_argument('--require-publishable',action='store_true')
     fetch=sub.add_parser('restore');fetch.add_argument('--wrapper',type=Path,required=True)
-    fetch.add_argument('--suite',choices=['app','fw','new-energy-matlab','android-validation18','matlab-simulink','all'],required=True)
+    fetch.add_argument('--suite',choices=['app','fw','new-energy-matlab','architecture-center','ai-center','intelligent-driving-center','android-validation18','matlab-simulink','all'],required=True)
     fetch.add_argument('--destination',type=Path,required=True);fetch.add_argument('--resume',action='store_true')
     fetch.add_argument('--include-submodules',action='store_true')
     fetch.add_argument('--source-map',type=Path);fetch.add_argument('--ids',nargs='+')

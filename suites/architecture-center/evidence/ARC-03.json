@@ -1,0 +1,318 @@
+{
+  "execution": {
+    "limits": [
+      "MIL and host replay only; no physical device, ECU, SIL/PIL/HIL, BTC or certification.",
+      "Simulink coverage is distinct from generated C statement coverage; C statement coverage was not measured.",
+      "Independent equations and configured scenarios are maintainer checks, not candidate-model evaluation or blind gold."
+    ],
+    "records": [
+      {
+        "path": "suites/architecture-center/execution/ARC-03.json",
+        "sha256": "bbff996000c2b183d176d98062bdd4eb68e2c6c4037acabf41791b86f3a528a2"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+  "id": "ARC-03",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/matlab.json",
+      "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+    },
+    "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+    "id": "ARC-03",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "block_path": "MotionCoordinator/Driver",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=7 MotionCoordinator/Driver",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/MotionCoordinator.slx",
+            "sha256": "e72b4a579d3ca63ff7bd0f2f680fb3ba85b0cff8f25e3f8b7351632e3d742c44",
+            "sid": "7"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "hierarchy",
+        "reason": "驾驶需求、纵向分配、横向分配和多执行器限幅四个功能组件清楚，但限幅组件同时承接多个执行器领域。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "MotionCoordinator/Driver",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=7 MotionCoordinator/Driver",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/MotionCoordinator.slx",
+            "sha256": "e72b4a579d3ca63ff7bd0f2f680fb3ba85b0cff8f25e3f8b7351632e3d742c44",
+            "sid": "7"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "reuse",
+        "reason": "控制分配逻辑封装到四个生产库；相似限幅/门控服务不同执行器，没有发现应单独计为复制的相同业务实现。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "MotionCoordinator/Driver",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=7 MotionCoordinator/Driver",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/MotionCoordinator.slx",
+            "sha256": "e72b4a579d3ca63ff7bd0f2f680fb3ba85b0cff8f25e3f8b7351632e3d742c44",
+            "sid": "7"
+          },
+          {
+            "kind": "file",
+            "locator": "Inputs/Outputs sheets, header row 4 and typed data from row 5",
+            "path": "Model/Interface.xlsx",
+            "sha256": "b9b8cd00f830cd24ade05a1adcb3b2e952c35d31f72e4dba324473084acd7d23"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "interface",
+        "reason": "端口显式、具名、具备类型，根物理单位有工作簿记录；力/角度部分范围及正式变更流程未完整描述。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "MotionCoordinator/Driver",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=7 MotionCoordinator/Driver",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/MotionCoordinator.slx",
+            "sha256": "e72b4a579d3ca63ff7bd0f2f680fb3ba85b0cff8f25e3f8b7351632e3d742c44",
+            "sid": "7"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "dataflow",
+        "reason": "输入到需求分配和执行器限值的方向清楚，关键输出具名；中间力/角度连接仍主要依赖端口名。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "c00b659f6a8003c62f56bec89f29896557aac022",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "2bcb746cea2342867a4176ad76a0474c1bef76d20d6c10d733dedb6ec23b7fe8"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "unit_test",
+        "reason": "当前完整跟踪树没有仓内单元测试；维护者的外部640样本验证不转换为仓内测试分。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "MotionCoordinator/Driver",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=7 MotionCoordinator/Driver",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/MotionCoordinator.slx",
+            "sha256": "e72b4a579d3ca63ff7bd0f2f680fb3ba85b0cff8f25e3f8b7351632e3d742c44",
+            "sid": "7"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "naming",
+        "reason": "需求/纵横向分配命名基本清楚，Limits、Driver等顶层短名及泛化Command标签仍需结合上下文。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "2bcb746cea2342867a4176ad76a0474c1bef76d20d6c10d733dedb6ec23b7fe8"
+          },
+          {
+            "block_path": "MotionCoordinator/Driver",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=7 MotionCoordinator/Driver",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/MotionCoordinator.slx",
+            "sha256": "e72b4a579d3ca63ff7bd0f2f680fb3ba85b0cff8f25e3f8b7351632e3d742c44",
+            "sid": "7"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "directory",
+        "reason": "Model与组件/启动脚本有基本分类，但接口表、标定和生产文件混置在模型树中，尚无更一致的工程分区。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "MotionCoordinator/Driver",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=7 MotionCoordinator/Driver",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/MotionCoordinator.slx",
+            "sha256": "e72b4a579d3ca63ff7bd0f2f680fb3ba85b0cff8f25e3f8b7351632e3d742c44",
+            "sid": "7"
+          },
+          {
+            "kind": "file",
+            "locator": "repository-specific model and component paths",
+            "path": "project_init.m",
+            "sha256": "aedb856a954a3b246b9e47d172c37bec9acc016ec5a87d0df7c430723232d7e4"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "build_independence",
+        "reason": "当前构建直接加载源SLX/MDL或M脚本；没有达到受控Bus/Mask组件契约、独立包与版本锁定的边界。只有显式端口不据此跳到2档。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/MotionCoordinator.slx",
+            "sha256": "e72b4a579d3ca63ff7bd0f2f680fb3ba85b0cff8f25e3f8b7351632e3d742c44"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "c00b659f6a8003c62f56bec89f29896557aac022",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "model_version",
+        "reason": "模型内AutoIncrement版本和实际构造Git提交可查，但未提供完整版本/信号变更表及正式评审差异记录。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/MotionCoordinator.slx",
+            "sha256": "e72b4a579d3ca63ff7bd0f2f680fb3ba85b0cff8f25e3f8b7351632e3d742c44"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "c00b659f6a8003c62f56bec89f29896557aac022",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "version_independence",
+        "reason": "存在模型内部自增版本，未形成MAJOR.MINOR.PATCH独立语义版本及发布兼容约定。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "c00b659f6a8003c62f56bec89f29896557aac022",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "production parameter expressions and model workspace",
+            "path": "Model/MotionCoordinator.slx",
+            "sha256": "e72b4a579d3ca63ff7bd0f2f680fb3ba85b0cff8f25e3f8b7351632e3d742c44"
+          },
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "2bcb746cea2342867a4176ad76a0474c1bef76d20d6c10d733dedb6ec23b7fe8"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "release_branches",
+        "reason": "完整Git仅有实际初始/修复main历史，未落实可核对的跨车型/平台发布分支或多配置策略。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "c00b659f6a8003c62f56bec89f29896557aac022",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "production parameter expressions and model workspace",
+            "path": "Model/MotionCoordinator.slx",
+            "sha256": "e72b4a579d3ca63ff7bd0f2f680fb3ba85b0cff8f25e3f8b7351632e3d742c44"
+          },
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "2bcb746cea2342867a4176ad76a0474c1bef76d20d6c10d733dedb6ec23b7fe8"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "device_specificity",
+        "reason": "部分标定外置，可调节工程参数；仅验证默认设备假设，没有证明跨设备复用。",
+        "score": 1
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "10af906321d6cb8a8c0a1335ce6c8ca28932ddc7"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "10af906321d6cb8a8c0a1335ce6c8ca28932ddc7"
+}

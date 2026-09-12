@@ -1,0 +1,59 @@
+{
+  "bytes": 440171,
+  "clean": true,
+  "commit_count": 1,
+  "default_ref": "refs/heads/main",
+  "evaluation_ref": "refs/heads/main",
+  "extensions": {
+    ".m": 3,
+    ".md": 2,
+    ".slx": 5,
+    ".xlsx": 1,
+    "<noext>": 2
+  },
+  "file_bytes": {
+    ".gitattributes": 112,
+    ".gitignore": 115,
+    "Model/Interface.xlsx": 7171,
+    "Model/MotionCoordinator.slx": 93645,
+    "Model/calibration_MotionCoordinator.m": 588,
+    "Model/components/ActuatorEnvelopeLib.slx": 106705,
+    "Model/components/DriverDemandLib.slx": 78513,
+    "Model/components/LateralAllocationLib.slx": 76865,
+    "Model/components/LongitudinalAllocationLib.slx": 74854,
+    "MotionCoordinator_init.m": 154,
+    "README.md": 710,
+    "SOURCE_ORIGIN.md": 589,
+    "project_init.m": 150
+  },
+  "files": {
+    ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+    ".gitignore": "a6a7aecd86872e47d32d2e0b2b683207e71fa0da6312ddb34d0e819082c4e0be",
+    "Model/Interface.xlsx": "b9b8cd00f830cd24ade05a1adcb3b2e952c35d31f72e4dba324473084acd7d23",
+    "Model/MotionCoordinator.slx": "e72b4a579d3ca63ff7bd0f2f680fb3ba85b0cff8f25e3f8b7351632e3d742c44",
+    "Model/calibration_MotionCoordinator.m": "95401eca5519596ab031f826bc7f051885ebe13de9bd1af3b63c1a83e3a47b7b",
+    "Model/components/ActuatorEnvelopeLib.slx": "f14064d2db411dc4f63259e1a39464d340f301be3e1dfb4d168fa9c52efe12d1",
+    "Model/components/DriverDemandLib.slx": "677466f20950817fcedf45c0271296ffdd76b3eb1e75cea7ca6827673d51adcf",
+    "Model/components/LateralAllocationLib.slx": "e08f25c54b272d23b633cd980598be0e68d5d52865b37896092555ecc9e31213",
+    "Model/components/LongitudinalAllocationLib.slx": "538fed300e37abf0ddd20cd8112f7f2f08d4d8dabb0c7d24996d14ab450cb6ce",
+    "MotionCoordinator_init.m": "3ececa4a24031d30362d60f7edbfa07abe14292ff455eebdf892c6e8b1952bf6",
+    "README.md": "2bcb746cea2342867a4176ad76a0474c1bef76d20d6c10d733dedb6ec23b7fe8",
+    "SOURCE_ORIGIN.md": "8bc8ddcf8f0abc11490179c4673338fc270339fd5f058ec8c65c633ed671b213",
+    "project_init.m": "aedb856a954a3b246b9e47d172c37bec9acc016ec5a87d0df7c430723232d7e4"
+  },
+  "full_history": true,
+  "gitlinks": [],
+  "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+  "id": "ARC-03",
+  "name": "arch-motion-coordinator",
+  "refs": {
+    "refs/heads/main": "c00b659f6a8003c62f56bec89f29896557aac022"
+  },
+  "remote_count": 0,
+  "source_lines_by_extension": {
+    ".m": 22
+  },
+  "tracked_file_count": 13,
+  "tree": "10af906321d6cb8a8c0a1335ce6c8ca28932ddc7",
+  "worktree_equals_git_blobs": true
+}

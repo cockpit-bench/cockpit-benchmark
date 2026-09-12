@@ -1,4 +1,4 @@
-"""Three business repository types, with preserved legacy evidence and scoped restore.
+"""Six reporting groups, with preserved legacy evidence and scoped restore.
 
 APP and FW are separate scoring populations. MATLAB is technology metadata;
 the current business type is New Energy MATLAB. No cross-type score is emitted.
@@ -11,9 +11,12 @@ import re
 import sys
 
 import suites as legacy
+from centers import GROUPS
 
 TYPES={'app':('APP','Android',8,40),'fw':('FW','Android',11,52),
        'new-energy-matlab':('New Energy MATLAB','MATLAB / Simulink',13,61)}
+LEGACY_TYPES=set(TYPES)
+TYPES.update({key:(name,technology,None,None) for key,(name,technology) in GROUPS.items()})
 ANDROID_COMMON={'compilation.ci_independence':3,'compilation.compilation_independence':3,'compilation.api_version_management':3,'platform_reuse.platform_upgrade':10,'platform_reuse.release_branch_strategy':10}
 LEAF_LIMITS={'app':{**ANDROID_COMMON,'architecture.componentization':5,'architecture.decoupling':3,'architecture.modularization':3},'fw':{**ANDROID_COMMON,'quality.integration_test':3,**{'solid_principle.'+n:4 for n in ['single_responsibility','open_closed','liskov_substitution','interface_segregation','dependency_inversion']}},'new-energy-matlab':{'hierarchy':3,'reuse':3,'interface':3,'dataflow':3,'unit_test':5,'naming':5,'directory':5,'build_independence':3,'model_version':3,'version_independence':3,'release_branches':10,'device_specificity':10,'parameter_management':5}}
 ALIASES={'android-validation18':['app','fw'],'matlab-simulink':['new-energy-matlab']}
@@ -34,11 +37,12 @@ def summarize(rows):
 def validate(wrapper,require_publishable=False):
     wrapper=Path(wrapper).resolve();registry=read(wrapper/'suites.json')
     require(set(registry)=={'schema_version','benchmark_id','integration_status','default_suite','aggregation','legacy_baseline','suites'},'Unsupported type registry keys')
-    require(registry['schema_version']=='benchmark-repository-types-2' and registry['benchmark_id']=='cockpit-benchmark','Wrong type registry')
+    require(registry['schema_version'] in {'benchmark-repository-types-2','benchmark-reporting-groups-3'} and registry['benchmark_id']=='cockpit-benchmark','Wrong type registry')
     require(registry['aggregation']=='separate_repository_type_scores_no_raw_sum','Repository types must not be combined')
     require(registry['default_suite']=='all' and registry['integration_status'] in {'local_expansion','published'},'Invalid integration state/default')
     baseline=read(bound(wrapper,registry['legacy_baseline']));legacy.validate_legacy(wrapper,True,baseline)
-    entries=registry['suites'];require(len(entries)==3 and {x['id'] for x in entries}==set(TYPES),'APP, FW, and New Energy MATLAB are required separately')
+    entries=registry['suites'];expected=set(TYPES) if registry['schema_version']=='benchmark-reporting-groups-3' else LEGACY_TYPES
+    require(len(entries)==len(expected) and {x['id'] for x in entries}==expected,'Reporting groups differ from the current registry schema')
     old_android=read(wrapper/'STANDARD_SCORES.json')['repositories']
     old_refs={r['id']:r for r in old_android};seen=set();preserved=set()
     old_manifest=read(wrapper/'manifest.json')['repositories']
@@ -47,6 +51,11 @@ def validate(wrapper,require_publishable=False):
     for entry in entries:
         required={'id','name','technology','status','contract','manifest','canonical_scores','repository_count','leaf_count','max_score','score','failed_leaves','published_repositories'}
         require(set(entry) in (required,required|{'cohorts'}),'Unsupported type fields')
+        if entry['id'] in GROUPS:
+            from centers import validate_entry
+            ids=validate_entry(wrapper,entry,require_publishable)
+            require(not seen.intersection(ids),'Duplicate/cross-group source');seen.update(ids)
+            continue
         if 'cohorts' in entry:
             require(entry['id']=='new-energy-matlab','Cohort catalogue belongs to New Energy MATLAB')
             from ne_reality import validate_catalog
@@ -129,8 +138,10 @@ def validate(wrapper,require_publishable=False):
     return registry
 
 def select(registry,wrapper,type_id,ids=None):
-    selected=set(TYPES) if type_id=='all' else set(ALIASES.get(type_id,[type_id]))
+    present={entry['id'] for entry in registry['suites']}
+    selected=present if type_id=='all' else set(ALIASES.get(type_id,[type_id]))
     require(selected<=set(TYPES),'Unknown repository type')
+    require(selected<=present,'Requested group is not in this registry')
     rows=[row for entry in registry['suites'] if entry['id'] in selected for row in read(bound(wrapper,entry['manifest']))['repositories']]
     if ids is not None:
         require(len(ids)==len(set(ids)) and set(ids)<={r['id'] for r in rows},'Requested IDs outside selected type')
@@ -143,7 +154,11 @@ def check_source(path,row):
     require(refs==row['refs'],'Restored refs differ')
     require(git('-C',path,'rev-parse','--is-shallow-repository')=='false','Main source history is shallow')
     require(not git('-C',path,'status','--porcelain') and not git('-C',path,'remote'),'Source is dirty or has remotes')
-    require(not (Path(path)/'.git/objects/info/alternates').exists(),'Source borrows objects through alternates')
+    alternate=Path(git('-C',path,'rev-parse','--path-format=absolute','--git-path','objects/info/alternates'))
+    require(not alternate.exists(),'Source borrows objects through alternates')
+    if row['type_id'] in GROUPS:
+        from centers import verify_source_files
+        verify_source_files(path,row)
     if row.get('cohort_id')=='reality-proxy-20260910':
         files=git('-C',path,'ls-files','-z',binary=True).decode('utf-8').split('\0')[:-1]
         require(set(files)==set(row['files']),'Restored source file set differs')
@@ -157,6 +172,7 @@ def restore_binding(row):
 
 def restore(wrapper,type_id,destination,resume=False,include_submodules=False,source_map=None,ids=None):
     wrapper=Path(wrapper).resolve();registry=validate(wrapper);rows=select(registry,wrapper,type_id,ids)
+    all_sources={r['id']:r for r in select(registry,wrapper,'all')}
     destination=Path(destination).resolve();mapping=read(source_map) if source_map else {}
     require(isinstance(mapping,dict),'Source map must map repository IDs to local paths')
     require(destination!=wrapper and not destination.is_relative_to(wrapper) and not wrapper.is_relative_to(destination),'Destination overlaps wrapper')
@@ -166,6 +182,7 @@ def restore(wrapper,type_id,destination,resume=False,include_submodules=False,so
         if row['id'] in mapping:
             origin=Path(mapping[row['id']]).resolve();require((origin/'.git').is_dir(),'Local source is not a repository')
             require(destination!=origin and not destination.is_relative_to(origin) and not origin.is_relative_to(destination),'Destination overlaps a source')
+            require(git('-C',origin,'rev-parse','--is-shallow-repository')=='false','Local transport history is shallow: '+row['id'])
             transports[row['id']]=str(origin)
         else:
             require(row['publication_status']=='published',row['id']+': unpublished source requires --source-map')
@@ -194,10 +211,16 @@ def restore(wrapper,type_id,destination,resume=False,include_submodules=False,so
         if owned:
             require(not git('-C',target,'status','--porcelain') or not any(p.name!='.git' for p in target.iterdir()),'Partial source contains local changes')
             if 'origin' not in git('-C',target,'remote').splitlines():git('-C',target,'remote','add','origin',transports[row['id']])
-            if row.get('cohort_id')=='reality-proxy-20260910':git('-C',target,'config','core.autocrlf','false')
+            if row.get('cohort_id')=='reality-proxy-20260910' or row['type_id'] in GROUPS:git('-C',target,'config','core.autocrlf','false')
             git('-C',target,'checkout','--detach',row['head']);git('-C',target,'fetch','origin','refs/heads/*:refs/heads/*','refs/tags/*:refs/tags/*')
             git('-C',target,'remote','remove','origin')
         if include_submodules:
+            if row['type_id'] in GROUPS:
+                from centers import restore_submodules
+                restore_submodules(target,row,all_sources,mapping)
+                results.append(check_source(target,row));marker.write_bytes(encoded({'binding':binding,'phase':'complete'}))
+                (destination/'restore-state.json').write_bytes(encoded({'repository_types':sorted({r['type_id'] for r in results}),'repositories':results,'completed_repositories':len(results),'execution':'not_run'}))
+                continue
             # Existing complete main repositories still need this requested gate.
             git('-c','protocol.allow=never','-c','protocol.https.allow=always','-C',target,'submodule','update','--init','--recursive','--checkout','--depth','1')
             for line in git('-C',target,'submodule','status','--recursive',binary=True).decode().splitlines():

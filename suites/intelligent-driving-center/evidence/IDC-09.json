@@ -1,0 +1,318 @@
+{
+  "execution": {
+    "limits": [
+      "MIL and host replay only; no physical device, ECU, SIL/PIL/HIL, BTC or certification.",
+      "Simulink coverage is distinct from generated C statement coverage; C statement coverage was not measured.",
+      "Independent equations and configured scenarios are maintainer checks, not candidate-model evaluation or blind gold."
+    ],
+    "records": [
+      {
+        "path": "suites/intelligent-driving-center/execution/IDC-09.json",
+        "sha256": "cffa6ac922039e55ebaf12152a507b40987bd4087d028c3aa0d853992d405d0c"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "e629895f0302ae51e7f229794f72a9e06edbe183",
+  "id": "IDC-09",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/matlab.json",
+      "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+    },
+    "head": "e629895f0302ae51e7f229794f72a9e06edbe183",
+    "id": "IDC-09",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "block_path": "ParkingState/Obstacle",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=15 ParkingState/Obstacle",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ParkingState.slx",
+            "sha256": "7c13ab4974ca81713f7d462ab52c03ebd99f0292eaf3f968475c2edd2e2333c4",
+            "sid": "15"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "hierarchy",
+        "reason": "请求资格、阶段机、障碍停车、速度查表和转向包络分开；阶段内部仍为较密的条件选择图。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "ParkingState/Obstacle",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=15 ParkingState/Obstacle",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ParkingState.slx",
+            "sha256": "7c13ab4974ca81713f7d462ab52c03ebd99f0292eaf3f968475c2edd2e2333c4",
+            "sid": "15"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "reuse",
+        "reason": "五个功能组件有源库封装；状态选择分支为不同状态行为，不把必要状态分支误计为算法复制。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "ParkingState/Obstacle",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=15 ParkingState/Obstacle",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ParkingState.slx",
+            "sha256": "7c13ab4974ca81713f7d462ab52c03ebd99f0292eaf3f968475c2edd2e2333c4",
+            "sid": "15"
+          },
+          {
+            "kind": "file",
+            "locator": "Inputs/Outputs sheets, header row 4 and typed data from row 5",
+            "path": "Model/Interface.xlsx",
+            "sha256": "8b25337f0e73f08b634f0fea21d3071187f7b78205deedf4b19274a2fe923a6f"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "interface",
+        "reason": "全部显式具名和类型化，输入单位/范围在工作簿；内部组件约束/正式接口变更流程仍不完整。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "ParkingState/Obstacle",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=15 ParkingState/Obstacle",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ParkingState.slx",
+            "sha256": "7c13ab4974ca81713f7d462ab52c03ebd99f0292eaf3f968475c2edd2e2333c4",
+            "sid": "15"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "dataflow",
+        "reason": "阶段许可到速度门控及障碍停止流向可读，中间线仅少量具名；无DataStore跨模块隐式依赖。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "passed/samples/modelCoverageMeasured/cStatementCoverageMeasured",
+            "path": "Tests/results/test-result.json",
+            "sha256": "f792ca7857e40d205a17e52411d44f395907861086e777b2f86877811148e83d"
+          },
+          {
+            "kind": "file",
+            "locator": "stimulus, expected, absoluteTolerance, relativeTolerance",
+            "path": "Tests/TestData.mat",
+            "sha256": "5f26b9b7cf56744732d2b48038342a60509c5e151ef8f95fd6f81f0ffcac7ea7"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "unit_test",
+        "reason": "仓内Tests包含真实模型引用夹具、640有序样本和逐输出独立期望，并实测通过；报告仅测Simulink模型coverage，C语句覆盖未测，故按合同止于1档。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "ParkingState/Obstacle",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=15 ParkingState/Obstacle",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ParkingState.slx",
+            "sha256": "7c13ab4974ca81713f7d462ab52c03ebd99f0292eaf3f968475c2edd2e2333c4",
+            "sid": "15"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "naming",
+        "reason": "停车请求、障碍、剩余距离及阶段转移命名基本清楚；Phase0..4等编码名需结合枚举逻辑。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "efc5dd41d6271653fdd8a1d1d926f673fb40e8c17e01c20570ec15b42aee6266"
+          },
+          {
+            "block_path": "ParkingState/Obstacle",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=15 ParkingState/Obstacle",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ParkingState.slx",
+            "sha256": "7c13ab4974ca81713f7d462ab52c03ebd99f0292eaf3f968475c2edd2e2333c4",
+            "sid": "15"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "directory",
+        "reason": "Model、components、Tests及Configurations/Generated/Host等真实职责目录分开，可从入口找到依赖与结果。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "ParkingState/Obstacle",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=15 ParkingState/Obstacle",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ParkingState.slx",
+            "sha256": "7c13ab4974ca81713f7d462ab52c03ebd99f0292eaf3f968475c2edd2e2333c4",
+            "sid": "15"
+          },
+          {
+            "kind": "file",
+            "locator": "repository-specific model and component paths",
+            "path": "project_init.m",
+            "sha256": "1aff25e7266aabee63c12edb0d1a79ce1c0fbfb68e571d277ec209a68997464c"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "build_independence",
+        "reason": "当前构建直接加载源SLX/MDL或M脚本；没有达到受控Bus/Mask组件契约、独立包与版本锁定的边界。只有显式端口不据此跳到2档。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/ParkingState.slx",
+            "sha256": "7c13ab4974ca81713f7d462ab52c03ebd99f0292eaf3f968475c2edd2e2333c4"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "e629895f0302ae51e7f229794f72a9e06edbe183",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "model_version",
+        "reason": "模型内AutoIncrement版本和实际构造Git提交可查，但未提供完整版本/信号变更表及正式评审差异记录。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/ParkingState.slx",
+            "sha256": "7c13ab4974ca81713f7d462ab52c03ebd99f0292eaf3f968475c2edd2e2333c4"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "e629895f0302ae51e7f229794f72a9e06edbe183",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "version_independence",
+        "reason": "存在模型内部自增版本，未形成MAJOR.MINOR.PATCH独立语义版本及发布兼容约定。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "e629895f0302ae51e7f229794f72a9e06edbe183",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "configurations and allowed_parameters",
+            "path": "Configurations/configurations.json",
+            "sha256": "0926fb2fa2de1616d141dd5a48d51b0edafb384c3e6e4bfa2e3308c57624da86"
+          },
+          {
+            "kind": "file",
+            "locator": "two executed configurations and nonzero changedOutputs",
+            "path": "Tests/configuration-results/result.json",
+            "sha256": "db8c232e32deb40aaddf752d73ddd5f69e7a1a258ffa85eff3660fe59bd64e10"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "release_branches",
+        "reason": "同一main实际支持两个配置，参数被生产模型消费、均通过640样本期望比较且输出有可观察差异；不以单分支名本身给分。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "e629895f0302ae51e7f229794f72a9e06edbe183",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "configurations and allowed_parameters",
+            "path": "Configurations/configurations.json",
+            "sha256": "0926fb2fa2de1616d141dd5a48d51b0edafb384c3e6e4bfa2e3308c57624da86"
+          },
+          {
+            "kind": "file",
+            "locator": "two executed configurations and nonzero changedOutputs",
+            "path": "Tests/configuration-results/result.json",
+            "sha256": "db8c232e32deb40aaddf752d73ddd5f69e7a1a258ffa85eff3660fe59bd64e10"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "device_specificity",
+        "reason": "两组几何/权限/附着配置实际共享业务并仿真；仍保留若干固定包络/结构假设，未证明设备差异全部隔离。",
+        "score": 2
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "25fbc686ebd7df7c69b7b5a8b3b9d50993688a92"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "25fbc686ebd7df7c69b7b5a8b3b9d50993688a92"
+}

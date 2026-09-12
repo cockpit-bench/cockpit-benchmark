@@ -1,0 +1,494 @@
+{
+  "execution": {
+    "limits": [
+      "Android runtime is one API35 x86_64 emulator, not a physical device or vehicle acceptance.",
+      "Execution is maintainer verification, not remote CI, candidate/model evaluation or independent holdout.",
+      "The full UI scenarios were replayed after final APK reconstruction; runtime artifact SHA matches the final build result. Bitwise deterministic APK builds are not claimed.",
+      "The published source history has provenance metadata normalized. Original executed HEAD/tree and byte-equivalence evidence are retained explicitly; this metadata operation is not a new native run."
+    ],
+    "records": [
+      {
+        "path": "suites/ai-center/execution/AIC-10.json",
+        "sha256": "4c222cca3cbb879a80220223941cd068800f2d5b6f1dca9d3cf66c3687fb2924"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "04ecdf17210613d85535e4a51efd1a61ec3fab40",
+  "id": "AIC-10",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "04ecdf17210613d85535e4a51efd1a61ec3fab40",
+    "id": "AIC-10",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: class AgentGraph",
+            "path": "app/src/main/java/org/bench/vehicleagent/AgentGraph.kt",
+            "sha256": "b039e7ec47cf60a183a8c08624c8eefba401b8938e136f7212c938f0458da9f0",
+            "symbol": "class AgentGraph"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class AgentEngine",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/AgentEngine.kt",
+            "sha256": "88f4053e15f2e9d2465e0921dc2af3353b34033319821b05bab091fafa27d6ab",
+            "symbol": "class AgentEngine"
+          }
+        ],
+        "limitations": [
+          "两个 feature 模块是较薄的投影层，全部界面仍在 Activity。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "计划核心、车辆替身、JSON目录、会话日志、预览/进度投影与 app 组合分离。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: include ':app'",
+            "path": "settings.gradle",
+            "sha256": "df2f110c9c90f61b19725eb3655550599b71cd438b0961766faf91388fd43c45",
+            "symbol": "include ':app'"
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: val directory=",
+            "path": "app/src/main/java/org/bench/vehicleagent/AgentGraph.kt",
+            "sha256": "b039e7ec47cf60a183a8c08624c8eefba401b8938e136f7212c938f0458da9f0",
+            "symbol": "val directory="
+          }
+        ],
+        "limitations": [
+          "feature-planner/progress 较薄，不能把七个目录当作七个完整业务产品。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "七模块实际参与构建，计划、车辆与会话持久化有独立执行职责。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class AgentEngine",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/AgentEngine.kt",
+            "sha256": "88f4053e15f2e9d2465e0921dc2af3353b34033319821b05bab091fafa27d6ab",
+            "symbol": "class AgentEngine"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: interface VehicleGateway",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/VehicleGateway.kt",
+            "sha256": "a12f1203a26dd469a3004f96fbe4d574859bc7fd88638a388abb527bb2b99e73",
+            "symbol": "interface VehicleGateway"
+          }
+        ],
+        "limitations": [
+          "具体 app 仍显式操纵 LocalVehicleGateway 的故障注入开关。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "核心 AgentEngine 依赖 VehicleGateway 和 SessionRepository，测试和生产分别注入实现。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "df2f110c9c90f61b19725eb3655550599b71cd438b0961766faf91388fd43c45",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "本机Gradle构建和维护者脚本不冒称仓内或远端CI。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单没有CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: compileSdk 34",
+            "path": "app/build.gradle",
+            "sha256": "cd5045635f9665f27769142920cf2e91be3dc256836027cb5e1a9072d9cb9c27",
+            "symbol": "compileSdk 34"
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: version '8.3.0'",
+            "path": "build.gradle",
+            "sha256": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+            "symbol": "version '8.3.0'"
+          }
+        ],
+        "limitations": [
+          "仍依赖Android SDK与固定包缓存/下载；未提供公开接口版本兼容合同，保守取包边界档。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "Gradle8.4、AGP8.3.0、Kotlin1.9.22、SDK34版本明确，所有本仓模块可独立构建成APK/AAR。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: defaultConfig",
+            "path": "app/build.gradle",
+            "sha256": "cd5045635f9665f27769142920cf2e91be3dc256836027cb5e1a9072d9cb9c27",
+            "symbol": "defaultConfig"
+          }
+        ],
+        "limitations": [
+          "versionName、数据库版本和卡片递增revision都不能替代API版本。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "没有独立的公共API语义版本或兼容检查。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class IntentRouter",
+            "path": "plan-catalog/src/main/java/org/bench/vehicleagent/catalog/IntentRouter.kt",
+            "sha256": "0b2b28d42295e86c7634b60d68e9f433a7dbe04637f0cf3030ce6d9c3bbd0916",
+            "symbol": "class IntentRouter"
+          },
+          {
+            "kind": "file",
+            "line": 18,
+            "locator": "line 18: fun cancel",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/AgentEngine.kt",
+            "sha256": "88f4053e15f2e9d2465e0921dc2af3353b34033319821b05bab091fafa27d6ab",
+            "symbol": "fun cancel"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class SessionJournal",
+            "path": "agent-data/src/main/java/org/bench/vehicleagent/data/SessionJournal.kt",
+            "sha256": "a14a44fb3ed2ec04d094457dc46ee88af332a57544fc8def600f3f1c4f6a59d9",
+            "symbol": "class SessionJournal"
+          }
+        ],
+        "limitations": [
+          "Engine 仍串联状态与补偿写入，未处理跨写入原子性。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "意图路由、目录校验、推进/补偿、车辆适配、日志和投影各可定位。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class PlanDirectory",
+            "path": "plan-catalog/src/main/java/org/bench/vehicleagent/catalog/PlanDirectory.kt",
+            "sha256": "f8be64d7d30aa9f8063f39316fe5993d005cf54d54cd36e4bdd9b03723b9e82f",
+            "symbol": "class PlanDirectory"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: private val allowed=",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/PlanValidator.kt",
+            "sha256": "5dd6ca1861ebb4caa82123eeb146ab616e6defc220f12fc93654e9fbccd49f62",
+            "symbol": "private val allowed="
+          }
+        ],
+        "limitations": [
+          "新增动作键/意图词仍需改 PlanValidator、IntentRouter、LocalVehicleGateway。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "相同动作集合的新多步计划可通过 plans.json 接入。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: private class Vehicle",
+            "path": "agent-core/src/test/java/org/bench/vehicleagent/core/AgentEngineTest.kt",
+            "sha256": "263f223016ba0a27947952c53b99172059f21aa597611a4cd2834e936078fbcc",
+            "symbol": "private class Vehicle"
+          },
+          {
+            "kind": "file",
+            "line": 13,
+            "locator": "line 13: override fun set",
+            "path": "vehicle-sim/src/main/java/org/bench/vehicleagent/vehicle/LocalVehicleGateway.kt",
+            "sha256": "1db0fdd9d36c0a0a9a7969066def42329fd1aef44b9ce1aaa18f81e4317dd588",
+            "symbol": "override fun set"
+          }
+        ],
+        "limitations": [
+          "测试 Vehicle.set 不覆盖生产适配全部取值校验和磁盘错误语义，替换合同尚不完整。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "VehicleGateway 与 SessionRepository 有生产和测试实现，核心实际运行。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: interface VehicleGateway",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/VehicleGateway.kt",
+            "sha256": "a12f1203a26dd469a3004f96fbe4d574859bc7fd88638a388abb527bb2b99e73",
+            "symbol": "interface VehicleGateway"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: interface SessionRepository",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/VehicleGateway.kt",
+            "sha256": "a12f1203a26dd469a3004f96fbe4d574859bc7fd88638a388abb527bb2b99e73",
+            "symbol": "interface SessionRepository"
+          }
+        ],
+        "limitations": [
+          "key/value 动作接口缺少更细的类型化能力接口和版本。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "VehicleGateway 只暴露状态/能力/读写，SessionRepository 仅 save/load，符合消费者需求。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class AgentEngine",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/AgentEngine.kt",
+            "sha256": "88f4053e15f2e9d2465e0921dc2af3353b34033319821b05bab091fafa27d6ab",
+            "symbol": "class AgentEngine"
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: val engine=",
+            "path": "app/src/main/java/org/bench/vehicleagent/AgentGraph.kt",
+            "sha256": "b039e7ec47cf60a183a8c08624c8eefba401b8938e136f7212c938f0458da9f0",
+            "symbol": "val engine="
+          }
+        ],
+        "limitations": [
+          "UI 对替身诊断能力有具体依赖；未把局部良好边界说成整仓完全可替换。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "业务只依赖核心定义的适配接口，生产与替身由外部组合。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class AgentEngine",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/AgentEngine.kt",
+            "sha256": "88f4053e15f2e9d2465e0921dc2af3353b34033319821b05bab091fafa27d6ab",
+            "symbol": "class AgentEngine"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class SessionJournal",
+            "path": "agent-data/src/main/java/org/bench/vehicleagent/data/SessionJournal.kt",
+            "sha256": "a14a44fb3ed2ec04d094457dc46ee88af332a57544fc8def600f3f1c4f6a59d9",
+            "symbol": "class SessionJournal"
+          }
+        ],
+        "limitations": [
+          "没有第二套受支持 SDK 编译或外部协议版本兼容回归。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "状态机和动作计划不含 Android 引用，Android 偏好只在 vehicle/data 层。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: val defaults=",
+            "path": "vehicle-sim/src/main/java/org/bench/vehicleagent/vehicle/LocalVehicleGateway.kt",
+            "sha256": "1db0fdd9d36c0a0a9a7969066def42329fd1aef44b9ce1aaa18f81e4317dd588",
+            "symbol": "val defaults="
+          },
+          {
+            "kind": "file",
+            "line": 13,
+            "locator": "line 13: if(step.parkedOnly",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/AgentEngine.kt",
+            "sha256": "88f4053e15f2e9d2465e0921dc2af3353b34033319821b05bab091fafa27d6ab",
+            "symbol": "if(step.parkedOnly"
+          }
+        ],
+        "limitations": [
+          "这些是一个本地车辆替身的场景变化，不是两套生产设备适配。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "同一核心处理五套计划、车辆状态门控、动作失败和补偿。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "df2f110c9c90f61b19725eb3655550599b71cd438b0961766faf91388fd43c45",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "不伪造历史tags或设备分支；主题/场景变化不自动等同分支策略。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "只有本次本地main实际建设提交，没有已实施的多平台分支/变体策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 12,
+            "locator": "line 12: fun next",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/AgentEngine.kt",
+            "sha256": "88f4053e15f2e9d2465e0921dc2af3353b34033319821b05bab091fafa27d6ab",
+            "symbol": "fun next"
+          },
+          {
+            "kind": "file",
+            "line": 18,
+            "locator": "line 18: fun cancel",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/AgentEngine.kt",
+            "sha256": "88f4053e15f2e9d2465e0921dc2af3353b34033319821b05bab091fafa27d6ab",
+            "symbol": "fun cancel"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: object ProgressRows",
+            "path": "feature-progress/src/main/java/org/bench/vehicleagent/progress/ProgressRows.kt",
+            "sha256": "56213bc4a614080972c23fb5a97405086fa712f9173303f44c13f6cc160f9f6d",
+            "symbol": "object ProgressRows"
+          }
+        ],
+        "limitations": [
+          "JSON计划步骤和测试数据不计重复；目录与界面仍有普通样板。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "审阅十三个生产 Kotlin：动作执行/逆序补偿/状态投影各集中实现，五计划共享同一引擎。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class AgentEngine",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/AgentEngine.kt",
+            "sha256": "88f4053e15f2e9d2465e0921dc2af3353b34033319821b05bab091fafa27d6ab",
+            "symbol": "class AgentEngine"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: interface SessionRepository",
+            "path": "agent-core/src/main/java/org/bench/vehicleagent/core/VehicleGateway.kt",
+            "sha256": "a12f1203a26dd469a3004f96fbe4d574859bc7fd88638a388abb527bb2b99e73",
+            "symbol": "interface SessionRepository"
+          }
+        ],
+        "limitations": [
+          "车辆与日志适配仍是 Android 专用实现，原子写入缺口保留。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "业务核心仅通过 VehicleGateway/SessionRepository 访问外部状态，不含 Android Context/Intent。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class AgentEngineTest",
+            "path": "agent-core/src/test/java/org/bench/vehicleagent/core/AgentEngineTest.kt",
+            "sha256": "263f223016ba0a27947952c53b99172059f21aa597611a4cd2834e936078fbcc",
+            "symbol": "class AgentEngineTest"
+          }
+        ],
+        "limitations": [
+          "不能将仓外完整运行冒称仓内集成测试。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "仓内六项测试是 agent-core 与替身的局部验证；Android跨模块/持久化由仓外UI脚本覆盖。",
+        "score": 0,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "5119dd42132a3855a8e9db74658438e53c35ab7c"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "5119dd42132a3855a8e9db74658438e53c35ab7c"
+}

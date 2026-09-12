@@ -1,4 +1,4 @@
-"""Current three-type evaluation. Maintainer-side registration; never candidate input.
+"""Current six-group evaluation. Maintainer-side registration; never candidate input.
 
 Assignments cover all current sources so cross-type lineage cannot cross splits.
 The runner still owns process/network isolation and registration timing.
@@ -64,12 +64,27 @@ def packet_check(path,spec):
         for row in index['files']:
             body=z.read(row['path'])
             if len(body)!=row['bytes'] or rt.sha(body)!=row['sha256']:raise ValueError('Raw file differs')
+        center_bindings={}
         for name in names:
             if name.endswith('/source-binding.json') and json.loads(z.read(name)).get('schema')=='sdk-source-binding-v1':
                 sdk_check({n[len(name.rsplit('/',1)[0])+1:]:z.read(n) for n in names if n.startswith(name.rsplit('/',1)[0]+'/')})
+            if name.endswith('/source-binding.json') and json.loads(z.read(name)).get('schema')=='center-execution-source-binding-1':
+                binding=json.loads(z.read(name));rid=binding['id'];prefix=rid+'/'
+                if name!=prefix+'source-binding.json' or rid in center_bindings:raise ValueError('Center raw target path differs')
+                identity={'head':binding['head'],'tree':binding['tree']}
+                if spec.get('sources',{}).get(rid)!=identity:raise ValueError('Center raw source identity differs')
+                declared={prefix+r['path']:r for r in binding['records']}
+                actual={n for n in names if n.startswith(prefix)}-{name}
+                if set(declared)!=actual or len(declared)!=len(binding['records']):raise ValueError('Center raw records differ')
+                for path,record in declared.items():
+                    data=z.read(path)
+                    if len(data)!=record['bytes'] or rt.sha(data)!=record['sha256']:raise ValueError('Center execution record differs')
+                if not binding.get('source_files') or not binding.get('engines'):raise ValueError('Center raw source/engine binding missing')
+                center_bindings[rid]=identity
             if name.endswith('/capture.json') and json.loads(z.read(name)).get('schema')=='official-source-capture-v1':
                 prefix=name.rsplit('/',1)[0]+'/'
                 official_source_check({n[len(prefix):]:z.read(n) for n in names if n.startswith(prefix)})
+        if spec.get('sources') is not None and center_bindings!=spec['sources']:raise ValueError('Center raw source set differs')
     return {'sha256':spec['sha256'],'files':len(index['files'])}
 
 
@@ -200,11 +215,18 @@ def prepare(wrapper,type_id,mode,assignments,external_inputs=None,profile=None):
     byid={r['id']:r for r in sources}
     for row in refs:
         for name,(score,maximum) in rt.leaf_values(row['reference']).items():
-            allowed=TIERS[name] if type_id!='new-energy-matlab' else {3:[0,1,2,3],5:[0,1,3,5],10:[0,3,8,10]}[maximum]
+            if type_id in rt.GROUPS:allowed=list(range(maximum+1))
+            else:allowed=TIERS[name] if type_id!='new-energy-matlab' else {3:[0,1,2,3],5:[0,1,3,5],10:[0,3,8,10]}[maximum]
             leaves.append({'id':row['id']+'/'+name,'repository_id':row['id'],'name':name,'score':score,'kind':type_id,'allowed_scores':allowed,'split':assignments[row['id']],'family_id':byid[row['id']]['family_id']})
     if set(ep.indexed(leaves))!=set(profile['requested']):raise ValueError('Current reference/availability universe differs')
     batch={'schema':'evaluation-batch-v2','profile':profile,'reference':{'context':context,'leaves':leaves},'assignments':assignments,'lineage_check':split,'external_packet_check':checks,'limits':'One business type per batch; source eligibility is independent of gold score. No OS isolation or blind-review claim.'}
-    batch['population_diagnostics']=population_diagnostics(leaves,split['components'])
+    if type_id in rt.GROUPS:
+        from population_diagnostics import analyze_mixed_contracts
+        from centers import contract
+        selected={r['id']:('matlab' if r['implementation_kind']=='matlab' else 'software') for r in sources if r['type_id']==type_id}
+        contracts={kind:{l['name']:l['allowed_scores'] for l in contract(wrapper,kind)['leaves']} for kind in set(selected.values())}
+        batch['population_diagnostics']=analyze_mixed_contracts(leaves,split['components'],selected,contracts)
+    else:batch['population_diagnostics']=population_diagnostics(leaves,split['components'])
     if type_id in {'app','fw'}:
         sizes=android_source_sizes(wrapper,[s for s in sources if s['type_id']==type_id])
         batch['population_diagnostics']['size_support']=size_associations(leaves,split['components'],sizes)

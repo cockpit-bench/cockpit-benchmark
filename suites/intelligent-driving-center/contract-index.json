@@ -1,0 +1,11 @@
+{
+  "matlab": {
+    "path": "suites/center-contracts/matlab.json",
+    "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+  },
+  "schema": "center-contract-index-1",
+  "software": {
+    "path": "suites/center-contracts/software.json",
+    "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+  }
+}

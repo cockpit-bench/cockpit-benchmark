@@ -1,0 +1,51 @@
+{
+  "bytes": 113309,
+  "clean": true,
+  "commit_count": 1,
+  "default_ref": "refs/heads/main",
+  "evaluation_ref": "refs/heads/main",
+  "extensions": {
+    ".m": 3,
+    ".md": 2,
+    ".slx": 1,
+    ".xlsx": 1,
+    "<noext>": 2
+  },
+  "file_bytes": {
+    ".gitattributes": 112,
+    ".gitignore": 115,
+    "ActuatorTarget_init.m": 151,
+    "Model/ActuatorTarget.slx": 105560,
+    "Model/Interface.xlsx": 5611,
+    "Model/calibration_ActuatorTarget.m": 406,
+    "README.md": 661,
+    "SOURCE_ORIGIN.md": 546,
+    "project_init.m": 147
+  },
+  "files": {
+    ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+    ".gitignore": "a6a7aecd86872e47d32d2e0b2b683207e71fa0da6312ddb34d0e819082c4e0be",
+    "ActuatorTarget_init.m": "23e3780bdd82076fb8881ac103884bbfb20cc1e8372d969512aaaaff1498394e",
+    "Model/ActuatorTarget.slx": "99159a8ab53e742ee62c859c2fe1f56101fc07228dcf389c539e68344e2a71c9",
+    "Model/Interface.xlsx": "c16748ed6298e316c3873fe7abfcf033eb66111bbe674fd0b928b7dab9a80237",
+    "Model/calibration_ActuatorTarget.m": "918ab83893c4dc90f8f97b144b9f40971c94ce3458e9cbc9c430e5475a87fb81",
+    "README.md": "0f63232ed55d8619490a6d4cae16e98402e5fd5fa605d67b95243ddb846e319d",
+    "SOURCE_ORIGIN.md": "8da644ea5e469f2b1408537cb5b183a2c25b0f42227d57b521931b22fc3c527e",
+    "project_init.m": "b65705137caa341c3675d9ef18b33294e62cd89cc249c3abb76de4f53b7cbff9"
+  },
+  "full_history": true,
+  "gitlinks": [],
+  "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+  "id": "ARC-01",
+  "name": "arch-actuator-target",
+  "refs": {
+    "refs/heads/main": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793"
+  },
+  "remote_count": 0,
+  "source_lines_by_extension": {
+    ".m": 18
+  },
+  "tracked_file_count": 9,
+  "tree": "d05d608119d5b88086d9d077f9e6f2505dddf614",
+  "worktree_equals_git_blobs": true
+}

@@ -1,0 +1,404 @@
+{
+  "checks": {
+    "asserted_sample_predicates": 687,
+    "component_simulations": 26,
+    "component_time_samples": 5226,
+    "external_business_assertions": 7,
+    "graph_and_interface_contract_checks": 31,
+    "native_scenarios": 3,
+    "output_channel_samples": 22512,
+    "supported_configurations": 2
+  },
+  "engines": [
+    "MATLAB R2023b / Simulink normal mode",
+    "Python graph, SLX-port and XLSX-interface checks"
+  ],
+  "head": "43d3360c130d347dc3e2d818b25dc0e8716abc9f",
+  "id": "ARC-07",
+  "limits": [
+    "Feed-forward stateful component simulations; no vehicle feedback plant or real-time scheduler load.",
+    "No repository test suite in this umbrella; external assertions are not counted as repository tests.",
+    "No physical vehicle, ECU, SIL/PIL/HIL, generated-C coverage or certification is claimed.",
+    "The published source history has provenance metadata normalized. Original executed HEAD/tree and byte-equivalence evidence are retained explicitly; this metadata operation is not a new native run."
+  ],
+  "name": "arch-motion-integration",
+  "provenance_normalization": {
+    "changed_current_files": [
+      {
+        "original_sha256": "2f61a96a753d5a17e503f13eef5fbb30c5fecf3e45241ae84c8b80d470e9bf23",
+        "path": "SOURCE_ORIGIN.md",
+        "public_sha256": "d62058292cdf3d0c2fc8796b9d1392ac7426b0e72b208a1a16b583be66a30072"
+      },
+      {
+        "original_sha256": "602b910e3ed0828fabddfd6eb923daeb5449f8d0dfd2104e6daac688945eeb31",
+        "path": "scan-profile.json",
+        "public_sha256": "249c5b4eb52a31afd7d6899826c8c7e313bfafbcc3727f000792380db8ffb437"
+      }
+    ],
+    "executed_or_reviewed_head": "2e301223681ff9a939a8c1c03ea16740938a99c8",
+    "executed_or_reviewed_tree": "32080a1c532eab5f84736fef4d6ae1940a0aa225",
+    "public_head": "43d3360c130d347dc3e2d818b25dc0e8716abc9f",
+    "public_tree": "208682dfe483e0af4cbc86fef09a6f9d68ded7f2",
+    "schema": "provenance-normalization-binding-1",
+    "scope": "Native execution remains bound to its original recorded identity. All implementation, model, calibration, test and binary blobs are unchanged; only provenance documents and derived dependency-lock identities were normalized before first publication.",
+    "unchanged_implementation_files": 10
+  },
+  "raw_packet": {
+    "bytes": 13886791,
+    "format": "candidate-raw-inputs-v1",
+    "name": "center-native-inputs-v0.12.0.zip",
+    "release_url": "https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.12.0",
+    "sha256": "d0d076424d5a83516bff67997779a1bc5125daa408c1ab52d025930cf72c348a",
+    "sources": {
+      "AIC-01": {
+        "head": "554118dcaed430f1712f1ac5c4be9ae9fc91e749",
+        "tree": "f7744f765c475125f20b2f83f31116a2c160c15a"
+      },
+      "AIC-02": {
+        "head": "69582afa41f69548179a6e8db297b326454ee4d3",
+        "tree": "5255217dbee9c9c032432b474b3aeab4a3f7d320"
+      },
+      "AIC-03": {
+        "head": "b7dc0937f48bbcf3b163ce46dd70098d708bbe50",
+        "tree": "f49cbccd75d0b5d313d7f686ab759f255ac46355"
+      },
+      "AIC-04": {
+        "head": "2a2987de0db0d345c77748aafbfd3b693a6ca073",
+        "tree": "2d0b4fea320f52d2e8e9d2392f6115bcd57f59bb"
+      },
+      "AIC-05": {
+        "head": "2f94a73210da7bb69575b806c7f431183fec759b",
+        "tree": "76e61f200adb540622de3743613ebee40f700a47"
+      },
+      "AIC-06": {
+        "head": "33e6f4c186d1548c2906d74232a9ffa0ebde6996",
+        "tree": "156371a7dfc973a2123010b9bb5c385639793ded"
+      },
+      "AIC-07": {
+        "head": "8394177bed790a0c0ba557d87931e00bb0b13235",
+        "tree": "90303ff3a3998adb99784c4b3017c5846ffa440a"
+      },
+      "AIC-08": {
+        "head": "58b1e989cf25e7431717b6c7a5b43ae8856962ec",
+        "tree": "e39b8dd3fe29167a2aad5eeba90147fb15a12a50"
+      },
+      "AIC-09": {
+        "head": "ed34ae9126eed17cc34806a0ab60e3b7f68fc071",
+        "tree": "0e80e150bbaf4c2e1f5a94045860c87498b463ac"
+      },
+      "AIC-10": {
+        "head": "04ecdf17210613d85535e4a51efd1a61ec3fab40",
+        "tree": "5119dd42132a3855a8e9db74658438e53c35ab7c"
+      },
+      "AIC-11": {
+        "head": "b0851c013d9996e553cca4f58c2f787d06bf6b0f",
+        "tree": "821f678bbfae87d485bfd6b208a32606521d9f16"
+      },
+      "ARC-01": {
+        "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+        "tree": "d05d608119d5b88086d9d077f9e6f2505dddf614"
+      },
+      "ARC-02": {
+        "head": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+        "tree": "70a72c0b2254efb4226a6fb19ad91be9aa47bbf7"
+      },
+      "ARC-03": {
+        "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+        "tree": "10af906321d6cb8a8c0a1335ce6c8ca28932ddc7"
+      },
+      "ARC-04": {
+        "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+        "tree": "6d4ecc7d48a66c00f7b232917196b7995015a466"
+      },
+      "ARC-05": {
+        "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+        "tree": "8af5b2293dfcd63936ecf6fbb553ab231b75c2c6"
+      },
+      "ARC-06": {
+        "head": "258ba5ba20acffb8b4c16f0d7e905611498a1928",
+        "tree": "6d2d152642b07aa4149c02c0982ddaf230a52c76"
+      },
+      "ARC-07": {
+        "head": "43d3360c130d347dc3e2d818b25dc0e8716abc9f",
+        "tree": "208682dfe483e0af4cbc86fef09a6f9d68ded7f2"
+      },
+      "ARC-08": {
+        "head": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827",
+        "tree": "f78aafac2df2c0eb3ff3a73cb10d23501f4eadf2"
+      },
+      "ARC-09": {
+        "head": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+        "tree": "6a84feae70438c8f969d1ad35b7886ca20dbb7e5"
+      },
+      "ARC-10": {
+        "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+        "tree": "3085c2803f5add13a353c69f2beaf22e0bc177b8"
+      },
+      "ARC-11": {
+        "head": "204dab303944f787a4702e3dfb8d215b07ce0371",
+        "tree": "acac89513567bc9e4ee68c07397dafc9b746290f"
+      },
+      "IDC-01": {
+        "head": "ca9fa37711754fd3fccc1ada6145f75475a1649c",
+        "tree": "b2b6df534b7633fb0d8386dc886a9a3c9ff35822"
+      },
+      "IDC-02": {
+        "head": "7dc81b216d594b0bdee5fc1095a8296a8beef005",
+        "tree": "268b81e4c952971f5758f75d7a9bc944fc72713b"
+      },
+      "IDC-03": {
+        "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+        "tree": "0126c386fb81044f3feedfa2c828e83bc7ce6bdf"
+      },
+      "IDC-04": {
+        "head": "257dcc87392c004a682b38b8df8645d5970997ab",
+        "tree": "52ecb01a014153e1d3895f15cd70cce512bf2cdf"
+      },
+      "IDC-05": {
+        "head": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff",
+        "tree": "a52ae34535e9dba329b2ae375c3b7eac78e9873b"
+      },
+      "IDC-06": {
+        "head": "0f4e6819ec2981f4a4170058402e7c8f6cf656a2",
+        "tree": "9c60b436285f8f63b768ff2c7caee7561c20bb87"
+      },
+      "IDC-07": {
+        "head": "30f934b48ae56ceee8c490ef655d6ef38c42dba7",
+        "tree": "530fd74a9901bf624d896edca3b4fd679fb3df7c"
+      },
+      "IDC-08": {
+        "head": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1",
+        "tree": "6af5f27a12415791ff8abda0ecaea6f0317a77de"
+      },
+      "IDC-09": {
+        "head": "e629895f0302ae51e7f229794f72a9e06edbe183",
+        "tree": "25fbc686ebd7df7c69b7b5a8b3b9d50993688a92"
+      },
+      "IDC-10": {
+        "head": "13d83b57827247366cea13f88daba33234da8fc8",
+        "tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c"
+      },
+      "IDC-11": {
+        "head": "fbb4014901ac35cd6b0083977eeee1e481d330c9",
+        "tree": "3fe05f9e66804cafa03b618d6465456b318b3b27"
+      }
+    }
+  },
+  "record_sha256": {
+    "ARC-07/contract-verification.json": "1d8e2cb93bb8771da85c3ac4335f93ddc85dd2df3ab724c8104d7c8083361827",
+    "ARC-07/matlab-full-normal/normal_ActuatorTarget.mat": "c8cf19a025fbdb6d9d3342fa7bc48e63124daf8306373993b8c5600c73af891f",
+    "ARC-07/matlab-full-normal/normal_BrakeStability.mat": "7674f64f00b45b133e81b2192f2639e0adc0bb5b3633fde9e28dace488c67557",
+    "ARC-07/matlab-full-normal/normal_CrosswindControl.mat": "e0f9426ebed44baa29c8bfee611f83cd8a8d658aaae0ef09a38a0c345792d59e",
+    "ARC-07/matlab-full-normal/normal_MotionCoordinator.mat": "4393478f8ac279d77c3adbd5db8d04006f4ff65697a18181c6ecc7de5c38780c",
+    "ARC-07/matlab-full-normal/normal_SignalSupervisor.mat": "329fc76d8af13daae94c152bba992b7f9f343272bff78c4741da786f967b981e",
+    "ARC-07/matlab-full-normal/normal_SteeringRedundancy.mat": "27df8175fbe95087940c60554dc19d9c6a8ee34c18ce5bd84dfa93852526ea99",
+    "ARC-07/matlab-full-normal/normal_SuspensionMonitor.mat": "eba8745ebc3a34caa5d530dfc914b86e0e783e7ffc140899824b1276fe73700a",
+    "ARC-07/matlab-full-normal/normal_VehicleSafety.mat": "b7898739e5a27d5bd8d5f87f4966110f3062d81f65041e7c09c8a1e7ff784367",
+    "ARC-07/matlab-full-normal/normal_VehicleState.mat": "3bca9b831bf5f6af2766c27b533660c306f402ef151d2197186f1b960462d680",
+    "ARC-07/matlab-full-normal/normal_maintainer-checks.json": "219759f1e1b4f3ffdba82666993dc566892f0f9a66e2d2aa3de393868a8a7aeb",
+    "ARC-07/matlab-full-normal/normal_receipt.json": "ffcabb323bbffd790c1ac3b9530ed9c193b98a77aab593e82b6a56c30c206aa7",
+    "ARC-07/matlab-full-normal/normal_signals.mat": "5eb26169e63435b764d5d228a8215c26e799ebadd9fdb858c70d9566ca7bffbc",
+    "ARC-07/matlab-full-stale/stale_speed_ActuatorTarget.mat": "501e0b68bc81bdbd554ad52a968aad4b5e75925b87dd4ea3b5e43ccb489af9c3",
+    "ARC-07/matlab-full-stale/stale_speed_BrakeStability.mat": "9dfdd3ace0354da5b882c2337027499bf0c7b989046a926ea091fcb8ea2c95ab",
+    "ARC-07/matlab-full-stale/stale_speed_CrosswindControl.mat": "0681d2cdc346d7b9b514725fb78eb8c599623f8d8d4373b27f8c4dd48129d455",
+    "ARC-07/matlab-full-stale/stale_speed_MotionCoordinator.mat": "9613dd15510bcea01de0bcc94a0a42fb8433c94a4107c4c58540e5c8b7b47ea4",
+    "ARC-07/matlab-full-stale/stale_speed_SignalSupervisor.mat": "788a2ff76ae18482c5017808fb7a8df0257715c421543e028476fb603cd3159d",
+    "ARC-07/matlab-full-stale/stale_speed_SteeringRedundancy.mat": "04dfc6f540835f77dce263d09fae371629cdc7f5536ab62752569239ddd8dba0",
+    "ARC-07/matlab-full-stale/stale_speed_SuspensionMonitor.mat": "1d5af63477a361334e05e521d72b62392aef8416078491999b1f5c9c20348a5a",
+    "ARC-07/matlab-full-stale/stale_speed_VehicleSafety.mat": "222b27e443fcc76ac83ea2d28af3f33f027732031d1e5d562475dbfa0236943d",
+    "ARC-07/matlab-full-stale/stale_speed_VehicleState.mat": "74f7407787aa1558d78067a9d8ed8e981e491d48bbaa83492b8c0e7605b27eec",
+    "ARC-07/matlab-full-stale/stale_speed_maintainer-checks.json": "8839c8e3673f4400987d937d6597503b358a92a2888daee4dbf05351ad37953c",
+    "ARC-07/matlab-full-stale/stale_speed_receipt.json": "fb8b854af46237d775f34f43ece2f13ddbfd65bce1c21c55031d8321a7fa98ce",
+    "ARC-07/matlab-full-stale/stale_speed_signals.mat": "dda7e5aa37fa234744d522e2d1d050d40d40e9995f82bccf693b94f7798e00df",
+    "ARC-07/matlab-steel-spring/normal_ActuatorTarget.mat": "d72c8e93effaf509a6313bd648dfb2f8fa3bebf981ba87fe4a39077c47c04c7c",
+    "ARC-07/matlab-steel-spring/normal_BrakeStability.mat": "71bd6ca760994b1ceb78262652c891fe6029840cf09ca08b6e99f9def880a928",
+    "ARC-07/matlab-steel-spring/normal_CrosswindControl.mat": "b0ed76df9ed28e01e13d37752fbc483cd667e9870d95e74d790b90a8aea33e57",
+    "ARC-07/matlab-steel-spring/normal_MotionCoordinator.mat": "645bfcff18a9ae219290f45a99b211ddab39ab9a3151da94716256b12c32ef22",
+    "ARC-07/matlab-steel-spring/normal_SignalSupervisor.mat": "45727afdf129e4c5e4dd13dcc73e5d3c99b4efbab1be883c42bbdfa2665e4719",
+    "ARC-07/matlab-steel-spring/normal_SteeringRedundancy.mat": "3773f315a5dc3ed2362e13a57561b36163e97d854ab1ba0afec26f616c0da27b",
+    "ARC-07/matlab-steel-spring/normal_VehicleSafety.mat": "b3eb89d22778a5a116e355808d60ee84482a388f8e1b0c69c8bb095f3d3200e5",
+    "ARC-07/matlab-steel-spring/normal_VehicleState.mat": "56158859ec9fb3dd796440ddc416f84e3d24aabf0d1bccef24a2e07c1bad171d",
+    "ARC-07/matlab-steel-spring/normal_maintainer-checks.json": "219759f1e1b4f3ffdba82666993dc566892f0f9a66e2d2aa3de393868a8a7aeb",
+    "ARC-07/matlab-steel-spring/normal_receipt.json": "18b6b81243222066063ca6fbf82111f222f682d1a3a02362bd5442765ad6b4cc",
+    "ARC-07/matlab-steel-spring/normal_signals.mat": "89f6b95749eab6a64620f39efb21703e48a7187667db382f209db99682433496",
+    "ARC-07/provenance-normalization.json": "37e05198334531d844bf232f4b9c2768c9acd5141c25f175db7c5c668ecb9f7a"
+  },
+  "records": [
+    {
+      "path": "ARC-07/contract-verification.json",
+      "sha256": "1d8e2cb93bb8771da85c3ac4335f93ddc85dd2df3ab724c8104d7c8083361827"
+    },
+    {
+      "path": "ARC-07/matlab-full-normal/normal_maintainer-checks.json",
+      "sha256": "219759f1e1b4f3ffdba82666993dc566892f0f9a66e2d2aa3de393868a8a7aeb"
+    },
+    {
+      "path": "ARC-07/matlab-full-normal/normal_receipt.json",
+      "sha256": "ffcabb323bbffd790c1ac3b9530ed9c193b98a77aab593e82b6a56c30c206aa7"
+    },
+    {
+      "path": "ARC-07/matlab-full-normal/normal_ActuatorTarget.mat",
+      "sha256": "c8cf19a025fbdb6d9d3342fa7bc48e63124daf8306373993b8c5600c73af891f"
+    },
+    {
+      "path": "ARC-07/matlab-full-normal/normal_BrakeStability.mat",
+      "sha256": "7674f64f00b45b133e81b2192f2639e0adc0bb5b3633fde9e28dace488c67557"
+    },
+    {
+      "path": "ARC-07/matlab-full-normal/normal_CrosswindControl.mat",
+      "sha256": "e0f9426ebed44baa29c8bfee611f83cd8a8d658aaae0ef09a38a0c345792d59e"
+    },
+    {
+      "path": "ARC-07/matlab-full-normal/normal_MotionCoordinator.mat",
+      "sha256": "4393478f8ac279d77c3adbd5db8d04006f4ff65697a18181c6ecc7de5c38780c"
+    },
+    {
+      "path": "ARC-07/matlab-full-normal/normal_signals.mat",
+      "sha256": "5eb26169e63435b764d5d228a8215c26e799ebadd9fdb858c70d9566ca7bffbc"
+    },
+    {
+      "path": "ARC-07/matlab-full-normal/normal_SignalSupervisor.mat",
+      "sha256": "329fc76d8af13daae94c152bba992b7f9f343272bff78c4741da786f967b981e"
+    },
+    {
+      "path": "ARC-07/matlab-full-normal/normal_SteeringRedundancy.mat",
+      "sha256": "27df8175fbe95087940c60554dc19d9c6a8ee34c18ce5bd84dfa93852526ea99"
+    },
+    {
+      "path": "ARC-07/matlab-full-normal/normal_SuspensionMonitor.mat",
+      "sha256": "eba8745ebc3a34caa5d530dfc914b86e0e783e7ffc140899824b1276fe73700a"
+    },
+    {
+      "path": "ARC-07/matlab-full-normal/normal_VehicleSafety.mat",
+      "sha256": "b7898739e5a27d5bd8d5f87f4966110f3062d81f65041e7c09c8a1e7ff784367"
+    },
+    {
+      "path": "ARC-07/matlab-full-normal/normal_VehicleState.mat",
+      "sha256": "3bca9b831bf5f6af2766c27b533660c306f402ef151d2197186f1b960462d680"
+    },
+    {
+      "path": "ARC-07/matlab-full-stale/stale_speed_maintainer-checks.json",
+      "sha256": "8839c8e3673f4400987d937d6597503b358a92a2888daee4dbf05351ad37953c"
+    },
+    {
+      "path": "ARC-07/matlab-full-stale/stale_speed_receipt.json",
+      "sha256": "fb8b854af46237d775f34f43ece2f13ddbfd65bce1c21c55031d8321a7fa98ce"
+    },
+    {
+      "path": "ARC-07/matlab-full-stale/stale_speed_ActuatorTarget.mat",
+      "sha256": "501e0b68bc81bdbd554ad52a968aad4b5e75925b87dd4ea3b5e43ccb489af9c3"
+    },
+    {
+      "path": "ARC-07/matlab-full-stale/stale_speed_BrakeStability.mat",
+      "sha256": "9dfdd3ace0354da5b882c2337027499bf0c7b989046a926ea091fcb8ea2c95ab"
+    },
+    {
+      "path": "ARC-07/matlab-full-stale/stale_speed_CrosswindControl.mat",
+      "sha256": "0681d2cdc346d7b9b514725fb78eb8c599623f8d8d4373b27f8c4dd48129d455"
+    },
+    {
+      "path": "ARC-07/matlab-full-stale/stale_speed_MotionCoordinator.mat",
+      "sha256": "9613dd15510bcea01de0bcc94a0a42fb8433c94a4107c4c58540e5c8b7b47ea4"
+    },
+    {
+      "path": "ARC-07/matlab-full-stale/stale_speed_signals.mat",
+      "sha256": "dda7e5aa37fa234744d522e2d1d050d40d40e9995f82bccf693b94f7798e00df"
+    },
+    {
+      "path": "ARC-07/matlab-full-stale/stale_speed_SignalSupervisor.mat",
+      "sha256": "788a2ff76ae18482c5017808fb7a8df0257715c421543e028476fb603cd3159d"
+    },
+    {
+      "path": "ARC-07/matlab-full-stale/stale_speed_SteeringRedundancy.mat",
+      "sha256": "04dfc6f540835f77dce263d09fae371629cdc7f5536ab62752569239ddd8dba0"
+    },
+    {
+      "path": "ARC-07/matlab-full-stale/stale_speed_SuspensionMonitor.mat",
+      "sha256": "1d5af63477a361334e05e521d72b62392aef8416078491999b1f5c9c20348a5a"
+    },
+    {
+      "path": "ARC-07/matlab-full-stale/stale_speed_VehicleSafety.mat",
+      "sha256": "222b27e443fcc76ac83ea2d28af3f33f027732031d1e5d562475dbfa0236943d"
+    },
+    {
+      "path": "ARC-07/matlab-full-stale/stale_speed_VehicleState.mat",
+      "sha256": "74f7407787aa1558d78067a9d8ed8e981e491d48bbaa83492b8c0e7605b27eec"
+    },
+    {
+      "path": "ARC-07/matlab-steel-spring/normal_maintainer-checks.json",
+      "sha256": "219759f1e1b4f3ffdba82666993dc566892f0f9a66e2d2aa3de393868a8a7aeb"
+    },
+    {
+      "path": "ARC-07/matlab-steel-spring/normal_receipt.json",
+      "sha256": "18b6b81243222066063ca6fbf82111f222f682d1a3a02362bd5442765ad6b4cc"
+    },
+    {
+      "path": "ARC-07/matlab-steel-spring/normal_ActuatorTarget.mat",
+      "sha256": "d72c8e93effaf509a6313bd648dfb2f8fa3bebf981ba87fe4a39077c47c04c7c"
+    },
+    {
+      "path": "ARC-07/matlab-steel-spring/normal_BrakeStability.mat",
+      "sha256": "71bd6ca760994b1ceb78262652c891fe6029840cf09ca08b6e99f9def880a928"
+    },
+    {
+      "path": "ARC-07/matlab-steel-spring/normal_CrosswindControl.mat",
+      "sha256": "b0ed76df9ed28e01e13d37752fbc483cd667e9870d95e74d790b90a8aea33e57"
+    },
+    {
+      "path": "ARC-07/matlab-steel-spring/normal_MotionCoordinator.mat",
+      "sha256": "645bfcff18a9ae219290f45a99b211ddab39ab9a3151da94716256b12c32ef22"
+    },
+    {
+      "path": "ARC-07/matlab-steel-spring/normal_signals.mat",
+      "sha256": "89f6b95749eab6a64620f39efb21703e48a7187667db382f209db99682433496"
+    },
+    {
+      "path": "ARC-07/matlab-steel-spring/normal_SignalSupervisor.mat",
+      "sha256": "45727afdf129e4c5e4dd13dcc73e5d3c99b4efbab1be883c42bbdfa2665e4719"
+    },
+    {
+      "path": "ARC-07/matlab-steel-spring/normal_SteeringRedundancy.mat",
+      "sha256": "3773f315a5dc3ed2362e13a57561b36163e97d854ab1ba0afec26f616c0da27b"
+    },
+    {
+      "path": "ARC-07/matlab-steel-spring/normal_VehicleSafety.mat",
+      "sha256": "b3eb89d22778a5a116e355808d60ee84482a388f8e1b0c69c8bb095f3d3200e5"
+    },
+    {
+      "path": "ARC-07/matlab-steel-spring/normal_VehicleState.mat",
+      "sha256": "56158859ec9fb3dd796440ddc416f84e3d24aabf0d1bccef24a2e07c1bad171d"
+    },
+    {
+      "path": "ARC-07/provenance-normalization.json",
+      "sha256": "37e05198334531d844bf232f4b9c2768c9acd5141c25f175db7c5c668ecb9f7a"
+    }
+  ],
+  "restoration_record": "integration-restoration.json",
+  "runs": [
+    {
+      "components": 9,
+      "lock_sha256": "300e7e684811f72c175844163a8e24d5553a4a0a64638dc0b49fd6220d7d6f62",
+      "platform": "full-motion",
+      "samples_per_component": 201,
+      "scene": "normal"
+    },
+    {
+      "components": 9,
+      "lock_sha256": "300e7e684811f72c175844163a8e24d5553a4a0a64638dc0b49fd6220d7d6f62",
+      "platform": "full-motion",
+      "samples_per_component": 201,
+      "scene": "stale_speed"
+    },
+    {
+      "components": 8,
+      "lock_sha256": "300e7e684811f72c175844163a8e24d5553a4a0a64638dc0b49fd6220d7d6f62",
+      "platform": "steel-spring",
+      "samples_per_component": 201,
+      "scene": "normal"
+    }
+  ],
+  "schema": "center-execution-summary-1",
+  "source_binding": "ARC-07/source-binding.json",
+  "status": "passed",
+  "tree": "208682dfe483e0af4cbc86fef09a6f9d68ded7f2"
+}

@@ -1,0 +1,318 @@
+{
+  "execution": {
+    "limits": [
+      "MIL and host replay only; no physical device, ECU, SIL/PIL/HIL, BTC or certification.",
+      "Simulink coverage is distinct from generated C statement coverage; C statement coverage was not measured.",
+      "Independent equations and configured scenarios are maintainer checks, not candidate-model evaluation or blind gold."
+    ],
+    "records": [
+      {
+        "path": "suites/architecture-center/execution/ARC-05.json",
+        "sha256": "78e531fc20cce7d67dcfc2eebaebb6c3ba5eadbb49be70b4cda37414a905f27a"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+  "id": "ARC-05",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/matlab.json",
+      "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+    },
+    "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+    "id": "ARC-05",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "block_path": "CrosswindControl/ControlMode",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=34 CrosswindControl/ControlMode",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/CrosswindControl.slx",
+            "sha256": "be2461184ab171efcdb2de9dc0058a2ead2e972c5a6f1acbcfa67a82bffb4b8e",
+            "sid": "34"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "hierarchy",
+        "reason": "扰动估计、控制模式、积分状态、输出补偿四个业务层次可辨认；模式与控制层粒度仍不完全一致。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "CrosswindControl/ControlMode",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=34 CrosswindControl/ControlMode",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/CrosswindControl.slx",
+            "sha256": "be2461184ab171efcdb2de9dc0058a2ead2e972c5a6f1acbcfa67a82bffb4b8e",
+            "sid": "34"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "reuse",
+        "reason": "PI状态、模式与输出包络各自封装，未发现不必要的相同控制算法副本；无外部稳定库边界。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "CrosswindControl/ControlMode",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=34 CrosswindControl/ControlMode",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/CrosswindControl.slx",
+            "sha256": "be2461184ab171efcdb2de9dc0058a2ead2e972c5a6f1acbcfa67a82bffb4b8e",
+            "sid": "34"
+          },
+          {
+            "kind": "file",
+            "locator": "Inputs/Outputs sheets, header row 4 and typed data from row 5",
+            "path": "Model/Interface.xlsx",
+            "sha256": "d6e15ab60080d2b137b77adcd41383adccd205697b4182f906c8f2e373b3d097"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "interface",
+        "reason": "根物理量有显式端口和工作簿；14个内部InN/OutN仍默认，接口规范未覆盖内部层次。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "CrosswindControl/ControlMode",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=34 CrosswindControl/ControlMode",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/CrosswindControl.slx",
+            "sha256": "be2461184ab171efcdb2de9dc0058a2ead2e972c5a6f1acbcfa67a82bffb4b8e",
+            "sid": "34"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "dataflow",
+        "reason": "主控制方向清楚但积分/复位回线较多，45条线仅8条具名，内部追踪依赖图形位置。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "e535af6ba42afd253baf0f6be52f11f6063ca3cdacae48e83057f5453ffc46d8"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "unit_test",
+        "reason": "当前完整跟踪树没有仓内单元测试；维护者的外部640样本验证不转换为仓内测试分。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "CrosswindControl/ControlMode",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=34 CrosswindControl/ControlMode",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/CrosswindControl.slx",
+            "sha256": "be2461184ab171efcdb2de9dc0058a2ead2e972c5a6f1acbcfa67a82bffb4b8e",
+            "sid": "34"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "naming",
+        "reason": "43个生产块内有14个默认端口；PI/扰动等主要算法名可理解，整体命名尚不完整。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "e535af6ba42afd253baf0f6be52f11f6063ca3cdacae48e83057f5453ffc46d8"
+          },
+          {
+            "block_path": "CrosswindControl/ControlMode",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=34 CrosswindControl/ControlMode",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/CrosswindControl.slx",
+            "sha256": "be2461184ab171efcdb2de9dc0058a2ead2e972c5a6f1acbcfa67a82bffb4b8e",
+            "sid": "34"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "directory",
+        "reason": "Model与组件/启动脚本有基本分类，但接口表、标定和生产文件混置在模型树中，尚无更一致的工程分区。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "CrosswindControl/ControlMode",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=34 CrosswindControl/ControlMode",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/CrosswindControl.slx",
+            "sha256": "be2461184ab171efcdb2de9dc0058a2ead2e972c5a6f1acbcfa67a82bffb4b8e",
+            "sid": "34"
+          },
+          {
+            "kind": "file",
+            "locator": "repository-specific model and component paths",
+            "path": "project_init.m",
+            "sha256": "016ac597031843bf51fb309c8d3f1c0be77b1942c95f1afdfe819dd271496508"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "build_independence",
+        "reason": "当前构建直接加载源SLX/MDL或M脚本；没有达到受控Bus/Mask组件契约、独立包与版本锁定的边界。只有显式端口不据此跳到2档。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/CrosswindControl.slx",
+            "sha256": "be2461184ab171efcdb2de9dc0058a2ead2e972c5a6f1acbcfa67a82bffb4b8e"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "model_version",
+        "reason": "模型内AutoIncrement版本和实际构造Git提交可查，但未提供完整版本/信号变更表及正式评审差异记录。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/CrosswindControl.slx",
+            "sha256": "be2461184ab171efcdb2de9dc0058a2ead2e972c5a6f1acbcfa67a82bffb4b8e"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "version_independence",
+        "reason": "存在模型内部自增版本，未形成MAJOR.MINOR.PATCH独立语义版本及发布兼容约定。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "production parameter expressions and model workspace",
+            "path": "Model/CrosswindControl.slx",
+            "sha256": "be2461184ab171efcdb2de9dc0058a2ead2e972c5a6f1acbcfa67a82bffb4b8e"
+          },
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "e535af6ba42afd253baf0f6be52f11f6063ca3cdacae48e83057f5453ffc46d8"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "release_branches",
+        "reason": "完整Git仅有实际初始/修复main历史，未落实可核对的跨车型/平台发布分支或多配置策略。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "production parameter expressions and model workspace",
+            "path": "Model/CrosswindControl.slx",
+            "sha256": "be2461184ab171efcdb2de9dc0058a2ead2e972c5a6f1acbcfa67a82bffb4b8e"
+          },
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "e535af6ba42afd253baf0f6be52f11f6063ca3cdacae48e83057f5453ffc46d8"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "device_specificity",
+        "reason": "PI及行程限值为单工程内联固定假设，没有独立设备配置边界。",
+        "score": 0
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "8af5b2293dfcd63936ecf6fbb553ab231b75c2c6"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "8af5b2293dfcd63936ecf6fbb553ab231b75c2c6"
+}

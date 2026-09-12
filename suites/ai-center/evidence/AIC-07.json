@@ -1,0 +1,614 @@
+{
+  "execution": {
+    "limits": [
+      "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+      "Maintainer external tests do not count as repository-owned integration tests.",
+      "Same maintainer construction family; not an independent holdout.",
+      "arm64-v8a compiled and packaged only; Android runtime checks used an emulator, not a physical device."
+    ],
+    "records": [
+      {
+        "path": "suites/ai-center/execution/AIC-07.json",
+        "sha256": "e13c330159bbb679ab6da05a659ce95a6ed2dde75d97afe71f63e09a374dd7f2"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "8394177bed790a0c0ba557d87931e00bb0b13235",
+  "id": "AIC-07",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "8394177bed790a0c0ba557d87931e00bb0b13235",
+    "id": "AIC-07",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 176,
+            "locator": "line 176: CompiledExpression compile(",
+            "path": "modules/language/compiled_expression.cpp",
+            "sha256": "a3dc2080bf19958fbe3adae9c4cf221466449c87c15106a1021e02a56db5e0eb",
+            "symbol": "CompiledExpression compile("
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: void TypedRuntime::replace",
+            "path": "modules/runtime/typed_runtime.cpp",
+            "sha256": "f30bfc9dc33492f1cc4ccf88be1a067f5bbd71ef333469b98de66f2270802840",
+            "symbol": "void TypedRuntime::replace"
+          },
+          {
+            "kind": "file",
+            "line": 22,
+            "locator": "line 22: Java_org_benchmark_rules_NativeRule_evaluate",
+            "path": "jni/RuleBridge.cpp",
+            "sha256": "299f80172591549cda871d60b30ee83e02da5121d95abc1171eaf257b7675f53",
+            "symbol": "Java_org_benchmark_rules_NativeRule_evaluate"
+          }
+        ],
+        "limitations": [
+          "Android演示只调用表达式计算，不是完整车辆规则服务。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "词法/类型化表达式、信号存储、规则运行、配置加载、JNI和Android界面有可核对的单向依赖。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: class CompiledExpression",
+            "path": "include/rule_engine/compiled_expression.hpp",
+            "sha256": "c9c61434b27d740de81646aba81c2ae603e51eac5e4725fc3337085598b24ac0",
+            "symbol": "class CompiledExpression"
+          },
+          {
+            "kind": "file",
+            "line": 20,
+            "locator": "line 20: class TypedRuntime",
+            "path": "include/rule_engine/typed_runtime.hpp",
+            "sha256": "79da109893e7376fde6b7ca1510037f617f3b2786ad4824ce61e85e65887c368",
+            "symbol": "class TypedRuntime"
+          },
+          {
+            "kind": "file",
+            "line": 12,
+            "locator": "line 12: class SignalStore",
+            "path": "include/rule_engine/signal_store.hpp",
+            "sha256": "8b329b024fab08253d2cbe7655c1dddb082180fddfb11667c5c9020e85bb919b",
+            "symbol": "class SignalStore"
+          }
+        ],
+        "limitations": [
+          "保留原简化求值器与新类型编译器，两条语言路径仍共存于同库。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "类型编译、TTL信号、规则事务替换与动作队列形成实质业务模块。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 47,
+            "locator": "line 47: return rule_engine::compile",
+            "path": "jni/RuleBridge.cpp",
+            "sha256": "299f80172591549cda871d60b30ee83e02da5121d95abc1171eaf257b7675f53",
+            "symbol": "return rule_engine::compile"
+          },
+          {
+            "kind": "file",
+            "line": 30,
+            "locator": "line 30: s.expression.evaluate(context)",
+            "path": "modules/runtime/typed_runtime.cpp",
+            "sha256": "f30bfc9dc33492f1cc4ccf88be1a067f5bbd71ef333469b98de66f2270802840",
+            "symbol": "s.expression.evaluate(context)"
+          }
+        ],
+        "limitations": [
+          "语法与触发策略具体实现仍静态绑定，未形成可替换编译器接口。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "规则核心只消费TypedContext，JNI通过窄包装调用同一个compile/evaluate。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(ai_rule_runtime STATIC",
+            "path": "CMakeLists.txt",
+            "sha256": "bdcbe9292931501f1e75712f621c758c8aed8a066f17e18c5651cae83ec38601",
+            "symbol": "add_library(ai_rule_runtime STATIC"
+          }
+        ],
+        "limitations": [
+          "本机CMake/Make/Gradle和维护者脚本不等同仓内CI或远端执行。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单无仓内CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: set(CMAKE_CXX_STANDARD 17)",
+            "path": "CMakeLists.txt",
+            "sha256": "bdcbe9292931501f1e75712f621c758c8aed8a066f17e18c5651cae83ec38601",
+            "symbol": "set(CMAKE_CXX_STANDARD 17)"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: ndkVersion '26.1.10909125'",
+            "path": "demo/android/app/build.gradle",
+            "sha256": "f3d03f844023ba1f8ee53a6ce844e4a77e1083bbdf443deab751885aa7a47005",
+            "symbol": "ndkVersion '26.1.10909125'"
+          },
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: target_compile_features",
+            "path": "demo/android/app/src/main/cpp/CMakeLists.txt",
+            "sha256": "589fc0200c168da56f1c8040ab6cd61baa81b49cb9167c31bd0d4ecc9e18c379",
+            "symbol": "target_compile_features"
+          }
+        ],
+        "limitations": [
+          "主机独立构建不代表设备固件或生产SDK集成；外部维护者测试是可选构建参数。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "当前CMake独立构建仓内全部实现，标准C99/C++17及工具链边界明确，无必需第三方实现源码或未版本化BSP。 JNI演示另固定JDK/NDK/AGP/Gradle，复用同一C++核心。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 11,
+            "locator": "line 11: magic != \"RULESET1\"",
+            "path": "modules/config/rule_catalog.cpp",
+            "sha256": "74c06b8cd722cb8c7d8944ffe850e0fa8d00df283eb6dc041cdca6619c056abe",
+            "symbol": "magic != \"RULESET1\""
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: RULESET1",
+            "path": "config/comfort.rules",
+            "sha256": "61023bfea147accef9b30d54426c4002756125e08a754ec47121e3ebdd68c990",
+            "symbol": "RULESET1"
+          },
+          {
+            "kind": "file",
+            "line": 34,
+            "locator": "line 34: rule_engine::load_rules(",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "7a5499292a516dbf3202211ea4b75cb237355f97f6beff960bb17925f22b64d4",
+            "symbol": "rule_engine::load_rules("
+          },
+          {
+            "kind": "file",
+            "line": 37,
+            "locator": "line 37: catalog_runtime.replace(catalog,",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "7a5499292a516dbf3202211ea4b75cb237355f97f6beff960bb17925f22b64d4",
+            "symbol": "catalog_runtime.replace(catalog,"
+          }
+        ],
+        "limitations": [
+          "RULESET1不含MAJOR.MINOR.PATCH语义，也没有规则文件跨版本兼容回归；JNI方法和CMake项目版本不额外证明API版本管理。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "公开规则文件以RULESET1标记手工版本，load_rules校验该标记，仓内测试真实加载comfort.rules并在TypedRuntime执行。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 45,
+            "locator": "line 45: class TypedParser",
+            "path": "modules/language/compiled_expression.cpp",
+            "sha256": "a3dc2080bf19958fbe3adae9c4cf221466449c87c15106a1021e02a56db5e0eb",
+            "symbol": "class TypedParser"
+          },
+          {
+            "kind": "file",
+            "line": 20,
+            "locator": "line 20: TypedContext SignalStore::snapshot",
+            "path": "modules/signals/signal_store.cpp",
+            "sha256": "9d96b028a87de3972f63429582ef49f39a76d095a6e73d406e820f51010742dd",
+            "symbol": "TypedContext SignalStore::snapshot"
+          },
+          {
+            "kind": "file",
+            "line": 48,
+            "locator": "line 48: catch (const std::exception& e)",
+            "path": "jni/RuleBridge.cpp",
+            "sha256": "299f80172591549cda871d60b30ee83e02da5121d95abc1171eaf257b7675f53",
+            "symbol": "catch (const std::exception& e)"
+          }
+        ],
+        "limitations": [
+          "TypedRuntime仍在同类组合队列与触发状态；未证明所有未来扩展免修改。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "编译期类型检查、信号有效期、规则边沿/冷却和JNI异常映射由独立单元承担。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: void TypedRuntime::replace",
+            "path": "modules/runtime/typed_runtime.cpp",
+            "sha256": "f30bfc9dc33492f1cc4ccf88be1a067f5bbd71ef333469b98de66f2270802840",
+            "symbol": "void TypedRuntime::replace"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: std::vector<TypedRule> load_rules",
+            "path": "modules/config/rule_catalog.cpp",
+            "sha256": "74c06b8cd722cb8c7d8944ffe850e0fa8d00df283eb6dc041cdca6619c056abe",
+            "symbol": "std::vector<TypedRule> load_rules"
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: RULESET1",
+            "path": "config/comfort.rules",
+            "sha256": "61023bfea147accef9b30d54426c4002756125e08a754ec47121e3ebdd68c990",
+            "symbol": "RULESET1"
+          }
+        ],
+        "limitations": [
+          "新增语言运算符或触发模式仍要修改编译器或tick。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "comfort.rules和replace接口可以增加业务表达式/动作规则，核心运行器不需新增规则分支。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: class CompiledExpression",
+            "path": "include/rule_engine/compiled_expression.hpp",
+            "sha256": "c9c61434b27d740de81646aba81c2ae603e51eac5e4725fc3337085598b24ac0",
+            "symbol": "class CompiledExpression"
+          },
+          {
+            "kind": "file",
+            "line": 20,
+            "locator": "line 20: class TypedRuntime",
+            "path": "include/rule_engine/typed_runtime.hpp",
+            "sha256": "79da109893e7376fde6b7ca1510037f617f3b2786ad4824ce61e85e65887c368",
+            "symbol": "class TypedRuntime"
+          }
+        ],
+        "limitations": [
+          "此档说明不适用范围，不代表替换契约已被验证。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "审阅公开类型与生产实现，没有适用的继承/实现替换关系，按合同LSP中间档处理。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 26,
+            "locator": "line 26: struct Token",
+            "path": "include/rule_engine/rule_engine.hpp",
+            "sha256": "2a25a7b850abe70959d749189e33635ad02354fae9467b1bd032cfa4153b4834",
+            "symbol": "struct Token"
+          },
+          {
+            "kind": "file",
+            "line": 39,
+            "locator": "line 39: class RuleEngine",
+            "path": "include/rule_engine/rule_engine.hpp",
+            "sha256": "2a25a7b850abe70959d749189e33635ad02354fae9467b1bd032cfa4153b4834",
+            "symbol": "class RuleEngine"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: class CompiledExpression",
+            "path": "include/rule_engine/compiled_expression.hpp",
+            "sha256": "c9c61434b27d740de81646aba81c2ae603e51eac5e4725fc3337085598b24ac0",
+            "symbol": "class CompiledExpression"
+          }
+        ],
+        "limitations": [
+          "旧rule_engine.hpp仍汇总词法、表达式与Engine接口并包含宽泛标准依赖。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "CompiledExpression、SignalStore及TypedRuntime分头定义。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 14,
+            "locator": "line 14: auto expression = compile",
+            "path": "modules/runtime/typed_runtime.cpp",
+            "sha256": "f30bfc9dc33492f1cc4ccf88be1a067f5bbd71ef333469b98de66f2270802840",
+            "symbol": "auto expression = compile"
+          },
+          {
+            "kind": "file",
+            "line": 33,
+            "locator": "line 33: rule_engine::TypedContext context",
+            "path": "jni/RuleBridge.cpp",
+            "sha256": "299f80172591549cda871d60b30ee83e02da5121d95abc1171eaf257b7675f53",
+            "symbol": "rule_engine::TypedContext context"
+          }
+        ],
+        "limitations": [
+          "语言具体编译实现由Runtime直接调用，外部动作执行未纳入本仓。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "规则业务对输入上下文、动作数据和JNI边界有隔离。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 44,
+            "locator": "line 44: option(BUILD_JNI",
+            "path": "CMakeLists.txt",
+            "sha256": "bdcbe9292931501f1e75712f621c758c8aed8a066f17e18c5651cae83ec38601",
+            "symbol": "option(BUILD_JNI"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: \"${RULE_ROOT}/jni/RuleBridge.cpp\"",
+            "path": "demo/android/app/src/main/cpp/CMakeLists.txt",
+            "sha256": "589fc0200c168da56f1c8040ab6cd61baa81b49cb9167c31bd0d4ecc9e18c379",
+            "symbol": "\"${RULE_ROOT}/jni/RuleBridge.cpp\""
+          },
+          {
+            "kind": "file",
+            "line": 13,
+            "locator": "line 13: check(NativeRule.evaluate(\"2+3*4\"",
+            "path": "demo/android/app/src/androidTest/java/org/benchmark/rules/demo/NativeInstrumentation.java",
+            "sha256": "69ca21a85a4cb2b9ee3a3989c6c9223a27b0fe62222acf8a838bf4e902662e07",
+            "symbol": "check(NativeRule.evaluate(\"2+3*4\""
+          }
+        ],
+        "execution_evidence": [
+          "AIC-07/final-native-run.json",
+          "AIC-07/final-restored-native-run.json",
+          "AIC-07/jni-run.json",
+          "AIC-07/android-jni-run.json"
+        ],
+        "limitations": [
+          "Android arm64-v8a只编译打包；无实体设备/真实OS升级测试。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "Windows JDK17 JNI与Android NDK/Java实际共用同一typed compiler，两个受支持运行配置都完成JNI检查。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 13,
+            "locator": "line 13: abiFilters 'x86_64', 'arm64-v8a'",
+            "path": "demo/android/app/build.gradle",
+            "sha256": "f3d03f844023ba1f8ee53a6ce844e4a77e1083bbdf443deab751885aa7a47005",
+            "symbol": "abiFilters 'x86_64', 'arm64-v8a'"
+          },
+          {
+            "kind": "file",
+            "line": 22,
+            "locator": "line 22: Java_org_benchmark_rules_NativeRule_evaluate",
+            "path": "jni/RuleBridge.cpp",
+            "sha256": "299f80172591549cda871d60b30ee83e02da5121d95abc1171eaf257b7675f53",
+            "symbol": "Java_org_benchmark_rules_NativeRule_evaluate"
+          }
+        ],
+        "execution_evidence": [
+          "AIC-07/final-native-run.json",
+          "AIC-07/final-restored-native-run.json",
+          "AIC-07/jni-run.json",
+          "AIC-07/android-jni-run.json"
+        ],
+        "limitations": [
+          "两个已执行配置是Windows x64和Android x86_64；不称arm64实际运行或实体设备验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "Windows JNI与Android模拟器通过各自JNI构建适配边界消费同一核心；Android构建显式包含x86_64及arm64-v8a。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 44,
+            "locator": "line 44: option(BUILD_JNI",
+            "path": "CMakeLists.txt",
+            "sha256": "bdcbe9292931501f1e75712f621c758c8aed8a066f17e18c5651cae83ec38601",
+            "symbol": "option(BUILD_JNI"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: \"${RULE_ROOT}/jni/RuleBridge.cpp\"",
+            "path": "demo/android/app/src/main/cpp/CMakeLists.txt",
+            "sha256": "589fc0200c168da56f1c8040ab6cd61baa81b49cb9167c31bd0d4ecc9e18c379",
+            "symbol": "\"${RULE_ROOT}/jni/RuleBridge.cpp\""
+          }
+        ],
+        "execution_evidence": [
+          "AIC-07/final-native-run.json",
+          "AIC-07/final-restored-native-run.json",
+          "AIC-07/jni-run.json",
+          "AIC-07/android-jni-run.json"
+        ],
+        "limitations": [
+          "不是多设备分支历史；arm64-v8a仅构建。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "共用main内的CMake/JDK与Gradle/NDK两套真实配置共用jni/RuleBridge.cpp和typed compiler，并各自执行。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 73,
+            "locator": "line 73: double logical_and()",
+            "path": "modules/language/parser.cpp",
+            "sha256": "a4f5c37b42b9dc3113b6e0eba49b27c4af5e22b7c00db8a4edfb6b57832fff24",
+            "symbol": "double logical_and()"
+          },
+          {
+            "kind": "file",
+            "line": 141,
+            "locator": "line 141: NodePtr logical_and()",
+            "path": "modules/language/compiled_expression.cpp",
+            "sha256": "a3dc2080bf19958fbe3adae9c4cf221466449c87c15106a1021e02a56db5e0eb",
+            "symbol": "NodePtr logical_and()"
+          }
+        ],
+        "limitations": [
+          "保留两种语义以兼容场景，不以相同测试宏或数据结构计算重复。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "审阅modules：词法分词复用，但旧parser与新的typed parser具有表达式优先级/算术处理重叠。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 47,
+            "locator": "line 47: return rule_engine::compile",
+            "path": "jni/RuleBridge.cpp",
+            "sha256": "299f80172591549cda871d60b30ee83e02da5121d95abc1171eaf257b7675f53",
+            "symbol": "return rule_engine::compile"
+          },
+          {
+            "kind": "file",
+            "line": 24,
+            "locator": "line 24: bool TypedRuntime::tick",
+            "path": "modules/runtime/typed_runtime.cpp",
+            "sha256": "f30bfc9dc33492f1cc4ccf88be1a067f5bbd71ef333469b98de66f2270802840",
+            "symbol": "bool TypedRuntime::tick"
+          }
+        ],
+        "limitations": [
+          "此分不自动证明平台迁移、多设备运行或物理设备验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "生产业务只使用C/C++标准值类型/标准库或明确JNI、TCP、I/O适配边界。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 37,
+            "locator": "line 37: catalog_runtime.replace",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "7a5499292a516dbf3202211ea4b75cb237355f97f6beff960bb17925f22b64d4",
+            "symbol": "catalog_runtime.replace"
+          },
+          {
+            "kind": "file",
+            "line": 81,
+            "locator": "line 81: CHECK(!rt.tick",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "7a5499292a516dbf3202211ea4b75cb237355f97f6beff960bb17925f22b64d4",
+            "symbol": "CHECK(!rt.tick"
+          },
+          {
+            "kind": "file",
+            "line": 86,
+            "locator": "line 86: THROWS(rt.replace",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "7a5499292a516dbf3202211ea4b75cb237355f97f6beff960bb17925f22b64d4",
+            "symbol": "THROWS(rt.replace"
+          },
+          {
+            "kind": "file",
+            "line": 17,
+            "locator": "line 17: check(NativeRule.evaluate(\"false && 1/0 > 0\"",
+            "path": "demo/android/app/src/androidTest/java/org/benchmark/rules/demo/NativeInstrumentation.java",
+            "sha256": "69ca21a85a4cb2b9ee3a3989c6c9223a27b0fe62222acf8a838bf4e902662e07",
+            "symbol": "check(NativeRule.evaluate(\"false && 1/0 > 0\""
+          }
+        ],
+        "execution_evidence": [
+          "AIC-07/final-native-run.json",
+          "AIC-07/final-restored-native-run.json",
+          "AIC-07/jni-run.json",
+          "AIC-07/android-jni-run.json"
+        ],
+        "limitations": [
+          "JNI另有Windows JDK17及Android模拟器实际检查；arm64-v8a只构建打包。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "仓内规则catalog→compile→TypedRuntime及signal schema连接真实执行；覆盖类型错误、队列背压、失败替换保留旧规则和时间倒退。",
+        "score": 3,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "90303ff3a3998adb99784c4b3017c5846ffa440a"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "90303ff3a3998adb99784c4b3017c5846ffa440a"
+}

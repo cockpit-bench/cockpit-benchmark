@@ -1,0 +1,541 @@
+{
+  "execution": {
+    "limits": [
+      "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+      "Maintainer external tests do not count as repository-owned integration tests.",
+      "Same maintainer construction family; not an independent holdout."
+    ],
+    "records": [
+      {
+        "path": "suites/intelligent-driving-center/execution/IDC-07.json",
+        "sha256": "54196752a33cb50c2d99828dc801adb55172b3e5ba248eabd5d6271660e7b816"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "30f934b48ae56ceee8c490ef655d6ef38c42dba7",
+  "id": "IDC-07",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "30f934b48ae56ceee8c490ef655d6ef38c42dba7",
+    "id": "IDC-07",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "e62a1723d9119bff4c46f241d6b7176a529c89810419a5b648b333c4d18b229c",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct RawEcho {",
+            "path": "include/ultrasonic/range_gate.hpp",
+            "sha256": "cc7684263ba2c78625d2dc40ad5047c77eb070e59f1e599d05f832456d727442",
+            "symbol": "struct RawEcho {"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5:     throw std::invalid_argument(\"range maximum\");",
+            "path": "src/range_gate.cpp",
+            "sha256": "6cc860670c0335f523c1f8588d8b57995c26c79dd9436f4fa66e46d240d60515",
+            "symbol": "    throw std::invalid_argument(\"range maximum\");"
+          }
+        ],
+        "limitations": [
+          "range_gate.hpp同时公开温度测距与OccupancyGrid，输入/空间表示边界偏宽。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "回波门控、障碍合并、查询和占用网格对应实际业务实现。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "e62a1723d9119bff4c46f241d6b7176a529c89810419a5b648b333c4d18b229c",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct RawEcho {",
+            "path": "include/ultrasonic/range_gate.hpp",
+            "sha256": "cc7684263ba2c78625d2dc40ad5047c77eb070e59f1e599d05f832456d727442",
+            "symbol": "struct RawEcho {"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5:     throw std::invalid_argument(\"range maximum\");",
+            "path": "src/range_gate.cpp",
+            "sha256": "6cc860670c0335f523c1f8588d8b57995c26c79dd9436f4fa66e46d240d60515",
+            "symbol": "    throw std::invalid_argument(\"range maximum\");"
+          }
+        ],
+        "limitations": [
+          "Perception内部向消费者返回原始障碍容器，两个感知表示由使用者自行组合。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "RangeGate、Perception、OccupancyGrid各自有状态与处理逻辑。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "e62a1723d9119bff4c46f241d6b7176a529c89810419a5b648b333c4d18b229c",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct RawEcho {",
+            "path": "include/ultrasonic/range_gate.hpp",
+            "sha256": "cc7684263ba2c78625d2dc40ad5047c77eb070e59f1e599d05f832456d727442",
+            "symbol": "struct RawEcho {"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5:     throw std::invalid_argument(\"range maximum\");",
+            "path": "src/range_gate.cpp",
+            "sha256": "6cc860670c0335f523c1f8588d8b57995c26c79dd9436f4fa66e46d240d60515",
+            "symbol": "    throw std::invalid_argument(\"range maximum\");"
+          }
+        ],
+        "limitations": [
+          "没有输入驱动或空间模型替换接口，算法直接绑定数据表示。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "输入为显式传感器姿态和回波，未直接依赖TensorRT/硬件。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "e62a1723d9119bff4c46f241d6b7176a529c89810419a5b648b333c4d18b229c",
+            "symbol": "add_library("
+          }
+        ],
+        "limitations": [
+          "本机CMake/Make/Gradle和维护者脚本不等同仓内CI或远端执行。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单无仓内CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "e62a1723d9119bff4c46f241d6b7176a529c89810419a5b648b333c4d18b229c",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # drive-ultrasonic-perception",
+            "path": "README.md",
+            "sha256": "44cb234b117c6614167866ba927693b61b7da0610bec4ba0bee02fcd2ca8a351",
+            "symbol": "# drive-ultrasonic-perception"
+          }
+        ],
+        "limitations": [
+          "主机独立构建不代表设备固件或生产SDK集成；外部维护者测试是可选构建参数。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "当前CMake独立构建仓内全部实现，标准C99/C++17及工具链边界明确，无必需第三方实现源码或未版本化BSP。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct RawEcho {",
+            "path": "include/ultrasonic/range_gate.hpp",
+            "sha256": "cc7684263ba2c78625d2dc40ad5047c77eb070e59f1e599d05f832456d727442",
+            "symbol": "struct RawEcho {"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "e62a1723d9119bff4c46f241d6b7176a529c89810419a5b648b333c4d18b229c",
+            "symbol": "add_library("
+          }
+        ],
+        "limitations": [
+          "项目版本号不足以证明接口语义化版本或兼容检查。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "公开业务接口未声明版本；只有CMake项目VERSION 1.0.0。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5:     throw std::invalid_argument(\"range maximum\");",
+            "path": "src/range_gate.cpp",
+            "sha256": "6cc860670c0335f523c1f8588d8b57995c26c79dd9436f4fa66e46d240d60515",
+            "symbol": "    throw std::invalid_argument(\"range maximum\");"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: namespace ultrasonic {",
+            "path": "src/query.cpp",
+            "sha256": "1a94b1011f597e9a1e0f27a21564bf1b8c355140b0f86dc92e76495f499c9e5a",
+            "symbol": "namespace ultrasonic {"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct RawEcho {",
+            "path": "include/ultrasonic/range_gate.hpp",
+            "sha256": "cc7684263ba2c78625d2dc40ad5047c77eb070e59f1e599d05f832456d727442",
+            "symbol": "struct RawEcho {"
+          }
+        ],
+        "limitations": [
+          "OccupancyGrid同时更新、衰减、概率查询；RangeGate文件与网格功能共处。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "测距温度补偿与障碍查询不同单元实现。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7:     throw std::invalid_argument(\"range\");",
+            "path": "src/echo_filter.cpp",
+            "sha256": "25476e5d8d233309c0dd3a28f21518596a30f466f59177ef12cfa75a15e4602b",
+            "symbol": "    throw std::invalid_argument(\"range\");"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5:     throw std::invalid_argument(\"grid geometry\");",
+            "path": "src/occupancy.cpp",
+            "sha256": "5ad913c4f5cd483bc3dafe022b9a70b3848865281996209d955e95a8aba555f6",
+            "symbol": "    throw std::invalid_argument(\"grid geometry\");"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5:     throw std::invalid_argument(\"range maximum\");",
+            "path": "src/range_gate.cpp",
+            "sha256": "6cc860670c0335f523c1f8588d8b57995c26c79dd9436f4fa66e46d240d60515",
+            "symbol": "    throw std::invalid_argument(\"range maximum\");"
+          }
+        ],
+        "limitations": [
+          "回波滤波、合并与网格概率模型固定，新增算法要改实现。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "传感器位姿和量程可配置。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct RawEcho {",
+            "path": "include/ultrasonic/range_gate.hpp",
+            "sha256": "cc7684263ba2c78625d2dc40ad5047c77eb070e59f1e599d05f832456d727442",
+            "symbol": "struct RawEcho {"
+          }
+        ],
+        "limitations": [
+          "此档说明不适用范围，不代表替换契约已被验证。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "审阅公开类型与生产实现，没有适用的继承/实现替换关系，按合同LSP中间档处理。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct RawEcho {",
+            "path": "include/ultrasonic/range_gate.hpp",
+            "sha256": "cc7684263ba2c78625d2dc40ad5047c77eb070e59f1e599d05f832456d727442",
+            "symbol": "struct RawEcho {"
+          },
+          {
+            "kind": "file",
+            "line": 25,
+            "locator": "line 25: struct Echo {",
+            "path": "include/ultrasonic/ultrasonic.hpp",
+            "sha256": "d2ee1ff14bb64f297bf25b2a8e5c845272a3e16af10c495c4466e49ab76bb76b",
+            "symbol": "struct Echo {"
+          }
+        ],
+        "limitations": [
+          "使用RangeGate会包含OccupancyGrid及完整ultrasonic基础接口。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "RangeGate与Perception分开类型。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct RawEcho {",
+            "path": "include/ultrasonic/range_gate.hpp",
+            "sha256": "cc7684263ba2c78625d2dc40ad5047c77eb070e59f1e599d05f832456d727442",
+            "symbol": "struct RawEcho {"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5:     throw std::invalid_argument(\"range maximum\");",
+            "path": "src/range_gate.cpp",
+            "sha256": "6cc860670c0335f523c1f8588d8b57995c26c79dd9436f4fa66e46d240d60515",
+            "symbol": "    throw std::invalid_argument(\"range maximum\");"
+          }
+        ],
+        "limitations": [
+          "无可替换策略边界，不能因没有设备调用自动取满档。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "纯值类型阻断硬件依赖。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # Flat scalar configuration; keys are required.",
+            "path": "config/default.yaml",
+            "sha256": "2aaee0a227234b5edc7c112a93c0e5d8e75d3b0517e59a80faa8136d88bb85e9",
+            "symbol": "# Flat scalar configuration; keys are required."
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "e62a1723d9119bff4c46f241d6b7176a529c89810419a5b648b333c4d18b229c",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-07/final-native-run.json",
+          "IDC-07/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "只完成当前主机环境验证，没有两种受支持平台/接口升级兼容回归。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "平台依赖主要限制在I/O、配置或适配处，业务核心消费标准数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # Flat scalar configuration; keys are required.",
+            "path": "config/default.yaml",
+            "sha256": "2aaee0a227234b5edc7c112a93c0e5d8e75d3b0517e59a80faa8136d88bb85e9",
+            "symbol": "# Flat scalar configuration; keys are required."
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "e62a1723d9119bff4c46f241d6b7176a529c89810419a5b648b333c4d18b229c",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-07/final-native-run.json",
+          "IDC-07/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "仅主机替身验证；运行时多传感器/多个数值配置不等同两组完整设备适配验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "业务消费参数、显式输入和共用计算逻辑，可从不同来源提供数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # Flat scalar configuration; keys are required.",
+            "path": "config/default.yaml",
+            "sha256": "2aaee0a227234b5edc7c112a93c0e5d8e75d3b0517e59a80faa8136d88bb85e9",
+            "symbol": "# Flat scalar configuration; keys are required."
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "e62a1723d9119bff4c46f241d6b7176a529c89810419a5b648b333c4d18b229c",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-07/final-native-run.json",
+          "IDC-07/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "未合成分支/tag，运行参数或算法场景不自动算平台变体。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "实际Git仅main初始/实现提交，无已落实的多平台维护策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7:     throw std::invalid_argument(\"range\");",
+            "path": "src/echo_filter.cpp",
+            "sha256": "25476e5d8d233309c0dd3a28f21518596a30f466f59177ef12cfa75a15e4602b",
+            "symbol": "    throw std::invalid_argument(\"range\");"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5:     throw std::invalid_argument(\"range maximum\");",
+            "path": "src/range_gate.cpp",
+            "sha256": "6cc860670c0335f523c1f8588d8b57995c26c79dd9436f4fa66e46d240d60515",
+            "symbol": "    throw std::invalid_argument(\"range maximum\");"
+          }
+        ],
+        "limitations": [
+          "这些检查保护不同入口，只记局部重复而非大量设计错误。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "距离与网格业务集中，但Perception和RangeGate均执行时间/数值/量程资格判断。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5:     throw std::invalid_argument(\"range maximum\");",
+            "path": "src/range_gate.cpp",
+            "sha256": "6cc860670c0335f523c1f8588d8b57995c26c79dd9436f4fa66e46d240d60515",
+            "symbol": "    throw std::invalid_argument(\"range maximum\");"
+          }
+        ],
+        "limitations": [
+          "此分不自动证明平台迁移、多设备运行或物理设备验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "生产业务只使用C/C++标准值类型/标准库或明确JNI、TCP、I/O适配边界。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 15,
+            "locator": "line 15: set(BENCH_EXTERNAL_TEST",
+            "path": "CMakeLists.txt",
+            "sha256": "e62a1723d9119bff4c46f241d6b7176a529c89810419a5b648b333c4d18b229c",
+            "symbol": "set(BENCH_EXTERNAL_TEST"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: int main(int argc, char **argv) {",
+            "path": "tools/scenario.cpp",
+            "sha256": "b9f98c517e62b425bfdfe6729958040cace4aac41b42c3416dc4966e284095a2",
+            "symbol": "int main(int argc, char **argv) {"
+          }
+        ],
+        "execution_evidence": [
+          "IDC-07/final-native-run.json",
+          "IDC-07/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "本轮实际维护者回放、CLI场景及跨仓集成不冒充本仓自有测试。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "跟踪源码没有仓内有效集成测试，CMake只提供可选外部维护者测试入口。",
+        "score": 0,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "530fd74a9901bf624d896edca3b4fd679fb3df7c"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "530fd74a9901bf624d896edca3b4fd679fb3df7c"
+}

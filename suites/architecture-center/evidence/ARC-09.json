@@ -1,0 +1,335 @@
+{
+  "execution": {
+    "limits": [
+      "MIL and host replay only; no physical device, ECU, SIL/PIL/HIL, BTC or certification.",
+      "Simulink coverage is distinct from generated C statement coverage; C statement coverage was not measured.",
+      "Independent equations and configured scenarios are maintainer checks, not candidate-model evaluation or blind gold."
+    ],
+    "records": [
+      {
+        "path": "suites/architecture-center/execution/ARC-09.json",
+        "sha256": "c552ce2b9df8df2ab753543608f172fdba5fb8834de2488448b473cdfe5afbc0"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+  "id": "ARC-09",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/matlab.json",
+      "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+    },
+    "head": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+    "id": "ARC-09",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "block_path": "SuspensionMonitor/Filter0",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=8 SuspensionMonitor/Filter0",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/SuspensionMonitor.slx",
+            "sha256": "32a523b1a4a042bfea652c4f58f63ab579f24f4a02edc2d3ca97bb34206f7008",
+            "sid": "8"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "hierarchy",
+        "reason": "四角滤波、车身姿态、均值高度、阀控制与许可门控有职责划分，顶层滤波实例与聚合层并置。",
+        "score": 2
+      },
+      {
+        "comparison": {
+          "allowed_parameter_substitutions": {},
+          "blocks_each": 9,
+          "complete_graph_equal_after_listed_parameter_substitution": true,
+          "directed_edges_each": 10,
+          "ignored": "Only display geometry/order. All block types, names, SIDs, remaining parameter expressions and full directed edges retained.",
+          "normalized_graph_sha256": "8cff5c8fec9e77c8d8beaa347057bc7a669423d342d3936d184047d35f1b14a3"
+        },
+        "evidence": [
+          {
+            "block_path": "FrontLeftHeightLib/FrontLeftHeight/FilterGain",
+            "kind": "model",
+            "locator": "simulink/systems/system_1.xml Block SID=6 FilterGain",
+            "member": "simulink/systems/system_1.xml",
+            "path": "Model/components/FrontLeftHeightLib.slx",
+            "sha256": "2b6db2fad3f320f694bc89525b465cf032479bd5419ef8d7bbb0c1118001a3df",
+            "sid": "6"
+          },
+          {
+            "block_path": "FrontRightHeightLib/FrontRightHeight/FilterGain",
+            "kind": "model",
+            "locator": "simulink/systems/system_1.xml Block SID=6 FilterGain",
+            "member": "simulink/systems/system_1.xml",
+            "path": "Model/components/FrontRightHeightLib.slx",
+            "sha256": "37392658a3f49b6928ace86c12df6fd4ae963f8d1942c7447961449320727af1",
+            "sid": "6"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "reuse",
+        "reason": "两份独立源库均实现带复位的一阶递归高度滤波，完整9块及状态反馈边一致，连K_AlphaFront参数表达式也相同。左右高度是两个状态实例的需求，不要求复制两个源实现。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "SuspensionMonitor/Filter0",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=8 SuspensionMonitor/Filter0",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/SuspensionMonitor.slx",
+            "sha256": "32a523b1a4a042bfea652c4f58f63ab579f24f4a02edc2d3ca97bb34206f7008",
+            "sid": "8"
+          },
+          {
+            "kind": "file",
+            "locator": "Inputs/Outputs sheets, header row 4 and typed data from row 5",
+            "path": "Model/Interface.xlsx",
+            "sha256": "c5498c46420505cc4e2685a814ad1c170094b06b4f3acdaebbeae20e84848f7c"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "interface",
+        "reason": "显式具名类型端口及根工作簿齐备，正式接口变更控制与部分内部量完整范围不足。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "SuspensionMonitor/Filter0",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=8 SuspensionMonitor/Filter0",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/SuspensionMonitor.slx",
+            "sha256": "32a523b1a4a042bfea652c4f58f63ab579f24f4a02edc2d3ca97bb34206f7008",
+            "sid": "8"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "dataflow",
+        "reason": "主要高度/姿态到阀控制方向清楚，存在交叉扇出；关键输出有名，中间线覆盖不足。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "passed/samples/modelCoverageMeasured/cStatementCoverageMeasured",
+            "path": "Tests/results/test-result.json",
+            "sha256": "5af0c46d4960be72a6769b3929c6b4b79152174f1c022ecd125485c56df46517"
+          },
+          {
+            "kind": "file",
+            "locator": "stimulus, expected, absoluteTolerance, relativeTolerance",
+            "path": "Tests/TestData.mat",
+            "sha256": "a017186beb7004be53f4e234b2835ccd6b13fe1a1fac7372c19afc35391d2266"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "unit_test",
+        "reason": "仓内Tests包含真实模型引用夹具、640有序样本和逐输出独立期望，并实测通过；报告仅测Simulink模型coverage，C语句覆盖未测，故按合同止于1档。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "SuspensionMonitor/Filter0",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=8 SuspensionMonitor/Filter0",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/SuspensionMonitor.slx",
+            "sha256": "32a523b1a4a042bfea652c4f58f63ab579f24f4a02edc2d3ca97bb34206f7008",
+            "sid": "8"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "naming",
+        "reason": "姿态/高度主体名称清楚，但Filter0..3和通用Sum仍弱化业务含义。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "d3d7ca89d380a34debae0279d8a0f74114100317d5b3506b8644758c3f30a03b"
+          },
+          {
+            "block_path": "SuspensionMonitor/Filter0",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=8 SuspensionMonitor/Filter0",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/SuspensionMonitor.slx",
+            "sha256": "32a523b1a4a042bfea652c4f58f63ab579f24f4a02edc2d3ca97bb34206f7008",
+            "sid": "8"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "directory",
+        "reason": "Model、components、Tests及Configurations/Generated/Host等真实职责目录分开，可从入口找到依赖与结果。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "SuspensionMonitor/Filter0",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=8 SuspensionMonitor/Filter0",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/SuspensionMonitor.slx",
+            "sha256": "32a523b1a4a042bfea652c4f58f63ab579f24f4a02edc2d3ca97bb34206f7008",
+            "sid": "8"
+          },
+          {
+            "kind": "file",
+            "locator": "repository-specific model and component paths",
+            "path": "project_init.m",
+            "sha256": "ef404664198664ab90ce8d3d0447134ce75c3a754537b724730594fc689e70f1"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "build_independence",
+        "reason": "当前构建直接加载源SLX/MDL或M脚本；没有达到受控Bus/Mask组件契约、独立包与版本锁定的边界。只有显式端口不据此跳到2档。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/SuspensionMonitor.slx",
+            "sha256": "32a523b1a4a042bfea652c4f58f63ab579f24f4a02edc2d3ca97bb34206f7008"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "model_version",
+        "reason": "模型内AutoIncrement版本和实际构造Git提交可查，但未提供完整版本/信号变更表及正式评审差异记录。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/SuspensionMonitor.slx",
+            "sha256": "32a523b1a4a042bfea652c4f58f63ab579f24f4a02edc2d3ca97bb34206f7008"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "version_independence",
+        "reason": "存在模型内部自增版本，未形成MAJOR.MINOR.PATCH独立语义版本及发布兼容约定。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "configurations and allowed_parameters",
+            "path": "Configurations/configurations.json",
+            "sha256": "80a217bbd54441baa73d3aca422f06db23af05e5cd401de69efe987956e06959"
+          },
+          {
+            "kind": "file",
+            "locator": "two executed configurations and nonzero changedOutputs",
+            "path": "Tests/configuration-results/result.json",
+            "sha256": "ba1e5eaa7d5c16fa6aa4052d232f992a23b58b727fa7ade99c8c4600f291e8bd"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "release_branches",
+        "reason": "同一main实际支持两个配置，参数被生产模型消费、均通过640样本期望比较且输出有可观察差异；不以单分支名本身给分。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "configurations and allowed_parameters",
+            "path": "Configurations/configurations.json",
+            "sha256": "80a217bbd54441baa73d3aca422f06db23af05e5cd401de69efe987956e06959"
+          },
+          {
+            "kind": "file",
+            "locator": "two executed configurations and nonzero changedOutputs",
+            "path": "Tests/configuration-results/result.json",
+            "sha256": "ba1e5eaa7d5c16fa6aa4052d232f992a23b58b727fa7ade99c8c4600f291e8bd"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "device_specificity",
+        "reason": "两组几何/权限/附着配置实际共享业务并仿真；仍保留若干固定包络/结构假设，未证明设备差异全部隔离。",
+        "score": 2
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "6a84feae70438c8f969d1ad35b7886ca20dbb7e5"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "6a84feae70438c8f969d1ad35b7886ca20dbb7e5"
+}

@@ -1,16 +1,28 @@
-# 当前三类型评测（v0.11.3）
+# 当前六组评测（v0.12.0）
 
-NEP修复HEAD已公开，参考绑定已刷新；四项工程修复见[FIDELITY_REPAIR_20260910.md](FIDELITY_REPAIR_20260910.md)。143个数值保持，构建独立性叶沿用旧值、暂停重新裁决。正式候选运行0。
+当前66仓、863个requested叶。三中心逐仓评分与合同修正见[SIX_GROUPS_20260912.md](SIX_GROUPS_20260912.md)。原APP/FW/NEP有效合同和352叶参考保持，NEP构建独立性争议继续暂停。正式候选运行0。
 
-当前 33 仓：APP 11、FW 11、NEP 现实代理 11，共 352 个 requested 叶，352 个数值参考。旧新能源 ML-01..09、NEM-10/11 已删除出当前集合，其参考和合同不再参与评测。
-
-| 类型 | source_only | frozen_external | requested |
+|报告组|source_only|frozen_external|requested|
 |---|---:|---:|---:|
-| APP | 79 | 81 | 88 |
-| FW | 109 | 113 | 121 |
-| 新能源现实代理 | 143 | 143 | 143 |
+|APP|79|81|88|
+|FW|109|113|121|
+|New Energy MATLAB|143|143|143|
+|架构中心|105|142|142|
+|人工智能中心|132|187|187|
+|智能驾驶中心|129|182|182|
 
-`evaluation_current.py prepare --type new-energy-matlab` 现在绑定 reality-proxy-20260910 的原 Part 7 合同、源码清单和 143 叶参考。可直接使用 [当前 assignments 示例](../verification/examples/current-assignments.json)。全局 assignments 必须恰好覆盖当前 33 ID；来源/依赖/构造闭包不能跨 split。旧 ID 或旧批次不自动映射到 NEP。
+六组独立注册和报告，不合并原始分数。[assignments示例](../verification/examples/current-assignments.json)必须恰好覆盖66个ID；源码/依赖/构造传递闭包不能跨split。新33仓保守合并，并记录与先前脚手架/工程方法的来源关联，不作为独立holdout。
+
+新增中心的软件API、平台升级/设备/分支、集成测试，以及模型UT/设备/分支维度统一要求已登记raw。这是按维度预先固定的保守证据要求，与具体参考分值无关。source_only中这些叶保持requested并明确排除；frozen_external在验证单仓记录/原始输入SHA和HEAD后可评。不能拿排除后的accuracy冒充全体requested准确率。
+
+新增原始包为[center-native-inputs-v0.12.0.zip](https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.12.0)。下载到下面旧包所在raw目录后，可执行：
+
+```sh
+python verification/evaluation_current.py prepare --wrapper . --type architecture-center --mode frozen_external --assignments verification/examples/current-assignments.json --external-inputs C:/bench/raw --output C:/bench/architecture-batch.json
+python verification/evaluation_current.py inputs --wrapper . --repository-id ARC-01 --packet C:/bench/raw/center-native-inputs-v0.12.0.zip --destination C:/candidate/raw
+```
+
+单仓raw只含该目标的输入、记录和绑定，不含维护者评分或其他目标的参考。三个AAR宿主断言提供实际执行源码的单仓摘录及原文件/已安装APK绑定；摘录本身未声称独立构建。集成目标的声明依赖属于运行输入，不能另计为被评分目标。
 
 `ne_reality.py evaluate` 保留原新组格式；两个入口的数值参考一致。其 evidence_submitted 仅表示非空，不能当作证据正确率；统一入口的证据审阅亦须提供独立 review-plan/adjudications，未审阅时结果为 not_reviewed，不冒称联合正确。NEP-10 构建规则争议见 [评审核对](REVIEW_V0111.md)，本次不改合同或参考值。
 

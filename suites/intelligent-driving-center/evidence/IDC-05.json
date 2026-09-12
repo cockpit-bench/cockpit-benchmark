@@ -1,0 +1,549 @@
+{
+  "execution": {
+    "limits": [
+      "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+      "Maintainer external tests do not count as repository-owned integration tests.",
+      "Same maintainer construction family; not an independent holdout."
+    ],
+    "records": [
+      {
+        "path": "suites/intelligent-driving-center/execution/IDC-05.json",
+        "sha256": "0a99638616ca53eb09e6749affab54f2522b1c781ed6c1eeda52e51cfa837e40"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff",
+  "id": "IDC-05",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff",
+    "id": "IDC-05",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "6aa5271a0cef7fb686e351c0c7b4c6f8a85e9143dbf208b8124f6cacdf1e8d36",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: enum class TrackStage { Tentative, Confirmed, Coasting };",
+            "path": "include/sensor_fusion/track_bank.hpp",
+            "sha256": "6948a412d47d65d4a23b5972e723e94c4418348a62297c4894bde258dcc42e62",
+            "symbol": "enum class TrackStage { Tentative, Confirmed, Coasting };"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {",
+            "path": "algorithm/tracker/track_bank.cpp",
+            "sha256": "1cbf87e469e5ae737219d77bd18d4a649c869e4bfc3288badc07b4f4f121f20a",
+            "symbol": "bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {"
+          }
+        ],
+        "limitations": [
+          "旧Fusion与新TrackBank两条轨迹路径并存；时间补偿由调用方显式连接。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "输入适配、车体运动历史、滤波和轨迹管理分离，TrackBank组合Kalman2D。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "6aa5271a0cef7fb686e351c0c7b4c6f8a85e9143dbf208b8124f6cacdf1e8d36",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: enum class TrackStage { Tentative, Confirmed, Coasting };",
+            "path": "include/sensor_fusion/track_bank.hpp",
+            "sha256": "6948a412d47d65d4a23b5972e723e94c4418348a62297c4894bde258dcc42e62",
+            "symbol": "enum class TrackStage { Tentative, Confirmed, Coasting };"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {",
+            "path": "algorithm/tracker/track_bank.cpp",
+            "sha256": "1cbf87e469e5ae737219d77bd18d4a649c869e4bfc3288badc07b4f4f121f20a",
+            "symbol": "bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {"
+          }
+        ],
+        "limitations": [
+          "FusedTrack公开Kalman实例，滤波内部类型泄漏给轨迹消费者。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "传感器标准化、CV Kalman、坐标补偿、关联与轨迹生命周期均有真实逻辑。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "6aa5271a0cef7fb686e351c0c7b4c6f8a85e9143dbf208b8124f6cacdf1e8d36",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: enum class TrackStage { Tentative, Confirmed, Coasting };",
+            "path": "include/sensor_fusion/track_bank.hpp",
+            "sha256": "6948a412d47d65d4a23b5972e723e94c4418348a62297c4894bde258dcc42e62",
+            "symbol": "enum class TrackStage { Tentative, Confirmed, Coasting };"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {",
+            "path": "algorithm/tracker/track_bank.cpp",
+            "sha256": "1cbf87e469e5ae737219d77bd18d4a649c869e4bfc3288badc07b4f4f121f20a",
+            "symbol": "bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {"
+          }
+        ],
+        "limitations": [
+          "TrackBank直接固定Kalman2D和贪心匹配策略，难以单独替换滤波/关联。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "输入通过SensorConfig/Detection边界适配，算法没有ROS或设备直接调用。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "6aa5271a0cef7fb686e351c0c7b4c6f8a85e9143dbf208b8124f6cacdf1e8d36",
+            "symbol": "add_library("
+          }
+        ],
+        "limitations": [
+          "本机CMake/Make/Gradle和维护者脚本不等同仓内CI或远端执行。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单无仓内CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "6aa5271a0cef7fb686e351c0c7b4c6f8a85e9143dbf208b8124f6cacdf1e8d36",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # drive-sensor-fusion",
+            "path": "README.md",
+            "sha256": "9823fc7aec4bda27fbbf3178dbecb6a6f3b33fd71424342f76bfb2dec4bf3a2d",
+            "symbol": "# drive-sensor-fusion"
+          }
+        ],
+        "limitations": [
+          "主机独立构建不代表设备固件或生产SDK集成；外部维护者测试是可选构建参数。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "当前CMake独立构建仓内全部实现，标准C99/C++17及工具链边界明确，无必需第三方实现源码或未版本化BSP。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: enum class TrackStage { Tentative, Confirmed, Coasting };",
+            "path": "include/sensor_fusion/track_bank.hpp",
+            "sha256": "6948a412d47d65d4a23b5972e723e94c4418348a62297c4894bde258dcc42e62",
+            "symbol": "enum class TrackStage { Tentative, Confirmed, Coasting };"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "6aa5271a0cef7fb686e351c0c7b4c6f8a85e9143dbf208b8124f6cacdf1e8d36",
+            "symbol": "add_library("
+          }
+        ],
+        "limitations": [
+          "项目版本号不足以证明接口语义化版本或兼容检查。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "公开业务接口未声明版本；只有CMake项目VERSION 1.0.0。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8:     throw std::invalid_argument(\"track initialization\");",
+            "path": "algorithm/filter/kalman.cpp",
+            "sha256": "45dbf836d9c5c43b80d0ad0e5f31c838c96d76a2ca0239c08a7d34de4c0da412",
+            "symbol": "    throw std::invalid_argument(\"track initialization\");"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: bool EgoHistory::add(EgoPose p) {",
+            "path": "algorithm/frames/ego_motion.cpp",
+            "sha256": "372d80fb0fa71f92c7ccc5523ad7da2088e4b5dcd43fff27136a1e7b92dda5f4",
+            "symbol": "bool EgoHistory::add(EgoPose p) {"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {",
+            "path": "algorithm/tracker/track_bank.cpp",
+            "sha256": "1cbf87e469e5ae737219d77bd18d4a649c869e4bfc3288badc07b4f4f121f20a",
+            "symbol": "bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {"
+          }
+        ],
+        "limitations": [
+          "TrackBank同时执行预测、候选代价、关联、确认/失配和过期回收。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "Kalman负责状态/协方差，EgoHistory负责时间与坐标转换。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # id yaw_rad tx_m ty_m variance_scale clock_offset_ms",
+            "path": "config/sensors.catalog",
+            "sha256": "bb53e05d45a7d7a49a934238caf083e0e761cc5941b2643ae4dab1811b0e2939",
+            "symbol": "# id yaw_rad tx_m ty_m variance_scale clock_offset_ms"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: void SensorAdapter::configure(SensorConfig c) {",
+            "path": "platform/host/sensor_adapter.cpp",
+            "sha256": "406068ae28eb698bcb6edeff5544a5a78f25665bee54a85a7128fe0f862dfd69",
+            "symbol": "void SensorAdapter::configure(SensorConfig c) {"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {",
+            "path": "algorithm/tracker/track_bank.cpp",
+            "sha256": "1cbf87e469e5ae737219d77bd18d4a649c869e4bfc3288badc07b4f4f121f20a",
+            "symbol": "bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {"
+          }
+        ],
+        "limitations": [
+          "新增滤波模型或全局匹配策略要改TrackBank核心。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "传感器外参与噪声时差可通过catalog增加，已有两条配置消费。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: enum class TrackStage { Tentative, Confirmed, Coasting };",
+            "path": "include/sensor_fusion/track_bank.hpp",
+            "sha256": "6948a412d47d65d4a23b5972e723e94c4418348a62297c4894bde258dcc42e62",
+            "symbol": "enum class TrackStage { Tentative, Confirmed, Coasting };"
+          }
+        ],
+        "limitations": [
+          "此档说明不适用范围，不代表替换契约已被验证。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "审阅公开类型与生产实现，没有适用的继承/实现替换关系，按合同LSP中间档处理。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: enum class TrackStage { Tentative, Confirmed, Coasting };",
+            "path": "include/sensor_fusion/track_bank.hpp",
+            "sha256": "6948a412d47d65d4a23b5972e723e94c4418348a62297c4894bde258dcc42e62",
+            "symbol": "enum class TrackStage { Tentative, Confirmed, Coasting };"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct SensorConfig {",
+            "path": "include/sensor_fusion/sensor_adapter.hpp",
+            "sha256": "13ce88754b620cef304b5a72abe9fba450f2a16d891891fa0fad93f398508f7c",
+            "symbol": "struct SensorConfig {"
+          }
+        ],
+        "limitations": [
+          "track_bank公开FusedTrack.filter，且基础头包含宽泛工具依赖。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "适配、运动历史、Kalman和轨迹有分开的头。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: enum class TrackStage { Tentative, Confirmed, Coasting };",
+            "path": "include/sensor_fusion/track_bank.hpp",
+            "sha256": "6948a412d47d65d4a23b5972e723e94c4418348a62297c4894bde258dcc42e62",
+            "symbol": "enum class TrackStage { Tentative, Confirmed, Coasting };"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {",
+            "path": "algorithm/tracker/track_bank.cpp",
+            "sha256": "1cbf87e469e5ae737219d77bd18d4a649c869e4bfc3288badc07b4f4f121f20a",
+            "symbol": "bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {"
+          }
+        ],
+        "limitations": [
+          "滤波具体类在高层轨迹状态中内嵌，没有抽象替换证明。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "业务只依赖标准数据与隔离的传感器适配边界。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # id yaw_rad tx_m ty_m variance_scale clock_offset_ms",
+            "path": "config/sensors.catalog",
+            "sha256": "bb53e05d45a7d7a49a934238caf083e0e761cc5941b2643ae4dab1811b0e2939",
+            "symbol": "# id yaw_rad tx_m ty_m variance_scale clock_offset_ms"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "6aa5271a0cef7fb686e351c0c7b4c6f8a85e9143dbf208b8124f6cacdf1e8d36",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-05/final-native-run.json",
+          "IDC-05/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "只完成当前主机环境验证，没有两种受支持平台/接口升级兼容回归。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "平台依赖主要限制在I/O、配置或适配处，业务核心消费标准数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # id yaw_rad tx_m ty_m variance_scale clock_offset_ms",
+            "path": "config/sensors.catalog",
+            "sha256": "bb53e05d45a7d7a49a934238caf083e0e761cc5941b2643ae4dab1811b0e2939",
+            "symbol": "# id yaw_rad tx_m ty_m variance_scale clock_offset_ms"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "6aa5271a0cef7fb686e351c0c7b4c6f8a85e9143dbf208b8124f6cacdf1e8d36",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-05/final-native-run.json",
+          "IDC-05/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "仅主机替身验证；运行时多传感器/多个数值配置不等同两组完整设备适配验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "业务消费参数、显式输入和共用计算逻辑，可从不同来源提供数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # id yaw_rad tx_m ty_m variance_scale clock_offset_ms",
+            "path": "config/sensors.catalog",
+            "sha256": "bb53e05d45a7d7a49a934238caf083e0e761cc5941b2643ae4dab1811b0e2939",
+            "symbol": "# id yaw_rad tx_m ty_m variance_scale clock_offset_ms"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "6aa5271a0cef7fb686e351c0c7b4c6f8a85e9143dbf208b8124f6cacdf1e8d36",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-05/final-native-run.json",
+          "IDC-05/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "未合成分支/tag，运行参数或算法场景不自动算平台变体。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "实际Git仅main初始/实现提交，无已落实的多平台维护策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: void Fusion::update(std::vector<Detection> input, std::int64_t now) {",
+            "path": "algorithm/tracker/fusion.cpp",
+            "sha256": "cd3d6c5d185929b39bfe86d523732b3c791b2d169ce38ea5f7b23e75434f1fe8",
+            "symbol": "void Fusion::update(std::vector<Detection> input, std::int64_t now) {"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {",
+            "path": "algorithm/tracker/track_bank.cpp",
+            "sha256": "1cbf87e469e5ae737219d77bd18d4a649c869e4bfc3288badc07b4f4f121f20a",
+            "symbol": "bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {"
+          }
+        ],
+        "limitations": [
+          "旧Fusion与TrackBank均维护关联/超时轨迹生命周期，存在两条相似业务路径。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "几何函数及Kalman数学集中复用。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {",
+            "path": "algorithm/tracker/track_bank.cpp",
+            "sha256": "1cbf87e469e5ae737219d77bd18d4a649c869e4bfc3288badc07b4f4f121f20a",
+            "symbol": "bool TrackBank::step(const std::vector<Detection>& input, std::int64_t now) {"
+          }
+        ],
+        "limitations": [
+          "此分不自动证明平台迁移、多设备运行或物理设备验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "生产业务只使用C/C++标准值类型/标准库或明确JNI、TCP、I/O适配边界。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 80,
+            "locator": "line 80: TrackBank bank",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "0d7a22e7231ef7f0b7c76c97e284ad825e1c17623be8092b9284acf0cecd6861",
+            "symbol": "TrackBank bank"
+          },
+          {
+            "kind": "file",
+            "line": 89,
+            "locator": "line 89: bank.step({{0, 0, -1",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "0d7a22e7231ef7f0b7c76c97e284ad825e1c17623be8092b9284acf0cecd6861",
+            "symbol": "bank.step({{0, 0, -1"
+          },
+          {
+            "kind": "file",
+            "line": 35,
+            "locator": "line 35: t.filter.correct",
+            "path": "algorithm/tracker/track_bank.cpp",
+            "sha256": "1cbf87e469e5ae737219d77bd18d4a649c869e4bfc3288badc07b4f4f121f20a",
+            "symbol": "t.filter.correct"
+          }
+        ],
+        "execution_evidence": [
+          "IDC-05/final-native-run.json",
+          "IDC-05/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "SensorAdapter和EgoHistory主要单独检查，未验证完整异步传感器到融合的联合流水。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "仓内TrackBank真实调用Kalman预测/校正，验证运动轨迹、状态确认、非法观测及超时回收；catalog两传感器实际读取。",
+        "score": 2,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "a52ae34535e9dba329b2ae375c3b7eac78e9873b"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "a52ae34535e9dba329b2ae375c3b7eac78e9873b"
+}

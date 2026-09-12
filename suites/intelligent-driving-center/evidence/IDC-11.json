@@ -1,0 +1,584 @@
+{
+  "execution": {
+    "limits": [
+      "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+      "Maintainer external tests do not count as repository-owned integration tests.",
+      "Same maintainer construction family; not an independent holdout.",
+      "Windows localhost TCP/RPC actually executed; POSIX implementation not executed.",
+      "ExecutionManager produces logical start/restart requests; it does not launch an OS process tree.",
+      "Obsolete original CLI failure is retained separately and is not counted as a passed current execution."
+    ],
+    "records": [
+      {
+        "path": "suites/intelligent-driving-center/execution/IDC-11.json",
+        "sha256": "9296fbe35510f0f68eff2ecd90cf615d5200bdc37f736a3f5b1c54339804c40d"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "fbb4014901ac35cd6b0083977eeee1e481d330c9",
+  "id": "IDC-11",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "fbb4014901ac35cd6b0083977eeee1e481d330c9",
+    "id": "IDC-11",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "cb3b94f29c0376489c4a49f1d5243aca288f4dc400e403e9320a31ed0c6c46c9",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct RpcReply {",
+            "path": "include/adaptive_platform/rpc.hpp",
+            "sha256": "1c0339e672fa6feeceb00d5094dd085bdd29dd338595a2be1e229b487e946187",
+            "symbol": "struct RpcReply {"
+          },
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10:     throw std::invalid_argument(\"scenario configuration\");",
+            "path": "apps/local_service/scenario_session.cpp",
+            "sha256": "bf5a7d3dc47716227708a4a5600aaed8587d984437fe411f1c86f295f92d4ce4",
+            "symbol": "    throw std::invalid_argument(\"scenario configuration\");"
+          }
+        ],
+        "limitations": [
+          "scenario_session在同一函数里组合监督状态、排队和socket线程，边界仍偏集中。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "wire、transport、RPC、health及execution形成五个真实库，入口组合localhost服务。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "cb3b94f29c0376489c4a49f1d5243aca288f4dc400e403e9320a31ed0c6c46c9",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct RpcReply {",
+            "path": "include/adaptive_platform/rpc.hpp",
+            "sha256": "1c0339e672fa6feeceb00d5094dd085bdd29dd338595a2be1e229b487e946187",
+            "symbol": "struct RpcReply {"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class TcpSocket {",
+            "path": "include/adaptive_platform/tcp.hpp",
+            "sha256": "4f9f14221ccc63129d598f577c44736eb0d61ceaf9b2231ef443637a3e7d2c92",
+            "symbol": "class TcpSocket {"
+          }
+        ],
+        "limitations": [
+          "并非完整AUTOSAR Adaptive SDK或生产过程管理器。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "五个库有明确目标依赖及独立接口，RPC仅依赖wire，transport封装平台TCP。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 16,
+            "locator": "line 16: static void close_native(NativeSocket s) { closesocket(s); }",
+            "path": "platform/windows/tcp.cpp",
+            "sha256": "2281eff916588df30b292e5e60491d30fd81a1dc9fc3440633c237a6b6c00123",
+            "symbol": "static void close_native(NativeSocket s) { closesocket(s); }"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5:     std::function<std::vector<unsigned char>(const std::vector<unsigned char> &)> handler) {",
+            "path": "ara/com/rpc.cpp",
+            "sha256": "e06545ec8001363d41af6c872d216a65e0459eea9ca6f7a0124683fb73bd7e51",
+            "symbol": "    std::function<std::vector<unsigned char>(const std::vector<unsigned char> &)> handler) {"
+          },
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10:     throw std::invalid_argument(\"scenario configuration\");",
+            "path": "apps/local_service/scenario_session.cpp",
+            "sha256": "bf5a7d3dc47716227708a4a5600aaed8587d984437fe411f1c86f295f92d4ce4",
+            "symbol": "    throw std::invalid_argument(\"scenario configuration\");"
+          }
+        ],
+        "limitations": [
+          "场景组合仍直接创建具体TcpListener/TcpSocket及Supervisor，替换传输需改组合实现。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "TcpSocket用PImpl隔离平台句柄，RpcRouter以回调接入处理器。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "cb3b94f29c0376489c4a49f1d5243aca288f4dc400e403e9320a31ed0c6c46c9",
+            "symbol": "add_library("
+          }
+        ],
+        "limitations": [
+          "本机CMake/Make/Gradle和维护者脚本不等同仓内CI或远端执行。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单无仓内CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "cb3b94f29c0376489c4a49f1d5243aca288f4dc400e403e9320a31ed0c6c46c9",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # drive-adaptive-platform",
+            "path": "README.md",
+            "sha256": "cb35012281d9d106745604c181c9ea38c9d90134acf8ce289d5aafc031d47e86",
+            "symbol": "# drive-adaptive-platform"
+          }
+        ],
+        "limitations": [
+          "主机独立构建不代表设备固件或生产SDK集成；外部维护者测试是可选构建参数。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "当前CMake独立构建仓内全部实现，标准C99/C++17及工具链边界明确，无必需第三方实现源码或未版本化BSP。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 23,
+            "locator": "line 23: unsigned service, major, minor, instance",
+            "path": "include/adaptive_platform/rpc.hpp",
+            "sha256": "1c0339e672fa6feeceb00d5094dd085bdd29dd338595a2be1e229b487e946187",
+            "symbol": "unsigned service, major, minor, instance"
+          },
+          {
+            "kind": "file",
+            "line": 38,
+            "locator": "line 38: s.major == major && s.minor >= minor",
+            "path": "ara/com/rpc.cpp",
+            "sha256": "e06545ec8001363d41af6c872d216a65e0459eea9ca6f7a0124683fb73bd7e51",
+            "symbol": "s.major == major && s.minor >= minor"
+          },
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10: magic != \"APPS1\"",
+            "path": "ara/exec/manifest.cpp",
+            "sha256": "fc0d0d4237dab64ece952d825a52b5fceeb037e6b4a7ed190ac5246df93f603b",
+            "symbol": "magic != \"APPS1\""
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: BEN1 is a benchmark-owned frame format",
+            "path": "docs/protocol.md",
+            "sha256": "69e5db0c37076ab8ea940d4de74b2f3596c68129c3f6bf526d904a2f4ddc8b84",
+            "symbol": "BEN1 is a benchmark-owned frame format"
+          }
+        ],
+        "limitations": [
+          "这些局部服务版本未等同公开SDK语义化ABI版本或整体兼容合同。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "服务发现有major/minor协商和手工协议版本。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: static void put(std::vector<unsigned char> &b, unsigned n) {",
+            "path": "ara/com/codec.cpp",
+            "sha256": "9b69c9632637384d82cadd85dd9fff9718891f2a9de11c78883a17385ff8fc72",
+            "symbol": "static void put(std::vector<unsigned char> &b, unsigned n) {"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: void HealthManager::register_entity(HealthContract c) {",
+            "path": "ara/phm/health.cpp",
+            "sha256": "a2398d787119862824761336358c50d4173245fde4da92121f92341930e6e7ce",
+            "symbol": "void HealthManager::register_entity(HealthContract c) {"
+          },
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10:     throw std::invalid_argument(\"scenario configuration\");",
+            "path": "apps/local_service/scenario_session.cpp",
+            "sha256": "bf5a7d3dc47716227708a4a5600aaed8587d984437fe411f1c86f295f92d4ce4",
+            "symbol": "    throw std::invalid_argument(\"scenario configuration\");"
+          }
+        ],
+        "limitations": [
+          "scenario_session承担输入校验、逻辑状态管理和socket线程协调多个变更原因。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "协议编解码、分帧、健康去抖和执行依赖分别实现。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5:     std::function<std::vector<unsigned char>(const std::vector<unsigned char> &)> handler) {",
+            "path": "ara/com/rpc.cpp",
+            "sha256": "e06545ec8001363d41af6c872d216a65e0459eea9ca6f7a0124683fb73bd7e51",
+            "symbol": "    std::function<std::vector<unsigned char>(const std::vector<unsigned char> &)> handler) {"
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8:       throw std::invalid_argument(\"application manifest\");",
+            "path": "ara/exec/execution_manager.cpp",
+            "sha256": "fa963cb4b73f9305d2703b7056b1cbbfb97a27eef2f8dc49e50f268457dffebf",
+            "symbol": "      throw std::invalid_argument(\"application manifest\");"
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: APPS1",
+            "path": "config/applications.manifest",
+            "sha256": "6cfa4cd8ba73b01b5155bb844f0d707ea92562687d34ca4d732ffe1b09fdabfc",
+            "symbol": "APPS1"
+          }
+        ],
+        "limitations": [
+          "增加传输类型或生命周期动作仍要改具体组合；没有实际OS进程启动。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "RpcRouter注册service/method处理回调，ExecutionManager消费manifest依赖图。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct RpcReply {",
+            "path": "include/adaptive_platform/rpc.hpp",
+            "sha256": "1c0339e672fa6feeceb00d5094dd085bdd29dd338595a2be1e229b487e946187",
+            "symbol": "struct RpcReply {"
+          }
+        ],
+        "limitations": [
+          "此档说明不适用范围，不代表替换契约已被验证。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "审阅公开类型与生产实现，没有适用的继承/实现替换关系，按合同LSP中间档处理。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct RpcReply {",
+            "path": "include/adaptive_platform/rpc.hpp",
+            "sha256": "1c0339e672fa6feeceb00d5094dd085bdd29dd338595a2be1e229b487e946187",
+            "symbol": "struct RpcReply {"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class TcpSocket {",
+            "path": "include/adaptive_platform/tcp.hpp",
+            "sha256": "4f9f14221ccc63129d598f577c44736eb0d61ceaf9b2231ef443637a3e7d2c92",
+            "symbol": "class TcpSocket {"
+          },
+          {
+            "kind": "file",
+            "line": 25,
+            "locator": "line 25: enum class ProcessState { Stopped, Starting, Running, Degraded, Failed };",
+            "path": "include/adaptive_platform/adaptive_platform.hpp",
+            "sha256": "b850c43b8c14779b0fb400fc17fb67a17fb246053b6daed7f21570718cb0390e",
+            "symbol": "enum class ProcessState { Stopped, Starting, Running, Degraded, Failed };"
+          }
+        ],
+        "limitations": [
+          "RPC和TCP仍包含宽泛adaptive_platform.hpp；库聚合目标暴露全部SDK能力。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "wire/rpc/health/execution/tcp头按能力分离，TcpSocket隐藏系统细节。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5:     std::function<std::vector<unsigned char>(const std::vector<unsigned char> &)> handler) {",
+            "path": "ara/com/rpc.cpp",
+            "sha256": "e06545ec8001363d41af6c872d216a65e0459eea9ca6f7a0124683fb73bd7e51",
+            "symbol": "    std::function<std::vector<unsigned char>(const std::vector<unsigned char> &)> handler) {"
+          },
+          {
+            "kind": "file",
+            "line": 16,
+            "locator": "line 16: static void close_native(NativeSocket s) { closesocket(s); }",
+            "path": "platform/windows/tcp.cpp",
+            "sha256": "2281eff916588df30b292e5e60491d30fd81a1dc9fc3440633c237a6b6c00123",
+            "symbol": "static void close_native(NativeSocket s) { closesocket(s); }"
+          },
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10:     throw std::invalid_argument(\"scenario configuration\");",
+            "path": "apps/local_service/scenario_session.cpp",
+            "sha256": "bf5a7d3dc47716227708a4a5600aaed8587d984437fe411f1c86f295f92d4ce4",
+            "symbol": "    throw std::invalid_argument(\"scenario configuration\");"
+          }
+        ],
+        "limitations": [
+          "传输选择、监督策略具体绑定，没有统一受控传输替换接口。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "RPC业务处理由函数回调注入，系统TCP句柄经PImpl隔离。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: APPS1",
+            "path": "config/applications.manifest",
+            "sha256": "6cfa4cd8ba73b01b5155bb844f0d707ea92562687d34ca4d732ffe1b09fdabfc",
+            "symbol": "APPS1"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "cb3b94f29c0376489c4a49f1d5243aca288f4dc400e403e9320a31ed0c6c46c9",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-11/final-native-run.json",
+          "IDC-11/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "只完成当前主机环境验证，没有两种受支持平台/接口升级兼容回归。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "平台依赖主要限制在I/O、配置或适配处，业务核心消费标准数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: APPS1",
+            "path": "config/applications.manifest",
+            "sha256": "6cfa4cd8ba73b01b5155bb844f0d707ea92562687d34ca4d732ffe1b09fdabfc",
+            "symbol": "APPS1"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "cb3b94f29c0376489c4a49f1d5243aca288f4dc400e403e9320a31ed0c6c46c9",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-11/final-native-run.json",
+          "IDC-11/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "仅主机替身验证；运行时多传感器/多个数值配置不等同两组完整设备适配验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "业务消费参数、显式输入和共用计算逻辑，可从不同来源提供数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: APPS1",
+            "path": "config/applications.manifest",
+            "sha256": "6cfa4cd8ba73b01b5155bb844f0d707ea92562687d34ca4d732ffe1b09fdabfc",
+            "symbol": "APPS1"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "cb3b94f29c0376489c4a49f1d5243aca288f4dc400e403e9320a31ed0c6c46c9",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-11/final-native-run.json",
+          "IDC-11/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "未合成分支/tag，运行参数或算法场景不自动算平台变体。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "实际Git仅main初始/实现提交，无已落实的多平台维护策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7:     throw std::invalid_argument(\"watchdog interval\");",
+            "path": "ara/exec/supervision.cpp",
+            "sha256": "8e33f1e251c29df146e9e6e4e4316e01ad1a56d2207d54bba57c17f38bd27d2c",
+            "symbol": "    throw std::invalid_argument(\"watchdog interval\");"
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8:       throw std::invalid_argument(\"application manifest\");",
+            "path": "ara/exec/execution_manager.cpp",
+            "sha256": "fa963cb4b73f9305d2703b7056b1cbbfb97a27eef2f8dc49e50f268457dffebf",
+            "symbol": "      throw std::invalid_argument(\"application manifest\");"
+          }
+        ],
+        "limitations": [
+          "Supervisor与ExecutionManager并存相近的心跳/重启生命周期计算。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "wire encode/decode和TCP frame封装复用，审阅ara/platform未见多份协议实现。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10:     throw std::invalid_argument(\"scenario configuration\");",
+            "path": "apps/local_service/scenario_session.cpp",
+            "sha256": "bf5a7d3dc47716227708a4a5600aaed8587d984437fe411f1c86f295f92d4ce4",
+            "symbol": "    throw std::invalid_argument(\"scenario configuration\");"
+          },
+          {
+            "kind": "file",
+            "line": 16,
+            "locator": "line 16: static void close_native(NativeSocket s) { closesocket(s); }",
+            "path": "platform/windows/tcp.cpp",
+            "sha256": "2281eff916588df30b292e5e60491d30fd81a1dc9fc3440633c237a6b6c00123",
+            "symbol": "static void close_native(NativeSocket s) { closesocket(s); }"
+          }
+        ],
+        "limitations": [
+          "此分不自动证明平台迁移、多设备运行或物理设备验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "生产业务只使用C/C++标准值类型/标准库或明确JNI、TCP、I/O适配边界。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 15,
+            "locator": "line 15: set(BENCH_EXTERNAL_TEST",
+            "path": "CMakeLists.txt",
+            "sha256": "cb3b94f29c0376489c4a49f1d5243aca288f4dc400e403e9320a31ed0c6c46c9",
+            "symbol": "set(BENCH_EXTERNAL_TEST"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: int main(int argc, char **argv) {",
+            "path": "tools/scenario.cpp",
+            "sha256": "2d4d7b8b05bbdf998f59ef29de72a45c4e1afb9371ae86be45666eb29d7d266a",
+            "symbol": "int main(int argc, char **argv) {"
+          }
+        ],
+        "execution_evidence": [
+          "IDC-11/final-native-run.json",
+          "IDC-11/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "本轮实际维护者回放、CLI场景及跨仓集成不冒充本仓自有测试。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "跟踪源码没有仓内有效集成测试，CMake只提供可选外部维护者测试入口。",
+        "score": 0,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "3fe05f9e66804cafa03b618d6465456b318b3b27"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "3fe05f9e66804cafa03b618d6465456b318b3b27"
+}

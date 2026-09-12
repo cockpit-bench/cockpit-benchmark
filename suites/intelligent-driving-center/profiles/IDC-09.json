@@ -1,0 +1,195 @@
+{
+  "actual": {
+    "bytes": 1169443,
+    "commit_count": 2,
+    "extensions": {
+      ".a2l": 1,
+      ".c": 3,
+      ".css": 2,
+      ".csv": 1,
+      ".cvt": 1,
+      ".gif": 27,
+      ".h": 4,
+      ".html": 3,
+      ".js": 2,
+      ".json": 6,
+      ".m": 5,
+      ".mat": 2,
+      ".md": 5,
+      ".png": 2,
+      ".sldd": 1,
+      ".slx": 7,
+      ".txt": 1,
+      ".xlsx": 1,
+      "<noext>": 2
+    },
+    "gitlinks": [],
+    "model_census": {
+      "production_model_count": 6,
+      "root_expanded_block_count": 105,
+      "root_expanded_block_types": [
+        {
+          "count": 16,
+          "type": "Constant"
+        },
+        {
+          "count": 5,
+          "type": "DataTypeConversion"
+        },
+        {
+          "count": 1,
+          "type": "Gain"
+        },
+        {
+          "count": 27,
+          "type": "Inport"
+        },
+        {
+          "count": 8,
+          "type": "Logic"
+        },
+        {
+          "count": 1,
+          "type": "Lookup_n-D"
+        },
+        {
+          "count": 10,
+          "type": "Outport"
+        },
+        {
+          "count": 12,
+          "type": "RelationalOperator"
+        },
+        {
+          "count": 2,
+          "type": "Saturate"
+        },
+        {
+          "count": 5,
+          "type": "SubSystem"
+        },
+        {
+          "count": 1,
+          "type": "Sum"
+        },
+        {
+          "count": 15,
+          "type": "Switch"
+        },
+        {
+          "count": 2,
+          "type": "UnitDelay"
+        }
+      ]
+    },
+    "refs": {
+      "refs/heads/main": "e629895f0302ae51e7f229794f72a9e06edbe183"
+    },
+    "scope": "All tracked files of the scored target; excludes untracked build caches and dependency worktrees. Text line counts include generated and test files and are not production LOC.",
+    "source_lines_by_extension": {
+      ".c": 552,
+      ".h": 420,
+      ".m": 88
+    },
+    "tracked_file_count": 76
+  },
+  "center": "智能驾驶中心",
+  "conclusion": "Bounded structural and business proxy with declared deviations; not a full production distribution reproduction or independent holdout.",
+  "deviations": [
+    "扫描文件总数为342，本仓跟踪文件为76；统计范围不同且规模明显压缩，不声明生产整仓体量等价。",
+    "历史为本次真实构造/修复提交，未复制扫描中的大量分支/tag或虚构长期研发史。",
+    "仅提供了结构、模式和汇总，内部算法、标定值及全部生产依赖未提供；不能据此宣称业务实现相同。",
+    "扫描默认HEAD为空；交付主线直接提供可运行内容并固定评测HEAD，此处选择可用性，不伪造空壳默认分支。",
+    "模型规模及工作簿模板为有界投影；没有补造扫描缺失的保护组件、认证、BTC、ECU或C语句覆盖记录。"
+  ],
+  "head": "e629895f0302ae51e7f229794f72a9e06edbe183",
+  "id": "IDC-09",
+  "implementation_kind": "matlab",
+  "matched_traits": [
+    "采用matlab实现并保留mixed_state_model的主要组织形态；以最终源码及构建入口核对。",
+    "业务为新编写的可执行有界切片；声明的模块、配置和接口具有实际调用方。"
+  ],
+  "observed": {
+    "branches": 143,
+    "build_label": "matlab",
+    "commit_count": 427,
+    "default_head_empty": true,
+    "extensions": {
+      ".c": 11,
+      ".c1": 1,
+      ".cmake": 6,
+      ".cpp": 8,
+      ".h": 31,
+      ".md": 1,
+      ".mlx": 2,
+      ".prj": 3,
+      ".sh": 1,
+      ".sldd": 11,
+      ".slx": 26,
+      ".txt": 4,
+      ".xml": 233,
+      ".yaml": 2,
+      "<noext>": 2
+    },
+    "file_count": 342,
+    "model_scan": {
+      "a2l_count": 0,
+      "block_census": {
+        "BusAssignment": 10,
+        "BusCreator": 7,
+        "BusSelector": 29,
+        "Constant": 157,
+        "DataTypeConversion": 71,
+        "Demux": 42,
+        "From": 167,
+        "Gain": 20,
+        "Goto": 119,
+        "Ground": 9,
+        "Inport": 315,
+        "Logic": 40,
+        "Mux": 5,
+        "Outport": 126,
+        "Reference": 98,
+        "RelationalOperator": 94,
+        "S-Function": 42,
+        "Saturate": 16,
+        "Selector": 17,
+        "SignalConversion": 7,
+        "SubSystem": 82,
+        "Switch": 79,
+        "Terminator": 59,
+        "TriggerPort": 2,
+        "UnitDelay": 9
+      },
+      "generated_c_files": 42,
+      "p_file_count": 0,
+      "scope": "The supplied model census can cover only sampled files; zero values from unsupported legacy parsing are unknown, not absence.",
+      "total_model_refs": 0,
+      "total_sfunctions": 42,
+      "total_subsystems": 82,
+      "xls_count": 0
+    },
+    "tags": 376
+  },
+  "repairs": [],
+  "schema": "center-scan-profile-comparison-1",
+  "source_basis": {
+    "document_sha256": "55a68ccf2bc725c0bec0d322bfaa63c714a7915e9f1332f68a0605fbf33ba508",
+    "original_names": "Retained only in the local supplied-scan mapping",
+    "section_line": 27649,
+    "selection": "One supplied per-repository joint structural prototype; no target-score selection",
+    "spec_line": 27822
+  },
+  "target": {
+    "business": "parking_state",
+    "layout": "mixed_state_model",
+    "planned_production_units": 6,
+    "repository_owned_tests": true
+  },
+  "tree": "25fbc686ebd7df7c69b7b5a8b3b9d50993688a92",
+  "unknowns": [
+    "Scanner test_case_count=0 is not evidence that tests are absent.",
+    "Reported HTML percentages are not accepted as actual test coverage unless the report semantics and execution binding are verified.",
+    "Some large-source scans stop at 2500 source files; capped values are not whole-repository counts."
+  ]
+}

@@ -1,0 +1,478 @@
+{
+  "execution": {
+    "limits": [
+      "Android runtime is one API35 x86_64 emulator, not a physical device or vehicle acceptance.",
+      "Execution is maintainer verification, not remote CI, candidate/model evaluation or independent holdout.",
+      "Only this repository checks and AAR input are exported. The shared host APK/source and full shared report are maintainer-only because they contain unrelated repositories.",
+      "The published source history has provenance metadata normalized. Original executed HEAD/tree and byte-equivalence evidence are retained explicitly; this metadata operation is not a new native run."
+    ],
+    "records": [
+      {
+        "path": "suites/ai-center/execution/AIC-06.json",
+        "sha256": "ab4cf0a94db5047222813a3afd39fc2cada3a01be5133f3ec3a5f09b3fa42a5b"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "33e6f4c186d1548c2906d74232a9ffa0ebde6996",
+  "id": "AIC-06",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "33e6f4c186d1548c2906d74232a9ffa0ebde6996",
+    "id": "AIC-06",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: enum class CardState",
+            "path": "widgets/src/main/java/org/bench/widgets/CardState.kt",
+            "sha256": "557e2f00afc1988cce34de81f43c1b2bd3f0e53ee3f6c6644acf16e53d0168f0",
+            "symbol": "enum class CardState"
+          },
+          {
+            "kind": "file",
+            "line": 15,
+            "locator": "line 15: fun bind",
+            "path": "widgets/src/main/java/org/bench/widgets/ServiceCardView.kt",
+            "sha256": "6134d92fbc01ed2e652f2951645a453e3a6c88a1724bac16379515016feb3ff9",
+            "symbol": "fun bind"
+          }
+        ],
+        "limitations": [
+          "布局与状态文字仍在具体控件中，缺少独立渲染模型层。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "CardState/ServiceCard、ClickGate、主题/状态策略与 Android View 分开。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: fun submit",
+            "path": "widgets/src/main/java/org/bench/widgets/ServiceGrid.kt",
+            "sha256": "ba89c3ae7812c00f7b4590c4a9ca31b2acb05d3c7d6259059311ac178c90e71a",
+            "symbol": "fun submit"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class ProgressStepsView",
+            "path": "widgets/src/main/java/org/bench/widgets/ProgressStepsView.kt",
+            "sha256": "f0e7504aefe9b91a473df1ff02dc09e3df3b57e52cb6d25b13a8e9d07da45d9c",
+            "symbol": "class ProgressStepsView"
+          }
+        ],
+        "limitations": [
+          "只有一个发布模块；主题和状态枚举为固定集合。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "AAR 中九个实际控件/策略单元，ServiceGrid 复用稳定 ID 的卡片视图。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10: var onActivate",
+            "path": "widgets/src/main/java/org/bench/widgets/ServiceCardView.kt",
+            "sha256": "6134d92fbc01ed2e652f2951645a453e3a6c88a1724bac16379515016feb3ff9",
+            "symbol": "var onActivate"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: var onActivate",
+            "path": "widgets/src/main/java/org/bench/widgets/ServiceGrid.kt",
+            "sha256": "ba89c3ae7812c00f7b4590c4a9ca31b2acb05d3c7d6259059311ac178c90e71a",
+            "symbol": "var onActivate"
+          }
+        ],
+        "limitations": [
+          "具体呈现依赖 Android View，状态策略仍为静态对象。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "服务数据由消费者传入，导航经 onActivate 回调返回，无网络/账号单例。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "6a01873f164541008b63a7f882bb643f8578c0bf48cb1f51fb3397fd8931b85a",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "本机Gradle构建和维护者脚本不冒称仓内或远端CI。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单没有CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: compileSdk 34",
+            "path": "widgets/build.gradle",
+            "sha256": "69077d4941cb2cd2e1ac9b490a5531c85ffddbd290b18ad5e7f5d9248072e1f9",
+            "symbol": "compileSdk 34"
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: version '8.3.0'",
+            "path": "build.gradle",
+            "sha256": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+            "symbol": "version '8.3.0'"
+          }
+        ],
+        "limitations": [
+          "仍依赖Android SDK与固定包缓存/下载；未提供公开接口版本兼容合同，保守取包边界档。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "Gradle8.4、AGP8.3.0、Kotlin1.9.22、SDK34版本明确，所有本仓模块可独立构建成APK/AAR。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: defaultConfig",
+            "path": "widgets/build.gradle",
+            "sha256": "69077d4941cb2cd2e1ac9b490a5531c85ffddbd290b18ad5e7f5d9248072e1f9",
+            "symbol": "defaultConfig"
+          }
+        ],
+        "limitations": [
+          "versionName、数据库版本和卡片递增revision都不能替代API版本。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "没有独立的公共API语义版本或兼容检查。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: class ClickGate",
+            "path": "widgets/src/main/java/org/bench/widgets/ClickGate.kt",
+            "sha256": "dc174990bee1b6052f28345b91f44c63a7bc4a6bbf56a3de437215a0f8fef669",
+            "symbol": "class ClickGate"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: object StatusPalette",
+            "path": "widgets/src/main/java/org/bench/widgets/StatusPalette.kt",
+            "sha256": "6694a6253bb5778ee4470e5460fca130653d7bca08767a06a64d1fb0220fe2b5",
+            "symbol": "object StatusPalette"
+          }
+        ],
+        "limitations": [
+          "控件仍负责本地布局与文案，不覆盖复杂列表/动画架构。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "点击门控、状态策略、主题和各类视图分工清晰，宿主实际复用。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 15,
+            "locator": "line 15: fun bind",
+            "path": "widgets/src/main/java/org/bench/widgets/ServiceCardView.kt",
+            "sha256": "6134d92fbc01ed2e652f2951645a453e3a6c88a1724bac16379515016feb3ff9",
+            "symbol": "fun bind"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: fun label",
+            "path": "widgets/src/main/java/org/bench/widgets/StatusPalette.kt",
+            "sha256": "6694a6253bb5778ee4470e5460fca130653d7bca08767a06a64d1fb0220fe2b5",
+            "symbol": "fun label"
+          }
+        ],
+        "limitations": [
+          "新增 CardState 仍需修改状态文字及行为分支。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "不同服务实例通过同一卡片/网格接口接入，主题值统一消费。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: class ServiceCardView",
+            "path": "widgets/src/main/java/org/bench/widgets/ServiceCardView.kt",
+            "sha256": "6134d92fbc01ed2e652f2951645a453e3a6c88a1724bac16379515016feb3ff9",
+            "symbol": "class ServiceCardView"
+          }
+        ],
+        "limitations": [
+          "没有自定义可替换控件合同，按中间档；不因没有复杂继承满分。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "遵循 Android View 基本构造与渲染入口，宿主实际使用。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10: var onActivate",
+            "path": "widgets/src/main/java/org/bench/widgets/ServiceCardView.kt",
+            "sha256": "6134d92fbc01ed2e652f2951645a453e3a6c88a1724bac16379515016feb3ff9",
+            "symbol": "var onActivate"
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: fun bind",
+            "path": "widgets/src/main/java/org/bench/widgets/EmptyStateView.kt",
+            "sha256": "638cb6bd9c7ffa326a9a5ce6d1ec46f7097e6f310dcba0a8e00c1acced9e77ca",
+            "symbol": "fun bind"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: fun bind",
+            "path": "widgets/src/main/java/org/bench/widgets/ProgressStepsView.kt",
+            "sha256": "f0e7504aefe9b91a473df1ff02dc09e3df3b57e52cb6d25b13a8e9d07da45d9c",
+            "symbol": "fun bind"
+          }
+        ],
+        "limitations": [
+          "版本化公共 API 尚未建立。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "消费者只提交 ServiceCard 与接收 ID 回调，空态、步骤和入口组件各有小 API。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10: var onActivate",
+            "path": "widgets/src/main/java/org/bench/widgets/ServiceCardView.kt",
+            "sha256": "6134d92fbc01ed2e652f2951645a453e3a6c88a1724bac16379515016feb3ff9",
+            "symbol": "var onActivate"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: var onActivate",
+            "path": "widgets/src/main/java/org/bench/widgets/ServiceGrid.kt",
+            "sha256": "ba89c3ae7812c00f7b4590c4a9ca31b2acb05d3c7d6259059311ac178c90e71a",
+            "symbol": "var onActivate"
+          }
+        ],
+        "limitations": [
+          "主题/状态策略仍为编译期静态依赖，没有可插拔策略接口。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "控件不依赖具体导航、网络或账户实现，通过回调交还动作。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: compileSdk 34",
+            "path": "widgets/build.gradle",
+            "sha256": "69077d4941cb2cd2e1ac9b490a5531c85ffddbd290b18ad5e7f5d9248072e1f9",
+            "symbol": "compileSdk 34"
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: class ServiceCardView",
+            "path": "widgets/src/main/java/org/bench/widgets/ServiceCardView.kt",
+            "sha256": "6134d92fbc01ed2e652f2951645a453e3a6c88a1724bac16379515016feb3ff9",
+            "symbol": "class ServiceCardView"
+          }
+        ],
+        "limitations": [
+          "只做 SDK34/API35 验证，未做第二套平台升级回归。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "Android 原生 UI 集中在库边界，无业务后端调用。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: enum class HallTheme",
+            "path": "widgets/src/main/java/org/bench/widgets/HallTheme.kt",
+            "sha256": "b7d8f3e19ca6af3033e7167600addb79b1a6b7d770144da7ee83c747bc6a8dba",
+            "symbol": "enum class HallTheme"
+          },
+          {
+            "kind": "file",
+            "line": 16,
+            "locator": "line 16: fun applyTheme",
+            "path": "widgets/src/main/java/org/bench/widgets/ServiceCardView.kt",
+            "sha256": "6134d92fbc01ed2e652f2951645a453e3a6c88a1724bac16379515016feb3ff9",
+            "symbol": "fun applyTheme"
+          }
+        ],
+        "limitations": [
+          "主题不是设备适配；像素间距和单模拟器验证仍限制不同密度设备。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "同一控件消费三种主题，宿主实际检查默认与高对比状态。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "6a01873f164541008b63a7f882bb643f8578c0bf48cb1f51fb3397fd8931b85a",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "不伪造历史tags或设备分支；主题/场景变化不自动等同分支策略。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "只有本次本地main实际建设提交，没有已实施的多平台分支/变体策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: class ClickGate",
+            "path": "widgets/src/main/java/org/bench/widgets/ClickGate.kt",
+            "sha256": "dc174990bee1b6052f28345b91f44c63a7bc4a6bbf56a3de437215a0f8fef669",
+            "symbol": "class ClickGate"
+          },
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: views.getOrPut",
+            "path": "widgets/src/main/java/org/bench/widgets/ServiceGrid.kt",
+            "sha256": "ba89c3ae7812c00f7b4590c4a9ca31b2acb05d3c7d6259059311ac178c90e71a",
+            "symbol": "views.getOrPut"
+          }
+        ],
+        "limitations": [
+          "基础 View 初始化与协议模型样板排除，不泛化为大型 UI 库无重复。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "审阅九个生产文件：ClickGate、StatusPalette 与 ServiceCardView 被网格复用；无重复的同一动作门控实现。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: data class ServiceCard",
+            "path": "widgets/src/main/java/org/bench/widgets/CardState.kt",
+            "sha256": "557e2f00afc1988cce34de81f43c1b2bd3f0e53ee3f6c6644acf16e53d0168f0",
+            "symbol": "data class ServiceCard"
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: class ServiceCardView",
+            "path": "widgets/src/main/java/org/bench/widgets/ServiceCardView.kt",
+            "sha256": "6134d92fbc01ed2e652f2951645a453e3a6c88a1724bac16379515016feb3ff9",
+            "symbol": "class ServiceCardView"
+          }
+        ],
+        "limitations": [
+          "本库的视图和控件生命周期本身是 Android 专用，不能声称跨 OS UI 可复用。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "纯模型/策略与 Android 控件分离，外部业务通过提交/回调连接。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: include ':widgets'",
+            "path": "settings.gradle",
+            "sha256": "6a01873f164541008b63a7f882bb643f8578c0bf48cb1f51fb3397fd8931b85a",
+            "symbol": "include ':widgets'"
+          }
+        ],
+        "limitations": [
+          "仓外 AAR 宿主实际检验点击防重/重排/主题/无障碍，仍不计入仓内集成测试。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "Git 清单无仓内测试，符合该画像的 repository_tests=false。",
+        "score": 0,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "156371a7dfc973a2123010b9bb5c385639793ded"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "156371a7dfc973a2123010b9bb5c385639793ded"
+}

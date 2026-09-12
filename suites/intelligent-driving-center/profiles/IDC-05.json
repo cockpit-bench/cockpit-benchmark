@@ -1,0 +1,94 @@
+{
+  "actual": {
+    "bytes": 32415,
+    "commit_count": 2,
+    "extensions": {
+      ".catalog": 1,
+      ".cpp": 10,
+      ".csv": 1,
+      ".hpp": 6,
+      ".md": 2,
+      ".txt": 1,
+      ".yaml": 1,
+      "<noext>": 3
+    },
+    "gitlinks": [],
+    "refs": {
+      "refs/heads/main": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff"
+    },
+    "scope": "All tracked files of the scored target; excludes untracked build caches and dependency worktrees. Text line counts include generated and test files and are not production LOC.",
+    "source_lines_by_extension": {
+      ".cpp": 630,
+      ".hpp": 150
+    },
+    "tracked_file_count": 25
+  },
+  "center": "智能驾驶中心",
+  "conclusion": "Bounded structural and business proxy with declared deviations; not a full production distribution reproduction or independent holdout.",
+  "deviations": [
+    "扫描文件总数为1642，本仓跟踪文件为25；统计范围不同且规模明显压缩，不声明生产整仓体量等价。",
+    "历史为本次真实构造/修复提交，未复制扫描中的大量分支/tag或虚构长期研发史。",
+    "仅提供了结构、模式和汇总，内部算法、标定值及全部生产依赖未提供；不能据此宣称业务实现相同。",
+    "扫描默认HEAD为空；交付主线直接提供可运行内容并固定评测HEAD，此处选择可用性，不伪造空壳默认分支。"
+  ],
+  "head": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff",
+  "id": "IDC-05",
+  "implementation_kind": "native_cpp",
+  "matched_traits": [
+    "采用native_cpp实现并保留algorithm_platform的主要组织形态；以最终源码及构建入口核对。",
+    "业务为新编写的可执行有界切片；声明的模块、配置和接口具有实际调用方。"
+  ],
+  "observed": {
+    "branches": 4408,
+    "build_label": "cmake",
+    "commit_count": 18746,
+    "default_head_empty": true,
+    "extensions": {
+      ".a": 4,
+      ".c": 5,
+      ".cmake": 4,
+      ".cpp": 549,
+      ".cu": 2,
+      ".h": 701,
+      ".hpp": 202,
+      ".in": 2,
+      ".ini": 1,
+      ".json": 3,
+      ".md": 5,
+      ".o": 5,
+      ".py": 55,
+      ".rviz": 2,
+      ".s": 2,
+      ".sh": 16,
+      ".txt": 64,
+      ".ui": 1,
+      ".xsl": 1,
+      ".xslt": 1,
+      ".yaml": 14,
+      "<noext>": 3
+    },
+    "file_count": 1642,
+    "tags": 24755
+  },
+  "repairs": [],
+  "schema": "center-scan-profile-comparison-1",
+  "source_basis": {
+    "document_sha256": "55a68ccf2bc725c0bec0d322bfaa63c714a7915e9f1332f68a0605fbf33ba508",
+    "original_names": "Retained only in the local supplied-scan mapping",
+    "section_line": 16151,
+    "selection": "One supplied per-repository joint structural prototype; no target-score selection",
+    "spec_line": 16324
+  },
+  "target": {
+    "business": "sensor_fusion",
+    "layout": "algorithm_platform",
+    "planned_production_units": 0,
+    "repository_owned_tests": true
+  },
+  "tree": "a52ae34535e9dba329b2ae375c3b7eac78e9873b",
+  "unknowns": [
+    "Scanner test_case_count=0 is not evidence that tests are absent.",
+    "Reported HTML percentages are not accepted as actual test coverage unless the report semantics and execution binding are verified.",
+    "Some large-source scans stop at 2500 source files; capped values are not whole-repository counts."
+  ]
+}

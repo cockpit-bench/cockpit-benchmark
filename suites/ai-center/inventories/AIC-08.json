@@ -1,0 +1,71 @@
+{
+  "bytes": 74142,
+  "clean": true,
+  "commit_count": 2,
+  "default_ref": "refs/heads/main",
+  "evaluation_ref": "refs/heads/main",
+  "extensions": {
+    ".bat": 1,
+    ".gradle": 3,
+    ".jar": 1,
+    ".json": 1,
+    ".kt": 3,
+    ".md": 1,
+    ".properties": 2,
+    ".xml": 2,
+    "<noext>": 3
+  },
+  "file_bytes": {
+    ".gitattributes": 45,
+    ".gitignore": 49,
+    "README.md": 1877,
+    "build.gradle": 187,
+    "gradle.properties": 148,
+    "gradle/wrapper/gradle-wrapper.jar": 59203,
+    "gradle/wrapper/gradle-wrapper.properties": 230,
+    "gradlew": 5766,
+    "gradlew.bat": 2674,
+    "health-card/build.gradle": 376,
+    "health-card/src/main/AndroidManifest.xml": 72,
+    "health-card/src/main/java/org/bench/health/DiagnosticRoute.kt": 331,
+    "health-card/src/main/java/org/bench/health/HealthCardView.kt": 1228,
+    "health-card/src/main/java/org/bench/health/HealthReport.kt": 705,
+    "health-card/src/main/res/values/strings.xml": 203,
+    "provenance.json": 767,
+    "settings.gradle": 281
+  },
+  "files": {
+    ".gitattributes": "ddbbb15374ae2ffaee62f0aef04babc710274695142a80eb5f6a1f7cfca793f4",
+    ".gitignore": "25ad61c98e7c3e2c466e1c4bae45f8810bfc48c15398f679262e4d47d78621f5",
+    "README.md": "d182a238e406d46bd12a6a891977e9d43dbf391450143207d8fcdc2e5057845e",
+    "build.gradle": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+    "gradle.properties": "8c01912cbf365b832bf103ce9d43b8c1a148e40c72bb7e2a69c962af4e891a20",
+    "gradle/wrapper/gradle-wrapper.jar": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637",
+    "gradle/wrapper/gradle-wrapper.properties": "67b52d806eee8963f650f69e4d2afad60ee1bbdbd044d2209f635f26724493c2",
+    "gradlew": "63135287117a1e6d12c84580f1f49c61d1ba02218ecd28660605e97f976e7d65",
+    "gradlew.bat": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129",
+    "health-card/build.gradle": "64aa62874643c971785faf225989ebadcae9e574757de47ff08ca61537031c5f",
+    "health-card/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+    "health-card/src/main/java/org/bench/health/DiagnosticRoute.kt": "da6674d414b583b5a51f264491588f7c0fa913ca48ea80acf02239bc26ba19a7",
+    "health-card/src/main/java/org/bench/health/HealthCardView.kt": "e5fbdcceca57a631926b9f024e731f9fa1c0fcbc099ef2425776e028b94be5c1",
+    "health-card/src/main/java/org/bench/health/HealthReport.kt": "b8a37587d00b8933ae0bc1bb1712acd3a0c681f2d4d18dc010e727e4636c28bc",
+    "health-card/src/main/res/values/strings.xml": "45f9cab81876d7062e7a06abdb851f53e12ca662c4e63193d4b2e0acf366c0d1",
+    "provenance.json": "6ae61dcce7db51d376597122d8c318041a841d439981bc0d3b37a526f2f19689",
+    "settings.gradle": "40864fcbf85287273b746be45916c5e816fc462d1edf2d15394768908dc41291"
+  },
+  "full_history": true,
+  "gitlinks": [],
+  "head": "58b1e989cf25e7431717b6c7a5b43ae8856962ec",
+  "id": "AIC-08",
+  "name": "ai-health-card",
+  "refs": {
+    "refs/heads/main": "58b1e989cf25e7431717b6c7a5b43ae8856962ec"
+  },
+  "remote_count": 0,
+  "source_lines_by_extension": {
+    ".kt": 26
+  },
+  "tracked_file_count": 17,
+  "tree": "e39b8dd3fe29167a2aad5eeba90147fb15a12a50",
+  "worktree_equals_git_blobs": true
+}

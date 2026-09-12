@@ -1,0 +1,315 @@
+{
+  "checks": {
+    "counting_note": "Check invocations include repeated loop assertions and, where present, the repository test and identical external copy. This is not a count of unique independent business cases.",
+    "ctest_check_invocations": 619,
+    "ctest_executable_reports": [
+      607,
+      12
+    ],
+    "original_and_fresh_clone_passed": true,
+    "scenario_rows": 2
+  },
+  "engines": [
+    "Windows MinGW GCC C++17/CMake/Ninja/CTest"
+  ],
+  "head": "30f934b48ae56ceee8c490ef655d6ef38c42dba7",
+  "id": "IDC-07",
+  "limits": [
+    "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+    "Maintainer external tests do not count as repository-owned integration tests.",
+    "Same maintainer construction family; not an independent holdout."
+  ],
+  "raw_packet": {
+    "bytes": 13886791,
+    "format": "candidate-raw-inputs-v1",
+    "name": "center-native-inputs-v0.12.0.zip",
+    "release_url": "https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.12.0",
+    "sha256": "d0d076424d5a83516bff67997779a1bc5125daa408c1ab52d025930cf72c348a",
+    "sources": {
+      "AIC-01": {
+        "head": "554118dcaed430f1712f1ac5c4be9ae9fc91e749",
+        "tree": "f7744f765c475125f20b2f83f31116a2c160c15a"
+      },
+      "AIC-02": {
+        "head": "69582afa41f69548179a6e8db297b326454ee4d3",
+        "tree": "5255217dbee9c9c032432b474b3aeab4a3f7d320"
+      },
+      "AIC-03": {
+        "head": "b7dc0937f48bbcf3b163ce46dd70098d708bbe50",
+        "tree": "f49cbccd75d0b5d313d7f686ab759f255ac46355"
+      },
+      "AIC-04": {
+        "head": "2a2987de0db0d345c77748aafbfd3b693a6ca073",
+        "tree": "2d0b4fea320f52d2e8e9d2392f6115bcd57f59bb"
+      },
+      "AIC-05": {
+        "head": "2f94a73210da7bb69575b806c7f431183fec759b",
+        "tree": "76e61f200adb540622de3743613ebee40f700a47"
+      },
+      "AIC-06": {
+        "head": "33e6f4c186d1548c2906d74232a9ffa0ebde6996",
+        "tree": "156371a7dfc973a2123010b9bb5c385639793ded"
+      },
+      "AIC-07": {
+        "head": "8394177bed790a0c0ba557d87931e00bb0b13235",
+        "tree": "90303ff3a3998adb99784c4b3017c5846ffa440a"
+      },
+      "AIC-08": {
+        "head": "58b1e989cf25e7431717b6c7a5b43ae8856962ec",
+        "tree": "e39b8dd3fe29167a2aad5eeba90147fb15a12a50"
+      },
+      "AIC-09": {
+        "head": "ed34ae9126eed17cc34806a0ab60e3b7f68fc071",
+        "tree": "0e80e150bbaf4c2e1f5a94045860c87498b463ac"
+      },
+      "AIC-10": {
+        "head": "04ecdf17210613d85535e4a51efd1a61ec3fab40",
+        "tree": "5119dd42132a3855a8e9db74658438e53c35ab7c"
+      },
+      "AIC-11": {
+        "head": "b0851c013d9996e553cca4f58c2f787d06bf6b0f",
+        "tree": "821f678bbfae87d485bfd6b208a32606521d9f16"
+      },
+      "ARC-01": {
+        "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+        "tree": "d05d608119d5b88086d9d077f9e6f2505dddf614"
+      },
+      "ARC-02": {
+        "head": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+        "tree": "70a72c0b2254efb4226a6fb19ad91be9aa47bbf7"
+      },
+      "ARC-03": {
+        "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+        "tree": "10af906321d6cb8a8c0a1335ce6c8ca28932ddc7"
+      },
+      "ARC-04": {
+        "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+        "tree": "6d4ecc7d48a66c00f7b232917196b7995015a466"
+      },
+      "ARC-05": {
+        "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+        "tree": "8af5b2293dfcd63936ecf6fbb553ab231b75c2c6"
+      },
+      "ARC-06": {
+        "head": "258ba5ba20acffb8b4c16f0d7e905611498a1928",
+        "tree": "6d2d152642b07aa4149c02c0982ddaf230a52c76"
+      },
+      "ARC-07": {
+        "head": "43d3360c130d347dc3e2d818b25dc0e8716abc9f",
+        "tree": "208682dfe483e0af4cbc86fef09a6f9d68ded7f2"
+      },
+      "ARC-08": {
+        "head": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827",
+        "tree": "f78aafac2df2c0eb3ff3a73cb10d23501f4eadf2"
+      },
+      "ARC-09": {
+        "head": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+        "tree": "6a84feae70438c8f969d1ad35b7886ca20dbb7e5"
+      },
+      "ARC-10": {
+        "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+        "tree": "3085c2803f5add13a353c69f2beaf22e0bc177b8"
+      },
+      "ARC-11": {
+        "head": "204dab303944f787a4702e3dfb8d215b07ce0371",
+        "tree": "acac89513567bc9e4ee68c07397dafc9b746290f"
+      },
+      "IDC-01": {
+        "head": "ca9fa37711754fd3fccc1ada6145f75475a1649c",
+        "tree": "b2b6df534b7633fb0d8386dc886a9a3c9ff35822"
+      },
+      "IDC-02": {
+        "head": "7dc81b216d594b0bdee5fc1095a8296a8beef005",
+        "tree": "268b81e4c952971f5758f75d7a9bc944fc72713b"
+      },
+      "IDC-03": {
+        "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+        "tree": "0126c386fb81044f3feedfa2c828e83bc7ce6bdf"
+      },
+      "IDC-04": {
+        "head": "257dcc87392c004a682b38b8df8645d5970997ab",
+        "tree": "52ecb01a014153e1d3895f15cd70cce512bf2cdf"
+      },
+      "IDC-05": {
+        "head": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff",
+        "tree": "a52ae34535e9dba329b2ae375c3b7eac78e9873b"
+      },
+      "IDC-06": {
+        "head": "0f4e6819ec2981f4a4170058402e7c8f6cf656a2",
+        "tree": "9c60b436285f8f63b768ff2c7caee7561c20bb87"
+      },
+      "IDC-07": {
+        "head": "30f934b48ae56ceee8c490ef655d6ef38c42dba7",
+        "tree": "530fd74a9901bf624d896edca3b4fd679fb3df7c"
+      },
+      "IDC-08": {
+        "head": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1",
+        "tree": "6af5f27a12415791ff8abda0ecaea6f0317a77de"
+      },
+      "IDC-09": {
+        "head": "e629895f0302ae51e7f229794f72a9e06edbe183",
+        "tree": "25fbc686ebd7df7c69b7b5a8b3b9d50993688a92"
+      },
+      "IDC-10": {
+        "head": "13d83b57827247366cea13f88daba33234da8fc8",
+        "tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c"
+      },
+      "IDC-11": {
+        "head": "fbb4014901ac35cd6b0083977eeee1e481d330c9",
+        "tree": "3fe05f9e66804cafa03b618d6465456b318b3b27"
+      }
+    }
+  },
+  "record_sha256": {
+    "IDC-07/1-configure.log": "70df3fc4aacbbd15d85b0867331a914a2c8f3f3bd59574214291ec6ac0e8d5c2",
+    "IDC-07/2-compile.log": "ba4f81e82de886ed1537edff5579e973fea3702f4c4c4b413ac40c695d2781ca",
+    "IDC-07/3-test.log": "f7ad349864bce0dfbecd2c92a1e2fb46b92fa7d629881d06a56e514fb1c15e10",
+    "IDC-07/bad-input.csv": "b58620feb681f7a11c67a503de2f0058cdb21d22ee8dc9b173e0647214c765b5",
+    "IDC-07/business_tests.cpp": "b75f01b930940118cf46adbb86e4b99f9fe084b3568000660e56fb9185e1ce70",
+    "IDC-07/duplicate.conf": "77504bd8ca7dc25bbce86ae4ac79edae3c2267219895cb9b14ddef2343fca6c5",
+    "IDC-07/extended_tests.cpp": "100a0f6d8ed43d75cc6d00189395514c604200e95a38f31c6518282783bcb363",
+    "IDC-07/final-native-run.json": "aad85bbce3e422c8283ad4cd532b23926802015cf7c495b344f3b6ee7ce3f49a",
+    "IDC-07/final-restore-git-13.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-07/final-restore-git-6.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-07/final-restore-git-head.log": "33c6c21d60e75bbd15d30b709c0004758e0bcbf4b8705ecfdf34f9025fa46d03",
+    "IDC-07/final-restore-git-tree.log": "2a5bd27b320369fb24618b88c2a6acada7614fc134edf0e5556fca19b7ab10c0",
+    "IDC-07/final-restored-native-run.json": "7040d2cec580ef496ecacff4c56c6072da042da4bc10ef73339a4af320eaa040",
+    "IDC-07/inputs-final/config/default.yaml": "2aaee0a227234b5edc7c112a93c0e5d8e75d3b0517e59a80faa8136d88bb85e9",
+    "IDC-07/inputs-final/scenarios/default.csv": "1864443ffe97254a3eee6160d985b05d590c803bec2c29b7d12942e345b3b6b7",
+    "IDC-07/restore-clone.log": "17d293f425e2b0993b500b4ffeb3b99ff22c0a21a0e505f8a3a54c8e8d3f4e73",
+    "IDC-07/restore-compile.log": "f513dd6e3068b15ae1c99dd9d3a87ad9aefced70322bc52005e5f7994937ed89",
+    "IDC-07/restore-configure.log": "677d4f2dc70d021af1e955ba5aaff4246b0de3bdbbd8a7970fe4188a1f21e8f5",
+    "IDC-07/restore-ctest.log": "5c99c96699d55078eded589ee61d005d0d8370d477bca8b34ec2ce23fd38e761",
+    "IDC-07/restore-git-fsck.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-07/restore-git-remote.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-07/restore-git-rev-list.log": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    "IDC-07/restore-git-show-ref.log": "60d32a75b5bec3b5650743d9ed9d70770d9e68553325e9d77f249781fafbabe7",
+    "IDC-07/restore-remove-remote.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-07/restore-scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-07/restored-scenario.csv": "9a4202e6ffcd1999a91c8e8fa3a8145ec76d08b82f735de85a69626a44a0c440",
+    "IDC-07/scenario-expected.json": "2b4847f04989f01b0f9c91631058cfeb1c13a437f83c3594dcadbb218fc94832",
+    "IDC-07/scenario-output.csv": "9a4202e6ffcd1999a91c8e8fa3a8145ec76d08b82f735de85a69626a44a0c440",
+    "IDC-07/scenario-run.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "records": [
+    {
+      "path": "IDC-07/1-configure.log",
+      "sha256": "70df3fc4aacbbd15d85b0867331a914a2c8f3f3bd59574214291ec6ac0e8d5c2"
+    },
+    {
+      "path": "IDC-07/2-compile.log",
+      "sha256": "ba4f81e82de886ed1537edff5579e973fea3702f4c4c4b413ac40c695d2781ca"
+    },
+    {
+      "path": "IDC-07/3-test.log",
+      "sha256": "f7ad349864bce0dfbecd2c92a1e2fb46b92fa7d629881d06a56e514fb1c15e10"
+    },
+    {
+      "path": "IDC-07/bad-input.csv",
+      "sha256": "b58620feb681f7a11c67a503de2f0058cdb21d22ee8dc9b173e0647214c765b5"
+    },
+    {
+      "path": "IDC-07/business_tests.cpp",
+      "sha256": "b75f01b930940118cf46adbb86e4b99f9fe084b3568000660e56fb9185e1ce70"
+    },
+    {
+      "path": "IDC-07/duplicate.conf",
+      "sha256": "77504bd8ca7dc25bbce86ae4ac79edae3c2267219895cb9b14ddef2343fca6c5"
+    },
+    {
+      "path": "IDC-07/extended_tests.cpp",
+      "sha256": "100a0f6d8ed43d75cc6d00189395514c604200e95a38f31c6518282783bcb363"
+    },
+    {
+      "path": "IDC-07/final-native-run.json",
+      "sha256": "aad85bbce3e422c8283ad4cd532b23926802015cf7c495b344f3b6ee7ce3f49a"
+    },
+    {
+      "path": "IDC-07/final-restore-git-13.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-07/final-restore-git-6.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-07/final-restore-git-head.log",
+      "sha256": "33c6c21d60e75bbd15d30b709c0004758e0bcbf4b8705ecfdf34f9025fa46d03"
+    },
+    {
+      "path": "IDC-07/final-restore-git-tree.log",
+      "sha256": "2a5bd27b320369fb24618b88c2a6acada7614fc134edf0e5556fca19b7ab10c0"
+    },
+    {
+      "path": "IDC-07/final-restored-native-run.json",
+      "sha256": "7040d2cec580ef496ecacff4c56c6072da042da4bc10ef73339a4af320eaa040"
+    },
+    {
+      "path": "IDC-07/inputs-final/config/default.yaml",
+      "sha256": "2aaee0a227234b5edc7c112a93c0e5d8e75d3b0517e59a80faa8136d88bb85e9"
+    },
+    {
+      "path": "IDC-07/inputs-final/scenarios/default.csv",
+      "sha256": "1864443ffe97254a3eee6160d985b05d590c803bec2c29b7d12942e345b3b6b7"
+    },
+    {
+      "path": "IDC-07/restore-clone.log",
+      "sha256": "17d293f425e2b0993b500b4ffeb3b99ff22c0a21a0e505f8a3a54c8e8d3f4e73"
+    },
+    {
+      "path": "IDC-07/restore-compile.log",
+      "sha256": "f513dd6e3068b15ae1c99dd9d3a87ad9aefced70322bc52005e5f7994937ed89"
+    },
+    {
+      "path": "IDC-07/restore-configure.log",
+      "sha256": "677d4f2dc70d021af1e955ba5aaff4246b0de3bdbbd8a7970fe4188a1f21e8f5"
+    },
+    {
+      "path": "IDC-07/restore-ctest.log",
+      "sha256": "5c99c96699d55078eded589ee61d005d0d8370d477bca8b34ec2ce23fd38e761"
+    },
+    {
+      "path": "IDC-07/restore-git-fsck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-07/restore-git-remote.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-07/restore-git-rev-list.log",
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    {
+      "path": "IDC-07/restore-git-show-ref.log",
+      "sha256": "60d32a75b5bec3b5650743d9ed9d70770d9e68553325e9d77f249781fafbabe7"
+    },
+    {
+      "path": "IDC-07/restore-remove-remote.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-07/restore-scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-07/restored-scenario.csv",
+      "sha256": "9a4202e6ffcd1999a91c8e8fa3a8145ec76d08b82f735de85a69626a44a0c440"
+    },
+    {
+      "path": "IDC-07/scenario-expected.json",
+      "sha256": "2b4847f04989f01b0f9c91631058cfeb1c13a437f83c3594dcadbb218fc94832"
+    },
+    {
+      "path": "IDC-07/scenario-output.csv",
+      "sha256": "9a4202e6ffcd1999a91c8e8fa3a8145ec76d08b82f735de85a69626a44a0c440"
+    },
+    {
+      "path": "IDC-07/scenario-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "schema": "center-execution-summary-1",
+  "status": "passed",
+  "tree": "530fd74a9901bf624d896edca3b4fd679fb3df7c"
+}

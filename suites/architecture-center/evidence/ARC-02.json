@@ -1,0 +1,338 @@
+{
+  "execution": {
+    "limits": [
+      "MIL and host replay only; no physical device, ECU, SIL/PIL/HIL, BTC or certification.",
+      "Simulink coverage is distinct from generated C statement coverage; C statement coverage was not measured.",
+      "Independent equations and configured scenarios are maintainer checks, not candidate-model evaluation or blind gold."
+    ],
+    "records": [
+      {
+        "path": "suites/architecture-center/execution/ARC-02.json",
+        "sha256": "7cfa476d865652db1a585f02cb975f422a4fc2b201ed2a2e00ec51b25eb6e52d"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+  "id": "ARC-02",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/matlab.json",
+      "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+    },
+    "head": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+    "id": "ARC-02",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "block_path": "BrakeStability/AxleSplit",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=17 BrakeStability/AxleSplit",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/BrakeStability.slx",
+            "sha256": "47f1decfc88658865e722a542619558dc4135ebeb5859b29a6c41624f37b42a3",
+            "sid": "17"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "hierarchy",
+        "reason": "轮速滤波、滑移估计、滑移目标、压力控制、横摆模型、轴分配和左右泄压/速率组件边界清楚。",
+        "score": 3
+      },
+      {
+        "comparison": {
+          "allowed_parameter_substitutions": {
+            "K_WheelAlpha": "FILTER_ALPHA",
+            "K_YawAlpha": "FILTER_ALPHA"
+          },
+          "blocks_each": 9,
+          "complete_graph_equal_after_listed_parameter_substitution": true,
+          "directed_edges_each": 10,
+          "ignored": "Only display geometry/order. All block types, names, SIDs, remaining parameter expressions and full directed edges retained.",
+          "normalized_graph_sha256": "d9715dac0419579014ba0505d9fdae1b53a29fe0d8659e87df2d62f3f461dba2"
+        },
+        "evidence": [
+          {
+            "block_path": "WheelVelocityFilterLib/WheelVelocityFilter/FilterGain",
+            "kind": "model",
+            "locator": "simulink/systems/system_1.xml Block SID=6 FilterGain",
+            "member": "simulink/systems/system_1.xml",
+            "path": "Model/components/WheelVelocityFilterLib.slx",
+            "sha256": "1dfb36462e23b039534b8ac8d5411bdc2b7a4e12299bd93e774fe918f2839e2d",
+            "sid": "6"
+          },
+          {
+            "block_path": "YawMeasurementFilterLib/YawMeasurementFilter/FilterGain",
+            "kind": "model",
+            "locator": "simulink/systems/system_1.xml Block SID=6 FilterGain",
+            "member": "simulink/systems/system_1.xml",
+            "path": "Model/components/YawMeasurementFilterLib.slx",
+            "sha256": "6ac132772da6724ea65bf7f53f261f04f866f20338b7673c7a0b9aaebdda954c",
+            "sid": "6"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "reuse",
+        "reason": "两份实际复位一阶递归低通：innovation=measured-memory；next=memory+alpha*innovation；Reset时输出零；UnitDelay保存实际输出，采样0.01s。完整9块及全部反馈边一致，仅alpha标定符号和图形位置不同。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "BrakeStability/AxleSplit",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=17 BrakeStability/AxleSplit",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/BrakeStability.slx",
+            "sha256": "47f1decfc88658865e722a542619558dc4135ebeb5859b29a6c41624f37b42a3",
+            "sid": "17"
+          },
+          {
+            "kind": "file",
+            "locator": "Inputs/Outputs sheets, header row 4 and typed data from row 5",
+            "path": "Model/Interface.xlsx",
+            "sha256": "c4486268b000672aadc8bac47c0997c014d78ae83a618cc9f96d02f164f17bb0"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "interface",
+        "reason": "根及库端口显式且具名，类型可编译核对；部分内部物理范围及正式接口变更控制缺失。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "BrakeStability/AxleSplit",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=17 BrakeStability/AxleSplit",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/BrakeStability.slx",
+            "sha256": "47f1decfc88658865e722a542619558dc4135ebeb5859b29a6c41624f37b42a3",
+            "sid": "17"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "dataflow",
+        "reason": "主信号从估计到压力分配/输出基本顺序明确，少量复位和有效性长线交叉；非所有中间线具名。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "passed/samples/modelCoverageMeasured/cStatementCoverageMeasured",
+            "path": "Tests/results/test-result.json",
+            "sha256": "e16c3a71c3852036c19c1e431a84c839acd0c338a7f763de2cf183060f8b9799"
+          },
+          {
+            "kind": "file",
+            "locator": "stimulus, expected, absoluteTolerance, relativeTolerance",
+            "path": "Tests/TestData.mat",
+            "sha256": "d731ba99e306bead0348c80024d1903193f62470eb1f43a8d6f99ddce4c7e0a9"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "unit_test",
+        "reason": "仓内Tests包含真实模型引用夹具、640有序样本和逐输出独立期望，并实测通过；报告仅测Simulink模型coverage，C语句覆盖未测，故按合同止于1档。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "BrakeStability/AxleSplit",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=17 BrakeStability/AxleSplit",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/BrakeStability.slx",
+            "sha256": "47f1decfc88658865e722a542619558dc4135ebeb5859b29a6c41624f37b42a3",
+            "sid": "17"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "naming",
+        "reason": "轮滑移、附着目标、压力限制、横摆校正等块按职责命名；本轮逐块检查未发现默认InN/OutN。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "b1378cf8eb27e7980f2d5e30169803106c783aa833c9a7e0607d7f70455a25aa"
+          },
+          {
+            "block_path": "BrakeStability/AxleSplit",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=17 BrakeStability/AxleSplit",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/BrakeStability.slx",
+            "sha256": "47f1decfc88658865e722a542619558dc4135ebeb5859b29a6c41624f37b42a3",
+            "sid": "17"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "directory",
+        "reason": "Model、components、Tests及Configurations/Generated/Host等真实职责目录分开，可从入口找到依赖与结果。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "BrakeStability/AxleSplit",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=17 BrakeStability/AxleSplit",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/BrakeStability.slx",
+            "sha256": "47f1decfc88658865e722a542619558dc4135ebeb5859b29a6c41624f37b42a3",
+            "sid": "17"
+          },
+          {
+            "kind": "file",
+            "locator": "repository-specific model and component paths",
+            "path": "project_init.m",
+            "sha256": "0a71f75d27f677cb6f02a7ef0606a9645a5ed595e5a95dfcad507be7a0198497"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "build_independence",
+        "reason": "当前构建直接加载源SLX/MDL或M脚本；没有达到受控Bus/Mask组件契约、独立包与版本锁定的边界。只有显式端口不据此跳到2档。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/BrakeStability.slx",
+            "sha256": "47f1decfc88658865e722a542619558dc4135ebeb5859b29a6c41624f37b42a3"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "model_version",
+        "reason": "模型内AutoIncrement版本和实际构造Git提交可查，但未提供完整版本/信号变更表及正式评审差异记录。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/BrakeStability.slx",
+            "sha256": "47f1decfc88658865e722a542619558dc4135ebeb5859b29a6c41624f37b42a3"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "version_independence",
+        "reason": "存在模型内部自增版本，未形成MAJOR.MINOR.PATCH独立语义版本及发布兼容约定。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "configurations and allowed_parameters",
+            "path": "Configurations/configurations.json",
+            "sha256": "5d4b1b8dc628291291fb40120d4880b309896fac9fc1b35b368cc53191ef6204"
+          },
+          {
+            "kind": "file",
+            "locator": "two executed configurations and nonzero changedOutputs",
+            "path": "Tests/configuration-results/result.json",
+            "sha256": "5899694e34f36f4f727ae7d03e93bc5e4d627403cddd2d5208e6330b1fa9a559"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "release_branches",
+        "reason": "同一main实际支持两个配置，参数被生产模型消费、均通过640样本期望比较且输出有可观察差异；不以单分支名本身给分。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "configurations and allowed_parameters",
+            "path": "Configurations/configurations.json",
+            "sha256": "5d4b1b8dc628291291fb40120d4880b309896fac9fc1b35b368cc53191ef6204"
+          },
+          {
+            "kind": "file",
+            "locator": "two executed configurations and nonzero changedOutputs",
+            "path": "Tests/configuration-results/result.json",
+            "sha256": "5899694e34f36f4f727ae7d03e93bc5e4d627403cddd2d5208e6330b1fa9a559"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "device_specificity",
+        "reason": "两组几何/权限/附着配置实际共享业务并仿真；仍保留若干固定包络/结构假设，未证明设备差异全部隔离。",
+        "score": 2
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "70a72c0b2254efb4226a6fb19ad91be9aa47bbf7"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "70a72c0b2254efb4226a6fb19ad91be9aa47bbf7"
+}

@@ -8,6 +8,47 @@ from itertools import combinations
 from statistics import median
 
 
+def analyze_mixed_contracts(leaves,components,repository_contracts,contracts):
+    """Describe one center with different applicable contracts without imputation.
+
+    Contract partitions are an internal diagnostic scope, not reporting groups.
+    Missing/inapplicable metrics are never padded with zeros.
+    """
+    ids={r['repository_id'] for r in leaves}
+    if set(repository_contracts)!=ids:raise ValueError('Contract assignment is incomplete')
+    by_repo=defaultdict(dict)
+    for row in leaves:
+        rid=row['repository_id'];name=row['name']
+        if name in by_repo[rid]:raise ValueError('Duplicate population leaf')
+        by_repo[rid][name]=row['allowed_scores']
+    for rid,metrics in by_repo.items():
+        if metrics!=contracts[repository_contracts[rid]]:raise ValueError('Incomplete applicable contract')
+    partitions={}
+    for contract in sorted(set(repository_contracts.values())):
+        selected=[r for r in leaves if repository_contracts[r['repository_id']]==contract]
+        partitions[contract]=analyze(selected,components)
+    groups=[sorted(ids.intersection(c)) for c in components if ids.intersection(c)]
+    flattened=[rid for group in groups for rid in group]
+    if set(flattened)!=ids or len(flattened)!=len(ids):raise ValueError('Lineage components do not partition this center')
+    bands=[dict(b,contract=key) for key,d in partitions.items() for b in d['bands']]
+    return {'schema':'population-mixed-contracts-v1','repository_count':len(ids),'leaf_count':len(leaves),
+        'observed_band_cells':sum(b['count']>0 for b in bands),'legal_band_cells':len(bands),'bands':bands,
+        'unresolved_reference_leaves':sorted(r['repository_id']+'/'+r['name'] for r in leaves if r['score'] is None),
+        'constant_leaves':[dict(contract=key,name=name) for key,d in partitions.items() for name in d['constant_leaves']],
+        'modal_baseline':{'hits':sum(d['modal_baseline']['hits'] for d in partitions.values()),
+                          'denominator':sum(r['score'] is not None for r in leaves),'status':'in_sample_only'},
+        'source_groups':groups,'source_group_count':len(groups),
+        'independent_holdout':{'status':'structurally_unavailable' if len(groups)<2 else 'not_certified'},
+        'contract_scopes':{key:{'repository_ids':sorted(rid for rid in ids if repository_contracts[rid]==key),
+                               'leaf_count':d['leaf_count']} for key,d in partitions.items()},
+        'deterministic_associations':[dict(a,contract=key) for key,d in partitions.items() for a in d['deterministic_associations']],
+        'conditional_mode_diagnostics':[dict(a,contract=key) for key,d in partitions.items() for a in d['conditional_mode_diagnostics']],
+        'limits':['One reporting center; technical contracts only scope applicable metrics and associations.',
+                  'Inapplicable metrics are absent, not zero; incomplete applicable contracts are rejected.',
+                  'Structural per-repository scans were supplied; the underlying production source/raw extraction archive was not available.',
+                  'Same-set diagnostics do not establish internal joint-frequency representativeness or independent candidate generalization.']}
+
+
 def size_associations(leaves,components,sizes):
     """Observed size support for each score band, never a representativeness claim."""
     ids={r['repository_id'] for r in leaves}

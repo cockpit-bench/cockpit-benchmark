@@ -1,0 +1,789 @@
+{
+  "repositories": [
+    {
+      "center": "人工智能中心",
+      "evidence": {
+        "path": "suites/ai-center/evidence/AIC-01.json",
+        "sha256": "527bc934c1050b9f43b5ef528b805ced9cb8b851e62a763a04f756048167b3bc"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "ddbbb15374ae2ffaee62f0aef04babc710274695142a80eb5f6a1f7cfca793f4",
+        ".gitignore": "25ad61c98e7c3e2c466e1c4bae45f8810bfc48c15398f679262e4d47d78621f5",
+        "README.md": "125a79ec48015dd3d4d082f932432feac9e8143f60c7a65d715a499d462cd66c",
+        "app/build.gradle": "60d7818f5af110ddb2c88429bc6bd642a946a0c0746acc7b871a53fa7fcd1902",
+        "app/src/main/AndroidManifest.xml": "d958781faf4ce01c3a146036078e59c1b2c98a08879795e5eea9815be7c1b294",
+        "app/src/main/java/org/bench/servicehall/HallGraph.kt": "f6bfd4ccfcccaffa4f0c2e317bb19d14157b024b38a3c905dd8edb27b47634c2",
+        "app/src/main/java/org/bench/servicehall/MainActivity.kt": "48938859491b625d66b6c17ee59c292c15c6efadbe7c2b1cdd01f000ec9a5b42",
+        "app/src/main/java/org/bench/servicehall/Ui.kt": "dfa1f8d1dc0f688167a8dad773490f544b1e4afdae657176379dcb2a88a535d7",
+        "build.gradle": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+        "data/build.gradle": "cbd38da19c7d935aea23119aea9b792fb8396e56f50f606280abd5e51df6b088",
+        "data/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "data/src/main/assets/services.json": "35a5a4c88ddd74dc608bceeb7b9cbac65d2cab6894a33f355fa114f1d5969249",
+        "data/src/main/java/org/bench/servicehall/data/AssetServiceDirectory.kt": "dd213f08c82a15f800c1e9da4b2f1728073e4679abc6d2dca383e3249ec257dc",
+        "data/src/main/java/org/bench/servicehall/data/HallPreferences.kt": "c5d84bbb754f19648c58fc8e092c9b132b56fa1779c0660e14061e38f04ab999",
+        "data/src/main/java/org/bench/servicehall/data/RequestDatabase.kt": "3c6b5239725c809dcd87019703bbbd4605ae04a5a7f7c466055d1de2210c94bc",
+        "domain/build.gradle": "e4ba02cea08c34d847a818c8e966ea9c9a64db367c548d1f5c59297666d912fd",
+        "domain/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "domain/src/main/java/org/bench/servicehall/domain/CustomerContext.kt": "ef32e905617cc22bae9a3ed2e70e18f258b898a79d04c68c07c00a6e89d69e84",
+        "domain/src/main/java/org/bench/servicehall/domain/EligibilityPolicy.kt": "8f9505c2f3c60a59de51c81427049f6e9ef5f04e4619f21545bd019f9d5bc172",
+        "domain/src/main/java/org/bench/servicehall/domain/PersonalizedOrder.kt": "8fb0a47d5118a3807e7129244eca010126d29e55f816d6d8025ccf961377beb3",
+        "domain/src/main/java/org/bench/servicehall/domain/RequestRecord.kt": "131d8721346186f51122fade9775fc484fe3f6238c6c5f75fd6890b105957643",
+        "domain/src/main/java/org/bench/servicehall/domain/RequestWorkflow.kt": "c540ff72c9425ed7901ed6f81efd2f28ff4052fe5bb3533c641b00ddf9b9bd7e",
+        "domain/src/main/java/org/bench/servicehall/domain/ServiceDefinition.kt": "420d40f2b2be69cd9e85bdac250ae413cd904421ea2a81bcf459ffaf703bfb38",
+        "domain/src/main/java/org/bench/servicehall/domain/ServiceDirectory.kt": "c57c86847289c0970b76e3d1d78a499a57c17f560ca244f7ab2419c599e720d8",
+        "domain/src/test/java/org/bench/servicehall/domain/WorkflowTest.kt": "4a44cd716c5187c1522bfad49cb869c9de3d38a89ba172b868bbeef3a75c808a",
+        "feature-catalog/build.gradle": "81d63d861e2f563c8d8e85d3b88097b4ade12fd8d0ccfb8f6fc8af1b08cfca9a",
+        "feature-catalog/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "feature-catalog/src/main/java/org/bench/servicehall/catalog/CatalogPresenter.kt": "007f4ca899b822f8a676f8694247578173f71e2385859eeefe79f7c4ba418ff4",
+        "feature-requests/build.gradle": "1a2f60fb7dc96a8e1b00681a01dc7379aa577c7d2376787f3681573c43fc520b",
+        "feature-requests/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "feature-requests/src/main/java/org/bench/servicehall/requests/RequestPresenter.kt": "f813b3fa704b575efeddf50337f3d8f451440c668ab8089abe6d0566aec4bfe1",
+        "gradle.properties": "8c01912cbf365b832bf103ce9d43b8c1a148e40c72bb7e2a69c962af4e891a20",
+        "gradle/wrapper/gradle-wrapper.jar": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637",
+        "gradle/wrapper/gradle-wrapper.properties": "67b52d806eee8963f650f69e4d2afad60ee1bbdbd044d2209f635f26724493c2",
+        "gradlew": "63135287117a1e6d12c84580f1f49c61d1ba02218ecd28660605e97f976e7d65",
+        "gradlew.bat": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129",
+        "platform/build.gradle": "00e91f18f328cd3eaac82a55cde89b38682a9bc0e05ff0a83d4d54866e473f13",
+        "platform/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "platform/src/main/java/org/bench/servicehall/platform/SimulatedVehicle.kt": "5906980600f209b54d56d77761e4b5a92f087e3dcc313d9214ac36f9be548dc9",
+        "provenance.json": "be038bbc88e00ebb1fd02bd57b202c280d7883f4247a2fd44efeeb3d7273a5fe",
+        "settings.gradle": "a68e2726704eae480fbbfc287eb6bf35b7e1e5e49079ca3aba085d02ca3fe0f3"
+      },
+      "gitlinks": [],
+      "head": "554118dcaed430f1712f1ac5c4be9ae9fc91e749",
+      "id": "AIC-01",
+      "implementation_kind": "android",
+      "inventory": {
+        "path": "suites/ai-center/inventories/AIC-01.json",
+        "sha256": "01245c57e95b47c741f26e567be8d7d871e69d2612af13a0b89fb372095cf4a1"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": [
+          "APP-21"
+        ]
+      },
+      "name": "ai-service-hall",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "554118dcaed430f1712f1ac5c4be9ae9fc91e749"
+      },
+      "repository_url": "https://github.com/cockpit-bench/ai-service-hall.git",
+      "scan_profile": {
+        "path": "suites/ai-center/profiles/AIC-01.json",
+        "sha256": "a6dec079cbc2789c58cc89f358f8bae6cd0fb1f3f1ffc128bd0fdd989f094fc5"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "f7744f765c475125f20b2f83f31116a2c160c15a",
+      "type_id": "ai-center"
+    },
+    {
+      "center": "人工智能中心",
+      "evidence": {
+        "path": "suites/ai-center/evidence/AIC-02.json",
+        "sha256": "ca2b942c62395c570f03d9046a2af4db45ffce033b0b253031899155fd6a3bca"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "ddbbb15374ae2ffaee62f0aef04babc710274695142a80eb5f6a1f7cfca793f4",
+        ".gitignore": "25ad61c98e7c3e2c466e1c4bae45f8810bfc48c15398f679262e4d47d78621f5",
+        "README.md": "f83820720b74957cb08fd7b1750a7cbb9834f1cbfbd40dd4cd7dfe05f0e0f9da",
+        "build.gradle": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+        "gradle.properties": "8c01912cbf365b832bf103ce9d43b8c1a148e40c72bb7e2a69c962af4e891a20",
+        "gradle/wrapper/gradle-wrapper.jar": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637",
+        "gradle/wrapper/gradle-wrapper.properties": "67b52d806eee8963f650f69e4d2afad60ee1bbdbd044d2209f635f26724493c2",
+        "gradlew": "63135287117a1e6d12c84580f1f49c61d1ba02218ecd28660605e97f976e7d65",
+        "gradlew.bat": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129",
+        "hall-data/build.gradle": "f4c110d2b1edf0a31892f4b410a10e61f2c9a9b14994ebc5db27e90f0f6f21ac",
+        "hall-data/src/main/AndroidManifest.xml": "f1dcacb16aac40fd8cd8d11436e7760373db4fc6d313841a8c7935d7f496e143",
+        "hall-data/src/main/aidl/org/bench/halldata/IHallData.aidl": "4bd493e6369084bda258225def6b498dc0a89fb2d27005f278ff2831ba90bdba",
+        "hall-data/src/main/aidl/org/bench/halldata/IHallObserver.aidl": "0468ed801e7dd62f999fc255cdce9ef2b099c1b97557d711346ac04dfd1f2089",
+        "hall-data/src/main/java/org/bench/halldata/CardSnapshot.kt": "4195a3ac58f8e463777708083b3593e984c25deae9f91b330d0b4a21869326fe",
+        "hall-data/src/main/java/org/bench/halldata/HallDataConnection.kt": "a2880fa38d205208cbbdbdc6e8d86681fb6de2f925686b8e51b8d781620b56c9",
+        "hall-data/src/main/java/org/bench/halldata/HallDataService.kt": "e6acdfb3ac714297e153c16e3bf61be0aed66e0e38d762e6dcbdba8f104aa333",
+        "hall-data/src/main/java/org/bench/halldata/PublishResult.kt": "b52c72c33db259cb6afc148a7dfbca1a37fced1a96390179d3e5c22ea233ae8b",
+        "hall-data/src/main/java/org/bench/halldata/SnapshotCodec.kt": "a981f0ed2b8d81fdaf42482c7d6119ac582358f22cf55c69d073e5f5d7041d42",
+        "hall-data/src/main/java/org/bench/halldata/SnapshotJournal.kt": "603b880a49a8c794dab11a5d383a9c793c7785da86594337a22f4f7e3f84581f",
+        "hall-data/src/main/java/org/bench/halldata/SnapshotStore.kt": "535dc576aaa357066524771e0fc7e0904b442e860d8a8f762efd03b2d6a903db",
+        "hall-data/src/test/java/org/bench/halldata/SnapshotStoreTest.kt": "9266e1ed7a6dfaefac36498b9b9181feccde386619e6e9a3e9024347fabd06f2",
+        "provenance.json": "92f745b1f95f9711ec5c06b525bcbd9eb0be04e87d90d0366ca2bdccb48cd4e9",
+        "settings.gradle": "6dd57c2784ba07458196d253c686d2f0f8a3e72bb10a50c2a8b857f3a619c9c4"
+      },
+      "gitlinks": [],
+      "head": "69582afa41f69548179a6e8db297b326454ee4d3",
+      "id": "AIC-02",
+      "implementation_kind": "android_library",
+      "inventory": {
+        "path": "suites/ai-center/inventories/AIC-02.json",
+        "sha256": "230eb06aa9607083602e7eca73f169729f075404ac3fc4fc6bea7172f7eb14bf"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "ai-hall-data",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "69582afa41f69548179a6e8db297b326454ee4d3"
+      },
+      "repository_url": "https://github.com/cockpit-bench/ai-hall-data.git",
+      "scan_profile": {
+        "path": "suites/ai-center/profiles/AIC-02.json",
+        "sha256": "fa7b75e29f50694ea5eda08e234facbd47f7de92b16d9d4205697b20a2b9edce"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "5255217dbee9c9c032432b474b3aeab4a3f7d320",
+      "type_id": "ai-center"
+    },
+    {
+      "center": "人工智能中心",
+      "evidence": {
+        "path": "suites/ai-center/evidence/AIC-03.json",
+        "sha256": "012307d499e33d4bda67ffad8eba1ca9234074bedb12ba8e538314d249d41e4f"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "ddbbb15374ae2ffaee62f0aef04babc710274695142a80eb5f6a1f7cfca793f4",
+        ".gitignore": "25ad61c98e7c3e2c466e1c4bae45f8810bfc48c15398f679262e4d47d78621f5",
+        "README.md": "521defab84b2c978b9a6280855c799fa7182aa426ddedd065a501c3d25579a08",
+        "app/build.gradle": "220988fe93949f08ed1dbca7820f5a72c47315da62e831bc1f97dbc27fee35e1",
+        "app/src/main/AndroidManifest.xml": "4e7bbed0922975ebc2e346194c3de83d6b04ee47953799daf0f31672d7849942",
+        "app/src/main/java/org/bench/compact/Entry.kt": "26550dff0c56e2dd7a05c16b9f7f40cd6be43b6dd731dcecf752d9384a64aa6d",
+        "app/src/main/java/org/bench/compact/Handbook.kt": "637179e33fdbe35e41fc61b5ea79818222e58ebf1341718c6bf9aa1849fde9eb",
+        "app/src/main/java/org/bench/compact/LocalOrders.kt": "59116f4fd6887ff0cff82ebe92c69c7aa16578132e6624909c017352e24220cd",
+        "app/src/main/java/org/bench/compact/MainActivity.kt": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+        "app/src/main/java/org/bench/compact/Ui.kt": "7d8cdcb1ff7c84e6266472cb6a5c444205fde913de081cd9497be98a61bdb985",
+        "app/src/main/res/values/strings.xml": "c8637d4183c6574f9ad101e6b0b4db038dd0e50ca14c2415d6b6ed6807c06d9e",
+        "build.gradle": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+        "gradle.properties": "8c01912cbf365b832bf103ce9d43b8c1a148e40c72bb7e2a69c962af4e891a20",
+        "gradle/wrapper/gradle-wrapper.jar": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637",
+        "gradle/wrapper/gradle-wrapper.properties": "67b52d806eee8963f650f69e4d2afad60ee1bbdbd044d2209f635f26724493c2",
+        "gradlew": "63135287117a1e6d12c84580f1f49c61d1ba02218ecd28660605e97f976e7d65",
+        "gradlew.bat": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129",
+        "provenance.json": "08b82ff23dff9fa6128c99dc898d1931cab7acdaf8628db63a32114096d24ef2",
+        "settings.gradle": "1718904a95ff2d4c8befa09770bcdff40417ae71e15f3cd94752c027ca88a2f9"
+      },
+      "gitlinks": [],
+      "head": "b7dc0937f48bbcf3b163ce46dd70098d708bbe50",
+      "id": "AIC-03",
+      "implementation_kind": "android",
+      "inventory": {
+        "path": "suites/ai-center/inventories/AIC-03.json",
+        "sha256": "80321dafb9b6bb939af1afa6ba7f97fc816a5cdb27c6ef10791351f0bd03435b"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "ai-compact-hall",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "b7dc0937f48bbcf3b163ce46dd70098d708bbe50"
+      },
+      "repository_url": "https://github.com/cockpit-bench/ai-compact-hall.git",
+      "scan_profile": {
+        "path": "suites/ai-center/profiles/AIC-03.json",
+        "sha256": "d545722577b1c53c1c290fbfc2e76d463bbd78de14fd366336671bbdab6ab1ca"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "f49cbccd75d0b5d313d7f686ab759f255ac46355",
+      "type_id": "ai-center"
+    },
+    {
+      "center": "人工智能中心",
+      "evidence": {
+        "path": "suites/ai-center/evidence/AIC-04.json",
+        "sha256": "6f72333c7b8d579694658e9c9ab63e7d674302630d3849249ef9cec50c48ceaa"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "044cc2b51aceda47b144f702faf05606734da02241c72cefc4fee8909090cd36",
+        ".gitattributes": "d43603815b3859c608b5707d75af683b1bcfcbe44e64802fb8a2d1a70accdc64",
+        ".gitignore": "a9eefd20cf2c920388b524003cf84542d0bcb037c24f6255e0c7ec76e7527902",
+        "CMakeLists.txt": "7c60faafd823c3a220585f42f110729b8e5dc05afe6ca5243448d57d1611ef6d",
+        "README.md": "267d68acf598ee855a7290cbfcecaff88da7a20f5152f4f0b5b55bf900bb0338",
+        "SOURCE_ORIGIN.md": "7d511bffe90190867c66b7306a31cb753779daf7e1eb56fb75589c8b027c9d90",
+        "config/default.conf": "1866270e3b2feecdfe52ac42e4e03e5b0db620bfa198ca7655d0d0d77dd9e81a",
+        "config/signals.catalog": "613fa6f0d8145d4ef048400990049bd8a45a7121fbf57e2505e67c88bd24318d",
+        "engine/acquisition/ingest.cpp": "253183460845dda760abf47f2c172bce7e3b70bda568f5f712f5cc67df9667f8",
+        "engine/acquisition/signal_decoder.cpp": "05ba9951ada7be82d75afc6a75f436b247a9ab04a423ba634181cbacdfa80d9c",
+        "engine/acquisition/worker.cpp": "00444cae11b6b658fd0e6fbe520c8d3599aa6837af1dba561fe1150c05dcd985",
+        "engine/window/aggregation.cpp": "ec828613236fe699f0e01b7a39e31d3ff8e0e5dd09d06d249f2e110a95e6f918",
+        "include/data_collect/data_collect.hpp": "c382c12e5a2376554eaa06f398465bc74fea0db16e9a03f85a5bba165e1edb6f",
+        "include/data_collect/signal_decoder.hpp": "c75867ca02ef891be1c0ca4e41aee96d7805dd41228f8897d8b6f096932d6410",
+        "include/data_collect/spool.hpp": "11f499f8a045ab02d3fed10bbdd33e911d803d0c78e68f80123b7b6f34ba2f43",
+        "include/data_collect/worker.hpp": "ffc8a8df2ae5a3961059f7d91ec7466550bfdd5a8dc0812904f072e3cdb9f576",
+        "scenarios/default.csv": "98e6eb846deef980df1238b1183dfdbf0a2453ff7b207eacdcf7d0465b2900c3",
+        "schemas/upload.record": "62d9b7e69a6b66bbd76b0fdf26dfc391644a8219ed48eeafcf3115bedcd95729",
+        "service/spool.cpp": "653f3a48ff01e78af7d7980a64b7658245911041814b30d01bd9aaf28f97a0f4",
+        "service/upload.cpp": "d8bb6c9cd07164a65e70dfd38148832d85a481bf8cbf9c988bb008ef0771b759",
+        "tests/business_tests.cpp": "93542c7a2d2c4506d5bfc76e4c047b1600c8759f4b0b27c5a8ee9e59d2b9e105",
+        "tests/integration_tests.cpp": "fcb5f3c50616b33ea45d0cbcc546b8ba97c910abe19297854ce00c26c84d2ed3",
+        "tools/file_io.cpp": "8405e0d55909446df67b197f007fa5f49090ba18179de868d575f7e1ac00d9b4",
+        "tools/file_io.hpp": "bb5d280594cb42c97a22241bcd0451d7bbd91a38c88a9e166d5411d9c6647197",
+        "tools/scenario.cpp": "e742037afca3a5bc723c9ed0ed6ba9d9ebb44fc0d2462aab2e3a5080ed194d2e"
+      },
+      "gitlinks": [],
+      "head": "2a2987de0db0d345c77748aafbfd3b693a6ca073",
+      "id": "AIC-04",
+      "implementation_kind": "native_cpp",
+      "inventory": {
+        "path": "suites/ai-center/inventories/AIC-04.json",
+        "sha256": "8ca5f30f42d0a3952d651ad9e8d234d0f3813ec45cbe5926f295ea694ce04d1f"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "ai-data-collector",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "2a2987de0db0d345c77748aafbfd3b693a6ca073"
+      },
+      "repository_url": "https://github.com/cockpit-bench/ai-data-collector.git",
+      "scan_profile": {
+        "path": "suites/ai-center/profiles/AIC-04.json",
+        "sha256": "795f1ebbcf86affce9c56e20e290d907fd4a557c1b0b4c76be9d6aed58f2d456"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "2d0b4fea320f52d2e8e9d2392f6115bcd57f59bb",
+      "type_id": "ai-center"
+    },
+    {
+      "center": "人工智能中心",
+      "evidence": {
+        "path": "suites/ai-center/evidence/AIC-05.json",
+        "sha256": "21b0415c17efe335732f3e6e41369b53e5c9704435d3d799d742c747acdf3bd2"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "044cc2b51aceda47b144f702faf05606734da02241c72cefc4fee8909090cd36",
+        ".gitattributes": "d43603815b3859c608b5707d75af683b1bcfcbe44e64802fb8a2d1a70accdc64",
+        ".gitignore": "a9eefd20cf2c920388b524003cf84542d0bcb037c24f6255e0c7ec76e7527902",
+        "CMakeLists.txt": "eec92226138708d59e9c95e019552253d71a2b0d8fcf660435a6b35a9db5ec32",
+        "README.md": "30e839939a734484c57e1db7902f6cf298be29b6396977650eac11e74c89586e",
+        "SOURCE_ORIGIN.md": "11319c9f532a83f84e83a9db1159288d3619ea75fabf18d30db41d3d5c8af77a",
+        "config/default.conf": "7997bed7f6f9f16d069fc6e299a8c72b4611b58cd68c5617beb7b5f8dc3a123a",
+        "include/data_exchange/data_exchange.hpp": "4267a0841b6590a9ff8950712bb64c5f933f43ddd5f863fd543fff7c2a41ee61",
+        "include/data_exchange/file_store.hpp": "0304ddff1654705453e1d370a9ea046d9fffc5bb6fa489c76594fcf4873354dc",
+        "include/data_exchange/persistent_exchange.hpp": "10236a3e7efc43b3e2e51b66a06cff1e557a60b434a004fd0ef4c422e17c438c",
+        "include/data_exchange/schema_adapter.hpp": "9d6c4b21e772f3379c3366eacc3fd03da646d252123d0bba9b48ec96564d8378",
+        "scenarios/default.csv": "5d3725c2e90c5046d29da1213ba59243df683fc9a6c9d846591471cb433776b6",
+        "src/adapter/schema_adapter.cpp": "32bb3aa0807accdcf154f02953738ed7d32a5dea638e03aeea4e0510d7dce69c",
+        "src/service/persistent_exchange.cpp": "cbc297c8b60924422dc52044573787f471e5f00f7ad8d462085fb8192bb523f5",
+        "src/storage/file_store.cpp": "255a242f5e5b5e795f3b4cd6a637320967ea8e24ed0d65780c7bc548fd8479f5",
+        "src/storage/persistence.cpp": "705c0f471302c001e308ddbc3e2f4154a24618b6e25e17c778dd073360534ac8",
+        "src/transport/routing.cpp": "a285f6cc10e9c574f0fddbab1a1802f349e49af26b4fc3ee803d7ee6de5bdaff",
+        "tests/business_tests.cpp": "61c7b837fc281d0ec7d6182412e7a956246308047515d41c72081a3d93dce446",
+        "tests/integration_tests.cpp": "d79be6cffe053f98440575e08bb605e719b00555f384a3d4af8c690b9bfec086",
+        "tools/file_io.cpp": "8405e0d55909446df67b197f007fa5f49090ba18179de868d575f7e1ac00d9b4",
+        "tools/file_io.hpp": "bb5d280594cb42c97a22241bcd0451d7bbd91a38c88a9e166d5411d9c6647197",
+        "tools/scenario.cpp": "e678a8ad621840da7a4e0d8928038ff8db7af9f56a2b92d7d9da4357b63ce1b9"
+      },
+      "gitlinks": [],
+      "head": "2f94a73210da7bb69575b806c7f431183fec759b",
+      "id": "AIC-05",
+      "implementation_kind": "native_cpp",
+      "inventory": {
+        "path": "suites/ai-center/inventories/AIC-05.json",
+        "sha256": "848f97dfa0ca39726263c23ce9c95880f6fe7c8d5bccff70c6855a6884a8ff55"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "ai-data-exchange",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "2f94a73210da7bb69575b806c7f431183fec759b"
+      },
+      "repository_url": "https://github.com/cockpit-bench/ai-data-exchange.git",
+      "scan_profile": {
+        "path": "suites/ai-center/profiles/AIC-05.json",
+        "sha256": "bb60ebf2b29a7f3d5f7321262cd74f9aec9a46832c07e60ef271724c312e8241"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "76e61f200adb540622de3743613ebee40f700a47",
+      "type_id": "ai-center"
+    },
+    {
+      "center": "人工智能中心",
+      "evidence": {
+        "path": "suites/ai-center/evidence/AIC-06.json",
+        "sha256": "02b385e00f12da1469334cc56cbec2150ea2b4f9938830c19d453dddbe4b5665"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "ddbbb15374ae2ffaee62f0aef04babc710274695142a80eb5f6a1f7cfca793f4",
+        ".gitignore": "25ad61c98e7c3e2c466e1c4bae45f8810bfc48c15398f679262e4d47d78621f5",
+        "README.md": "6e64c8e00b03b05e83d10c2e633a22f047aaeb7fd79e471ca5c99b6506c75f89",
+        "build.gradle": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+        "gradle.properties": "8c01912cbf365b832bf103ce9d43b8c1a148e40c72bb7e2a69c962af4e891a20",
+        "gradle/wrapper/gradle-wrapper.jar": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637",
+        "gradle/wrapper/gradle-wrapper.properties": "67b52d806eee8963f650f69e4d2afad60ee1bbdbd044d2209f635f26724493c2",
+        "gradlew": "63135287117a1e6d12c84580f1f49c61d1ba02218ecd28660605e97f976e7d65",
+        "gradlew.bat": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129",
+        "provenance.json": "01b7dd7e92d076d98dfb7a33a33d981a1b5ad8928b31be51adec9f7c5bac3a55",
+        "settings.gradle": "6a01873f164541008b63a7f882bb643f8578c0bf48cb1f51fb3397fd8931b85a",
+        "widgets/build.gradle": "69077d4941cb2cd2e1ac9b490a5531c85ffddbd290b18ad5e7f5d9248072e1f9",
+        "widgets/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "widgets/src/main/java/org/bench/widgets/CardState.kt": "557e2f00afc1988cce34de81f43c1b2bd3f0e53ee3f6c6644acf16e53d0168f0",
+        "widgets/src/main/java/org/bench/widgets/ClickGate.kt": "dc174990bee1b6052f28345b91f44c63a7bc4a6bbf56a3de437215a0f8fef669",
+        "widgets/src/main/java/org/bench/widgets/EmptyStateView.kt": "638cb6bd9c7ffa326a9a5ce6d1ec46f7097e6f310dcba0a8e00c1acced9e77ca",
+        "widgets/src/main/java/org/bench/widgets/HallTheme.kt": "b7d8f3e19ca6af3033e7167600addb79b1a6b7d770144da7ee83c747bc6a8dba",
+        "widgets/src/main/java/org/bench/widgets/ProgressStepsView.kt": "f0e7504aefe9b91a473df1ff02dc09e3df3b57e52cb6d25b13a8e9d07da45d9c",
+        "widgets/src/main/java/org/bench/widgets/ServiceCardView.kt": "6134d92fbc01ed2e652f2951645a453e3a6c88a1724bac16379515016feb3ff9",
+        "widgets/src/main/java/org/bench/widgets/ServiceEntryView.kt": "2434a6995c4110820ab9c560d73bbdf67ba8ed9322ccc91a17e73032231635f9",
+        "widgets/src/main/java/org/bench/widgets/ServiceGrid.kt": "ba89c3ae7812c00f7b4590c4a9ca31b2acb05d3c7d6259059311ac178c90e71a",
+        "widgets/src/main/java/org/bench/widgets/StatusPalette.kt": "6694a6253bb5778ee4470e5460fca130653d7bca08767a06a64d1fb0220fe2b5",
+        "widgets/src/main/res/values/attrs.xml": "31ed1ee8623fea3d74744472d856fe76c7c22c5db1fda568a5f1541ebf9920dd",
+        "widgets/src/main/res/values/dimens.xml": "3c99944139f85ed8f039631d14f05e718baffd0fc71e9c86dbd25ba96e06aaad",
+        "widgets/src/main/res/values/strings.xml": "1fd86665705f41d04ed8765805daa6da4c97ad9bd33e16d77eb113bb303cd621"
+      },
+      "gitlinks": [],
+      "head": "33e6f4c186d1548c2906d74232a9ffa0ebde6996",
+      "id": "AIC-06",
+      "implementation_kind": "android_library",
+      "inventory": {
+        "path": "suites/ai-center/inventories/AIC-06.json",
+        "sha256": "0a186689c99b4e131343e5dc26afa237408fe838e204503cbae3c668b1d05d3a"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "ai-hall-widgets",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "33e6f4c186d1548c2906d74232a9ffa0ebde6996"
+      },
+      "repository_url": "https://github.com/cockpit-bench/ai-hall-widgets.git",
+      "scan_profile": {
+        "path": "suites/ai-center/profiles/AIC-06.json",
+        "sha256": "53764a1059654aa1ac5cecb5c8ea6124ec79b02251f6edfbf978a609fb42b190"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "156371a7dfc973a2123010b9bb5c385639793ded",
+      "type_id": "ai-center"
+    },
+    {
+      "center": "人工智能中心",
+      "evidence": {
+        "path": "suites/ai-center/evidence/AIC-07.json",
+        "sha256": "e23e6965bc064d1cd8090d03cf7818fb45716a0da52f9f1a8680b71cdaf9fbe2"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "83f85d7e632cffb3f615a5281b7aa2ce6f436d601afadeb97322540922966173",
+        ".gitattributes": "77272b4a2fca0d658154d5881bb000f0006eb3254f911c250797e35c1a7d90db",
+        ".gitignore": "5e1509d804b92dce1a0f5ba3b7a8508bb3db0024a08072fc4c3369188077189e",
+        "CMakeLists.txt": "bdcbe9292931501f1e75712f621c758c8aed8a066f17e18c5651cae83ec38601",
+        "README.md": "bc602a3bea0bc0a1638b1e976fc6e90b2c4dfb2c7c8201d8da41e7a1b2267c81",
+        "SOURCE_ORIGIN.md": "27af2d345dbfacdca7ea6da4cedda9d0579250bf8621131a6470a40ed1148a64",
+        "config/comfort.rules": "61023bfea147accef9b30d54426c4002756125e08a754ec47121e3ebdd68c990",
+        "config/default.conf": "7e9ff4983b25ce961a70ff59c52d908a489b0ecafc98319cf047fed6af4745e8",
+        "demo/android/README.md": "bef99e9890688ed00e246302f1edb26cbfe57465f4e2e305a6475e6612a67607",
+        "demo/android/app/build.gradle": "f3d03f844023ba1f8ee53a6ce844e4a77e1083bbdf443deab751885aa7a47005",
+        "demo/android/app/src/androidTest/java/org/benchmark/rules/demo/NativeInstrumentation.java": "69ca21a85a4cb2b9ee3a3989c6c9223a27b0fe62222acf8a838bf4e902662e07",
+        "demo/android/app/src/main/AndroidManifest.xml": "26a14fc2b91d49c8b4f96fc5d4f68befba2cb45a9803579ab0944f3126d38aa5",
+        "demo/android/app/src/main/cpp/CMakeLists.txt": "589fc0200c168da56f1c8040ab6cd61baa81b49cb9167c31bd0d4ecc9e18c379",
+        "demo/android/app/src/main/java/org/benchmark/rules/demo/RuleActivity.java": "8d9b817703c31d7b57f4df6c27840c4071311df1030b76d0a918e0c6123ae885",
+        "demo/android/build.gradle": "a41bc9c80946de40c2d168dc00bc1fa68a7c2c9ee41470e53ecdd39c3a0ed3fb",
+        "demo/android/gradle.properties": "cc6ad22c60400ba1e8a8c19153908c8d10d129b98876cdcac31ae84e4593af3c",
+        "demo/android/gradle/wrapper/gradle-wrapper.jar": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637",
+        "demo/android/gradle/wrapper/gradle-wrapper.properties": "67b52d806eee8963f650f69e4d2afad60ee1bbdbd044d2209f635f26724493c2",
+        "demo/android/gradlew": "63135287117a1e6d12c84580f1f49c61d1ba02218ecd28660605e97f976e7d65",
+        "demo/android/gradlew.bat": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129",
+        "demo/android/settings.gradle": "51d3e3ce37d13311daee3b1427114eaaeff35111d565b9616bb5652ddbc17ff0",
+        "include/rule_engine/compiled_expression.hpp": "c9c61434b27d740de81646aba81c2ae603e51eac5e4725fc3337085598b24ac0",
+        "include/rule_engine/rule_engine.hpp": "2a25a7b850abe70959d749189e33635ad02354fae9467b1bd032cfa4153b4834",
+        "include/rule_engine/signal_store.hpp": "8b329b024fab08253d2cbe7655c1dddb082180fddfb11667c5c9020e85bb919b",
+        "include/rule_engine/typed_runtime.hpp": "79da109893e7376fde6b7ca1510037f617f3b2786ad4824ce61e85e65887c368",
+        "include/rule_engine/value.hpp": "0a6313bfa90ec287ac07848750f1c0bb78747e37f9382a721f9764bf854cfa39",
+        "java/org/benchmark/rules/NativeRule.java": "036582ffa1f54f58b2b518f306c712f99f26c1fe61dddc19d72dce9cb5a3098f",
+        "jni/RuleBridge.cpp": "299f80172591549cda871d60b30ee83e02da5121d95abc1171eaf257b7675f53",
+        "modules/config/rule_catalog.cpp": "74c06b8cd722cb8c7d8944ffe850e0fa8d00df283eb6dc041cdca6619c056abe",
+        "modules/language/compiled_expression.cpp": "a3dc2080bf19958fbe3adae9c4cf221466449c87c15106a1021e02a56db5e0eb",
+        "modules/language/lexer.cpp": "415c56a03e7aba9de750aa0730ae99362c9a4418dccfc0c90a5cbd61d39e5421",
+        "modules/language/parser.cpp": "a4f5c37b42b9dc3113b6e0eba49b27c4af5e22b7c00db8a4edfb6b57832fff24",
+        "modules/runtime/engine.cpp": "15cefa664117ae44cc01af55662b7cf7574767d8e01daa4a417076a0d768b41a",
+        "modules/runtime/typed_runtime.cpp": "f30bfc9dc33492f1cc4ccf88be1a067f5bbd71ef333469b98de66f2270802840",
+        "modules/signals/signal_store.cpp": "9d96b028a87de3972f63429582ef49f39a76d095a6e73d406e820f51010742dd",
+        "scenarios/default.csv": "9dfb4ced41bfc04437c062c43c372969955b2f0e867b64ef31b9164374d56b0f",
+        "tests/business_tests.cpp": "be230c6ab0a814bdb5f05e01cafc330a4bd9d68bcd6d9b03a9c273d4f1bd9e2c",
+        "tests/integration_tests.cpp": "7a5499292a516dbf3202211ea4b75cb237355f97f6beff960bb17925f22b64d4",
+        "tools/file_io.cpp": "fbb4c31c7ba25cba8c5a4105dad6e0f36b813720d56d8ad334b449e9adfd48a6",
+        "tools/file_io.hpp": "9cdaf8010112504dc0dca6fb54d50899bb783aabfda52a76f052d746d1375b6a",
+        "tools/scenario.cpp": "2323c5f9a74b40f0946143ec593ddab3affb2d7f3be43c1caf9700dd555d4818"
+      },
+      "gitlinks": [],
+      "head": "8394177bed790a0c0ba557d87931e00bb0b13235",
+      "id": "AIC-07",
+      "implementation_kind": "native_cpp",
+      "inventory": {
+        "path": "suites/ai-center/inventories/AIC-07.json",
+        "sha256": "5907bb323ed461907b4c97b0a6fafb91c93ba06c1eaf30ecfe67071c269aa81e"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "ai-rule-runtime",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "8394177bed790a0c0ba557d87931e00bb0b13235"
+      },
+      "repository_url": "https://github.com/cockpit-bench/ai-rule-runtime.git",
+      "scan_profile": {
+        "path": "suites/ai-center/profiles/AIC-07.json",
+        "sha256": "e753aff62125ae8c3202a535ed38aac51af28e550b3adb8334b1ee14b0fe6ba1"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "90303ff3a3998adb99784c4b3017c5846ffa440a",
+      "type_id": "ai-center"
+    },
+    {
+      "center": "人工智能中心",
+      "evidence": {
+        "path": "suites/ai-center/evidence/AIC-08.json",
+        "sha256": "4e65f77eca13daaa3316dd0d4f1db18591e581a8960aa9b4a338309523d05734"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "ddbbb15374ae2ffaee62f0aef04babc710274695142a80eb5f6a1f7cfca793f4",
+        ".gitignore": "25ad61c98e7c3e2c466e1c4bae45f8810bfc48c15398f679262e4d47d78621f5",
+        "README.md": "d182a238e406d46bd12a6a891977e9d43dbf391450143207d8fcdc2e5057845e",
+        "build.gradle": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+        "gradle.properties": "8c01912cbf365b832bf103ce9d43b8c1a148e40c72bb7e2a69c962af4e891a20",
+        "gradle/wrapper/gradle-wrapper.jar": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637",
+        "gradle/wrapper/gradle-wrapper.properties": "67b52d806eee8963f650f69e4d2afad60ee1bbdbd044d2209f635f26724493c2",
+        "gradlew": "63135287117a1e6d12c84580f1f49c61d1ba02218ecd28660605e97f976e7d65",
+        "gradlew.bat": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129",
+        "health-card/build.gradle": "64aa62874643c971785faf225989ebadcae9e574757de47ff08ca61537031c5f",
+        "health-card/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "health-card/src/main/java/org/bench/health/DiagnosticRoute.kt": "da6674d414b583b5a51f264491588f7c0fa913ca48ea80acf02239bc26ba19a7",
+        "health-card/src/main/java/org/bench/health/HealthCardView.kt": "e5fbdcceca57a631926b9f024e731f9fa1c0fcbc099ef2425776e028b94be5c1",
+        "health-card/src/main/java/org/bench/health/HealthReport.kt": "b8a37587d00b8933ae0bc1bb1712acd3a0c681f2d4d18dc010e727e4636c28bc",
+        "health-card/src/main/res/values/strings.xml": "45f9cab81876d7062e7a06abdb851f53e12ca662c4e63193d4b2e0acf366c0d1",
+        "provenance.json": "6ae61dcce7db51d376597122d8c318041a841d439981bc0d3b37a526f2f19689",
+        "settings.gradle": "40864fcbf85287273b746be45916c5e816fc462d1edf2d15394768908dc41291"
+      },
+      "gitlinks": [],
+      "head": "58b1e989cf25e7431717b6c7a5b43ae8856962ec",
+      "id": "AIC-08",
+      "implementation_kind": "android_library",
+      "inventory": {
+        "path": "suites/ai-center/inventories/AIC-08.json",
+        "sha256": "e61439d40847a650a76d15e57587de22c0a1490eb95ae7e66ab493f2c3f0e0aa"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "ai-health-card",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "58b1e989cf25e7431717b6c7a5b43ae8856962ec"
+      },
+      "repository_url": "https://github.com/cockpit-bench/ai-health-card.git",
+      "scan_profile": {
+        "path": "suites/ai-center/profiles/AIC-08.json",
+        "sha256": "d92524c2c014cf580311e4264d676bea3e4581d24ca7a23d3202badceb9d13ab"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "e39b8dd3fe29167a2aad5eeba90147fb15a12a50",
+      "type_id": "ai-center"
+    },
+    {
+      "center": "人工智能中心",
+      "evidence": {
+        "path": "suites/ai-center/evidence/AIC-09.json",
+        "sha256": "3e611f85716832a5f61967201bafde21bdeb456cf278ac0704c0a11ea69135f6"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "83f85d7e632cffb3f615a5281b7aa2ce6f436d601afadeb97322540922966173",
+        ".gitattributes": "d43603815b3859c608b5707d75af683b1bcfcbe44e64802fb8a2d1a70accdc64",
+        ".gitignore": "a9eefd20cf2c920388b524003cf84542d0bcb037c24f6255e0c7ec76e7527902",
+        "CMakeLists.txt": "6497c097adf7bf9fdc2c6d66f59f1bc0f5171c3f31a316f9e3e3ab6c1850e3b1",
+        "README.md": "6519cbfd3a19382f7ff8d930e958ca60368d433a6dcb4d119f95fd4229bdd56e",
+        "SOURCE_ORIGIN.md": "e2c921ea2371dce17a7b570952066624f6d6011f7851dbf64fb56dff7919160a",
+        "config/default.conf": "872ef75febe68f8fa133ca75a8e46f47060d731b7e053df7a4837880b68d3fde",
+        "config/trip.workflow": "33e0873672d16e162e55a29a70dd0b1b89572b152918e5478fc52c8d1b6d7489",
+        "include/agent_dispatch/agent_dispatch.hpp": "1dade5c6a8434acf335034f48786264f18e5fb22ebc25099c340f18fd7353890",
+        "include/agent_dispatch/local_skills.hpp": "b785f0159c538296a87726540decfb60bfe29c6d737f4081a841487292a1036c",
+        "include/agent_dispatch/workflow.hpp": "86d17b22740019cde22f916644b1983e250e79ed4d7e2b2a2881b4e75b3838a8",
+        "include/agent_dispatch/workflow_catalog.hpp": "77dfff51cd669c406df7204a534d20a00fbe8ad1715859fb1686059b41079a4b",
+        "scenarios/default.csv": "cf736f63c3f342ea318bf5bbfdec1ff8cfcf5294660365253a70e176a64d6625",
+        "src/adapters/local_skills.cpp": "064bd972b1c871a15a40b5a098598db55bf89da8bf8ed716d3f432b0d3cb597d",
+        "src/dispatch/scheduler.cpp": "276eccf0f95228b0f2ab01cf461295d94626f9695d62fd6764f94d476f0f99c0",
+        "src/manifest/workflow_catalog.cpp": "b394812b6fe42390f5c1950872629ea61ee9f6dee4c00704dd4436affa523918",
+        "src/session/sessions.cpp": "6f137fab971f624946e19c9ba209d85653a45c61b90c33886018f5565f58a159",
+        "src/workflow/definition.cpp": "a68b8887f11e8b630140e587c403645e76debbdbc61ed3e71ecdb83b0c8b008a",
+        "src/workflow/runner.cpp": "950f182ba05c6357c9bd555a99809e376c5c1a9886536ac919e64cc64aed2d09",
+        "tests/business_tests.cpp": "92157cd4b0ec59134f3578aaa611d235382f82b7fb14a60230f23c77c9726591",
+        "tests/compensation_tests.cpp": "d205ba3d72ea4a36dc835144a0ed86f58b4bff6d5f5d982b607d60a817010d6b",
+        "tests/integration_tests.cpp": "b6f9be584323d73c548ec3bf491bbcaf29ab6e7b7aa3414cca8e513944aa2468",
+        "tools/file_io.cpp": "fbb4c31c7ba25cba8c5a4105dad6e0f36b813720d56d8ad334b449e9adfd48a6",
+        "tools/file_io.hpp": "9cdaf8010112504dc0dca6fb54d50899bb783aabfda52a76f052d746d1375b6a",
+        "tools/scenario.cpp": "c880f3047b0a22b06836e264f74682d5b02aeb2cbc9ad5bc83d02cde1ff24145"
+      },
+      "gitlinks": [],
+      "head": "ed34ae9126eed17cc34806a0ab60e3b7f68fc071",
+      "id": "AIC-09",
+      "implementation_kind": "native_cpp",
+      "inventory": {
+        "path": "suites/ai-center/inventories/AIC-09.json",
+        "sha256": "ba5b3f6ca5e9f1fa0d88ae03e5f44363790d4d23479c213abf429b91f59acfba"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "ai-agent-dispatch",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "ed34ae9126eed17cc34806a0ab60e3b7f68fc071"
+      },
+      "repository_url": "https://github.com/cockpit-bench/ai-agent-dispatch.git",
+      "scan_profile": {
+        "path": "suites/ai-center/profiles/AIC-09.json",
+        "sha256": "ca2ec4e14a0605fbb75fd2f84396bfdb479373be6fa6d6d7365068a0c1b27b65"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "0e80e150bbaf4c2e1f5a94045860c87498b463ac",
+      "type_id": "ai-center"
+    },
+    {
+      "center": "人工智能中心",
+      "evidence": {
+        "path": "suites/ai-center/evidence/AIC-10.json",
+        "sha256": "ea7b042cd18b1b93d1fa18815f1c90c860d874561d9eebd37327459149d6474e"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "ddbbb15374ae2ffaee62f0aef04babc710274695142a80eb5f6a1f7cfca793f4",
+        ".gitignore": "25ad61c98e7c3e2c466e1c4bae45f8810bfc48c15398f679262e4d47d78621f5",
+        "README.md": "de9789498460896a9983912d39a47954e37fb3ba6d550b63c0b3cc868942c440",
+        "agent-core/build.gradle": "49c3c125395931e683dd6d4a4d1b2a1f096e298611b2fa36c853bc378aa9bec1",
+        "agent-core/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "agent-core/src/main/java/org/bench/vehicleagent/core/AgentEngine.kt": "88f4053e15f2e9d2465e0921dc2af3353b34033319821b05bab091fafa27d6ab",
+        "agent-core/src/main/java/org/bench/vehicleagent/core/Plan.kt": "b665d6173c4bb029478cf0db914dfb2ee00bbea8663449f2c36c2ea27f5e4e18",
+        "agent-core/src/main/java/org/bench/vehicleagent/core/PlanValidator.kt": "5dd6ca1861ebb4caa82123eeb146ab616e6defc220f12fc93654e9fbccd49f62",
+        "agent-core/src/main/java/org/bench/vehicleagent/core/VehicleGateway.kt": "a12f1203a26dd469a3004f96fbe4d574859bc7fd88638a388abb527bb2b99e73",
+        "agent-core/src/test/java/org/bench/vehicleagent/core/AgentEngineTest.kt": "263f223016ba0a27947952c53b99172059f21aa597611a4cd2834e936078fbcc",
+        "agent-data/build.gradle": "ebf889b76367807588dd596d06f59a41cf224438a8160c8dcdaa0e3486edef8b",
+        "agent-data/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "agent-data/src/main/java/org/bench/vehicleagent/data/SessionJournal.kt": "a14a44fb3ed2ec04d094457dc46ee88af332a57544fc8def600f3f1c4f6a59d9",
+        "app/build.gradle": "cd5045635f9665f27769142920cf2e91be3dc256836027cb5e1a9072d9cb9c27",
+        "app/src/main/AndroidManifest.xml": "bece7f28a126ee1092ef619db231daf3cc9ccc2b379e508dfc7e9759e6cb4c7a",
+        "app/src/main/java/org/bench/vehicleagent/AgentGraph.kt": "b039e7ec47cf60a183a8c08624c8eefba401b8938e136f7212c938f0458da9f0",
+        "app/src/main/java/org/bench/vehicleagent/MainActivity.kt": "7808ef4b57539f767fe1591d3ee6003c50ac5d228e9c46a2eabf29ab67987583",
+        "app/src/main/java/org/bench/vehicleagent/Ui.kt": "e8bc43e119cd4637d71570c688bd4781aa9acab923ebfa2ba46eda2a6a71fdea",
+        "build.gradle": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+        "feature-planner/build.gradle": "35e6ca35e03f4f9371433458a6476889a3a5f7f28842490605d6d07657171376",
+        "feature-planner/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "feature-planner/src/main/java/org/bench/vehicleagent/planner/PlanPreview.kt": "0a634751139089cd277bbea88e5ff86dabb1b8efe2f5f883668be495f2180e55",
+        "feature-progress/build.gradle": "ff16c9ebc8b61276c32070245dcf4f1080d03953dd5d3299daba34aec4d7712d",
+        "feature-progress/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "feature-progress/src/main/java/org/bench/vehicleagent/progress/ProgressRows.kt": "56213bc4a614080972c23fb5a97405086fa712f9173303f44c13f6cc160f9f6d",
+        "gradle.properties": "8c01912cbf365b832bf103ce9d43b8c1a148e40c72bb7e2a69c962af4e891a20",
+        "gradle/wrapper/gradle-wrapper.jar": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637",
+        "gradle/wrapper/gradle-wrapper.properties": "67b52d806eee8963f650f69e4d2afad60ee1bbdbd044d2209f635f26724493c2",
+        "gradlew": "63135287117a1e6d12c84580f1f49c61d1ba02218ecd28660605e97f976e7d65",
+        "gradlew.bat": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129",
+        "plan-catalog/build.gradle": "24f17455b6e03009ddbcb35fd6ff6225d5b6dbedb4db986f9ca1cfd18e982444",
+        "plan-catalog/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "plan-catalog/src/main/assets/plans.json": "2e6ee0029a3f0207fe6bc51a2880e76de7efbf4cefe57b83f659ed8848e52d9d",
+        "plan-catalog/src/main/java/org/bench/vehicleagent/catalog/IntentRouter.kt": "0b2b28d42295e86c7634b60d68e9f433a7dbe04637f0cf3030ce6d9c3bbd0916",
+        "plan-catalog/src/main/java/org/bench/vehicleagent/catalog/PlanDirectory.kt": "f8be64d7d30aa9f8063f39316fe5993d005cf54d54cd36e4bdd9b03723b9e82f",
+        "provenance.json": "061aafca5c4c1b48846fe30e848eb123d04466604dcedf5ffb971e83577df918",
+        "settings.gradle": "df2f110c9c90f61b19725eb3655550599b71cd438b0961766faf91388fd43c45",
+        "vehicle-sim/build.gradle": "dffa826f2cd5eb96364db1dbaabd942b94f21b1a73ce55c9fe6e3f057f6a8194",
+        "vehicle-sim/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "vehicle-sim/src/main/java/org/bench/vehicleagent/vehicle/LocalVehicleGateway.kt": "1db0fdd9d36c0a0a9a7969066def42329fd1aef44b9ce1aaa18f81e4317dd588"
+      },
+      "gitlinks": [],
+      "head": "04ecdf17210613d85535e4a51efd1a61ec3fab40",
+      "id": "AIC-10",
+      "implementation_kind": "android",
+      "inventory": {
+        "path": "suites/ai-center/inventories/AIC-10.json",
+        "sha256": "8575d16bdd51811076df5a1e92e517ca31ab2ee6479d10516fe2338c73732ae9"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "ai-vehicle-agent",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "04ecdf17210613d85535e4a51efd1a61ec3fab40"
+      },
+      "repository_url": "https://github.com/cockpit-bench/ai-vehicle-agent.git",
+      "scan_profile": {
+        "path": "suites/ai-center/profiles/AIC-10.json",
+        "sha256": "054cfb20ea816f1acbb31bc00b6a291ef36f4122039c7b97a854550e7e8e64dd"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "5119dd42132a3855a8e9db74658438e53c35ab7c",
+      "type_id": "ai-center"
+    },
+    {
+      "center": "人工智能中心",
+      "evidence": {
+        "path": "suites/ai-center/evidence/AIC-11.json",
+        "sha256": "dadf9a6878cd6da2a0fca6c758ed151f7afb269f5f7a27874026c5db9399842d"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "ddbbb15374ae2ffaee62f0aef04babc710274695142a80eb5f6a1f7cfca793f4",
+        ".gitignore": "25ad61c98e7c3e2c466e1c4bae45f8810bfc48c15398f679262e4d47d78621f5",
+        "README.md": "d3d4f828ffec663f4ba6cfdc8b6b3e3c6be10fc6aaca805f22b24065d5ab3d5c",
+        "app/build.gradle": "3cb175fcb1fbd6a23fabe084c400473360d8669d62ad25103f130c0e116cb0b6",
+        "app/src/main/AndroidManifest.xml": "eaa8f950c46bac6659fdf9fc835ff72041f4384e15e023e4ff21e35f3f140ab1",
+        "app/src/main/java/org/bench/personalhall/AccountScreen.kt": "34bb7e5936f1f6bb96c057722434e2b6a01194a7cb8e2e9c40b11d1a38347d0a",
+        "app/src/main/java/org/bench/personalhall/DetailScreen.kt": "4f4b050c4bd9859e322f04cb574d93efd254b815f8c75dc629081145da8e7654",
+        "app/src/main/java/org/bench/personalhall/EditorScreen.kt": "5a0ae510e2bf873ac0e1e5bd7f5b848ffde07fcb6189772f0e2bb07d6b2df9d0",
+        "app/src/main/java/org/bench/personalhall/GarageScreen.kt": "aba8af81f77a22006dbe32787e51dbe119742d10a0264da627765e0e7474b0f7",
+        "app/src/main/java/org/bench/personalhall/HallUi.kt": "fb5840f65e7e78c6dee487885d717602d6830ce8c2aca921b1e435a7a5782be0",
+        "app/src/main/java/org/bench/personalhall/HistoryScreen.kt": "736bb809110bfa81efc98d1169000228b785c04a7301f114dd881661fe2f0828",
+        "app/src/main/java/org/bench/personalhall/HomeScreen.kt": "2e12a33446231505071c342b331b22e2cb8b9981b26ae646d566ec94c88b9afe",
+        "app/src/main/java/org/bench/personalhall/LegacyGraph.kt": "c7dfb0bd2ce2cb2c8559586bf1792190c843784989a3cc5d18e1867f430660c3",
+        "app/src/main/java/org/bench/personalhall/MainActivity.kt": "2c4563bf577b94d6479b6d1e2bbf42f1b38b1584784bc9a5024b55f57bc6e2c4",
+        "app/src/main/java/org/bench/personalhall/SceneBannerView.kt": "b64c377b8d9b9965df0f4266afd7b5258605423b63e812dd3396180d43672830",
+        "app/src/main/java/org/bench/personalhall/ServicesScreen.kt": "aec6f1c93149284c27b6f954ec9d96d38eff6c1fd69375357e6b3875d005057b",
+        "app/src/main/res/drawable/card_care.xml": "d1b91dd97d8ef2c5c08b1ee6bb7e457f4b91c7459e4e684a542d7b96599a1e02",
+        "app/src/main/res/drawable/card_culture.xml": "7f4b425b61b81389c2b0031c7bb8cfce356e03fe9b1bd54f9694c80c141ae72b",
+        "app/src/main/res/drawable/card_daily.xml": "ba3572eb562df4937137b046a7762c7d318de2bf17cb5cb918352b72556fd24e",
+        "app/src/main/res/drawable/card_member.xml": "542146f6c941360ab7e8ab496fdf45da55fad8e8f6656928a39bcb0281328c9e",
+        "app/src/main/res/drawable/card_travel.xml": "e7ad34c3877ccccf1d355b420a20f9f94492dffccc897b4cc48679f48a5c6162",
+        "app/src/main/res/values/strings.xml": "f20de12c1870cf00533bf77aaa0dbd8441ef262371695abadd9b225754204b2e",
+        "build.gradle": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+        "card-cache/build.gradle": "da7a7ae1aac5c17c5c7dfd9b8d77d1a43fdcf948e9c6d18a94c31d8a328f3221",
+        "card-cache/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "card-cache/src/main/assets/services.json": "8c3b1ba086a0f985b087648b37154bfca1ad05d972060ba534f74227c9a6d5e7",
+        "card-cache/src/main/java/org/bench/personalhall/cache/Booking.kt": "5740353d3b0b8c49f90a9e018dcae78907dbdc2ec339f553c947d39c50568f30",
+        "card-cache/src/main/java/org/bench/personalhall/cache/BookingStore.kt": "d8c732742cbfcd8cb5dcb3dbb5f6c6bb592786db20442d8308fc898084d4f390",
+        "card-cache/src/main/java/org/bench/personalhall/cache/CatalogCache.kt": "2bc761c7cd5a7e5071ac7689fedd742db63922e20b6f4a31ec21456b576ca1ea",
+        "card-cache/src/main/java/org/bench/personalhall/cache/CatalogDecoder.kt": "08ed774c66d151dbbd4fd849df5e6869be46a82823ccc861351b0b6e33629e1a",
+        "feature-account/build.gradle": "f065e0964325972fb10518a116fafddd8876d778f8952396aa7f0e94cf73b4f0",
+        "feature-account/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "feature-account/src/main/assets/scenes.json": "b013f7a3a5d2c71b4c7dbe511e78635b9b54590846fcd25f311bf5a483b5eb70",
+        "feature-account/src/main/assets/themes.json": "8db5a13145ef1b6d5aa397ccc7709423922aa9a5382b3547488f8ebfa4baf658",
+        "feature-account/src/main/java/org/bench/personalhall/account/AccountStore.kt": "ae45122f0ee0a00fe662895699f9e29ae8be8b7f795c59357c3eb3ef7c33e262",
+        "feature-account/src/main/java/org/bench/personalhall/account/CardArrangement.kt": "aecd996ca6f7b685fadcc6892b672ec96e045194a2a54603aa1ccc5edfc47267",
+        "feature-account/src/main/java/org/bench/personalhall/account/RewardBook.kt": "da4281399a923bae0bfffad601aece04efd563ca5bd00341ba1caf75ad99673c",
+        "feature-account/src/main/java/org/bench/personalhall/account/ThemeDirectory.kt": "aa098b65bf680bc24438afd6de59d9d531f622db7968ec4dda231f61ca00b35f",
+        "feature-garage/build.gradle": "b6f80161970aab675bf9793765866f1a82c1212a64149087c50d3494902bf653",
+        "feature-garage/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "feature-garage/src/main/java/org/bench/personalhall/garage/GarageStore.kt": "3d039ebd454ec8c8d101d4dc3a4e300164ce52cc3664acf582cdbcf4c0b09a14",
+        "feature-garage/src/main/java/org/bench/personalhall/garage/TripHistory.kt": "c5d4b65844ab93ba46e22381fd5c1c914720eaadbec09139bfe6c1eb987aa067",
+        "feature-garage/src/main/java/org/bench/personalhall/garage/Vehicle.kt": "523974ddce984c467b65be1fda048fc04201f20d604f6f3c464cfae83a7037c9",
+        "feature-services/build.gradle": "48dba3d7eee6a3029e635b1e249c4a71359872465e9ebee97f758fd4651eec36",
+        "feature-services/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "feature-services/src/main/java/org/bench/personalhall/services/DeepLinks.kt": "b9e3e0840ed2fed71556d8d3c244c215e300206bb5a65cb9ad6f933db5429b45",
+        "feature-services/src/main/java/org/bench/personalhall/services/ServiceAdmission.kt": "a5cfc3172fa5b35e170f20040284a5f8fb215ca1005bb5fb7d557520864bd2d0",
+        "feature-services/src/main/java/org/bench/personalhall/services/ServiceGuides.kt": "48998eb82caa3e9f7b90bc26d937f4020c37b863932218c5c6d9fa03625153b9",
+        "feature-services/src/main/java/org/bench/personalhall/services/ServiceSearch.kt": "d147a5e857f099daab1d575ca9b15e4df56f2abbdf2f1da913f4281b27307351",
+        "gradle.properties": "8c01912cbf365b832bf103ce9d43b8c1a148e40c72bb7e2a69c962af4e891a20",
+        "gradle/wrapper/gradle-wrapper.jar": "e996d452d2645e70c01c11143ca2d3742734a28da2bf61f25c82bdc288c9e637",
+        "gradle/wrapper/gradle-wrapper.properties": "67b52d806eee8963f650f69e4d2afad60ee1bbdbd044d2209f635f26724493c2",
+        "gradlew": "63135287117a1e6d12c84580f1f49c61d1ba02218ecd28660605e97f976e7d65",
+        "gradlew.bat": "c46a27c79007746de5922b17abb6230d64ad8b1ba3ad1585ee5c6543c2a9b129",
+        "legacy-common/build.gradle": "55de1eae2bedbaaa670415356817057c27ec2df588a372bce70249dee2c903df",
+        "legacy-common/src/main/AndroidManifest.xml": "343d5be1ac17cdd45d1a2f2ddc616c509290e655869125a9422a96d88aa66066",
+        "legacy-common/src/main/java/org/bench/personalhall/common/LegacySession.kt": "1d9dcd0e9240119cdc3add1388c37665cb5bc2efa2881f0d10a0629477773935",
+        "legacy-common/src/main/java/org/bench/personalhall/common/LocalTime.kt": "9272a16eb9cc7e83a845bdb7df7fab284efc8bdaacae63b9d7bdcbd95744ccfb",
+        "legacy-common/src/main/java/org/bench/personalhall/common/PreferenceList.kt": "6277287ae3844df512daee9a3a2dd3eee86f59c4f45754224a5eb38492d1f44e",
+        "legacy-common/src/main/java/org/bench/personalhall/common/ServiceItem.kt": "3f06eed588f9b8a1f7eb300650bbb2aeee6a7ab8438a6825389da8d24e7d96ba",
+        "legacy-common/src/main/java/org/bench/personalhall/common/ThemeSpec.kt": "9b596057e1a8edd7b05b286b02ad76038d6091b79f0ab8e6c61b80196cf9ebc1",
+        "provenance.json": "590a7ea7fe75754a6f1fc61add0a4a0b8c816424fcaa4363dd20064f58254b73",
+        "settings.gradle": "ca2030beae73bdf3618af3ade92f04d3dd6d45cd2a6f75fbef276f543d520ce8"
+      },
+      "gitlinks": [],
+      "head": "b0851c013d9996e553cca4f58c2f787d06bf6b0f",
+      "id": "AIC-11",
+      "implementation_kind": "android",
+      "inventory": {
+        "path": "suites/ai-center/inventories/AIC-11.json",
+        "sha256": "5d47a65d427af02f02980f208836e8de741b6791fc1c421b3a186fa9617f2005"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "ai-personal-hall",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "b0851c013d9996e553cca4f58c2f787d06bf6b0f"
+      },
+      "repository_url": "https://github.com/cockpit-bench/ai-personal-hall.git",
+      "scan_profile": {
+        "path": "suites/ai-center/profiles/AIC-11.json",
+        "sha256": "c37267d1d1569631493dd9efe0f62b34718854d750778d5bab739b9769cb1c2d"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "821f678bbfae87d485bfd6b208a32606521d9f16",
+      "type_id": "ai-center"
+    }
+  ],
+  "schema": "center-source-manifest-1",
+  "type_id": "ai-center"
+}

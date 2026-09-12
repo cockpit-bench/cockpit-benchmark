@@ -1,0 +1,533 @@
+{
+  "execution": {
+    "limits": [
+      "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+      "Maintainer external tests do not count as repository-owned integration tests.",
+      "Same maintainer construction family; not an independent holdout."
+    ],
+    "records": [
+      {
+        "path": "suites/intelligent-driving-center/execution/IDC-04.json",
+        "sha256": "7baa1e451c374e759a6daf2adc06a41c00e4a687ea73e8215fb3bdcae2f9a83b"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "257dcc87392c004a682b38b8df8645d5970997ab",
+  "id": "IDC-04",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "257dcc87392c004a682b38b8df8645d5970997ab",
+    "id": "IDC-04",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "7acd7ae7fb996e03ed236e65aa1d6d93d27219c80c4b2107bf8c9b393047e5e8",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct Quality {",
+            "path": "include/calibration/quality.hpp",
+            "sha256": "b710dc1207e11d7cb63bc5d5280399f5e1c0503314f6107f4894aac0b94ed927",
+            "symbol": "struct Quality {"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: Transform compose(const Transform &a, const Transform &b) {",
+            "path": "src/quality/residuals.cpp",
+            "sha256": "da3ed2e860ad46df5a34c3c67c81becd2cf109d8f2854339d10271022e67eb50",
+            "symbol": "Transform compose(const Transform &a, const Transform &b) {"
+          }
+        ],
+        "limitations": [
+          "quality.hpp同时公开统计、会话、插值和文件读写，边界偏宽。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "空间拟合、坐标变换、时间对齐、质量门限和文件I/O有对应模块。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "7acd7ae7fb996e03ed236e65aa1d6d93d27219c80c4b2107bf8c9b393047e5e8",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct Quality {",
+            "path": "include/calibration/quality.hpp",
+            "sha256": "b710dc1207e11d7cb63bc5d5280399f5e1c0503314f6107f4894aac0b94ed927",
+            "symbol": "struct Quality {"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: Transform compose(const Transform &a, const Transform &b) {",
+            "path": "src/quality/residuals.cpp",
+            "sha256": "da3ed2e860ad46df5a34c3c67c81becd2cf109d8f2854339d10271022e67eb50",
+            "symbol": "Transform compose(const Transform &a, const Transform &b) {"
+          }
+        ],
+        "limitations": [
+          "全部共用两个宽泛头及单一静态库。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "estimate、residuals、interpolate及calibrate分别有算法责任，calibrate组合拟合与质量判断。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "7acd7ae7fb996e03ed236e65aa1d6d93d27219c80c4b2107bf8c9b393047e5e8",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct Quality {",
+            "path": "include/calibration/quality.hpp",
+            "sha256": "b710dc1207e11d7cb63bc5d5280399f5e1c0503314f6107f4894aac0b94ed927",
+            "symbol": "struct Quality {"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: Transform compose(const Transform &a, const Transform &b) {",
+            "path": "src/quality/residuals.cpp",
+            "sha256": "da3ed2e860ad46df5a34c3c67c81becd2cf109d8f2854339d10271022e67eb50",
+            "symbol": "Transform compose(const Transform &a, const Transform &b) {"
+          }
+        ],
+        "limitations": [
+          "calibrate直接选择estimate算法，没有拟合策略替换点。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "校准算法消费标准值类型，文件函数在common单元实现。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "7acd7ae7fb996e03ed236e65aa1d6d93d27219c80c4b2107bf8c9b393047e5e8",
+            "symbol": "add_library("
+          }
+        ],
+        "limitations": [
+          "本机CMake/Make/Gradle和维护者脚本不等同仓内CI或远端执行。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单无仓内CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "7acd7ae7fb996e03ed236e65aa1d6d93d27219c80c4b2107bf8c9b393047e5e8",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # drive-calibration",
+            "path": "README.md",
+            "sha256": "93a8a59d238abdd63493a1e0c784bde6aeda1fbbec7dbb0230c1bfbf3d26c64d",
+            "symbol": "# drive-calibration"
+          }
+        ],
+        "limitations": [
+          "主机独立构建不代表设备固件或生产SDK集成；外部维护者测试是可选构建参数。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "当前CMake独立构建仓内全部实现，标准C99/C++17及工具链边界明确，无必需第三方实现源码或未版本化BSP。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 28,
+            "locator": "line 28: values[\"version:\"] != 1",
+            "path": "src/common/calibration_file.cpp",
+            "sha256": "337968309ab86d6e8f5f1823c9df658b0aa6467d13bd7613f30cea935f75b90c",
+            "symbol": "values[\"version:\"] != 1"
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: version: 1",
+            "path": "config/camera_extrinsics.yaml",
+            "sha256": "8ab1677fac3b6f29bf0baa65d6d602168e5d4f7ba5ea01a36f250c31c9d6e22a",
+            "symbol": "version: 1"
+          }
+        ],
+        "limitations": [
+          "没有公开C++ API语义化版本或跨版本文件迁移合同。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "变换文件写入并校验version:1，形成手工版本数据接口。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 30,
+            "locator": "line 30: CalibrationResult estimate(const std::vector<Point> &a, const std::vector<Point> &b, double gate) {",
+            "path": "src/spatial/fit.cpp",
+            "sha256": "88c0456d7e983d06ccc88001f5dc6247d8d297f3a9b82b0ac4f25c7de57b6786",
+            "symbol": "CalibrationResult estimate(const std::vector<Point> &a, const std::vector<Point> &b, double gate) {"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: OffsetResult time_offset(const std::vector<double> &a, const std::vector<double> &b, int limit) {",
+            "path": "src/temporal/alignment.cpp",
+            "sha256": "fa6dd61b7d975e8f8b1f64ae720d39c367a1cd10a8cb3e88675553767bb208e5",
+            "symbol": "OffsetResult time_offset(const std::vector<double> &a, const std::vector<double> &b, int limit) {"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct Quality {",
+            "path": "include/calibration/quality.hpp",
+            "sha256": "b710dc1207e11d7cb63bc5d5280399f5e1c0503314f6107f4894aac0b94ed927",
+            "symbol": "struct Quality {"
+          }
+        ],
+        "limitations": [
+          "质量头同时汇总坐标组合、文件I/O及会话，按变更原因尚未完全分开。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "空间求解和时间匹配独立实现。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: Transform compose(const Transform &a, const Transform &b) {",
+            "path": "src/quality/residuals.cpp",
+            "sha256": "da3ed2e860ad46df5a34c3c67c81becd2cf109d8f2854339d10271022e67eb50",
+            "symbol": "Transform compose(const Transform &a, const Transform &b) {"
+          },
+          {
+            "kind": "file",
+            "line": 30,
+            "locator": "line 30: CalibrationResult estimate(const std::vector<Point> &a, const std::vector<Point> &b, double gate) {",
+            "path": "src/spatial/fit.cpp",
+            "sha256": "88c0456d7e983d06ccc88001f5dc6247d8d297f3a9b82b0ac4f25c7de57b6786",
+            "symbol": "CalibrationResult estimate(const std::vector<Point> &a, const std::vector<Point> &b, double gate) {"
+          }
+        ],
+        "limitations": [
+          "替换拟合算法或输入维度需要改calibrate和公共类型。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "残差门限和最小可观测性阈值可参数化。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct Quality {",
+            "path": "include/calibration/quality.hpp",
+            "sha256": "b710dc1207e11d7cb63bc5d5280399f5e1c0503314f6107f4894aac0b94ed927",
+            "symbol": "struct Quality {"
+          }
+        ],
+        "limitations": [
+          "此档说明不适用范围，不代表替换契约已被验证。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "审阅公开类型与生产实现，没有适用的继承/实现替换关系，按合同LSP中间档处理。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct Quality {",
+            "path": "include/calibration/quality.hpp",
+            "sha256": "b710dc1207e11d7cb63bc5d5280399f5e1c0503314f6107f4894aac0b94ed927",
+            "symbol": "struct Quality {"
+          },
+          {
+            "kind": "file",
+            "line": 25,
+            "locator": "line 25: struct Point {",
+            "path": "include/calibration/calibration.hpp",
+            "sha256": "a0e27442f31859ebcc3e7b430e1a64920948c4c1fef463635386f07f55161174",
+            "symbol": "struct Point {"
+          }
+        ],
+        "limitations": [
+          "只用插值的消费者仍依赖包含会话和文件接口的quality.hpp。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "核心点/变换类型与quality扩展分头。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct Quality {",
+            "path": "include/calibration/quality.hpp",
+            "sha256": "b710dc1207e11d7cb63bc5d5280399f5e1c0503314f6107f4894aac0b94ed927",
+            "symbol": "struct Quality {"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: Transform compose(const Transform &a, const Transform &b) {",
+            "path": "src/quality/residuals.cpp",
+            "sha256": "da3ed2e860ad46df5a34c3c67c81becd2cf109d8f2854339d10271022e67eb50",
+            "symbol": "Transform compose(const Transform &a, const Transform &b) {"
+          }
+        ],
+        "limitations": [
+          "策略采用具体estimate调用，未有受控替换验证。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "没有操作系统/设备API，纯算法与显式数据之间有边界。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: version: 1",
+            "path": "config/camera_extrinsics.yaml",
+            "sha256": "8ab1677fac3b6f29bf0baa65d6d602168e5d4f7ba5ea01a36f250c31c9d6e22a",
+            "symbol": "version: 1"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "7acd7ae7fb996e03ed236e65aa1d6d93d27219c80c4b2107bf8c9b393047e5e8",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-04/final-native-run.json",
+          "IDC-04/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "只完成当前主机环境验证，没有两种受支持平台/接口升级兼容回归。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "平台依赖主要限制在I/O、配置或适配处，业务核心消费标准数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: version: 1",
+            "path": "config/camera_extrinsics.yaml",
+            "sha256": "8ab1677fac3b6f29bf0baa65d6d602168e5d4f7ba5ea01a36f250c31c9d6e22a",
+            "symbol": "version: 1"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "7acd7ae7fb996e03ed236e65aa1d6d93d27219c80c4b2107bf8c9b393047e5e8",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-04/final-native-run.json",
+          "IDC-04/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "仅主机替身验证；运行时多传感器/多个数值配置不等同两组完整设备适配验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "业务消费参数、显式输入和共用计算逻辑，可从不同来源提供数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: version: 1",
+            "path": "config/camera_extrinsics.yaml",
+            "sha256": "8ab1677fac3b6f29bf0baa65d6d602168e5d4f7ba5ea01a36f250c31c9d6e22a",
+            "symbol": "version: 1"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "7acd7ae7fb996e03ed236e65aa1d6d93d27219c80c4b2107bf8c9b393047e5e8",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-04/final-native-run.json",
+          "IDC-04/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "未合成分支/tag，运行参数或算法场景不自动算平台变体。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "实际Git仅main初始/实现提交，无已落实的多平台维护策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 30,
+            "locator": "line 30: CalibrationResult estimate(const std::vector<Point> &a, const std::vector<Point> &b, double gate) {",
+            "path": "src/spatial/fit.cpp",
+            "sha256": "88c0456d7e983d06ccc88001f5dc6247d8d297f3a9b82b0ac4f25c7de57b6786",
+            "symbol": "CalibrationResult estimate(const std::vector<Point> &a, const std::vector<Point> &b, double gate) {"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: Transform compose(const Transform &a, const Transform &b) {",
+            "path": "src/quality/residuals.cpp",
+            "sha256": "da3ed2e860ad46df5a34c3c67c81becd2cf109d8f2854339d10271022e67eb50",
+            "symbol": "Transform compose(const Transform &a, const Transform &b) {"
+          }
+        ],
+        "limitations": [
+          "统计目的不同，未将同形数学公式等同大量重复。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "拟合共用apply/squared_distance；审阅spatial/quality可见残差遍历和汇总有局部重复。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: Transform compose(const Transform &a, const Transform &b) {",
+            "path": "src/quality/residuals.cpp",
+            "sha256": "da3ed2e860ad46df5a34c3c67c81becd2cf109d8f2854339d10271022e67eb50",
+            "symbol": "Transform compose(const Transform &a, const Transform &b) {"
+          }
+        ],
+        "limitations": [
+          "此分不自动证明平台迁移、多设备运行或物理设备验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "生产业务只使用C/C++标准值类型/标准库或明确JNI、TCP、I/O适配边界。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 15,
+            "locator": "line 15: set(BENCH_EXTERNAL_TEST",
+            "path": "CMakeLists.txt",
+            "sha256": "7acd7ae7fb996e03ed236e65aa1d6d93d27219c80c4b2107bf8c9b393047e5e8",
+            "symbol": "set(BENCH_EXTERNAL_TEST"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: int main(int argc, char **argv) {",
+            "path": "tools/scenario.cpp",
+            "sha256": "a641c0eedc26eda3792714a0efd1e94d464be3844626acc6c4083fae6c27c848",
+            "symbol": "int main(int argc, char **argv) {"
+          }
+        ],
+        "execution_evidence": [
+          "IDC-04/final-native-run.json",
+          "IDC-04/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "本轮实际维护者回放、CLI场景及跨仓集成不冒充本仓自有测试。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "跟踪源码没有仓内有效集成测试，CMake只提供可选外部维护者测试入口。",
+        "score": 0,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "52ecb01a014153e1d3895f15cd70cce512bf2cdf"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "52ecb01a014153e1d3895f15cd70cce512bf2cdf"
+}

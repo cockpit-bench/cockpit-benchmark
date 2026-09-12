@@ -1,5 +1,19 @@
 {
+  "ai-center": {
+    "candidate_runs": 0,
+    "frozen_external": {
+      "eligible": 187,
+      "excluded": 0,
+      "requested": 187
+    },
+    "source_only": {
+      "eligible": 132,
+      "excluded": 55,
+      "requested": 187
+    }
+  },
   "app": {
+    "candidate_runs": 0,
     "frozen_external": {
       "eligible": 81,
       "excluded": 7,
@@ -11,7 +25,21 @@
       "requested": 88
     }
   },
+  "architecture-center": {
+    "candidate_runs": 0,
+    "frozen_external": {
+      "eligible": 142,
+      "excluded": 0,
+      "requested": 142
+    },
+    "source_only": {
+      "eligible": 105,
+      "excluded": 37,
+      "requested": 142
+    }
+  },
   "fw": {
+    "candidate_runs": 0,
     "frozen_external": {
       "eligible": 113,
       "excluded": 8,
@@ -23,7 +51,21 @@
       "requested": 121
     }
   },
+  "intelligent-driving-center": {
+    "candidate_runs": 0,
+    "frozen_external": {
+      "eligible": 182,
+      "excluded": 0,
+      "requested": 182
+    },
+    "source_only": {
+      "eligible": 129,
+      "excluded": 53,
+      "requested": 182
+    }
+  },
   "new-energy-matlab": {
+    "candidate_runs": 0,
     "frozen_external": {
       "eligible": 143,
       "excluded": 0,

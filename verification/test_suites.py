@@ -6,7 +6,7 @@ W=Path(__file__).resolve().parents[1]
 class SuiteTests(unittest.TestCase):
  def test_current_entry_and_publication_gate(self):
   registry=suites.validate(W)
-  self.assertEqual(len(rt.select(registry,W,'all')),33)
+  self.assertEqual(len(rt.select(registry,W,'all')),66)
   if registry['integration_status']=='published':suites.validate(W,True)
   else:
    with self.assertRaises(suites.InvalidSuite):suites.validate(W,True)
@@ -24,6 +24,6 @@ class SuiteTests(unittest.TestCase):
   assignments=rt.read(W/'verification/examples/current-assignments.json')
   rows=rt.select(suites.validate(W),W,'all')
   self.assertEqual(set(assignments),{r['id'] for r in rows})
-  for kind,count in [('app',88),('fw',121),('new-energy-matlab',143)]:
+  for kind,count in [('app',88),('fw',121),('new-energy-matlab',143),('architecture-center',142),('ai-center',187),('intelligent-driving-center',182)]:
    batch=ec.prepare(W,kind,'source_only',assignments)
    self.assertEqual(len(batch['profile']['requested']),count)

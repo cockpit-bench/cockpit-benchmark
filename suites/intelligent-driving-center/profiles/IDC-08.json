@@ -1,0 +1,82 @@
+{
+  "actual": {
+    "bytes": 34233,
+    "commit_count": 2,
+    "extensions": {
+      ".cpp": 6,
+      ".csv": 1,
+      ".hpp": 10,
+      ".md": 3,
+      ".txt": 1,
+      ".yaml": 1,
+      "<noext>": 3
+    },
+    "gitlinks": [],
+    "refs": {
+      "refs/heads/main": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1"
+    },
+    "scope": "All tracked files of the scored target; excludes untracked build caches and dependency worktrees. Text line counts include generated and test files and are not production LOC.",
+    "source_lines_by_extension": {
+      ".cpp": 403,
+      ".hpp": 467
+    },
+    "tracked_file_count": 25
+  },
+  "center": "智能驾驶中心",
+  "conclusion": "Bounded structural and business proxy with declared deviations; not a full production distribution reproduction or independent holdout.",
+  "deviations": [
+    "扫描文件总数为215，本仓跟踪文件为25；统计范围不同且规模明显压缩，不声明生产整仓体量等价。",
+    "历史为本次真实构造/修复提交，未复制扫描中的大量分支/tag或虚构长期研发史。",
+    "仅提供了结构、模式和汇总，内部算法、标定值及全部生产依赖未提供；不能据此宣称业务实现相同。",
+    "扫描默认HEAD为空；交付主线直接提供可运行内容并固定评测HEAD，此处选择可用性，不伪造空壳默认分支。"
+  ],
+  "head": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1",
+  "id": "IDC-08",
+  "implementation_kind": "native_cpp",
+  "matched_traits": [
+    "采用native_cpp实现并保留middleware的主要组织形态；以最终源码及构建入口核对。",
+    "业务为新编写的可执行有界切片；声明的模块、配置和接口具有实际调用方。"
+  ],
+  "observed": {
+    "branches": 103,
+    "build_label": "cmake",
+    "commit_count": 143,
+    "default_head_empty": true,
+    "extensions": {
+      ".a": 3,
+      ".asn": 2,
+      ".baseline": 1,
+      ".cmake": 1,
+      ".cpp": 5,
+      ".h": 171,
+      ".hpp": 24,
+      ".md": 2,
+      ".sh": 2,
+      ".txt": 1,
+      "<noext>": 3
+    },
+    "file_count": 215,
+    "tags": 7230
+  },
+  "repairs": [],
+  "schema": "center-scan-profile-comparison-1",
+  "source_basis": {
+    "document_sha256": "55a68ccf2bc725c0bec0d322bfaa63c714a7915e9f1332f68a0605fbf33ba508",
+    "original_names": "Retained only in the local supplied-scan mapping",
+    "section_line": 36499,
+    "selection": "One supplied per-repository joint structural prototype; no target-score selection",
+    "spec_line": 36668
+  },
+  "target": {
+    "business": "world_model",
+    "layout": "middleware",
+    "planned_production_units": 0,
+    "repository_owned_tests": true
+  },
+  "tree": "6af5f27a12415791ff8abda0ecaea6f0317a77de",
+  "unknowns": [
+    "Scanner test_case_count=0 is not evidence that tests are absent.",
+    "Reported HTML percentages are not accepted as actual test coverage unless the report semantics and execution binding are verified.",
+    "Some large-source scans stop at 2500 source files; capped values are not whole-repository counts."
+  ]
+}

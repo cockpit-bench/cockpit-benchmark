@@ -1,0 +1,104 @@
+{
+  "bytes": 110762,
+  "clean": true,
+  "commit_count": 5,
+  "default_ref": "refs/heads/main",
+  "evaluation_ref": "refs/heads/main",
+  "extensions": {
+    ".json": 5,
+    ".m": 1,
+    ".md": 2,
+    ".py": 1,
+    "<noext>": 3
+  },
+  "file_bytes": {
+    ".gitattributes": 44,
+    ".gitignore": 46,
+    ".gitmodules": 987,
+    "README.md": 3764,
+    "SOURCE_ORIGIN.md": 637,
+    "components.lock.json": 46257,
+    "motion.py": 10247,
+    "motion_manifest.json": 26991,
+    "run_motion_integration.m": 3388,
+    "scan-profile.json": 673,
+    "scenes/normal.json": 8802,
+    "scenes/stale_speed.json": 8926
+  },
+  "files": {
+    ".gitattributes": "eca0301728922494ffa0ace497e170eb62651cf99f908188312fe3e634cb2bc4",
+    ".gitignore": "43f2e4065dc8c9a84b873fe85f8326fcdf4b1852e9021f0e4f75d593095b848a",
+    ".gitmodules": "1da4c150e972990a58d1683df36deca86b8c5750b4f7383acbb1dabdffcd335a",
+    "README.md": "1398d1f5dd13ea53c82a8e15cf8e200f9bc13205b4032e7a93741512a86f6d1b",
+    "SOURCE_ORIGIN.md": "d62058292cdf3d0c2fc8796b9d1392ac7426b0e72b208a1a16b583be66a30072",
+    "components.lock.json": "74e697ff40a9df09ecc3056aff4a45f3f5531ab3ce9e420dc7c614d49b5c383a",
+    "motion.py": "1251f16e0dbf09a79d8a4bd99d21c9b00239e87366482ef0e3298d1c7a54a694",
+    "motion_manifest.json": "22362c22523efb081c6e8481d6c7c18e61a200a9ca51dda146efd4d205393fc3",
+    "run_motion_integration.m": "58b790aced39e9f841fee1d71c14c264b8500d04f5a359cf960ecf49b5c80bf0",
+    "scan-profile.json": "249c5b4eb52a31afd7d6899826c8c7e313bfafbcc3727f000792380db8ffb437",
+    "scenes/normal.json": "8d79af7037bf3ddd6af42796d9fae204b5abfeba7eb4745a5985802922456894",
+    "scenes/stale_speed.json": "160a3087f44800bc10af18ccabe67ada6da60570d8465ab8e24e94fed8c78b18"
+  },
+  "full_history": true,
+  "gitlinks": [
+    {
+      "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+      "path": "components/arch-actuator-target",
+      "repository_id": "ARC-01"
+    },
+    {
+      "head": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+      "path": "components/arch-brake-stability",
+      "repository_id": "ARC-02"
+    },
+    {
+      "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+      "path": "components/arch-crosswind-control",
+      "repository_id": "ARC-05"
+    },
+    {
+      "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+      "path": "components/arch-motion-coordinator",
+      "repository_id": "ARC-03"
+    },
+    {
+      "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+      "path": "components/arch-signal-supervisor",
+      "repository_id": "ARC-04"
+    },
+    {
+      "head": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827",
+      "path": "components/arch-steering-redundancy",
+      "repository_id": "ARC-08"
+    },
+    {
+      "head": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+      "path": "components/arch-suspension-monitor",
+      "repository_id": "ARC-09"
+    },
+    {
+      "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+      "path": "components/arch-vehicle-safety",
+      "repository_id": "ARC-10"
+    },
+    {
+      "head": "258ba5ba20acffb8b4c16f0d7e905611498a1928",
+      "path": "components/arch-vehicle-state",
+      "repository_id": "ARC-06"
+    }
+  ],
+  "head": "43d3360c130d347dc3e2d818b25dc0e8716abc9f",
+  "id": "ARC-07",
+  "name": "arch-motion-integration",
+  "refs": {
+    "refs/heads/main": "43d3360c130d347dc3e2d818b25dc0e8716abc9f"
+  },
+  "remote_count": 0,
+  "source_lines_by_extension": {
+    ".m": 63,
+    ".py": 213
+  },
+  "tracked_file_count": 12,
+  "tree": "208682dfe483e0af4cbc86fef09a6f9d68ded7f2",
+  "worktree_equals_git_blobs": true
+}

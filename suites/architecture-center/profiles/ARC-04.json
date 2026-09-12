@@ -1,0 +1,182 @@
+{
+  "actual": {
+    "bytes": 1756085,
+    "commit_count": 1,
+    "extensions": {
+      ".css": 2,
+      ".cvt": 1,
+      ".gif": 27,
+      ".html": 3,
+      ".js": 2,
+      ".json": 1,
+      ".m": 4,
+      ".mat": 2,
+      ".md": 3,
+      ".png": 2,
+      ".slx": 10,
+      ".txt": 1,
+      ".xlsx": 1,
+      "<noext>": 2
+    },
+    "gitlinks": [],
+    "model_census": {
+      "production_model_count": 9,
+      "root_expanded_block_count": 253,
+      "root_expanded_block_types": [
+        {
+          "count": 56,
+          "type": "Constant"
+        },
+        {
+          "count": 8,
+          "type": "DataTypeConversion"
+        },
+        {
+          "count": 57,
+          "type": "Inport"
+        },
+        {
+          "count": 25,
+          "type": "Logic"
+        },
+        {
+          "count": 26,
+          "type": "Outport"
+        },
+        {
+          "count": 32,
+          "type": "RelationalOperator"
+        },
+        {
+          "count": 8,
+          "type": "Saturate"
+        },
+        {
+          "count": 8,
+          "type": "SubSystem"
+        },
+        {
+          "count": 9,
+          "type": "Sum"
+        },
+        {
+          "count": 16,
+          "type": "Switch"
+        },
+        {
+          "count": 8,
+          "type": "UnitDelay"
+        }
+      ]
+    },
+    "refs": {
+      "refs/heads/main": "3d1b82c43d854087fd5355452c21bafdadfad376"
+    },
+    "scope": "All tracked files of the scored target; excludes untracked build caches and dependency worktrees. Text line counts include generated and test files and are not production LOC.",
+    "source_lines_by_extension": {
+      ".m": 60
+    },
+    "tracked_file_count": 61
+  },
+  "center": "架构中心",
+  "conclusion": "Bounded structural and business proxy with declared deviations; not a full production distribution reproduction or independent holdout.",
+  "deviations": [
+    "扫描文件总数为218，本仓跟踪文件为61；统计范围不同且规模明显压缩，不声明生产整仓体量等价。",
+    "历史为本次真实构造/修复提交，未复制扫描中的大量分支/tag或虚构长期研发史。",
+    "仅提供了结构、模式和汇总，内部算法、标定值及全部生产依赖未提供；不能据此宣称业务实现相同。",
+    "扫描默认HEAD为空；交付主线直接提供可运行内容并固定评测HEAD，此处选择可用性，不伪造空壳默认分支。",
+    "模型规模及工作簿模板为有界投影；没有补造扫描缺失的保护组件、认证、BTC、ECU或C语句覆盖记录。"
+  ],
+  "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+  "id": "ARC-04",
+  "implementation_kind": "matlab",
+  "matched_traits": [
+    "采用matlab实现并保留element_library的主要组织形态；以最终源码及构建入口核对。",
+    "业务为新编写的可执行有界切片；声明的模块、配置和接口具有实际调用方。"
+  ],
+  "observed": {
+    "branches": 20,
+    "build_label": "matlab",
+    "commit_count": 146,
+    "default_head_empty": true,
+    "extensions": {
+      ".bat": 1,
+      ".c": 1,
+      ".def": 1,
+      ".dll": 1,
+      ".exp": 1,
+      ".h": 5,
+      ".l": 12,
+      ".lib": 1,
+      ".m": 33,
+      ".mak": 1,
+      ".mat": 50,
+      ".md": 17,
+      ".obj": 2,
+      ".slx": 43,
+      ".slxc": 2,
+      ".xlsx": 33,
+      ".xml": 14
+    },
+    "file_count": 218,
+    "model_scan": {
+      "a2l_count": 0,
+      "block_census": {
+        "BusCreator": 222,
+        "BusSelector": 377,
+        "Constant": 3180,
+        "DataTypeConversion": 1121,
+        "DataTypeDuplicate": 43,
+        "Delay": 11,
+        "Demux": 22,
+        "From": 985,
+        "FromWorkspace": 1386,
+        "Gain": 38,
+        "Goto": 512,
+        "Inport": 4771,
+        "Logic": 123,
+        "MinMax": 97,
+        "Outport": 5154,
+        "Product": 60,
+        "Reference": 217,
+        "RelationalOperator": 113,
+        "S-Function": 33,
+        "SignalConversion": 2094,
+        "SubSystem": 258,
+        "Sum": 122,
+        "Switch": 1542,
+        "Terminator": 2132,
+        "UnitDelay": 162
+      },
+      "generated_c_files": 6,
+      "p_file_count": 0,
+      "scope": "The supplied model census can cover only sampled files; zero values from unsupported legacy parsing are unknown, not absence.",
+      "total_model_refs": 0,
+      "total_sfunctions": 33,
+      "total_subsystems": 258,
+      "xls_count": 33
+    },
+    "tags": 10
+  },
+  "repairs": [],
+  "schema": "center-scan-profile-comparison-1",
+  "source_basis": {
+    "document_sha256": "3c520994ae277431da28042e8fadfc90ac69cd273985b98b04ccc4157bb65282",
+    "original_names": "Retained only in the local supplied-scan mapping",
+    "section_line": 24315,
+    "selection": "One supplied per-repository joint structural prototype; no target-score selection",
+    "spec_line": 24488
+  },
+  "target": {
+    "business": "signal_supervisor",
+    "layout": "element_library",
+    "planned_production_units": 9,
+    "repository_owned_tests": true
+  },
+  "tree": "6d4ecc7d48a66c00f7b232917196b7995015a466",
+  "unknowns": [
+    "Scanner test_case_count=0 is not evidence that tests are absent.",
+    "Reported HTML percentages are not accepted as actual test coverage unless the report semantics and execution binding are verified.",
+    "Some large-source scans stop at 2500 source files; capped values are not whole-repository counts."
+  ]
+}

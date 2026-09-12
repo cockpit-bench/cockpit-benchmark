@@ -1,0 +1,129 @@
+{
+  "bytes": 64788,
+  "clean": true,
+  "commit_count": 5,
+  "default_ref": "refs/heads/main",
+  "evaluation_ref": "refs/heads/main",
+  "extensions": {
+    ".conf": 2,
+    ".cpp": 2,
+    ".csv": 6,
+    ".hpp": 1,
+    ".json": 3,
+    ".md": 2,
+    ".py": 1,
+    ".txt": 1,
+    "<noext>": 4
+  },
+  "file_bytes": {
+    ".clang-format": 51,
+    ".gitattributes": 44,
+    ".gitignore": 46,
+    ".gitmodules": 981,
+    "CMakeLists.txt": 1061,
+    "README.md": 3560,
+    "SOURCE_ORIGIN.md": 637,
+    "app/csv.cpp": 2225,
+    "app/csv.hpp": 256,
+    "app/driving_stack.cpp": 10568,
+    "config/highway-drive.conf": 103,
+    "config/urban-parking.conf": 105,
+    "integrate.py": 10723,
+    "product.json": 7043,
+    "product.lock.json": 24941,
+    "scan-profile.json": 1058,
+    "scenarios/calibration.csv": 78,
+    "scenarios/manual_takeover.csv": 256,
+    "scenarios/normal.csv": 256,
+    "scenarios/obstacle_stop.csv": 264,
+    "scenarios/occupied_route.csv": 270,
+    "scenarios/stale_remote.csv": 262
+  },
+  "files": {
+    ".clang-format": "889de0c77a6ce473d981be32315a12752c0d7e4f59e40a9fc2e4b7a5fb410e02",
+    ".gitattributes": "eca0301728922494ffa0ace497e170eb62651cf99f908188312fe3e634cb2bc4",
+    ".gitignore": "43f2e4065dc8c9a84b873fe85f8326fcdf4b1852e9021f0e4f75d593095b848a",
+    ".gitmodules": "0b5bd6d25a4d367598d6c0be0720579d475821c5303b4c5dab28bed426b49606",
+    "CMakeLists.txt": "6ed41478eb04b7fef0957d723f7312696b9b527cbb42d5a7e1c5ad7a269dfd1a",
+    "README.md": "1207b5f172a7cf5d85d5b01ee5efd02018404760af7b182b20babd8a70655207",
+    "SOURCE_ORIGIN.md": "14d6cdac25c50db84e66315f3dccd01c819c131643477a872ddc3976ace37c65",
+    "app/csv.cpp": "e59fc146df303f1273ae0bcb6a2603d0d129c1168dbe204cdfe394207bd6b077",
+    "app/csv.hpp": "fa14553953d1248df38d7506c2365a9b6b52262190f655417819afef7de62203",
+    "app/driving_stack.cpp": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2",
+    "config/highway-drive.conf": "fc278de5d85d7937d567430942864a0e12081d2d4a01ff97da8b9e01cc4a2099",
+    "config/urban-parking.conf": "2333acc8c513db476ab18cee36520fa115740c11dd234f01817785597bc4893b",
+    "integrate.py": "d98d27877c2bd43e45089636f1fa074b6f77103d442b2982c9fff412f917b21d",
+    "product.json": "681a23b083d74e04125c3a8dd2901db37acbc33be57d4a01511e5b639fb55d5f",
+    "product.lock.json": "bcfb4be837e3588883963f8b7360642b1fa65bb92d3409feef5909b06d9c72dd",
+    "scan-profile.json": "e9794dfc2c0e6df1b763c0dfe7777771e6cc80b7039090b91a38f9654cc3b18b",
+    "scenarios/calibration.csv": "a8b6b06e52ea8fe2e92c43d0e9dd0de3c23cdb45ce0d334ea36235cd2b099d96",
+    "scenarios/manual_takeover.csv": "75b292875cde0000578994ab5c45f1ca5c389612eecc2f33497102e16174df23",
+    "scenarios/normal.csv": "5e909bb677c6806a785cca82078cc5655003a2eeccde2961c24c7ce350ed0cb9",
+    "scenarios/obstacle_stop.csv": "babe6380273f50d2fa2f125a85f8a91d86dc977ae4181238c5860592266f918b",
+    "scenarios/occupied_route.csv": "18b721cd35a5a01cbdbf3177494ea5fd34b1b63cbf28e3f245a6b78c174c4075",
+    "scenarios/stale_remote.csv": "050b69c7c91c25c4232aa01f1db02808ca9d762950eff8b2aa09626a7d5d0055"
+  },
+  "full_history": true,
+  "gitlinks": [
+    {
+      "head": "fbb4014901ac35cd6b0083977eeee1e481d330c9",
+      "path": "components/drive-adaptive-platform",
+      "repository_id": "IDC-11"
+    },
+    {
+      "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+      "path": "components/drive-build-orchestrator",
+      "repository_id": "IDC-03"
+    },
+    {
+      "head": "257dcc87392c004a682b38b8df8645d5970997ab",
+      "path": "components/drive-calibration",
+      "repository_id": "IDC-04"
+    },
+    {
+      "head": "7dc81b216d594b0bdee5fc1095a8296a8beef005",
+      "path": "components/drive-mcu-platform",
+      "repository_id": "IDC-02"
+    },
+    {
+      "head": "ca9fa37711754fd3fccc1ada6145f75475a1649c",
+      "path": "components/drive-parking-arbitration",
+      "repository_id": "IDC-01"
+    },
+    {
+      "head": "0f4e6819ec2981f4a4170058402e7c8f6cf656a2",
+      "path": "components/drive-route-planner",
+      "repository_id": "IDC-06"
+    },
+    {
+      "head": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff",
+      "path": "components/drive-sensor-fusion",
+      "repository_id": "IDC-05"
+    },
+    {
+      "head": "30f934b48ae56ceee8c490ef655d6ef38c42dba7",
+      "path": "components/drive-ultrasonic-perception",
+      "repository_id": "IDC-07"
+    },
+    {
+      "head": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1",
+      "path": "components/drive-world-model",
+      "repository_id": "IDC-08"
+    }
+  ],
+  "head": "13d83b57827247366cea13f88daba33234da8fc8",
+  "id": "IDC-10",
+  "name": "drive-algorithm-integration",
+  "refs": {
+    "refs/heads/main": "13d83b57827247366cea13f88daba33234da8fc8"
+  },
+  "remote_count": 0,
+  "source_lines_by_extension": {
+    ".cpp": 276,
+    ".hpp": 8,
+    ".py": 211
+  },
+  "tracked_file_count": 22,
+  "tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c",
+  "worktree_equals_git_blobs": true
+}

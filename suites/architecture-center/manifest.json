@@ -1,0 +1,935 @@
+{
+  "repositories": [
+    {
+      "center": "架构中心",
+      "evidence": {
+        "path": "suites/architecture-center/evidence/ARC-01.json",
+        "sha256": "eb4976cb10be49d869624c1220b2f1c52450eccd6161d81b9c32628326f1926a"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+        ".gitignore": "a6a7aecd86872e47d32d2e0b2b683207e71fa0da6312ddb34d0e819082c4e0be",
+        "ActuatorTarget_init.m": "23e3780bdd82076fb8881ac103884bbfb20cc1e8372d969512aaaaff1498394e",
+        "Model/ActuatorTarget.slx": "99159a8ab53e742ee62c859c2fe1f56101fc07228dcf389c539e68344e2a71c9",
+        "Model/Interface.xlsx": "c16748ed6298e316c3873fe7abfcf033eb66111bbe674fd0b928b7dab9a80237",
+        "Model/calibration_ActuatorTarget.m": "918ab83893c4dc90f8f97b144b9f40971c94ce3458e9cbc9c430e5475a87fb81",
+        "README.md": "0f63232ed55d8619490a6d4cae16e98402e5fd5fa605d67b95243ddb846e319d",
+        "SOURCE_ORIGIN.md": "8da644ea5e469f2b1408537cb5b183a2c25b0f42227d57b521931b22fc3c527e",
+        "project_init.m": "b65705137caa341c3675d9ef18b33294e62cd89cc249c3abb76de4f53b7cbff9"
+      },
+      "gitlinks": [],
+      "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+      "id": "ARC-01",
+      "implementation_kind": "matlab",
+      "inventory": {
+        "path": "suites/architecture-center/inventories/ARC-01.json",
+        "sha256": "9228408ac0ec68b3e14728aab79bba9481959c07b832b877c1f2ccec8ee6b1ea"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": [
+          "NEP-01"
+        ]
+      },
+      "name": "arch-actuator-target",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793"
+      },
+      "repository_url": "https://github.com/cockpit-bench/arch-actuator-target.git",
+      "scan_profile": {
+        "path": "suites/architecture-center/profiles/ARC-01.json",
+        "sha256": "3cce5b01e6b1f6a899c0b762a07e705e64afc53b24e63495c3121164f8ce91e6"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/matlab.json",
+        "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+      },
+      "tree": "d05d608119d5b88086d9d077f9e6f2505dddf614",
+      "type_id": "architecture-center"
+    },
+    {
+      "center": "架构中心",
+      "evidence": {
+        "path": "suites/architecture-center/evidence/ARC-02.json",
+        "sha256": "f22a2c22130c6152d8902583a7c0a4f6f73bed030bd4b5d2a0a81ef4016cb9fd"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+        ".gitignore": "264c5d78988a38a39757859b02a8f70d66bd31212fb2f02aacbec8c76f55b51c",
+        "BrakeStability_init.m": "b281e676cd604b5e6cc3feef292f5cd40a7a5bdc01ea967ee3cb15b7f1beecee",
+        "BrakeStability_simulate_configuration.m": "a3a195818344f3e754b4f4b105ac8935a98fbca3bc096cb6273ce77a60dde9fa",
+        "Configurations/README.md": "d0180156beddecfbe389cfcb211ed4c31fd5ff085d99ca4523728156e975aef5",
+        "Configurations/configurations.json": "5d4b1b8dc628291291fb40120d4880b309896fac9fc1b35b368cc53191ef6204",
+        "Model/BrakeStability.slx": "47f1decfc88658865e722a542619558dc4135ebeb5859b29a6c41624f37b42a3",
+        "Model/Interface.xlsx": "c4486268b000672aadc8bac47c0997c014d78ae83a618cc9f96d02f164f17bb0",
+        "Model/calibration_BrakeStability.m": "207c16d522778b2e86d13a05991fe66557783512247504bfb5616f5b0f198443",
+        "Model/components/AxleDistributionLib.slx": "dbab10227f86124758a4df8378f7a1cae75a99650519d56a291138cf592f16e2",
+        "Model/components/BrakeFaultQualificationLib.slx": "11f68ff48024e70c3dc0c27ef6690a7265a3a1df4e05b94abede1e174332694d",
+        "Model/components/BrakeReleaseLib.slx": "f0388153734bae69c1286be568888564c7be069a43e6e8bc6fa10fe156a5c598",
+        "Model/components/PressureDemandLib.slx": "aeeba56b05f60e5d3db679a89cd24b290c8aa44296143827ddad89ac1dcea022",
+        "Model/components/PressureSlewLib.slx": "e2f1fccb096973e0853797e5beb537af8b1f4d109dd56de89aa9139dc9e2c466",
+        "Model/components/SlipRatioLib.slx": "eb9a72c13195218a09d09e33e77128a4d0c3a74e663f3dcfded6abfa5bb0bc88",
+        "Model/components/SlipTargetLib.slx": "6cd6bfc53904bca70ed7320e1e061377c9e9c2fe95a7305396d2940abd6bce80",
+        "Model/components/WheelVelocityFilterLib.slx": "1dfb36462e23b039534b8ac8d5411bdc2b7a4e12299bd93e774fe918f2839e2d",
+        "Model/components/YawCorrectionLib.slx": "ccef976dbacd74d762d81a8720be9d8e9332bdf20d8b676bad35aebe55bf64c0",
+        "Model/components/YawMeasurementFilterLib.slx": "6ac132772da6724ea65bf7f53f261f04f866f20338b7673c7a0b9aaebdda954c",
+        "Model/components/YawReferenceLib.slx": "7874c4b8874474ffaa139d2c0b254f9b0f0977dc040797235d9290992bbdc200",
+        "README.md": "b1378cf8eb27e7980f2d5e30169803106c783aa833c9a7e0607d7f70455a25aa",
+        "SOURCE_ORIGIN.md": "80731706eb89f48171adb594c3c2e274ae635c4c38668b4bf6191dce7107e551",
+        "Tests/BrakeStability_UTHarness.slx": "225e26adee029f32899651780c2dba733b6094b381605294ff23cfa8721acc0a",
+        "Tests/BrakeStability_run_tests.m": "89d8bd84488f89f01ed8b9e4f2a9040dcf1834fcb586e5f44fe3de0a26ecc7dd",
+        "Tests/BrakeStability_test_configurations.m": "5767348336c0c1d90ccc2d2fb0c8e118ce6227fd8f7371bff4b46ea4a800f0de",
+        "Tests/ConfigurationExpected.json": "c6e242071b682918a7fa38cbb67f3fc0a6ee5d35b2744e982dc57cd9e8ccee77",
+        "Tests/README.md": "866d9d25f7c3bf901560c00a4e591ae31a0b44ab02a0adf7ac515562dcf86c90",
+        "Tests/TestData.mat": "d731ba99e306bead0348c80024d1903193f62470eb1f43a8d6f99ddce4c7e0a9",
+        "Tests/configuration-results/compact_dry.json": "dccfff38090ffbf588c5b3f3a002c049c50dbbb130048aa18a1860950e6fe95b",
+        "Tests/configuration-results/result.json": "5899694e34f36f4f727ae7d03e93bc5e4d627403cddd2d5208e6330b1fa9a559",
+        "Tests/configuration-results/utility_wet.json": "23ddcd241d2b677459372957f217dc3166567d461be8185a1bd7a92bda16522f",
+        "Tests/results/actual-output.mat": "31d579a63e138bcfb6770324e7e417ebe0f7166cbdf79f519e1afd3e586d19cb",
+        "Tests/results/model-coverage.cvt": "63c585bbcde6dcc761622ca64cd8ad90fe808234b6f0527ef1522c88e44080f8",
+        "Tests/results/model-coverage.html": "b5b5f7ebfd647d32181cef71327cc0d327213a2559359b8238495198e40333f7",
+        "Tests/results/model-coverage_BrakeStability_UTHarness_cov.html": "7213cb2c8a28276cdf4624cb1cb0fbfcdf53935ed568f0be7e82048844fd766a",
+        "Tests/results/model-coverage_BrakeStability_cov.html": "a4c00e03e78fcfc05c1ad9dfa00a1f59109c3091a1ac147777295fdbf9dbf9ce",
+        "Tests/results/scv_images/aqua.gif": "ad9c261ddb00bd753ee2ff8165576c56641a25e47184bbfe449237049b3ad23f",
+        "Tests/results/scv_images/black.gif": "e4c8efe0cd4a34ef45c313760fe5bd92c0d0d61cf444ca99d53519d9d3657608",
+        "Tests/results/scv_images/blue.gif": "97b29e3c43d78fa176d02a1e7a5b504479238c5d92759889f35407007c0a8249",
+        "Tests/results/scv_images/codecovreport.css": "e270aa4668967feeb8bb30d8e52bf05dd557db423243c5967a5d63b74d873174",
+        "Tests/results/scv_images/codecovreport_utils.js": "1c100b13c270cc8e7bbaa5cb67d8a3272d5bbc9ada0ad4f3ef730afc83412b82",
+        "Tests/results/scv_images/covreport_utils.js": "0e8785e7af36a244846340a4ec98d6f69ba6e0579b8db017063786a850efe5be",
+        "Tests/results/scv_images/dkgrn.gif": "14f3b540d2d3775d67230e3696f18fc3d15ca80821cde8e96fa4868b99dea34a",
+        "Tests/results/scv_images/filter_add.png": "e8dbb146c2719430239579ab0628a4418b8c46d70bce886c9755574e6a8508da",
+        "Tests/results/scv_images/filter_remove.png": "14407604c19f2c75e8fec6c32585f6788b2f333e99f2c8100988b174d2801484",
+        "Tests/results/scv_images/grn01.gif": "8baf586b065f39e4461ee2fffc5dfbc6acd55c51ec3d6c4907d9d77291c382d4",
+        "Tests/results/scv_images/grn02.gif": "74960e107cdbed1fc098d4895b0d17f537010dc5fb1a0b712fd920c2ef1dccd0",
+        "Tests/results/scv_images/grn03.gif": "8f9ff0ba3a1dd827394765bb6fcd720ff4d3fc5a43a627cb9197fd54485464cf",
+        "Tests/results/scv_images/grn04.gif": "76b27649e6a7ca324fcaebc2c00bb76383a03d2bd80c3633c3ea02206fa83691",
+        "Tests/results/scv_images/grn05.gif": "b1fb57b4359baddb5f5569e6f70aea7c22453b579f4c4cf8bf118400171d92b9",
+        "Tests/results/scv_images/grn06.gif": "41a24c03efc762ee7b37db58ad8556df0c09571f1296f733410f5f1055eec00e",
+        "Tests/results/scv_images/grn07.gif": "2c52a8fe4aa9d788e8f16d8ffb1f0b6a4a12652a5d466b2a5b00209e786d73f8",
+        "Tests/results/scv_images/grn08.gif": "025dbdc8028720290a793694a5d432463a7b34a24cc2b3ad4c513b3dbe9906d4",
+        "Tests/results/scv_images/grn09.gif": "fe73578518129cef436fc38f6b0474caa840fc74f4cee16360e4edf56ce707fb",
+        "Tests/results/scv_images/horz_line.gif": "a7de1d7b593509123cface3a3520dfb5710a0da1861b90ca16a8bad3c1238d6a",
+        "Tests/results/scv_images/htmlfile.gif": "8196e3b39156656ee3215972df65be4618b70362c57bf70e995267ab53a6dcd9",
+        "Tests/results/scv_images/left_arrow.gif": "c42378268d3a479e9dbab2988c3a1546bf366f546512ae5e16c7288207bce2ff",
+        "Tests/results/scv_images/ltBlu.gif": "ad9c261ddb00bd753ee2ff8165576c56641a25e47184bbfe449237049b3ad23f",
+        "Tests/results/scv_images/ltblue.gif": "750b473c632dd819db257c73251c3757bcbc9f3b83fd4c4d8cfa7acadc9bb8fb",
+        "Tests/results/scv_images/ltgrn.gif": "7a3b7f2f73c3fb72dc65ef9a5951e868815c383b3aba64c48dbc69b33e5ca9f3",
+        "Tests/results/scv_images/modelcovreport.css": "f86022e11f91131ab2b843e4fafa50918db28e1fc931f9525052ebbe77cf9991",
+        "Tests/results/scv_images/pink.gif": "d91ed8b20f6f7cb9257b629fcf685b8106795f072bb9308108f88fdeecf2750a",
+        "Tests/results/scv_images/purple.gif": "b06073fbc896c43ac6ef1cae1ba91c31e5342d9b0ada9d3bb3e2f097e20a2245",
+        "Tests/results/scv_images/red.gif": "ac3dd4667fdf1465102ef0ee921db208fae4c3608e7ec22196f2e5cc81b997f9",
+        "Tests/results/scv_images/right_arrow.gif": "eacea9b91092016481440caf0249a9fc508b322caf290b4f8eef1a56fc258180",
+        "Tests/results/scv_images/trans.gif": "2dfe28cbdb83f01c940de6a88ab86200154fd772d568035ac568664e52068363",
+        "Tests/results/scv_images/version111.txt": "af6df543acb274a7933576377e43d91631a12e4a52ba534089a7b5552e6343a7",
+        "Tests/results/scv_images/vert_line.gif": "505eaa7c67326d9cafad4dd0baf4350b6fd993af25f759bb662987d9a2bde497",
+        "Tests/results/scv_images/white.gif": "d605903facc2777941bd034d29c9894b99d8c762629e179fc5b962e97b4db6d7",
+        "Tests/results/scv_images/yellow.gif": "e25864e50b9ad36cf2ea5949eb38d96c4b44ee43a61052512e54121d6c1e844c",
+        "Tests/results/test-result.json": "e16c3a71c3852036c19c1e431a84c839acd0c338a7f763de2cf183060f8b9799",
+        "project_init.m": "0a71f75d27f677cb6f02a7ef0606a9645a5ed595e5a95dfcad507be7a0198497"
+      },
+      "gitlinks": [],
+      "head": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+      "id": "ARC-02",
+      "implementation_kind": "matlab",
+      "inventory": {
+        "path": "suites/architecture-center/inventories/ARC-02.json",
+        "sha256": "6c9b5212bc1e7419b9cdacf25edfc59f3a3fb77c8673a22c23f0c54fe379e0e8"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "arch-brake-stability",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d"
+      },
+      "repository_url": "https://github.com/cockpit-bench/arch-brake-stability.git",
+      "scan_profile": {
+        "path": "suites/architecture-center/profiles/ARC-02.json",
+        "sha256": "1385cf79ffec6933e054fc81765886f061da14e58aa5ffdeed4c71b7c5495a9a"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/matlab.json",
+        "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+      },
+      "tree": "70a72c0b2254efb4226a6fb19ad91be9aa47bbf7",
+      "type_id": "architecture-center"
+    },
+    {
+      "center": "架构中心",
+      "evidence": {
+        "path": "suites/architecture-center/evidence/ARC-03.json",
+        "sha256": "30b4f480d0e3e8a22d4b6d0ec8a03a08ee3e2e5dcde2316478defb35554fb827"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+        ".gitignore": "a6a7aecd86872e47d32d2e0b2b683207e71fa0da6312ddb34d0e819082c4e0be",
+        "Model/Interface.xlsx": "b9b8cd00f830cd24ade05a1adcb3b2e952c35d31f72e4dba324473084acd7d23",
+        "Model/MotionCoordinator.slx": "e72b4a579d3ca63ff7bd0f2f680fb3ba85b0cff8f25e3f8b7351632e3d742c44",
+        "Model/calibration_MotionCoordinator.m": "95401eca5519596ab031f826bc7f051885ebe13de9bd1af3b63c1a83e3a47b7b",
+        "Model/components/ActuatorEnvelopeLib.slx": "f14064d2db411dc4f63259e1a39464d340f301be3e1dfb4d168fa9c52efe12d1",
+        "Model/components/DriverDemandLib.slx": "677466f20950817fcedf45c0271296ffdd76b3eb1e75cea7ca6827673d51adcf",
+        "Model/components/LateralAllocationLib.slx": "e08f25c54b272d23b633cd980598be0e68d5d52865b37896092555ecc9e31213",
+        "Model/components/LongitudinalAllocationLib.slx": "538fed300e37abf0ddd20cd8112f7f2f08d4d8dabb0c7d24996d14ab450cb6ce",
+        "MotionCoordinator_init.m": "3ececa4a24031d30362d60f7edbfa07abe14292ff455eebdf892c6e8b1952bf6",
+        "README.md": "2bcb746cea2342867a4176ad76a0474c1bef76d20d6c10d733dedb6ec23b7fe8",
+        "SOURCE_ORIGIN.md": "8bc8ddcf8f0abc11490179c4673338fc270339fd5f058ec8c65c633ed671b213",
+        "project_init.m": "aedb856a954a3b246b9e47d172c37bec9acc016ec5a87d0df7c430723232d7e4"
+      },
+      "gitlinks": [],
+      "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+      "id": "ARC-03",
+      "implementation_kind": "matlab",
+      "inventory": {
+        "path": "suites/architecture-center/inventories/ARC-03.json",
+        "sha256": "e3262886c815cd6a0353d7d03f047ab74d735326909102053a0d4653f6f3197e"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "arch-motion-coordinator",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "c00b659f6a8003c62f56bec89f29896557aac022"
+      },
+      "repository_url": "https://github.com/cockpit-bench/arch-motion-coordinator.git",
+      "scan_profile": {
+        "path": "suites/architecture-center/profiles/ARC-03.json",
+        "sha256": "a400badaad2b5c86e60ee6c90bfd65e798d04ed4aa103969ddf74a5623e11fc1"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/matlab.json",
+        "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+      },
+      "tree": "10af906321d6cb8a8c0a1335ce6c8ca28932ddc7",
+      "type_id": "architecture-center"
+    },
+    {
+      "center": "架构中心",
+      "evidence": {
+        "path": "suites/architecture-center/evidence/ARC-04.json",
+        "sha256": "689f042b687974031650bb9ec73ad2daff088d26b60db8c3fc98cc6c4120744a"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+        ".gitignore": "a6a7aecd86872e47d32d2e0b2b683207e71fa0da6312ddb34d0e819082c4e0be",
+        "Model/Interface.xlsx": "c0db59219a78747340e86123893737f78722c00673ad1e3726dd9ba2e4b5c117",
+        "Model/SignalSupervisor.slx": "b0980452aa789c42642feaf89ab4f3721249bbd17e94a8293abb3c4c0118c052",
+        "Model/calibration_SignalSupervisor.m": "23268113d51483579870f8ca6806c4ac7c0fb1211fe0515d48ebfda53cc20399",
+        "Model/components/AcceleratorQualifierLib.slx": "c161bb8750140421dcdad3a2a7b479a9a556f9bdcf1af9a7cc64ba874f5c0e86",
+        "Model/components/BrakePedalQualifierLib.slx": "45f758f851396acbbb15cb66080952abac589ae8d25453a2a9968fb7fede5473",
+        "Model/components/LateralAccelerationQualifierLib.slx": "84842065929b837d44a218dd11cdd974060982d1cf404a46d9d0edc9b012e473",
+        "Model/components/RackPositionQualifierLib.slx": "16e7df8444ac1a7fb94a527b46f1bb4b2ae7c1ab976b00b20ae38f6f8c20fc21",
+        "Model/components/SteeringQualifierLib.slx": "3c008ac8724fbc232a3c65f50446a93016340f3bb907c1766cecf1f5f925fdba",
+        "Model/components/SupplyVoltageQualifierLib.slx": "78093e20b68e9190e7eec0972fcbc61b2e7d4c308d984ead2ee6d1661870b458",
+        "Model/components/VehicleSpeedQualifierLib.slx": "89bdbb8d83fbac427b82449094072e139d289516c7b86ea22b9b40c833718120",
+        "Model/components/YawRateQualifierLib.slx": "102ba81b7c71228299975b969419f6ac1ba1b17c167c908ac4fcd3c2d0af2bec",
+        "README.md": "b6756ef5ecc95e484a48e7d0fa28ca3996deda1b7e76714faea224819acb4de7",
+        "SOURCE_ORIGIN.md": "31328c4821a4b20e35ec6b70afe25e0d9bd39aed2b5458bac5ce1d97bad4fdff",
+        "SignalSupervisor_init.m": "8a250567e4555b3329c9923f8cfdf135c1a7ad8ce1fd476b12530e3eeffc00cb",
+        "Tests/README.md": "2899b41b72019fd81ba8e9bcc16e4b0b968c3d75cdc23f355f3effed87ab404c",
+        "Tests/SignalSupervisor_UTHarness.slx": "c0f0bb9064ef37269e5adddbc1cf3b48220eab21a8246e1a24115082c2234b7e",
+        "Tests/SignalSupervisor_run_tests.m": "10955a8478d060ac7c7b1fdb000c4e798b9dca7a593840336288d413b08820f8",
+        "Tests/TestData.mat": "4806a308c5589d3075519c74d7ae4f60660d83de72e8f566aac8888536be1739",
+        "Tests/results/actual-output.mat": "eaa1b609528b2cb8bea3f0467c0af586b83ce3a679e4e6d97f6b8eaabd18897b",
+        "Tests/results/model-coverage.cvt": "9bbc867fb8342b7078c09ee32422fd3faf8fb48d80d619b8e9855ebb2d4c1fbc",
+        "Tests/results/model-coverage.html": "a76821bff10cc419fa65d259de41ff00067745d723f1928c4c7d5085ac403b16",
+        "Tests/results/model-coverage_SignalSupervisor_UTHarness_cov.html": "c6ba958be20cb711c84d40c7267ac733590c4c6856e95840b49cd8e5e4cdd3f7",
+        "Tests/results/model-coverage_SignalSupervisor_cov.html": "289124959dc52790d5b427b0221f03503ac061c3cb6123bcd4117f194e751bf2",
+        "Tests/results/scv_images/aqua.gif": "ad9c261ddb00bd753ee2ff8165576c56641a25e47184bbfe449237049b3ad23f",
+        "Tests/results/scv_images/black.gif": "e4c8efe0cd4a34ef45c313760fe5bd92c0d0d61cf444ca99d53519d9d3657608",
+        "Tests/results/scv_images/blue.gif": "97b29e3c43d78fa176d02a1e7a5b504479238c5d92759889f35407007c0a8249",
+        "Tests/results/scv_images/codecovreport.css": "e270aa4668967feeb8bb30d8e52bf05dd557db423243c5967a5d63b74d873174",
+        "Tests/results/scv_images/codecovreport_utils.js": "1c100b13c270cc8e7bbaa5cb67d8a3272d5bbc9ada0ad4f3ef730afc83412b82",
+        "Tests/results/scv_images/covreport_utils.js": "0e8785e7af36a244846340a4ec98d6f69ba6e0579b8db017063786a850efe5be",
+        "Tests/results/scv_images/dkgrn.gif": "14f3b540d2d3775d67230e3696f18fc3d15ca80821cde8e96fa4868b99dea34a",
+        "Tests/results/scv_images/filter_add.png": "e8dbb146c2719430239579ab0628a4418b8c46d70bce886c9755574e6a8508da",
+        "Tests/results/scv_images/filter_remove.png": "14407604c19f2c75e8fec6c32585f6788b2f333e99f2c8100988b174d2801484",
+        "Tests/results/scv_images/grn01.gif": "8baf586b065f39e4461ee2fffc5dfbc6acd55c51ec3d6c4907d9d77291c382d4",
+        "Tests/results/scv_images/grn02.gif": "74960e107cdbed1fc098d4895b0d17f537010dc5fb1a0b712fd920c2ef1dccd0",
+        "Tests/results/scv_images/grn03.gif": "8f9ff0ba3a1dd827394765bb6fcd720ff4d3fc5a43a627cb9197fd54485464cf",
+        "Tests/results/scv_images/grn04.gif": "76b27649e6a7ca324fcaebc2c00bb76383a03d2bd80c3633c3ea02206fa83691",
+        "Tests/results/scv_images/grn05.gif": "b1fb57b4359baddb5f5569e6f70aea7c22453b579f4c4cf8bf118400171d92b9",
+        "Tests/results/scv_images/grn06.gif": "41a24c03efc762ee7b37db58ad8556df0c09571f1296f733410f5f1055eec00e",
+        "Tests/results/scv_images/grn07.gif": "2c52a8fe4aa9d788e8f16d8ffb1f0b6a4a12652a5d466b2a5b00209e786d73f8",
+        "Tests/results/scv_images/grn08.gif": "025dbdc8028720290a793694a5d432463a7b34a24cc2b3ad4c513b3dbe9906d4",
+        "Tests/results/scv_images/grn09.gif": "fe73578518129cef436fc38f6b0474caa840fc74f4cee16360e4edf56ce707fb",
+        "Tests/results/scv_images/horz_line.gif": "a7de1d7b593509123cface3a3520dfb5710a0da1861b90ca16a8bad3c1238d6a",
+        "Tests/results/scv_images/htmlfile.gif": "8196e3b39156656ee3215972df65be4618b70362c57bf70e995267ab53a6dcd9",
+        "Tests/results/scv_images/left_arrow.gif": "c42378268d3a479e9dbab2988c3a1546bf366f546512ae5e16c7288207bce2ff",
+        "Tests/results/scv_images/ltBlu.gif": "ad9c261ddb00bd753ee2ff8165576c56641a25e47184bbfe449237049b3ad23f",
+        "Tests/results/scv_images/ltblue.gif": "750b473c632dd819db257c73251c3757bcbc9f3b83fd4c4d8cfa7acadc9bb8fb",
+        "Tests/results/scv_images/ltgrn.gif": "7a3b7f2f73c3fb72dc65ef9a5951e868815c383b3aba64c48dbc69b33e5ca9f3",
+        "Tests/results/scv_images/modelcovreport.css": "f86022e11f91131ab2b843e4fafa50918db28e1fc931f9525052ebbe77cf9991",
+        "Tests/results/scv_images/pink.gif": "d91ed8b20f6f7cb9257b629fcf685b8106795f072bb9308108f88fdeecf2750a",
+        "Tests/results/scv_images/purple.gif": "b06073fbc896c43ac6ef1cae1ba91c31e5342d9b0ada9d3bb3e2f097e20a2245",
+        "Tests/results/scv_images/red.gif": "ac3dd4667fdf1465102ef0ee921db208fae4c3608e7ec22196f2e5cc81b997f9",
+        "Tests/results/scv_images/right_arrow.gif": "eacea9b91092016481440caf0249a9fc508b322caf290b4f8eef1a56fc258180",
+        "Tests/results/scv_images/trans.gif": "2dfe28cbdb83f01c940de6a88ab86200154fd772d568035ac568664e52068363",
+        "Tests/results/scv_images/version111.txt": "af6df543acb274a7933576377e43d91631a12e4a52ba534089a7b5552e6343a7",
+        "Tests/results/scv_images/vert_line.gif": "505eaa7c67326d9cafad4dd0baf4350b6fd993af25f759bb662987d9a2bde497",
+        "Tests/results/scv_images/white.gif": "d605903facc2777941bd034d29c9894b99d8c762629e179fc5b962e97b4db6d7",
+        "Tests/results/scv_images/yellow.gif": "e25864e50b9ad36cf2ea5949eb38d96c4b44ee43a61052512e54121d6c1e844c",
+        "Tests/results/test-result.json": "c413b57eb98dc9a45f90d6b323c12a5d6218204db26ea14b29eca359e3e0a6e2",
+        "project_init.m": "a4d5d6e737e48800e812db30c3743084fcd5c41bc98c7e26a1c546f745c397fa"
+      },
+      "gitlinks": [],
+      "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+      "id": "ARC-04",
+      "implementation_kind": "matlab",
+      "inventory": {
+        "path": "suites/architecture-center/inventories/ARC-04.json",
+        "sha256": "c3cb518a0be7e59ea2d88958a125f8eacf50b8ff8a5a76bc7bcfe366b4842c0d"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "arch-signal-supervisor",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "3d1b82c43d854087fd5355452c21bafdadfad376"
+      },
+      "repository_url": "https://github.com/cockpit-bench/arch-signal-supervisor.git",
+      "scan_profile": {
+        "path": "suites/architecture-center/profiles/ARC-04.json",
+        "sha256": "c5bc55a1345e5a1ec0563ba8d72447edfd0f2a41223081029ca0a15a58c367bc"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/matlab.json",
+        "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+      },
+      "tree": "6d4ecc7d48a66c00f7b232917196b7995015a466",
+      "type_id": "architecture-center"
+    },
+    {
+      "center": "架构中心",
+      "evidence": {
+        "path": "suites/architecture-center/evidence/ARC-05.json",
+        "sha256": "0f917fb68a39744fb4d96d3d47046e26e21e49aa70ceb5d4a87afca1e630b068"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+        ".gitignore": "a6a7aecd86872e47d32d2e0b2b683207e71fa0da6312ddb34d0e819082c4e0be",
+        "CrosswindControl_init.m": "cad5d25f094ff8d6f8d501dab26d0e115c2a0d990da59bc5d14bc4b338fd1acf",
+        "Model/CrosswindControl.slx": "be2461184ab171efcdb2de9dc0058a2ead2e972c5a6f1acbcfa67a82bffb4b8e",
+        "Model/Interface.xlsx": "d6e15ab60080d2b137b77adcd41383adccd205697b4182f906c8f2e373b3d097",
+        "README.md": "e535af6ba42afd253baf0f6be52f11f6063ca3cdacae48e83057f5453ffc46d8",
+        "SOURCE_ORIGIN.md": "d5784e72964f6e4e512da455852eaf775488d0d006f343a5c4d77268d339e3b4",
+        "project_init.m": "016ac597031843bf51fb309c8d3f1c0be77b1942c95f1afdfe819dd271496508"
+      },
+      "gitlinks": [],
+      "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+      "id": "ARC-05",
+      "implementation_kind": "matlab",
+      "inventory": {
+        "path": "suites/architecture-center/inventories/ARC-05.json",
+        "sha256": "9dbe43026472e02d7a313c5b4b51efb69d1b9948d51eb4fa8e0ffd5cc8b39370"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "arch-crosswind-control",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "3e172ba8305a826f2e711782eab171dba9ab30a9"
+      },
+      "repository_url": "https://github.com/cockpit-bench/arch-crosswind-control.git",
+      "scan_profile": {
+        "path": "suites/architecture-center/profiles/ARC-05.json",
+        "sha256": "0f084af9b81b4bc95877a5213a79e4ae485a5e9e83c55acc9acb8912aa2e998c"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/matlab.json",
+        "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+      },
+      "tree": "8af5b2293dfcd63936ecf6fbb553ab231b75c2c6",
+      "type_id": "architecture-center"
+    },
+    {
+      "center": "架构中心",
+      "evidence": {
+        "path": "suites/architecture-center/evidence/ARC-06.json",
+        "sha256": "61a141336c4145cb39068cd94293350c67fe0b0564005de1889b813459172a23"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+        ".gitignore": "a6a7aecd86872e47d32d2e0b2b683207e71fa0da6312ddb34d0e819082c4e0be",
+        "Model/Interface.xlsx": "68130fe5d2122bea31277061e10897516f1e85ca4f00627c934034a4d4193591",
+        "Model/VehicleState.slx": "2fdb732d7abff0a29db0c6a7d30a80891600e444d7650a53eb4f746e6e44ecf7",
+        "Model/calibration_VehicleState.m": "69194ba0a522ee316c6a4671cd7908c9620da1d792b9c5d2875271def938956b",
+        "Model/components/DirectionClassificationLib.mdl": "ffe691016d0cfae52e49ea223920d5160dd787bc61fc990eaad95277a8b5e944",
+        "Model/components/LegacyYawFilterLib.mdl": "5184808693ab5e38a3be7b8b89e9d785a4dc88399bbaaad0677cf7d0dda46337",
+        "Model/components/VehicleStateCodeLib.mdl": "c2294da4b538d8ae870d8a4036a667c319e289cc2d20d4c1866dd81fb16821c2",
+        "Model/components/WheelMeanLib.mdl": "fb81a092d77eb20eff7e4c238fb30a83f16e03c5cdf24ecbe74dacbb9e74b1a6",
+        "Model/components/WheelSpreadLib.mdl": "d2dd855576162e5566d3e055ebb6c300ebaa274e27dd9901ca8c5a31da1adeb0",
+        "README.md": "4e8d9541a323b36e6654c7d539c51e0d1c1d46d9c37c03ecd837b48d179c6c63",
+        "SOURCE_ORIGIN.md": "28be4c248dee193709da0d200eb9cbc84b5609b27f4c74883742f64edd3ff740",
+        "VehicleState_init.m": "e13c28c9d8aaf83dba244dc45371a630a5c52bba236e050ebb198586afa893ee",
+        "project_init.m": "cd20fa90b05917702f28d568a34a4ed3baefeea12f9b0222e4d60140a9acae77"
+      },
+      "gitlinks": [],
+      "head": "258ba5ba20acffb8b4c16f0d7e905611498a1928",
+      "id": "ARC-06",
+      "implementation_kind": "matlab",
+      "inventory": {
+        "path": "suites/architecture-center/inventories/ARC-06.json",
+        "sha256": "d6726a132e0ee518b54e801ee15c890d99c4deb38212f0e448a7546892617526"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "arch-vehicle-state",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "258ba5ba20acffb8b4c16f0d7e905611498a1928"
+      },
+      "repository_url": "https://github.com/cockpit-bench/arch-vehicle-state.git",
+      "scan_profile": {
+        "path": "suites/architecture-center/profiles/ARC-06.json",
+        "sha256": "bad9f563a7c8c7beaad1fb8be5fae49c0fb3e15e2a0e82227f088a17627d070c"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/matlab.json",
+        "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+      },
+      "tree": "6d2d152642b07aa4149c02c0982ddaf230a52c76",
+      "type_id": "architecture-center"
+    },
+    {
+      "center": "架构中心",
+      "evidence": {
+        "path": "suites/architecture-center/evidence/ARC-07.json",
+        "sha256": "9f12e90ade7cc72988e7e29be261166026f5170597974b82d772fccceda3cbb2"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "eca0301728922494ffa0ace497e170eb62651cf99f908188312fe3e634cb2bc4",
+        ".gitignore": "43f2e4065dc8c9a84b873fe85f8326fcdf4b1852e9021f0e4f75d593095b848a",
+        ".gitmodules": "1da4c150e972990a58d1683df36deca86b8c5750b4f7383acbb1dabdffcd335a",
+        "README.md": "1398d1f5dd13ea53c82a8e15cf8e200f9bc13205b4032e7a93741512a86f6d1b",
+        "SOURCE_ORIGIN.md": "d62058292cdf3d0c2fc8796b9d1392ac7426b0e72b208a1a16b583be66a30072",
+        "components.lock.json": "74e697ff40a9df09ecc3056aff4a45f3f5531ab3ce9e420dc7c614d49b5c383a",
+        "motion.py": "1251f16e0dbf09a79d8a4bd99d21c9b00239e87366482ef0e3298d1c7a54a694",
+        "motion_manifest.json": "22362c22523efb081c6e8481d6c7c18e61a200a9ca51dda146efd4d205393fc3",
+        "run_motion_integration.m": "58b790aced39e9f841fee1d71c14c264b8500d04f5a359cf960ecf49b5c80bf0",
+        "scan-profile.json": "249c5b4eb52a31afd7d6899826c8c7e313bfafbcc3727f000792380db8ffb437",
+        "scenes/normal.json": "8d79af7037bf3ddd6af42796d9fae204b5abfeba7eb4745a5985802922456894",
+        "scenes/stale_speed.json": "160a3087f44800bc10af18ccabe67ada6da60570d8465ab8e24e94fed8c78b18"
+      },
+      "gitlinks": [
+        {
+          "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+          "path": "components/arch-actuator-target",
+          "repository_id": "ARC-01"
+        },
+        {
+          "head": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+          "path": "components/arch-brake-stability",
+          "repository_id": "ARC-02"
+        },
+        {
+          "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+          "path": "components/arch-crosswind-control",
+          "repository_id": "ARC-05"
+        },
+        {
+          "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+          "path": "components/arch-motion-coordinator",
+          "repository_id": "ARC-03"
+        },
+        {
+          "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+          "path": "components/arch-signal-supervisor",
+          "repository_id": "ARC-04"
+        },
+        {
+          "head": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827",
+          "path": "components/arch-steering-redundancy",
+          "repository_id": "ARC-08"
+        },
+        {
+          "head": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+          "path": "components/arch-suspension-monitor",
+          "repository_id": "ARC-09"
+        },
+        {
+          "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+          "path": "components/arch-vehicle-safety",
+          "repository_id": "ARC-10"
+        },
+        {
+          "head": "258ba5ba20acffb8b4c16f0d7e905611498a1928",
+          "path": "components/arch-vehicle-state",
+          "repository_id": "ARC-06"
+        }
+      ],
+      "head": "43d3360c130d347dc3e2d818b25dc0e8716abc9f",
+      "id": "ARC-07",
+      "implementation_kind": "integration",
+      "inventory": {
+        "path": "suites/architecture-center/inventories/ARC-07.json",
+        "sha256": "4d688872fb4e8baef052ade9b6d0cf25ea8b72179b65ed8059ba892db956c627"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": [
+          "ARC-01",
+          "ARC-02",
+          "ARC-03",
+          "ARC-04",
+          "ARC-05",
+          "ARC-06",
+          "ARC-08",
+          "ARC-09",
+          "ARC-10"
+        ]
+      },
+      "name": "arch-motion-integration",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "43d3360c130d347dc3e2d818b25dc0e8716abc9f"
+      },
+      "repository_url": "https://github.com/cockpit-bench/arch-motion-integration.git",
+      "scan_profile": {
+        "path": "suites/architecture-center/profiles/ARC-07.json",
+        "sha256": "f43b4a930381cb2148cc734791183b93cd01f12262e624b4a17aa12b265eeef4"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "208682dfe483e0af4cbc86fef09a6f9d68ded7f2",
+      "type_id": "architecture-center"
+    },
+    {
+      "center": "架构中心",
+      "evidence": {
+        "path": "suites/architecture-center/evidence/ARC-08.json",
+        "sha256": "ac91c880d83223905235467c7a53013049ae716f88a66dda0830760580ee35de"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+        ".gitignore": "264c5d78988a38a39757859b02a8f70d66bd31212fb2f02aacbec8c76f55b51c",
+        "Configurations/README.md": "ecc6e43d6f9160aac85f77fe136f3c0dde6d9ebd0e19f53855c911dbc1da2379",
+        "Configurations/configurations.json": "491073cade61de04d443b88c52f7b17eee2ff8280ef58b988ac4141d4b67961e",
+        "Model/Interface.xlsx": "27deeebaa4a1c972d9360384606621ccd174fed654f77645a3b99819517b57e5",
+        "Model/SteeringRedundancy.slx": "aa0cf736f0b7e573890a508b63987ebe5860e9d1781cfdaf2ef5b0472c594cea",
+        "Model/calibration_SteeringRedundancy.sldd": "b61a953126dc9ac5c41fa06319d3b56781eaaab836970a3655dc54994dce6006",
+        "Model/components/RackAQuality.slx": "79f6655d3f5d696565995c4a0f1853d0ed3f714d406456f11e9743ddb6e6f2b6",
+        "Model/components/RackBQuality.slx": "16081708975988686a0fa3178414823e5f9a7040477c94284378bc2b65b04be0",
+        "Model/components/RackVoter.slx": "3f837dd9c947d96624d77e1cdfe7c254402dbf71f8e92ded7fee7271a27c24a6",
+        "Model/components/SteeringFaultLatch.slx": "3f23a56d6831c4fab43225ffc084a8252a221f8037c899c7bd6d212cf0ff38cd",
+        "Model/components/SteeringOutput.slx": "826e646e0ee96199ae64020126062f7f3a9fd01a505c43506c1a6911ab375729",
+        "Model/components/SteeringSlew.slx": "ad99626ac4b2b5b09da2e7eafd25ee1ab94d53b52acf66dd9d736efc5327d380",
+        "Model/components/SteeringTarget.slx": "661d14d687cd4d2ea25e5661cb23cc04013582ac7efcba0c7973c0d487fbbeff",
+        "README.md": "aa417b18447e5d2c4efbbc8b2f32fea24dc0426240ebb89423dcea3926267ec4",
+        "SOURCE_ORIGIN.md": "1e155f45f52db7b3824e2f0c93760ee35366015e1bf213a08243daa80d2e05fc",
+        "SteeringRedundancy_init.m": "0366cacba19a745d3229036c1adf175211c2ef78b1701e627810c7a8ff42fc8c",
+        "SteeringRedundancy_simulate_configuration.m": "2dba0fd333aaa87d0d0290d6e04b25ec22283041e4596f418e6dcc3de3ed8da6",
+        "Tests/ConfigurationExpected.json": "b3f2f0e0af2fd8de43da6dd55e6692833e327caec24d1b293075ba7a4ea76a1e",
+        "Tests/README.md": "506008438ff2cd23278c836673625b40c1ecef14f4bbbaa4f638d6adae9d92f5",
+        "Tests/SteeringRedundancy_UTHarness.slx": "a32058de00b7e93028dcced9737b6ca3376d51495147f018336aaca21d0cd97b",
+        "Tests/SteeringRedundancy_run_tests.m": "b7913fcc1c9e84f9a727f8c06a4d559eb5a6365f912af5d6f481fc1c2a999033",
+        "Tests/SteeringRedundancy_test_configurations.m": "a8235a67ee58739b692fd08f393d9aa21eea8fb84fe5b0d5b352b1ac3758af3d",
+        "Tests/TestData.mat": "6e799b9646cb8ba07182a34d1668184e6cd9e5b540ba30e53e6c32a1a0e7144d",
+        "Tests/configuration-results/compact.json": "45635ec5cb56bfe535c4288450c2d22f11c5a7888ca2843e967e1cfbf318af6e",
+        "Tests/configuration-results/result.json": "01af1a756d9e5484459fed17163eb00181cc13993a309651aaec10d25b3dae4d",
+        "Tests/configuration-results/utility.json": "187867893270738ab9f1a5d9973ce9d9b932c936ceefca8a0f6a94aa810d1479",
+        "Tests/results/actual-output.mat": "db39c8870014800da6989b9731bf9e10f47ba2221c453b7e2c2583a0b1aafe63",
+        "Tests/results/model-coverage.cvt": "f77b0b12389d68d060ac3e54e3af9e599f8deb724b3e4d8dc221087a68a67c94",
+        "Tests/results/model-coverage.html": "cc52f09f001e47078356415bafb9138b4a3d69524b394612065bbeac54f838ff",
+        "Tests/results/model-coverage_RackAQuality_cov.html": "e07bd18682e766167dd811a452c5db76dcc6f556e4128535fa8e9e93bd6df405",
+        "Tests/results/model-coverage_RackBQuality_cov.html": "6e82d8599d0e0f95da75cb16a9938c4d40b864b63fd96e7b77a8da9cb38feb7d",
+        "Tests/results/model-coverage_RackVoter_cov.html": "24ea8fe6382ad9ad3eb1dce9ac8701a0065530992a91fbe7a272977a956c66d6",
+        "Tests/results/model-coverage_SteeringFaultLatch_cov.html": "20f5587dfa4ee2e56046e52f7d2fd64662ce3b6e483b83002e3ae7dd4b4bb672",
+        "Tests/results/model-coverage_SteeringOutput_cov.html": "5ab070fc38eb41616f8dc36e22e843fe41a9537f8300e512097b4f0725dd57dc",
+        "Tests/results/model-coverage_SteeringRedundancy_UTHarness_cov.html": "bc2d6970492fa4007198a472deed088e1d01331b04d407951e10e57a2b1734a0",
+        "Tests/results/model-coverage_SteeringRedundancy_cov.html": "ec8165210bda2c74b8784870e03b2132b01078d6d335980eee0cc91345c22b65",
+        "Tests/results/model-coverage_SteeringSlew_cov.html": "2f83e7507b7e0596c9c0a2be74527f149db755f1e6b22ad3cbc9fd6b8c1da513",
+        "Tests/results/model-coverage_SteeringTarget_cov.html": "dafec91c4ccaed097589b8d68678f1cc8dddfb924c6a0352bad70565931d81d2",
+        "Tests/results/scv_images/aqua.gif": "ad9c261ddb00bd753ee2ff8165576c56641a25e47184bbfe449237049b3ad23f",
+        "Tests/results/scv_images/black.gif": "e4c8efe0cd4a34ef45c313760fe5bd92c0d0d61cf444ca99d53519d9d3657608",
+        "Tests/results/scv_images/blue.gif": "97b29e3c43d78fa176d02a1e7a5b504479238c5d92759889f35407007c0a8249",
+        "Tests/results/scv_images/codecovreport.css": "e270aa4668967feeb8bb30d8e52bf05dd557db423243c5967a5d63b74d873174",
+        "Tests/results/scv_images/codecovreport_utils.js": "1c100b13c270cc8e7bbaa5cb67d8a3272d5bbc9ada0ad4f3ef730afc83412b82",
+        "Tests/results/scv_images/covreport_utils.js": "0e8785e7af36a244846340a4ec98d6f69ba6e0579b8db017063786a850efe5be",
+        "Tests/results/scv_images/dkgrn.gif": "14f3b540d2d3775d67230e3696f18fc3d15ca80821cde8e96fa4868b99dea34a",
+        "Tests/results/scv_images/filter_add.png": "e8dbb146c2719430239579ab0628a4418b8c46d70bce886c9755574e6a8508da",
+        "Tests/results/scv_images/filter_remove.png": "14407604c19f2c75e8fec6c32585f6788b2f333e99f2c8100988b174d2801484",
+        "Tests/results/scv_images/grn01.gif": "8baf586b065f39e4461ee2fffc5dfbc6acd55c51ec3d6c4907d9d77291c382d4",
+        "Tests/results/scv_images/grn02.gif": "74960e107cdbed1fc098d4895b0d17f537010dc5fb1a0b712fd920c2ef1dccd0",
+        "Tests/results/scv_images/grn03.gif": "8f9ff0ba3a1dd827394765bb6fcd720ff4d3fc5a43a627cb9197fd54485464cf",
+        "Tests/results/scv_images/grn04.gif": "76b27649e6a7ca324fcaebc2c00bb76383a03d2bd80c3633c3ea02206fa83691",
+        "Tests/results/scv_images/grn05.gif": "b1fb57b4359baddb5f5569e6f70aea7c22453b579f4c4cf8bf118400171d92b9",
+        "Tests/results/scv_images/grn06.gif": "41a24c03efc762ee7b37db58ad8556df0c09571f1296f733410f5f1055eec00e",
+        "Tests/results/scv_images/grn07.gif": "2c52a8fe4aa9d788e8f16d8ffb1f0b6a4a12652a5d466b2a5b00209e786d73f8",
+        "Tests/results/scv_images/grn08.gif": "025dbdc8028720290a793694a5d432463a7b34a24cc2b3ad4c513b3dbe9906d4",
+        "Tests/results/scv_images/grn09.gif": "fe73578518129cef436fc38f6b0474caa840fc74f4cee16360e4edf56ce707fb",
+        "Tests/results/scv_images/horz_line.gif": "a7de1d7b593509123cface3a3520dfb5710a0da1861b90ca16a8bad3c1238d6a",
+        "Tests/results/scv_images/htmlfile.gif": "8196e3b39156656ee3215972df65be4618b70362c57bf70e995267ab53a6dcd9",
+        "Tests/results/scv_images/left_arrow.gif": "c42378268d3a479e9dbab2988c3a1546bf366f546512ae5e16c7288207bce2ff",
+        "Tests/results/scv_images/ltBlu.gif": "ad9c261ddb00bd753ee2ff8165576c56641a25e47184bbfe449237049b3ad23f",
+        "Tests/results/scv_images/ltblue.gif": "750b473c632dd819db257c73251c3757bcbc9f3b83fd4c4d8cfa7acadc9bb8fb",
+        "Tests/results/scv_images/ltgrn.gif": "7a3b7f2f73c3fb72dc65ef9a5951e868815c383b3aba64c48dbc69b33e5ca9f3",
+        "Tests/results/scv_images/modelcovreport.css": "f86022e11f91131ab2b843e4fafa50918db28e1fc931f9525052ebbe77cf9991",
+        "Tests/results/scv_images/pink.gif": "d91ed8b20f6f7cb9257b629fcf685b8106795f072bb9308108f88fdeecf2750a",
+        "Tests/results/scv_images/purple.gif": "b06073fbc896c43ac6ef1cae1ba91c31e5342d9b0ada9d3bb3e2f097e20a2245",
+        "Tests/results/scv_images/red.gif": "ac3dd4667fdf1465102ef0ee921db208fae4c3608e7ec22196f2e5cc81b997f9",
+        "Tests/results/scv_images/right_arrow.gif": "eacea9b91092016481440caf0249a9fc508b322caf290b4f8eef1a56fc258180",
+        "Tests/results/scv_images/trans.gif": "2dfe28cbdb83f01c940de6a88ab86200154fd772d568035ac568664e52068363",
+        "Tests/results/scv_images/version111.txt": "af6df543acb274a7933576377e43d91631a12e4a52ba534089a7b5552e6343a7",
+        "Tests/results/scv_images/vert_line.gif": "505eaa7c67326d9cafad4dd0baf4350b6fd993af25f759bb662987d9a2bde497",
+        "Tests/results/scv_images/white.gif": "d605903facc2777941bd034d29c9894b99d8c762629e179fc5b962e97b4db6d7",
+        "Tests/results/scv_images/yellow.gif": "e25864e50b9ad36cf2ea5949eb38d96c4b44ee43a61052512e54121d6c1e844c",
+        "Tests/results/test-result.json": "95f4b49a1ab73b6e45b6d803c6ff90d3478f353a1814301846fc8dcaa55ebd0e",
+        "project_init.m": "ce70c81c34750dc950348036addbbf7e6eda21c9f0cb04388fba7229c908462d"
+      },
+      "gitlinks": [],
+      "head": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827",
+      "id": "ARC-08",
+      "implementation_kind": "matlab",
+      "inventory": {
+        "path": "suites/architecture-center/inventories/ARC-08.json",
+        "sha256": "723db3f3b71496f9a0c55e48561518532427b02dbbe2f42bd19deeb64808fcc6"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "arch-steering-redundancy",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827"
+      },
+      "repository_url": "https://github.com/cockpit-bench/arch-steering-redundancy.git",
+      "scan_profile": {
+        "path": "suites/architecture-center/profiles/ARC-08.json",
+        "sha256": "3978f85f2406eccd4998b88bbb8f7d8ec95d736a8765fb40bf9c659bbc89b0f0"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/matlab.json",
+        "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+      },
+      "tree": "f78aafac2df2c0eb3ff3a73cb10d23501f4eadf2",
+      "type_id": "architecture-center"
+    },
+    {
+      "center": "架构中心",
+      "evidence": {
+        "path": "suites/architecture-center/evidence/ARC-09.json",
+        "sha256": "74dcf3c2eeb66547ca23fb99d3ca1da4fef8646bea804403fd4a98e0fa5e33a3"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+        ".gitignore": "264c5d78988a38a39757859b02a8f70d66bd31212fb2f02aacbec8c76f55b51c",
+        "Configurations/README.md": "2bf1041c3b49e579497343e81180199ef6e6155da2f28db41265606992eefbd9",
+        "Configurations/configurations.json": "80a217bbd54441baa73d3aca422f06db23af05e5cd401de69efe987956e06959",
+        "Model/Interface.xlsx": "c5498c46420505cc4e2685a814ad1c170094b06b4f3acdaebbeae20e84848f7c",
+        "Model/SuspensionMonitor.slx": "32a523b1a4a042bfea652c4f58f63ab579f24f4a02edc2d3ca97bb34206f7008",
+        "Model/calibration_SuspensionMonitor.m": "62e3bffa92fe20dd39e9b9216b77e1a07b5fec9b23c5d9da4472636fcb4d6b23",
+        "Model/components/BodyPitchLib.slx": "93a1eec8f8118363a0bccd6c44944263050df5c53c8081ce0ab2863d0fc4d646",
+        "Model/components/BodyRollLib.slx": "5bdee8cedab0ea94919b92a60520ebb6a18a32314a06a670ed7837f3612ae72b",
+        "Model/components/FrontLeftHeightLib.slx": "2b6db2fad3f320f694bc89525b465cf032479bd5419ef8d7bbb0c1118001a3df",
+        "Model/components/FrontRightHeightLib.slx": "37392658a3f49b6928ace86c12df6fd4ae963f8d1942c7447961449320727af1",
+        "Model/components/MeanRideHeightLib.slx": "150e80a4ec6f0bbb222809e74ed8eba7b4cf77c09417f2f983404f66ce1d3284",
+        "Model/components/RearLeftHeightLib.slx": "db4c4b2ef2b37c708bbb7ec59eef779e77cdaa63a5448daf13e0cdc792f44c19",
+        "Model/components/RearRightHeightLib.slx": "f81df65365834de35d61237c5b25d58b0933975ff1e70e72729b2eaa5bfd3421",
+        "Model/components/SuspensionGateLib.slx": "17d11f74e689a1f1590c2944ac3ae60ffe5ce75558745e05271de7801763f42d",
+        "Model/components/ValveDemandLib.slx": "0ddf6d84c888d79c847477a898ef9ac6c17f5a26c2083452fa471e7c3bf59b5f",
+        "README.md": "d3d7ca89d380a34debae0279d8a0f74114100317d5b3506b8644758c3f30a03b",
+        "SOURCE_ORIGIN.md": "7995e5102f0570c1fa1e0c005954a388de262b3966e6572c112ff2de1582af05",
+        "SuspensionMonitor_init.m": "20cb35d71b5c0b6520b3f0907ff94b43cd4675d0ac6d2093516d75cb80616552",
+        "SuspensionMonitor_simulate_configuration.m": "df52f070cfd32326640c8788d8255ec35c4027953884fb860e4a06ebfa3d0468",
+        "Tests/ConfigurationExpected.json": "be7cf80332b0a82338862d318e7f88c2efae99a002881240c0ed5d2dab353370",
+        "Tests/README.md": "e47b76ad6bc1b319eef26540f9f8c06afc17d0ec5a4686a9935729a52be20f31",
+        "Tests/SuspensionMonitor_UTHarness.slx": "ed4434db1d5f2ac83da72c0434a3bffdb6316cc61e6a3b3f42c4eaa875fe5da6",
+        "Tests/SuspensionMonitor_run_tests.m": "e3c4fca54f8cbc9411a5db71fd9f82624726c1d41ddccda20618a89bb56cc4e1",
+        "Tests/SuspensionMonitor_test_configurations.m": "b8367c68aac3553863ad53c94c34946f6533cf15cc4bec5c19a17b2a5346d23d",
+        "Tests/TestData.mat": "a017186beb7004be53f4e234b2835ccd6b13fe1a1fac7372c19afc35391d2266",
+        "Tests/configuration-results/result.json": "ba1e5eaa7d5c16fa6aa4052d232f992a23b58b727fa7ade99c8c4600f291e8bd",
+        "Tests/configuration-results/sedan.json": "ac59898d02e10bb40db26216e8154aa735b69a3a3b7acfe7c468c41693403f2c",
+        "Tests/configuration-results/utility.json": "eacc3652b9ace235bef5b3d5aa8a852137f31d9073ab0cf4dc0066bcc1d33ab6",
+        "Tests/results/actual-output.mat": "90a98373668151f64707a6a5f39a877af3b99de696a24edd6295a599c162fb27",
+        "Tests/results/model-coverage.cvt": "32d357e63f68fd87c8a508550b30c26799b0101ac99511f094af8b4880eaf6e4",
+        "Tests/results/model-coverage.html": "08198bf2a32048c3f7c2a9ffbda6ed98a201a673fac65144a07409c4f2918ed2",
+        "Tests/results/model-coverage_SuspensionMonitor_UTHarness_cov.html": "28adfb543e021f292ae6a4856344098219d8cb6f628ec98420ed9f155c52f856",
+        "Tests/results/model-coverage_SuspensionMonitor_cov.html": "0928d7a2faf99a2d768ecf5c11c21f4f81ddfd49a1e8c1399e47dcd129cac5d0",
+        "Tests/results/scv_images/aqua.gif": "ad9c261ddb00bd753ee2ff8165576c56641a25e47184bbfe449237049b3ad23f",
+        "Tests/results/scv_images/black.gif": "e4c8efe0cd4a34ef45c313760fe5bd92c0d0d61cf444ca99d53519d9d3657608",
+        "Tests/results/scv_images/blue.gif": "97b29e3c43d78fa176d02a1e7a5b504479238c5d92759889f35407007c0a8249",
+        "Tests/results/scv_images/codecovreport.css": "e270aa4668967feeb8bb30d8e52bf05dd557db423243c5967a5d63b74d873174",
+        "Tests/results/scv_images/codecovreport_utils.js": "1c100b13c270cc8e7bbaa5cb67d8a3272d5bbc9ada0ad4f3ef730afc83412b82",
+        "Tests/results/scv_images/covreport_utils.js": "0e8785e7af36a244846340a4ec98d6f69ba6e0579b8db017063786a850efe5be",
+        "Tests/results/scv_images/dkgrn.gif": "14f3b540d2d3775d67230e3696f18fc3d15ca80821cde8e96fa4868b99dea34a",
+        "Tests/results/scv_images/filter_add.png": "e8dbb146c2719430239579ab0628a4418b8c46d70bce886c9755574e6a8508da",
+        "Tests/results/scv_images/filter_remove.png": "14407604c19f2c75e8fec6c32585f6788b2f333e99f2c8100988b174d2801484",
+        "Tests/results/scv_images/grn01.gif": "8baf586b065f39e4461ee2fffc5dfbc6acd55c51ec3d6c4907d9d77291c382d4",
+        "Tests/results/scv_images/grn02.gif": "74960e107cdbed1fc098d4895b0d17f537010dc5fb1a0b712fd920c2ef1dccd0",
+        "Tests/results/scv_images/grn03.gif": "8f9ff0ba3a1dd827394765bb6fcd720ff4d3fc5a43a627cb9197fd54485464cf",
+        "Tests/results/scv_images/grn04.gif": "76b27649e6a7ca324fcaebc2c00bb76383a03d2bd80c3633c3ea02206fa83691",
+        "Tests/results/scv_images/grn05.gif": "b1fb57b4359baddb5f5569e6f70aea7c22453b579f4c4cf8bf118400171d92b9",
+        "Tests/results/scv_images/grn06.gif": "41a24c03efc762ee7b37db58ad8556df0c09571f1296f733410f5f1055eec00e",
+        "Tests/results/scv_images/grn07.gif": "2c52a8fe4aa9d788e8f16d8ffb1f0b6a4a12652a5d466b2a5b00209e786d73f8",
+        "Tests/results/scv_images/grn08.gif": "025dbdc8028720290a793694a5d432463a7b34a24cc2b3ad4c513b3dbe9906d4",
+        "Tests/results/scv_images/grn09.gif": "fe73578518129cef436fc38f6b0474caa840fc74f4cee16360e4edf56ce707fb",
+        "Tests/results/scv_images/horz_line.gif": "a7de1d7b593509123cface3a3520dfb5710a0da1861b90ca16a8bad3c1238d6a",
+        "Tests/results/scv_images/htmlfile.gif": "8196e3b39156656ee3215972df65be4618b70362c57bf70e995267ab53a6dcd9",
+        "Tests/results/scv_images/left_arrow.gif": "c42378268d3a479e9dbab2988c3a1546bf366f546512ae5e16c7288207bce2ff",
+        "Tests/results/scv_images/ltBlu.gif": "ad9c261ddb00bd753ee2ff8165576c56641a25e47184bbfe449237049b3ad23f",
+        "Tests/results/scv_images/ltblue.gif": "750b473c632dd819db257c73251c3757bcbc9f3b83fd4c4d8cfa7acadc9bb8fb",
+        "Tests/results/scv_images/ltgrn.gif": "7a3b7f2f73c3fb72dc65ef9a5951e868815c383b3aba64c48dbc69b33e5ca9f3",
+        "Tests/results/scv_images/modelcovreport.css": "f86022e11f91131ab2b843e4fafa50918db28e1fc931f9525052ebbe77cf9991",
+        "Tests/results/scv_images/pink.gif": "d91ed8b20f6f7cb9257b629fcf685b8106795f072bb9308108f88fdeecf2750a",
+        "Tests/results/scv_images/purple.gif": "b06073fbc896c43ac6ef1cae1ba91c31e5342d9b0ada9d3bb3e2f097e20a2245",
+        "Tests/results/scv_images/red.gif": "ac3dd4667fdf1465102ef0ee921db208fae4c3608e7ec22196f2e5cc81b997f9",
+        "Tests/results/scv_images/right_arrow.gif": "eacea9b91092016481440caf0249a9fc508b322caf290b4f8eef1a56fc258180",
+        "Tests/results/scv_images/trans.gif": "2dfe28cbdb83f01c940de6a88ab86200154fd772d568035ac568664e52068363",
+        "Tests/results/scv_images/version111.txt": "af6df543acb274a7933576377e43d91631a12e4a52ba534089a7b5552e6343a7",
+        "Tests/results/scv_images/vert_line.gif": "505eaa7c67326d9cafad4dd0baf4350b6fd993af25f759bb662987d9a2bde497",
+        "Tests/results/scv_images/white.gif": "d605903facc2777941bd034d29c9894b99d8c762629e179fc5b962e97b4db6d7",
+        "Tests/results/scv_images/yellow.gif": "e25864e50b9ad36cf2ea5949eb38d96c4b44ee43a61052512e54121d6c1e844c",
+        "Tests/results/test-result.json": "5af0c46d4960be72a6769b3929c6b4b79152174f1c022ecd125485c56df46517",
+        "project_init.m": "ef404664198664ab90ce8d3d0447134ce75c3a754537b724730594fc689e70f1"
+      },
+      "gitlinks": [],
+      "head": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+      "id": "ARC-09",
+      "implementation_kind": "matlab",
+      "inventory": {
+        "path": "suites/architecture-center/inventories/ARC-09.json",
+        "sha256": "688869b431639104c9f753a8c78fcebac7449304ead245d386799f6a814e8e09"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "arch-suspension-monitor",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "a990dbc493f1534eaefcf9ac1a57543191ed88f0"
+      },
+      "repository_url": "https://github.com/cockpit-bench/arch-suspension-monitor.git",
+      "scan_profile": {
+        "path": "suites/architecture-center/profiles/ARC-09.json",
+        "sha256": "85601c78059e60aa853b546d4c85fe51f111d8b81a4d27b026f69115010e05bd"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/matlab.json",
+        "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+      },
+      "tree": "6a84feae70438c8f969d1ad35b7886ca20dbb7e5",
+      "type_id": "architecture-center"
+    },
+    {
+      "center": "架构中心",
+      "evidence": {
+        "path": "suites/architecture-center/evidence/ARC-10.json",
+        "sha256": "2a474b279da621864117deffc356fa996cf6c8f318ace4308f2b5875b7990749"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+        ".gitignore": "a6a7aecd86872e47d32d2e0b2b683207e71fa0da6312ddb34d0e819082c4e0be",
+        "Generated/VehicleSafety.a2l": "bdafbceb5494988c9b12acdafa069403be1f6c714a740addc9c2f59d43637861",
+        "Generated/VehicleSafety.c": "7a6a358f83aaf26b80b4e800a1f3030684290d7ec35651fc2ff0dc3e8ec5ae3c",
+        "Generated/VehicleSafety.h": "845fdfe85fc96ac6bce279160dc81e315dd22d60cc7f3cff648762d03f96be88",
+        "Generated/VehicleSafety_data.c": "e72083883fc0f53257d8a5cfb78739bff097909781aa4fe79e825997d8074601",
+        "Generated/VehicleSafety_private.h": "eaf48f5ade4b797e79b0f60133ef9e8eb102c6533078e6b4d4dd89d231eadc5f",
+        "Generated/VehicleSafety_types.h": "2ca04c0d90c8df4d833ff5f8c4e0f9048807478f2c6e2e707b03c5aa9adbc6db",
+        "Generated/rtwtypes.h": "ab1c8e559af7bcd9a9bc2d5b0dd11b000f9b2e1cf01caf99ebe3366cf9488f46",
+        "Host/README.md": "e2626bc643f0e59d2551c27bb2358c7ab1aec7cbd4fb9368951968f9c84f6a8a",
+        "Host/replay.c": "eb41ace13aa40035460e8b8a3870854a50e4647e2d7896d89b695309a5a0db8d",
+        "Host/scenario.csv": "a9262c45c5e05c4d9bca04304bbf241d4ac61ccd02fd872c994b945ec378b6d4",
+        "Model/Interface.xlsx": "8028e9c8d8a21bb901d5920acd55fb29a1337dc6d5618d33741d5aaa9d9e4fce",
+        "Model/VehicleSafety.slx": "fe2d1160517f862bd2162b5f5fae3e7a9bfac7d22201fbfd37a9e4ea8d26e102",
+        "Model/calibration_VehicleSafety.m": "a3a1ba7c8324e045193c58eb3f14043961e12754c53176715540fe0e030b8980",
+        "Model/components/FaultDebounceLib.mdl": "7a5de13cfd6fb487301b0d725758693656bb226d4508200b44975b6ec8bd2b3b",
+        "Model/components/FaultEventCounterLib.slx": "87e1c1642fcabeaa28d03da2c06276b7b41fa49591ade10eea326324af8eb88c",
+        "Model/components/HeartbeatWatchdogLib.mdl": "60da18e2d9734a43603c798075177cf7d959b4927ed5f95e8fd3b1d096d30caa",
+        "Model/components/MessageTimeoutLib.mdl": "dd69ec82b60e26ec83bf9f98fa44d782e4348fd9907197df0d1243cd395fa575",
+        "Model/components/RedundantRequestVoteLib.slx": "aeec11daaecc38e38a8f6746ab74e393450c7e68eabe7cfbae3d541948b21033",
+        "Model/components/RequestQualityLib.slx": "d5137d1258981fafe7535cb77613b9cd0f3f59c933fcb4ba195f20a84d6a304e",
+        "Model/components/SafetyCommandEnvelopeLib.slx": "c588e98af2f784ba0be7c7d87f6474009799d1519300c5dbdd64dbd77c03fe78",
+        "Model/components/SafetyLatchLib.slx": "1fcdd14ce921638c3fa050fad8953fb57e505be4a0601bccdb7a4953952bd0d2",
+        "Model/components/SafetyModeMapLib.mdl": "474dc27835fda4e837ab637b0e5b1fc17c4d6deca3c20e0bbb0d2f605ed708e9",
+        "README.md": "773e9e4b8883f895e1a798f6b762b54ea00c3f5da723ae9a441ea83ae748c346",
+        "SOURCE_ORIGIN.md": "5615dd9d11a6ddcc722e5b61fab2b79b6de1dd27036d7be609f79063d223d94e",
+        "Tests/README.md": "c74650e60e62477c78ea92f599de6e97066f362f015eca08a81b684651b47c52",
+        "Tests/TestData.mat": "aa4cfc17e4066aef878ba5246935f969be740645069ce474f0b48e59a59f46b6",
+        "Tests/VehicleSafety_UTHarness.slx": "f276da9ae154d5e0f4ae73de3cad4655d34e8cf556e4e90c477dbffa55e09e9a",
+        "Tests/VehicleSafety_run_tests.m": "85a641e00f46f9bd74667f9071ec9dc4c86d68f861f41a8357babb7c07dd0b58",
+        "Tests/results/actual-output.mat": "a6c00da9f41843ea3527fa299699c582a81b74791da478ba1458a3829f0a8082",
+        "Tests/results/model-coverage.cvt": "2e7134544e6c0a98808a703c271aedb1ff912a76bc69952929eca614744c09d2",
+        "Tests/results/model-coverage.html": "db3e66d50b1047e624c6808b0554fee387b4eab54da54b6423731730b11b749e",
+        "Tests/results/model-coverage_VehicleSafety_UTHarness_cov.html": "a50e46e97a570b8584d341f22d353d8cb857923de4c92d9872fe3bdc5a70953f",
+        "Tests/results/model-coverage_VehicleSafety_cov.html": "c264470d1e5b63ac70f1cf711d77dea266db8da1cee13b605286d7068c8c4fdd",
+        "Tests/results/scv_images/aqua.gif": "ad9c261ddb00bd753ee2ff8165576c56641a25e47184bbfe449237049b3ad23f",
+        "Tests/results/scv_images/black.gif": "e4c8efe0cd4a34ef45c313760fe5bd92c0d0d61cf444ca99d53519d9d3657608",
+        "Tests/results/scv_images/blue.gif": "97b29e3c43d78fa176d02a1e7a5b504479238c5d92759889f35407007c0a8249",
+        "Tests/results/scv_images/codecovreport.css": "e270aa4668967feeb8bb30d8e52bf05dd557db423243c5967a5d63b74d873174",
+        "Tests/results/scv_images/codecovreport_utils.js": "1c100b13c270cc8e7bbaa5cb67d8a3272d5bbc9ada0ad4f3ef730afc83412b82",
+        "Tests/results/scv_images/covreport_utils.js": "0e8785e7af36a244846340a4ec98d6f69ba6e0579b8db017063786a850efe5be",
+        "Tests/results/scv_images/dkgrn.gif": "14f3b540d2d3775d67230e3696f18fc3d15ca80821cde8e96fa4868b99dea34a",
+        "Tests/results/scv_images/filter_add.png": "e8dbb146c2719430239579ab0628a4418b8c46d70bce886c9755574e6a8508da",
+        "Tests/results/scv_images/filter_remove.png": "14407604c19f2c75e8fec6c32585f6788b2f333e99f2c8100988b174d2801484",
+        "Tests/results/scv_images/grn01.gif": "8baf586b065f39e4461ee2fffc5dfbc6acd55c51ec3d6c4907d9d77291c382d4",
+        "Tests/results/scv_images/grn02.gif": "74960e107cdbed1fc098d4895b0d17f537010dc5fb1a0b712fd920c2ef1dccd0",
+        "Tests/results/scv_images/grn03.gif": "8f9ff0ba3a1dd827394765bb6fcd720ff4d3fc5a43a627cb9197fd54485464cf",
+        "Tests/results/scv_images/grn04.gif": "76b27649e6a7ca324fcaebc2c00bb76383a03d2bd80c3633c3ea02206fa83691",
+        "Tests/results/scv_images/grn05.gif": "b1fb57b4359baddb5f5569e6f70aea7c22453b579f4c4cf8bf118400171d92b9",
+        "Tests/results/scv_images/grn06.gif": "41a24c03efc762ee7b37db58ad8556df0c09571f1296f733410f5f1055eec00e",
+        "Tests/results/scv_images/grn07.gif": "2c52a8fe4aa9d788e8f16d8ffb1f0b6a4a12652a5d466b2a5b00209e786d73f8",
+        "Tests/results/scv_images/grn08.gif": "025dbdc8028720290a793694a5d432463a7b34a24cc2b3ad4c513b3dbe9906d4",
+        "Tests/results/scv_images/grn09.gif": "fe73578518129cef436fc38f6b0474caa840fc74f4cee16360e4edf56ce707fb",
+        "Tests/results/scv_images/horz_line.gif": "a7de1d7b593509123cface3a3520dfb5710a0da1861b90ca16a8bad3c1238d6a",
+        "Tests/results/scv_images/htmlfile.gif": "8196e3b39156656ee3215972df65be4618b70362c57bf70e995267ab53a6dcd9",
+        "Tests/results/scv_images/left_arrow.gif": "c42378268d3a479e9dbab2988c3a1546bf366f546512ae5e16c7288207bce2ff",
+        "Tests/results/scv_images/ltBlu.gif": "ad9c261ddb00bd753ee2ff8165576c56641a25e47184bbfe449237049b3ad23f",
+        "Tests/results/scv_images/ltblue.gif": "750b473c632dd819db257c73251c3757bcbc9f3b83fd4c4d8cfa7acadc9bb8fb",
+        "Tests/results/scv_images/ltgrn.gif": "7a3b7f2f73c3fb72dc65ef9a5951e868815c383b3aba64c48dbc69b33e5ca9f3",
+        "Tests/results/scv_images/modelcovreport.css": "f86022e11f91131ab2b843e4fafa50918db28e1fc931f9525052ebbe77cf9991",
+        "Tests/results/scv_images/pink.gif": "d91ed8b20f6f7cb9257b629fcf685b8106795f072bb9308108f88fdeecf2750a",
+        "Tests/results/scv_images/purple.gif": "b06073fbc896c43ac6ef1cae1ba91c31e5342d9b0ada9d3bb3e2f097e20a2245",
+        "Tests/results/scv_images/red.gif": "ac3dd4667fdf1465102ef0ee921db208fae4c3608e7ec22196f2e5cc81b997f9",
+        "Tests/results/scv_images/right_arrow.gif": "eacea9b91092016481440caf0249a9fc508b322caf290b4f8eef1a56fc258180",
+        "Tests/results/scv_images/trans.gif": "2dfe28cbdb83f01c940de6a88ab86200154fd772d568035ac568664e52068363",
+        "Tests/results/scv_images/version111.txt": "af6df543acb274a7933576377e43d91631a12e4a52ba534089a7b5552e6343a7",
+        "Tests/results/scv_images/vert_line.gif": "505eaa7c67326d9cafad4dd0baf4350b6fd993af25f759bb662987d9a2bde497",
+        "Tests/results/scv_images/white.gif": "d605903facc2777941bd034d29c9894b99d8c762629e179fc5b962e97b4db6d7",
+        "Tests/results/scv_images/yellow.gif": "e25864e50b9ad36cf2ea5949eb38d96c4b44ee43a61052512e54121d6c1e844c",
+        "Tests/results/test-result.json": "a4883a15f5f2a93f6a46775e2890458ed92a54c14e424f3c24bff38e478c457a",
+        "VehicleSafety_init.m": "b240963cca719df13adf31619e5212e1871376195a20425b3a6c80d174890afb",
+        "project_init.m": "127af45758fb1fcb1ee38c550eeb7ea51f3e1fd5f21e5adfb93b48407ab22942"
+      },
+      "gitlinks": [],
+      "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+      "id": "ARC-10",
+      "implementation_kind": "matlab",
+      "inventory": {
+        "path": "suites/architecture-center/inventories/ARC-10.json",
+        "sha256": "6bc8bfba86f428cd86b45208c0ef4f8fd617e6616501f4a39a385924a5da3b5a"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "arch-vehicle-safety",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67"
+      },
+      "repository_url": "https://github.com/cockpit-bench/arch-vehicle-safety.git",
+      "scan_profile": {
+        "path": "suites/architecture-center/profiles/ARC-10.json",
+        "sha256": "a5b2dbbceacb4d8077ef6bce27228a1b4bac4249ba0e9300622ec43b33d7bdae"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/matlab.json",
+        "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+      },
+      "tree": "3085c2803f5add13a353c69f2beaf22e0bc177b8",
+      "type_id": "architecture-center"
+    },
+    {
+      "center": "架构中心",
+      "evidence": {
+        "path": "suites/architecture-center/evidence/ARC-11.json",
+        "sha256": "844c32cdd08d8168006ac73ab6538f7b3e9435bd8d6118246f3f05a4b75ab208"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "3c5c0a0d8fe57648869c7faf763b7ff35067b0986980355fd3026f8a019bdcab",
+        ".gitattributes": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
+        ".gitignore": "856c7b84f0064de3cf28749f6fcc743b11e4653f2e97e7606f8755841841f539",
+        "CMakeLists.txt": "db50facf770d05c3abf780ee153cd231a025d82589030460af8d4ecb6dc0d662",
+        "Makefile": "baa5167f2f5eaba72a670e28bc0f7fd40f2214bb99c62dd378fb56802150d4a5",
+        "README.md": "6377bcaa7e5bfe90d4d78d949f815102a9a0571390012a61348d499f03a1e1c4",
+        "SOURCE_ORIGIN.md": "94e2b574f5d4caa69d6295e4c0f2384ba8a6f38c0a89437097ae56f2275a8857",
+        "generated/Envelope_Cfg.c": "b27291babee74256e498d855f95388c485ed147e8e437cee95934094cf8ba896",
+        "generated/Freshness_Cfg.c": "436671236d33a866ff5280c5565e9d452121fc1cb094729cff40cb876af9dea8",
+        "generated/Safety_Config.h": "31ec85738a8fd9f1027da1a33a3fb459925eb9077bf7cb5e47d558dac601eb27",
+        "generated/Schedule_Cfg.c": "8028adacd5a0727c1455db692ce82b59e951565986264a88c19980f689b907c3",
+        "host/replay.c": "65e7b40c2cb25496ec92148e79025aa7a316dfb91ec491f3fc785f94462866b4",
+        "include/Safety_Runtime.h": "73c4efeff5b28db2a9a005be56975815093da31fda86c6b90ae69304904d58c5",
+        "include/Safety_Types.h": "ba519fde9f91a13e58cc2b584b6cc744d916fbff3f28721a3d7f8f6d7f3e35c8",
+        "runtime/Acquisition.c": "6addb5b826b7f3de3082e17c59b895d73adcd038264b3e155243f52b0cc7c483",
+        "runtime/Envelope.c": "f47fef0547cef9290d99ce3b868b70438fedcca1bbcb194b703df7019ce37e1a",
+        "runtime/Envelope.h": "fec15b7285893602b787f5c261788493b02cf56e52490d3370e301bc38f19821",
+        "runtime/FaultPolicy.c": "a51ee68639e716d79c1d394dccc6838ebb5088208546433207e4ab230061061b",
+        "runtime/FaultPolicy.h": "ec9d15192f2048549afb33aedcb11d709a47d4c187f56f96903f9113882324d4",
+        "runtime/Freshness.c": "48391fc3dd1a270fb56032c46efab28141983b493b6b8607097ece81fb96731a",
+        "runtime/Freshness.h": "eee963516f84b2133b3355ee258c1794ffa8185641145a010c277f58ee8c2309",
+        "runtime/Safety_Runtime.c": "9c096282489642ad7d4167cc925bb4d2d473483106815c565b324fcd3b4ebd4b",
+        "runtime/Scheduler.c": "64f84f01091aa7c2bf3107916a0ba8aaa86336557aed48255e3f7939f52e63e8",
+        "runtime/Scheduler.h": "dc880b81b609fe290230a11e2d7606d0d6b737d1c51cf81b32bc62595896efa4",
+        "scenarios/default.csv": "c41a72a5d7b8b5c079fd31fa90f8aef9eeeb5f4282b0bd6380f916b8fb07f784"
+      },
+      "gitlinks": [],
+      "head": "204dab303944f787a4702e3dfb8d215b07ce0371",
+      "id": "ARC-11",
+      "implementation_kind": "native_c",
+      "inventory": {
+        "path": "suites/architecture-center/inventories/ARC-11.json",
+        "sha256": "d15748f0f5eb89c6918e490a27a03c627658b5c6ee7c04a642e276072a6bb69d"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "arch-safety-runtime",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "204dab303944f787a4702e3dfb8d215b07ce0371"
+      },
+      "repository_url": "https://github.com/cockpit-bench/arch-safety-runtime.git",
+      "scan_profile": {
+        "path": "suites/architecture-center/profiles/ARC-11.json",
+        "sha256": "2029926f64c7687e08ca2f07739d8f0f7ba5f5a37bc36d9a0a63e07149aae36e"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "acac89513567bc9e4ee68c07397dafc9b746290f",
+      "type_id": "architecture-center"
+    }
+  ],
+  "schema": "center-source-manifest-1",
+  "type_id": "architecture-center"
+}

@@ -1,0 +1,62 @@
+{
+  "bytes": 382544,
+  "clean": true,
+  "commit_count": 1,
+  "default_ref": "refs/heads/main",
+  "evaluation_ref": "refs/heads/main",
+  "extensions": {
+    ".m": 3,
+    ".md": 2,
+    ".mdl": 5,
+    ".slx": 1,
+    ".xlsx": 1,
+    "<noext>": 2
+  },
+  "file_bytes": {
+    ".gitattributes": 112,
+    ".gitignore": 115,
+    "Model/Interface.xlsx": 7064,
+    "Model/VehicleState.slx": 111782,
+    "Model/calibration_VehicleState.m": 523,
+    "Model/components/DirectionClassificationLib.mdl": 52748,
+    "Model/components/LegacyYawFilterLib.mdl": 51571,
+    "Model/components/VehicleStateCodeLib.mdl": 55024,
+    "Model/components/WheelMeanLib.mdl": 50393,
+    "Model/components/WheelSpreadLib.mdl": 51659,
+    "README.md": 685,
+    "SOURCE_ORIGIN.md": 574,
+    "VehicleState_init.m": 149,
+    "project_init.m": 145
+  },
+  "files": {
+    ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+    ".gitignore": "a6a7aecd86872e47d32d2e0b2b683207e71fa0da6312ddb34d0e819082c4e0be",
+    "Model/Interface.xlsx": "68130fe5d2122bea31277061e10897516f1e85ca4f00627c934034a4d4193591",
+    "Model/VehicleState.slx": "2fdb732d7abff0a29db0c6a7d30a80891600e444d7650a53eb4f746e6e44ecf7",
+    "Model/calibration_VehicleState.m": "69194ba0a522ee316c6a4671cd7908c9620da1d792b9c5d2875271def938956b",
+    "Model/components/DirectionClassificationLib.mdl": "ffe691016d0cfae52e49ea223920d5160dd787bc61fc990eaad95277a8b5e944",
+    "Model/components/LegacyYawFilterLib.mdl": "5184808693ab5e38a3be7b8b89e9d785a4dc88399bbaaad0677cf7d0dda46337",
+    "Model/components/VehicleStateCodeLib.mdl": "c2294da4b538d8ae870d8a4036a667c319e289cc2d20d4c1866dd81fb16821c2",
+    "Model/components/WheelMeanLib.mdl": "fb81a092d77eb20eff7e4c238fb30a83f16e03c5cdf24ecbe74dacbb9e74b1a6",
+    "Model/components/WheelSpreadLib.mdl": "d2dd855576162e5566d3e055ebb6c300ebaa274e27dd9901ca8c5a31da1adeb0",
+    "README.md": "4e8d9541a323b36e6654c7d539c51e0d1c1d46d9c37c03ecd837b48d179c6c63",
+    "SOURCE_ORIGIN.md": "28be4c248dee193709da0d200eb9cbc84b5609b27f4c74883742f64edd3ff740",
+    "VehicleState_init.m": "e13c28c9d8aaf83dba244dc45371a630a5c52bba236e050ebb198586afa893ee",
+    "project_init.m": "cd20fa90b05917702f28d568a34a4ed3baefeea12f9b0222e4d60140a9acae77"
+  },
+  "full_history": true,
+  "gitlinks": [],
+  "head": "258ba5ba20acffb8b4c16f0d7e905611498a1928",
+  "id": "ARC-06",
+  "name": "arch-vehicle-state",
+  "refs": {
+    "refs/heads/main": "258ba5ba20acffb8b4c16f0d7e905611498a1928"
+  },
+  "remote_count": 0,
+  "source_lines_by_extension": {
+    ".m": 21
+  },
+  "tracked_file_count": 14,
+  "tree": "6d2d152642b07aa4149c02c0982ddaf230a52c76",
+  "worktree_equals_git_blobs": true
+}

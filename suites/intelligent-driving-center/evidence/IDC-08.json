@@ -1,0 +1,565 @@
+{
+  "execution": {
+    "limits": [
+      "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+      "Maintainer external tests do not count as repository-owned integration tests.",
+      "Same maintainer construction family; not an independent holdout."
+    ],
+    "records": [
+      {
+        "path": "suites/intelligent-driving-center/execution/IDC-08.json",
+        "sha256": "35de1801c1f91566175aa9fb052087f028186f272f7574a06da2730007511a88"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1",
+  "id": "IDC-08",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1",
+    "id": "IDC-08",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "9d3cc7605384f2e95b7300beae8b49bee37f40cb12e601b03be788511465a185",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class FrameAssembler {",
+            "path": "include/world_model/frame_assembler.hpp",
+            "sha256": "6e82144d73791d4e614450b2976278e310c750639c25b4816c351f86117506de",
+            "symbol": "class FrameAssembler {"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7:     throw std::invalid_argument(\"ttl\");",
+            "path": "src/middleware/snapshot.cpp",
+            "sha256": "4aa1a5cb333ca94a9151ef8163ca177eba041f268e98af6e4e20559caa74e262",
+            "symbol": "    throw std::invalid_argument(\"ttl\");"
+          }
+        ],
+        "limitations": [
+          "没有完整生产消息总线/ASN.1栈。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "场景快照、时间缓存、空间索引、车道图、车位查询及序列化有清晰值接口。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "9d3cc7605384f2e95b7300beae8b49bee37f40cb12e601b03be788511465a185",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class FrameAssembler {",
+            "path": "include/world_model/frame_assembler.hpp",
+            "sha256": "6e82144d73791d4e614450b2976278e310c750639c25b4816c351f86117506de",
+            "symbol": "class FrameAssembler {"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7:     throw std::invalid_argument(\"ttl\");",
+            "path": "src/middleware/snapshot.cpp",
+            "sha256": "4aa1a5cb333ca94a9151ef8163ca177eba041f268e98af6e4e20559caa74e262",
+            "symbol": "    throw std::invalid_argument(\"ttl\");"
+          }
+        ],
+        "limitations": [
+          "header-heavy实现使编译传播较大，但未把头文件数量作为模块分。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "时间、空间、拓扑和车位能力通过Snapshot/Object/Lane组合，实际客户端分别消费。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "9d3cc7605384f2e95b7300beae8b49bee37f40cb12e601b03be788511465a185",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class FrameAssembler {",
+            "path": "include/world_model/frame_assembler.hpp",
+            "sha256": "6e82144d73791d4e614450b2976278e310c750639c25b4816c351f86117506de",
+            "symbol": "class FrameAssembler {"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7:     throw std::invalid_argument(\"ttl\");",
+            "path": "src/middleware/snapshot.cpp",
+            "sha256": "4aa1a5cb333ca94a9151ef8163ca177eba041f268e98af6e4e20559caa74e262",
+            "symbol": "    throw std::invalid_argument(\"ttl\");"
+          }
+        ],
+        "limitations": [
+          "多数组件具体依赖Snapshot容器布局，未提供外部中间件替换端口。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "标准值模型使核心与设备消息传输解耦。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "9d3cc7605384f2e95b7300beae8b49bee37f40cb12e601b03be788511465a185",
+            "symbol": "add_library("
+          }
+        ],
+        "limitations": [
+          "本机CMake/Make/Gradle和维护者脚本不等同仓内CI或远端执行。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单无仓内CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "9d3cc7605384f2e95b7300beae8b49bee37f40cb12e601b03be788511465a185",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # drive-world-model",
+            "path": "README.md",
+            "sha256": "e57ad44e0b83ec065b1f0c2b1e4de12594e092a6b56d056f6ed00bb09b8100f5",
+            "symbol": "# drive-world-model"
+          }
+        ],
+        "limitations": [
+          "主机独立构建不代表设备固件或生产SDK集成；外部维护者测试是可选构建参数。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "当前CMake独立构建仓内全部实现，标准C99/C++17及工具链边界明确，无必需第三方实现源码或未版本化BSP。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 23,
+            "locator": "line 23: magic != \"WORLD1\"",
+            "path": "include/world_model/snapshot_codec.hpp",
+            "sha256": "9de755452c6d988521c404e1b6b6d80ff7963baa6becc696332bdf967582bfbc",
+            "symbol": "magic != \"WORLD1\""
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # WORLD1 wire format",
+            "path": "docs/WORLD1.md",
+            "sha256": "3fc94632661f08d92fa9336fd0fc3223aa98d60c0a61bf6cb3804d53b3db3e1f",
+            "symbol": "# WORLD1 wire format"
+          }
+        ],
+        "limitations": [
+          "不是ASN.1实现；无语义化公开API版本或跨WORLD版本迁移。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "自定义WORLD1格式头有显式手工版本及严格解码。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class SpatialIndex {",
+            "path": "include/world_model/spatial_index.hpp",
+            "sha256": "1b2a4dba6b2151f8f7189011c47b43feccfca2a18a6b1383c123033ceefbb1c6",
+            "symbol": "class SpatialIndex {"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: struct LaneGeometry {",
+            "path": "include/world_model/lane_graph.hpp",
+            "sha256": "71c62bb1b0132f3d2a2347b5d079c820037d420fc1cf0785493bd6c2710e9f83",
+            "symbol": "struct LaneGeometry {"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class SnapshotBus {",
+            "path": "include/world_model/subscription.hpp",
+            "sha256": "a8c20397569e78b1bca7991835676cda9b73b5d82369bed45e7af5949f97438f",
+            "symbol": "class SnapshotBus {"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: WORLD1",
+            "path": "include/world_model/snapshot_codec.hpp",
+            "sha256": "9de755452c6d988521c404e1b6b6d80ff7963baa6becc696332bdf967582bfbc",
+            "symbol": "WORLD1"
+          }
+        ],
+        "limitations": [
+          "完整world_model.hpp仍承载公用类型及World原始接口。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "索引、拓扑、时序选择、几何、序列化和订阅容量有独立类/函数职责。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8:   struct Entry {",
+            "path": "include/world_model/time_buffer.hpp",
+            "sha256": "adc8e675a39e1b708476129477dcf030dc009348db20a508d7979516443fee96",
+            "symbol": "  struct Entry {"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class FrameAssembler {",
+            "path": "include/world_model/frame_assembler.hpp",
+            "sha256": "6e82144d73791d4e614450b2976278e310c750639c25b4816c351f86117506de",
+            "symbol": "class FrameAssembler {"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class SnapshotBus {",
+            "path": "include/world_model/subscription.hpp",
+            "sha256": "a8c20397569e78b1bca7991835676cda9b73b5d82369bed45e7af5949f97438f",
+            "symbol": "class SnapshotBus {"
+          }
+        ],
+        "limitations": [
+          "新增快照字段仍需同步格式与校验。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "TimeBuffer模板被对象/车道两个实际类型复用，快照订阅可增加使用方而不改发布核心。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class FrameAssembler {",
+            "path": "include/world_model/frame_assembler.hpp",
+            "sha256": "6e82144d73791d4e614450b2976278e310c750639c25b4816c351f86117506de",
+            "symbol": "class FrameAssembler {"
+          }
+        ],
+        "limitations": [
+          "此档说明不适用范围，不代表替换契约已被验证。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "审阅公开类型与生产实现，没有适用的继承/实现替换关系，按合同LSP中间档处理。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 25,
+            "locator": "line 25: struct Object {",
+            "path": "include/world_model/world_model.hpp",
+            "sha256": "22c9c33d8e5910bb5410bc76436c6706070065977ca13805fc5f0bfcfca0e179",
+            "symbol": "struct Object {"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class SnapshotBus {",
+            "path": "include/world_model/subscription.hpp",
+            "sha256": "a8c20397569e78b1bca7991835676cda9b73b5d82369bed45e7af5949f97438f",
+            "symbol": "class SnapshotBus {"
+          }
+        ],
+        "limitations": [
+          "多数细头仍包含宽泛world_model.hpp，使用订阅者需依赖整个Snapshot表示。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "能力按细头拆分，使用方可只选择索引或车位模块。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class FrameAssembler {",
+            "path": "include/world_model/frame_assembler.hpp",
+            "sha256": "6e82144d73791d4e614450b2976278e310c750639c25b4816c351f86117506de",
+            "symbol": "class FrameAssembler {"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7:     throw std::invalid_argument(\"ttl\");",
+            "path": "src/middleware/snapshot.cpp",
+            "sha256": "4aa1a5cb333ca94a9151ef8163ca177eba041f268e98af6e4e20559caa74e262",
+            "symbol": "    throw std::invalid_argument(\"ttl\");"
+          }
+        ],
+        "limitations": [
+          "快照构造与存储布局具体绑定，未出现可替换中间件适配。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "不直接调用设备或专有中间件，外部通过值快照传入。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # Flat scalar configuration; keys are required.",
+            "path": "config/default.yaml",
+            "sha256": "a157532b0093200b8774b51b714ae2f661a7581d155d48089d1e8a27829c4ce5",
+            "symbol": "# Flat scalar configuration; keys are required."
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "9d3cc7605384f2e95b7300beae8b49bee37f40cb12e601b03be788511465a185",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-08/final-native-run.json",
+          "IDC-08/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "只完成当前主机环境验证，没有两种受支持平台/接口升级兼容回归。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "平台依赖主要限制在I/O、配置或适配处，业务核心消费标准数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # Flat scalar configuration; keys are required.",
+            "path": "config/default.yaml",
+            "sha256": "a157532b0093200b8774b51b714ae2f661a7581d155d48089d1e8a27829c4ce5",
+            "symbol": "# Flat scalar configuration; keys are required."
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "9d3cc7605384f2e95b7300beae8b49bee37f40cb12e601b03be788511465a185",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-08/final-native-run.json",
+          "IDC-08/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "仅主机替身验证；运行时多传感器/多个数值配置不等同两组完整设备适配验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "业务消费参数、显式输入和共用计算逻辑，可从不同来源提供数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # Flat scalar configuration; keys are required.",
+            "path": "config/default.yaml",
+            "sha256": "a157532b0093200b8774b51b714ae2f661a7581d155d48089d1e8a27829c4ce5",
+            "symbol": "# Flat scalar configuration; keys are required."
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "9d3cc7605384f2e95b7300beae8b49bee37f40cb12e601b03be788511465a185",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-08/final-native-run.json",
+          "IDC-08/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "未合成分支/tag，运行参数或算法场景不自动算平台变体。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "实际Git仅main初始/实现提交，无已落实的多平台维护策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8:   struct Entry {",
+            "path": "include/world_model/time_buffer.hpp",
+            "sha256": "adc8e675a39e1b708476129477dcf030dc009348db20a508d7979516443fee96",
+            "symbol": "  struct Entry {"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: struct Point2 {",
+            "path": "include/world_model/geometry.hpp",
+            "sha256": "7ef295801b2ff1c8c56d04410d70f3e698963ebb25ed4f5d8c513fc9cd130480",
+            "symbol": "struct Point2 {"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class FrameAssembler {",
+            "path": "include/world_model/frame_assembler.hpp",
+            "sha256": "6e82144d73791d4e614450b2976278e310c750639c25b4816c351f86117506de",
+            "symbol": "class FrameAssembler {"
+          }
+        ],
+        "limitations": [
+          "协议字段序列化循环、测试数据和同形容器访问按合同排除。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "审阅include/world_model和src：TimeBuffer和几何被多个组件共用；未发现不必要业务复制。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7:     throw std::invalid_argument(\"ttl\");",
+            "path": "src/middleware/snapshot.cpp",
+            "sha256": "4aa1a5cb333ca94a9151ef8163ca177eba041f268e98af6e4e20559caa74e262",
+            "symbol": "    throw std::invalid_argument(\"ttl\");"
+          }
+        ],
+        "limitations": [
+          "此分不自动证明平台迁移、多设备运行或物理设备验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "生产业务只使用C/C++标准值类型/标准库或明确JNI、TCP、I/O适配边界。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 71,
+            "locator": "line 71: auto encoded = serialize",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "a7e76a08dc57b211fbb7589be5084df2c0009a029899b880175dee1bb797c4da",
+            "symbol": "auto encoded = serialize"
+          },
+          {
+            "kind": "file",
+            "line": 74,
+            "locator": "line 74: THROWS(deserialize(encoded",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "a7e76a08dc57b211fbb7589be5084df2c0009a029899b880175dee1bb797c4da",
+            "symbol": "THROWS(deserialize(encoded"
+          },
+          {
+            "kind": "file",
+            "line": 28,
+            "locator": "line 28: assemble(std::int64_t",
+            "path": "include/world_model/frame_assembler.hpp",
+            "sha256": "6e82144d73791d4e614450b2976278e310c750639c25b4816c351f86117506de",
+            "symbol": "assemble(std::int64_t"
+          }
+        ],
+        "execution_evidence": [
+          "IDC-08/final-native-run.json",
+          "IDC-08/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "不同模块场景并非完整自动驾驶产品管线。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "仓内FrameAssembler→Snapshot→serialize/deserialize真实连接，并覆盖缺帧、过期、坏协议和非法数值；订阅队列另验证溢出和并发。",
+        "score": 3,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "6af5f27a12415791ff8abda0ecaea6f0317a77de"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "6af5f27a12415791ff8abda0ecaea6f0317a77de"
+}

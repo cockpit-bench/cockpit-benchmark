@@ -1,0 +1,145 @@
+{
+  "actual": {
+    "bytes": 1394687,
+    "commit_count": 3,
+    "extensions": {
+      ".css": 2,
+      ".cvt": 1,
+      ".gif": 27,
+      ".html": 10,
+      ".js": 2,
+      ".json": 6,
+      ".m": 5,
+      ".mat": 2,
+      ".md": 4,
+      ".png": 2,
+      ".sldd": 1,
+      ".slx": 9,
+      ".txt": 1,
+      ".xlsx": 1,
+      "<noext>": 2
+    },
+    "gitlinks": [],
+    "model_census": {
+      "production_model_count": 8,
+      "root_expanded_block_count": 22,
+      "root_expanded_block_types": [
+        {
+          "count": 2,
+          "type": "DataTypeConversion"
+        },
+        {
+          "count": 9,
+          "type": "Inport"
+        },
+        {
+          "count": 7,
+          "type": "ModelReference"
+        },
+        {
+          "count": 4,
+          "type": "Outport"
+        }
+      ]
+    },
+    "refs": {
+      "refs/heads/main": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827"
+    },
+    "scope": "All tracked files of the scored target; excludes untracked build caches and dependency worktrees. Text line counts include generated and test files and are not production LOC.",
+    "source_lines_by_extension": {
+      ".m": 88
+    },
+    "tracked_file_count": 75
+  },
+  "center": "架构中心",
+  "conclusion": "Bounded structural and business proxy with declared deviations; not a full production distribution reproduction or independent holdout.",
+  "deviations": [
+    "扫描文件总数为38，本仓跟踪文件为75；统计范围不同且规模明显压缩，不声明生产整仓体量等价。",
+    "历史为本次真实构造/修复提交，未复制扫描中的大量分支/tag或虚构长期研发史。",
+    "仅提供了结构、模式和汇总，内部算法、标定值及全部生产依赖未提供；不能据此宣称业务实现相同。",
+    "模型规模及工作簿模板为有界投影；没有补造扫描缺失的保护组件、认证、BTC、ECU或C语句覆盖记录。"
+  ],
+  "head": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827",
+  "id": "ARC-08",
+  "implementation_kind": "matlab",
+  "matched_traits": [
+    "采用matlab实现并保留model_reference的主要组织形态；以最终源码及构建入口核对。",
+    "业务为新编写的可执行有界切片；声明的模块、配置和接口具有实际调用方。"
+  ],
+  "observed": {
+    "branches": 4,
+    "build_label": "matlab",
+    "commit_count": 13,
+    "default_head_empty": false,
+    "extensions": {
+      ".md": 2,
+      ".pdf": 1,
+      ".sldd": 12,
+      ".slx": 8,
+      ".xlsx": 1,
+      "<noext>": 14
+    },
+    "file_count": 38,
+    "model_scan": {
+      "a2l_count": 0,
+      "block_census": {
+        "Abs": 73,
+        "BusCreator": 235,
+        "BusSelector": 113,
+        "Constant": 6837,
+        "DataTypeConversion": 142,
+        "Delay": 49,
+        "Fcn": 173,
+        "From": 3347,
+        "Gain": 1307,
+        "Goto": 2832,
+        "Ground": 806,
+        "Inport": 6708,
+        "Logic": 1483,
+        "Mux": 52,
+        "Outport": 4834,
+        "Product": 281,
+        "Reference": 909,
+        "RelationalOperator": 3042,
+        "Saturate": 110,
+        "SignalConversion": 1643,
+        "SubSystem": 3220,
+        "Sum": 1567,
+        "Switch": 1513,
+        "Terminator": 821,
+        "UnitDelay": 444
+      },
+      "generated_c_files": 0,
+      "p_file_count": 0,
+      "scope": "The supplied model census can cover only sampled files; zero values from unsupported legacy parsing are unknown, not absence.",
+      "total_model_refs": 0,
+      "total_sfunctions": 22,
+      "total_subsystems": 3220,
+      "xls_count": 1
+    },
+    "tags": 0
+  },
+  "repairs": [
+    "扩大七个Model Reference显示区域，修复端口文字重叠；实际仿真、仓内UT和两配置回放通过。"
+  ],
+  "schema": "center-scan-profile-comparison-1",
+  "source_basis": {
+    "document_sha256": "3c520994ae277431da28042e8fadfc90ac69cd273985b98b04ccc4157bb65282",
+    "original_names": "Retained only in the local supplied-scan mapping",
+    "section_line": 48578,
+    "selection": "One supplied per-repository joint structural prototype; no target-score selection",
+    "spec_line": 48660
+  },
+  "target": {
+    "business": "steering_redundancy",
+    "layout": "model_reference",
+    "planned_production_units": 8,
+    "repository_owned_tests": true
+  },
+  "tree": "f78aafac2df2c0eb3ff3a73cb10d23501f4eadf2",
+  "unknowns": [
+    "Scanner test_case_count=0 is not evidence that tests are absent.",
+    "Reported HTML percentages are not accepted as actual test coverage unless the report semantics and execution binding are verified.",
+    "Some large-source scans stop at 2500 source files; capped values are not whole-repository counts."
+  ]
+}

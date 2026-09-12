@@ -1,30 +1,38 @@
-# Benchmark — APP、FW、新能源 MATLAB
+# Benchmark — 六组66仓
 
-v0.11.3发布已验证的新能源工程修复：LAB真实标签、查表/数组标定、类型化业务Bus，以及SWUT断言容差。当前APP/FW/新能源各11仓，分别142/440、194/572、409/671，共352个参考叶；有效合同和叶值保持，构建独立性争议继续暂停。
+v0.12.0新增架构中心、人工智能中心、智能驾驶中心各11仓。六组各11仓，分别评分；新中心内部不按技术再拆报告组。
 
-十个新能源仓有前向提交，NEP-05保持。APP/FW源码及参考对象、四个私有预留仓和旧22pending保持。见[修复与验证](docs/FIDELITY_REPAIR_20260910.md)。
+|报告组|仓库|参考分|叶数|
+|---|---:|---:|---:|
+|APP|11|142/440|88|
+|FW|11|194/572|121|
+|New Energy MATLAB|11|409/671|143|
+|架构中心|11|205/436|142|
+|人工智能中心|11|312/616|187|
+|智能驾驶中心|11|329/596|182|
+
+新增33仓511叶，整体863叶。原三组源码、合同和352叶分值保持。完整构造对照、修正、逐仓分数及执行边界见[本版报告](docs/SIX_GROUPS_20260912.md)，新合同见[评分定义](suites/center-contracts/README.md)。这些是有界代理工程的维护者参考，正式候选运行0；不声明完整内部生产分布、盲gold或独立留出验证。
 
 ## 公开恢复
 
-需要Python 3.11+、Git、PowerShell，无需GitHub凭据或本地SourceMap。
+需要Python 3.11+、Git、PowerShell，无需GitHub凭据或本地SourceMap。恢复不运行源码。
 
 ```powershell
-./restore.ps1 -Destination C:/bench/restored
-./restore.ps1 -Suite new-energy-matlab -Destination C:/bench/energy
-./restore.ps1 -Suite new-energy-matlab -Destination C:/bench/energy -Resume -IncludeSubmodules
+./restore.ps1 -Destination C:/bench/restored -IncludeSubmodules
+./restore.ps1 -Suite architecture-center -Destination C:/bench/architecture -IncludeSubmodules
+./restore.ps1 -Suite architecture-center -Destination C:/bench/architecture -Resume -IncludeSubmodules
 ```
 
 ```sh
 python verification/repository_types.py validate --wrapper . --require-publishable
-python verification/ne_reality.py restore --destination C:/bench/native-sources --output C:/bench/restore.json
-python verification/ne_reality.py replay --source-root C:/bench/native-sources
-python verification/ne_reality.py candidate --source-root C:/bench/native-sources --id NEP-01 --output C:/candidate/input
+python verification/centers.py replay --source-root C:/bench/restored --output C:/bench/center-replay.json
+python verification/centers.py candidate --source-root C:/bench/restored --id ARC-01 --output C:/candidate/input
 ```
 
-默认all恢复33仓，单新能源恢复NEP-01..11。恢复验证完整历史、HEAD/tree/refs/文件字节、干净状态和零remote，不执行模型。旧ML-01..09、NEM-10/11不在当前集合。
+默认all包含当前66仓。IncludeSubmodules恢复两个集成仓的18个实际Gitlink，并核对全部登记历史/refs/文件字节、clean、零remote和无alternates。旧matlab-simulink别名仍仅对应NEP-01..11；旧ML-01..09、NEM-10/11已退役，不映射到新ID。
 
-## 评测与边界
+## 评测
 
-[suites.json](suites.json)为三类型登记；[当前评测说明](docs/CURRENT_EVALUATION.md)解释单仓输入和外部证据。每个候选仅获得对应源码bundle、有效合同及允许的单仓raw；运行器负责实际进程/访问隔离。原始执行附件供维护者复核，不作为默认候选输入。
+[suites.json](suites.json)是当前六组登记；[当前评测说明](docs/CURRENT_EVALUATION.md)定义单仓输入和外部证据。每个候选只获得对应源码bundle、有效合同及允许的单仓raw。集成仓依赖由运行器按登记gitlink在独立只读区域提供；运行器负责实际访问隔离。
 
-本次发布沿用已绑定的11模型55949采样/138条业务属性和8仓C host回放；没有新增设备或候选执行。当前一个知情构造族，非独立holdout；内部36仓完整联合画像及生产标定仍缺失。构建独立性叶沿用暂停前值，不表示争议已解决。
+原始执行记录与源码复核分开报告。主机编译、模型仿真、模拟器与物理设备互不替代；没有ECU/SIL/PIL/HIL/BTC或认证结论。根目录旧Android标准文件及旧验证工具保留冻结兼容，不代表全部66仓。

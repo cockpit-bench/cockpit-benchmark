@@ -1,0 +1,589 @@
+{
+  "execution": {
+    "limits": [
+      "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+      "Maintainer external tests do not count as repository-owned integration tests.",
+      "Same maintainer construction family; not an independent holdout."
+    ],
+    "records": [
+      {
+        "path": "suites/ai-center/execution/AIC-04.json",
+        "sha256": "3380b9d06d78bec9cac1a117f616562efabfc5edbe5e436f7691dc370f4f8e79"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "2a2987de0db0d345c77748aafbfd3b693a6ca073",
+  "id": "AIC-04",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "2a2987de0db0d345c77748aafbfd3b693a6ca073",
+    "id": "AIC-04",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 13,
+            "locator": "line 13: SignalDecoder::decode",
+            "path": "engine/acquisition/signal_decoder.cpp",
+            "sha256": "05ba9951ada7be82d75afc6a75f436b247a9ab04a423ba634181cbacdfa80d9c",
+            "symbol": "SignalDecoder::decode"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: Collector::flush",
+            "path": "engine/window/aggregation.cpp",
+            "sha256": "ec828613236fe699f0e01b7a39e31d3ff8e0e5dd09d06d249f2e110a95e6f918",
+            "symbol": "Collector::flush"
+          },
+          {
+            "kind": "file",
+            "line": 64,
+            "locator": "line 64: DurableSpool::recover",
+            "path": "service/spool.cpp",
+            "sha256": "653f3a48ff01e78af7d7980a64b7658245911041814b30d01bd9aaf28f97a0f4",
+            "symbol": "DurableSpool::recover"
+          }
+        ],
+        "limitations": [
+          "Collector和UploadQueue仍集中在一个公共头；DurableSpool把日志协议、文件I/O和重试状态组合。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "解码、采集窗口、工作队列和上传持久化分别有实现，场景文件I/O位于tools。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 37,
+            "locator": "line 37: class Collector",
+            "path": "include/data_collect/data_collect.hpp",
+            "sha256": "c382c12e5a2376554eaa06f398465bc74fea0db16e9a03f85a5bba165e1edb6f",
+            "symbol": "class Collector"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class CollectionWorker",
+            "path": "include/data_collect/worker.hpp",
+            "sha256": "ffc8a8df2ae5a3961059f7d91ec7466550bfdd5a8dc0812904f072e3cdb9f576",
+            "symbol": "class CollectionWorker"
+          },
+          {
+            "kind": "file",
+            "line": 13,
+            "locator": "line 13: class DurableSpool",
+            "path": "include/data_collect/spool.hpp",
+            "sha256": "11f499f8a045ab02d3fed10bbdd33e911d803d0c78e68f80123b7b6f34ba2f43",
+            "symbol": "class DurableSpool"
+          }
+        ],
+        "limitations": [
+          "只有一个主要静态库，扩展模块之间尚未形成完整服务组合入口。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "Decoder、Collector、CollectionWorker和DurableSpool均有生产行为。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 13,
+            "locator": "line 13: std::function<void(const Event &)> sink_",
+            "path": "include/data_collect/worker.hpp",
+            "sha256": "ffc8a8df2ae5a3961059f7d91ec7466550bfdd5a8dc0812904f072e3cdb9f576",
+            "symbol": "std::function<void(const Event &)> sink_"
+          },
+          {
+            "kind": "file",
+            "line": 30,
+            "locator": "line 30: sink_(event)",
+            "path": "engine/acquisition/worker.cpp",
+            "sha256": "00444cae11b6b658fd0e6fbe520c8d3599aa6837af1dba561fe1150c05dcd985",
+            "symbol": "sink_(event)"
+          },
+          {
+            "kind": "file",
+            "line": 104,
+            "locator": "line 104: void DurableSpool::append",
+            "path": "service/spool.cpp",
+            "sha256": "653f3a48ff01e78af7d7980a64b7658245911041814b30d01bd9aaf28f97a0f4",
+            "symbol": "void DurableSpool::append"
+          }
+        ],
+        "limitations": [
+          "DurableSpool直接依赖文件流，持久化边界不能注入替换。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "CollectionWorker通过Event回调传递数据，采集核心不依赖CAN设备驱动。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(ai_data_collector STATIC",
+            "path": "CMakeLists.txt",
+            "sha256": "7c60faafd823c3a220585f42f110729b8e5dc05afe6ca5243448d57d1611ef6d",
+            "symbol": "add_library(ai_data_collector STATIC"
+          }
+        ],
+        "limitations": [
+          "本机CMake/Make/Gradle和维护者脚本不等同仓内CI或远端执行。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单无仓内CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: set(CMAKE_CXX_STANDARD 17)",
+            "path": "CMakeLists.txt",
+            "sha256": "7c60faafd823c3a220585f42f110729b8e5dc05afe6ca5243448d57d1611ef6d",
+            "symbol": "set(CMAKE_CXX_STANDARD 17)"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: find_package(Threads REQUIRED)",
+            "path": "CMakeLists.txt",
+            "sha256": "7c60faafd823c3a220585f42f110729b8e5dc05afe6ca5243448d57d1611ef6d",
+            "symbol": "find_package(Threads REQUIRED)"
+          },
+          {
+            "kind": "file",
+            "line": 32,
+            "locator": "line 32: target_sources(ai_data_collector PRIVATE",
+            "path": "CMakeLists.txt",
+            "sha256": "7c60faafd823c3a220585f42f110729b8e5dc05afe6ca5243448d57d1611ef6d",
+            "symbol": "target_sources(ai_data_collector PRIVATE"
+          }
+        ],
+        "limitations": [
+          "主机独立构建不代表设备固件或生产SDK集成；外部维护者测试是可选构建参数。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "当前CMake独立构建仓内全部实现，标准C99/C++17及工具链边界明确，无必需第三方实现源码或未版本化BSP。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: SPOOL1 journal:",
+            "path": "schemas/upload.record",
+            "sha256": "62d9b7e69a6b66bbd76b0fdf26dfc391644a8219ed48eeafcf3115bedcd95729",
+            "symbol": "SPOOL1 journal:"
+          },
+          {
+            "kind": "file",
+            "line": 24,
+            "locator": "line 24: DurableSpool(std::string",
+            "path": "include/data_collect/spool.hpp",
+            "sha256": "11f499f8a045ab02d3fed10bbdd33e911d803d0c78e68f80123b7b6f34ba2f43",
+            "symbol": "DurableSpool(std::string"
+          },
+          {
+            "kind": "file",
+            "line": 77,
+            "locator": "line 77: auto len = u32(header), crc = u32(header + 4)",
+            "path": "service/spool.cpp",
+            "sha256": "653f3a48ff01e78af7d7980a64b7658245911041814b30d01bd9aaf28f97a0f4",
+            "symbol": "auto len = u32(header), crc = u32(header + 4)"
+          },
+          {
+            "kind": "file",
+            "line": 109,
+            "locator": "line 109: u32(out, checksum(s))",
+            "path": "service/spool.cpp",
+            "sha256": "653f3a48ff01e78af7d7980a64b7658245911041814b30d01bd9aaf28f97a0f4",
+            "symbol": "u32(out, checksum(s))"
+          }
+        ],
+        "limitations": [
+          "SPOOL1仅为文档中的手工格式版本名，wire没有版本字段或版本验证，文档和实现之间无自动一致性机制；不计语义化版本或兼容回归档。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "仓内schemas/upload.record将自有持久化日志格式手工命名为SPOOL1；DurableSpool公开接受文件路径，实际实现对应长度/FNV1a/UTF-8命令布局。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 64,
+            "locator": "line 64: void DurableSpool::recover",
+            "path": "service/spool.cpp",
+            "sha256": "653f3a48ff01e78af7d7980a64b7658245911041814b30d01bd9aaf28f97a0f4",
+            "symbol": "void DurableSpool::recover"
+          },
+          {
+            "kind": "file",
+            "line": 104,
+            "locator": "line 104: void DurableSpool::append",
+            "path": "service/spool.cpp",
+            "sha256": "653f3a48ff01e78af7d7980a64b7658245911041814b30d01bd9aaf28f97a0f4",
+            "symbol": "void DurableSpool::append"
+          },
+          {
+            "kind": "file",
+            "line": 134,
+            "locator": "line 134: bool DurableSpool::complete",
+            "path": "service/spool.cpp",
+            "sha256": "653f3a48ff01e78af7d7980a64b7658245911041814b30d01bd9aaf28f97a0f4",
+            "symbol": "bool DurableSpool::complete"
+          }
+        ],
+        "limitations": [
+          "Spool同时管理日志编码、恢复、配额和退避，需跨多个原因修改同一类。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "解码与窗口统计独立，后台线程生命周期在Worker中。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: for (const auto &d : definitions_)",
+            "path": "engine/acquisition/signal_decoder.cpp",
+            "sha256": "05ba9951ada7be82d75afc6a75f436b247a9ab04a423ba634181cbacdfa80d9c",
+            "symbol": "for (const auto &d : definitions_)"
+          },
+          {
+            "kind": "file",
+            "line": 47,
+            "locator": "line 47: load_signal_catalog",
+            "path": "engine/acquisition/signal_decoder.cpp",
+            "sha256": "05ba9951ada7be82d75afc6a75f436b247a9ab04a423ba634181cbacdfa80d9c",
+            "symbol": "load_signal_catalog"
+          },
+          {
+            "kind": "file",
+            "line": 30,
+            "locator": "line 30: sink_(event)",
+            "path": "engine/acquisition/worker.cpp",
+            "sha256": "00444cae11b6b658fd0e6fbe520c8d3599aa6837af1dba561fe1150c05dcd985",
+            "symbol": "sink_(event)"
+          }
+        ],
+        "limitations": [
+          "新增持久化介质或日志格式仍需改DurableSpool。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "信号catalog和Worker sink回调提供实际扩展点，新增信号无需修改窗口核心。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 37,
+            "locator": "line 37: class Collector",
+            "path": "include/data_collect/data_collect.hpp",
+            "sha256": "c382c12e5a2376554eaa06f398465bc74fea0db16e9a03f85a5bba165e1edb6f",
+            "symbol": "class Collector"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class CollectionWorker",
+            "path": "include/data_collect/worker.hpp",
+            "sha256": "ffc8a8df2ae5a3961059f7d91ec7466550bfdd5a8dc0812904f072e3cdb9f576",
+            "symbol": "class CollectionWorker"
+          }
+        ],
+        "limitations": [
+          "此档说明不适用范围，不代表替换契约已被验证。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "审阅公开类型与生产实现，没有适用的继承/实现替换关系，按合同LSP中间档处理。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 37,
+            "locator": "line 37: class Collector",
+            "path": "include/data_collect/data_collect.hpp",
+            "sha256": "c382c12e5a2376554eaa06f398465bc74fea0db16e9a03f85a5bba165e1edb6f",
+            "symbol": "class Collector"
+          },
+          {
+            "kind": "file",
+            "line": 55,
+            "locator": "line 55: class UploadQueue",
+            "path": "include/data_collect/data_collect.hpp",
+            "sha256": "c382c12e5a2376554eaa06f398465bc74fea0db16e9a03f85a5bba165e1edb6f",
+            "symbol": "class UploadQueue"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class CollectionWorker",
+            "path": "include/data_collect/worker.hpp",
+            "sha256": "ffc8a8df2ae5a3961059f7d91ec7466550bfdd5a8dc0812904f072e3cdb9f576",
+            "symbol": "class CollectionWorker"
+          }
+        ],
+        "limitations": [
+          "核心公共头仍捆绑采集及上传队列并包含大量非必要标准头。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "新增Decoder、Worker和Spool各有分开的头与方法。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 13,
+            "locator": "line 13: std::function<void(const Event &)> sink_",
+            "path": "include/data_collect/worker.hpp",
+            "sha256": "ffc8a8df2ae5a3961059f7d91ec7466550bfdd5a8dc0812904f072e3cdb9f576",
+            "symbol": "std::function<void(const Event &)> sink_"
+          },
+          {
+            "kind": "file",
+            "line": 105,
+            "locator": "line 105: std::ofstream out(path_",
+            "path": "service/spool.cpp",
+            "sha256": "653f3a48ff01e78af7d7980a64b7658245911041814b30d01bd9aaf28f97a0f4",
+            "symbol": "std::ofstream out(path_"
+          }
+        ],
+        "limitations": [
+          "文件持久化具体实现仍被业务类直接持有。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "Worker的sink由使用方传入，事件类型位于业务边界。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 104,
+            "locator": "line 104: void DurableSpool::append",
+            "path": "service/spool.cpp",
+            "sha256": "653f3a48ff01e78af7d7980a64b7658245911041814b30d01bd9aaf28f97a0f4",
+            "symbol": "void DurableSpool::append"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: worker_ = std::thread",
+            "path": "engine/acquisition/worker.cpp",
+            "sha256": "00444cae11b6b658fd0e6fbe520c8d3599aa6837af1dba561fe1150c05dcd985",
+            "symbol": "worker_ = std::thread"
+          }
+        ],
+        "execution_evidence": [
+          "AIC-04/final-native-run.json",
+          "AIC-04/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "只完成当前主机环境验证，没有两种受支持平台/接口升级兼容回归。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "平台依赖主要限制在I/O、配置或适配处，业务核心消费标准数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: struct SignalDefinition",
+            "path": "include/data_collect/signal_decoder.hpp",
+            "sha256": "c75867ca02ef891be1c0ca4e41aee96d7805dd41228f8897d8b6f096932d6410",
+            "symbol": "struct SignalDefinition"
+          },
+          {
+            "kind": "file",
+            "line": 41,
+            "locator": "line 41: SignalDecoder d(",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "fcb5f3c50616b33ea45d0cbcc546b8ba97c910abe19297854ce00c26c84d2ed3",
+            "symbol": "SignalDecoder d("
+          }
+        ],
+        "execution_evidence": [
+          "AIC-04/final-native-run.json",
+          "AIC-04/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "仅主机替身验证；运行时多传感器/多个数值配置不等同两组完整设备适配验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "业务消费参数、显式输入和共用计算逻辑，可从不同来源提供数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: project(ai_data_collector VERSION",
+            "path": "CMakeLists.txt",
+            "sha256": "7c60faafd823c3a220585f42f110729b8e5dc05afe6ca5243448d57d1611ef6d",
+            "symbol": "project(ai_data_collector VERSION"
+          }
+        ],
+        "execution_evidence": [
+          "AIC-04/final-native-run.json",
+          "AIC-04/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "未合成分支/tag，运行参数或算法场景不自动算平台变体。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "实际Git仅main初始/实现提交，无已落实的多平台维护策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 23,
+            "locator": "line 23: b.due = now +",
+            "path": "service/upload.cpp",
+            "sha256": "d8bb6c9cd07164a65e70dfd38148832d85a481bf8cbf9c988bb008ef0771b759",
+            "symbol": "b.due = now +"
+          },
+          {
+            "kind": "file",
+            "line": 144,
+            "locator": "line 144: auto attempts = it->attempts + 1",
+            "path": "service/spool.cpp",
+            "sha256": "653f3a48ff01e78af7d7980a64b7658245911041814b30d01bd9aaf28f97a0f4",
+            "symbol": "auto attempts = it->attempts + 1"
+          }
+        ],
+        "limitations": [
+          "两种上传队列用途不同，但失败计数和due计算仍有局部相似逻辑。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "采集和窗口计算复用一处；审阅engine/service发现UploadQueue与DurableSpool各自实现重试队列。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: Collector::flush",
+            "path": "engine/window/aggregation.cpp",
+            "sha256": "ec828613236fe699f0e01b7a39e31d3ff8e0e5dd09d06d249f2e110a95e6f918",
+            "symbol": "Collector::flush"
+          },
+          {
+            "kind": "file",
+            "line": 105,
+            "locator": "line 105: std::ofstream out(path_",
+            "path": "service/spool.cpp",
+            "sha256": "653f3a48ff01e78af7d7980a64b7658245911041814b30d01bd9aaf28f97a0f4",
+            "symbol": "std::ofstream out(path_"
+          }
+        ],
+        "limitations": [
+          "此分不自动证明平台迁移、多设备运行或物理设备验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "生产业务只使用C/C++标准值类型/标准库或明确JNI、TCP、I/O适配边界。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 34,
+            "locator": "line 34: auto v = c.flush(100)",
+            "path": "tests/business_tests.cpp",
+            "sha256": "93542c7a2d2c4506d5bfc76e4c047b1600c8759f4b0b27c5a8ee9e59d2b9e105",
+            "symbol": "auto v = c.flush(100)"
+          },
+          {
+            "kind": "file",
+            "line": 44,
+            "locator": "line 44: auto id = q.enqueue(v)",
+            "path": "tests/business_tests.cpp",
+            "sha256": "93542c7a2d2c4506d5bfc76e4c047b1600c8759f4b0b27c5a8ee9e59d2b9e105",
+            "symbol": "auto id = q.enqueue(v)"
+          },
+          {
+            "kind": "file",
+            "line": 47,
+            "locator": "line 47: CHECK(q.acknowledge(id, false",
+            "path": "tests/business_tests.cpp",
+            "sha256": "93542c7a2d2c4506d5bfc76e4c047b1600c8759f4b0b27c5a8ee9e59d2b9e105",
+            "symbol": "CHECK(q.acknowledge(id, false"
+          }
+        ],
+        "execution_evidence": [
+          "AIC-04/final-native-run.json",
+          "AIC-04/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "后者主要分模块验证；未把它描述为decode到collect到spool到upload的完整服务链。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "仓内business_tests将Collector.flush输出交给UploadQueue并回放确认、失败退避；集成文件另实际检查Decoder/Spool/Worker。",
+        "score": 2,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "2d0b4fea320f52d2e8e9d2392f6115bcd57f59bb"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "2d0b4fea320f52d2e8e9d2392f6115bcd57f59bb"
+}

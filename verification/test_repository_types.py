@@ -19,11 +19,11 @@ class TypeRegistryTests(unittest.TestCase):
     def alter(self,r,kind,field,mutation):
         entry=next(e for e in r['suites'] if e['id']==kind)[field];path=self.root/entry['path'];value=suites.read(path)
         mutation(value);path.write_bytes(suites.encoded(value));entry['sha256']=suites.sha(path.read_bytes());self.save(r)
-    def test_three_separate_populations(self):
+    def test_six_separate_populations(self):
         r=rt.validate(self.root)
-        self.assertEqual([s['id'] for s in r['suites']],['app','fw','new-energy-matlab'])
-        self.assertEqual([s['repository_count'] for s in r['suites']],[11,11,11])
-        self.assertEqual([s['leaf_count'] for s in r['suites']],[88,121,143])
+        self.assertEqual([s['id'] for s in r['suites']],['app','fw','new-energy-matlab','architecture-center','ai-center','intelligent-driving-center'])
+        self.assertEqual([s['repository_count'] for s in r['suites']],[11,11,11,11,11,11])
+        self.assertEqual([s['leaf_count'] for s in r['suites']],[88,121,143,142,187,182])
         for entry in r['suites']:
             sources=suites.read(self.root/entry['manifest']['path'])['repositories']
             self.assertEqual(entry['published_repositories'],sum(s['publication_status']=='published' for s in sources))
@@ -31,6 +31,8 @@ class TypeRegistryTests(unittest.TestCase):
         if has_local:
             with self.assertRaisesRegex(suites.InvalidSuite,'unpublished local cohort'):
                 rt.validate(self.root,True)
+        elif any(e['status']!='published' for e in r['suites']):
+            with self.assertRaises(suites.InvalidSuite):rt.validate(self.root,True)
         else:self.assertEqual(rt.validate(self.root,True)['integration_status'],'published')
     def test_unpublished_cohort_still_blocks_publication(self):
         r=self.registry();entry=next(e for e in r['suites'] if 'cohorts' in e);binding=entry['cohorts'];p=self.root/binding['path']
@@ -46,6 +48,8 @@ class TypeRegistryTests(unittest.TestCase):
         p.write_bytes(suites.encoded(manifest));entry['manifest']['sha256']=suites.sha(p.read_bytes())
         entry.update(status='published',published_repositories=len(manifest['repositories']))
         r['integration_status']='published'
+        r['schema_version']='benchmark-repository-types-2'
+        r['suites']=[e for e in r['suites'] if e['id'] in rt.LEGACY_TYPES]
         for entry in r['suites']:entry.pop('cohorts',None)
         self.save(r)
         self.assertEqual(rt.validate(self.root,True)['integration_status'],'published')
@@ -59,7 +63,7 @@ class TypeRegistryTests(unittest.TestCase):
         self.assertTrue(all(s['id'].startswith('APP-') for s in rt.select(r,self.root,'app')))
         self.assertEqual(len(rt.select(r,self.root,'fw')),11)
         self.assertEqual(len(rt.select(r,self.root,'android-validation18')),22)
-        self.assertEqual(len(rt.select(r,self.root,'all')),33)
+        self.assertEqual(len(rt.select(r,self.root,'all')),66)
         with self.assertRaises(suites.InvalidSuite):rt.select(r,self.root,'app',['FW-21'])
     def test_rehashed_head_change_is_rejected(self):
         r=self.registry();self.alter(r,'app','manifest',lambda m:m['repositories'][-1].update(head='1'*40))

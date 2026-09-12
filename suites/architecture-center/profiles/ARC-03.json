@@ -1,0 +1,156 @@
+{
+  "actual": {
+    "bytes": 440171,
+    "commit_count": 1,
+    "extensions": {
+      ".m": 3,
+      ".md": 2,
+      ".slx": 5,
+      ".xlsx": 1,
+      "<noext>": 2
+    },
+    "gitlinks": [],
+    "model_census": {
+      "production_model_count": 5,
+      "root_expanded_block_count": 57,
+      "root_expanded_block_types": [
+        {
+          "count": 1,
+          "type": "Constant"
+        },
+        {
+          "count": 4,
+          "type": "Gain"
+        },
+        {
+          "count": 17,
+          "type": "Inport"
+        },
+        {
+          "count": 2,
+          "type": "Lookup_n-D"
+        },
+        {
+          "count": 13,
+          "type": "Outport"
+        },
+        {
+          "count": 3,
+          "type": "Product"
+        },
+        {
+          "count": 6,
+          "type": "Saturate"
+        },
+        {
+          "count": 4,
+          "type": "SubSystem"
+        },
+        {
+          "count": 3,
+          "type": "Sum"
+        },
+        {
+          "count": 4,
+          "type": "Switch"
+        }
+      ]
+    },
+    "refs": {
+      "refs/heads/main": "c00b659f6a8003c62f56bec89f29896557aac022"
+    },
+    "scope": "All tracked files of the scored target; excludes untracked build caches and dependency worktrees. Text line counts include generated and test files and are not production LOC.",
+    "source_lines_by_extension": {
+      ".m": 22
+    },
+    "tracked_file_count": 13
+  },
+  "center": "架构中心",
+  "conclusion": "Bounded structural and business proxy with declared deviations; not a full production distribution reproduction or independent holdout.",
+  "deviations": [
+    "扫描文件总数为76，本仓跟踪文件为13；统计范围不同且规模明显压缩，不声明生产整仓体量等价。",
+    "历史为本次真实构造/修复提交，未复制扫描中的大量分支/tag或虚构长期研发史。",
+    "仅提供了结构、模式和汇总，内部算法、标定值及全部生产依赖未提供；不能据此宣称业务实现相同。",
+    "模型规模及工作簿模板为有界投影；没有补造扫描缺失的保护组件、认证、BTC、ECU或C语句覆盖记录。"
+  ],
+  "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+  "id": "ARC-03",
+  "implementation_kind": "matlab",
+  "matched_traits": [
+    "采用matlab实现并保留component_tree的主要组织形态；以最终源码及构建入口核对。",
+    "业务为新编写的可执行有界切片；声明的模块、配置和接口具有实际调用方。"
+  ],
+  "observed": {
+    "branches": 21,
+    "build_label": "matlab",
+    "commit_count": 18,
+    "default_head_empty": false,
+    "extensions": {
+      ".m": 15,
+      ".pptx": 1,
+      ".slx": 53,
+      ".xlsx": 6,
+      "<noext>": 1
+    },
+    "file_count": 76,
+    "model_scan": {
+      "a2l_count": 0,
+      "block_census": {
+        "Abs": 8,
+        "BusCreator": 68,
+        "BusSelector": 129,
+        "BusToVector": 11,
+        "Constant": 291,
+        "DataTypeConversion": 293,
+        "DataTypeDuplicate": 79,
+        "Delay": 20,
+        "Demux": 32,
+        "From": 231,
+        "Gain": 18,
+        "Goto": 121,
+        "Inport": 1548,
+        "Logic": 12,
+        "Lookup_n-D": 12,
+        "Outport": 625,
+        "Product": 31,
+        "Reference": 88,
+        "RelationalOperator": 39,
+        "SignalConversion": 283,
+        "SubSystem": 135,
+        "Sum": 46,
+        "Switch": 125,
+        "Terminator": 303,
+        "UnitDelay": 20
+      },
+      "generated_c_files": 0,
+      "p_file_count": 0,
+      "scope": "The supplied model census can cover only sampled files; zero values from unsupported legacy parsing are unknown, not absence.",
+      "total_model_refs": 0,
+      "total_sfunctions": 7,
+      "total_subsystems": 135,
+      "xls_count": 6
+    },
+    "tags": 18
+  },
+  "repairs": [],
+  "schema": "center-scan-profile-comparison-1",
+  "source_basis": {
+    "document_sha256": "3c520994ae277431da28042e8fadfc90ac69cd273985b98b04ccc4157bb65282",
+    "original_names": "Retained only in the local supplied-scan mapping",
+    "section_line": 6720,
+    "selection": "One supplied per-repository joint structural prototype; no target-score selection",
+    "spec_line": 6883
+  },
+  "target": {
+    "business": "motion_coordinator",
+    "layout": "component_tree",
+    "planned_production_units": 5,
+    "repository_owned_tests": false
+  },
+  "tree": "10af906321d6cb8a8c0a1335ce6c8ca28932ddc7",
+  "unknowns": [
+    "Scanner test_case_count=0 is not evidence that tests are absent.",
+    "Reported HTML percentages are not accepted as actual test coverage unless the report semantics and execution binding are verified.",
+    "Some large-source scans stop at 2500 source files; capped values are not whole-repository counts."
+  ]
+}

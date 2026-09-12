@@ -1,0 +1,486 @@
+{
+  "execution": {
+    "limits": [
+      "Android runtime is one API35 x86_64 emulator, not a physical device or vehicle acceptance.",
+      "Execution is maintainer verification, not remote CI, candidate/model evaluation or independent holdout.",
+      "The full UI scenarios were replayed after final APK reconstruction; runtime artifact SHA matches the final build result. Bitwise deterministic APK builds are not claimed.",
+      "The published source history has provenance metadata normalized. Original executed HEAD/tree and byte-equivalence evidence are retained explicitly; this metadata operation is not a new native run."
+    ],
+    "records": [
+      {
+        "path": "suites/ai-center/execution/AIC-01.json",
+        "sha256": "3f728b0265b12fab92336167e4b7e15f73881093142cada91832f9d0b65ae649"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "554118dcaed430f1712f1ac5c4be9ae9fc91e749",
+  "id": "AIC-01",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "554118dcaed430f1712f1ac5c4be9ae9fc91e749",
+    "id": "AIC-01",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: class HallGraph",
+            "path": "app/src/main/java/org/bench/servicehall/HallGraph.kt",
+            "sha256": "f6bfd4ccfcccaffa4f0c2e317bb19d14157b024b38a3c905dd8edb27b47634c2",
+            "symbol": "class HallGraph"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: class RequestWorkflow",
+            "path": "domain/src/main/java/org/bench/servicehall/domain/RequestWorkflow.kt",
+            "sha256": "c540ff72c9425ed7901ed6f81efd2f28ff4052fe5bb3533c641b00ddf9b9bd7e",
+            "symbol": "class RequestWorkflow"
+          }
+        ],
+        "limitations": [
+          "MainActivity 仍集中呈现多个页面；分层存在不等于 UI 简洁。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "domain 不导入 Android；数据、平台替身、目录投影、请求投影由应用组合。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: include ':app'",
+            "path": "settings.gradle",
+            "sha256": "a68e2726704eae480fbbfc287eb6bf35b7e1e5e49079ca3aba085d02ca3fe0f3",
+            "symbol": "include ':app'"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: fun rows",
+            "path": "feature-catalog/src/main/java/org/bench/servicehall/catalog/CatalogPresenter.kt",
+            "sha256": "007f4ca899b822f8a676f8694247578173f71e2385859eeefe79f7c4ba418ff4",
+            "symbol": "fun rows"
+          }
+        ],
+        "limitations": [
+          "feature 模块较薄，具体页面仍全部留在 app，未把目录数量视为完整组件自治。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "六个实际 Gradle 模块参与 APK；domain/data/platform 有执行职责，两 feature 模块提供投影。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: class RequestWorkflow",
+            "path": "domain/src/main/java/org/bench/servicehall/domain/RequestWorkflow.kt",
+            "sha256": "c540ff72c9425ed7901ed6f81efd2f28ff4052fe5bb3533c641b00ddf9b9bd7e",
+            "symbol": "class RequestWorkflow"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: interface RequestRepository",
+            "path": "domain/src/main/java/org/bench/servicehall/domain/RequestRecord.kt",
+            "sha256": "131d8721346186f51122fade9775fc484fe3f6238c6c5f75fd6890b105957643",
+            "symbol": "interface RequestRepository"
+          }
+        ],
+        "limitations": [
+          "只验证本地适配，不等于真实远程提供方可以无条件替换。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "请求业务依赖 ServiceDirectory、RequestRepository 和 Clock，SQLite/资产/时钟在组合根注入。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "a68e2726704eae480fbbfc287eb6bf35b7e1e5e49079ca3aba085d02ca3fe0f3",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "本机Gradle构建和维护者脚本不冒称仓内或远端CI。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单没有CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: compileSdk 34",
+            "path": "app/build.gradle",
+            "sha256": "60d7818f5af110ddb2c88429bc6bd642a946a0c0746acc7b871a53fa7fcd1902",
+            "symbol": "compileSdk 34"
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: version '8.3.0'",
+            "path": "build.gradle",
+            "sha256": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+            "symbol": "version '8.3.0'"
+          }
+        ],
+        "limitations": [
+          "仍依赖Android SDK与固定包缓存/下载；未提供公开接口版本兼容合同，保守取包边界档。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "Gradle8.4、AGP8.3.0、Kotlin1.9.22、SDK34版本明确，所有本仓模块可独立构建成APK/AAR。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: defaultConfig",
+            "path": "app/build.gradle",
+            "sha256": "60d7818f5af110ddb2c88429bc6bd642a946a0c0746acc7b871a53fa7fcd1902",
+            "symbol": "defaultConfig"
+          }
+        ],
+        "limitations": [
+          "versionName、数据库版本和卡片递增revision都不能替代API版本。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "没有独立的公共API语义版本或兼容检查。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: class EligibilityPolicy",
+            "path": "domain/src/main/java/org/bench/servicehall/domain/EligibilityPolicy.kt",
+            "sha256": "8f9505c2f3c60a59de51c81427049f6e9ef5f04e4619f21545bd019f9d5bc172",
+            "symbol": "class EligibilityPolicy"
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: class RequestDatabase",
+            "path": "data/src/main/java/org/bench/servicehall/data/RequestDatabase.kt",
+            "sha256": "3c6b5239725c809dcd87019703bbbd4605ae04a5a7f7c466055d1de2210c94bc",
+            "symbol": "class RequestDatabase"
+          }
+        ],
+        "limitations": [
+          "Activity 承担页面路由与表单，尚无生产规模的独立 UI 控制器。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "目录加载、策略准入、持久化、请求推进与呈现投影分开。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: fun evaluate",
+            "path": "domain/src/main/java/org/bench/servicehall/domain/EligibilityPolicy.kt",
+            "sha256": "8f9505c2f3c60a59de51c81427049f6e9ef5f04e4619f21545bd019f9d5bc172",
+            "symbol": "fun evaluate"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class AssetServiceDirectory",
+            "path": "data/src/main/java/org/bench/servicehall/data/AssetServiceDirectory.kt",
+            "sha256": "dd213f08c82a15f800c1e9da4b2f1728073e4679abc6d2dca383e3249ec257dc",
+            "symbol": "class AssetServiceDirectory"
+          }
+        ],
+        "limitations": [
+          "新的准入条件仍须修改 EligibilityPolicy 的硬编码分支。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "新增已有条件组合的服务可改 services.json 而复用请求流程。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: private class Repo",
+            "path": "domain/src/test/java/org/bench/servicehall/domain/WorkflowTest.kt",
+            "sha256": "4a44cd716c5187c1522bfad49cb869c9de3d38a89ba172b868bbeef3a75c808a",
+            "symbol": "private class Repo"
+          },
+          {
+            "kind": "file",
+            "line": 11,
+            "locator": "line 11: override fun all",
+            "path": "data/src/main/java/org/bench/servicehall/data/RequestDatabase.kt",
+            "sha256": "3c6b5239725c809dcd87019703bbbd4605ae04a5a7f7c466055d1de2210c94bc",
+            "symbol": "override fun all"
+          }
+        ],
+        "limitations": [
+          "尚无对所有仓储实现运行同一份持久化一致性合同。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "业务接口由生产适配和测试仓储/时钟实际实现；同一工作流在替身与 SQLite UI 路径运行。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: interface ServiceDirectory",
+            "path": "domain/src/main/java/org/bench/servicehall/domain/ServiceDirectory.kt",
+            "sha256": "c57c86847289c0970b76e3d1d78a499a57c17f560ca244f7ab2419c599e720d8",
+            "symbol": "interface ServiceDirectory"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: interface RequestRepository",
+            "path": "domain/src/main/java/org/bench/servicehall/domain/RequestRecord.kt",
+            "sha256": "131d8721346186f51122fade9775fc484fe3f6238c6c5f75fd6890b105957643",
+            "symbol": "interface RequestRepository"
+          }
+        ],
+        "limitations": [
+          "接口覆盖当前有界场景，不代表分页/并发/事务等扩展已解决。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "目录只有 services，时钟只有 now，仓储只有 all/save，消费者不需实现无关设备 API。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: class RequestWorkflow",
+            "path": "domain/src/main/java/org/bench/servicehall/domain/RequestWorkflow.kt",
+            "sha256": "c540ff72c9425ed7901ed6f81efd2f28ff4052fe5bb3533c641b00ddf9b9bd7e",
+            "symbol": "class RequestWorkflow"
+          },
+          {
+            "kind": "file",
+            "line": 11,
+            "locator": "line 11: val workflow=",
+            "path": "app/src/main/java/org/bench/servicehall/HallGraph.kt",
+            "sha256": "f6bfd4ccfcccaffa4f0c2e317bb19d14157b024b38a3c905dd8edb27b47634c2",
+            "symbol": "val workflow="
+          }
+        ],
+        "limitations": [
+          "呈现层仍直接读取具体偏好与车辆替身，替换整个 UI 数据层需额外工作。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "Workflow 通过窄接口接收依赖；测试替身和生产组合都被实际消费。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class SimulatedVehicle",
+            "path": "platform/src/main/java/org/bench/servicehall/platform/SimulatedVehicle.kt",
+            "sha256": "5906980600f209b54d56d77761e4b5a92f087e3dcc313d9214ac36f9be548dc9",
+            "symbol": "class SimulatedVehicle"
+          },
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: compileSdk 34",
+            "path": "app/build.gradle",
+            "sha256": "60d7818f5af110ddb2c88429bc6bd642a946a0c0746acc7b871a53fa7fcd1902",
+            "symbol": "compileSdk 34"
+          }
+        ],
+        "limitations": [
+          "只有 SDK34 编译和 API35 模拟器，未实际做第二套编译配置迁移回归。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "Android 调用主要位于数据、平台与 UI；纯业务无需引用 Activity/Bundle。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: data class CustomerContext",
+            "path": "domain/src/main/java/org/bench/servicehall/domain/CustomerContext.kt",
+            "sha256": "ef32e905617cc22bae9a3ed2e70e18f258b898a79d04c68c07c00a6e89d69e84",
+            "symbol": "data class CustomerContext"
+          },
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10: fun context",
+            "path": "platform/src/main/java/org/bench/servicehall/platform/SimulatedVehicle.kt",
+            "sha256": "5906980600f209b54d56d77761e4b5a92f087e3dcc313d9214ac36f9be548dc9",
+            "symbol": "fun context"
+          }
+        ],
+        "limitations": [
+          "只有通用车辆替身和单 API35 模拟器，未验证两组设备适配。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "服务条件使用车辆上下文值而非具体 OEM SDK，状态可在本地切换并实际验证。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "a68e2726704eae480fbbfc287eb6bf35b7e1e5e49079ca3aba085d02ca3fe0f3",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "不伪造历史tags或设备分支；主题/场景变化不自动等同分支策略。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "只有本次本地main实际建设提交，没有已实施的多平台分支/变体策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: class EligibilityPolicy",
+            "path": "domain/src/main/java/org/bench/servicehall/domain/EligibilityPolicy.kt",
+            "sha256": "8f9505c2f3c60a59de51c81427049f6e9ef5f04e4619f21545bd019f9d5bc172",
+            "symbol": "class EligibilityPolicy"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: class RequestWorkflow",
+            "path": "domain/src/main/java/org/bench/servicehall/domain/RequestWorkflow.kt",
+            "sha256": "c540ff72c9425ed7901ed6f81efd2f28ff4052fe5bb3533c641b00ddf9b9bd7e",
+            "symbol": "class RequestWorkflow"
+          },
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: object Ui",
+            "path": "app/src/main/java/org/bench/servicehall/Ui.kt",
+            "sha256": "dfa1f8d1dc0f688167a8dad773490f544b1e4afdae657176379dcb2a88a535d7",
+            "symbol": "object Ui"
+          }
+        ],
+        "limitations": [
+          "不将测试数据、JSON目录、Gradle样板计入逻辑重复；小切片不能证明大型系统的无重复。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "全量生产 Kotlin 审阅：准入规则、请求状态推进各只有一份，目录/历史复用投影与 UI helper。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: class RequestWorkflow",
+            "path": "domain/src/main/java/org/bench/servicehall/domain/RequestWorkflow.kt",
+            "sha256": "c540ff72c9425ed7901ed6f81efd2f28ff4052fe5bb3533c641b00ddf9b9bd7e",
+            "symbol": "class RequestWorkflow"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: interface Clock",
+            "path": "domain/src/main/java/org/bench/servicehall/domain/ServiceDirectory.kt",
+            "sha256": "c57c86847289c0970b76e3d1d78a499a57c17f560ca244f7ab2419c599e720d8",
+            "symbol": "interface Clock"
+          }
+        ],
+        "limitations": [
+          "平台 UI 和 SQLite 仍是 Android 专用适配；不宣称跨 OS UI 可直接复用。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "业务工作流仅消费显式目录、仓储与时钟边界，平台类型没有进入 domain 数据模型。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class WorkflowTest",
+            "path": "domain/src/test/java/org/bench/servicehall/domain/WorkflowTest.kt",
+            "sha256": "4a44cd716c5187c1522bfad49cb869c9de3d38a89ba172b868bbeef3a75c808a",
+            "symbol": "class WorkflowTest"
+          }
+        ],
+        "limitations": [
+          "按合同“仓内集成测试”计 0；实际 APK UI 通过不偷偷改为仓内集成覆盖。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "仓内五个有效 JVM 测试均是 domain 测试，SQLite/Activity 多模块路径由仓外维护者脚本验证。",
+        "score": 0,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "f7744f765c475125f20b2f83f31116a2c160c15a"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "f7744f765c475125f20b2f83f31116a2c160c15a"
+}

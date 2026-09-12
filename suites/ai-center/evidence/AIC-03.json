@@ -1,0 +1,470 @@
+{
+  "execution": {
+    "limits": [
+      "Android runtime is one API35 x86_64 emulator, not a physical device or vehicle acceptance.",
+      "Execution is maintainer verification, not remote CI, candidate/model evaluation or independent holdout.",
+      "The full UI scenarios were replayed after final APK reconstruction; runtime artifact SHA matches the final build result. Bitwise deterministic APK builds are not claimed.",
+      "The published source history has provenance metadata normalized. Original executed HEAD/tree and byte-equivalence evidence are retained explicitly; this metadata operation is not a new native run."
+    ],
+    "records": [
+      {
+        "path": "suites/ai-center/execution/AIC-03.json",
+        "sha256": "de3b852120cdcb2beb955f5524f4641da16cca50e6b45daf4eff2da7735f3edd"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "b7dc0937f48bbcf3b163ce46dd70098d708bbe50",
+  "id": "AIC-03",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "b7dc0937f48bbcf3b163ce46dd70098d708bbe50",
+    "id": "AIC-03",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class MainActivity",
+            "path": "app/src/main/java/org/bench/compact/MainActivity.kt",
+            "sha256": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+            "symbol": "class MainActivity"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: class LocalOrders",
+            "path": "app/src/main/java/org/bench/compact/LocalOrders.kt",
+            "sha256": "59116f4fd6887ff0cff82ebe92c69c7aa16578132e6624909c017352e24220cd",
+            "symbol": "class LocalOrders"
+          }
+        ],
+        "limitations": [
+          "Activity 直接控制偏好、过滤、连接状态、排队/取消和呈现。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "Catalog/LocalOrders 与主页面可辨认，但仍是紧凑手工路由应用。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: include ':app'",
+            "path": "settings.gradle",
+            "sha256": "1718904a95ff2d4c8befa09770bcdff40417ae71e15f3cd94752c027ca88a2f9",
+            "symbol": "include ':app'"
+          },
+          {
+            "kind": "file",
+            "line": 17,
+            "locator": "line 17: private fun render",
+            "path": "app/src/main/java/org/bench/compact/MainActivity.kt",
+            "sha256": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+            "symbol": "private fun render"
+          }
+        ],
+        "limitations": [
+          "只有单 app；路由和主要业务操作仍集中，不能把文件数视为模块边界。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "按条目、订单、手册和 Activity 分文件，具有可运行业务。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: private val orders",
+            "path": "app/src/main/java/org/bench/compact/MainActivity.kt",
+            "sha256": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+            "symbol": "private val orders"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: class LocalOrders",
+            "path": "app/src/main/java/org/bench/compact/LocalOrders.kt",
+            "sha256": "59116f4fd6887ff0cff82ebe92c69c7aa16578132e6624909c017352e24220cd",
+            "symbol": "class LocalOrders"
+          }
+        ],
+        "limitations": [
+          "没有业务仓储/车辆/连接接口，核心操作强绑 Android 偏好。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "订单和偏好由 Activity 直接构造与访问。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "1718904a95ff2d4c8befa09770bcdff40417ae71e15f3cd94752c027ca88a2f9",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "本机Gradle构建和维护者脚本不冒称仓内或远端CI。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单没有CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: compileSdk 34",
+            "path": "app/build.gradle",
+            "sha256": "220988fe93949f08ed1dbca7820f5a72c47315da62e831bc1f97dbc27fee35e1",
+            "symbol": "compileSdk 34"
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: version '8.3.0'",
+            "path": "build.gradle",
+            "sha256": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+            "symbol": "version '8.3.0'"
+          }
+        ],
+        "limitations": [
+          "仍依赖Android SDK与固定包缓存/下载；未提供公开接口版本兼容合同，保守取包边界档。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "Gradle8.4、AGP8.3.0、Kotlin1.9.22、SDK34版本明确，所有本仓模块可独立构建成APK/AAR。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: defaultConfig",
+            "path": "app/build.gradle",
+            "sha256": "220988fe93949f08ed1dbca7820f5a72c47315da62e831bc1f97dbc27fee35e1",
+            "symbol": "defaultConfig"
+          }
+        ],
+        "limitations": [
+          "versionName、数据库版本和卡片递增revision都不能替代API版本。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "没有独立的公共API语义版本或兼容检查。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 22,
+            "locator": "line 22: private fun home",
+            "path": "app/src/main/java/org/bench/compact/MainActivity.kt",
+            "sha256": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+            "symbol": "private fun home"
+          },
+          {
+            "kind": "file",
+            "line": 33,
+            "locator": "line 33: private fun detail",
+            "path": "app/src/main/java/org/bench/compact/MainActivity.kt",
+            "sha256": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+            "symbol": "private fun detail"
+          }
+        ],
+        "limitations": [
+          "MainActivity 同时承担路由、收藏、离线同步、预订和视图，改业务常触及 UI。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "局部订单序列化与手册内容分开。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 20,
+            "locator": "line 20: when(route)",
+            "path": "app/src/main/java/org/bench/compact/MainActivity.kt",
+            "sha256": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+            "symbol": "when(route)"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: fun sections",
+            "path": "app/src/main/java/org/bench/compact/Handbook.kt",
+            "sha256": "637179e33fdbe35e41fc61b5ea79818222e58ebf1341718c6bf9aa1849fde9eb",
+            "symbol": "fun sections"
+          }
+        ],
+        "limitations": [
+          "新路由或特殊服务仍需改 render、detail 与 Handbook when 分支。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "内联目录可加同类条目。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: class LocalOrders",
+            "path": "app/src/main/java/org/bench/compact/LocalOrders.kt",
+            "sha256": "59116f4fd6887ff0cff82ebe92c69c7aa16578132e6624909c017352e24220cd",
+            "symbol": "class LocalOrders"
+          }
+        ],
+        "limitations": [
+          "没有适用替换合同或多实现示例，按中间档处理。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "未发现有约束冲突的自定义继承关系。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10: fun add",
+            "path": "app/src/main/java/org/bench/compact/LocalOrders.kt",
+            "sha256": "59116f4fd6887ff0cff82ebe92c69c7aa16578132e6624909c017352e24220cd",
+            "symbol": "fun add"
+          },
+          {
+            "kind": "file",
+            "line": 15,
+            "locator": "line 15: private fun go",
+            "path": "app/src/main/java/org/bench/compact/MainActivity.kt",
+            "sha256": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+            "symbol": "private fun go"
+          }
+        ],
+        "limitations": [
+          "也没有实际可复用接口隔离证据，不因无接口直接高分。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "小型应用只暴露局部方法，没有巨型跨模块接口。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: private val prefs",
+            "path": "app/src/main/java/org/bench/compact/MainActivity.kt",
+            "sha256": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+            "symbol": "private val prefs"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: private val prefs",
+            "path": "app/src/main/java/org/bench/compact/LocalOrders.kt",
+            "sha256": "59116f4fd6887ff0cff82ebe92c69c7aa16578132e6624909c017352e24220cd",
+            "symbol": "private val prefs"
+          }
+        ],
+        "limitations": [
+          "没有注入式边界。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "Activity 与 SharedPreferences/LocalOrders 是直接实现依赖。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 13,
+            "locator": "line 13: override fun onCreate",
+            "path": "app/src/main/java/org/bench/compact/MainActivity.kt",
+            "sha256": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+            "symbol": "override fun onCreate"
+          },
+          {
+            "kind": "file",
+            "line": 44,
+            "locator": "line 44: private fun reading",
+            "path": "app/src/main/java/org/bench/compact/MainActivity.kt",
+            "sha256": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+            "symbol": "private fun reading"
+          }
+        ],
+        "limitations": [
+          "状态和生命周期/偏好写入混合在业务页面，升级影响多个路径。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "使用公开 Android 基础控件，没有 OEM API。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10: fun column",
+            "path": "app/src/main/java/org/bench/compact/Ui.kt",
+            "sha256": "7d8cdcb1ff7c84e6266472cb6a5c444205fde913de081cd9497be98a61bdb985",
+            "symbol": "fun column"
+          },
+          {
+            "kind": "file",
+            "line": 22,
+            "locator": "line 22: private fun home",
+            "path": "app/src/main/java/org/bench/compact/MainActivity.kt",
+            "sha256": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+            "symbol": "private fun home"
+          }
+        ],
+        "limitations": [
+          "单套紧凑布局与像素间距，没有实质设备配置或适配层验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "目录数据不引用设备型号。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "1718904a95ff2d4c8befa09770bcdff40417ae71e15f3cd94752c027ca88a2f9",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "不伪造历史tags或设备分支；主题/场景变化不自动等同分支策略。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "只有本次本地main实际建设提交，没有已实施的多平台分支/变体策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10: fun add",
+            "path": "app/src/main/java/org/bench/compact/LocalOrders.kt",
+            "sha256": "59116f4fd6887ff0cff82ebe92c69c7aa16578132e6624909c017352e24220cd",
+            "symbol": "fun add"
+          },
+          {
+            "kind": "file",
+            "line": 33,
+            "locator": "line 33: private fun detail",
+            "path": "app/src/main/java/org/bench/compact/MainActivity.kt",
+            "sha256": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+            "symbol": "private fun detail"
+          }
+        ],
+        "limitations": [
+          "页面中标题/按钮/偏好读写仍有少量重复，未抽成统一状态管理。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "订单去重、取消、同步集中在 LocalOrders，核心不是七份同壳。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 22,
+            "locator": "line 22: private fun home",
+            "path": "app/src/main/java/org/bench/compact/MainActivity.kt",
+            "sha256": "18205c31b21b42e3f0ccfcb381236008cd77eef9f21d3190853c21dd34902d8d",
+            "symbol": "private fun home"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: class LocalOrders",
+            "path": "app/src/main/java/org/bench/compact/LocalOrders.kt",
+            "sha256": "59116f4fd6887ff0cff82ebe92c69c7aa16578132e6624909c017352e24220cd",
+            "symbol": "class LocalOrders"
+          }
+        ],
+        "limitations": [
+          "可运行不表示业务与平台隔离。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "路由、收藏、离线条件和订单提交直接耦合 Activity 与 SharedPreferences。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: include ':app'",
+            "path": "settings.gradle",
+            "sha256": "1718904a95ff2d4c8befa09770bcdff40417ae71e15f3cd94752c027ca88a2f9",
+            "symbol": "include ':app'"
+          }
+        ],
+        "limitations": [
+          "仓外 UI 场景验证队列/恢复/取消，不能转换为仓内测试得分。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "该画像未配置仓内测试，Git 清单无测试源。",
+        "score": 0,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "f49cbccd75d0b5d313d7f686ab759f255ac46355"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "f49cbccd75d0b5d313d7f686ab759f255ac46355"
+}

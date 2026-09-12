@@ -1,0 +1,557 @@
+{
+  "execution": {
+    "limits": [
+      "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+      "Maintainer external tests do not count as repository-owned integration tests.",
+      "Same maintainer construction family; not an independent holdout."
+    ],
+    "records": [
+      {
+        "path": "suites/intelligent-driving-center/execution/IDC-06.json",
+        "sha256": "ef1345383075e13c6a67df543661ffe9c5bf5af289bb45d8a7db1bc39dc731af"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "0f4e6819ec2981f4a4170058402e7c8f6cf656a2",
+  "id": "IDC-06",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "0f4e6819ec2981f4a4170058402e7c8f6cf656a2",
+    "id": "IDC-06",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "744ce95da0c75b6ca01a3626029c08c64580e9627c75ed7ead52c1586a203da2",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: enum class PlanMode { Follow, Stop, Emergency, Unavailable };",
+            "path": "include/route_planner/behavior.hpp",
+            "sha256": "a8c68bd830f5f5853f05eb6ce073ba80757efa4c1dda7dc71e9e43d8b73baf38",
+            "symbol": "enum class PlanMode { Follow, Stop, Emergency, Unavailable };"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {",
+            "path": "modules/behavior/decision.cpp",
+            "sha256": "8f80f9f1f8527c844df2437a40ed14d2e9602d2cdec224c9d532b5601fda7b21",
+            "symbol": "unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {"
+          }
+        ],
+        "limitations": [
+          "有界候选选择，不包含实际地图服务或车辆执行器。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "图路由、几何、速度、扫掠碰撞与行为协调分层，场景I/O外置。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "744ce95da0c75b6ca01a3626029c08c64580e9627c75ed7ead52c1586a203da2",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: enum class PlanMode { Follow, Stop, Emergency, Unavailable };",
+            "path": "include/route_planner/behavior.hpp",
+            "sha256": "a8c68bd830f5f5853f05eb6ce073ba80757efa4c1dda7dc71e9e43d8b73baf38",
+            "symbol": "enum class PlanMode { Follow, Stop, Emergency, Unavailable };"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {",
+            "path": "modules/behavior/decision.cpp",
+            "sha256": "8f80f9f1f8527c844df2437a40ed14d2e9602d2cdec224c9d532b5601fda7b21",
+            "symbol": "unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {"
+          }
+        ],
+        "limitations": [
+          "实现仍单一静态库，分数来自实际责任/依赖而非目标数量。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "PlanningCoordinator通过Trajectory/VehicleLimits等数据接口组合速度约束、参数化和碰撞判断。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "744ce95da0c75b6ca01a3626029c08c64580e9627c75ed7ead52c1586a203da2",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: enum class PlanMode { Follow, Stop, Emergency, Unavailable };",
+            "path": "include/route_planner/behavior.hpp",
+            "sha256": "a8c68bd830f5f5853f05eb6ce073ba80757efa4c1dda7dc71e9e43d8b73baf38",
+            "symbol": "enum class PlanMode { Follow, Stop, Emergency, Unavailable };"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {",
+            "path": "modules/behavior/decision.cpp",
+            "sha256": "8f80f9f1f8527c844df2437a40ed14d2e9602d2cdec224c9d532b5601fda7b21",
+            "symbol": "unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {"
+          }
+        ],
+        "limitations": [
+          "候选代价及碰撞算法采用固定实现，无可替换策略注入。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "纯算法输入边界隔离平台，行为层调用低层规划函数。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "744ce95da0c75b6ca01a3626029c08c64580e9627c75ed7ead52c1586a203da2",
+            "symbol": "add_library("
+          }
+        ],
+        "limitations": [
+          "本机CMake/Make/Gradle和维护者脚本不等同仓内CI或远端执行。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单无仓内CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "744ce95da0c75b6ca01a3626029c08c64580e9627c75ed7ead52c1586a203da2",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # drive-route-planner",
+            "path": "README.md",
+            "sha256": "585b9bd4fb3733feaaf3fda307e1c6d59efce62ff7dc089b8d4e051f5eb52b4b",
+            "symbol": "# drive-route-planner"
+          }
+        ],
+        "limitations": [
+          "主机独立构建不代表设备固件或生产SDK集成；外部维护者测试是可选构建参数。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "当前CMake独立构建仓内全部实现，标准C99/C++17及工具链边界明确，无必需第三方实现源码或未版本化BSP。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: enum class PlanMode { Follow, Stop, Emergency, Unavailable };",
+            "path": "include/route_planner/behavior.hpp",
+            "sha256": "a8c68bd830f5f5853f05eb6ce073ba80757efa4c1dda7dc71e9e43d8b73baf38",
+            "symbol": "enum class PlanMode { Follow, Stop, Emergency, Unavailable };"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "744ce95da0c75b6ca01a3626029c08c64580e9627c75ed7ead52c1586a203da2",
+            "symbol": "add_library("
+          }
+        ],
+        "limitations": [
+          "项目版本号不足以证明接口语义化版本或兼容检查。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "公开业务接口未声明版本；只有CMake项目VERSION 1.0.0。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 33,
+            "locator": "line 33:     throw std::invalid_argument(\"stop limits\");",
+            "path": "modules/collision/swept_volume.cpp",
+            "sha256": "23c16ffa9fda98153a57eb0514f090ee6f14420420fc858f7927d52dd9ec1442",
+            "symbol": "    throw std::invalid_argument(\"stop limits\");"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: static double curvature(const Waypoint &a, const Waypoint &b, const Waypoint &c) {",
+            "path": "modules/trajectory/parameterization.cpp",
+            "sha256": "1c66e8d35282afdbed6703b1ec66cf996ba10d2e8bf09faecf62ade7e6add156",
+            "symbol": "static double curvature(const Waypoint &a, const Waypoint &b, const Waypoint &c) {"
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8:     throw std::invalid_argument(\"profile limits\");",
+            "path": "modules/velocity/speed.cpp",
+            "sha256": "f2f70874c15ae9e4da738eabf8b98666aa180d405808a44fef2cf0aa03d25124",
+            "symbol": "    throw std::invalid_argument(\"profile limits\");"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {",
+            "path": "modules/behavior/decision.cpp",
+            "sha256": "8f80f9f1f8527c844df2437a40ed14d2e9602d2cdec224c9d532b5601fda7b21",
+            "symbol": "unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {"
+          }
+        ],
+        "limitations": [
+          "Coordinator组合流程较长，但职责仍是选择可行计划。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "扫掠碰撞、轨迹时间化、速度限制与车道选择按不同原因分开实现。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct TrajectoryPoint {",
+            "path": "include/route_planner/trajectory.hpp",
+            "sha256": "3320a94b05038a23d7258c6b97094d6719567baa5b0e7eeee6e65212396cf6c7",
+            "symbol": "struct TrajectoryPoint {"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {",
+            "path": "modules/behavior/decision.cpp",
+            "sha256": "8f80f9f1f8527c844df2437a40ed14d2e9602d2cdec224c9d532b5601fda7b21",
+            "symbol": "unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {"
+          }
+        ],
+        "limitations": [
+          "改变规划代价或碰撞几何需要修改核心函数。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "车辆尺寸和纵横向限制参数化，可消费不同候选轨迹。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: enum class PlanMode { Follow, Stop, Emergency, Unavailable };",
+            "path": "include/route_planner/behavior.hpp",
+            "sha256": "a8c68bd830f5f5853f05eb6ce073ba80757efa4c1dda7dc71e9e43d8b73baf38",
+            "symbol": "enum class PlanMode { Follow, Stop, Emergency, Unavailable };"
+          }
+        ],
+        "limitations": [
+          "此档说明不适用范围，不代表替换契约已被验证。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "审阅公开类型与生产实现，没有适用的继承/实现替换关系，按合同LSP中间档处理。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: enum class PlanMode { Follow, Stop, Emergency, Unavailable };",
+            "path": "include/route_planner/behavior.hpp",
+            "sha256": "a8c68bd830f5f5853f05eb6ce073ba80757efa4c1dda7dc71e9e43d8b73baf38",
+            "symbol": "enum class PlanMode { Follow, Stop, Emergency, Unavailable };"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: struct TrajectoryPoint {",
+            "path": "include/route_planner/trajectory.hpp",
+            "sha256": "3320a94b05038a23d7258c6b97094d6719567baa5b0e7eeee6e65212396cf6c7",
+            "symbol": "struct TrajectoryPoint {"
+          },
+          {
+            "kind": "file",
+            "line": 25,
+            "locator": "line 25: struct Node {",
+            "path": "include/route_planner/route_planner.hpp",
+            "sha256": "90c5a15db94111612a4d85291deb9c1de796183167dd80af7e2189a69869057b",
+            "symbol": "struct Node {"
+          }
+        ],
+        "limitations": [
+          "基础公共头仍聚合图、几何及速度类型，消费者编译依赖偏宽。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "behavior与trajectory接口有区分，调用方可直接用函数。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: enum class PlanMode { Follow, Stop, Emergency, Unavailable };",
+            "path": "include/route_planner/behavior.hpp",
+            "sha256": "a8c68bd830f5f5853f05eb6ce073ba80757efa4c1dda7dc71e9e43d8b73baf38",
+            "symbol": "enum class PlanMode { Follow, Stop, Emergency, Unavailable };"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {",
+            "path": "modules/behavior/decision.cpp",
+            "sha256": "8f80f9f1f8527c844df2437a40ed14d2e9602d2cdec224c9d532b5601fda7b21",
+            "symbol": "unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {"
+          }
+        ],
+        "limitations": [
+          "算法策略静态调用，没有实际替换点。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "业务接口没有平台专有类型，候选及障碍数据由调用者提供。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # Flat scalar configuration; keys are required.",
+            "path": "config/default.yaml",
+            "sha256": "ef05c5e0d36141884f4f9fd8f0909779c7a914ebbf3f9bde1c323f23f521e1d4",
+            "symbol": "# Flat scalar configuration; keys are required."
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "744ce95da0c75b6ca01a3626029c08c64580e9627c75ed7ead52c1586a203da2",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-06/final-native-run.json",
+          "IDC-06/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "只完成当前主机环境验证，没有两种受支持平台/接口升级兼容回归。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "平台依赖主要限制在I/O、配置或适配处，业务核心消费标准数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # Flat scalar configuration; keys are required.",
+            "path": "config/default.yaml",
+            "sha256": "ef05c5e0d36141884f4f9fd8f0909779c7a914ebbf3f9bde1c323f23f521e1d4",
+            "symbol": "# Flat scalar configuration; keys are required."
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "744ce95da0c75b6ca01a3626029c08c64580e9627c75ed7ead52c1586a203da2",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-06/final-native-run.json",
+          "IDC-06/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "仅主机替身验证；运行时多传感器/多个数值配置不等同两组完整设备适配验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "业务消费参数、显式输入和共用计算逻辑，可从不同来源提供数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # Flat scalar configuration; keys are required.",
+            "path": "config/default.yaml",
+            "sha256": "ef05c5e0d36141884f4f9fd8f0909779c7a914ebbf3f9bde1c323f23f521e1d4",
+            "symbol": "# Flat scalar configuration; keys are required."
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "744ce95da0c75b6ca01a3626029c08c64580e9627c75ed7ead52c1586a203da2",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-06/final-native-run.json",
+          "IDC-06/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "未合成分支/tag，运行参数或算法场景不自动算平台变体。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "实际Git仅main初始/实现提交，无已落实的多平台维护策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8:     throw std::invalid_argument(\"profile limits\");",
+            "path": "modules/velocity/speed.cpp",
+            "sha256": "f2f70874c15ae9e4da738eabf8b98666aa180d405808a44fef2cf0aa03d25124",
+            "symbol": "    throw std::invalid_argument(\"profile limits\");"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {",
+            "path": "modules/behavior/decision.cpp",
+            "sha256": "8f80f9f1f8527c844df2437a40ed14d2e9602d2cdec224c9d532b5601fda7b21",
+            "symbol": "unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {"
+          }
+        ],
+        "limitations": [
+          "旧速度函数与Coordinator纵向约束均含加减速度扫掠计算，局部重复。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "公共轨迹参数化和collision_free在选路与紧急停车共用。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {",
+            "path": "modules/behavior/decision.cpp",
+            "sha256": "8f80f9f1f8527c844df2437a40ed14d2e9602d2cdec224c9d532b5601fda7b21",
+            "symbol": "unsigned select_lane(const std::vector<LaneOption> &options, unsigned current, double desired) {"
+          }
+        ],
+        "limitations": [
+          "此分不自动证明平台迁移、多设备运行或物理设备验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "生产业务只使用C/C++标准值类型/标准库或明确JNI、TCP、I/O适配边界。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 54,
+            "locator": "line 54: auto plan = coordinator.choose",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "1b6a8b17ff87b24fac80da0aee5c3febcc4743f56d49f65814a56d7e4479d356",
+            "symbol": "auto plan = coordinator.choose"
+          },
+          {
+            "kind": "file",
+            "line": 56,
+            "locator": "line 56: auto blocked = coordinator.choose",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "1b6a8b17ff87b24fac80da0aee5c3febcc4743f56d49f65814a56d7e4479d356",
+            "symbol": "auto blocked = coordinator.choose"
+          },
+          {
+            "kind": "file",
+            "line": 51,
+            "locator": "line 51: auto trajectory = parameterize",
+            "path": "modules/behavior/decision.cpp",
+            "sha256": "8f80f9f1f8527c844df2437a40ed14d2e9602d2cdec224c9d532b5601fda7b21",
+            "symbol": "auto trajectory = parameterize"
+          }
+        ],
+        "execution_evidence": [
+          "IDC-06/final-native-run.json",
+          "IDC-06/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "测试是合成二维场景；没有真实道路安全/物理车辆性能保证。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "仓内Coordinator→限速→parameterize→collision_free真实组合，覆盖正常停车、阻挡后制动及无法避免碰撞的显式风险返回。",
+        "score": 3,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "9c60b436285f8f63b768ff2c7caee7561c20bb87"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "9c60b436285f8f63b768ff2c7caee7561c20bb87"
+}

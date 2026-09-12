@@ -1,0 +1,586 @@
+{
+  "execution": {
+    "limits": [
+      "Host integration scene with a small deterministic road graph and input replay; no production autonomous driving claim.",
+      "MCU activity is the real repository host BSP implementation, not execution on a physical microcontroller.",
+      "No repository test suite in this umbrella; successful external semantic checks do not become internal test scores.",
+      "Adaptive dependency CLI also executes localhost TCP/RPC; the product bridge itself exercises codec/queue/discovery in process.",
+      "The published source history has provenance metadata normalized. Original executed HEAD/tree and byte-equivalence evidence are retained explicitly; this metadata operation is not a new native run."
+    ],
+    "records": [
+      {
+        "path": "suites/intelligent-driving-center/execution/IDC-10.json",
+        "sha256": "1bfa05b43636287114ffe2bea2fe53ed075ab2b481dfc15c08a8ec98d5285c24"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "13d83b57827247366cea13f88daba33234da8fc8",
+  "id": "IDC-10",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "13d83b57827247366cea13f88daba33234da8fc8",
+    "id": "IDC-10",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 143,
+            "line_start": 109,
+            "locator": "lines 109-143: def execute",
+            "path": "integrate.py",
+            "sha256": "d98d27877c2bd43e45089636f1fa074b6f77103d442b2982c9fff412f917b21d"
+          },
+          {
+            "kind": "file",
+            "line_end": 43,
+            "line_start": 25,
+            "locator": "lines 25-43: namespace input",
+            "path": "app/csv.cpp",
+            "sha256": "e59fc146df303f1273ae0bcb6a2603d0d129c1168dbe204cdfe394207bd6b077"
+          },
+          {
+            "kind": "file",
+            "line_end": 54,
+            "line_start": 27,
+            "locator": "lines 27-54: int main",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          }
+        ],
+        "limitations": [
+          "不能仅凭八个子仓就把产品自身编排视为分层完整。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "Python准备版本锁/构建依赖，CMake链接产品，C++消费场景并调度真实业务模块，文件输入解析另有边界；main仍混合路线装配、感知、仲裁、CAN编码和通信生命周期。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 152,
+            "line_start": 128,
+            "locator": "lines 128-152: for name in product['platforms'][platform]['modules']",
+            "path": "integrate.py",
+            "sha256": "d98d27877c2bd43e45089636f1fa074b6f77103d442b2982c9fff412f917b21d"
+          },
+          {
+            "kind": "file",
+            "line_end": 126,
+            "line_start": 107,
+            "locator": "lines 107-126: auto vehicle =",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          }
+        ],
+        "limitations": [
+          "导入归档不改变本产品必须共同编译外部实现源码的事实。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "实际静态库由独立源码仓构建后导入，产物与头文件在使用前检查，模块职责可辨认；产品主循环仍集中共享这些模块状态及具体数据结构。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 61,
+            "line_start": 50,
+            "locator": "lines 50-61: sensor_fusion::Fusion",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 17,
+            "line_start": 7,
+            "locator": "lines 7-17: #if PRODUCT_PARKING",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 177,
+            "line_start": 167,
+            "locator": "lines 167-177: Mcu_ReceiveCan",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          }
+        ],
+        "limitations": [
+          "没有可替换的感知/停车/执行器抽象。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "产品有manifest、CSV解析和构建边界，但运行main直接创建具体Fusion/WorldModel/Planner/MCU实现，并以编译期开关选择停车实现。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 30,
+            "line_start": 26,
+            "locator": "lines 26-30: Boundaries and quality",
+            "path": "README.md",
+            "sha256": "1207b5f172a7cf5d85d5b01ee5efd02018404760af7b182b20babd8a70655207"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete current tracked tree 7d6d62bb86e758bc2ddfa5b4cbe59da25cd45f21 and complete actual refs/history; no inferred CI or release branches",
+            "oid": "13d83b57827247366cea13f88daba33234da8fc8",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "不猜测组织侧流水线。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整跟踪树无CI配置，本地集成执行和外部验证不等于仓内CI。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 124,
+            "line_start": 121,
+            "locator": "lines 121-124: built = engine.build",
+            "path": "integrate.py",
+            "sha256": "d98d27877c2bd43e45089636f1fa074b6f77103d442b2982c9fff412f917b21d"
+          },
+          {
+            "kind": "file",
+            "line_end": 8,
+            "line_start": 1,
+            "locator": "lines 1-8: [submodule",
+            "path": ".gitmodules",
+            "sha256": "0b5bd6d25a4d367598d6c0be0720579d475821c5303b4c5dab28bed426b49606"
+          },
+          {
+            "kind": "file",
+            "line_end": 14,
+            "line_start": 8,
+            "locator": "lines 8-14: include(",
+            "path": "CMakeLists.txt",
+            "sha256": "6ed41478eb04b7fef0957d723f7312696b9b527cbb42d5a7e1c5ad7a269dfd1a"
+          }
+        ],
+        "limitations": [
+          "没有把本地构建出的archive伪装成外部独立SDK交付。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "运行入口先调用orchestrator从八个源码Gitlink真实编译，再导入静态库链接产品；库导入语法本身不消除外部实现共同编译。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 51,
+            "line_start": 33,
+            "locator": "lines 33-51: \"interfaces\"",
+            "path": "product.json",
+            "sha256": "681a23b083d74e04125c3a8dd2901db37acbc33be57d4a01511e5b639fb55d5f"
+          },
+          {
+            "kind": "file",
+            "line_end": 71,
+            "line_start": 50,
+            "locator": "lines 50-71: def validate",
+            "path": "integrate.py",
+            "sha256": "d98d27877c2bd43e45089636f1fa074b6f77103d442b2982c9fff412f917b21d"
+          },
+          {
+            "kind": "file",
+            "line_end": 40,
+            "line_start": 39,
+            "locator": "lines 39-40: cfg.at(\"message_major\") != 1",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 2,
+            "line_start": 2,
+            "locator": "lines 2-2: project(",
+            "path": "CMakeLists.txt",
+            "sha256": "6ed41478eb04b7fef0957d723f7312696b9b527cbb42d5a7e1c5ad7a269dfd1a"
+          }
+        ],
+        "limitations": [
+          "有效的消息形状/major拒绝检查保留为工程证据，不据此给自身API语义化或跨版本兼容高档。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "产品消息描述和运行配置手工提供major=1，实际拒绝不一致描述及major=2；但没有自身MAJOR.MINOR.PATCH公开接口契约。CMake的项目1.0.0及被消费库的版本锁不替代产品消息API的语义化版本管理。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 49,
+            "line_start": 26,
+            "locator": "lines 26-49: std::vector<std::vector<double>> rows",
+            "path": "app/csv.cpp",
+            "sha256": "e59fc146df303f1273ae0bcb6a2603d0d129c1168dbe204cdfe394207bd6b077"
+          },
+          {
+            "kind": "file",
+            "line_end": 70,
+            "line_start": 27,
+            "locator": "lines 27-70: int main",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 183,
+            "line_start": 156,
+            "locator": "lines 156-183: const auto encoded_speed",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          }
+        ],
+        "limitations": [
+          "这是有界主机编排器，未据能运行判为完备软件架构。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "CSV解析与准备构建单独实现；产品main仍跨越路线固定图、感知变换、泊车状态、CAN字节布局和进程/通信监督，多种修改原因集中在一个函数。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 32,
+            "line_start": 4,
+            "locator": "lines 4-32: \"platforms\"",
+            "path": "product.json",
+            "sha256": "681a23b083d74e04125c3a8dd2901db37acbc33be57d4a01511e5b639fb55d5f"
+          },
+          {
+            "kind": "file",
+            "line_end": 17,
+            "line_start": 7,
+            "locator": "lines 7-17: #if PRODUCT_PARKING",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 18,
+            "line_start": 12,
+            "locator": "lines 12-18: target_link_libraries(driving_stack",
+            "path": "CMakeLists.txt",
+            "sha256": "6ed41478eb04b7fef0957d723f7312696b9b527cbb42d5a7e1c5ad7a269dfd1a"
+          }
+        ],
+        "limitations": [
+          "现有变体支持不是任意业务策略扩展证明。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "现有两产品通过配置和PRODUCT_PARKING共用大部分流程；新增感知后端、CAN布局或执行器仍要修改核心main和链接列表。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 55,
+            "line_start": 50,
+            "locator": "lines 50-55: sensor_fusion::Fusion",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          }
+        ],
+        "limitations": [
+          "按LSP不适用范围给中间档。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "没有生产替换实现的继承/接口关系；不同业务库是协作关系，不是满足同一抽象的可替换实现。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 99,
+            "line_start": 96,
+            "locator": "lines 96-99: input::rows(argv[3]",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 184,
+            "line_start": 179,
+            "locator": "lines 179-184: #else",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 31,
+            "line_start": 20,
+            "locator": "lines 20-31: \"highway-drive\"",
+            "path": "product.json",
+            "sha256": "681a23b083d74e04125c3a8dd2901db37acbc33be57d4a01511e5b639fb55d5f"
+          }
+        ],
+        "limitations": [
+          "该问题是实际多余输入依赖，不按头文件数量扣分。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "不同模块的调用面可辨认，highway确实不链接停车/MCU/超声；但统一CSV仍要求sonar/remote_age/parking相关字段，即使该变体不消费这些能力，产品输入接口尚未完全按消费者隔离。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 55,
+            "line_start": 50,
+            "locator": "lines 50-55: sensor_fusion::Fusion",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 150,
+            "line_start": 144,
+            "locator": "lines 144-150: Parking_step",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 176,
+            "line_start": 167,
+            "locator": "lines 167-176: Mcu_ReceiveCan",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          }
+        ],
+        "limitations": [
+          "哈希锁和数据结构明确不能代替依赖倒置。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "高层产品直接依赖各具体类及Mcu_*函数，配置可选开关但没有由产品业务侧定义的感知/仲裁/执行器抽象。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 32,
+            "line_start": 4,
+            "locator": "lines 4-32: \"platforms\"",
+            "path": "product.json",
+            "sha256": "681a23b083d74e04125c3a8dd2901db37acbc33be57d4a01511e5b639fb55d5f"
+          },
+          {
+            "kind": "file",
+            "line_end": 6,
+            "line_start": 1,
+            "locator": "lines 1-6: maximum_speed",
+            "path": "config/urban-parking.conf",
+            "sha256": "2333acc8c513db476ab18cee36520fa115740c11dd234f01817785597bc4893b"
+          },
+          {
+            "kind": "file",
+            "line_end": 6,
+            "line_start": 1,
+            "locator": "lines 1-6: maximum_speed",
+            "path": "config/highway-drive.conf",
+            "sha256": "fc278de5d85d7937d567430942864a0e12081d2d4a01ff97da8b9e01cc4a2099"
+          }
+        ],
+        "limitations": [
+          "这是明确受支持产品配置的兼容回归，不宣称OS升级或实体车迁移。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "urban包含八组件/停车MCU、1.2m/s和Debug，highway包含五组件、4m/s和Release；同一核心被两套真实构建/业务场景及协议拒绝检查覆盖。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 71,
+            "line_start": 55,
+            "locator": "lines 55-71: for (auto n :",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 85,
+            "line_start": 78,
+            "locator": "lines 78-85: ultrasonic::Perception",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 169,
+            "line_start": 156,
+            "locator": "lines 156-169: const auto encoded_speed",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          }
+        ],
+        "limitations": [
+          "只完成主机BSP替身执行，不把它称作ECU或车辆验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "两组配置实际消费并产生不同模块集合/速度行为；路线图、单超声安装点、CAN ID/字节缩放和部分生命周期时限仍硬编码于主循环。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 32,
+            "line_start": 4,
+            "locator": "lines 4-32: \"platforms\"",
+            "path": "product.json",
+            "sha256": "681a23b083d74e04125c3a8dd2901db37acbc33be57d4a01511e5b639fb55d5f"
+          },
+          {
+            "kind": "file",
+            "line_end": 11,
+            "line_start": 9,
+            "locator": "lines 9-11: urban-parking",
+            "path": "README.md",
+            "sha256": "1207b5f172a7cf5d85d5b01ee5efd02018404760af7b182b20babd8a70655207"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete current tracked tree 7d6d62bb86e758bc2ddfa5b4cbe59da25cd45f21 and complete actual refs/history; no inferred CI or release branches",
+            "oid": "13d83b57827247366cea13f88daba33234da8fc8",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "本次真实变体不等于内部历史发布策略复原。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "完整Git共用main，两个实质产品变体均已真实构建回放；没有用名称不同但内容相同的分支或tag作证。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 126,
+            "line_start": 107,
+            "locator": "lines 107-126: auto vehicle =",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 203,
+            "line_start": 185,
+            "locator": "lines 185-203: supervisor.heartbeat",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 132,
+            "line_start": 109,
+            "locator": "lines 109-132: def execute",
+            "path": "integrate.py",
+            "sha256": "d98d27877c2bd43e45089636f1fa074b6f77103d442b2982c9fff412f917b21d"
+          }
+        ],
+        "limitations": [
+          "未由本仓结果推断全部八个库内部无重复。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "扫描自有integrate.py、CMakeLists.txt及app两个C++/一个头文件，排除独立子仓和场景数据。共同感知→路由→传输循环只有一份；停车特有分支与highway人工门控承担不同业务，不按相似字段或协议结构误计重复。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 181,
+            "line_start": 152,
+            "locator": "lines 152-181: while (mcu_tick",
+            "path": "app/driving_stack.cpp",
+            "sha256": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2"
+          },
+          {
+            "kind": "file",
+            "line_end": 19,
+            "line_start": 13,
+            "locator": "lines 13-19: if(PRODUCT_PARKING)",
+            "path": "CMakeLists.txt",
+            "sha256": "6ed41478eb04b7fef0957d723f7312696b9b527cbb42d5a7e1c5ad7a269dfd1a"
+          }
+        ],
+        "limitations": [
+          "平台假设有集中区域但仍与业务循环混在一起。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "大部分外部调用经过库接口，但产品主循环内仍直接编排MCU1ms节拍、CAN帧布局/CRC与PRODUCT_PARKING，业务流程绕过单独设备适配层。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 28,
+            "line_start": 28,
+            "locator": "lines 28-28: repository test suite",
+            "path": "README.md",
+            "sha256": "1207b5f172a7cf5d85d5b01ee5efd02018404760af7b182b20babd8a70655207"
+          },
+          {
+            "kind": "file",
+            "line_end": 174,
+            "line_start": 159,
+            "locator": "lines 159-174: for scenario in product['scenarios']",
+            "path": "integrate.py",
+            "sha256": "d98d27877c2bd43e45089636f1fa074b6f77103d442b2982c9fff412f917b21d"
+          }
+        ],
+        "limitations": [
+          "依赖子仓自带测试不自动计入产品仓自身测试。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "仓内提供可运行产品场景和运行时契约检查，但没有自带独立语义期望/测试夹具；8个场景和14项外部语义/负例是维护者取证，不冒充仓内测试。",
+        "score": 0
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c"
+}

@@ -1,0 +1,1111 @@
+{
+  "checks": {
+    "external_business_and_negative_checks": 14,
+    "message_and_startup_contract_checks": 8,
+    "native_product_scenarios": 8,
+    "product_frames": 56,
+    "public_snapshot_reexecution": {
+      "actual_product_configurations": 2,
+      "external_business_and_negative_checks": 14,
+      "frames": 56,
+      "native_component_builds": 13,
+      "scenario_outputs_identical_to_pre_redaction_sources": true,
+      "scenarios": 8
+    },
+    "supported_product_configurations": 2
+  },
+  "engines": [
+    "Actual C parking state machine and 1 ms MCU host BSP scheduler in urban variant",
+    "Actual native product executable and external causal/negative-case assertions",
+    "CMake / Ninja / MinGW GCC and G++",
+    "CMake/Ninja/MinGW GCC and G++ actual fresh dependency builds",
+    "Native C++ host product process"
+  ],
+  "head": "13d83b57827247366cea13f88daba33234da8fc8",
+  "id": "IDC-10",
+  "limits": [
+    "Host integration scene with a small deterministic road graph and input replay; no production autonomous driving claim.",
+    "MCU activity is the real repository host BSP implementation, not execution on a physical microcontroller.",
+    "No repository test suite in this umbrella; successful external semantic checks do not become internal test scores.",
+    "Adaptive dependency CLI also executes localhost TCP/RPC; the product bridge itself exercises codec/queue/discovery in process.",
+    "The published source history has provenance metadata normalized. Original executed HEAD/tree and byte-equivalence evidence are retained explicitly; this metadata operation is not a new native run."
+  ],
+  "name": "drive-algorithm-integration",
+  "provenance_normalization": {
+    "changed_current_files": [
+      {
+        "original_sha256": "c9af0a4d1dca32dff7bdb75198e8a19a6b9a66b3555801b897e28ab49962810b",
+        "path": "SOURCE_ORIGIN.md",
+        "public_sha256": "14d6cdac25c50db84e66315f3dccd01c819c131643477a872ddc3976ace37c65"
+      },
+      {
+        "original_sha256": "3ab614296d0f0beab268721a9fdf601b1eac6c8f8fd42996be84de588f1ed1aa",
+        "path": "product.lock.json",
+        "public_sha256": "bcfb4be837e3588883963f8b7360642b1fa65bb92d3409feef5909b06d9c72dd"
+      },
+      {
+        "original_sha256": "166c7d8e334f8dfc2dd548fd40c5d17ed7514f6dd5619ab167c52df5c6585db7",
+        "path": "scan-profile.json",
+        "public_sha256": "e9794dfc2c0e6df1b763c0dfe7777771e6cc80b7039090b91a38f9654cc3b18b"
+      }
+    ],
+    "executed_or_reviewed_head": "d589a07c2928e31e6f52b9935a0988664edfb807",
+    "executed_or_reviewed_tree": "7d6d62bb86e758bc2ddfa5b4cbe59da25cd45f21",
+    "public_head": "13d83b57827247366cea13f88daba33234da8fc8",
+    "public_tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c",
+    "schema": "provenance-normalization-binding-1",
+    "scope": "Native execution remains bound to its original recorded identity. All implementation, model, calibration, test and binary blobs are unchanged; only provenance documents and derived dependency-lock identities were normalized before first publication.",
+    "unchanged_implementation_files": 19
+  },
+  "public_snapshot_execution": {
+    "checks": {
+      "actual_product_configurations": 2,
+      "external_business_and_negative_checks": 14,
+      "frames": 56,
+      "native_component_builds": 13,
+      "scenario_outputs_identical_to_pre_redaction_sources": true,
+      "scenarios": 8
+    },
+    "engines": [
+      "CMake/Ninja/MinGW GCC and G++ actual fresh dependency builds",
+      "Actual native product executable and external causal/negative-case assertions"
+    ],
+    "head": "13d83b57827247366cea13f88daba33234da8fc8",
+    "id": "IDC-10",
+    "limits": [
+      "Host simulation and native execution only; no physical vehicle, ECU, SIL/PIL/HIL, cloud CI or certification.",
+      "Public history changes were source metadata and dependency identity mapping; business input/model/source blobs unchanged."
+    ],
+    "name": "drive-algorithm-integration",
+    "record_sha256": {
+      "IDC-10/public-highway-semantics.json": "320369e6271ce4b20a2244f22e0633d9cee68d84c21a52c45596511a44953bfd",
+      "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/build.log": "de7b93627a85b6e19929afc3855906352bd4c3eb18bce0745396f5bbaf8b1d73",
+      "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/configure.log": "0a839973fc969e8fb6bdc109bb707b42ddfb70332f6c73097560b2d7e97a1447",
+      "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/scenario.csv": "02f51552c0dce7b4c4aea4a4c9fd2473a8b74f106063a51c110f9b2fe79df591",
+      "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/scenario.log": "29140874739838431490978c345c37403f1f1d9bb5f1889c093bbe376163ea4e",
+      "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/build.log": "cf4bd33d97b81a333fb1816c2098dcdbee308ea5dd48b7d413a30a46bd6de442",
+      "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/configure.log": "778ed13e40d92566f118f854b8df19ab34f91f07294a6ad8230ec0f761c2754c",
+      "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/scenario.csv": "1ae20f0873d86d74d8be9748024a46b01899ae1021b66c0d728873bef970bd88",
+      "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/build.log": "78aa8802d25fe445a2d83eb990939325b71675564775a8c2bec5f3f0a7bd21c1",
+      "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/configure.log": "cbdf4becb8afe0b052e4dcf49e810f4505ebc0c3b18277ed01497ac35592a126",
+      "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/scenario.csv": "80feff2dfdb776bda43f4eaa7bb1422772e3323d2f8b3c82dc5d14f7c4fb535a",
+      "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/build.log": "fc8f6d11468fb0159c14efdc5f7bb05efd0cad724ad3126b536b9695aa76da84",
+      "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/configure.log": "a102f6f3a97b99c4c93c6fcea8c6d2b95ab5a12a7fe9bc7e273956f8b6dcb2d8",
+      "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/scenario.csv": "b3a4d02e906a67ed439e87a564e27a7a986770da8d3e5dee9ddc207aa4e8ba39",
+      "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/build.log": "4ca2d47390b4721bd91f901a7c79f4a8d4282ae1995e0b76fd63a945ab4a3a5d",
+      "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/configure.log": "cd47ae92533e3efdab6374bcb140d767666ac602cfd5a1233efca2d8fd95017d",
+      "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/scenario.csv": "1e8e121d3522eacfd7e708ef5ba8e821f96e9322f4dbf52048823de911de9590",
+      "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/0.log": "3b4032b99a1a58b28b77a63d56d0507d783b5aedf7b90c4ecfe15f09624d65b6",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/1.log": "c4cb7d3fbf86ea35eb7435b3c540b22e558598e7d18b80916594073dc6b11970",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/manual_takeover.csv": "273008cb5d1950edf1ebea998544d71958c0502053451422bc50de02421bfecc",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/manual_takeover.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/normal.csv": "604f5c64586df1f41cee50dfeb1294045563aee4b72cbf6db8a4294cc8bb1dab",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/normal.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/occupied_route.csv": "fa60127686d34ff58cbb76b0c26cfb3130ff1debc6f1e107500127f48bcf347f",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/occupied_route.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-highway.json": "bd8712a4c6b6422404bbdb3233cf65c526c0b27b2f7d39a6dd73f7353c5f271c",
+      "IDC-10/public-urban-semantics.json": "f9a1efa5c572536183a397de7501f9f031c5e59cc461f34f26b35e51f41dd4e5",
+      "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/build.log": "cb0128214b0399efcdc1e4d51faf1c01073157cbb4ddf4f0fef0dc258553ce7a",
+      "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/configure.log": "23ac6f1e55126306867ebb3e858a23aec8ecc3fbf9adc13f68e6b5e5db167f24",
+      "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/scenario.csv": "02f51552c0dce7b4c4aea4a4c9fd2473a8b74f106063a51c110f9b2fe79df591",
+      "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/scenario.log": "29140874739838431490978c345c37403f1f1d9bb5f1889c093bbe376163ea4e",
+      "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/build.log": "111274504e08082b148a2e639eea5083211cf99866a13ffe0b99880ff69088fc",
+      "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/configure.log": "c35a3b9e62221021c333810f239a7d148755802297e7e5ca85a4dfefbe426bd2",
+      "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/scenario.csv": "1ae20f0873d86d74d8be9748024a46b01899ae1021b66c0d728873bef970bd88",
+      "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/build.log": "b53b7cb36c7ae1a649fb63893bf6c4b343e04c08bd7191d7b26e4d767a1ce49b",
+      "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/configure.log": "fd2ce0aa8b76fb7b4d0f4b09b60427ab07076d66837fde132232044a254a6636",
+      "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/scenario.csv": "80feff2dfdb776bda43f4eaa7bb1422772e3323d2f8b3c82dc5d14f7c4fb535a",
+      "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-urban-work/dependencies/attempts/mcu/24349f83f83e-46062a2b/build.log": "20c7a78c04558b7260fd54bfec5aae0a63034b8501a047f93643f1a1a72ac535",
+      "IDC-10/public-urban-work/dependencies/attempts/mcu/24349f83f83e-46062a2b/configure.log": "fe70bcbacf7f80adf39b48aeb666cdc16208f2233c5d3a07c338510cc6ea7f6f",
+      "IDC-10/public-urban-work/dependencies/attempts/parking/018a8e63bfad-714ce1f8/build.log": "587b18bb1d027c71436d9c0071715fa1f48c8c067b695b5873b712c319acb843",
+      "IDC-10/public-urban-work/dependencies/attempts/parking/018a8e63bfad-714ce1f8/configure.log": "acb90ca04b227572a0ea0a540eed1d7d369cf594cf4222d63eaed3c0c0fb8cbb",
+      "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/build.log": "fc8f6d11468fb0159c14efdc5f7bb05efd0cad724ad3126b536b9695aa76da84",
+      "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/configure.log": "9ce2d32890ae907522c0054d37b96403fb53dea0638c0d4f434b9ab0af7fcbfd",
+      "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/scenario.csv": "b3a4d02e906a67ed439e87a564e27a7a986770da8d3e5dee9ddc207aa4e8ba39",
+      "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/build.log": "d122f65afdff7f70e9d49583461d9491dd6ffd4a5f19e3ffa729f45fb0933790",
+      "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/configure.log": "c1f343c2428012479fa423d98efa218f9afd1fb8ee48ab2e8ca38e73ce25a5b5",
+      "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/scenario.csv": "9a4202e6ffcd1999a91c8e8fa3a8145ec76d08b82f735de85a69626a44a0c440",
+      "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/build.log": "4ca2d47390b4721bd91f901a7c79f4a8d4282ae1995e0b76fd63a945ab4a3a5d",
+      "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/configure.log": "d9233d604afd884caf4fa026818da0c7cc43fd2fcb04dbdf4eeff0249de0eb58",
+      "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/scenario.csv": "1e8e121d3522eacfd7e708ef5ba8e821f96e9322f4dbf52048823de911de9590",
+      "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/0.log": "0e4fdc71b7ecb5316d8e49562645022976436689cbba7362f361c4dcb039a05f",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/1.log": "c4cb7d3fbf86ea35eb7435b3c540b22e558598e7d18b80916594073dc6b11970",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/manual_takeover.csv": "cbaeca5425fd8547bf41e19a9a453a7238455fbd80ee6e80a18263b6dc5945cf",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/manual_takeover.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/normal.csv": "bd385eb8d6d046fbb5c456a6476f7e42a2310795ba0dea1a21afa71bd8c93993",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/normal.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/obstacle_stop.csv": "a74368890e6d86ad0a80e74e10476c9b0a0c1b4117478285e7ec9b8df78f130e",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/obstacle_stop.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/occupied_route.csv": "381207832d199c8f47d5f2f6ecae1c4d0aae0e5a77c21a8ac92a79a370398725",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/occupied_route.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/stale_remote.csv": "a14efe5a8c751d875a5cad016704f81a778df4632f998fb450321f09ff648e63",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/stale_remote.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "IDC-10/public-urban.json": "5d5ce3f598a3374eb731c35278d160019b99efb58620211e0b5c7e4ce7bd44dd"
+    },
+    "records": [
+      "IDC-10/public-highway-semantics.json",
+      "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/build.log",
+      "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/configure.log",
+      "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/scenario.csv",
+      "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/scenario.log",
+      "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/build.log",
+      "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/configure.log",
+      "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/scenario.csv",
+      "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/scenario.log",
+      "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/build.log",
+      "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/configure.log",
+      "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/scenario.csv",
+      "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/scenario.log",
+      "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/build.log",
+      "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/configure.log",
+      "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/scenario.csv",
+      "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/scenario.log",
+      "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/build.log",
+      "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/configure.log",
+      "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/scenario.csv",
+      "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/scenario.log",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/0.log",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/1.log",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/manual_takeover.csv",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/manual_takeover.log",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/normal.csv",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/normal.log",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/occupied_route.csv",
+      "IDC-10/public-highway-work/products/highway-drive-2440bea76b/occupied_route.log",
+      "IDC-10/public-highway.json",
+      "IDC-10/public-urban-semantics.json",
+      "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/build.log",
+      "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/configure.log",
+      "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/scenario.csv",
+      "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/scenario.log",
+      "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/build.log",
+      "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/configure.log",
+      "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/scenario.csv",
+      "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/scenario.log",
+      "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/build.log",
+      "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/configure.log",
+      "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/scenario.csv",
+      "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/scenario.log",
+      "IDC-10/public-urban-work/dependencies/attempts/mcu/24349f83f83e-46062a2b/build.log",
+      "IDC-10/public-urban-work/dependencies/attempts/mcu/24349f83f83e-46062a2b/configure.log",
+      "IDC-10/public-urban-work/dependencies/attempts/parking/018a8e63bfad-714ce1f8/build.log",
+      "IDC-10/public-urban-work/dependencies/attempts/parking/018a8e63bfad-714ce1f8/configure.log",
+      "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/build.log",
+      "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/configure.log",
+      "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/scenario.csv",
+      "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/scenario.log",
+      "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/build.log",
+      "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/configure.log",
+      "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/scenario.csv",
+      "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/scenario.log",
+      "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/build.log",
+      "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/configure.log",
+      "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/scenario.csv",
+      "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/scenario.log",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/0.log",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/1.log",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/manual_takeover.csv",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/manual_takeover.log",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/normal.csv",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/normal.log",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/obstacle_stop.csv",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/obstacle_stop.log",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/occupied_route.csv",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/occupied_route.log",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/stale_remote.csv",
+      "IDC-10/public-urban-work/products/urban-parking-45e302b6de/stale_remote.log",
+      "IDC-10/public-urban.json"
+    ],
+    "runs": [
+      {
+        "all_scenario_csv_bytes_equal_pre_redaction_run": true,
+        "external_checks": 8,
+        "frames": 35,
+        "native_components": 8,
+        "platform": "urban-parking",
+        "scenarios": 5,
+        "source_identity": "13d83b57827247366cea13f88daba33234da8fc8"
+      },
+      {
+        "all_scenario_csv_bytes_equal_pre_redaction_run": true,
+        "external_checks": 6,
+        "frames": 21,
+        "native_components": 5,
+        "platform": "highway-drive",
+        "scenarios": 3,
+        "source_identity": "13d83b57827247366cea13f88daba33234da8fc8"
+      }
+    ],
+    "status": "passed",
+    "tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c"
+  },
+  "raw_packet": {
+    "bytes": 13886791,
+    "format": "candidate-raw-inputs-v1",
+    "name": "center-native-inputs-v0.12.0.zip",
+    "release_url": "https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.12.0",
+    "sha256": "d0d076424d5a83516bff67997779a1bc5125daa408c1ab52d025930cf72c348a",
+    "sources": {
+      "AIC-01": {
+        "head": "554118dcaed430f1712f1ac5c4be9ae9fc91e749",
+        "tree": "f7744f765c475125f20b2f83f31116a2c160c15a"
+      },
+      "AIC-02": {
+        "head": "69582afa41f69548179a6e8db297b326454ee4d3",
+        "tree": "5255217dbee9c9c032432b474b3aeab4a3f7d320"
+      },
+      "AIC-03": {
+        "head": "b7dc0937f48bbcf3b163ce46dd70098d708bbe50",
+        "tree": "f49cbccd75d0b5d313d7f686ab759f255ac46355"
+      },
+      "AIC-04": {
+        "head": "2a2987de0db0d345c77748aafbfd3b693a6ca073",
+        "tree": "2d0b4fea320f52d2e8e9d2392f6115bcd57f59bb"
+      },
+      "AIC-05": {
+        "head": "2f94a73210da7bb69575b806c7f431183fec759b",
+        "tree": "76e61f200adb540622de3743613ebee40f700a47"
+      },
+      "AIC-06": {
+        "head": "33e6f4c186d1548c2906d74232a9ffa0ebde6996",
+        "tree": "156371a7dfc973a2123010b9bb5c385639793ded"
+      },
+      "AIC-07": {
+        "head": "8394177bed790a0c0ba557d87931e00bb0b13235",
+        "tree": "90303ff3a3998adb99784c4b3017c5846ffa440a"
+      },
+      "AIC-08": {
+        "head": "58b1e989cf25e7431717b6c7a5b43ae8856962ec",
+        "tree": "e39b8dd3fe29167a2aad5eeba90147fb15a12a50"
+      },
+      "AIC-09": {
+        "head": "ed34ae9126eed17cc34806a0ab60e3b7f68fc071",
+        "tree": "0e80e150bbaf4c2e1f5a94045860c87498b463ac"
+      },
+      "AIC-10": {
+        "head": "04ecdf17210613d85535e4a51efd1a61ec3fab40",
+        "tree": "5119dd42132a3855a8e9db74658438e53c35ab7c"
+      },
+      "AIC-11": {
+        "head": "b0851c013d9996e553cca4f58c2f787d06bf6b0f",
+        "tree": "821f678bbfae87d485bfd6b208a32606521d9f16"
+      },
+      "ARC-01": {
+        "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+        "tree": "d05d608119d5b88086d9d077f9e6f2505dddf614"
+      },
+      "ARC-02": {
+        "head": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+        "tree": "70a72c0b2254efb4226a6fb19ad91be9aa47bbf7"
+      },
+      "ARC-03": {
+        "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+        "tree": "10af906321d6cb8a8c0a1335ce6c8ca28932ddc7"
+      },
+      "ARC-04": {
+        "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+        "tree": "6d4ecc7d48a66c00f7b232917196b7995015a466"
+      },
+      "ARC-05": {
+        "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+        "tree": "8af5b2293dfcd63936ecf6fbb553ab231b75c2c6"
+      },
+      "ARC-06": {
+        "head": "258ba5ba20acffb8b4c16f0d7e905611498a1928",
+        "tree": "6d2d152642b07aa4149c02c0982ddaf230a52c76"
+      },
+      "ARC-07": {
+        "head": "43d3360c130d347dc3e2d818b25dc0e8716abc9f",
+        "tree": "208682dfe483e0af4cbc86fef09a6f9d68ded7f2"
+      },
+      "ARC-08": {
+        "head": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827",
+        "tree": "f78aafac2df2c0eb3ff3a73cb10d23501f4eadf2"
+      },
+      "ARC-09": {
+        "head": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+        "tree": "6a84feae70438c8f969d1ad35b7886ca20dbb7e5"
+      },
+      "ARC-10": {
+        "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+        "tree": "3085c2803f5add13a353c69f2beaf22e0bc177b8"
+      },
+      "ARC-11": {
+        "head": "204dab303944f787a4702e3dfb8d215b07ce0371",
+        "tree": "acac89513567bc9e4ee68c07397dafc9b746290f"
+      },
+      "IDC-01": {
+        "head": "ca9fa37711754fd3fccc1ada6145f75475a1649c",
+        "tree": "b2b6df534b7633fb0d8386dc886a9a3c9ff35822"
+      },
+      "IDC-02": {
+        "head": "7dc81b216d594b0bdee5fc1095a8296a8beef005",
+        "tree": "268b81e4c952971f5758f75d7a9bc944fc72713b"
+      },
+      "IDC-03": {
+        "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+        "tree": "0126c386fb81044f3feedfa2c828e83bc7ce6bdf"
+      },
+      "IDC-04": {
+        "head": "257dcc87392c004a682b38b8df8645d5970997ab",
+        "tree": "52ecb01a014153e1d3895f15cd70cce512bf2cdf"
+      },
+      "IDC-05": {
+        "head": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff",
+        "tree": "a52ae34535e9dba329b2ae375c3b7eac78e9873b"
+      },
+      "IDC-06": {
+        "head": "0f4e6819ec2981f4a4170058402e7c8f6cf656a2",
+        "tree": "9c60b436285f8f63b768ff2c7caee7561c20bb87"
+      },
+      "IDC-07": {
+        "head": "30f934b48ae56ceee8c490ef655d6ef38c42dba7",
+        "tree": "530fd74a9901bf624d896edca3b4fd679fb3df7c"
+      },
+      "IDC-08": {
+        "head": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1",
+        "tree": "6af5f27a12415791ff8abda0ecaea6f0317a77de"
+      },
+      "IDC-09": {
+        "head": "e629895f0302ae51e7f229794f72a9e06edbe183",
+        "tree": "25fbc686ebd7df7c69b7b5a8b3b9d50993688a92"
+      },
+      "IDC-10": {
+        "head": "13d83b57827247366cea13f88daba33234da8fc8",
+        "tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c"
+      },
+      "IDC-11": {
+        "head": "fbb4014901ac35cd6b0083977eeee1e481d330c9",
+        "tree": "3fe05f9e66804cafa03b618d6465456b318b3b27"
+      }
+    }
+  },
+  "record_sha256": {
+    "IDC-10/contract-verification.json": "d7c15832fd50c6f3fd3410c70077deed8dfa9d13a70d2c97b15369913abf48cf",
+    "IDC-10/final-highway-work/dependencies/attempts/adaptive/38106eb1744b-f9ed8d78/build.log": "cb0128214b0399efcdc1e4d51faf1c01073157cbb4ddf4f0fef0dc258553ce7a",
+    "IDC-10/final-highway-work/dependencies/attempts/adaptive/38106eb1744b-f9ed8d78/configure.log": "9f9d49769055614e5a5691b27031b5b05116746958a0f123aaf18df6c190dce7",
+    "IDC-10/final-highway-work/dependencies/attempts/adaptive/38106eb1744b-f9ed8d78/scenario.log": "29140874739838431490978c345c37403f1f1d9bb5f1889c093bbe376163ea4e",
+    "IDC-10/final-highway-work/dependencies/attempts/calibration/346c9c551b71-fd7f51ba/build.log": "cf4bd33d97b81a333fb1816c2098dcdbee308ea5dd48b7d413a30a46bd6de442",
+    "IDC-10/final-highway-work/dependencies/attempts/calibration/346c9c551b71-fd7f51ba/configure.log": "cf3e19464e7282082c5a1e13093fa17475266096fac51c15b099f82209a3691e",
+    "IDC-10/final-highway-work/dependencies/attempts/calibration/346c9c551b71-fd7f51ba/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-highway-work/dependencies/attempts/fusion/ec040958d215-20b9324e/build.log": "78aa8802d25fe445a2d83eb990939325b71675564775a8c2bec5f3f0a7bd21c1",
+    "IDC-10/final-highway-work/dependencies/attempts/fusion/ec040958d215-20b9324e/configure.log": "8ad0a11e611a8dfcb73398429eb80eb95d7cee1034f8540a89cc481455b88729",
+    "IDC-10/final-highway-work/dependencies/attempts/fusion/ec040958d215-20b9324e/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-highway-work/dependencies/attempts/route/8d7a002f4798-cc91d852/build.log": "fc8f6d11468fb0159c14efdc5f7bb05efd0cad724ad3126b536b9695aa76da84",
+    "IDC-10/final-highway-work/dependencies/attempts/route/8d7a002f4798-cc91d852/configure.log": "c6870ceda6cc3f9f8895adad2b261fb45f4991947ef52969ca9ed81a5cd5d7cd",
+    "IDC-10/final-highway-work/dependencies/attempts/route/8d7a002f4798-cc91d852/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-highway-work/dependencies/attempts/world/e379da01e233-c2302ed9/build.log": "4ca2d47390b4721bd91f901a7c79f4a8d4282ae1995e0b76fd63a945ab4a3a5d",
+    "IDC-10/final-highway-work/dependencies/attempts/world/e379da01e233-c2302ed9/configure.log": "555fe86bbd5c0b5dd5ee7f0508fe555401ae5e4da49a112ed707f4a5d788f382",
+    "IDC-10/final-highway-work/dependencies/attempts/world/e379da01e233-c2302ed9/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/0.log": "e25e9604584ac8d2868761d760f58831810938216a4a2265a888f02c9bce24fd",
+    "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/1.log": "c4cb7d3fbf86ea35eb7435b3c540b22e558598e7d18b80916594073dc6b11970",
+    "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/manual_takeover.csv": "273008cb5d1950edf1ebea998544d71958c0502053451422bc50de02421bfecc",
+    "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/manual_takeover.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/normal.csv": "604f5c64586df1f41cee50dfeb1294045563aee4b72cbf6db8a4294cc8bb1dab",
+    "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/normal.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/occupied_route.csv": "fa60127686d34ff58cbb76b0c26cfb3130ff1debc6f1e107500127f48bcf347f",
+    "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/occupied_route.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-highway.json": "f3ed00142bfec32f5dd368841de3bb2ce41b75459fb53561a8f02e097e22139a",
+    "IDC-10/final-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-3a6311e5/build.log": "a576da41e332b1de086d9ffb1537cd79ff5e729c265b404bde407c983a315a1f",
+    "IDC-10/final-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-3a6311e5/configure.log": "07c2b6a70c419c04b33ad5e30b1486d16d670299e329214fc2a404d63c089cf1",
+    "IDC-10/final-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-3a6311e5/scenario.log": "29140874739838431490978c345c37403f1f1d9bb5f1889c093bbe376163ea4e",
+    "IDC-10/final-urban-work/dependencies/attempts/calibration/2a9b14bf2759-48f9a4f9/build.log": "cf4bd33d97b81a333fb1816c2098dcdbee308ea5dd48b7d413a30a46bd6de442",
+    "IDC-10/final-urban-work/dependencies/attempts/calibration/2a9b14bf2759-48f9a4f9/configure.log": "777e147422548b8f13be1204505919e508c90f455aec4ae48db5c42fa9678c7a",
+    "IDC-10/final-urban-work/dependencies/attempts/calibration/2a9b14bf2759-48f9a4f9/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-urban-work/dependencies/attempts/fusion/01111101eca8-b195b4a6/build.log": "78aa8802d25fe445a2d83eb990939325b71675564775a8c2bec5f3f0a7bd21c1",
+    "IDC-10/final-urban-work/dependencies/attempts/fusion/01111101eca8-b195b4a6/configure.log": "b30445c96eaac6acf9bf1f8f3cfa6a5018780a988db90ce8248a16e8945f6233",
+    "IDC-10/final-urban-work/dependencies/attempts/fusion/01111101eca8-b195b4a6/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-urban-work/dependencies/attempts/mcu/22871d8558b7-aed04b90/build.log": "20c7a78c04558b7260fd54bfec5aae0a63034b8501a047f93643f1a1a72ac535",
+    "IDC-10/final-urban-work/dependencies/attempts/mcu/22871d8558b7-aed04b90/configure.log": "c230a1d9e0b49557885b19da7afdafb975a93ec2013c02ab8381f16fb9b7c887",
+    "IDC-10/final-urban-work/dependencies/attempts/parking/9497d1378c81-b7161925/build.log": "587b18bb1d027c71436d9c0071715fa1f48c8c067b695b5873b712c319acb843",
+    "IDC-10/final-urban-work/dependencies/attempts/parking/9497d1378c81-b7161925/configure.log": "378c3691686caaf97c002a22e64ca3515358ac64ed047061877e7e1375c01c92",
+    "IDC-10/final-urban-work/dependencies/attempts/route/62d95884eb91-799a7c46/build.log": "62695c019dc74a9644a151e50efa5ff7e6a79af9b8a32a338ace9ac837fde18c",
+    "IDC-10/final-urban-work/dependencies/attempts/route/62d95884eb91-799a7c46/configure.log": "d7abff27fdde5dc25ee373e0ef3762b25b81da2963f67b0a2e1099cd866b463b",
+    "IDC-10/final-urban-work/dependencies/attempts/route/62d95884eb91-799a7c46/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-21f465b0/build.log": "592a84da2b97b6a674764a4ee9436447209ee1fdd9847c7164e2cd5667860426",
+    "IDC-10/final-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-21f465b0/configure.log": "0f200664a74de452a5a02b288737b620bb345c04c0bfdea5435f9359931eea06",
+    "IDC-10/final-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-21f465b0/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-urban-work/dependencies/attempts/world/b5847714a6e6-e0cae2c7/build.log": "4ca2d47390b4721bd91f901a7c79f4a8d4282ae1995e0b76fd63a945ab4a3a5d",
+    "IDC-10/final-urban-work/dependencies/attempts/world/b5847714a6e6-e0cae2c7/configure.log": "623c22dd217e1de2edf566d68391aad053565ba63ba0cb45bae7f0241502bdbb",
+    "IDC-10/final-urban-work/dependencies/attempts/world/b5847714a6e6-e0cae2c7/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/0.log": "91ec69e0e7c5d7d57467c8f3b2d3ac75f75192ea1df68fd5dc04761fbefee083",
+    "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/1.log": "c4cb7d3fbf86ea35eb7435b3c540b22e558598e7d18b80916594073dc6b11970",
+    "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/manual_takeover.csv": "cbaeca5425fd8547bf41e19a9a453a7238455fbd80ee6e80a18263b6dc5945cf",
+    "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/manual_takeover.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/normal.csv": "bd385eb8d6d046fbb5c456a6476f7e42a2310795ba0dea1a21afa71bd8c93993",
+    "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/normal.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/obstacle_stop.csv": "a74368890e6d86ad0a80e74e10476c9b0a0c1b4117478285e7ec9b8df78f130e",
+    "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/obstacle_stop.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/occupied_route.csv": "381207832d199c8f47d5f2f6ecae1c4d0aae0e5a77c21a8ac92a79a370398725",
+    "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/occupied_route.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/stale_remote.csv": "a14efe5a8c751d875a5cad016704f81a778df4632f998fb450321f09ff648e63",
+    "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/stale_remote.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/final-urban.json": "5b30527ff39fd9b41c85b845148f6c1536617c4c638099173632a383dc162ad1",
+    "IDC-10/provenance-normalization.json": "f7e1a80c1e4331a249d0f7fba36fb980611e5417674e42cd030ac8cf73f9de01",
+    "IDC-10/public-highway-semantics.json": "320369e6271ce4b20a2244f22e0633d9cee68d84c21a52c45596511a44953bfd",
+    "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/build.log": "de7b93627a85b6e19929afc3855906352bd4c3eb18bce0745396f5bbaf8b1d73",
+    "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/configure.log": "0a839973fc969e8fb6bdc109bb707b42ddfb70332f6c73097560b2d7e97a1447",
+    "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/scenario.csv": "02f51552c0dce7b4c4aea4a4c9fd2473a8b74f106063a51c110f9b2fe79df591",
+    "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/scenario.log": "29140874739838431490978c345c37403f1f1d9bb5f1889c093bbe376163ea4e",
+    "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/build.log": "cf4bd33d97b81a333fb1816c2098dcdbee308ea5dd48b7d413a30a46bd6de442",
+    "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/configure.log": "778ed13e40d92566f118f854b8df19ab34f91f07294a6ad8230ec0f761c2754c",
+    "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/scenario.csv": "1ae20f0873d86d74d8be9748024a46b01899ae1021b66c0d728873bef970bd88",
+    "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/build.log": "78aa8802d25fe445a2d83eb990939325b71675564775a8c2bec5f3f0a7bd21c1",
+    "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/configure.log": "cbdf4becb8afe0b052e4dcf49e810f4505ebc0c3b18277ed01497ac35592a126",
+    "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/scenario.csv": "80feff2dfdb776bda43f4eaa7bb1422772e3323d2f8b3c82dc5d14f7c4fb535a",
+    "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/build.log": "fc8f6d11468fb0159c14efdc5f7bb05efd0cad724ad3126b536b9695aa76da84",
+    "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/configure.log": "a102f6f3a97b99c4c93c6fcea8c6d2b95ab5a12a7fe9bc7e273956f8b6dcb2d8",
+    "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/scenario.csv": "b3a4d02e906a67ed439e87a564e27a7a986770da8d3e5dee9ddc207aa4e8ba39",
+    "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/build.log": "4ca2d47390b4721bd91f901a7c79f4a8d4282ae1995e0b76fd63a945ab4a3a5d",
+    "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/configure.log": "cd47ae92533e3efdab6374bcb140d767666ac602cfd5a1233efca2d8fd95017d",
+    "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/scenario.csv": "1e8e121d3522eacfd7e708ef5ba8e821f96e9322f4dbf52048823de911de9590",
+    "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-highway-work/products/highway-drive-2440bea76b/0.log": "3b4032b99a1a58b28b77a63d56d0507d783b5aedf7b90c4ecfe15f09624d65b6",
+    "IDC-10/public-highway-work/products/highway-drive-2440bea76b/1.log": "c4cb7d3fbf86ea35eb7435b3c540b22e558598e7d18b80916594073dc6b11970",
+    "IDC-10/public-highway-work/products/highway-drive-2440bea76b/manual_takeover.csv": "273008cb5d1950edf1ebea998544d71958c0502053451422bc50de02421bfecc",
+    "IDC-10/public-highway-work/products/highway-drive-2440bea76b/manual_takeover.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-highway-work/products/highway-drive-2440bea76b/normal.csv": "604f5c64586df1f41cee50dfeb1294045563aee4b72cbf6db8a4294cc8bb1dab",
+    "IDC-10/public-highway-work/products/highway-drive-2440bea76b/normal.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-highway-work/products/highway-drive-2440bea76b/occupied_route.csv": "fa60127686d34ff58cbb76b0c26cfb3130ff1debc6f1e107500127f48bcf347f",
+    "IDC-10/public-highway-work/products/highway-drive-2440bea76b/occupied_route.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-highway.json": "bd8712a4c6b6422404bbdb3233cf65c526c0b27b2f7d39a6dd73f7353c5f271c",
+    "IDC-10/public-urban-semantics.json": "f9a1efa5c572536183a397de7501f9f031c5e59cc461f34f26b35e51f41dd4e5",
+    "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/build.log": "cb0128214b0399efcdc1e4d51faf1c01073157cbb4ddf4f0fef0dc258553ce7a",
+    "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/configure.log": "23ac6f1e55126306867ebb3e858a23aec8ecc3fbf9adc13f68e6b5e5db167f24",
+    "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/scenario.csv": "02f51552c0dce7b4c4aea4a4c9fd2473a8b74f106063a51c110f9b2fe79df591",
+    "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/scenario.log": "29140874739838431490978c345c37403f1f1d9bb5f1889c093bbe376163ea4e",
+    "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/build.log": "111274504e08082b148a2e639eea5083211cf99866a13ffe0b99880ff69088fc",
+    "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/configure.log": "c35a3b9e62221021c333810f239a7d148755802297e7e5ca85a4dfefbe426bd2",
+    "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/scenario.csv": "1ae20f0873d86d74d8be9748024a46b01899ae1021b66c0d728873bef970bd88",
+    "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/build.log": "b53b7cb36c7ae1a649fb63893bf6c4b343e04c08bd7191d7b26e4d767a1ce49b",
+    "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/configure.log": "fd2ce0aa8b76fb7b4d0f4b09b60427ab07076d66837fde132232044a254a6636",
+    "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/scenario.csv": "80feff2dfdb776bda43f4eaa7bb1422772e3323d2f8b3c82dc5d14f7c4fb535a",
+    "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-urban-work/dependencies/attempts/mcu/24349f83f83e-46062a2b/build.log": "20c7a78c04558b7260fd54bfec5aae0a63034b8501a047f93643f1a1a72ac535",
+    "IDC-10/public-urban-work/dependencies/attempts/mcu/24349f83f83e-46062a2b/configure.log": "fe70bcbacf7f80adf39b48aeb666cdc16208f2233c5d3a07c338510cc6ea7f6f",
+    "IDC-10/public-urban-work/dependencies/attempts/parking/018a8e63bfad-714ce1f8/build.log": "587b18bb1d027c71436d9c0071715fa1f48c8c067b695b5873b712c319acb843",
+    "IDC-10/public-urban-work/dependencies/attempts/parking/018a8e63bfad-714ce1f8/configure.log": "acb90ca04b227572a0ea0a540eed1d7d369cf594cf4222d63eaed3c0c0fb8cbb",
+    "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/build.log": "fc8f6d11468fb0159c14efdc5f7bb05efd0cad724ad3126b536b9695aa76da84",
+    "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/configure.log": "9ce2d32890ae907522c0054d37b96403fb53dea0638c0d4f434b9ab0af7fcbfd",
+    "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/scenario.csv": "b3a4d02e906a67ed439e87a564e27a7a986770da8d3e5dee9ddc207aa4e8ba39",
+    "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/build.log": "d122f65afdff7f70e9d49583461d9491dd6ffd4a5f19e3ffa729f45fb0933790",
+    "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/configure.log": "c1f343c2428012479fa423d98efa218f9afd1fb8ee48ab2e8ca38e73ce25a5b5",
+    "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/scenario.csv": "9a4202e6ffcd1999a91c8e8fa3a8145ec76d08b82f735de85a69626a44a0c440",
+    "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/build.log": "4ca2d47390b4721bd91f901a7c79f4a8d4282ae1995e0b76fd63a945ab4a3a5d",
+    "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/configure.log": "d9233d604afd884caf4fa026818da0c7cc43fd2fcb04dbdf4eeff0249de0eb58",
+    "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/scenario.csv": "1e8e121d3522eacfd7e708ef5ba8e821f96e9322f4dbf52048823de911de9590",
+    "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-urban-work/products/urban-parking-45e302b6de/0.log": "0e4fdc71b7ecb5316d8e49562645022976436689cbba7362f361c4dcb039a05f",
+    "IDC-10/public-urban-work/products/urban-parking-45e302b6de/1.log": "c4cb7d3fbf86ea35eb7435b3c540b22e558598e7d18b80916594073dc6b11970",
+    "IDC-10/public-urban-work/products/urban-parking-45e302b6de/manual_takeover.csv": "cbaeca5425fd8547bf41e19a9a453a7238455fbd80ee6e80a18263b6dc5945cf",
+    "IDC-10/public-urban-work/products/urban-parking-45e302b6de/manual_takeover.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-urban-work/products/urban-parking-45e302b6de/normal.csv": "bd385eb8d6d046fbb5c456a6476f7e42a2310795ba0dea1a21afa71bd8c93993",
+    "IDC-10/public-urban-work/products/urban-parking-45e302b6de/normal.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-urban-work/products/urban-parking-45e302b6de/obstacle_stop.csv": "a74368890e6d86ad0a80e74e10476c9b0a0c1b4117478285e7ec9b8df78f130e",
+    "IDC-10/public-urban-work/products/urban-parking-45e302b6de/obstacle_stop.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-urban-work/products/urban-parking-45e302b6de/occupied_route.csv": "381207832d199c8f47d5f2f6ecae1c4d0aae0e5a77c21a8ac92a79a370398725",
+    "IDC-10/public-urban-work/products/urban-parking-45e302b6de/occupied_route.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-urban-work/products/urban-parking-45e302b6de/stale_remote.csv": "a14efe5a8c751d875a5cad016704f81a778df4632f998fb450321f09ff648e63",
+    "IDC-10/public-urban-work/products/urban-parking-45e302b6de/stale_remote.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-10/public-urban.json": "5d5ce3f598a3374eb731c35278d160019b99efb58620211e0b5c7e4ce7bd44dd",
+    "IDC-10/restored-highway-semantics.json": "f10b277db13c53cbda985a89af805c5170ef0b507ae7bb9593d52ef98985d293",
+    "IDC-10/restored-highway.json": "1302d9f86760f2f305fd93bacd7789178d2737c7db639828fcfec68a9c33198b",
+    "IDC-10/semantics-highway-drive.json": "ce792af535ded3ea9a412189ee6adccf99121536e9ae5bdc9e826eb947c4d5f5",
+    "IDC-10/semantics-urban-parking.json": "287bc831ecd8f25c870c5df4df13e7c1337e989dee6594abf85d3a90df26885b"
+  },
+  "records": [
+    {
+      "path": "IDC-10/contract-verification.json",
+      "sha256": "d7c15832fd50c6f3fd3410c70077deed8dfa9d13a70d2c97b15369913abf48cf"
+    },
+    {
+      "path": "IDC-10/final-urban.json",
+      "sha256": "5b30527ff39fd9b41c85b845148f6c1536617c4c638099173632a383dc162ad1"
+    },
+    {
+      "path": "IDC-10/semantics-urban-parking.json",
+      "sha256": "287bc831ecd8f25c870c5df4df13e7c1337e989dee6594abf85d3a90df26885b"
+    },
+    {
+      "path": "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/normal.csv",
+      "sha256": "bd385eb8d6d046fbb5c456a6476f7e42a2310795ba0dea1a21afa71bd8c93993"
+    },
+    {
+      "path": "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/occupied_route.csv",
+      "sha256": "381207832d199c8f47d5f2f6ecae1c4d0aae0e5a77c21a8ac92a79a370398725"
+    },
+    {
+      "path": "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/obstacle_stop.csv",
+      "sha256": "a74368890e6d86ad0a80e74e10476c9b0a0c1b4117478285e7ec9b8df78f130e"
+    },
+    {
+      "path": "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/stale_remote.csv",
+      "sha256": "a14efe5a8c751d875a5cad016704f81a778df4632f998fb450321f09ff648e63"
+    },
+    {
+      "path": "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/manual_takeover.csv",
+      "sha256": "cbaeca5425fd8547bf41e19a9a453a7238455fbd80ee6e80a18263b6dc5945cf"
+    },
+    {
+      "path": "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/0.log",
+      "sha256": "91ec69e0e7c5d7d57467c8f3b2d3ac75f75192ea1df68fd5dc04761fbefee083"
+    },
+    {
+      "path": "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/1.log",
+      "sha256": "c4cb7d3fbf86ea35eb7435b3c540b22e558598e7d18b80916594073dc6b11970"
+    },
+    {
+      "path": "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/normal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/occupied_route.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/obstacle_stop.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/stale_remote.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-urban-work/products/urban-parking-b812fba7cc/manual_takeover.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-3a6311e5/configure.log",
+      "sha256": "07c2b6a70c419c04b33ad5e30b1486d16d670299e329214fc2a404d63c089cf1"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-3a6311e5/build.log",
+      "sha256": "a576da41e332b1de086d9ffb1537cd79ff5e729c265b404bde407c983a315a1f"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-3a6311e5/scenario.log",
+      "sha256": "29140874739838431490978c345c37403f1f1d9bb5f1889c093bbe376163ea4e"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/calibration/2a9b14bf2759-48f9a4f9/configure.log",
+      "sha256": "777e147422548b8f13be1204505919e508c90f455aec4ae48db5c42fa9678c7a"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/calibration/2a9b14bf2759-48f9a4f9/build.log",
+      "sha256": "cf4bd33d97b81a333fb1816c2098dcdbee308ea5dd48b7d413a30a46bd6de442"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/calibration/2a9b14bf2759-48f9a4f9/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/fusion/01111101eca8-b195b4a6/configure.log",
+      "sha256": "b30445c96eaac6acf9bf1f8f3cfa6a5018780a988db90ce8248a16e8945f6233"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/fusion/01111101eca8-b195b4a6/build.log",
+      "sha256": "78aa8802d25fe445a2d83eb990939325b71675564775a8c2bec5f3f0a7bd21c1"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/fusion/01111101eca8-b195b4a6/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/world/b5847714a6e6-e0cae2c7/configure.log",
+      "sha256": "623c22dd217e1de2edf566d68391aad053565ba63ba0cb45bae7f0241502bdbb"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/world/b5847714a6e6-e0cae2c7/build.log",
+      "sha256": "4ca2d47390b4721bd91f901a7c79f4a8d4282ae1995e0b76fd63a945ab4a3a5d"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/world/b5847714a6e6-e0cae2c7/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/route/62d95884eb91-799a7c46/configure.log",
+      "sha256": "d7abff27fdde5dc25ee373e0ef3762b25b81da2963f67b0a2e1099cd866b463b"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/route/62d95884eb91-799a7c46/build.log",
+      "sha256": "62695c019dc74a9644a151e50efa5ff7e6a79af9b8a32a338ace9ac837fde18c"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/route/62d95884eb91-799a7c46/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-21f465b0/configure.log",
+      "sha256": "0f200664a74de452a5a02b288737b620bb345c04c0bfdea5435f9359931eea06"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-21f465b0/build.log",
+      "sha256": "592a84da2b97b6a674764a4ee9436447209ee1fdd9847c7164e2cd5667860426"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-21f465b0/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/parking/9497d1378c81-b7161925/configure.log",
+      "sha256": "378c3691686caaf97c002a22e64ca3515358ac64ed047061877e7e1375c01c92"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/parking/9497d1378c81-b7161925/build.log",
+      "sha256": "587b18bb1d027c71436d9c0071715fa1f48c8c067b695b5873b712c319acb843"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/mcu/22871d8558b7-aed04b90/configure.log",
+      "sha256": "c230a1d9e0b49557885b19da7afdafb975a93ec2013c02ab8381f16fb9b7c887"
+    },
+    {
+      "path": "IDC-10/final-urban-work/dependencies/attempts/mcu/22871d8558b7-aed04b90/build.log",
+      "sha256": "20c7a78c04558b7260fd54bfec5aae0a63034b8501a047f93643f1a1a72ac535"
+    },
+    {
+      "path": "IDC-10/final-highway.json",
+      "sha256": "f3ed00142bfec32f5dd368841de3bb2ce41b75459fb53561a8f02e097e22139a"
+    },
+    {
+      "path": "IDC-10/semantics-highway-drive.json",
+      "sha256": "ce792af535ded3ea9a412189ee6adccf99121536e9ae5bdc9e826eb947c4d5f5"
+    },
+    {
+      "path": "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/normal.csv",
+      "sha256": "604f5c64586df1f41cee50dfeb1294045563aee4b72cbf6db8a4294cc8bb1dab"
+    },
+    {
+      "path": "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/occupied_route.csv",
+      "sha256": "fa60127686d34ff58cbb76b0c26cfb3130ff1debc6f1e107500127f48bcf347f"
+    },
+    {
+      "path": "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/manual_takeover.csv",
+      "sha256": "273008cb5d1950edf1ebea998544d71958c0502053451422bc50de02421bfecc"
+    },
+    {
+      "path": "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/0.log",
+      "sha256": "e25e9604584ac8d2868761d760f58831810938216a4a2265a888f02c9bce24fd"
+    },
+    {
+      "path": "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/1.log",
+      "sha256": "c4cb7d3fbf86ea35eb7435b3c540b22e558598e7d18b80916594073dc6b11970"
+    },
+    {
+      "path": "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/normal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/occupied_route.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-highway-work/products/highway-drive-4b0ac8f69d/manual_takeover.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/adaptive/38106eb1744b-f9ed8d78/configure.log",
+      "sha256": "9f9d49769055614e5a5691b27031b5b05116746958a0f123aaf18df6c190dce7"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/adaptive/38106eb1744b-f9ed8d78/build.log",
+      "sha256": "cb0128214b0399efcdc1e4d51faf1c01073157cbb4ddf4f0fef0dc258553ce7a"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/adaptive/38106eb1744b-f9ed8d78/scenario.log",
+      "sha256": "29140874739838431490978c345c37403f1f1d9bb5f1889c093bbe376163ea4e"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/calibration/346c9c551b71-fd7f51ba/configure.log",
+      "sha256": "cf3e19464e7282082c5a1e13093fa17475266096fac51c15b099f82209a3691e"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/calibration/346c9c551b71-fd7f51ba/build.log",
+      "sha256": "cf4bd33d97b81a333fb1816c2098dcdbee308ea5dd48b7d413a30a46bd6de442"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/calibration/346c9c551b71-fd7f51ba/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/fusion/ec040958d215-20b9324e/configure.log",
+      "sha256": "8ad0a11e611a8dfcb73398429eb80eb95d7cee1034f8540a89cc481455b88729"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/fusion/ec040958d215-20b9324e/build.log",
+      "sha256": "78aa8802d25fe445a2d83eb990939325b71675564775a8c2bec5f3f0a7bd21c1"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/fusion/ec040958d215-20b9324e/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/world/e379da01e233-c2302ed9/configure.log",
+      "sha256": "555fe86bbd5c0b5dd5ee7f0508fe555401ae5e4da49a112ed707f4a5d788f382"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/world/e379da01e233-c2302ed9/build.log",
+      "sha256": "4ca2d47390b4721bd91f901a7c79f4a8d4282ae1995e0b76fd63a945ab4a3a5d"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/world/e379da01e233-c2302ed9/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/route/8d7a002f4798-cc91d852/configure.log",
+      "sha256": "c6870ceda6cc3f9f8895adad2b261fb45f4991947ef52969ca9ed81a5cd5d7cd"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/route/8d7a002f4798-cc91d852/build.log",
+      "sha256": "fc8f6d11468fb0159c14efdc5f7bb05efd0cad724ad3126b536b9695aa76da84"
+    },
+    {
+      "path": "IDC-10/final-highway-work/dependencies/attempts/route/8d7a002f4798-cc91d852/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/restored-highway.json",
+      "sha256": "1302d9f86760f2f305fd93bacd7789178d2737c7db639828fcfec68a9c33198b"
+    },
+    {
+      "path": "IDC-10/restored-highway-semantics.json",
+      "sha256": "f10b277db13c53cbda985a89af805c5170ef0b507ae7bb9593d52ef98985d293"
+    },
+    {
+      "path": "IDC-10/provenance-normalization.json",
+      "sha256": "f7e1a80c1e4331a249d0f7fba36fb980611e5417674e42cd030ac8cf73f9de01"
+    },
+    {
+      "path": "IDC-10/public-highway-semantics.json",
+      "sha256": "320369e6271ce4b20a2244f22e0633d9cee68d84c21a52c45596511a44953bfd"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/build.log",
+      "sha256": "de7b93627a85b6e19929afc3855906352bd4c3eb18bce0745396f5bbaf8b1d73"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/configure.log",
+      "sha256": "0a839973fc969e8fb6bdc109bb707b42ddfb70332f6c73097560b2d7e97a1447"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/scenario.csv",
+      "sha256": "02f51552c0dce7b4c4aea4a4c9fd2473a8b74f106063a51c110f9b2fe79df591"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/adaptive/38106eb1744b-8c9a1219/scenario.log",
+      "sha256": "29140874739838431490978c345c37403f1f1d9bb5f1889c093bbe376163ea4e"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/build.log",
+      "sha256": "cf4bd33d97b81a333fb1816c2098dcdbee308ea5dd48b7d413a30a46bd6de442"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/configure.log",
+      "sha256": "778ed13e40d92566f118f854b8df19ab34f91f07294a6ad8230ec0f761c2754c"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/scenario.csv",
+      "sha256": "1ae20f0873d86d74d8be9748024a46b01899ae1021b66c0d728873bef970bd88"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/calibration/346c9c551b71-b6fa306e/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/build.log",
+      "sha256": "78aa8802d25fe445a2d83eb990939325b71675564775a8c2bec5f3f0a7bd21c1"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/configure.log",
+      "sha256": "cbdf4becb8afe0b052e4dcf49e810f4505ebc0c3b18277ed01497ac35592a126"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/scenario.csv",
+      "sha256": "80feff2dfdb776bda43f4eaa7bb1422772e3323d2f8b3c82dc5d14f7c4fb535a"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/fusion/26a6e28a8408-8b601801/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/build.log",
+      "sha256": "fc8f6d11468fb0159c14efdc5f7bb05efd0cad724ad3126b536b9695aa76da84"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/configure.log",
+      "sha256": "a102f6f3a97b99c4c93c6fcea8c6d2b95ab5a12a7fe9bc7e273956f8b6dcb2d8"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/scenario.csv",
+      "sha256": "b3a4d02e906a67ed439e87a564e27a7a986770da8d3e5dee9ddc207aa4e8ba39"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/route/c39f57c55861-01d7b202/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/build.log",
+      "sha256": "4ca2d47390b4721bd91f901a7c79f4a8d4282ae1995e0b76fd63a945ab4a3a5d"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/configure.log",
+      "sha256": "cd47ae92533e3efdab6374bcb140d767666ac602cfd5a1233efca2d8fd95017d"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/scenario.csv",
+      "sha256": "1e8e121d3522eacfd7e708ef5ba8e821f96e9322f4dbf52048823de911de9590"
+    },
+    {
+      "path": "IDC-10/public-highway-work/dependencies/attempts/world/1278a68fff8a-19ae5fcb/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-highway-work/products/highway-drive-2440bea76b/0.log",
+      "sha256": "3b4032b99a1a58b28b77a63d56d0507d783b5aedf7b90c4ecfe15f09624d65b6"
+    },
+    {
+      "path": "IDC-10/public-highway-work/products/highway-drive-2440bea76b/1.log",
+      "sha256": "c4cb7d3fbf86ea35eb7435b3c540b22e558598e7d18b80916594073dc6b11970"
+    },
+    {
+      "path": "IDC-10/public-highway-work/products/highway-drive-2440bea76b/manual_takeover.csv",
+      "sha256": "273008cb5d1950edf1ebea998544d71958c0502053451422bc50de02421bfecc"
+    },
+    {
+      "path": "IDC-10/public-highway-work/products/highway-drive-2440bea76b/manual_takeover.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-highway-work/products/highway-drive-2440bea76b/normal.csv",
+      "sha256": "604f5c64586df1f41cee50dfeb1294045563aee4b72cbf6db8a4294cc8bb1dab"
+    },
+    {
+      "path": "IDC-10/public-highway-work/products/highway-drive-2440bea76b/normal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-highway-work/products/highway-drive-2440bea76b/occupied_route.csv",
+      "sha256": "fa60127686d34ff58cbb76b0c26cfb3130ff1debc6f1e107500127f48bcf347f"
+    },
+    {
+      "path": "IDC-10/public-highway-work/products/highway-drive-2440bea76b/occupied_route.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-highway.json",
+      "sha256": "bd8712a4c6b6422404bbdb3233cf65c526c0b27b2f7d39a6dd73f7353c5f271c"
+    },
+    {
+      "path": "IDC-10/public-urban-semantics.json",
+      "sha256": "f9a1efa5c572536183a397de7501f9f031c5e59cc461f34f26b35e51f41dd4e5"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/build.log",
+      "sha256": "cb0128214b0399efcdc1e4d51faf1c01073157cbb4ddf4f0fef0dc258553ce7a"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/configure.log",
+      "sha256": "23ac6f1e55126306867ebb3e858a23aec8ecc3fbf9adc13f68e6b5e5db167f24"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/scenario.csv",
+      "sha256": "02f51552c0dce7b4c4aea4a4c9fd2473a8b74f106063a51c110f9b2fe79df591"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/adaptive/b4ece03bdd17-7bed8043/scenario.log",
+      "sha256": "29140874739838431490978c345c37403f1f1d9bb5f1889c093bbe376163ea4e"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/build.log",
+      "sha256": "111274504e08082b148a2e639eea5083211cf99866a13ffe0b99880ff69088fc"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/configure.log",
+      "sha256": "c35a3b9e62221021c333810f239a7d148755802297e7e5ca85a4dfefbe426bd2"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/scenario.csv",
+      "sha256": "1ae20f0873d86d74d8be9748024a46b01899ae1021b66c0d728873bef970bd88"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/calibration/2a9b14bf2759-f0547d6a/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/build.log",
+      "sha256": "b53b7cb36c7ae1a649fb63893bf6c4b343e04c08bd7191d7b26e4d767a1ce49b"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/configure.log",
+      "sha256": "fd2ce0aa8b76fb7b4d0f4b09b60427ab07076d66837fde132232044a254a6636"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/scenario.csv",
+      "sha256": "80feff2dfdb776bda43f4eaa7bb1422772e3323d2f8b3c82dc5d14f7c4fb535a"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/fusion/1ed12f478ed0-01e9a73b/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/mcu/24349f83f83e-46062a2b/build.log",
+      "sha256": "20c7a78c04558b7260fd54bfec5aae0a63034b8501a047f93643f1a1a72ac535"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/mcu/24349f83f83e-46062a2b/configure.log",
+      "sha256": "fe70bcbacf7f80adf39b48aeb666cdc16208f2233c5d3a07c338510cc6ea7f6f"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/parking/018a8e63bfad-714ce1f8/build.log",
+      "sha256": "587b18bb1d027c71436d9c0071715fa1f48c8c067b695b5873b712c319acb843"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/parking/018a8e63bfad-714ce1f8/configure.log",
+      "sha256": "acb90ca04b227572a0ea0a540eed1d7d369cf594cf4222d63eaed3c0c0fb8cbb"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/build.log",
+      "sha256": "fc8f6d11468fb0159c14efdc5f7bb05efd0cad724ad3126b536b9695aa76da84"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/configure.log",
+      "sha256": "9ce2d32890ae907522c0054d37b96403fb53dea0638c0d4f434b9ab0af7fcbfd"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/scenario.csv",
+      "sha256": "b3a4d02e906a67ed439e87a564e27a7a986770da8d3e5dee9ddc207aa4e8ba39"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/route/42058e08798d-a0a0a2ab/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/build.log",
+      "sha256": "d122f65afdff7f70e9d49583461d9491dd6ffd4a5f19e3ffa729f45fb0933790"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/configure.log",
+      "sha256": "c1f343c2428012479fa423d98efa218f9afd1fb8ee48ab2e8ca38e73ce25a5b5"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/scenario.csv",
+      "sha256": "9a4202e6ffcd1999a91c8e8fa3a8145ec76d08b82f735de85a69626a44a0c440"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/ultrasonic/cbf039d68a1d-1da79011/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/build.log",
+      "sha256": "4ca2d47390b4721bd91f901a7c79f4a8d4282ae1995e0b76fd63a945ab4a3a5d"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/configure.log",
+      "sha256": "d9233d604afd884caf4fa026818da0c7cc43fd2fcb04dbdf4eeff0249de0eb58"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/scenario.csv",
+      "sha256": "1e8e121d3522eacfd7e708ef5ba8e821f96e9322f4dbf52048823de911de9590"
+    },
+    {
+      "path": "IDC-10/public-urban-work/dependencies/attempts/world/23250e843259-04826750/scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-urban-work/products/urban-parking-45e302b6de/0.log",
+      "sha256": "0e4fdc71b7ecb5316d8e49562645022976436689cbba7362f361c4dcb039a05f"
+    },
+    {
+      "path": "IDC-10/public-urban-work/products/urban-parking-45e302b6de/1.log",
+      "sha256": "c4cb7d3fbf86ea35eb7435b3c540b22e558598e7d18b80916594073dc6b11970"
+    },
+    {
+      "path": "IDC-10/public-urban-work/products/urban-parking-45e302b6de/manual_takeover.csv",
+      "sha256": "cbaeca5425fd8547bf41e19a9a453a7238455fbd80ee6e80a18263b6dc5945cf"
+    },
+    {
+      "path": "IDC-10/public-urban-work/products/urban-parking-45e302b6de/manual_takeover.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-urban-work/products/urban-parking-45e302b6de/normal.csv",
+      "sha256": "bd385eb8d6d046fbb5c456a6476f7e42a2310795ba0dea1a21afa71bd8c93993"
+    },
+    {
+      "path": "IDC-10/public-urban-work/products/urban-parking-45e302b6de/normal.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-urban-work/products/urban-parking-45e302b6de/obstacle_stop.csv",
+      "sha256": "a74368890e6d86ad0a80e74e10476c9b0a0c1b4117478285e7ec9b8df78f130e"
+    },
+    {
+      "path": "IDC-10/public-urban-work/products/urban-parking-45e302b6de/obstacle_stop.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-urban-work/products/urban-parking-45e302b6de/occupied_route.csv",
+      "sha256": "381207832d199c8f47d5f2f6ecae1c4d0aae0e5a77c21a8ac92a79a370398725"
+    },
+    {
+      "path": "IDC-10/public-urban-work/products/urban-parking-45e302b6de/occupied_route.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-urban-work/products/urban-parking-45e302b6de/stale_remote.csv",
+      "sha256": "a14efe5a8c751d875a5cad016704f81a778df4632f998fb450321f09ff648e63"
+    },
+    {
+      "path": "IDC-10/public-urban-work/products/urban-parking-45e302b6de/stale_remote.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-10/public-urban.json",
+      "sha256": "5d5ce3f598a3374eb731c35278d160019b99efb58620211e0b5c7e4ce7bd44dd"
+    }
+  ],
+  "restoration_record": "integration-restoration.json",
+  "restored_execution": {
+    "all_scenario_output_bytes_equal_to_original": true,
+    "component_builds": 5,
+    "external_semantic_and_negative_checks": 6,
+    "frames": 21,
+    "platform": "highway-drive",
+    "scenarios": 3,
+    "status": "passed"
+  },
+  "runs": [
+    {
+      "component_builds": 8,
+      "external_business_and_negative_checks": 8,
+      "frames": 35,
+      "platform": "urban-parking",
+      "scenarios": 5
+    },
+    {
+      "component_builds": 5,
+      "external_business_and_negative_checks": 6,
+      "frames": 21,
+      "platform": "highway-drive",
+      "scenarios": 3
+    }
+  ],
+  "schema": "center-execution-summary-1",
+  "source_binding": "IDC-10/source-binding.json",
+  "status": "passed",
+  "tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c"
+}

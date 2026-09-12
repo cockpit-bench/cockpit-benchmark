@@ -1,0 +1,318 @@
+{
+  "execution": {
+    "limits": [
+      "MIL and host replay only; no physical device, ECU, SIL/PIL/HIL, BTC or certification.",
+      "Simulink coverage is distinct from generated C statement coverage; C statement coverage was not measured.",
+      "Independent equations and configured scenarios are maintainer checks, not candidate-model evaluation or blind gold."
+    ],
+    "records": [
+      {
+        "path": "suites/architecture-center/execution/ARC-10.json",
+        "sha256": "020be22e98fd245d8c257adeb873f6c65352fb592e0c6c8a406480bbf611e5de"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+  "id": "ARC-10",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/matlab.json",
+      "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+    },
+    "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+    "id": "ARC-10",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "block_path": "VehicleSafety/Debounce",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=12 VehicleSafety/Debounce",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/VehicleSafety.slx",
+            "sha256": "fe2d1160517f862bd2162b5f5fae3e7a9bfac7d22201fbfd37a9e4ea8d26e102",
+            "sid": "12"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "hierarchy",
+        "reason": "资格、超时、心跳、投票、去抖、锁存、模式和包络分别封装；顶层安全编排仍集中较多支路。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "VehicleSafety/Debounce",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=12 VehicleSafety/Debounce",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/VehicleSafety.slx",
+            "sha256": "fe2d1160517f862bd2162b5f5fae3e7a9bfac7d22201fbfd37a9e4ea8d26e102",
+            "sid": "12"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "reuse",
+        "reason": "安全功能封装为库，计数/锁存承担不同职责；未发现需要合并的同一主要业务副本。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "VehicleSafety/Debounce",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=12 VehicleSafety/Debounce",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/VehicleSafety.slx",
+            "sha256": "fe2d1160517f862bd2162b5f5fae3e7a9bfac7d22201fbfd37a9e4ea8d26e102",
+            "sid": "12"
+          },
+          {
+            "kind": "file",
+            "locator": "Inputs/Outputs sheets, header row 4 and typed data from row 5",
+            "path": "Model/Interface.xlsx",
+            "sha256": "8028e9c8d8a21bb901d5920acd55fb29a1337dc6d5618d33741d5aaa9d9e4fce"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "interface",
+        "reason": "请求/通信/心跳与安全输出显式具名且类型可编译核对；部分内部接口物理范围和变更控制缺失。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "VehicleSafety/Debounce",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=12 VehicleSafety/Debounce",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/VehicleSafety.slx",
+            "sha256": "fe2d1160517f862bd2162b5f5fae3e7a9bfac7d22201fbfd37a9e4ea8d26e102",
+            "sid": "12"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "dataflow",
+        "reason": "37条根线仅4条具名，心跳/复位/故障逻辑支线交叉，关键状态追踪需要跨图。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "passed/samples/modelCoverageMeasured/cStatementCoverageMeasured",
+            "path": "Tests/results/test-result.json",
+            "sha256": "a4883a15f5f2a93f6a46775e2890458ed92a54c14e424f3c24bff38e478c457a"
+          },
+          {
+            "kind": "file",
+            "locator": "stimulus, expected, absoluteTolerance, relativeTolerance",
+            "path": "Tests/TestData.mat",
+            "sha256": "aa4cfc17e4066aef878ba5246935f969be740645069ce474f0b48e59a59f46b6"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "unit_test",
+        "reason": "仓内Tests包含真实模型引用夹具、640有序样本和逐输出独立期望，并实测通过；报告仅测Simulink模型coverage，C语句覆盖未测，故按合同止于1档。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "VehicleSafety/Debounce",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=12 VehicleSafety/Debounce",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/VehicleSafety.slx",
+            "sha256": "fe2d1160517f862bd2162b5f5fae3e7a9bfac7d22201fbfd37a9e4ea8d26e102",
+            "sid": "12"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "naming",
+        "reason": "Watchdog/Vote/Latch/Envelope等可辨识，RawFault、ModeFunction、Sum等泛名仍依赖上下文。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "773e9e4b8883f895e1a798f6b762b54ea00c3f5da723ae9a441ea83ae748c346"
+          },
+          {
+            "block_path": "VehicleSafety/Debounce",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=12 VehicleSafety/Debounce",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/VehicleSafety.slx",
+            "sha256": "fe2d1160517f862bd2162b5f5fae3e7a9bfac7d22201fbfd37a9e4ea8d26e102",
+            "sid": "12"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "directory",
+        "reason": "Model与组件/启动脚本有基本分类，但接口表、标定和生产文件混置在模型树中，尚无更一致的工程分区。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "VehicleSafety/Debounce",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=12 VehicleSafety/Debounce",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/VehicleSafety.slx",
+            "sha256": "fe2d1160517f862bd2162b5f5fae3e7a9bfac7d22201fbfd37a9e4ea8d26e102",
+            "sid": "12"
+          },
+          {
+            "kind": "file",
+            "locator": "repository-specific model and component paths",
+            "path": "project_init.m",
+            "sha256": "127af45758fb1fcb1ee38c550eeb7ea51f3e1fd5f21e5adfb93b48407ab22942"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "build_independence",
+        "reason": "当前构建直接加载源SLX/MDL或M脚本；没有达到受控Bus/Mask组件契约、独立包与版本锁定的边界。只有显式端口不据此跳到2档。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/VehicleSafety.slx",
+            "sha256": "fe2d1160517f862bd2162b5f5fae3e7a9bfac7d22201fbfd37a9e4ea8d26e102"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "model_version",
+        "reason": "模型内AutoIncrement版本和实际构造Git提交可查，但未提供完整版本/信号变更表及正式评审差异记录。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/VehicleSafety.slx",
+            "sha256": "fe2d1160517f862bd2162b5f5fae3e7a9bfac7d22201fbfd37a9e4ea8d26e102"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "version_independence",
+        "reason": "存在模型内部自增版本，未形成MAJOR.MINOR.PATCH独立语义版本及发布兼容约定。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "production parameter expressions and model workspace",
+            "path": "Model/VehicleSafety.slx",
+            "sha256": "fe2d1160517f862bd2162b5f5fae3e7a9bfac7d22201fbfd37a9e4ea8d26e102"
+          },
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "773e9e4b8883f895e1a798f6b762b54ea00c3f5da723ae9a441ea83ae748c346"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "release_branches",
+        "reason": "完整Git仅有实际初始/修复main历史，未落实可核对的跨车型/平台发布分支或多配置策略。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "production parameter expressions and model workspace",
+            "path": "Model/VehicleSafety.slx",
+            "sha256": "fe2d1160517f862bd2162b5f5fae3e7a9bfac7d22201fbfd37a9e4ea8d26e102"
+          },
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "773e9e4b8883f895e1a798f6b762b54ea00c3f5da723ae9a441ea83ae748c346"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "device_specificity",
+        "reason": "部分标定外置，可调节工程参数；仅验证默认设备假设，没有证明跨设备复用。",
+        "score": 1
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "3085c2803f5add13a353c69f2beaf22e0bc177b8"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "3085c2803f5add13a353c69f2beaf22e0bc177b8"
+}

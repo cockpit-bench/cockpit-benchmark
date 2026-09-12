@@ -1,0 +1,90 @@
+{
+  "actual": {
+    "bytes": 97073,
+    "commit_count": 2,
+    "extensions": {
+      ".bat": 1,
+      ".gradle": 9,
+      ".jar": 1,
+      ".json": 2,
+      ".kt": 14,
+      ".md": 1,
+      ".properties": 2,
+      ".xml": 7,
+      "<noext>": 3
+    },
+    "gitlinks": [],
+    "refs": {
+      "refs/heads/main": "04ecdf17210613d85535e4a51efd1a61ec3fab40"
+    },
+    "scope": "All tracked files of the scored target; excludes untracked build caches and dependency worktrees. Text line counts include generated and test files and are not production LOC.",
+    "source_lines_by_extension": {
+      ".kt": 187
+    },
+    "tracked_file_count": 40
+  },
+  "center": "人工智能中心",
+  "conclusion": "Bounded structural and business proxy with declared deviations; not a full production distribution reproduction or independent holdout.",
+  "deviations": [
+    "扫描文件总数为935，本仓跟踪文件为40；统计范围不同且规模明显压缩，不声明生产整仓体量等价。",
+    "历史为本次真实构造/修复提交，未复制扫描中的大量分支/tag或虚构长期研发史。",
+    "仅提供了结构、模式和汇总，内部算法、标定值及全部生产依赖未提供；不能据此宣称业务实现相同。"
+  ],
+  "head": "04ecdf17210613d85535e4a51efd1a61ec3fab40",
+  "id": "AIC-10",
+  "implementation_kind": "android",
+  "matched_traits": [
+    "采用android实现并保留feature_modules的主要组织形态；以最终源码及构建入口核对。",
+    "业务为新编写的可执行有界切片；声明的模块、配置和接口具有实际调用方。"
+  ],
+  "observed": {
+    "branches": 51,
+    "build_label": "gradle",
+    "commit_count": 49,
+    "default_head_empty": false,
+    "extensions": {
+      ".aar": 4,
+      ".bat": 1,
+      ".gradle": 15,
+      ".jar": 5,
+      ".java": 76,
+      ".keystore": 1,
+      ".kt": 316,
+      ".md": 1,
+      ".msext": 2,
+      ".pag": 21,
+      ".png": 220,
+      ".pro": 13,
+      ".properties": 3,
+      ".webp": 31,
+      ".xlsx": 1,
+      ".xml": 221,
+      ".xsl": 1,
+      ".yml": 1,
+      "<noext>": 2
+    },
+    "file_count": 935,
+    "tags": 10
+  },
+  "repairs": [],
+  "schema": "center-scan-profile-comparison-1",
+  "source_basis": {
+    "document_sha256": "22e81b7f45ffc6231582c5d72a5fa49769d65942e783b8f2d5929b67069ea520",
+    "original_names": "Retained only in the local supplied-scan mapping",
+    "section_line": 11441,
+    "selection": "One supplied per-repository joint structural prototype; no target-score selection",
+    "spec_line": 11614
+  },
+  "target": {
+    "business": "vehicle_agent",
+    "layout": "feature_modules",
+    "planned_production_units": 0,
+    "repository_owned_tests": true
+  },
+  "tree": "5119dd42132a3855a8e9db74658438e53c35ab7c",
+  "unknowns": [
+    "Scanner test_case_count=0 is not evidence that tests are absent.",
+    "Reported HTML percentages are not accepted as actual test coverage unless the report semantics and execution binding are verified.",
+    "Some large-source scans stop at 2500 source files; capped values are not whole-repository counts."
+  ]
+}

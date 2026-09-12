@@ -1,0 +1,566 @@
+{
+  "execution": {
+    "limits": [
+      "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+      "Maintainer external tests do not count as repository-owned integration tests.",
+      "Same maintainer construction family; not an independent holdout.",
+      "Generated C came from an explicit benchmark JSON/policy generator; it is not a Simulink/production generator output."
+    ],
+    "records": [
+      {
+        "path": "suites/intelligent-driving-center/execution/IDC-01.json",
+        "sha256": "cecb543c4ca930bf2426b770dd9a44f2eff2732e8bd144a56ef9f7b4719ce248"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "ca9fa37711754fd3fccc1ada6145f75475a1649c",
+  "id": "IDC-01",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "ca9fa37711754fd3fccc1ada6145f75475a1649c",
+    "id": "IDC-01",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "1c6d95789fb874209114def1a1824c304e25f8f1a657fea8a5ab23e5071d872e",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: void Parking_initialize(Parking_State *);",
+            "path": "include/Parking.h",
+            "sha256": "d0647ccbafee6f797ee68c7cd800c6199ff200b0016e44a661b011ad108268dd",
+            "symbol": "void Parking_initialize(Parking_State *);"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {",
+            "path": "generated/Parking_Arbitration.c",
+            "sha256": "7b7c6213689b18611833b1420f27460c24478f15a579fc0ee1d7bed23ff784cf",
+            "symbol": "Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {"
+          }
+        ],
+        "limitations": [
+          "公开Parking_State/Input及generated包含目录暴露内部表示。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "输入资格、定时、状态转移与输出门控有实际调用链，host入口独立。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "1c6d95789fb874209114def1a1824c304e25f8f1a657fea8a5ab23e5071d872e",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: void Parking_initialize(Parking_State *);",
+            "path": "include/Parking.h",
+            "sha256": "d0647ccbafee6f797ee68c7cd800c6199ff200b0016e44a661b011ad108268dd",
+            "symbol": "void Parking_initialize(Parking_State *);"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {",
+            "path": "generated/Parking_Arbitration.c",
+            "sha256": "7b7c6213689b18611833b1420f27460c24478f15a579fc0ee1d7bed23ff784cf",
+            "symbol": "Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {"
+          }
+        ],
+        "limitations": [
+          "这些单元共享状态结构且静态链接，不是五个可独立替换服务。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "五个生成C单元分别执行资格、计时、初始化、门控与仲裁。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "1c6d95789fb874209114def1a1824c304e25f8f1a657fea8a5ab23e5071d872e",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: void Parking_initialize(Parking_State *);",
+            "path": "include/Parking.h",
+            "sha256": "d0647ccbafee6f797ee68c7cd800c6199ff200b0016e44a661b011ad108268dd",
+            "symbol": "void Parking_initialize(Parking_State *);"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {",
+            "path": "generated/Parking_Arbitration.c",
+            "sha256": "7b7c6213689b18611833b1420f27460c24478f15a579fc0ee1d7bed23ff784cf",
+            "symbol": "Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {"
+          }
+        ],
+        "limitations": [
+          "门控、资格及状态转移仍直接调用具体函数。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "仲裁只消费结构化输入和显式时间，未直接接设备接口。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "1c6d95789fb874209114def1a1824c304e25f8f1a657fea8a5ab23e5071d872e",
+            "symbol": "add_library("
+          }
+        ],
+        "limitations": [
+          "本机CMake/Make/Gradle和维护者脚本不等同仓内CI或远端执行。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单无仓内CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "1c6d95789fb874209114def1a1824c304e25f8f1a657fea8a5ab23e5071d872e",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # Parking arbitration",
+            "path": "README.md",
+            "sha256": "d4a664d91cc4f4fd14aac96c4b61c1768db10d7a93824b59b359b580bfaf1a72",
+            "symbol": "# Parking arbitration"
+          }
+        ],
+        "limitations": [
+          "主机独立构建不代表设备固件或生产SDK集成；外部维护者测试是可选构建参数。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "当前CMake独立构建仓内全部实现，标准C99/C++17及工具链边界明确，无必需第三方实现源码或未版本化BSP。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: void Parking_initialize(Parking_State *);",
+            "path": "include/Parking.h",
+            "sha256": "d0647ccbafee6f797ee68c7cd800c6199ff200b0016e44a661b011ad108268dd",
+            "symbol": "void Parking_initialize(Parking_State *);"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "1c6d95789fb874209114def1a1824c304e25f8f1a657fea8a5ab23e5071d872e",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: #define PARKING_GENERATOR_VERSION",
+            "path": "include/Parking_Version.h",
+            "sha256": "edb00070718b0a3eaf55589817c318bbdf11961a44471786d0313ca5b759577f",
+            "symbol": "#define PARKING_GENERATOR_VERSION"
+          }
+        ],
+        "limitations": [
+          "项目版本号及PARKING_GENERATOR_VERSION不足以证明接口语义化版本或兼容检查。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "公开Parking C接口及场景格式未声明自身版本；PARKING_GENERATOR_VERSION只标记生成器，CMake VERSION只标记项目。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: uint32_t Parking_qualify(const Parking_Input *i) {",
+            "path": "generated/Parking_Qualification.c",
+            "sha256": "27b2430e45e694507e3a286bfc96827890f7ed7e8cdb24bfc002a9d2f1d6893d",
+            "symbol": "uint32_t Parking_qualify(const Parking_Input *i) {"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: Parking_Output Parking_gate(Parking_Mode m, const Parking_Input *i, uint32_t reasons) {",
+            "path": "generated/Parking_Gating.c",
+            "sha256": "1909891f2e4084f39fe67fd3bd848b45b5d6debd5e3d1c00c78875169725fc14",
+            "symbol": "Parking_Output Parking_gate(Parking_Mode m, const Parking_Input *i, uint32_t reasons) {"
+          },
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: uint8_t Parking_elapsed(uint32_t now, uint32_t since, uint32_t duration) {",
+            "path": "generated/Parking_Timing.c",
+            "sha256": "d7c3271f1226a800d45f38717f6864dac4fcefe10cf2fcd122120750bb25e14f",
+            "symbol": "uint8_t Parking_elapsed(uint32_t now, uint32_t since, uint32_t duration) {"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {",
+            "path": "generated/Parking_Arbitration.c",
+            "sha256": "7b7c6213689b18611833b1420f27460c24478f15a579fc0ee1d7bed23ff784cf",
+            "symbol": "Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {"
+          }
+        ],
+        "limitations": [
+          "状态机本身包含所有模式转换，是有界业务核心。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "核心仲裁决策与资格检测、输出安全限幅和计时逻辑可以分开定位。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: #define PARKING_CONFIG_H",
+            "path": "generated/Parking_Config.h",
+            "sha256": "e41f814ccab3d0f0e246750ddcf054dc2a7ad6a258907308e77b66a8ce55f23c",
+            "symbol": "#define PARKING_CONFIG_H"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {",
+            "path": "generated/Parking_Arbitration.c",
+            "sha256": "7b7c6213689b18611833b1420f27460c24478f15a579fc0ee1d7bed23ff784cf",
+            "symbol": "Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {"
+          }
+        ],
+        "limitations": [
+          "新增模式或优先级要修改状态机生成策略，不是插件式扩展。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "时效、确认、释放及扭矩限制由独立配置定义。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: void Parking_initialize(Parking_State *);",
+            "path": "include/Parking.h",
+            "sha256": "d0647ccbafee6f797ee68c7cd800c6199ff200b0016e44a661b011ad108268dd",
+            "symbol": "void Parking_initialize(Parking_State *);"
+          }
+        ],
+        "limitations": [
+          "此档说明不适用范围，不代表替换契约已被验证。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "审阅公开类型与生产实现，没有适用的继承/实现替换关系，按合同LSP中间档处理。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: void Parking_initialize(Parking_State *);",
+            "path": "include/Parking.h",
+            "sha256": "d0647ccbafee6f797ee68c7cd800c6199ff200b0016e44a661b011ad108268dd",
+            "symbol": "void Parking_initialize(Parking_State *);"
+          },
+          {
+            "kind": "file",
+            "line": 12,
+            "locator": "line 12: typedef struct {",
+            "path": "include/Parking_Types.h",
+            "sha256": "82bf4d06e0fa3ce1ff43961a81e9411182cebf16efe6c8c0f10fb7ac7bcd3924",
+            "symbol": "typedef struct {"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "1c6d95789fb874209114def1a1824c304e25f8f1a657fea8a5ab23e5071d872e",
+            "symbol": "add_library("
+          }
+        ],
+        "limitations": [
+          "状态及输入类型完整公开，内部头及生成配置亦可从PUBLIC include访问。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "公开Parking入口只含initialize和step。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: void Parking_initialize(Parking_State *);",
+            "path": "include/Parking.h",
+            "sha256": "d0647ccbafee6f797ee68c7cd800c6199ff200b0016e44a661b011ad108268dd",
+            "symbol": "void Parking_initialize(Parking_State *);"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {",
+            "path": "generated/Parking_Arbitration.c",
+            "sha256": "7b7c6213689b18611833b1420f27460c24478f15a579fc0ee1d7bed23ff784cf",
+            "symbol": "Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {"
+          }
+        ],
+        "limitations": [
+          "没有实现替换点，不能仅因纯算法给满档。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "没有专有平台依赖，上层消费纯C数据边界。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: #define PARKING_CONFIG_H",
+            "path": "generated/Parking_Config.h",
+            "sha256": "e41f814ccab3d0f0e246750ddcf054dc2a7ad6a258907308e77b66a8ce55f23c",
+            "symbol": "#define PARKING_CONFIG_H"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "1c6d95789fb874209114def1a1824c304e25f8f1a657fea8a5ab23e5071d872e",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-01/final-native-run.json",
+          "IDC-01/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "只完成当前主机环境验证，没有两种受支持平台/接口升级兼容回归。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "平台依赖主要限制在I/O、配置或适配处，业务核心消费标准数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: #define PARKING_CONFIG_H",
+            "path": "generated/Parking_Config.h",
+            "sha256": "e41f814ccab3d0f0e246750ddcf054dc2a7ad6a258907308e77b66a8ce55f23c",
+            "symbol": "#define PARKING_CONFIG_H"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "1c6d95789fb874209114def1a1824c304e25f8f1a657fea8a5ab23e5071d872e",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-01/final-native-run.json",
+          "IDC-01/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "仅主机替身验证；运行时多传感器/多个数值配置不等同两组完整设备适配验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "业务消费参数、显式输入和共用计算逻辑，可从不同来源提供数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: #define PARKING_CONFIG_H",
+            "path": "generated/Parking_Config.h",
+            "sha256": "e41f814ccab3d0f0e246750ddcf054dc2a7ad6a258907308e77b66a8ce55f23c",
+            "symbol": "#define PARKING_CONFIG_H"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "1c6d95789fb874209114def1a1824c304e25f8f1a657fea8a5ab23e5071d872e",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-01/final-native-run.json",
+          "IDC-01/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "未合成分支/tag，运行参数或算法场景不自动算平台变体。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "实际Git仅main初始/实现提交，无已落实的多平台维护策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: uint8_t Parking_elapsed(uint32_t now, uint32_t since, uint32_t duration) {",
+            "path": "generated/Parking_Timing.c",
+            "sha256": "d7c3271f1226a800d45f38717f6864dac4fcefe10cf2fcd122120750bb25e14f",
+            "symbol": "uint8_t Parking_elapsed(uint32_t now, uint32_t since, uint32_t duration) {"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {",
+            "path": "generated/Parking_Arbitration.c",
+            "sha256": "7b7c6213689b18611833b1420f27460c24478f15a579fc0ee1d7bed23ff784cf",
+            "symbol": "Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: Parking_Output Parking_gate(Parking_Mode m, const Parking_Input *i, uint32_t reasons) {",
+            "path": "generated/Parking_Gating.c",
+            "sha256": "1909891f2e4084f39fe67fd3bd848b45b5d6debd5e3d1c00c78875169725fc14",
+            "symbol": "Parking_Output Parking_gate(Parking_Mode m, const Parking_Input *i, uint32_t reasons) {"
+          }
+        ],
+        "limitations": [
+          "生成结果本身按合同排除重复惩罚；此结论不代表可追溯到内部Simulink模型。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "逐一审阅五个生成单元及host：计时和状态进入逻辑共用函数，没有额外手写业务复制。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {",
+            "path": "generated/Parking_Arbitration.c",
+            "sha256": "7b7c6213689b18611833b1420f27460c24478f15a579fc0ee1d7bed23ff784cf",
+            "symbol": "Parking_Output Parking_step(Parking_State *s, const Parking_Input *i) {"
+          }
+        ],
+        "limitations": [
+          "此分不自动证明平台迁移、多设备运行或物理设备验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "生产业务只使用C/C++标准值类型/标准库或明确JNI、TCP、I/O适配边界。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 12,
+            "locator": "line 12: set(BENCH_EXTERNAL_TEST",
+            "path": "CMakeLists.txt",
+            "sha256": "1c6d95789fb874209114def1a1824c304e25f8f1a657fea8a5ab23e5071d872e",
+            "symbol": "set(BENCH_EXTERNAL_TEST"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: int main(int argc, char **argv) {",
+            "path": "host/replay.c",
+            "sha256": "fc1c8953d884ed3e2b9d245e5eb28288ee8b1d7c158e89d8c19dcd9df93c12ce",
+            "symbol": "int main(int argc, char **argv) {"
+          }
+        ],
+        "execution_evidence": [
+          "IDC-01/final-native-run.json",
+          "IDC-01/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "本轮实际维护者回放、CLI场景及跨仓集成不冒充本仓自有测试。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "跟踪源码没有仓内有效集成测试，CMake只提供可选外部维护者测试入口。",
+        "score": 0,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "b2b6df534b7633fb0d8386dc886a9a3c9ff35822"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "b2b6df534b7633fb0d8386dc886a9a3c9ff35822"
+}

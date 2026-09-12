@@ -1,0 +1,230 @@
+{
+  "checks": {
+    "builds": 1,
+    "emulator_runtime_checks": 11,
+    "failures": 0,
+    "repository_unit_tests": 0,
+    "skipped": 0
+  },
+  "engines": [
+    "Gradle 8.4 / AGP 8.3.0 / Kotlin 1.9.22 / compileSdk 34",
+    "Android Emulator 36.2.12 / API35 / x86_64"
+  ],
+  "head": "58b1e989cf25e7431717b6c7a5b43ae8856962ec",
+  "id": "AIC-08",
+  "limits": [
+    "Android runtime is one API35 x86_64 emulator, not a physical device or vehicle acceptance.",
+    "Execution is maintainer verification, not remote CI, candidate/model evaluation or independent holdout.",
+    "Only this repository checks and AAR input are exported. The shared host APK/source and full shared report are maintainer-only because they contain unrelated repositories.",
+    "The published source history has provenance metadata normalized. Original executed HEAD/tree and byte-equivalence evidence are retained explicitly; this metadata operation is not a new native run."
+  ],
+  "provenance_normalization": {
+    "changed_current_files": [
+      {
+        "original_sha256": "826001b85f37b47b1dc2e5fa2bbf291f29abfe2bf7060161945cfa709caa2c4c",
+        "path": "provenance.json",
+        "public_sha256": "6ae61dcce7db51d376597122d8c318041a841d439981bc0d3b37a526f2f19689"
+      }
+    ],
+    "executed_or_reviewed_head": "719b7886cf1281eee94e154ead1a91235fc11a20",
+    "executed_or_reviewed_tree": "275668dbe045b1b17b22d1197f80f075e14f5490",
+    "public_head": "58b1e989cf25e7431717b6c7a5b43ae8856962ec",
+    "public_tree": "e39b8dd3fe29167a2aad5eeba90147fb15a12a50",
+    "schema": "provenance-normalization-binding-1",
+    "scope": "Native execution remains bound to its original recorded identity. All implementation, model, calibration, test and binary blobs are unchanged; only provenance documents and derived dependency-lock identities were normalized before first publication.",
+    "unchanged_implementation_files": 16
+  },
+  "raw_packet": {
+    "bytes": 13886791,
+    "format": "candidate-raw-inputs-v1",
+    "name": "center-native-inputs-v0.12.0.zip",
+    "release_url": "https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.12.0",
+    "sha256": "d0d076424d5a83516bff67997779a1bc5125daa408c1ab52d025930cf72c348a",
+    "sources": {
+      "AIC-01": {
+        "head": "554118dcaed430f1712f1ac5c4be9ae9fc91e749",
+        "tree": "f7744f765c475125f20b2f83f31116a2c160c15a"
+      },
+      "AIC-02": {
+        "head": "69582afa41f69548179a6e8db297b326454ee4d3",
+        "tree": "5255217dbee9c9c032432b474b3aeab4a3f7d320"
+      },
+      "AIC-03": {
+        "head": "b7dc0937f48bbcf3b163ce46dd70098d708bbe50",
+        "tree": "f49cbccd75d0b5d313d7f686ab759f255ac46355"
+      },
+      "AIC-04": {
+        "head": "2a2987de0db0d345c77748aafbfd3b693a6ca073",
+        "tree": "2d0b4fea320f52d2e8e9d2392f6115bcd57f59bb"
+      },
+      "AIC-05": {
+        "head": "2f94a73210da7bb69575b806c7f431183fec759b",
+        "tree": "76e61f200adb540622de3743613ebee40f700a47"
+      },
+      "AIC-06": {
+        "head": "33e6f4c186d1548c2906d74232a9ffa0ebde6996",
+        "tree": "156371a7dfc973a2123010b9bb5c385639793ded"
+      },
+      "AIC-07": {
+        "head": "8394177bed790a0c0ba557d87931e00bb0b13235",
+        "tree": "90303ff3a3998adb99784c4b3017c5846ffa440a"
+      },
+      "AIC-08": {
+        "head": "58b1e989cf25e7431717b6c7a5b43ae8856962ec",
+        "tree": "e39b8dd3fe29167a2aad5eeba90147fb15a12a50"
+      },
+      "AIC-09": {
+        "head": "ed34ae9126eed17cc34806a0ab60e3b7f68fc071",
+        "tree": "0e80e150bbaf4c2e1f5a94045860c87498b463ac"
+      },
+      "AIC-10": {
+        "head": "04ecdf17210613d85535e4a51efd1a61ec3fab40",
+        "tree": "5119dd42132a3855a8e9db74658438e53c35ab7c"
+      },
+      "AIC-11": {
+        "head": "b0851c013d9996e553cca4f58c2f787d06bf6b0f",
+        "tree": "821f678bbfae87d485bfd6b208a32606521d9f16"
+      },
+      "ARC-01": {
+        "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+        "tree": "d05d608119d5b88086d9d077f9e6f2505dddf614"
+      },
+      "ARC-02": {
+        "head": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+        "tree": "70a72c0b2254efb4226a6fb19ad91be9aa47bbf7"
+      },
+      "ARC-03": {
+        "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+        "tree": "10af906321d6cb8a8c0a1335ce6c8ca28932ddc7"
+      },
+      "ARC-04": {
+        "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+        "tree": "6d4ecc7d48a66c00f7b232917196b7995015a466"
+      },
+      "ARC-05": {
+        "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+        "tree": "8af5b2293dfcd63936ecf6fbb553ab231b75c2c6"
+      },
+      "ARC-06": {
+        "head": "258ba5ba20acffb8b4c16f0d7e905611498a1928",
+        "tree": "6d2d152642b07aa4149c02c0982ddaf230a52c76"
+      },
+      "ARC-07": {
+        "head": "43d3360c130d347dc3e2d818b25dc0e8716abc9f",
+        "tree": "208682dfe483e0af4cbc86fef09a6f9d68ded7f2"
+      },
+      "ARC-08": {
+        "head": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827",
+        "tree": "f78aafac2df2c0eb3ff3a73cb10d23501f4eadf2"
+      },
+      "ARC-09": {
+        "head": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+        "tree": "6a84feae70438c8f969d1ad35b7886ca20dbb7e5"
+      },
+      "ARC-10": {
+        "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+        "tree": "3085c2803f5add13a353c69f2beaf22e0bc177b8"
+      },
+      "ARC-11": {
+        "head": "204dab303944f787a4702e3dfb8d215b07ce0371",
+        "tree": "acac89513567bc9e4ee68c07397dafc9b746290f"
+      },
+      "IDC-01": {
+        "head": "ca9fa37711754fd3fccc1ada6145f75475a1649c",
+        "tree": "b2b6df534b7633fb0d8386dc886a9a3c9ff35822"
+      },
+      "IDC-02": {
+        "head": "7dc81b216d594b0bdee5fc1095a8296a8beef005",
+        "tree": "268b81e4c952971f5758f75d7a9bc944fc72713b"
+      },
+      "IDC-03": {
+        "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+        "tree": "0126c386fb81044f3feedfa2c828e83bc7ce6bdf"
+      },
+      "IDC-04": {
+        "head": "257dcc87392c004a682b38b8df8645d5970997ab",
+        "tree": "52ecb01a014153e1d3895f15cd70cce512bf2cdf"
+      },
+      "IDC-05": {
+        "head": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff",
+        "tree": "a52ae34535e9dba329b2ae375c3b7eac78e9873b"
+      },
+      "IDC-06": {
+        "head": "0f4e6819ec2981f4a4170058402e7c8f6cf656a2",
+        "tree": "9c60b436285f8f63b768ff2c7caee7561c20bb87"
+      },
+      "IDC-07": {
+        "head": "30f934b48ae56ceee8c490ef655d6ef38c42dba7",
+        "tree": "530fd74a9901bf624d896edca3b4fd679fb3df7c"
+      },
+      "IDC-08": {
+        "head": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1",
+        "tree": "6af5f27a12415791ff8abda0ecaea6f0317a77de"
+      },
+      "IDC-09": {
+        "head": "e629895f0302ae51e7f229794f72a9e06edbe183",
+        "tree": "25fbc686ebd7df7c69b7b5a8b3b9d50993688a92"
+      },
+      "IDC-10": {
+        "head": "13d83b57827247366cea13f88daba33234da8fc8",
+        "tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c"
+      },
+      "IDC-11": {
+        "head": "fbb4014901ac35cd6b0083977eeee1e481d330c9",
+        "tree": "3fe05f9e66804cafa03b618d6465456b318b3b27"
+      }
+    }
+  },
+  "record_sha256": {
+    "AIC-08/build-final.log": "e6e5c31fcc154112cd3041495fe445f5afb005183589dbdcb688db0b04b94d48",
+    "AIC-08/build-result.json": "3daa70a590ced2ac657e996a5632b4b0884cc019d3e2c42eb52a5c9ff7c6eb3f",
+    "AIC-08/library-runtime/DiagnosticsActivity.kt": "d7be6fbe92796440b010eb207a81b2a8b9a9935d263b19fa91cb383b97af4715",
+    "AIC-08/library-runtime/DiagnosticsActivity.registration.xml": "3fe0a661f2f8666cdca697ca3f45d3fd32edc3f4ee4d57583dbf5897a1c723be",
+    "AIC-08/library-runtime/MaintainerChecks.excerpt.kt": "2425396955f3ac094d13af87897c55449faa30dbbb2457bbf35998ac707f692c",
+    "AIC-08/library-runtime/Ui.kt": "389250a61dbe8b15c2f182a12a7566fc494f99c1257ab71d888f22d648ab24a9",
+    "AIC-08/library-runtime/input-binding.json": "f34d34fe39023f9057493cf0bf240f245be7ea5c6eeddf6e0dee180784291365",
+    "AIC-08/library-runtime/result.json": "31345cc238d34b25cf8e936821ebd33695f5638df24c2a69a096465135380ab4",
+    "AIC-08/provenance-normalization.json": "30b9d1751f568208ba3ca45591d6d5d7fdf2a54ba525609a2b83dda0a34b19d5"
+  },
+  "records": [
+    {
+      "path": "AIC-08/build-result.json",
+      "sha256": "3daa70a590ced2ac657e996a5632b4b0884cc019d3e2c42eb52a5c9ff7c6eb3f"
+    },
+    {
+      "path": "AIC-08/build-final.log",
+      "sha256": "e6e5c31fcc154112cd3041495fe445f5afb005183589dbdcb688db0b04b94d48"
+    },
+    {
+      "path": "AIC-08/library-runtime/result.json",
+      "sha256": "31345cc238d34b25cf8e936821ebd33695f5638df24c2a69a096465135380ab4"
+    },
+    {
+      "path": "AIC-08/library-runtime/input-binding.json",
+      "sha256": "f34d34fe39023f9057493cf0bf240f245be7ea5c6eeddf6e0dee180784291365"
+    },
+    {
+      "path": "AIC-08/library-runtime/MaintainerChecks.excerpt.kt",
+      "sha256": "2425396955f3ac094d13af87897c55449faa30dbbb2457bbf35998ac707f692c"
+    },
+    {
+      "path": "AIC-08/library-runtime/DiagnosticsActivity.kt",
+      "sha256": "d7be6fbe92796440b010eb207a81b2a8b9a9935d263b19fa91cb383b97af4715"
+    },
+    {
+      "path": "AIC-08/library-runtime/Ui.kt",
+      "sha256": "389250a61dbe8b15c2f182a12a7566fc494f99c1257ab71d888f22d648ab24a9"
+    },
+    {
+      "path": "AIC-08/library-runtime/DiagnosticsActivity.registration.xml",
+      "sha256": "3fe0a661f2f8666cdca697ca3f45d3fd32edc3f4ee4d57583dbf5897a1c723be"
+    },
+    {
+      "path": "AIC-08/provenance-normalization.json",
+      "sha256": "30b9d1751f568208ba3ca45591d6d5d7fdf2a54ba525609a2b83dda0a34b19d5"
+    }
+  ],
+  "schema": "center-execution-summary-1",
+  "status": "passed",
+  "tree": "e39b8dd3fe29167a2aad5eeba90147fb15a12a50"
+}

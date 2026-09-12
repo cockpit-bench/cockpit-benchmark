@@ -1,0 +1,478 @@
+{
+  "execution": {
+    "limits": [
+      "Android runtime is one API35 x86_64 emulator, not a physical device or vehicle acceptance.",
+      "Execution is maintainer verification, not remote CI, candidate/model evaluation or independent holdout.",
+      "Only this repository checks and AAR input are exported. The shared host APK/source and full shared report are maintainer-only because they contain unrelated repositories.",
+      "The published source history has provenance metadata normalized. Original executed HEAD/tree and byte-equivalence evidence are retained explicitly; this metadata operation is not a new native run."
+    ],
+    "records": [
+      {
+        "path": "suites/ai-center/execution/AIC-02.json",
+        "sha256": "30bb25d1805ea3548151088ab7d0693174e5ed37711265afd2c1a831a759e945"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "69582afa41f69548179a6e8db297b326454ee4d3",
+  "id": "AIC-02",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "69582afa41f69548179a6e8db297b326454ee4d3",
+    "id": "AIC-02",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class SnapshotStore",
+            "path": "hall-data/src/main/java/org/bench/halldata/SnapshotStore.kt",
+            "sha256": "535dc576aaa357066524771e0fc7e0904b442e860d8a8f762efd03b2d6a903db",
+            "symbol": "class SnapshotStore"
+          },
+          {
+            "kind": "file",
+            "line": 13,
+            "locator": "line 13: override fun publish",
+            "path": "hall-data/src/main/java/org/bench/halldata/HallDataService.kt",
+            "sha256": "e6acdfb3ac714297e153c16e3bf61be0aed66e0e38d762e6dcbdba8f104aa333",
+            "symbol": "override fun publish"
+          }
+        ],
+        "limitations": [
+          "Service.publish 同时编排存储、磁盘提交与观察者广播，错误边界较集中。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "纯快照存储与 Android Bundle/AIDL、SharedPreferences 日志分离。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class HallDataConnection",
+            "path": "hall-data/src/main/java/org/bench/halldata/HallDataConnection.kt",
+            "sha256": "a2880fa38d205208cbbdbdc6e8d86681fb6de2f925686b8e51b8d781620b56c9",
+            "symbol": "class HallDataConnection"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class HallDataService",
+            "path": "hall-data/src/main/java/org/bench/halldata/HallDataService.kt",
+            "sha256": "e6acdfb3ac714297e153c16e3bf61be0aed66e0e38d762e6dcbdba8f104aa333",
+            "symbol": "class HallDataService"
+          }
+        ],
+        "limitations": [
+          "只有一个发布模块，Service 直接构造内部实现，无可替换的日志插件边界。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "AAR 提供真实数据存储、编码、日志、绑定和跨进程服务单元，外部宿主消费编译 AAR。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: private val store=",
+            "path": "hall-data/src/main/java/org/bench/halldata/HallDataService.kt",
+            "sha256": "e6acdfb3ac714297e153c16e3bf61be0aed66e0e38d762e6dcbdba8f104aa333",
+            "symbol": "private val store="
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: class SnapshotJournal",
+            "path": "hall-data/src/main/java/org/bench/halldata/SnapshotJournal.kt",
+            "sha256": "603b880a49a8c794dab11a5d383a9c793c7785da86594337a22f4f7e3f84581f",
+            "symbol": "class SnapshotJournal"
+          }
+        ],
+        "limitations": [
+          "服务内部直接依赖 SnapshotStore 和 SnapshotJournal，无法注入其他持久化实现。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "消费者使用 AIDL 与绑定封装，调用方不依赖存储容器。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "6dd57c2784ba07458196d253c686d2f0f8a3e72bb10a50c2a8b857f3a619c9c4",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "本机Gradle构建和维护者脚本不冒称仓内或远端CI。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单没有CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: compileSdk 34",
+            "path": "hall-data/build.gradle",
+            "sha256": "f4c110d2b1edf0a31892f4b410a10e61f2c9a9b14994ebc5db27e90f0f6f21ac",
+            "symbol": "compileSdk 34"
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: version '8.3.0'",
+            "path": "build.gradle",
+            "sha256": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+            "symbol": "version '8.3.0'"
+          }
+        ],
+        "limitations": [
+          "仍依赖Android SDK与固定包缓存/下载；未提供公开接口版本兼容合同，保守取包边界档。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "Gradle8.4、AGP8.3.0、Kotlin1.9.22、SDK34版本明确，所有本仓模块可独立构建成APK/AAR。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: defaultConfig",
+            "path": "hall-data/build.gradle",
+            "sha256": "f4c110d2b1edf0a31892f4b410a10e61f2c9a9b14994ebc5db27e90f0f6f21ac",
+            "symbol": "defaultConfig"
+          }
+        ],
+        "limitations": [
+          "versionName、数据库版本和卡片递增revision都不能替代API版本。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "没有独立的公共API语义版本或兼容检查。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: object SnapshotCodec",
+            "path": "hall-data/src/main/java/org/bench/halldata/SnapshotCodec.kt",
+            "sha256": "a981f0ed2b8d81fdaf42482c7d6119ac582358f22cf55c69d073e5f5d7041d42",
+            "symbol": "object SnapshotCodec"
+          },
+          {
+            "kind": "file",
+            "line": 13,
+            "locator": "line 13: override fun publish",
+            "path": "hall-data/src/main/java/org/bench/halldata/HallDataService.kt",
+            "sha256": "e6acdfb3ac714297e153c16e3bf61be0aed66e0e38d762e6dcbdba8f104aa333",
+            "symbol": "override fun publish"
+          }
+        ],
+        "limitations": [
+          "publish 的数据库提交和广播错误处理仍在同一服务函数。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "模型、比较交换存储、编解码和日志各有明确文件。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: init",
+            "path": "hall-data/src/main/java/org/bench/halldata/CardSnapshot.kt",
+            "sha256": "4195a3ac58f8e463777708083b3593e984c25deae9f91b330d0b4a21869326fe",
+            "symbol": "init"
+          },
+          {
+            "kind": "file",
+            "line": 13,
+            "locator": "line 13: fun save",
+            "path": "hall-data/src/main/java/org/bench/halldata/SnapshotJournal.kt",
+            "sha256": "603b880a49a8c794dab11a5d383a9c793c7785da86594337a22f4f7e3f84581f",
+            "symbol": "fun save"
+          }
+        ],
+        "limitations": [
+          "新增字段或状态须同步修改模型校验、Bundle codec、JSON journal，缺少扩展注册机制。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "卡片实例和观察者可以增加，不需改存储循环。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: interface IHallData",
+            "path": "hall-data/src/main/aidl/org/bench/halldata/IHallData.aidl",
+            "sha256": "4bd493e6369084bda258225def6b498dc0a89fb2d27005f278ff2831ba90bdba",
+            "symbol": "interface IHallData"
+          },
+          {
+            "kind": "file",
+            "line": 11,
+            "locator": "line 11: private val binder=",
+            "path": "hall-data/src/main/java/org/bench/halldata/HallDataService.kt",
+            "sha256": "e6acdfb3ac714297e153c16e3bf61be0aed66e0e38d762e6dcbdba8f104aa333",
+            "symbol": "private val binder="
+          }
+        ],
+        "limitations": [
+          "没有适用的自定义多实现替换合同，不能因无复杂继承给高档。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "AIDL Stub 使用平台要求的接口，宿主实际进行远程调用。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: interface IHallObserver",
+            "path": "hall-data/src/main/aidl/org/bench/halldata/IHallObserver.aidl",
+            "sha256": "0468ed801e7dd62f999fc255cdce9ef2b099c1b97557d711346ac04dfd1f2089",
+            "symbol": "interface IHallObserver"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: interface IHallData",
+            "path": "hall-data/src/main/aidl/org/bench/halldata/IHallData.aidl",
+            "sha256": "4bd493e6369084bda258225def6b498dc0a89fb2d27005f278ff2831ba90bdba",
+            "symbol": "interface IHallData"
+          }
+        ],
+        "limitations": [
+          "主 AIDL 同时暴露查询、发布、订阅与诊断 PID，读者仍依赖完整接口。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "观察者接口只有变更回调，连接可独立关闭。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: private lateinit var journal",
+            "path": "hall-data/src/main/java/org/bench/halldata/HallDataService.kt",
+            "sha256": "e6acdfb3ac714297e153c16e3bf61be0aed66e0e38d762e6dcbdba8f104aa333",
+            "symbol": "private lateinit var journal"
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: fun connect",
+            "path": "hall-data/src/main/java/org/bench/halldata/HallDataConnection.kt",
+            "sha256": "a2880fa38d205208cbbdbdc6e8d86681fb6de2f925686b8e51b8d781620b56c9",
+            "symbol": "fun connect"
+          }
+        ],
+        "limitations": [
+          "替换日志或存储必须改 HallDataService 具体构造。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "外部宿主通过 IHallData 获取行为；内部存储未向服务暴露抽象。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class SnapshotStore",
+            "path": "hall-data/src/main/java/org/bench/halldata/SnapshotStore.kt",
+            "sha256": "535dc576aaa357066524771e0fc7e0904b442e860d8a8f762efd03b2d6a903db",
+            "symbol": "class SnapshotStore"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class HallDataConnection",
+            "path": "hall-data/src/main/java/org/bench/halldata/HallDataConnection.kt",
+            "sha256": "a2880fa38d205208cbbdbdc6e8d86681fb6de2f925686b8e51b8d781620b56c9",
+            "symbol": "class HallDataConnection"
+          }
+        ],
+        "limitations": [
+          "无第二套 SDK 构建或 Binder API 版本迁移检查。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "Android 传输集中在 Service/Connection/Codec，纯快照存储无需 Android。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: Bundle snapshot",
+            "path": "hall-data/src/main/aidl/org/bench/halldata/IHallData.aidl",
+            "sha256": "4bd493e6369084bda258225def6b498dc0a89fb2d27005f278ff2831ba90bdba",
+            "symbol": "Bundle snapshot"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: data class CardSnapshot",
+            "path": "hall-data/src/main/java/org/bench/halldata/CardSnapshot.kt",
+            "sha256": "4195a3ac58f8e463777708083b3593e984c25deae9f91b330d0b4a21869326fe",
+            "symbol": "data class CardSnapshot"
+          }
+        ],
+        "limitations": [
+          "仅 API35 宿主替身的真实双进程验证，没有两套设备配置。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "接口不绑定 OEM 设备，时间和数据由消费者显式传入。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "6dd57c2784ba07458196d253c686d2f0f8a3e72bb10a50c2a8b857f3a619c9c4",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "不伪造历史tags或设备分支；主题/场景变化不自动等同分支策略。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "只有本次本地main实际建设提交，没有已实施的多平台分支/变体策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: fun publish",
+            "path": "hall-data/src/main/java/org/bench/halldata/SnapshotStore.kt",
+            "sha256": "535dc576aaa357066524771e0fc7e0904b442e860d8a8f762efd03b2d6a903db",
+            "symbol": "fun publish"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: fun expired",
+            "path": "hall-data/src/main/java/org/bench/halldata/CardSnapshot.kt",
+            "sha256": "4195a3ac58f8e463777708083b3593e984c25deae9f91b330d0b4a21869326fe",
+            "symbol": "fun expired"
+          }
+        ],
+        "limitations": [
+          "Bundle/JSON字段映射属协议结构，已排除；不把它们当作重复缺陷。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "审阅全部七个生产 Kotlin 与两个 AIDL；CAS、过期判断、监听器注册没有重复业务实现。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class SnapshotStore",
+            "path": "hall-data/src/main/java/org/bench/halldata/SnapshotStore.kt",
+            "sha256": "535dc576aaa357066524771e0fc7e0904b442e860d8a8f762efd03b2d6a903db",
+            "symbol": "class SnapshotStore"
+          },
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10: override fun onCreate",
+            "path": "hall-data/src/main/java/org/bench/halldata/HallDataService.kt",
+            "sha256": "e6acdfb3ac714297e153c16e3bf61be0aed66e0e38d762e6dcbdba8f104aa333",
+            "symbol": "override fun onCreate"
+          }
+        ],
+        "limitations": [
+          "服务实例仍直接控制 Android 日志提交及 binder 回调生命周期。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "卡片与存储无平台导入，平台传输分开。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class SnapshotStoreTest",
+            "path": "hall-data/src/test/java/org/bench/halldata/SnapshotStoreTest.kt",
+            "sha256": "9266e1ed7a6dfaefac36498b9b9181feccde386619e6e9a3e9024347fabd06f2",
+            "symbol": "class SnapshotStoreTest"
+          }
+        ],
+        "limitations": [
+          "维护者宿主不计入仓内集成测试。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "仓内三项测试仅验证 SnapshotStore；AIDL/双进程/服务重建在仓外宿主真实运行。",
+        "score": 0,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "5255217dbee9c9c032432b474b3aeab4a3f7d320"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "5255217dbee9c9c032432b474b3aeab4a3f7d320"
+}

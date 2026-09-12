@@ -1,0 +1,320 @@
+{
+  "checks": {
+    "counting_note": "Check invocations include repeated loop assertions and, where present, the repository test and identical external copy. This is not a count of unique independent business cases.",
+    "ctest_check_invocations": 262,
+    "ctest_executable_reports": [
+      209,
+      53
+    ],
+    "original_and_fresh_clone_passed": true,
+    "scenario_rows": 1
+  },
+  "engines": [
+    "Windows MinGW GCC C++17/CMake/Ninja/CTest"
+  ],
+  "head": "257dcc87392c004a682b38b8df8645d5970997ab",
+  "id": "IDC-04",
+  "limits": [
+    "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+    "Maintainer external tests do not count as repository-owned integration tests.",
+    "Same maintainer construction family; not an independent holdout."
+  ],
+  "raw_packet": {
+    "bytes": 13886791,
+    "format": "candidate-raw-inputs-v1",
+    "name": "center-native-inputs-v0.12.0.zip",
+    "release_url": "https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.12.0",
+    "sha256": "d0d076424d5a83516bff67997779a1bc5125daa408c1ab52d025930cf72c348a",
+    "sources": {
+      "AIC-01": {
+        "head": "554118dcaed430f1712f1ac5c4be9ae9fc91e749",
+        "tree": "f7744f765c475125f20b2f83f31116a2c160c15a"
+      },
+      "AIC-02": {
+        "head": "69582afa41f69548179a6e8db297b326454ee4d3",
+        "tree": "5255217dbee9c9c032432b474b3aeab4a3f7d320"
+      },
+      "AIC-03": {
+        "head": "b7dc0937f48bbcf3b163ce46dd70098d708bbe50",
+        "tree": "f49cbccd75d0b5d313d7f686ab759f255ac46355"
+      },
+      "AIC-04": {
+        "head": "2a2987de0db0d345c77748aafbfd3b693a6ca073",
+        "tree": "2d0b4fea320f52d2e8e9d2392f6115bcd57f59bb"
+      },
+      "AIC-05": {
+        "head": "2f94a73210da7bb69575b806c7f431183fec759b",
+        "tree": "76e61f200adb540622de3743613ebee40f700a47"
+      },
+      "AIC-06": {
+        "head": "33e6f4c186d1548c2906d74232a9ffa0ebde6996",
+        "tree": "156371a7dfc973a2123010b9bb5c385639793ded"
+      },
+      "AIC-07": {
+        "head": "8394177bed790a0c0ba557d87931e00bb0b13235",
+        "tree": "90303ff3a3998adb99784c4b3017c5846ffa440a"
+      },
+      "AIC-08": {
+        "head": "58b1e989cf25e7431717b6c7a5b43ae8856962ec",
+        "tree": "e39b8dd3fe29167a2aad5eeba90147fb15a12a50"
+      },
+      "AIC-09": {
+        "head": "ed34ae9126eed17cc34806a0ab60e3b7f68fc071",
+        "tree": "0e80e150bbaf4c2e1f5a94045860c87498b463ac"
+      },
+      "AIC-10": {
+        "head": "04ecdf17210613d85535e4a51efd1a61ec3fab40",
+        "tree": "5119dd42132a3855a8e9db74658438e53c35ab7c"
+      },
+      "AIC-11": {
+        "head": "b0851c013d9996e553cca4f58c2f787d06bf6b0f",
+        "tree": "821f678bbfae87d485bfd6b208a32606521d9f16"
+      },
+      "ARC-01": {
+        "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+        "tree": "d05d608119d5b88086d9d077f9e6f2505dddf614"
+      },
+      "ARC-02": {
+        "head": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+        "tree": "70a72c0b2254efb4226a6fb19ad91be9aa47bbf7"
+      },
+      "ARC-03": {
+        "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+        "tree": "10af906321d6cb8a8c0a1335ce6c8ca28932ddc7"
+      },
+      "ARC-04": {
+        "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+        "tree": "6d4ecc7d48a66c00f7b232917196b7995015a466"
+      },
+      "ARC-05": {
+        "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+        "tree": "8af5b2293dfcd63936ecf6fbb553ab231b75c2c6"
+      },
+      "ARC-06": {
+        "head": "258ba5ba20acffb8b4c16f0d7e905611498a1928",
+        "tree": "6d2d152642b07aa4149c02c0982ddaf230a52c76"
+      },
+      "ARC-07": {
+        "head": "43d3360c130d347dc3e2d818b25dc0e8716abc9f",
+        "tree": "208682dfe483e0af4cbc86fef09a6f9d68ded7f2"
+      },
+      "ARC-08": {
+        "head": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827",
+        "tree": "f78aafac2df2c0eb3ff3a73cb10d23501f4eadf2"
+      },
+      "ARC-09": {
+        "head": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+        "tree": "6a84feae70438c8f969d1ad35b7886ca20dbb7e5"
+      },
+      "ARC-10": {
+        "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+        "tree": "3085c2803f5add13a353c69f2beaf22e0bc177b8"
+      },
+      "ARC-11": {
+        "head": "204dab303944f787a4702e3dfb8d215b07ce0371",
+        "tree": "acac89513567bc9e4ee68c07397dafc9b746290f"
+      },
+      "IDC-01": {
+        "head": "ca9fa37711754fd3fccc1ada6145f75475a1649c",
+        "tree": "b2b6df534b7633fb0d8386dc886a9a3c9ff35822"
+      },
+      "IDC-02": {
+        "head": "7dc81b216d594b0bdee5fc1095a8296a8beef005",
+        "tree": "268b81e4c952971f5758f75d7a9bc944fc72713b"
+      },
+      "IDC-03": {
+        "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+        "tree": "0126c386fb81044f3feedfa2c828e83bc7ce6bdf"
+      },
+      "IDC-04": {
+        "head": "257dcc87392c004a682b38b8df8645d5970997ab",
+        "tree": "52ecb01a014153e1d3895f15cd70cce512bf2cdf"
+      },
+      "IDC-05": {
+        "head": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff",
+        "tree": "a52ae34535e9dba329b2ae375c3b7eac78e9873b"
+      },
+      "IDC-06": {
+        "head": "0f4e6819ec2981f4a4170058402e7c8f6cf656a2",
+        "tree": "9c60b436285f8f63b768ff2c7caee7561c20bb87"
+      },
+      "IDC-07": {
+        "head": "30f934b48ae56ceee8c490ef655d6ef38c42dba7",
+        "tree": "530fd74a9901bf624d896edca3b4fd679fb3df7c"
+      },
+      "IDC-08": {
+        "head": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1",
+        "tree": "6af5f27a12415791ff8abda0ecaea6f0317a77de"
+      },
+      "IDC-09": {
+        "head": "e629895f0302ae51e7f229794f72a9e06edbe183",
+        "tree": "25fbc686ebd7df7c69b7b5a8b3b9d50993688a92"
+      },
+      "IDC-10": {
+        "head": "13d83b57827247366cea13f88daba33234da8fc8",
+        "tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c"
+      },
+      "IDC-11": {
+        "head": "fbb4014901ac35cd6b0083977eeee1e481d330c9",
+        "tree": "3fe05f9e66804cafa03b618d6465456b318b3b27"
+      }
+    }
+  },
+  "record_sha256": {
+    "IDC-04/1-configure.log": "b0f5768f5ebb00103a67a0a1aa49902f45417f6e036226b5f65730bf1c1f53df",
+    "IDC-04/2-compile.log": "8d6c3872104ab4ad1dadbbf02f4f36df6ef8b1b68fa3a5a397d1bca4fce3ad78",
+    "IDC-04/3-test.log": "5bc3a13825489520c548c332c8909b45fa2ad388b710ebeeeda55f891432f4b5",
+    "IDC-04/bad-input.csv": "b58620feb681f7a11c67a503de2f0058cdb21d22ee8dc9b173e0647214c765b5",
+    "IDC-04/business_tests.cpp": "973963db0b315dc55dc16619ae512627a59806d3104fb657433078f45a5a5092",
+    "IDC-04/duplicate.conf": "77504bd8ca7dc25bbce86ae4ac79edae3c2267219895cb9b14ddef2343fca6c5",
+    "IDC-04/extended_tests.cpp": "7f84034379eefed9c85e5128ac0ce13e4bd8b23b10821774659b43ee4340416c",
+    "IDC-04/final-native-run.json": "9a177963c27c3c7bf69ec93017946d7dc522eeea3e2b0f30352e6a368f7ca2da",
+    "IDC-04/final-restore-git-13.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-04/final-restore-git-6.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-04/final-restore-git-head.log": "21cea3caccd8c1692f796d8a4f448f19dad5cc13f3e18f448c49cfa99a7dd4da",
+    "IDC-04/final-restore-git-tree.log": "62d7f5c6a869923f3ebe9ace47caca13ba8bedef49034b5ea322c044a0c86168",
+    "IDC-04/final-restored-native-run.json": "905cbfcb6ed916d1aa543ed909cbc78a29f9b1b8c7897873bd2b209966c4379b",
+    "IDC-04/inputs-final/config/camera_extrinsics.yaml": "8ab1677fac3b6f29bf0baa65d6d602168e5d4f7ba5ea01a36f250c31c9d6e22a",
+    "IDC-04/inputs-final/config/default.yaml": "a26b66be72c2910a6c960632f3319e039259f6a5f910361523e55239b3de9357",
+    "IDC-04/inputs-final/scenarios/default.csv": "3851a7379a6ff1bb12207eb065d176199fccb78fdf853e0d0b67e8ac651ccbd4",
+    "IDC-04/restore-clone.log": "b6f273e92830fd474e62a5c9d64b3bdaad1ba90adc62fe68a8a8769166a0bcfb",
+    "IDC-04/restore-compile.log": "e17c2ea0e7d1465002ec09eaabb07879177c91f4ddb63ea22cf9d88f8e1e9301",
+    "IDC-04/restore-configure.log": "80d2493c5444196f2cc005785e8e519c57d89decc3a66fcafd81e6fb99912f88",
+    "IDC-04/restore-ctest.log": "07e8756acdfe52c59a10b9ab876d627298e9b61241f69db7be4915146e14fb76",
+    "IDC-04/restore-git-fsck.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-04/restore-git-remote.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-04/restore-git-rev-list.log": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3",
+    "IDC-04/restore-git-show-ref.log": "eafabb1c6bb0922f0e918273e919e3b685322b49df44d25dc354c0ebf2ccdaf9",
+    "IDC-04/restore-remove-remote.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-04/restore-scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "IDC-04/restored-scenario.csv": "1ae20f0873d86d74d8be9748024a46b01899ae1021b66c0d728873bef970bd88",
+    "IDC-04/scenario-expected.json": "9212b2f4226d5cf19f28611ab9a09a1ee5910b2c3ee05fda3a25bb7bdec13a74",
+    "IDC-04/scenario-output.csv": "1ae20f0873d86d74d8be9748024a46b01899ae1021b66c0d728873bef970bd88",
+    "IDC-04/scenario-run.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "records": [
+    {
+      "path": "IDC-04/1-configure.log",
+      "sha256": "b0f5768f5ebb00103a67a0a1aa49902f45417f6e036226b5f65730bf1c1f53df"
+    },
+    {
+      "path": "IDC-04/2-compile.log",
+      "sha256": "8d6c3872104ab4ad1dadbbf02f4f36df6ef8b1b68fa3a5a397d1bca4fce3ad78"
+    },
+    {
+      "path": "IDC-04/3-test.log",
+      "sha256": "5bc3a13825489520c548c332c8909b45fa2ad388b710ebeeeda55f891432f4b5"
+    },
+    {
+      "path": "IDC-04/bad-input.csv",
+      "sha256": "b58620feb681f7a11c67a503de2f0058cdb21d22ee8dc9b173e0647214c765b5"
+    },
+    {
+      "path": "IDC-04/business_tests.cpp",
+      "sha256": "973963db0b315dc55dc16619ae512627a59806d3104fb657433078f45a5a5092"
+    },
+    {
+      "path": "IDC-04/duplicate.conf",
+      "sha256": "77504bd8ca7dc25bbce86ae4ac79edae3c2267219895cb9b14ddef2343fca6c5"
+    },
+    {
+      "path": "IDC-04/extended_tests.cpp",
+      "sha256": "7f84034379eefed9c85e5128ac0ce13e4bd8b23b10821774659b43ee4340416c"
+    },
+    {
+      "path": "IDC-04/final-native-run.json",
+      "sha256": "9a177963c27c3c7bf69ec93017946d7dc522eeea3e2b0f30352e6a368f7ca2da"
+    },
+    {
+      "path": "IDC-04/final-restore-git-13.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-04/final-restore-git-6.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-04/final-restore-git-head.log",
+      "sha256": "21cea3caccd8c1692f796d8a4f448f19dad5cc13f3e18f448c49cfa99a7dd4da"
+    },
+    {
+      "path": "IDC-04/final-restore-git-tree.log",
+      "sha256": "62d7f5c6a869923f3ebe9ace47caca13ba8bedef49034b5ea322c044a0c86168"
+    },
+    {
+      "path": "IDC-04/final-restored-native-run.json",
+      "sha256": "905cbfcb6ed916d1aa543ed909cbc78a29f9b1b8c7897873bd2b209966c4379b"
+    },
+    {
+      "path": "IDC-04/inputs-final/config/camera_extrinsics.yaml",
+      "sha256": "8ab1677fac3b6f29bf0baa65d6d602168e5d4f7ba5ea01a36f250c31c9d6e22a"
+    },
+    {
+      "path": "IDC-04/inputs-final/config/default.yaml",
+      "sha256": "a26b66be72c2910a6c960632f3319e039259f6a5f910361523e55239b3de9357"
+    },
+    {
+      "path": "IDC-04/inputs-final/scenarios/default.csv",
+      "sha256": "3851a7379a6ff1bb12207eb065d176199fccb78fdf853e0d0b67e8ac651ccbd4"
+    },
+    {
+      "path": "IDC-04/restore-clone.log",
+      "sha256": "b6f273e92830fd474e62a5c9d64b3bdaad1ba90adc62fe68a8a8769166a0bcfb"
+    },
+    {
+      "path": "IDC-04/restore-compile.log",
+      "sha256": "e17c2ea0e7d1465002ec09eaabb07879177c91f4ddb63ea22cf9d88f8e1e9301"
+    },
+    {
+      "path": "IDC-04/restore-configure.log",
+      "sha256": "80d2493c5444196f2cc005785e8e519c57d89decc3a66fcafd81e6fb99912f88"
+    },
+    {
+      "path": "IDC-04/restore-ctest.log",
+      "sha256": "07e8756acdfe52c59a10b9ab876d627298e9b61241f69db7be4915146e14fb76"
+    },
+    {
+      "path": "IDC-04/restore-git-fsck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-04/restore-git-remote.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-04/restore-git-rev-list.log",
+      "sha256": "53c234e5e8472b6ac51c1ae1cab3fe06fad053beb8ebfd8977b010655bfdd3c3"
+    },
+    {
+      "path": "IDC-04/restore-git-show-ref.log",
+      "sha256": "eafabb1c6bb0922f0e918273e919e3b685322b49df44d25dc354c0ebf2ccdaf9"
+    },
+    {
+      "path": "IDC-04/restore-remove-remote.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-04/restore-scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "IDC-04/restored-scenario.csv",
+      "sha256": "1ae20f0873d86d74d8be9748024a46b01899ae1021b66c0d728873bef970bd88"
+    },
+    {
+      "path": "IDC-04/scenario-expected.json",
+      "sha256": "9212b2f4226d5cf19f28611ab9a09a1ee5910b2c3ee05fda3a25bb7bdec13a74"
+    },
+    {
+      "path": "IDC-04/scenario-output.csv",
+      "sha256": "1ae20f0873d86d74d8be9748024a46b01899ae1021b66c0d728873bef970bd88"
+    },
+    {
+      "path": "IDC-04/scenario-run.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "schema": "center-execution-summary-1",
+  "status": "passed",
+  "tree": "52ecb01a014153e1d3895f15cd70cce512bf2cdf"
+}

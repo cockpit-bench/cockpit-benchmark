@@ -1,0 +1,824 @@
+{
+  "repositories": [
+    {
+      "center": "智能驾驶中心",
+      "evidence": {
+        "path": "suites/intelligent-driving-center/evidence/IDC-01.json",
+        "sha256": "3ad60626a96c12f34446625635a26402400a12d19089db9b0565f2c3e98b3da6"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "3c5c0a0d8fe57648869c7faf763b7ff35067b0986980355fd3026f8a019bdcab",
+        ".gitattributes": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
+        ".gitignore": "856c7b84f0064de3cf28749f6fcc743b11e4653f2e97e7606f8755841841f539",
+        "CMakeLists.txt": "1c6d95789fb874209114def1a1824c304e25f8f1a657fea8a5ab23e5071d872e",
+        "Makefile": "685230ecea9865df0fa7166cd8c7562604b8e9e5edc8fc60d22f88546d4693c1",
+        "README.md": "d4a664d91cc4f4fd14aac96c4b61c1768db10d7a93824b59b359b580bfaf1a72",
+        "SOURCE_ORIGIN.md": "0d8a0ab6d815ab56993c700d9ac0b9bec6758e2cd376161ea2aa4fea70867a65",
+        "generated/Parking_Arbitration.c": "7b7c6213689b18611833b1420f27460c24478f15a579fc0ee1d7bed23ff784cf",
+        "generated/Parking_Config.h": "e41f814ccab3d0f0e246750ddcf054dc2a7ad6a258907308e77b66a8ce55f23c",
+        "generated/Parking_Gating.c": "1909891f2e4084f39fe67fd3bd848b45b5d6debd5e3d1c00c78875169725fc14",
+        "generated/Parking_Init.c": "f09e2e08263a90fd9c21553f74948c6d8191ee37dc86a1d2b5696af940f00f5c",
+        "generated/Parking_Qualification.c": "27b2430e45e694507e3a286bfc96827890f7ed7e8cdb24bfc002a9d2f1d6893d",
+        "generated/Parking_Timing.c": "d7c3271f1226a800d45f38717f6864dac4fcefe10cf2fcd122120750bb25e14f",
+        "host/replay.c": "fc1c8953d884ed3e2b9d245e5eb28288ee8b1d7c158e89d8c19dcd9df93c12ce",
+        "include/Parking.h": "d0647ccbafee6f797ee68c7cd800c6199ff200b0016e44a661b011ad108268dd",
+        "include/Parking_Gating.h": "60917daf42f9223d09b70622777cfee98525c1277c8288e1073dd19ce02fe1bb",
+        "include/Parking_Qualification.h": "0933413e236717c361c23de0ac3023117f8fd8fccfbed2b79be6217393e9c9eb",
+        "include/Parking_Timing.h": "459fc8a7d26325fccb0e75b3f60245ee36be945134eddebbc4bf6829f6382c9d",
+        "include/Parking_Transition.h": "84bfac4d34d34065a64ab39391c38a0d0cfa9cc74e4aa53b33d8105e5e954262",
+        "include/Parking_Types.h": "82bf4d06e0fa3ce1ff43961a81e9411182cebf16efe6c8c0f10fb7ac7bcd3924",
+        "include/Parking_Version.h": "edb00070718b0a3eaf55589817c318bbdf11961a44471786d0313ca5b759577f",
+        "scenarios/default.csv": "55b1af442727f160186bfe50b68999e7f35a69b1be1fbfd4f0d6b12183d3a35a"
+      },
+      "gitlinks": [],
+      "head": "ca9fa37711754fd3fccc1ada6145f75475a1649c",
+      "id": "IDC-01",
+      "implementation_kind": "native_c",
+      "inventory": {
+        "path": "suites/intelligent-driving-center/inventories/IDC-01.json",
+        "sha256": "4b449b7c2da1c51033cb4905a4bba1a8753c3a80d2cc4104f51441464166e7be"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "drive-parking-arbitration",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "ca9fa37711754fd3fccc1ada6145f75475a1649c"
+      },
+      "repository_url": "https://github.com/cockpit-bench/drive-parking-arbitration.git",
+      "scan_profile": {
+        "path": "suites/intelligent-driving-center/profiles/IDC-01.json",
+        "sha256": "205e1b8e8f0fa6df02b3853df1217a315c2be58e31ddd4450202d6e812cdc793"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "b2b6df534b7633fb0d8386dc886a9a3c9ff35822",
+      "type_id": "intelligent-driving-center"
+    },
+    {
+      "center": "智能驾驶中心",
+      "evidence": {
+        "path": "suites/intelligent-driving-center/evidence/IDC-02.json",
+        "sha256": "7b877645e6f3df390e91c5b250bcd6727aa868828e50584371d10c42bea87f9b"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "3c5c0a0d8fe57648869c7faf763b7ff35067b0986980355fd3026f8a019bdcab",
+        ".gitattributes": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
+        ".gitignore": "856c7b84f0064de3cf28749f6fcc743b11e4653f2e97e7606f8755841841f539",
+        "App/SupplyMonitor.c": "4a72d6dcae56f8689b3ccb5fe9f06582b1a190f6dec8b302f711f9a63294baca",
+        "App/SupplyMonitor.h": "626b8a6f9676513544266b951a8f4f2b1393abb1a587704626a934537be4368d",
+        "App/TorqueControl.c": "6f43c8c9477b2f2bcf1252f9b38287bdb071ebd7322f0331a4c78789fa2a086f",
+        "App/TorqueControl.h": "155a0635a9967726836beb5f9564f9dbc3bfecd2802937e8dbc7e9ac66b6859c",
+        "Bsp/Host/Adc.c": "27763710571e733defd1831e53b48eed47811ce3e415030f095bf042bfa7f219",
+        "Bsp/Host/Adc.h": "91930f2c1c740ec1cc043f2f286378c4e5dfad9779c0baaf56c507e47b09b9dc",
+        "Bsp/Host/Can.c": "d62eaf782f360f1874e0700d7f227b38b0f131ea21a9d689689d028982a5aff1",
+        "Bsp/Host/Can.h": "c4e65cf54fb897adf20703dbebd75513e634d404fda799ead6ee22d9f8b07e40",
+        "Bsp/Host/Dio.c": "6071479deaeac9f6e5cbdd5260058fe599860cbade90e01d59aa5938fa026980",
+        "Bsp/Host/Dio.h": "0f903775de7ab9e1efebd1f071fdd11ea13f122f0b133457cf5c843823bccd5e",
+        "Bsp/Host/HostClock.c": "20c09dfceab4fef2f7091eb27846c3cef6d19ed0680ddd939881dd1318ea59ec",
+        "Bsp/Host/HostClock.h": "5a5a25f76cc158b377803b1293c97daf5cf61e98b40395e0c71b738e27667ab1",
+        "Bsw/CanIf/CanIf.c": "999d1d85ad558d6bd4536f1a0ee5fc2899ae5a5d9309912500479e331b009255",
+        "Bsw/CanIf/CanIf.h": "2b2d35df77c312eb3f82bad8650210cb96b329ccb88ae0cdbe2d34d55430e5b3",
+        "Bsw/Com/Com.c": "daba133838d82e4d778c9e7a9f93b71d7570f6921dcde13a687239d7970c7ca1",
+        "Bsw/Com/Com.h": "dd48494cd9062e5e56a4d03a273e178327bcc79427ee117594e3c0701473f66b",
+        "Bsw/Crc/Crc.c": "08cc3e48a46fb4a09463200205f19db6703039ffbec061c7c2e0abffedd217a6",
+        "Bsw/Crc/Crc.h": "43475cf6361b2592e2c6ba612f34b96ae1c71691f9fb87a340cdd12b8e61d1be",
+        "Bsw/Dcm/Dcm.c": "ff84a038fe5dffd90eb4d5f044ccd766f971cc6dbab685ab9ed4b12a8c48e0a5",
+        "Bsw/Dcm/Dcm.h": "b4d26be4a203f2920fc576e8396f16658ff1da5e087d0a07d5004dec3559fe96",
+        "Bsw/Dem/Dem.c": "97bdc9b7b6b96dcecb72853d5acdaebaf5e422f2d96c1216044d3adc45c6a62e",
+        "Bsw/Dem/Dem.h": "6075f607809dc48709f72d493b5b25cb6740258d197a8ec5b0d8a757aeb1641a",
+        "Bsw/NvM/NvM.c": "111dc888622da37358d4b6c240a898e512f8b81a8756a26058ee6bd9f563ed5b",
+        "Bsw/NvM/NvM.h": "688e154ef2c6212b5b49ae4fa8f3a9fe7fa181c48a825315d9db38ce8101a9e1",
+        "Bsw/PduR/PduR.c": "5151b412d13c6fb4b739b745de070aad6fe8ba2e475190159b904acc701928db",
+        "Bsw/PduR/PduR.h": "bfbf03d936492bc4cedde2af950489cf81a9cb3ba0442d1b299665ce7a5a0272",
+        "Bsw/WdgM/WdgM.c": "6f851c93bcacb19cb7d0558d2c3e4819b554dbda31c7b59a1e0a0a570fdfa99d",
+        "Bsw/WdgM/WdgM.h": "0df89bec1c6a090b5c62218d3ed965a5adc2a14a6239fea00a109ebc53e5d398",
+        "CMakeLists.txt": "0b0af775a13d734b5cb896792af2625ba7da73df8a84da7e115437411a7af2db",
+        "Config/EcuValues.arxml": "f35a0c3a0da838256c4fb979cb11a5ae4e72749617ed790e7ce6d4ce4f092f41",
+        "Config/vehicle_can.dbc": "63c863275f5128ffdf20ced1b4be371674f66626a37cd11ad544d941ed27b13a",
+        "Generated/CanIf_Cfg.c": "44ae02bdda35d4e2295193287cf5adf31c656dce9e90869a26dbdc5074e261c5",
+        "Generated/Dem_Cfg.c": "3217638f9ef11dbede542e3fd4238329ad300dd68f4e1e08a9342cd367a275fc",
+        "Generated/NvM_Cfg.c": "85b339ae61ef1c9df2f0c13b17a443f267ce2d024ee43d48bbc622dee8261f5a",
+        "Generated/Os_Cfg.c": "256c9cdec68764e8c451678fb1b8842c861bf3b785743cb23312ffbf1e2d6116",
+        "Integration/McuPlatform.c": "ee15670a567d8584bdcb2cf54e7d146347f58c3882538aef269c52467d707af1",
+        "Makefile": "1abbc6621251f9c15ad2d7af766f5c37d06c5ef53705aadf94ff57cb245c4b9c",
+        "Os/Os.c": "aa3b290a00eada54cc2c4ad8df4d52265e1b368fa8b8af83af402c77b1dce73f",
+        "Os/Os.h": "6ed8e37453e651665ddcc249b746b05e356b04af72246ce547a0acf64a8d3a33",
+        "README.md": "865b95bf26ced972b600b933654b9a33edf8d446c1f5008373d877fa22900148",
+        "SOURCE_ORIGIN.md": "c00cc38c7494cec746a90b158b6371c88b9994c20756ebadcee41849e23d5f55",
+        "host/replay.c": "2449a79a69351756fc7f7cba246b89dd3cdfec05b6c173d069c6987323f2d270",
+        "include/McuPlatform.h": "60b5fef4ff4ab31033763147d59ac3a12af5ed205a3204e13cb5d6de0ab0b69c",
+        "include/Std_Types.h": "21abf9075240893d0c2ba3c0d5f49302f3a4a9fa9342dc7b8b67a432c6dde8ab",
+        "scenarios/default.csv": "5ea3f4479c8068d8ef738f56d726ed7d06750f030424f17347b69bbd8e162962",
+        "tools/generate_config.py": "04dec0035d00feb97eb15bff61bf02df223994972a609f528a604d00c5e24677"
+      },
+      "gitlinks": [],
+      "head": "7dc81b216d594b0bdee5fc1095a8296a8beef005",
+      "id": "IDC-02",
+      "implementation_kind": "native_c",
+      "inventory": {
+        "path": "suites/intelligent-driving-center/inventories/IDC-02.json",
+        "sha256": "cb5b6abc496e72b4b84035509b17c3a69a6767c71ad946523436b07c32f07d24"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "drive-mcu-platform",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "7dc81b216d594b0bdee5fc1095a8296a8beef005"
+      },
+      "repository_url": "https://github.com/cockpit-bench/drive-mcu-platform.git",
+      "scan_profile": {
+        "path": "suites/intelligent-driving-center/profiles/IDC-02.json",
+        "sha256": "b317653e02e77b1f052edc6e118704de01c5f277b855c88587c056475a05ae7a"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "268b81e4c952971f5758f75d7a9bc944fc72713b",
+      "type_id": "intelligent-driving-center"
+    },
+    {
+      "center": "智能驾驶中心",
+      "evidence": {
+        "path": "suites/intelligent-driving-center/evidence/IDC-03.json",
+        "sha256": "a0916c1cc792776c064f135ebac6a573eb0c420a46ef767432723699242c183c"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "eca0301728922494ffa0ace497e170eb62651cf99f908188312fe3e634cb2bc4",
+        ".gitignore": "43f2e4065dc8c9a84b873fe85f8326fcdf4b1852e9021f0e4f75d593095b848a",
+        "README.md": "2300e89b53537f90598453102d36b9525a087d5ed7935e108981905a96247320",
+        "SOURCE_ORIGIN.md": "74d99e967451f6938bd828b29151e8a09d06f9ebf04c932dc1c99b4f4b857295",
+        "buildflow/__init__.py": "bfca0b4fa376d0277d7ceb42c80a2377979432d317ac0aafe7ac44072e7322f8",
+        "buildflow/__main__.py": "25a36ae43e32b551e0cf8cabb4a763f30bf9b21c4a6d192196beda632f0f1624",
+        "buildflow/contracts.py": "16e6250665ac8a3a6b6d243c71e94ea6b21af2fcc2d742b7f44c13cd98b89e45",
+        "buildflow/engine.py": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077",
+        "components.lock.json": "9c4cee60ac9fea52b8d93f8af567c52fe83006e1fa19d39dbf7c8ed376593c4c",
+        "products.json": "cc63993c8be3ccd94e4e3b3e10474db8a8a86bfcb1366e8e9879d063c4844ac2",
+        "scan-profile.json": "ae3eb84ddb42e10aa6451da7d534d1ed65ee9d283a752733caccbefeb02bba95",
+        "scripts/Build-Product.ps1": "a907cf23b23394e346159681819572a3131bf717f2a9f1c9ed89be8a045ca675",
+        "tests/test_buildflow.py": "797665f6cc61629f8c53e1752f6b2bb642fa66ccbf2dc1288ecdbcc6fdbd651d"
+      },
+      "gitlinks": [],
+      "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+      "id": "IDC-03",
+      "implementation_kind": "python",
+      "inventory": {
+        "path": "suites/intelligent-driving-center/inventories/IDC-03.json",
+        "sha256": "256fcbc7964180dd6d06c73485f7c9bc545cab755156836ed18d31dc725f1339"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "drive-build-orchestrator",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "2cba4820803c8efe60859103d44d62fd8f833ff9"
+      },
+      "repository_url": "https://github.com/cockpit-bench/drive-build-orchestrator.git",
+      "scan_profile": {
+        "path": "suites/intelligent-driving-center/profiles/IDC-03.json",
+        "sha256": "4e80272c9f30b37db60de0625c6719378eff918c16f804829e642ae0b4883a47"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "0126c386fb81044f3feedfa2c828e83bc7ce6bdf",
+      "type_id": "intelligent-driving-center"
+    },
+    {
+      "center": "智能驾驶中心",
+      "evidence": {
+        "path": "suites/intelligent-driving-center/evidence/IDC-04.json",
+        "sha256": "f1a14740a8cb0dc102c80b7ab57500a552b9f854aa87e69da2bcfbdbef0957ae"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "044cc2b51aceda47b144f702faf05606734da02241c72cefc4fee8909090cd36",
+        ".gitattributes": "d43603815b3859c608b5707d75af683b1bcfcbe44e64802fb8a2d1a70accdc64",
+        ".gitignore": "a9eefd20cf2c920388b524003cf84542d0bcb037c24f6255e0c7ec76e7527902",
+        "CMakeLists.txt": "7acd7ae7fb996e03ed236e65aa1d6d93d27219c80c4b2107bf8c9b393047e5e8",
+        "README.md": "93a8a59d238abdd63493a1e0c784bde6aeda1fbbec7dbb0230c1bfbf3d26c64d",
+        "SOURCE_ORIGIN.md": "3efd25eba571844f1297f096c74f6a18fca5376144c679fca9db75237e865bcb",
+        "config/camera_extrinsics.yaml": "8ab1677fac3b6f29bf0baa65d6d602168e5d4f7ba5ea01a36f250c31c9d6e22a",
+        "config/default.yaml": "a26b66be72c2910a6c960632f3319e039259f6a5f910361523e55239b3de9357",
+        "include/calibration/calibration.hpp": "a0e27442f31859ebcc3e7b430e1a64920948c4c1fef463635386f07f55161174",
+        "include/calibration/quality.hpp": "b710dc1207e11d7cb63bc5d5280399f5e1c0503314f6107f4894aac0b94ed927",
+        "scenarios/default.csv": "3851a7379a6ff1bb12207eb065d176199fccb78fdf853e0d0b67e8ac651ccbd4",
+        "src/common/calibration_file.cpp": "337968309ab86d6e8f5f1823c9df658b0aa6467d13bd7613f30cea935f75b90c",
+        "src/common/frames.cpp": "8f2e06f002ee0ed6ffcf996a04ad192376add30a1bf46c288bc5ea46e292d3b9",
+        "src/quality/residuals.cpp": "da3ed2e860ad46df5a34c3c67c81becd2cf109d8f2854339d10271022e67eb50",
+        "src/spatial/fit.cpp": "88c0456d7e983d06ccc88001f5dc6247d8d297f3a9b82b0ac4f25c7de57b6786",
+        "src/temporal/alignment.cpp": "fa6dd61b7d975e8f8b1f64ae720d39c367a1cd10a8cb3e88675553767bb208e5",
+        "src/temporal/interpolation.cpp": "8e25b27a3649e3ad40a65788718282ed0294a02952c31c81abc41683450e2562",
+        "tools/file_io.cpp": "8405e0d55909446df67b197f007fa5f49090ba18179de868d575f7e1ac00d9b4",
+        "tools/file_io.hpp": "bb5d280594cb42c97a22241bcd0451d7bbd91a38c88a9e166d5411d9c6647197",
+        "tools/scenario.cpp": "a641c0eedc26eda3792714a0efd1e94d464be3844626acc6c4083fae6c27c848"
+      },
+      "gitlinks": [],
+      "head": "257dcc87392c004a682b38b8df8645d5970997ab",
+      "id": "IDC-04",
+      "implementation_kind": "native_cpp",
+      "inventory": {
+        "path": "suites/intelligent-driving-center/inventories/IDC-04.json",
+        "sha256": "39a81d24ff21cd8556ca466906020e5ed37e743dd3e85f3fb6289100d6de8df7"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "drive-calibration",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "257dcc87392c004a682b38b8df8645d5970997ab"
+      },
+      "repository_url": "https://github.com/cockpit-bench/drive-calibration.git",
+      "scan_profile": {
+        "path": "suites/intelligent-driving-center/profiles/IDC-04.json",
+        "sha256": "03a12e5e6e340b574d8814f3025fdbd4eaea1266f1ac401a7a29789638c8079c"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "52ecb01a014153e1d3895f15cd70cce512bf2cdf",
+      "type_id": "intelligent-driving-center"
+    },
+    {
+      "center": "智能驾驶中心",
+      "evidence": {
+        "path": "suites/intelligent-driving-center/evidence/IDC-05.json",
+        "sha256": "eb4a63092159ea7ea42cc1f7e1245b97f6bcc50ce81f976b69657359347fb6ed"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "83f85d7e632cffb3f615a5281b7aa2ce6f436d601afadeb97322540922966173",
+        ".gitattributes": "d43603815b3859c608b5707d75af683b1bcfcbe44e64802fb8a2d1a70accdc64",
+        ".gitignore": "a9eefd20cf2c920388b524003cf84542d0bcb037c24f6255e0c7ec76e7527902",
+        "CMakeLists.txt": "6aa5271a0cef7fb686e351c0c7b4c6f8a85e9143dbf208b8124f6cacdf1e8d36",
+        "README.md": "9823fc7aec4bda27fbbf3178dbecb6a6f3b33fd71424342f76bfb2dec4bf3a2d",
+        "SOURCE_ORIGIN.md": "6999643430ab5426268eece24bb86bff6f4988fd2f70b7d52651f637d2e22cee",
+        "algorithm/association/geometry.cpp": "ee98b4a4d75f2547dc27d967cc7b1f3e691d2c15784a81e2298eb6fb84838597",
+        "algorithm/filter/kalman.cpp": "45dbf836d9c5c43b80d0ad0e5f31c838c96d76a2ca0239c08a7d34de4c0da412",
+        "algorithm/frames/ego_motion.cpp": "372d80fb0fa71f92c7ccc5523ad7da2088e4b5dcd43fff27136a1e7b92dda5f4",
+        "algorithm/tracker/fusion.cpp": "cd3d6c5d185929b39bfe86d523732b3c791b2d169ce38ea5f7b23e75434f1fe8",
+        "algorithm/tracker/track_bank.cpp": "1cbf87e469e5ae737219d77bd18d4a649c869e4bfc3288badc07b4f4f121f20a",
+        "config/default.yaml": "d8a3b3deccbbd5b70022743c5ccfc7b871ce559448dd1433e731e2586d463ff3",
+        "config/sensors.catalog": "bb53e05d45a7d7a49a934238caf083e0e761cc5941b2643ae4dab1811b0e2939",
+        "include/sensor_fusion/ego_motion.hpp": "b61b0ed522c341e4fb711fa5cc14cdb3e5a740d06cc67faa2cbe7d70e89e4616",
+        "include/sensor_fusion/kalman.hpp": "c4b4e925bf3ffcb81e417fa4170b615d14cdeabf8f22a16e0415855f3f14112e",
+        "include/sensor_fusion/sensor_adapter.hpp": "13ce88754b620cef304b5a72abe9fba450f2a16d891891fa0fad93f398508f7c",
+        "include/sensor_fusion/sensor_fusion.hpp": "52bbb8179221d02b8aad73cc877d659fe7d5a87a4da4a70b1ddddb08e416fc6d",
+        "include/sensor_fusion/track_bank.hpp": "6948a412d47d65d4a23b5972e723e94c4418348a62297c4894bde258dcc42e62",
+        "platform/host/sensor_adapter.cpp": "406068ae28eb698bcb6edeff5544a5a78f25665bee54a85a7128fe0f862dfd69",
+        "scenarios/default.csv": "2cb48b5316e714d3fd9dd2d821de8e623819bafa91a9458fd7e06c1f0b45dd39",
+        "tests/business_tests.cpp": "4d39c0149934182ae82e27593d8f5390135bf2385ed8d84d06260c7c13c9ae60",
+        "tests/integration_tests.cpp": "0d7a22e7231ef7f0b7c76c97e284ad825e1c17623be8092b9284acf0cecd6861",
+        "tools/file_io.cpp": "fbb4c31c7ba25cba8c5a4105dad6e0f36b813720d56d8ad334b449e9adfd48a6",
+        "tools/file_io.hpp": "9cdaf8010112504dc0dca6fb54d50899bb783aabfda52a76f052d746d1375b6a",
+        "tools/scenario.cpp": "37e9ba16a7e4ac2cce2301ff6ec1b6d1c18844b3c387ae82500b3256206c4238"
+      },
+      "gitlinks": [],
+      "head": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff",
+      "id": "IDC-05",
+      "implementation_kind": "native_cpp",
+      "inventory": {
+        "path": "suites/intelligent-driving-center/inventories/IDC-05.json",
+        "sha256": "7b1c94de24efb38f87624015642ab41e034005e0963c8b90b9a633bf8f8b8dd2"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "drive-sensor-fusion",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff"
+      },
+      "repository_url": "https://github.com/cockpit-bench/drive-sensor-fusion.git",
+      "scan_profile": {
+        "path": "suites/intelligent-driving-center/profiles/IDC-05.json",
+        "sha256": "019db0a49a5f28ecb6c44c14d4c185bade732dac9bc422daea16e94535781c26"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "a52ae34535e9dba329b2ae375c3b7eac78e9873b",
+      "type_id": "intelligent-driving-center"
+    },
+    {
+      "center": "智能驾驶中心",
+      "evidence": {
+        "path": "suites/intelligent-driving-center/evidence/IDC-06.json",
+        "sha256": "c3421c85392e33d6a46dd451594ceb97addabd17c70574e884e76656610a55b2"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "044cc2b51aceda47b144f702faf05606734da02241c72cefc4fee8909090cd36",
+        ".gitattributes": "d43603815b3859c608b5707d75af683b1bcfcbe44e64802fb8a2d1a70accdc64",
+        ".gitignore": "a9eefd20cf2c920388b524003cf84542d0bcb037c24f6255e0c7ec76e7527902",
+        "CMakeLists.txt": "744ce95da0c75b6ca01a3626029c08c64580e9627c75ed7ead52c1586a203da2",
+        "README.md": "585b9bd4fb3733feaaf3fda307e1c6d59efce62ff7dc089b8d4e051f5eb52b4b",
+        "SOURCE_ORIGIN.md": "d22ab9abc5f9172c963fbc3c1e466667d0a4ea26696ec7d0aeb14520bb8441af",
+        "config/default.yaml": "ef05c5e0d36141884f4f9fd8f0909779c7a914ebbf3f9bde1c323f23f521e1d4",
+        "include/route_planner/behavior.hpp": "a8c68bd830f5f5853f05eb6ce073ba80757efa4c1dda7dc71e9e43d8b73baf38",
+        "include/route_planner/route_planner.hpp": "90c5a15db94111612a4d85291deb9c1de796183167dd80af7e2189a69869057b",
+        "include/route_planner/trajectory.hpp": "3320a94b05038a23d7258c6b97094d6719567baa5b0e7eeee6e65212396cf6c7",
+        "modules/behavior/decision.cpp": "8f80f9f1f8527c844df2437a40ed14d2e9602d2cdec224c9d532b5601fda7b21",
+        "modules/collision/swept_volume.cpp": "23c16ffa9fda98153a57eb0514f090ee6f14420420fc858f7927d52dd9ec1442",
+        "modules/routing/graph.cpp": "989be2f9347dc8cfe7dfe1f03357d61d6cbecc719841d5a7a084dc3488af2532",
+        "modules/trajectory/geometry.cpp": "2d6358b19e06543e5891b5d2611429273ddde3dbb33d98f19cf5946d3c7137b0",
+        "modules/trajectory/parameterization.cpp": "1c66e8d35282afdbed6703b1ec66cf996ba10d2e8bf09faecf62ade7e6add156",
+        "modules/velocity/speed.cpp": "f2f70874c15ae9e4da738eabf8b98666aa180d405808a44fef2cf0aa03d25124",
+        "scenarios/default.csv": "0e82c5748eb46c803be2aa99c08e425b3618e6b117e3c713b38934354c5d6ba6",
+        "tests/business_tests.cpp": "b5afba97f9cdba232d0f10f3d8dd0e262a4059935ae28ab73e5d02759be1d83e",
+        "tests/integration_tests.cpp": "1b6a8b17ff87b24fac80da0aee5c3febcc4743f56d49f65814a56d7e4479d356",
+        "tools/file_io.cpp": "8405e0d55909446df67b197f007fa5f49090ba18179de868d575f7e1ac00d9b4",
+        "tools/file_io.hpp": "bb5d280594cb42c97a22241bcd0451d7bbd91a38c88a9e166d5411d9c6647197",
+        "tools/scenario.cpp": "68bb232731d9b886b429e19cb8e4847159e410beebb6b0c17559bc264bda1522"
+      },
+      "gitlinks": [],
+      "head": "0f4e6819ec2981f4a4170058402e7c8f6cf656a2",
+      "id": "IDC-06",
+      "implementation_kind": "native_cpp",
+      "inventory": {
+        "path": "suites/intelligent-driving-center/inventories/IDC-06.json",
+        "sha256": "aa7eed12d9dd2659eddce6e7d0c09f35447aac466b34c63019b49c284a1efdb9"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "drive-route-planner",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "0f4e6819ec2981f4a4170058402e7c8f6cf656a2"
+      },
+      "repository_url": "https://github.com/cockpit-bench/drive-route-planner.git",
+      "scan_profile": {
+        "path": "suites/intelligent-driving-center/profiles/IDC-06.json",
+        "sha256": "670601be5f9577df0447e0853777da73bac0c68d659c14456ebce6c7d699b45a"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "9c60b436285f8f63b768ff2c7caee7561c20bb87",
+      "type_id": "intelligent-driving-center"
+    },
+    {
+      "center": "智能驾驶中心",
+      "evidence": {
+        "path": "suites/intelligent-driving-center/evidence/IDC-07.json",
+        "sha256": "0c0c47ee1ae2092b529c78a900adde62235e2a93eb766bf661d7fc3ba94aee26"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "044cc2b51aceda47b144f702faf05606734da02241c72cefc4fee8909090cd36",
+        ".gitattributes": "d43603815b3859c608b5707d75af683b1bcfcbe44e64802fb8a2d1a70accdc64",
+        ".gitignore": "a9eefd20cf2c920388b524003cf84542d0bcb037c24f6255e0c7ec76e7527902",
+        "CMakeLists.txt": "e62a1723d9119bff4c46f241d6b7176a529c89810419a5b648b333c4d18b229c",
+        "README.md": "44cb234b117c6614167866ba927693b61b7da0610bec4ba0bee02fcd2ca8a351",
+        "SOURCE_ORIGIN.md": "d7805a4d1a686d54bdf2b11c2489487cdb64044e4c894988694eb56b11a91051",
+        "config/default.yaml": "2aaee0a227234b5edc7c112a93c0e5d8e75d3b0517e59a80faa8136d88bb85e9",
+        "include/ultrasonic/range_gate.hpp": "cc7684263ba2c78625d2dc40ad5047c77eb070e59f1e599d05f832456d727442",
+        "include/ultrasonic/ultrasonic.hpp": "d2ee1ff14bb64f297bf25b2a8e5c845272a3e16af10c495c4466e49ab76bb76b",
+        "scenarios/default.csv": "1864443ffe97254a3eee6160d985b05d590c803bec2c29b7d12942e345b3b6b7",
+        "src/echo_filter.cpp": "25476e5d8d233309c0dd3a28f21518596a30f466f59177ef12cfa75a15e4602b",
+        "src/occupancy.cpp": "5ad913c4f5cd483bc3dafe022b9a70b3848865281996209d955e95a8aba555f6",
+        "src/query.cpp": "1a94b1011f597e9a1e0f27a21564bf1b8c355140b0f86dc92e76495f499c9e5a",
+        "src/range_gate.cpp": "6cc860670c0335f523c1f8588d8b57995c26c79dd9436f4fa66e46d240d60515",
+        "tools/file_io.cpp": "8405e0d55909446df67b197f007fa5f49090ba18179de868d575f7e1ac00d9b4",
+        "tools/file_io.hpp": "bb5d280594cb42c97a22241bcd0451d7bbd91a38c88a9e166d5411d9c6647197",
+        "tools/scenario.cpp": "b9f98c517e62b425bfdfe6729958040cace4aac41b42c3416dc4966e284095a2"
+      },
+      "gitlinks": [],
+      "head": "30f934b48ae56ceee8c490ef655d6ef38c42dba7",
+      "id": "IDC-07",
+      "implementation_kind": "native_cpp",
+      "inventory": {
+        "path": "suites/intelligent-driving-center/inventories/IDC-07.json",
+        "sha256": "bcda97e2c6766c60bcfaedbf0221d8720dec6128e55d3f0b893826179eabb134"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "drive-ultrasonic-perception",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "30f934b48ae56ceee8c490ef655d6ef38c42dba7"
+      },
+      "repository_url": "https://github.com/cockpit-bench/drive-ultrasonic-perception.git",
+      "scan_profile": {
+        "path": "suites/intelligent-driving-center/profiles/IDC-07.json",
+        "sha256": "adec0f29465ab60f63b6eec08c31d57c17b620a729bc9c04235080aa092e0a3f"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "530fd74a9901bf624d896edca3b4fd679fb3df7c",
+      "type_id": "intelligent-driving-center"
+    },
+    {
+      "center": "智能驾驶中心",
+      "evidence": {
+        "path": "suites/intelligent-driving-center/evidence/IDC-08.json",
+        "sha256": "eb40fe1a5e096e31b052cb645609803f01d343555b2178035fcd9093dfa79b3b"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "044cc2b51aceda47b144f702faf05606734da02241c72cefc4fee8909090cd36",
+        ".gitattributes": "d43603815b3859c608b5707d75af683b1bcfcbe44e64802fb8a2d1a70accdc64",
+        ".gitignore": "a9eefd20cf2c920388b524003cf84542d0bcb037c24f6255e0c7ec76e7527902",
+        "CMakeLists.txt": "9d3cc7605384f2e95b7300beae8b49bee37f40cb12e601b03be788511465a185",
+        "README.md": "e57ad44e0b83ec065b1f0c2b1e4de12594e092a6b56d056f6ed00bb09b8100f5",
+        "SOURCE_ORIGIN.md": "8058c123824a65a9f11ce25fc0d5ea9459f83cb373eacffd08b7668c123b77b8",
+        "config/default.yaml": "a157532b0093200b8774b51b714ae2f661a7581d155d48089d1e8a27829c4ce5",
+        "docs/WORLD1.md": "3fc94632661f08d92fa9336fd0fc3223aa98d60c0a61bf6cb3804d53b3db3e1f",
+        "include/world_model/frame_assembler.hpp": "6e82144d73791d4e614450b2976278e310c750639c25b4816c351f86117506de",
+        "include/world_model/geometry.hpp": "7ef295801b2ff1c8c56d04410d70f3e698963ebb25ed4f5d8c513fc9cd130480",
+        "include/world_model/lane_graph.hpp": "71c62bb1b0132f3d2a2347b5d079c820037d420fc1cf0785493bd6c2710e9f83",
+        "include/world_model/parking_map.hpp": "64746302e3d89267d63702d95f7eebf55cb0a9535b494a26529715c39ec6782a",
+        "include/world_model/snapshot_codec.hpp": "9de755452c6d988521c404e1b6b6d80ff7963baa6becc696332bdf967582bfbc",
+        "include/world_model/spatial_index.hpp": "1b2a4dba6b2151f8f7189011c47b43feccfca2a18a6b1383c123033ceefbb1c6",
+        "include/world_model/subscription.hpp": "a8c20397569e78b1bca7991835676cda9b73b5d82369bed45e7af5949f97438f",
+        "include/world_model/time_buffer.hpp": "adc8e675a39e1b708476129477dcf030dc009348db20a508d7979516443fee96",
+        "include/world_model/world_model.hpp": "22c9c33d8e5910bb5410bc76436c6706070065977ca13805fc5f0bfcfca0e179",
+        "scenarios/default.csv": "164abd856d70af27a6e32c9aba5ec08b3b8dd4f2717224c7d7289b0ef21731f0",
+        "src/middleware/snapshot.cpp": "4aa1a5cb333ca94a9151ef8163ca177eba041f268e98af6e4e20559caa74e262",
+        "src/prediction/prediction.cpp": "0b972050bc35fddfdc009461c978ab8441dd7b5eb4f5fde5a2a9216d88d29076",
+        "tests/business_tests.cpp": "81f0114fa12a99facdc8a2a1963597a272d8157af54d89d43e86f988796b8097",
+        "tests/integration_tests.cpp": "a7e76a08dc57b211fbb7589be5084df2c0009a029899b880175dee1bb797c4da",
+        "tools/file_io.cpp": "8405e0d55909446df67b197f007fa5f49090ba18179de868d575f7e1ac00d9b4",
+        "tools/file_io.hpp": "bb5d280594cb42c97a22241bcd0451d7bbd91a38c88a9e166d5411d9c6647197",
+        "tools/scenario.cpp": "506386b8ac0cd6441c3b24f68cdcdcca5b32c12271416916877d3a5e89fb063e"
+      },
+      "gitlinks": [],
+      "head": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1",
+      "id": "IDC-08",
+      "implementation_kind": "native_cpp",
+      "inventory": {
+        "path": "suites/intelligent-driving-center/inventories/IDC-08.json",
+        "sha256": "2588b7f8035eb2d5f98ebd4856b6f20a818c55e8d10ebcb753ae13a39407bff0"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "drive-world-model",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1"
+      },
+      "repository_url": "https://github.com/cockpit-bench/drive-world-model.git",
+      "scan_profile": {
+        "path": "suites/intelligent-driving-center/profiles/IDC-08.json",
+        "sha256": "b35ec964e7aba5bf8595fca63800a2c807cdccad98b1f4d368e8e308698187c3"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "6af5f27a12415791ff8abda0ecaea6f0317a77de",
+      "type_id": "intelligent-driving-center"
+    },
+    {
+      "center": "智能驾驶中心",
+      "evidence": {
+        "path": "suites/intelligent-driving-center/evidence/IDC-09.json",
+        "sha256": "fd75de3c45f277d3872884821d3cc0a69512696924954420a96a2851536089d4"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+        ".gitignore": "264c5d78988a38a39757859b02a8f70d66bd31212fb2f02aacbec8c76f55b51c",
+        "Configurations/README.md": "1f493ecaab26762913aa780b4800ae6ef042722fe1af3b766e95eafad784b0c0",
+        "Configurations/configurations.json": "0926fb2fa2de1616d141dd5a48d51b0edafb384c3e6e4bfa2e3308c57624da86",
+        "Generated/ParkingState.a2l": "5bda97e3161f22696193b6c6445db0ab8759420e2de84b0dc8d9db72dca943f4",
+        "Generated/ParkingState.c": "2f3aea47978eac533301478a699d7b134d78fcdc6caec6c7f857eb7c4557f9f3",
+        "Generated/ParkingState.h": "8012b3a7489dd2993df7141c3c5e8216ced7f91b1fa0703bbd9f4f3d4eb11ad3",
+        "Generated/ParkingState_data.c": "3bb5be2d6e3f499f45566e835d9fafa589da06fd01a2b22490237ead023e30b1",
+        "Generated/ParkingState_private.h": "c1562f96fcfef2e8030cc945ebc4abe850d69953d514d56901c30cc3f7dd7f8b",
+        "Generated/ParkingState_types.h": "7b8a4375f503e2ffa9bd61fed00360ca20baa37245b5bd7bd370411fd9d6c55a",
+        "Generated/rtwtypes.h": "82f8e72b500289964a51a907cf9dbef0e8621b4130dbdb9eec600ca59c754a5e",
+        "Host/README.md": "e2626bc643f0e59d2551c27bb2358c7ab1aec7cbd4fb9368951968f9c84f6a8a",
+        "Host/replay.c": "b0185900f6e8a0e78548a8575c006139d9ae4d9b65f65ee381278c9518f1180c",
+        "Host/scenario.csv": "caea4b862bab96456babb1aa9800470a4c495b3aadb1c5163e270ebdaf2d4ad4",
+        "Model/Interface.xlsx": "8b25337f0e73f08b634f0fea21d3071187f7b78205deedf4b19274a2fe923a6f",
+        "Model/ParkingState.slx": "7c13ab4974ca81713f7d462ab52c03ebd99f0292eaf3f968475c2edd2e2333c4",
+        "Model/calibration_ParkingState.sldd": "773b50e0665b135b89f7f22f04a5383f41c72f48caeaf86334a91e24b4f4501d",
+        "Model/components/ObstacleStopLib.slx": "1622c93bc2de03f02100c24f464ea7f9d2a5c65cf78830e116e3ea0ccfa13f93",
+        "Model/components/ParkingPhaseLib.slx": "f8d2071df26c3e8f58e748f2a188add1931f99bd31b326c5334149ad1abda510",
+        "Model/components/ParkingRequestQualityLib.slx": "8152db8e450cb3818ded9b5f71a643f44f7b15f05e794e753936ee4a58ea36e6",
+        "Model/components/ParkingSpeedLib.slx": "ff81ff5b462e882b7f834158305b0cbc96ee75f2ab813fdbf064ca38f8e1c1a4",
+        "Model/components/ParkingSteeringLib.slx": "88ff777fc0faa3b1d0e60400a1d1d174cb1a2c3aecb1c688a63010acb91a50f2",
+        "ParkingState_init.m": "031c6118889e32baee9091e42ae869e97e5179d353abbcae7ac7d01e492caf7c",
+        "ParkingState_simulate_configuration.m": "617bbf644317226f90094c7613eafee755f9ea5d3a24c62437a00731b8042e15",
+        "README.md": "efc5dd41d6271653fdd8a1d1d926f673fb40e8c17e01c20570ec15b42aee6266",
+        "SOURCE_ORIGIN.md": "98832155613e9d7765fbbccc726196620e4a4227030fa4100c3d54b7966cfbfa",
+        "Tests/ConfigurationExpected.json": "c651e2e3b8e1301baab8eb8f4cd38bbc5a2889164e4d41482803fa790771fb1e",
+        "Tests/ParkingState_UTHarness.slx": "09d475392d8dcc20f96a778688f6c96c9d6b8694ef131fb634e75a8954130bf7",
+        "Tests/ParkingState_run_tests.m": "eac579cc6a16c62a88303c07ec1b0496b34e92a0287de8018ae6e7d5935070e1",
+        "Tests/ParkingState_test_configurations.m": "eb89d3906599ee5ee1676ac2683d7f1d50f0b225ce3299d0341fe677afacbaf4",
+        "Tests/README.md": "2e0fd216f10c5efffaacc13083961c8d5adad480558b9a28bc2c2bcdcf2f2013",
+        "Tests/TestData.mat": "5f26b9b7cf56744732d2b48038342a60509c5e151ef8f95fd6f81f0ffcac7ea7",
+        "Tests/configuration-results/compact.json": "94d5d4472a4a23d4ba47163f105e1de28d39ce822ca1b0bde44372fdbecd6dc4",
+        "Tests/configuration-results/result.json": "db8c232e32deb40aaddf752d73ddd5f69e7a1a258ffa85eff3660fe59bd64e10",
+        "Tests/configuration-results/utility.json": "447f405e2336f1759a9f98f730182af7d3faf7130397fed9eeb43cb4a07ace98",
+        "Tests/results/actual-output.mat": "5723cc2fdd7a5749b4dfbbeab8371ad95a643076745094c6a97656ed35ac0b1d",
+        "Tests/results/model-coverage.cvt": "1487ee432753ff6c5654967bd6932253bc5d31eb8668ee550d18e0c40265b640",
+        "Tests/results/model-coverage.html": "3e060c627a14df9cde91e9bc919c25d2e9c5c935f764e5e45c335f3769168cdc",
+        "Tests/results/model-coverage_ParkingState_UTHarness_cov.html": "48e4fedaf2651715593724f662aa37473de4049b917160c43617fffc8f37f64e",
+        "Tests/results/model-coverage_ParkingState_cov.html": "2e8cef2bf4e77370671ef64a0f95685782f563332ab3dbdd0fda150a6af6329a",
+        "Tests/results/scv_images/aqua.gif": "ad9c261ddb00bd753ee2ff8165576c56641a25e47184bbfe449237049b3ad23f",
+        "Tests/results/scv_images/black.gif": "e4c8efe0cd4a34ef45c313760fe5bd92c0d0d61cf444ca99d53519d9d3657608",
+        "Tests/results/scv_images/blue.gif": "97b29e3c43d78fa176d02a1e7a5b504479238c5d92759889f35407007c0a8249",
+        "Tests/results/scv_images/codecovreport.css": "e270aa4668967feeb8bb30d8e52bf05dd557db423243c5967a5d63b74d873174",
+        "Tests/results/scv_images/codecovreport_utils.js": "1c100b13c270cc8e7bbaa5cb67d8a3272d5bbc9ada0ad4f3ef730afc83412b82",
+        "Tests/results/scv_images/covreport_utils.js": "0e8785e7af36a244846340a4ec98d6f69ba6e0579b8db017063786a850efe5be",
+        "Tests/results/scv_images/dkgrn.gif": "14f3b540d2d3775d67230e3696f18fc3d15ca80821cde8e96fa4868b99dea34a",
+        "Tests/results/scv_images/filter_add.png": "e8dbb146c2719430239579ab0628a4418b8c46d70bce886c9755574e6a8508da",
+        "Tests/results/scv_images/filter_remove.png": "14407604c19f2c75e8fec6c32585f6788b2f333e99f2c8100988b174d2801484",
+        "Tests/results/scv_images/grn01.gif": "8baf586b065f39e4461ee2fffc5dfbc6acd55c51ec3d6c4907d9d77291c382d4",
+        "Tests/results/scv_images/grn02.gif": "74960e107cdbed1fc098d4895b0d17f537010dc5fb1a0b712fd920c2ef1dccd0",
+        "Tests/results/scv_images/grn03.gif": "8f9ff0ba3a1dd827394765bb6fcd720ff4d3fc5a43a627cb9197fd54485464cf",
+        "Tests/results/scv_images/grn04.gif": "76b27649e6a7ca324fcaebc2c00bb76383a03d2bd80c3633c3ea02206fa83691",
+        "Tests/results/scv_images/grn05.gif": "b1fb57b4359baddb5f5569e6f70aea7c22453b579f4c4cf8bf118400171d92b9",
+        "Tests/results/scv_images/grn06.gif": "41a24c03efc762ee7b37db58ad8556df0c09571f1296f733410f5f1055eec00e",
+        "Tests/results/scv_images/grn07.gif": "2c52a8fe4aa9d788e8f16d8ffb1f0b6a4a12652a5d466b2a5b00209e786d73f8",
+        "Tests/results/scv_images/grn08.gif": "025dbdc8028720290a793694a5d432463a7b34a24cc2b3ad4c513b3dbe9906d4",
+        "Tests/results/scv_images/grn09.gif": "fe73578518129cef436fc38f6b0474caa840fc74f4cee16360e4edf56ce707fb",
+        "Tests/results/scv_images/horz_line.gif": "a7de1d7b593509123cface3a3520dfb5710a0da1861b90ca16a8bad3c1238d6a",
+        "Tests/results/scv_images/htmlfile.gif": "8196e3b39156656ee3215972df65be4618b70362c57bf70e995267ab53a6dcd9",
+        "Tests/results/scv_images/left_arrow.gif": "c42378268d3a479e9dbab2988c3a1546bf366f546512ae5e16c7288207bce2ff",
+        "Tests/results/scv_images/ltBlu.gif": "ad9c261ddb00bd753ee2ff8165576c56641a25e47184bbfe449237049b3ad23f",
+        "Tests/results/scv_images/ltblue.gif": "750b473c632dd819db257c73251c3757bcbc9f3b83fd4c4d8cfa7acadc9bb8fb",
+        "Tests/results/scv_images/ltgrn.gif": "7a3b7f2f73c3fb72dc65ef9a5951e868815c383b3aba64c48dbc69b33e5ca9f3",
+        "Tests/results/scv_images/modelcovreport.css": "f86022e11f91131ab2b843e4fafa50918db28e1fc931f9525052ebbe77cf9991",
+        "Tests/results/scv_images/pink.gif": "d91ed8b20f6f7cb9257b629fcf685b8106795f072bb9308108f88fdeecf2750a",
+        "Tests/results/scv_images/purple.gif": "b06073fbc896c43ac6ef1cae1ba91c31e5342d9b0ada9d3bb3e2f097e20a2245",
+        "Tests/results/scv_images/red.gif": "ac3dd4667fdf1465102ef0ee921db208fae4c3608e7ec22196f2e5cc81b997f9",
+        "Tests/results/scv_images/right_arrow.gif": "eacea9b91092016481440caf0249a9fc508b322caf290b4f8eef1a56fc258180",
+        "Tests/results/scv_images/trans.gif": "2dfe28cbdb83f01c940de6a88ab86200154fd772d568035ac568664e52068363",
+        "Tests/results/scv_images/version111.txt": "af6df543acb274a7933576377e43d91631a12e4a52ba534089a7b5552e6343a7",
+        "Tests/results/scv_images/vert_line.gif": "505eaa7c67326d9cafad4dd0baf4350b6fd993af25f759bb662987d9a2bde497",
+        "Tests/results/scv_images/white.gif": "d605903facc2777941bd034d29c9894b99d8c762629e179fc5b962e97b4db6d7",
+        "Tests/results/scv_images/yellow.gif": "e25864e50b9ad36cf2ea5949eb38d96c4b44ee43a61052512e54121d6c1e844c",
+        "Tests/results/test-result.json": "f792ca7857e40d205a17e52411d44f395907861086e777b2f86877811148e83d",
+        "project_init.m": "1aff25e7266aabee63c12edb0d1a79ce1c0fbfb68e571d277ec209a68997464c"
+      },
+      "gitlinks": [],
+      "head": "e629895f0302ae51e7f229794f72a9e06edbe183",
+      "id": "IDC-09",
+      "implementation_kind": "matlab",
+      "inventory": {
+        "path": "suites/intelligent-driving-center/inventories/IDC-09.json",
+        "sha256": "12e917f793f693d1ed082f7f7e6e06dfdf80b1c02c83296ee112a3bc3e0db0dc"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "drive-parking-state",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "e629895f0302ae51e7f229794f72a9e06edbe183"
+      },
+      "repository_url": "https://github.com/cockpit-bench/drive-parking-state.git",
+      "scan_profile": {
+        "path": "suites/intelligent-driving-center/profiles/IDC-09.json",
+        "sha256": "9c3152dd1e550c7314bbc55654340188707451d68a13d4caeb57c7a78032bbc3"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/matlab.json",
+        "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+      },
+      "tree": "25fbc686ebd7df7c69b7b5a8b3b9d50993688a92",
+      "type_id": "intelligent-driving-center"
+    },
+    {
+      "center": "智能驾驶中心",
+      "evidence": {
+        "path": "suites/intelligent-driving-center/evidence/IDC-10.json",
+        "sha256": "32c788bc6f257565b3793297f6661f9cde5c6217b2e7ee4c6a8bfc6318311665"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "889de0c77a6ce473d981be32315a12752c0d7e4f59e40a9fc2e4b7a5fb410e02",
+        ".gitattributes": "eca0301728922494ffa0ace497e170eb62651cf99f908188312fe3e634cb2bc4",
+        ".gitignore": "43f2e4065dc8c9a84b873fe85f8326fcdf4b1852e9021f0e4f75d593095b848a",
+        ".gitmodules": "0b5bd6d25a4d367598d6c0be0720579d475821c5303b4c5dab28bed426b49606",
+        "CMakeLists.txt": "6ed41478eb04b7fef0957d723f7312696b9b527cbb42d5a7e1c5ad7a269dfd1a",
+        "README.md": "1207b5f172a7cf5d85d5b01ee5efd02018404760af7b182b20babd8a70655207",
+        "SOURCE_ORIGIN.md": "14d6cdac25c50db84e66315f3dccd01c819c131643477a872ddc3976ace37c65",
+        "app/csv.cpp": "e59fc146df303f1273ae0bcb6a2603d0d129c1168dbe204cdfe394207bd6b077",
+        "app/csv.hpp": "fa14553953d1248df38d7506c2365a9b6b52262190f655417819afef7de62203",
+        "app/driving_stack.cpp": "c7c881e277d7ca148fb8fe8b06a738bb62a51284c2adb0badcdbbfde055e61a2",
+        "config/highway-drive.conf": "fc278de5d85d7937d567430942864a0e12081d2d4a01ff97da8b9e01cc4a2099",
+        "config/urban-parking.conf": "2333acc8c513db476ab18cee36520fa115740c11dd234f01817785597bc4893b",
+        "integrate.py": "d98d27877c2bd43e45089636f1fa074b6f77103d442b2982c9fff412f917b21d",
+        "product.json": "681a23b083d74e04125c3a8dd2901db37acbc33be57d4a01511e5b639fb55d5f",
+        "product.lock.json": "bcfb4be837e3588883963f8b7360642b1fa65bb92d3409feef5909b06d9c72dd",
+        "scan-profile.json": "e9794dfc2c0e6df1b763c0dfe7777771e6cc80b7039090b91a38f9654cc3b18b",
+        "scenarios/calibration.csv": "a8b6b06e52ea8fe2e92c43d0e9dd0de3c23cdb45ce0d334ea36235cd2b099d96",
+        "scenarios/manual_takeover.csv": "75b292875cde0000578994ab5c45f1ca5c389612eecc2f33497102e16174df23",
+        "scenarios/normal.csv": "5e909bb677c6806a785cca82078cc5655003a2eeccde2961c24c7ce350ed0cb9",
+        "scenarios/obstacle_stop.csv": "babe6380273f50d2fa2f125a85f8a91d86dc977ae4181238c5860592266f918b",
+        "scenarios/occupied_route.csv": "18b721cd35a5a01cbdbf3177494ea5fd34b1b63cbf28e3f245a6b78c174c4075",
+        "scenarios/stale_remote.csv": "050b69c7c91c25c4232aa01f1db02808ca9d762950eff8b2aa09626a7d5d0055"
+      },
+      "gitlinks": [
+        {
+          "head": "fbb4014901ac35cd6b0083977eeee1e481d330c9",
+          "path": "components/drive-adaptive-platform",
+          "repository_id": "IDC-11"
+        },
+        {
+          "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+          "path": "components/drive-build-orchestrator",
+          "repository_id": "IDC-03"
+        },
+        {
+          "head": "257dcc87392c004a682b38b8df8645d5970997ab",
+          "path": "components/drive-calibration",
+          "repository_id": "IDC-04"
+        },
+        {
+          "head": "7dc81b216d594b0bdee5fc1095a8296a8beef005",
+          "path": "components/drive-mcu-platform",
+          "repository_id": "IDC-02"
+        },
+        {
+          "head": "ca9fa37711754fd3fccc1ada6145f75475a1649c",
+          "path": "components/drive-parking-arbitration",
+          "repository_id": "IDC-01"
+        },
+        {
+          "head": "0f4e6819ec2981f4a4170058402e7c8f6cf656a2",
+          "path": "components/drive-route-planner",
+          "repository_id": "IDC-06"
+        },
+        {
+          "head": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff",
+          "path": "components/drive-sensor-fusion",
+          "repository_id": "IDC-05"
+        },
+        {
+          "head": "30f934b48ae56ceee8c490ef655d6ef38c42dba7",
+          "path": "components/drive-ultrasonic-perception",
+          "repository_id": "IDC-07"
+        },
+        {
+          "head": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1",
+          "path": "components/drive-world-model",
+          "repository_id": "IDC-08"
+        }
+      ],
+      "head": "13d83b57827247366cea13f88daba33234da8fc8",
+      "id": "IDC-10",
+      "implementation_kind": "integration",
+      "inventory": {
+        "path": "suites/intelligent-driving-center/inventories/IDC-10.json",
+        "sha256": "12d462ee6675d7d9b97c1f1f53c64402b99273d61b9989df84b97a1c1b9dfe84"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": [
+          "IDC-01",
+          "IDC-02",
+          "IDC-03",
+          "IDC-04",
+          "IDC-05",
+          "IDC-06",
+          "IDC-07",
+          "IDC-08",
+          "IDC-11"
+        ]
+      },
+      "name": "drive-algorithm-integration",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "13d83b57827247366cea13f88daba33234da8fc8"
+      },
+      "repository_url": "https://github.com/cockpit-bench/drive-algorithm-integration.git",
+      "scan_profile": {
+        "path": "suites/intelligent-driving-center/profiles/IDC-10.json",
+        "sha256": "a35973a91f5dafee93aeea9c9b8b7d1607705f5418d69ec8f7e20818ae2bdcb5"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c",
+      "type_id": "intelligent-driving-center"
+    },
+    {
+      "center": "智能驾驶中心",
+      "evidence": {
+        "path": "suites/intelligent-driving-center/evidence/IDC-11.json",
+        "sha256": "f1110bd5857534943f91881df6161c8b14a2d61fbad6c53e820e7e25cd0b4562"
+      },
+      "family_id": "construction-six-centers-20260912",
+      "files": {
+        ".clang-format": "044cc2b51aceda47b144f702faf05606734da02241c72cefc4fee8909090cd36",
+        ".gitattributes": "d43603815b3859c608b5707d75af683b1bcfcbe44e64802fb8a2d1a70accdc64",
+        ".gitignore": "a9eefd20cf2c920388b524003cf84542d0bcb037c24f6255e0c7ec76e7527902",
+        "CMakeLists.txt": "cb3b94f29c0376489c4a49f1d5243aca288f4dc400e403e9320a31ed0c6c46c9",
+        "README.md": "cb35012281d9d106745604c181c9ea38c9d90134acf8ce289d5aafc031d47e86",
+        "SOURCE_ORIGIN.md": "aea5053f007c4292dc4a857bc0e41d48cbe759a2827b09902243c769faf43680",
+        "apps/local_service/scenario_session.cpp": "bf5a7d3dc47716227708a4a5600aaed8587d984437fe411f1c86f295f92d4ce4",
+        "ara/com/codec.cpp": "9b69c9632637384d82cadd85dd9fff9718891f2a9de11c78883a17385ff8fc72",
+        "ara/com/discovery.cpp": "40be5dd98a30b1d214a79e7dc71e135fe85a5cf484cfb62ae18a30f859712233",
+        "ara/com/reconnect.cpp": "337e6893fce7ddb038af666763fadcb576c2e12f6b689a39eb151a0d3a39089d",
+        "ara/com/rpc.cpp": "e06545ec8001363d41af6c872d216a65e0459eea9ca6f7a0124683fb73bd7e51",
+        "ara/com/stream.cpp": "a5f8731d8fd633cc3ebb2e634f16ce5e467128da62c44691c6d4975bee900307",
+        "ara/exec/execution_manager.cpp": "fa963cb4b73f9305d2703b7056b1cbbfb97a27eef2f8dc49e50f268457dffebf",
+        "ara/exec/manifest.cpp": "fc0d0d4237dab64ece952d825a52b5fceeb037e6b4a7ed190ac5246df93f603b",
+        "ara/exec/supervision.cpp": "8e33f1e251c29df146e9e6e4e4316e01ad1a56d2207d54bba57c17f38bd27d2c",
+        "ara/phm/health.cpp": "a2398d787119862824761336358c50d4173245fde4da92121f92341930e6e7ce",
+        "config/applications.manifest": "6cfa4cd8ba73b01b5155bb844f0d707ea92562687d34ca4d732ffe1b09fdabfc",
+        "config/default.conf": "73dc77c2a1ad111d47b7c5473a197b21df07424a633208f78e0627d29f82b773",
+        "docs/protocol.md": "69e5db0c37076ab8ea940d4de74b2f3596c68129c3f6bf526d904a2f4ddc8b84",
+        "include/adaptive_platform/adaptive_platform.hpp": "b850c43b8c14779b0fb400fc17fb67a17fb246053b6daed7f21570718cb0390e",
+        "include/adaptive_platform/execution.hpp": "b0eb614c449ffb627a2ffc907af18d8b30ea7e8cbe3d4e8239159f2b0d9f56c7",
+        "include/adaptive_platform/health.hpp": "8ccb22c9d0adf9abcfa6b0853de9d5fbdd34e2f29067f3c9fb2336bd74e92fa7",
+        "include/adaptive_platform/rpc.hpp": "1c0339e672fa6feeceb00d5094dd085bdd29dd338595a2be1e229b487e946187",
+        "include/adaptive_platform/scenario_session.hpp": "022b27e49e980398dfeca94350f3692393ba76355c9c04abd9a6ad4867e9ff1b",
+        "include/adaptive_platform/stream.hpp": "bb8e61d53327f818297173f82919b5b5143decd9896202b552f84d48eecdb527",
+        "include/adaptive_platform/tcp.hpp": "4f9f14221ccc63129d598f577c44736eb0d61ceaf9b2231ef443637a3e7d2c92",
+        "platform/windows/tcp.cpp": "2281eff916588df30b292e5e60491d30fd81a1dc9fc3440633c237a6b6c00123",
+        "scenarios/default.csv": "a4de87ad9ad84fa823e6ceba122a6886441b2541a96e78ef7deb910c80b90a6a",
+        "tools/file_io.cpp": "8405e0d55909446df67b197f007fa5f49090ba18179de868d575f7e1ac00d9b4",
+        "tools/file_io.hpp": "bb5d280594cb42c97a22241bcd0451d7bbd91a38c88a9e166d5411d9c6647197",
+        "tools/scenario.cpp": "2d4d7b8b05bbdf998f59ef29de72a45c4e1afb9371ae86be45666eb29d7d266a"
+      },
+      "gitlinks": [],
+      "head": "fbb4014901ac35cd6b0083977eeee1e481d330c9",
+      "id": "IDC-11",
+      "implementation_kind": "native_cpp",
+      "inventory": {
+        "path": "suites/intelligent-driving-center/inventories/IDC-11.json",
+        "sha256": "58eeebc26bdb85854e6a70ba607d6ee5def089005091ac690bd89bce2a312fd3"
+      },
+      "lineage": {
+        "construction_group": "construction-six-centers-20260912",
+        "limits": "All 33 additions conservatively joined; prior benchmark engineering knowledge and scaffolding also connect existing families. Not an independent holdout.",
+        "origin": "New business source derived from supplied structural scans; shared construction/review batch",
+        "related_ids": []
+      },
+      "name": "drive-adaptive-platform",
+      "publication_status": "published",
+      "refs": {
+        "refs/heads/main": "fbb4014901ac35cd6b0083977eeee1e481d330c9"
+      },
+      "repository_url": "https://github.com/cockpit-bench/drive-adaptive-platform.git",
+      "scan_profile": {
+        "path": "suites/intelligent-driving-center/profiles/IDC-11.json",
+        "sha256": "94c4475e9cd4278d3956bd3330853ec33e33ffde5a62a205f52e44cfa6086c72"
+      },
+      "scoring_contract": {
+        "path": "suites/center-contracts/software.json",
+        "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+      },
+      "tree": "3fe05f9e66804cafa03b618d6465456b318b3b27",
+      "type_id": "intelligent-driving-center"
+    }
+  ],
+  "schema": "center-source-manifest-1",
+  "type_id": "intelligent-driving-center"
+}

@@ -1,0 +1,49 @@
+{
+  "bytes": 104927,
+  "clean": true,
+  "commit_count": 1,
+  "default_ref": "refs/heads/main",
+  "evaluation_ref": "refs/heads/main",
+  "extensions": {
+    ".m": 2,
+    ".md": 2,
+    ".slx": 1,
+    ".xlsx": 1,
+    "<noext>": 2
+  },
+  "file_bytes": {
+    ".gitattributes": 112,
+    ".gitignore": 115,
+    "CrosswindControl_init.m": 153,
+    "Model/CrosswindControl.slx": 97498,
+    "Model/Interface.xlsx": 5647,
+    "README.md": 686,
+    "SOURCE_ORIGIN.md": 567,
+    "project_init.m": 149
+  },
+  "files": {
+    ".gitattributes": "40cdc725055f97bf37a7367380df79bf75eaca211b791db667f54e5b06136b6a",
+    ".gitignore": "a6a7aecd86872e47d32d2e0b2b683207e71fa0da6312ddb34d0e819082c4e0be",
+    "CrosswindControl_init.m": "cad5d25f094ff8d6f8d501dab26d0e115c2a0d990da59bc5d14bc4b338fd1acf",
+    "Model/CrosswindControl.slx": "be2461184ab171efcdb2de9dc0058a2ead2e972c5a6f1acbcfa67a82bffb4b8e",
+    "Model/Interface.xlsx": "d6e15ab60080d2b137b77adcd41383adccd205697b4182f906c8f2e373b3d097",
+    "README.md": "e535af6ba42afd253baf0f6be52f11f6063ca3cdacae48e83057f5453ffc46d8",
+    "SOURCE_ORIGIN.md": "d5784e72964f6e4e512da455852eaf775488d0d006f343a5c4d77268d339e3b4",
+    "project_init.m": "016ac597031843bf51fb309c8d3f1c0be77b1942c95f1afdfe819dd271496508"
+  },
+  "full_history": true,
+  "gitlinks": [],
+  "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+  "id": "ARC-05",
+  "name": "arch-crosswind-control",
+  "refs": {
+    "refs/heads/main": "3e172ba8305a826f2e711782eab171dba9ab30a9"
+  },
+  "remote_count": 0,
+  "source_lines_by_extension": {
+    ".m": 10
+  },
+  "tracked_file_count": 8,
+  "tree": "8af5b2293dfcd63936ecf6fbb553ab231b75c2c6",
+  "worktree_equals_git_blobs": true
+}

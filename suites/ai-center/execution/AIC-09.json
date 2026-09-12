@@ -1,0 +1,444 @@
+{
+  "checks": {
+    "count_note": "Invocation counts include loops and duplicate repository/external test copies; they are not independent-case counts.",
+    "ctest_check_invocations": 1339,
+    "ctest_executable_reports": [
+      614,
+      614,
+      16,
+      79,
+      16
+    ],
+    "independent_compensation_check_invocations": 39,
+    "malformed_csv_and_duplicate_config_rejected": true,
+    "new_repository_owned_compensation_check_invocations": 79,
+    "original_and_fresh_clone_passed": true,
+    "repeated_skill_original_and_restored_actual_temperature": 21,
+    "repeated_skill_original_and_restored_compensation_errors": 0,
+    "repeated_skill_original_and_restored_expected_temperature": 21,
+    "repository_owned_check_reports": [
+      614,
+      16,
+      79
+    ],
+    "restored_ctest_executable_reports": [
+      614,
+      614,
+      16,
+      79,
+      16
+    ],
+    "scenario_rows": 3
+  },
+  "engines": [
+    "Windows MinGW GCC C++17/CMake/Ninja/CTest",
+    "Independent Windows MinGW C++17 public-API probe"
+  ],
+  "head": "ed34ae9126eed17cc34806a0ab60e3b7f68fc071",
+  "id": "AIC-09",
+  "limits": [
+    "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+    "Maintainer external tests do not count as repository-owned integration tests.",
+    "Same maintainer construction family; not an independent holdout.",
+    "No transaction isolation between concurrently interleaved workflows mutating the same shared adapter.",
+    "Previous failing source and execution records are retained separately; this passed execution list contains only the corrected current source and its raw inputs/results."
+  ],
+  "raw_packet": {
+    "bytes": 13886791,
+    "format": "candidate-raw-inputs-v1",
+    "name": "center-native-inputs-v0.12.0.zip",
+    "release_url": "https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.12.0",
+    "sha256": "d0d076424d5a83516bff67997779a1bc5125daa408c1ab52d025930cf72c348a",
+    "sources": {
+      "AIC-01": {
+        "head": "554118dcaed430f1712f1ac5c4be9ae9fc91e749",
+        "tree": "f7744f765c475125f20b2f83f31116a2c160c15a"
+      },
+      "AIC-02": {
+        "head": "69582afa41f69548179a6e8db297b326454ee4d3",
+        "tree": "5255217dbee9c9c032432b474b3aeab4a3f7d320"
+      },
+      "AIC-03": {
+        "head": "b7dc0937f48bbcf3b163ce46dd70098d708bbe50",
+        "tree": "f49cbccd75d0b5d313d7f686ab759f255ac46355"
+      },
+      "AIC-04": {
+        "head": "2a2987de0db0d345c77748aafbfd3b693a6ca073",
+        "tree": "2d0b4fea320f52d2e8e9d2392f6115bcd57f59bb"
+      },
+      "AIC-05": {
+        "head": "2f94a73210da7bb69575b806c7f431183fec759b",
+        "tree": "76e61f200adb540622de3743613ebee40f700a47"
+      },
+      "AIC-06": {
+        "head": "33e6f4c186d1548c2906d74232a9ffa0ebde6996",
+        "tree": "156371a7dfc973a2123010b9bb5c385639793ded"
+      },
+      "AIC-07": {
+        "head": "8394177bed790a0c0ba557d87931e00bb0b13235",
+        "tree": "90303ff3a3998adb99784c4b3017c5846ffa440a"
+      },
+      "AIC-08": {
+        "head": "58b1e989cf25e7431717b6c7a5b43ae8856962ec",
+        "tree": "e39b8dd3fe29167a2aad5eeba90147fb15a12a50"
+      },
+      "AIC-09": {
+        "head": "ed34ae9126eed17cc34806a0ab60e3b7f68fc071",
+        "tree": "0e80e150bbaf4c2e1f5a94045860c87498b463ac"
+      },
+      "AIC-10": {
+        "head": "04ecdf17210613d85535e4a51efd1a61ec3fab40",
+        "tree": "5119dd42132a3855a8e9db74658438e53c35ab7c"
+      },
+      "AIC-11": {
+        "head": "b0851c013d9996e553cca4f58c2f787d06bf6b0f",
+        "tree": "821f678bbfae87d485bfd6b208a32606521d9f16"
+      },
+      "ARC-01": {
+        "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+        "tree": "d05d608119d5b88086d9d077f9e6f2505dddf614"
+      },
+      "ARC-02": {
+        "head": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+        "tree": "70a72c0b2254efb4226a6fb19ad91be9aa47bbf7"
+      },
+      "ARC-03": {
+        "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+        "tree": "10af906321d6cb8a8c0a1335ce6c8ca28932ddc7"
+      },
+      "ARC-04": {
+        "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+        "tree": "6d4ecc7d48a66c00f7b232917196b7995015a466"
+      },
+      "ARC-05": {
+        "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+        "tree": "8af5b2293dfcd63936ecf6fbb553ab231b75c2c6"
+      },
+      "ARC-06": {
+        "head": "258ba5ba20acffb8b4c16f0d7e905611498a1928",
+        "tree": "6d2d152642b07aa4149c02c0982ddaf230a52c76"
+      },
+      "ARC-07": {
+        "head": "43d3360c130d347dc3e2d818b25dc0e8716abc9f",
+        "tree": "208682dfe483e0af4cbc86fef09a6f9d68ded7f2"
+      },
+      "ARC-08": {
+        "head": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827",
+        "tree": "f78aafac2df2c0eb3ff3a73cb10d23501f4eadf2"
+      },
+      "ARC-09": {
+        "head": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+        "tree": "6a84feae70438c8f969d1ad35b7886ca20dbb7e5"
+      },
+      "ARC-10": {
+        "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+        "tree": "3085c2803f5add13a353c69f2beaf22e0bc177b8"
+      },
+      "ARC-11": {
+        "head": "204dab303944f787a4702e3dfb8d215b07ce0371",
+        "tree": "acac89513567bc9e4ee68c07397dafc9b746290f"
+      },
+      "IDC-01": {
+        "head": "ca9fa37711754fd3fccc1ada6145f75475a1649c",
+        "tree": "b2b6df534b7633fb0d8386dc886a9a3c9ff35822"
+      },
+      "IDC-02": {
+        "head": "7dc81b216d594b0bdee5fc1095a8296a8beef005",
+        "tree": "268b81e4c952971f5758f75d7a9bc944fc72713b"
+      },
+      "IDC-03": {
+        "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+        "tree": "0126c386fb81044f3feedfa2c828e83bc7ce6bdf"
+      },
+      "IDC-04": {
+        "head": "257dcc87392c004a682b38b8df8645d5970997ab",
+        "tree": "52ecb01a014153e1d3895f15cd70cce512bf2cdf"
+      },
+      "IDC-05": {
+        "head": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff",
+        "tree": "a52ae34535e9dba329b2ae375c3b7eac78e9873b"
+      },
+      "IDC-06": {
+        "head": "0f4e6819ec2981f4a4170058402e7c8f6cf656a2",
+        "tree": "9c60b436285f8f63b768ff2c7caee7561c20bb87"
+      },
+      "IDC-07": {
+        "head": "30f934b48ae56ceee8c490ef655d6ef38c42dba7",
+        "tree": "530fd74a9901bf624d896edca3b4fd679fb3df7c"
+      },
+      "IDC-08": {
+        "head": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1",
+        "tree": "6af5f27a12415791ff8abda0ecaea6f0317a77de"
+      },
+      "IDC-09": {
+        "head": "e629895f0302ae51e7f229794f72a9e06edbe183",
+        "tree": "25fbc686ebd7df7c69b7b5a8b3b9d50993688a92"
+      },
+      "IDC-10": {
+        "head": "13d83b57827247366cea13f88daba33234da8fc8",
+        "tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c"
+      },
+      "IDC-11": {
+        "head": "fbb4014901ac35cd6b0083977eeee1e481d330c9",
+        "tree": "3fe05f9e66804cafa03b618d6465456b318b3b27"
+      }
+    }
+  },
+  "record_sha256": {
+    "AIC-09/bad-input.csv": "b58620feb681f7a11c67a503de2f0058cdb21d22ee8dc9b173e0647214c765b5",
+    "AIC-09/business_tests.cpp": "ab2f8ed6ebedb0313202e3b540a8abde65ccf6a57fd443f3205f02c5d0e45794",
+    "AIC-09/compensation-fix/fixed-build-steps.json": "28c89a67ed15605eb9b7be3a4d180b711534af218be4ce6007298c938e685887",
+    "AIC-09/compensation-fix/fixed-compile.log": "355475675e75d2efc845642a0ccc37d1759aa3f27c0412a8e68dc1a864b09b26",
+    "AIC-09/compensation-fix/fixed-configure.log": "968797dafdaa77716725802b2bbf73c5d3e8b36ea1cd9c4325b2bbd524666f61",
+    "AIC-09/compensation-fix/fixed-ctest.log": "089c9d9b9ad09ce34f5bc9fee42806551b28abcb4f269837aa50597ca1e17b11",
+    "AIC-09/compensation-fix/fixed-duplicate-config.log": "382028f78ad12c9738db382302cc3f9bb00f697b51b3bfda46b9c088e2b18637",
+    "AIC-09/compensation-fix/fixed-extra-steps.json": "86a8cce1a098ac3317d2045d456f7f56afaf7dde9af8642eb13be1fb6ca7c56d",
+    "AIC-09/compensation-fix/fixed-malformed.log": "f51b1430c92d0c5bb41e99ba854416ef083fc15081f510f36a21e8ae79d1a024",
+    "AIC-09/compensation-fix/fixed-repro-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "AIC-09/compensation-fix/fixed-repro-run.log": "68e47f492899a33acebfae15a99a269cda4ac98070d5d0c9588c4ee6e286393a",
+    "AIC-09/compensation-fix/fixed-scenario-output.csv": "ea7cdeabbd0e38fb1c05ff1d4d918d0f7ea20aac37333d6759243d876257c9f2",
+    "AIC-09/compensation-fix/fixed-scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "AIC-09/compensation-fix/repeated-skill-repro.cpp": "9358ca72fa561f3ee73f77c11499f959d98d40bdfd9be32d895430c0fccf592c",
+    "AIC-09/compensation-fix/restored-clone.log": "984e17dd1088825a53b7f552b3e9968da120827e17f92e9a292bdfd38e192eaf",
+    "AIC-09/compensation-fix/restored-compile.log": "c2f7e48a8dc7483a927e161e6c3bba7ec2fda01c4f242b81fadc1c855472815b",
+    "AIC-09/compensation-fix/restored-configure.log": "75e61361491ac2b597c43be0242166e31c073eb1e31f29785669d0ed7480d011",
+    "AIC-09/compensation-fix/restored-ctest.log": "621b620ad6eba171b96158c1ae726ba148e1965070a9f7d3fd911cd8e270c494",
+    "AIC-09/compensation-fix/restored-duplicate-config.log": "382028f78ad12c9738db382302cc3f9bb00f697b51b3bfda46b9c088e2b18637",
+    "AIC-09/compensation-fix/restored-git-clean.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "AIC-09/compensation-fix/restored-git-final-clean.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "AIC-09/compensation-fix/restored-git-fsck.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "AIC-09/compensation-fix/restored-git-head.log": "2a5cdf655c1287afd3a1330fcf5ef69fddb670cc0693aaa4a8603a5ef16f7468",
+    "AIC-09/compensation-fix/restored-git-history.log": "1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2",
+    "AIC-09/compensation-fix/restored-git-refs.log": "4341e871d01889ea424b71dc4f33e2c12f568bf232ae23e50e7037fd3fdcbc16",
+    "AIC-09/compensation-fix/restored-git-remotes.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "AIC-09/compensation-fix/restored-git-tree.log": "e9a5f12f39ead33ca713d22d0672a642dfa492b5ed792c383059af71e1375378",
+    "AIC-09/compensation-fix/restored-malformed.log": "f51b1430c92d0c5bb41e99ba854416ef083fc15081f510f36a21e8ae79d1a024",
+    "AIC-09/compensation-fix/restored-remove-remote.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "AIC-09/compensation-fix/restored-repro-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "AIC-09/compensation-fix/restored-repro-run.log": "68e47f492899a33acebfae15a99a269cda4ac98070d5d0c9588c4ee6e286393a",
+    "AIC-09/compensation-fix/restored-scenario-output.csv": "ea7cdeabbd0e38fb1c05ff1d4d918d0f7ea20aac37333d6759243d876257c9f2",
+    "AIC-09/compensation-fix/restored-scenario.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "AIC-09/compensation-fix/test-inputs/business_tests.cpp": "92157cd4b0ec59134f3578aaa611d235382f82b7fb14a60230f23c77c9726591",
+    "AIC-09/compensation-fix/test-inputs/compensation_tests.cpp": "d205ba3d72ea4a36dc835144a0ed86f58b4bff6d5f5d982b607d60a817010d6b",
+    "AIC-09/compensation-fix/test-inputs/integration_tests.cpp": "b6f9be584323d73c548ec3bf491bbcaf29ab6e7b7aa3414cca8e513944aa2468",
+    "AIC-09/duplicate.conf": "77504bd8ca7dc25bbce86ae4ac79edae3c2267219895cb9b14ddef2343fca6c5",
+    "AIC-09/extended_tests.cpp": "41345c777f3746fe4d6811e94eb9ce44a3872f76742c256d1485228e7e43b265",
+    "AIC-09/final-native-run.json": "5acdfe1a708fa541dddf361e45849653da3b3068a980bed2dec9aadf1eb69ae8",
+    "AIC-09/final-restored-native-run.json": "33b056ef76e87e01810d68f54dde1109ad7051e5a80b73d5346bce6e13a541e5",
+    "AIC-09/independent-compensation-review/repaired-ed34ae9126ee/aic09_compensation_probe.cpp": "fa5f093f2798a011da05b612f6523339340aa44bd42f42165c053e3d38324ff1",
+    "AIC-09/independent-compensation-review/repaired-ed34ae9126ee/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "AIC-09/independent-compensation-review/repaired-ed34ae9126ee/compiler-version.log": "1b073f9fc976c1af5bbc013d890247bddc5db9ecdffa2b0035c7eb2240a57fbe",
+    "AIC-09/independent-compensation-review/repaired-ed34ae9126ee/result.json": "b1cdfed1f00cce1127c6ad1b42aedbc47cdfb33f4ca65608b0bfb54de85373cd",
+    "AIC-09/independent-compensation-review/repaired-ed34ae9126ee/run.jsonl": "51f8650bfe51a012f6b2758a50ae713495a1fe525b9518007f1c1530a7ddec23",
+    "AIC-09/inputs-final/config/default.conf": "872ef75febe68f8fa133ca75a8e46f47060d731b7e053df7a4837880b68d3fde",
+    "AIC-09/inputs-final/config/trip.workflow": "33e0873672d16e162e55a29a70dd0b1b89572b152918e5478fc52c8d1b6d7489",
+    "AIC-09/inputs-final/scenarios/default.csv": "cf736f63c3f342ea318bf5bbfdec1ff8cfcf5294660365253a70e176a64d6625",
+    "AIC-09/scenario-expected.json": "0e21622cd280110312516712c197a38282af5d04bf8d521e8805d62338191215",
+    "AIC-09/source-binding.json": "4831b0b513dc9fbb7bccfa031b340e77717340f11502180ce9e2126519791081"
+  },
+  "records": [
+    {
+      "path": "AIC-09/bad-input.csv",
+      "sha256": "b58620feb681f7a11c67a503de2f0058cdb21d22ee8dc9b173e0647214c765b5"
+    },
+    {
+      "path": "AIC-09/business_tests.cpp",
+      "sha256": "ab2f8ed6ebedb0313202e3b540a8abde65ccf6a57fd443f3205f02c5d0e45794"
+    },
+    {
+      "path": "AIC-09/compensation-fix/fixed-build-steps.json",
+      "sha256": "28c89a67ed15605eb9b7be3a4d180b711534af218be4ce6007298c938e685887"
+    },
+    {
+      "path": "AIC-09/compensation-fix/fixed-compile.log",
+      "sha256": "355475675e75d2efc845642a0ccc37d1759aa3f27c0412a8e68dc1a864b09b26"
+    },
+    {
+      "path": "AIC-09/compensation-fix/fixed-configure.log",
+      "sha256": "968797dafdaa77716725802b2bbf73c5d3e8b36ea1cd9c4325b2bbd524666f61"
+    },
+    {
+      "path": "AIC-09/compensation-fix/fixed-ctest.log",
+      "sha256": "089c9d9b9ad09ce34f5bc9fee42806551b28abcb4f269837aa50597ca1e17b11"
+    },
+    {
+      "path": "AIC-09/compensation-fix/fixed-duplicate-config.log",
+      "sha256": "382028f78ad12c9738db382302cc3f9bb00f697b51b3bfda46b9c088e2b18637"
+    },
+    {
+      "path": "AIC-09/compensation-fix/fixed-extra-steps.json",
+      "sha256": "86a8cce1a098ac3317d2045d456f7f56afaf7dde9af8642eb13be1fb6ca7c56d"
+    },
+    {
+      "path": "AIC-09/compensation-fix/fixed-malformed.log",
+      "sha256": "f51b1430c92d0c5bb41e99ba854416ef083fc15081f510f36a21e8ae79d1a024"
+    },
+    {
+      "path": "AIC-09/compensation-fix/fixed-repro-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "AIC-09/compensation-fix/fixed-repro-run.log",
+      "sha256": "68e47f492899a33acebfae15a99a269cda4ac98070d5d0c9588c4ee6e286393a"
+    },
+    {
+      "path": "AIC-09/compensation-fix/fixed-scenario-output.csv",
+      "sha256": "ea7cdeabbd0e38fb1c05ff1d4d918d0f7ea20aac37333d6759243d876257c9f2"
+    },
+    {
+      "path": "AIC-09/compensation-fix/fixed-scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "AIC-09/compensation-fix/repeated-skill-repro.cpp",
+      "sha256": "9358ca72fa561f3ee73f77c11499f959d98d40bdfd9be32d895430c0fccf592c"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-clone.log",
+      "sha256": "984e17dd1088825a53b7f552b3e9968da120827e17f92e9a292bdfd38e192eaf"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-compile.log",
+      "sha256": "c2f7e48a8dc7483a927e161e6c3bba7ec2fda01c4f242b81fadc1c855472815b"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-configure.log",
+      "sha256": "75e61361491ac2b597c43be0242166e31c073eb1e31f29785669d0ed7480d011"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-ctest.log",
+      "sha256": "621b620ad6eba171b96158c1ae726ba148e1965070a9f7d3fd911cd8e270c494"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-duplicate-config.log",
+      "sha256": "382028f78ad12c9738db382302cc3f9bb00f697b51b3bfda46b9c088e2b18637"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-git-clean.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-git-final-clean.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-git-fsck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-git-head.log",
+      "sha256": "2a5cdf655c1287afd3a1330fcf5ef69fddb670cc0693aaa4a8603a5ef16f7468"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-git-history.log",
+      "sha256": "1121cfccd5913f0a63fec40a6ffd44ea64f9dc135c66634ba001d10bcf4302a2"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-git-refs.log",
+      "sha256": "4341e871d01889ea424b71dc4f33e2c12f568bf232ae23e50e7037fd3fdcbc16"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-git-remotes.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-git-tree.log",
+      "sha256": "e9a5f12f39ead33ca713d22d0672a642dfa492b5ed792c383059af71e1375378"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-malformed.log",
+      "sha256": "f51b1430c92d0c5bb41e99ba854416ef083fc15081f510f36a21e8ae79d1a024"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-remove-remote.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-repro-build.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-repro-run.log",
+      "sha256": "68e47f492899a33acebfae15a99a269cda4ac98070d5d0c9588c4ee6e286393a"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-scenario-output.csv",
+      "sha256": "ea7cdeabbd0e38fb1c05ff1d4d918d0f7ea20aac37333d6759243d876257c9f2"
+    },
+    {
+      "path": "AIC-09/compensation-fix/restored-scenario.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "AIC-09/compensation-fix/test-inputs/business_tests.cpp",
+      "sha256": "92157cd4b0ec59134f3578aaa611d235382f82b7fb14a60230f23c77c9726591"
+    },
+    {
+      "path": "AIC-09/compensation-fix/test-inputs/compensation_tests.cpp",
+      "sha256": "d205ba3d72ea4a36dc835144a0ed86f58b4bff6d5f5d982b607d60a817010d6b"
+    },
+    {
+      "path": "AIC-09/compensation-fix/test-inputs/integration_tests.cpp",
+      "sha256": "b6f9be584323d73c548ec3bf491bbcaf29ab6e7b7aa3414cca8e513944aa2468"
+    },
+    {
+      "path": "AIC-09/duplicate.conf",
+      "sha256": "77504bd8ca7dc25bbce86ae4ac79edae3c2267219895cb9b14ddef2343fca6c5"
+    },
+    {
+      "path": "AIC-09/extended_tests.cpp",
+      "sha256": "41345c777f3746fe4d6811e94eb9ce44a3872f76742c256d1485228e7e43b265"
+    },
+    {
+      "path": "AIC-09/final-native-run.json",
+      "sha256": "5acdfe1a708fa541dddf361e45849653da3b3068a980bed2dec9aadf1eb69ae8"
+    },
+    {
+      "path": "AIC-09/final-restored-native-run.json",
+      "sha256": "33b056ef76e87e01810d68f54dde1109ad7051e5a80b73d5346bce6e13a541e5"
+    },
+    {
+      "path": "AIC-09/independent-compensation-review/repaired-ed34ae9126ee/aic09_compensation_probe.cpp",
+      "sha256": "fa5f093f2798a011da05b612f6523339340aa44bd42f42165c053e3d38324ff1"
+    },
+    {
+      "path": "AIC-09/independent-compensation-review/repaired-ed34ae9126ee/compile.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "AIC-09/independent-compensation-review/repaired-ed34ae9126ee/compiler-version.log",
+      "sha256": "1b073f9fc976c1af5bbc013d890247bddc5db9ecdffa2b0035c7eb2240a57fbe"
+    },
+    {
+      "path": "AIC-09/independent-compensation-review/repaired-ed34ae9126ee/result.json",
+      "sha256": "b1cdfed1f00cce1127c6ad1b42aedbc47cdfb33f4ca65608b0bfb54de85373cd"
+    },
+    {
+      "path": "AIC-09/independent-compensation-review/repaired-ed34ae9126ee/run.jsonl",
+      "sha256": "51f8650bfe51a012f6b2758a50ae713495a1fe525b9518007f1c1530a7ddec23"
+    },
+    {
+      "path": "AIC-09/inputs-final/config/default.conf",
+      "sha256": "872ef75febe68f8fa133ca75a8e46f47060d731b7e053df7a4837880b68d3fde"
+    },
+    {
+      "path": "AIC-09/inputs-final/config/trip.workflow",
+      "sha256": "33e0873672d16e162e55a29a70dd0b1b89572b152918e5478fc52c8d1b6d7489"
+    },
+    {
+      "path": "AIC-09/inputs-final/scenarios/default.csv",
+      "sha256": "cf736f63c3f342ea318bf5bbfdec1ff8cfcf5294660365253a70e176a64d6625"
+    },
+    {
+      "path": "AIC-09/scenario-expected.json",
+      "sha256": "0e21622cd280110312516712c197a38282af5d04bf8d521e8805d62338191215"
+    },
+    {
+      "path": "AIC-09/source-binding.json",
+      "sha256": "4831b0b513dc9fbb7bccfa031b340e77717340f11502180ce9e2126519791081"
+    }
+  ],
+  "schema": "center-execution-summary-1",
+  "status": "passed",
+  "tree": "0e80e150bbaf4c2e1f5a94045860c87498b463ac"
+}

@@ -1,0 +1,558 @@
+{
+  "execution": {
+    "limits": [
+      "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+      "Maintainer external tests do not count as repository-owned integration tests.",
+      "Same maintainer construction family; not an independent holdout.",
+      "BSP/MCAL and NvM are host projections; generated configuration consumes an ECUC subset, not a complete AUTOSAR implementation."
+    ],
+    "records": [
+      {
+        "path": "suites/intelligent-driving-center/execution/IDC-02.json",
+        "sha256": "5381e1dd3367581a07e32a4ed846cb59941964e2d481eff4a636f2ea5246d491"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "7dc81b216d594b0bdee5fc1095a8296a8beef005",
+  "id": "IDC-02",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "7dc81b216d594b0bdee5fc1095a8296a8beef005",
+    "id": "IDC-02",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "0b0af775a13d734b5cb896792af2625ba7da73df8a84da7e115437411a7af2db",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: typedef struct {",
+            "path": "include/McuPlatform.h",
+            "sha256": "60b5fef4ff4ab31033763147d59ac3a12af5ed205a3204e13cb5d6de0ab0b69c",
+            "symbol": "typedef struct {"
+          },
+          {
+            "kind": "file",
+            "line": 22,
+            "locator": "line 22: int Mcu_Init(const char *path) {",
+            "path": "Integration/McuPlatform.c",
+            "sha256": "ee15670a567d8584bdcb2cf54e7d146347f58c3882538aef269c52467d707af1",
+            "symbol": "int Mcu_Init(const char *path) {"
+          }
+        ],
+        "limitations": [
+          "Integration直接调用ADC/DIO/HostClock并包含业务阈值，应用与平台组合仍有混杂。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "App、Bsw、Bsp和Os目录对应真实调用，Integration组合CAN、诊断、NvM及控制。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "0b0af775a13d734b5cb896792af2625ba7da73df8a84da7e115437411a7af2db",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: typedef struct {",
+            "path": "include/McuPlatform.h",
+            "sha256": "60b5fef4ff4ab31033763147d59ac3a12af5ed205a3204e13cb5d6de0ab0b69c",
+            "symbol": "typedef struct {"
+          },
+          {
+            "kind": "file",
+            "line": 22,
+            "locator": "line 22: int Mcu_Init(const char *path) {",
+            "path": "Integration/McuPlatform.c",
+            "sha256": "ee15670a567d8584bdcb2cf54e7d146347f58c3882538aef269c52467d707af1",
+            "symbol": "int Mcu_Init(const char *path) {"
+          }
+        ],
+        "limitations": [
+          "全局静态状态和PUBLIC暴露所有内部目录降低组件独立性。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "CAN链路、CRC、诊断、两银行NvM、看门狗及电源/扭矩模块实际执行。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 22,
+            "locator": "line 22: int Mcu_Init(const char *path) {",
+            "path": "Integration/McuPlatform.c",
+            "sha256": "ee15670a567d8584bdcb2cf54e7d146347f58c3882538aef269c52467d707af1",
+            "symbol": "int Mcu_Init(const char *path) {"
+          },
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: static uint32_t rd32(const uint8_t *p) {",
+            "path": "Bsw/NvM/NvM.c",
+            "sha256": "111dc888622da37358d4b6c240a898e512f8b81a8756a26058ee6bd9f563ed5b",
+            "symbol": "static uint32_t rd32(const uint8_t *p) {"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: void Adc_SetSupply(uint16_t mv) { supply = mv; }",
+            "path": "Bsp/Host/Adc.c",
+            "sha256": "27763710571e733defd1831e53b48eed47811ce3e415030f095bf042bfa7f219",
+            "symbol": "void Adc_SetSupply(uint16_t mv) { supply = mv; }"
+          }
+        ],
+        "limitations": [
+          "Integration及部分BSW直接依赖Bsp/Host具体函数，NvM直接使用stdio文件替身。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "BSP和BSW接口将多数调用分层。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "0b0af775a13d734b5cb896792af2625ba7da73df8a84da7e115437411a7af2db",
+            "symbol": "add_library("
+          }
+        ],
+        "limitations": [
+          "本机CMake/Make/Gradle和维护者脚本不等同仓内CI或远端执行。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单无仓内CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "0b0af775a13d734b5cb896792af2625ba7da73df8a84da7e115437411a7af2db",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: # MCU host platform",
+            "path": "README.md",
+            "sha256": "865b95bf26ced972b600b933654b9a33edf8d446c1f5008373d877fa22900148",
+            "symbol": "# MCU host platform"
+          }
+        ],
+        "limitations": [
+          "主机独立构建不代表设备固件或生产SDK集成；外部维护者测试是可选构建参数。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "当前CMake独立构建仓内全部实现，标准C99/C++17及工具链边界明确，无必需第三方实现源码或未版本化BSP。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: VERSION \"benchmark-1\"",
+            "path": "Config/vehicle_can.dbc",
+            "sha256": "63c863275f5128ffdf20ced1b4be371674f66626a37cd11ad544d941ed27b13a",
+            "symbol": "VERSION \"benchmark-1\""
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: BO_ 257 ParkingCommand",
+            "path": "Config/vehicle_can.dbc",
+            "sha256": "63c863275f5128ffdf20ced1b4be371674f66626a37cd11ad544d941ed27b13a",
+            "symbol": "BO_ 257 ParkingCommand"
+          },
+          {
+            "kind": "file",
+            "line": 21,
+            "locator": "line 21: value.speed_mps =",
+            "path": "Bsw/Com/Com.c",
+            "sha256": "daba133838d82e4d778c9e7a9f93b71d7570f6921dcde13a687239d7970c7ca1",
+            "symbol": "value.speed_mps ="
+          },
+          {
+            "kind": "file",
+            "line": 34,
+            "locator": "line 34: f.id = 0x201",
+            "path": "Bsw/Com/Com.c",
+            "sha256": "daba133838d82e4d778c9e7a9f93b71d7570f6921dcde13a687239d7970c7ca1",
+            "symbol": "f.id = 0x201"
+          }
+        ],
+        "limitations": [
+          "DBC版本仅为手工元数据，wire没有版本字段验证，也无DBC与C实现自动一致性机制；XML/AUTOSAR版本和CMake项目版本不作为本仓API版本证据。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "自有CAN输入/输出格式在vehicle_can.dbc中以VERSION \"benchmark-1\"手工标记，Com的解析/打包实现对应所列信号布局。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 22,
+            "locator": "line 22: int Mcu_Init(const char *path) {",
+            "path": "Integration/McuPlatform.c",
+            "sha256": "ee15670a567d8584bdcb2cf54e7d146347f58c3882538aef269c52467d707af1",
+            "symbol": "int Mcu_Init(const char *path) {"
+          },
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: uint8_t Crc8(const uint8_t *data, size_t n) {",
+            "path": "Bsw/Crc/Crc.c",
+            "sha256": "08cc3e48a46fb4a09463200205f19db6703039ffbec061c7c2e0abffedd217a6",
+            "symbol": "uint8_t Crc8(const uint8_t *data, size_t n) {"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: void Dcm_Init(void) { session = 1; }",
+            "path": "Bsw/Dcm/Dcm.c",
+            "sha256": "ff84a038fe5dffd90eb4d5f044ccd766f971cc6dbab685ab9ed4b12a8c48e0a5",
+            "symbol": "void Dcm_Init(void) { session = 1; }"
+          }
+        ],
+        "limitations": [
+          "McuPlatform同时承担初始化、校准持久化、CAN路由、周期调度和故障业务。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "CRC、诊断处理和扭矩计算分开。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: void Com_Init(void) { memset(&value, 0, sizeof(value)); }",
+            "path": "Bsw/Com/Com.c",
+            "sha256": "daba133838d82e4d778c9e7a9f93b71d7570f6921dcde13a687239d7970c7ca1",
+            "symbol": "void Com_Init(void) { memset(&value, 0, sizeof(value)); }"
+          },
+          {
+            "kind": "file",
+            "line": 22,
+            "locator": "line 22: int Mcu_Init(const char *path) {",
+            "path": "Integration/McuPlatform.c",
+            "sha256": "ee15670a567d8584bdcb2cf54e7d146347f58c3882538aef269c52467d707af1",
+            "symbol": "int Mcu_Init(const char *path) {"
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: <?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+            "path": "Config/EcuValues.arxml",
+            "sha256": "f35a0c3a0da838256c4fb979cb11a5ae4e72749617ed790e7ce6d4ce4f092f41",
+            "symbol": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+          }
+        ],
+        "limitations": [
+          "CAN 0x101/0x201、100ms时效和速度上限散布具体实现，增加协议/硬件要改多个模块。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "ARXML子集驱动实际生成四份配置，已有部分参数扩展能力。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: typedef struct {",
+            "path": "include/McuPlatform.h",
+            "sha256": "60b5fef4ff4ab31033763147d59ac3a12af5ed205a3204e13cb5d6de0ab0b69c",
+            "symbol": "typedef struct {"
+          }
+        ],
+        "limitations": [
+          "此档说明不适用范围，不代表替换契约已被验证。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "审阅公开类型与生产实现，没有适用的继承/实现替换关系，按合同LSP中间档处理。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "0b0af775a13d734b5cb896792af2625ba7da73df8a84da7e115437411a7af2db",
+            "symbol": "add_library("
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: typedef struct {",
+            "path": "include/McuPlatform.h",
+            "sha256": "60b5fef4ff4ab31033763147d59ac3a12af5ed205a3204e13cb5d6de0ab0b69c",
+            "symbol": "typedef struct {"
+          }
+        ],
+        "limitations": [
+          "构建向所有使用方公开全部BSP/BSW/App包含路径，接口隔离未落实到构建边界。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "各BSW/BSP有小头文件，业务入口集中于McuPlatform。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 22,
+            "locator": "line 22: int Mcu_Init(const char *path) {",
+            "path": "Integration/McuPlatform.c",
+            "sha256": "ee15670a567d8584bdcb2cf54e7d146347f58c3882538aef269c52467d707af1",
+            "symbol": "int Mcu_Init(const char *path) {"
+          },
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: static uint32_t rd32(const uint8_t *p) {",
+            "path": "Bsw/NvM/NvM.c",
+            "sha256": "111dc888622da37358d4b6c240a898e512f8b81a8756a26058ee6bd9f563ed5b",
+            "symbol": "static uint32_t rd32(const uint8_t *p) {"
+          }
+        ],
+        "limitations": [
+          "高层Integration直接绑定HostClock/Adc/Dio，缺少可注入平台端口。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "局部使用CanIf/PduR函数边界。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: <?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+            "path": "Config/EcuValues.arxml",
+            "sha256": "f35a0c3a0da838256c4fb979cb11a5ae4e72749617ed790e7ce6d4ce4f092f41",
+            "symbol": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "0b0af775a13d734b5cb896792af2625ba7da73df8a84da7e115437411a7af2db",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-02/final-native-run.json",
+          "IDC-02/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "Integration/Com仍含固定ID、时间与Host接口，迁移需要多个业务模块修改。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "部分硬件操作通过BSP封装。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: <?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+            "path": "Config/EcuValues.arxml",
+            "sha256": "f35a0c3a0da838256c4fb979cb11a5ae4e72749617ed790e7ce6d4ce4f092f41",
+            "symbol": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "0b0af775a13d734b5cb896792af2625ba7da73df8a84da7e115437411a7af2db",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-02/final-native-run.json",
+          "IDC-02/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "CAN IDs、帧布局与Host BSP仍是单平台约束，无第二完整设备适配。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "电源/扭矩限制局部参数化。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: <?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+            "path": "Config/EcuValues.arxml",
+            "sha256": "f35a0c3a0da838256c4fb979cb11a5ae4e72749617ed790e7ce6d4ce4f092f41",
+            "symbol": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: add_library(",
+            "path": "CMakeLists.txt",
+            "sha256": "0b0af775a13d734b5cb896792af2625ba7da73df8a84da7e115437411a7af2db",
+            "symbol": "add_library("
+          }
+        ],
+        "execution_evidence": [
+          "IDC-02/final-native-run.json",
+          "IDC-02/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "未合成分支/tag，运行参数或算法场景不自动算平台变体。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "实际Git仅main初始/实现提交，无已落实的多平台维护策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: void Com_Init(void) { memset(&value, 0, sizeof(value)); }",
+            "path": "Bsw/Com/Com.c",
+            "sha256": "daba133838d82e4d778c9e7a9f93b71d7570f6921dcde13a687239d7970c7ca1",
+            "symbol": "void Com_Init(void) { memset(&value, 0, sizeof(value)); }"
+          },
+          {
+            "kind": "file",
+            "line": 22,
+            "locator": "line 22: int Mcu_Init(const char *path) {",
+            "path": "Integration/McuPlatform.c",
+            "sha256": "ee15670a567d8584bdcb2cf54e7d146347f58c3882538aef269c52467d707af1",
+            "symbol": "int Mcu_Init(const char *path) {"
+          }
+        ],
+        "limitations": [
+          "Com与McuPlatform重复字节拆装逻辑，状态初始化和时间阈值处理散布多处。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "CRC算法共用，CAN及NvM核心实现各一处。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 22,
+            "locator": "line 22: int Mcu_Init(const char *path) {",
+            "path": "Integration/McuPlatform.c",
+            "sha256": "ee15670a567d8584bdcb2cf54e7d146347f58c3882538aef269c52467d707af1",
+            "symbol": "int Mcu_Init(const char *path) {"
+          }
+        ],
+        "limitations": [
+          "Integration直接调用HostClock/ADC/DIO初始化，且NvM是stdio文件实现。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "多数平台行为通过Bsp/Host和BSW封装，业务算法没有专有寄存器访问。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 12,
+            "locator": "line 12: set(BENCH_EXTERNAL_TEST",
+            "path": "CMakeLists.txt",
+            "sha256": "0b0af775a13d734b5cb896792af2625ba7da73df8a84da7e115437411a7af2db",
+            "symbol": "set(BENCH_EXTERNAL_TEST"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: int main(int argc, char **argv) {",
+            "path": "host/replay.c",
+            "sha256": "2449a79a69351756fc7f7cba246b89dd3cdfec05b6c173d069c6987323f2d270",
+            "symbol": "int main(int argc, char **argv) {"
+          }
+        ],
+        "execution_evidence": [
+          "IDC-02/final-native-run.json",
+          "IDC-02/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "本轮实际维护者回放、CLI场景及跨仓集成不冒充本仓自有测试。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "跟踪源码没有仓内有效集成测试，CMake只提供可选外部维护者测试入口。",
+        "score": 0,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "268b81e4c952971f5758f75d7a9bc944fc72713b"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "268b81e4c952971f5758f75d7a9bc944fc72713b"
+}

@@ -1,0 +1,75 @@
+{
+  "actual": {
+    "bytes": 11426,
+    "commit_count": 1,
+    "extensions": {
+      ".c": 6,
+      ".csv": 1,
+      ".h": 8,
+      ".md": 2,
+      ".txt": 1,
+      "<noext>": 4
+    },
+    "gitlinks": [],
+    "refs": {
+      "refs/heads/main": "ca9fa37711754fd3fccc1ada6145f75475a1649c"
+    },
+    "scope": "All tracked files of the scored target; excludes untracked build caches and dependency worktrees. Text line counts include generated and test files and are not production LOC.",
+    "source_lines_by_extension": {
+      ".c": 156,
+      ".h": 84
+    },
+    "tracked_file_count": 22
+  },
+  "center": "智能驾驶中心",
+  "conclusion": "Bounded structural and business proxy with declared deviations; not a full production distribution reproduction or independent holdout.",
+  "deviations": [
+    "扫描文件总数为14，本仓跟踪文件为22；统计范围不同且规模明显压缩，不声明生产整仓体量等价。",
+    "历史为本次真实构造/修复提交，未复制扫描中的大量分支/tag或虚构长期研发史。",
+    "仅提供了结构、模式和汇总，内部算法、标定值及全部生产依赖未提供；不能据此宣称业务实现相同。",
+    "扫描默认HEAD为空；交付主线直接提供可运行内容并固定评测HEAD，此处选择可用性，不伪造空壳默认分支。"
+  ],
+  "head": "ca9fa37711754fd3fccc1ada6145f75475a1649c",
+  "id": "IDC-01",
+  "implementation_kind": "native_c",
+  "matched_traits": [
+    "采用native_c实现并保留generated_c的主要组织形态；以最终源码及构建入口核对。",
+    "业务为新编写的可执行有界切片；声明的模块、配置和接口具有实际调用方。"
+  ],
+  "observed": {
+    "branches": 31,
+    "build_label": "build_files",
+    "commit_count": 15,
+    "default_head_empty": true,
+    "extensions": {
+      ".c": 5,
+      ".h": 8,
+      ".txt": 1
+    },
+    "file_count": 14,
+    "tags": 59
+  },
+  "repairs": [
+    "按C/Make/生成代码证据构造停车仲裁运行库；代码生成器与生成C都保留，不冒充Simulink产物。"
+  ],
+  "schema": "center-scan-profile-comparison-1",
+  "source_basis": {
+    "document_sha256": "55a68ccf2bc725c0bec0d322bfaa63c714a7915e9f1332f68a0605fbf33ba508",
+    "original_names": "Retained only in the local supplied-scan mapping",
+    "section_line": 1,
+    "selection": "One supplied per-repository joint structural prototype; no target-score selection",
+    "spec_line": 58
+  },
+  "target": {
+    "business": "parking_arbitration",
+    "layout": "generated_c",
+    "planned_production_units": 0,
+    "repository_owned_tests": false
+  },
+  "tree": "b2b6df534b7633fb0d8386dc886a9a3c9ff35822",
+  "unknowns": [
+    "Scanner test_case_count=0 is not evidence that tests are absent.",
+    "Reported HTML percentages are not accepted as actual test coverage unless the report semantics and execution binding are verified.",
+    "Some large-source scans stop at 2500 source files; capped values are not whole-repository counts."
+  ]
+}

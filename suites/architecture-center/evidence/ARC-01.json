@@ -1,0 +1,318 @@
+{
+  "execution": {
+    "limits": [
+      "MIL and host replay only; no physical device, ECU, SIL/PIL/HIL, BTC or certification.",
+      "Simulink coverage is distinct from generated C statement coverage; C statement coverage was not measured.",
+      "Independent equations and configured scenarios are maintainer checks, not candidate-model evaluation or blind gold."
+    ],
+    "records": [
+      {
+        "path": "suites/architecture-center/execution/ARC-01.json",
+        "sha256": "9d9b562e1e90dacdf6007555738203c2cbd9ea31d70ee366b8d37c998e17a858"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+  "id": "ARC-01",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/matlab.json",
+      "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+    },
+    "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+    "id": "ARC-01",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "block_path": "ActuatorTarget/Availability",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=41 ActuatorTarget/Availability",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ActuatorTarget.slx",
+            "sha256": "99159a8ab53e742ee62c859c2fe1f56101fc07228dcf389c539e68344e2a71c9",
+            "sid": "41"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "hierarchy",
+        "reason": "七个子系统实际划分速度调度、使能、目标状态、速率/行程包络与可用性，但单开关层与复合状态层粒度不完全一致。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "ActuatorTarget/Availability",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=41 ActuatorTarget/Availability",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ActuatorTarget.slx",
+            "sha256": "99159a8ab53e742ee62c859c2fe1f56101fc07228dcf389c539e68344e2a71c9",
+            "sid": "41"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "reuse",
+        "reason": "现有调度/包络逻辑已封装，没有发现不必要的实质逻辑副本；没有可独立发布的参数化库。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "ActuatorTarget/Availability",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=41 ActuatorTarget/Availability",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ActuatorTarget.slx",
+            "sha256": "99159a8ab53e742ee62c859c2fe1f56101fc07228dcf389c539e68344e2a71c9",
+            "sid": "41"
+          },
+          {
+            "kind": "file",
+            "locator": "Inputs/Outputs sheets, header row 4 and typed data from row 5",
+            "path": "Model/Interface.xlsx",
+            "sha256": "c16748ed6298e316c3873fe7abfcf033eb66111bbe674fd0b928b7dab9a80237"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "interface",
+        "reason": "根端口类型和工作簿可核对；新增内部子系统23个端口仍为InN/OutN，内部接口命名不完整。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "ActuatorTarget/Availability",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=41 ActuatorTarget/Availability",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ActuatorTarget.slx",
+            "sha256": "99159a8ab53e742ee62c859c2fe1f56101fc07228dcf389c539e68344e2a71c9",
+            "sid": "41"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "dataflow",
+        "reason": "外部六条具名线可定位关键输出，内部线多数未命名；共享零值/复位线跨多级连接。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "0f63232ed55d8619490a6d4cae16e98402e5fd5fa605d67b95243ddb846e319d"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "unit_test",
+        "reason": "当前完整跟踪树没有仓内单元测试；维护者的外部640样本验证不转换为仓内测试分。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "ActuatorTarget/Availability",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=41 ActuatorTarget/Availability",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ActuatorTarget.slx",
+            "sha256": "99159a8ab53e742ee62c859c2fe1f56101fc07228dcf389c539e68344e2a71c9",
+            "sid": "41"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "naming",
+        "reason": "50个生产块中23个内部端口为默认InN/OutN，虽主业务块语义明确，整体仍存在较多默认名。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "0f63232ed55d8619490a6d4cae16e98402e5fd5fa605d67b95243ddb846e319d"
+          },
+          {
+            "block_path": "ActuatorTarget/Availability",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=41 ActuatorTarget/Availability",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ActuatorTarget.slx",
+            "sha256": "99159a8ab53e742ee62c859c2fe1f56101fc07228dcf389c539e68344e2a71c9",
+            "sid": "41"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "directory",
+        "reason": "Model与组件/启动脚本有基本分类，但接口表、标定和生产文件混置在模型树中，尚无更一致的工程分区。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "ActuatorTarget/Availability",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=41 ActuatorTarget/Availability",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/ActuatorTarget.slx",
+            "sha256": "99159a8ab53e742ee62c859c2fe1f56101fc07228dcf389c539e68344e2a71c9",
+            "sid": "41"
+          },
+          {
+            "kind": "file",
+            "locator": "repository-specific model and component paths",
+            "path": "project_init.m",
+            "sha256": "b65705137caa341c3675d9ef18b33294e62cd89cc249c3abb76de4f53b7cbff9"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "build_independence",
+        "reason": "当前构建直接加载源SLX/MDL或M脚本；没有达到受控Bus/Mask组件契约、独立包与版本锁定的边界。只有显式端口不据此跳到2档。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/ActuatorTarget.slx",
+            "sha256": "99159a8ab53e742ee62c859c2fe1f56101fc07228dcf389c539e68344e2a71c9"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "model_version",
+        "reason": "模型内AutoIncrement版本和实际构造Git提交可查，但未提供完整版本/信号变更表及正式评审差异记录。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/ActuatorTarget.slx",
+            "sha256": "99159a8ab53e742ee62c859c2fe1f56101fc07228dcf389c539e68344e2a71c9"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "version_independence",
+        "reason": "存在模型内部自增版本，未形成MAJOR.MINOR.PATCH独立语义版本及发布兼容约定。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "production parameter expressions and model workspace",
+            "path": "Model/ActuatorTarget.slx",
+            "sha256": "99159a8ab53e742ee62c859c2fe1f56101fc07228dcf389c539e68344e2a71c9"
+          },
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "0f63232ed55d8619490a6d4cae16e98402e5fd5fa605d67b95243ddb846e319d"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "release_branches",
+        "reason": "完整Git仅有实际初始/修复main历史，未落实可核对的跨车型/平台发布分支或多配置策略。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "production parameter expressions and model workspace",
+            "path": "Model/ActuatorTarget.slx",
+            "sha256": "99159a8ab53e742ee62c859c2fe1f56101fc07228dcf389c539e68344e2a71c9"
+          },
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "0f63232ed55d8619490a6d4cae16e98402e5fd5fa605d67b95243ddb846e319d"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "device_specificity",
+        "reason": "部分标定外置，可调节工程参数；仅验证默认设备假设，没有证明跨设备复用。",
+        "score": 1
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "d05d608119d5b88086d9d077f9e6f2505dddf614"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "d05d608119d5b88086d9d077f9e6f2505dddf614"
+}

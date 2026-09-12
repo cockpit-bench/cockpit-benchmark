@@ -1,0 +1,462 @@
+{
+  "execution": {
+    "limits": [
+      "Android runtime is one API35 x86_64 emulator, not a physical device or vehicle acceptance.",
+      "Execution is maintainer verification, not remote CI, candidate/model evaluation or independent holdout.",
+      "Only this repository checks and AAR input are exported. The shared host APK/source and full shared report are maintainer-only because they contain unrelated repositories.",
+      "The published source history has provenance metadata normalized. Original executed HEAD/tree and byte-equivalence evidence are retained explicitly; this metadata operation is not a new native run."
+    ],
+    "records": [
+      {
+        "path": "suites/ai-center/execution/AIC-08.json",
+        "sha256": "4227265963875f8b8a4abeb451e1ff176f8baf74ad564cc122ea65bd381d2bb1"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "58b1e989cf25e7431717b6c7a5b43ae8856962ec",
+  "id": "AIC-08",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "58b1e989cf25e7431717b6c7a5b43ae8856962ec",
+    "id": "AIC-08",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: data class HealthReport",
+            "path": "health-card/src/main/java/org/bench/health/HealthReport.kt",
+            "sha256": "b8a37587d00b8933ae0bc1bb1712acd3a0c681f2d4d18dc010e727e4636c28bc",
+            "symbol": "data class HealthReport"
+          },
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: fun bind",
+            "path": "health-card/src/main/java/org/bench/health/HealthCardView.kt",
+            "sha256": "e5fbdcceca57a631926b9f024e731f9fa1c0fcbc099ef2425776e028b94be5c1",
+            "symbol": "fun bind"
+          }
+        ],
+        "limitations": [
+          "三文件紧凑结构，过期/摘要文案与模型、视图仍相互贴近。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "HealthReport 与诊断路由、卡片视图可辨认。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: object DiagnosticRoute",
+            "path": "health-card/src/main/java/org/bench/health/DiagnosticRoute.kt",
+            "sha256": "da6674d414b583b5a51f264491588f7c0fa913ca48ea80acf02239bc26ba19a7",
+            "symbol": "object DiagnosticRoute"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class HealthCardView",
+            "path": "health-card/src/main/java/org/bench/health/HealthCardView.kt",
+            "sha256": "e5fbdcceca57a631926b9f024e731f9fa1c0fcbc099ef2425776e028b94be5c1",
+            "symbol": "class HealthCardView"
+          }
+        ],
+        "limitations": [
+          "没有更细组件边界，不因单库很小给满分。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "AAR 为一个实际可消费的健康卡组件，报告/路由/视图各有功能。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: onOpen:",
+            "path": "health-card/src/main/java/org/bench/health/HealthCardView.kt",
+            "sha256": "e5fbdcceca57a631926b9f024e731f9fa1c0fcbc099ef2425776e028b94be5c1",
+            "symbol": "onOpen:"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: fun create",
+            "path": "health-card/src/main/java/org/bench/health/DiagnosticRoute.kt",
+            "sha256": "da6674d414b583b5a51f264491588f7c0fa913ca48ea80acf02239bc26ba19a7",
+            "symbol": "fun create"
+          }
+        ],
+        "limitations": [
+          "回调暴露 Android Intent，视图直接调用具体路由构造器。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "导航动作以回调交给宿主。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "40864fcbf85287273b746be45916c5e816fc462d1edf2d15394768908dc41291",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "本机Gradle构建和维护者脚本不冒称仓内或远端CI。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单没有CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: compileSdk 34",
+            "path": "health-card/build.gradle",
+            "sha256": "64aa62874643c971785faf225989ebadcae9e574757de47ff08ca61537031c5f",
+            "symbol": "compileSdk 34"
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: version '8.3.0'",
+            "path": "build.gradle",
+            "sha256": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+            "symbol": "version '8.3.0'"
+          }
+        ],
+        "limitations": [
+          "仍依赖Android SDK与固定包缓存/下载；未提供公开接口版本兼容合同，保守取包边界档。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "Gradle8.4、AGP8.3.0、Kotlin1.9.22、SDK34版本明确，所有本仓模块可独立构建成APK/AAR。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: defaultConfig",
+            "path": "health-card/build.gradle",
+            "sha256": "64aa62874643c971785faf225989ebadcae9e574757de47ff08ca61537031c5f",
+            "symbol": "defaultConfig"
+          }
+        ],
+        "limitations": [
+          "versionName、数据库版本和卡片递增revision都不能替代API版本。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "没有独立的公共API语义版本或兼容检查。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: fun summary",
+            "path": "health-card/src/main/java/org/bench/health/HealthReport.kt",
+            "sha256": "b8a37587d00b8933ae0bc1bb1712acd3a0c681f2d4d18dc010e727e4636c28bc",
+            "symbol": "fun summary"
+          },
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: fun bind",
+            "path": "health-card/src/main/java/org/bench/health/HealthCardView.kt",
+            "sha256": "e5fbdcceca57a631926b9f024e731f9fa1c0fcbc099ef2425776e028b94be5c1",
+            "symbol": "fun bind"
+          }
+        ],
+        "limitations": [
+          "HealthReport 同时生成显示文字，HealthCardView 同时布局/状态着色/路由绑定。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "报告聚合、意图构造和视图分文件。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: fun stale",
+            "path": "health-card/src/main/java/org/bench/health/HealthReport.kt",
+            "sha256": "b8a37587d00b8933ae0bc1bb1712acd3a0c681f2d4d18dc010e727e4636c28bc",
+            "symbol": "fun stale"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: const val ACTION",
+            "path": "health-card/src/main/java/org/bench/health/DiagnosticRoute.kt",
+            "sha256": "da6674d414b583b5a51f264491588f7c0fa913ca48ea80acf02239bc26ba19a7",
+            "symbol": "const val ACTION"
+          }
+        ],
+        "limitations": [
+          "增加严重度、过期策略、动作类型需要修改固定分支和 inline 常量。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "同一组件可接入不同故障报告。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class HealthCardView",
+            "path": "health-card/src/main/java/org/bench/health/HealthCardView.kt",
+            "sha256": "e5fbdcceca57a631926b9f024e731f9fa1c0fcbc099ef2425776e028b94be5c1",
+            "symbol": "class HealthCardView"
+          }
+        ],
+        "limitations": [
+          "按中间档处理；不以“无继承”得高分。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "没有发现适用的自定义多实现继承体系。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: fun bind",
+            "path": "health-card/src/main/java/org/bench/health/HealthCardView.kt",
+            "sha256": "e5fbdcceca57a631926b9f024e731f9fa1c0fcbc099ef2425776e028b94be5c1",
+            "symbol": "fun bind"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: fun create",
+            "path": "health-card/src/main/java/org/bench/health/DiagnosticRoute.kt",
+            "sha256": "da6674d414b583b5a51f264491588f7c0fa913ca48ea80acf02239bc26ba19a7",
+            "symbol": "fun create"
+          }
+        ],
+        "limitations": [
+          "宿主仍需要理解 Android Intent 类型，没有协议版本。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "宿主仅提供报告/当前时间/动作回调，诊断 Intent 只带必要车辆与主故障。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: onOpen(DiagnosticRoute.create",
+            "path": "health-card/src/main/java/org/bench/health/HealthCardView.kt",
+            "sha256": "e5fbdcceca57a631926b9f024e731f9fa1c0fcbc099ef2425776e028b94be5c1",
+            "symbol": "onOpen(DiagnosticRoute.create"
+          }
+        ],
+        "limitations": [
+          "视图与具体 DiagnosticRoute/Android Intent 静态耦合。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "宿主控制最终 startActivity。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: data class HealthReport",
+            "path": "health-card/src/main/java/org/bench/health/HealthReport.kt",
+            "sha256": "b8a37587d00b8933ae0bc1bb1712acd3a0c681f2d4d18dc010e727e4636c28bc",
+            "symbol": "data class HealthReport"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: object DiagnosticRoute",
+            "path": "health-card/src/main/java/org/bench/health/DiagnosticRoute.kt",
+            "sha256": "da6674d414b583b5a51f264491588f7c0fa913ca48ea80acf02239bc26ba19a7",
+            "symbol": "object DiagnosticRoute"
+          }
+        ],
+        "limitations": [
+          "只做单 SDK 构建/API35 运行，没有迁移回归。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "Android 专用行为集中在视图与诊断构造器，纯报告可单独消费。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: fun stale",
+            "path": "health-card/src/main/java/org/bench/health/HealthReport.kt",
+            "sha256": "b8a37587d00b8933ae0bc1bb1712acd3a0c681f2d4d18dc010e727e4636c28bc",
+            "symbol": "fun stale"
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: init",
+            "path": "health-card/src/main/java/org/bench/health/HealthCardView.kt",
+            "sha256": "e5fbdcceca57a631926b9f024e731f9fa1c0fcbc099ef2425776e028b94be5c1",
+            "symbol": "init"
+          }
+        ],
+        "limitations": [
+          "只有内联样式/阈值和单套卡片实现；没有两组设备边界或密度配置验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "数据模型不写死车辆名称。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "40864fcbf85287273b746be45916c5e816fc462d1edf2d15394768908dc41291",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "不伪造历史tags或设备分支；主题/场景变化不自动等同分支策略。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "只有本次本地main实际建设提交，没有已实施的多平台分支/变体策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: fun primaryFault",
+            "path": "health-card/src/main/java/org/bench/health/HealthReport.kt",
+            "sha256": "b8a37587d00b8933ae0bc1bb1712acd3a0c681f2d4d18dc010e727e4636c28bc",
+            "symbol": "fun primaryFault"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: fun create",
+            "path": "health-card/src/main/java/org/bench/health/DiagnosticRoute.kt",
+            "sha256": "da6674d414b583b5a51f264491588f7c0fa913ca48ea80acf02239bc26ba19a7",
+            "symbol": "fun create"
+          }
+        ],
+        "limitations": [
+          "样本很小；不据此推断生产健康平台没有重复。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "全三文件审阅：严重度选择、过期判断、主故障路由各一个实现。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: data class HealthReport",
+            "path": "health-card/src/main/java/org/bench/health/HealthReport.kt",
+            "sha256": "b8a37587d00b8933ae0bc1bb1712acd3a0c681f2d4d18dc010e727e4636c28bc",
+            "symbol": "data class HealthReport"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: import android.content.Intent",
+            "path": "health-card/src/main/java/org/bench/health/DiagnosticRoute.kt",
+            "sha256": "da6674d414b583b5a51f264491588f7c0fa913ca48ea80acf02239bc26ba19a7",
+            "symbol": "import android.content.Intent"
+          }
+        ],
+        "limitations": [
+          "诊断动作常量与 Intent 类型暴露给宿主，尚未抽象跨平台导航。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "纯报告不导入 Android，平台调用只在视图/导航边界。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: include ':health-card'",
+            "path": "settings.gradle",
+            "sha256": "40864fcbf85287273b746be45916c5e816fc462d1edf2d15394768908dc41291",
+            "symbol": "include ':health-card'"
+          }
+        ],
+        "limitations": [
+          "仓外宿主已真实执行过期/严重度/回调/诊断 Activity 场景，不计入仓内集成测试。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "仓内无测试。",
+        "score": 0,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "e39b8dd3fe29167a2aad5eeba90147fb15a12a50"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "e39b8dd3fe29167a2aad5eeba90147fb15a12a50"
+}

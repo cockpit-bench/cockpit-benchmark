@@ -1,0 +1,721 @@
+{
+  "execution": {
+    "limits": [
+      "Host verification of synthetic bounded business only; no physical device, ECU, SIL/PIL/HIL, timing certification or production-safety claim.",
+      "Maintainer external tests do not count as repository-owned integration tests.",
+      "Same maintainer construction family; not an independent holdout.",
+      "No transaction isolation between concurrently interleaved workflows mutating the same shared adapter.",
+      "Previous failing source and execution records are retained separately; this passed execution list contains only the corrected current source and its raw inputs/results."
+    ],
+    "records": [
+      {
+        "path": "suites/ai-center/execution/AIC-09.json",
+        "sha256": "7638948c92226c216861f6a85dab228a41b108858da68817d5d6db34805709b0"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "ed34ae9126eed17cc34806a0ab60e3b7f68fc071",
+  "id": "AIC-09",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "ed34ae9126eed17cc34806a0ab60e3b7f68fc071",
+    "id": "AIC-09",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: WorkflowDefinition load_workflow",
+            "path": "src/manifest/workflow_catalog.cpp",
+            "sha256": "b394812b6fe42390f5c1950872629ea61ee9f6dee4c00704dd4436affa523918",
+            "symbol": "WorkflowDefinition load_workflow"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: Dispatcher::tick",
+            "path": "src/dispatch/scheduler.cpp",
+            "sha256": "276eccf0f95228b0f2ab01cf461295d94626f9695d62fd6764f94d476f0f99c0",
+            "symbol": "Dispatcher::tick"
+          },
+          {
+            "kind": "file",
+            "line": 35,
+            "locator": "line 35: void WorkflowRunner::tick",
+            "path": "src/workflow/runner.cpp",
+            "sha256": "950f182ba05c6357c9bd555a99809e376c5c1a9886536ac919e64cc64aed2d09",
+            "symbol": "void WorkflowRunner::tick"
+          }
+        ],
+        "limitations": [
+          "WorkflowRunner同时承担调度协调、会话状态及补偿；组合较集中。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "DAG定义、调度队列、会话执行、manifest加载和本地skill适配分别实现。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 46,
+            "locator": "line 46: class WorkflowRunner",
+            "path": "include/agent_dispatch/workflow.hpp",
+            "sha256": "86d17b22740019cde22f916644b1983e250e79ed4d7e2b2a2881b4e75b3838a8",
+            "symbol": "class WorkflowRunner"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class ClimateSkill",
+            "path": "include/agent_dispatch/local_skills.hpp",
+            "sha256": "b785f0159c538296a87726540decfb60bfe29c6d737f4081a841487292a1036c",
+            "symbol": "class ClimateSkill"
+          },
+          {
+            "kind": "file",
+            "line": 13,
+            "locator": "line 13: class NavigationSkill",
+            "path": "include/agent_dispatch/local_skills.hpp",
+            "sha256": "b785f0159c538296a87726540decfb60bfe29c6d737f4081a841487292a1036c",
+            "symbol": "class NavigationSkill"
+          }
+        ],
+        "limitations": [
+          "Runner直接持有Dispatcher，状态结构公开，适配器生命周期由调用者承担。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "Dispatcher、WorkflowRunner、ClimateSkill、NavigationSkill有实际业务边界。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 32,
+            "locator": "line 32: class SkillExecutor",
+            "path": "include/agent_dispatch/workflow.hpp",
+            "sha256": "86d17b22740019cde22f916644b1983e250e79ed4d7e2b2a2881b4e75b3838a8",
+            "symbol": "class SkillExecutor"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: void WorkflowRunner::skill",
+            "path": "src/workflow/definition.cpp",
+            "sha256": "a68b8887f11e8b630140e587c403645e76debbdbc61ed3e71ecdb83b0c8b008a",
+            "symbol": "void WorkflowRunner::skill"
+          },
+          {
+            "kind": "file",
+            "line": 72,
+            "locator": "line 72: executor.capture_compensation()",
+            "path": "src/workflow/runner.cpp",
+            "sha256": "950f182ba05c6357c9bd555a99809e376c5c1a9886536ac919e64cc64aed2d09",
+            "symbol": "executor.capture_compensation()"
+          },
+          {
+            "kind": "file",
+            "line": 73,
+            "locator": "line 73: executor.execute(step.definition.action, result)",
+            "path": "src/workflow/runner.cpp",
+            "sha256": "950f182ba05c6357c9bd555a99809e376c5c1a9886536ac919e64cc64aed2d09",
+            "symbol": "executor.execute(step.definition.action, result)"
+          }
+        ],
+        "limitations": [
+          "具体Dispatcher仍内置；该分仅认可关键可变化技能边界，不代表分布式服务替换验证。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "WorkflowRunner通过自己定义的SkillExecutor执行技能并取得/应用每步补偿上下文；Climate与Navigation在外侧注册。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: add_library(ai_agent_dispatch STATIC",
+            "path": "CMakeLists.txt",
+            "sha256": "6497c097adf7bf9fdc2c6d66f59f1bc0f5171c3f31a316f9e3e3ab6c1850e3b1",
+            "symbol": "add_library(ai_agent_dispatch STATIC"
+          }
+        ],
+        "limitations": [
+          "本机CMake/Make/Gradle和维护者脚本不等同仓内CI或远端执行。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单无仓内CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: set(CMAKE_CXX_STANDARD 17)",
+            "path": "CMakeLists.txt",
+            "sha256": "6497c097adf7bf9fdc2c6d66f59f1bc0f5171c3f31a316f9e3e3ab6c1850e3b1",
+            "symbol": "set(CMAKE_CXX_STANDARD 17)"
+          },
+          {
+            "kind": "file",
+            "line": 32,
+            "locator": "line 32: target_sources(ai_agent_dispatch PRIVATE",
+            "path": "CMakeLists.txt",
+            "sha256": "6497c097adf7bf9fdc2c6d66f59f1bc0f5171c3f31a316f9e3e3ab6c1850e3b1",
+            "symbol": "target_sources(ai_agent_dispatch PRIVATE"
+          }
+        ],
+        "limitations": [
+          "主机独立构建不代表设备固件或生产SDK集成；外部维护者测试是可选构建参数。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "CMake以标准C++17和Threads工具链独立构建全部仓内实现及自有测试，无必需第三方实现源码或未版本化BSP。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 10,
+            "locator": "line 10: magic != \"WORKFLOW1\"",
+            "path": "src/manifest/workflow_catalog.cpp",
+            "sha256": "b394812b6fe42390f5c1950872629ea61ee9f6dee4c00704dd4436affa523918",
+            "symbol": "magic != \"WORKFLOW1\""
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: WORKFLOW1",
+            "path": "config/trip.workflow",
+            "sha256": "33e0873672d16e162e55a29a70dd0b1b89572b152918e5478fc52c8d1b6d7489",
+            "symbol": "WORKFLOW1"
+          },
+          {
+            "kind": "file",
+            "line": 35,
+            "locator": "line 35: load_workflow(",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "b6f9be584323d73c548ec3bf491bbcaf29ab6e7b7aa3414cca8e513944aa2468",
+            "symbol": "load_workflow("
+          },
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: project(ai_agent_dispatch VERSION",
+            "path": "CMakeLists.txt",
+            "sha256": "6497c097adf7bf9fdc2c6d66f59f1bc0f5171c3f31a316f9e3e3ab6c1850e3b1",
+            "symbol": "project(ai_agent_dispatch VERSION"
+          }
+        ],
+        "limitations": [
+          "WORKFLOW1没有MAJOR.MINOR.PATCH语义或跨版本兼容检查；项目VERSION和内部climate/1、navigation/1补偿token不提高本仓公开API分数。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "公开文件输入以WORKFLOW1标记版本，load_workflow实际校验该标记并由仓内trip.workflow消费，属于手工schema版本。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: void WorkflowRunner::compensate",
+            "path": "src/workflow/runner.cpp",
+            "sha256": "950f182ba05c6357c9bd555a99809e376c5c1a9886536ac919e64cc64aed2d09",
+            "symbol": "void WorkflowRunner::compensate"
+          },
+          {
+            "kind": "file",
+            "line": 35,
+            "locator": "line 35: void WorkflowRunner::tick",
+            "path": "src/workflow/runner.cpp",
+            "sha256": "950f182ba05c6357c9bd555a99809e376c5c1a9886536ac919e64cc64aed2d09",
+            "symbol": "void WorkflowRunner::tick"
+          },
+          {
+            "kind": "file",
+            "line": 19,
+            "locator": "line 19: std::string compensation_context;",
+            "path": "include/agent_dispatch/workflow.hpp",
+            "sha256": "86d17b22740019cde22f916644b1983e250e79ed4d7e2b2a2881b4e75b3838a8",
+            "symbol": "std::string compensation_context;"
+          }
+        ],
+        "limitations": [
+          "WorkflowRunner仍集中协调会话选择、作业映射、超时和补偿；修复状态正确性不等于已分离这些变更职责。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "manifest解析、具体技能状态和调度器各有实现；每步补偿数据归StepExecution，适配器负责自身数据的编码/恢复。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: void WorkflowRunner::skill",
+            "path": "src/workflow/definition.cpp",
+            "sha256": "a68b8887f11e8b630140e587c403645e76debbdbc61ed3e71ecdb83b0c8b008a",
+            "symbol": "void WorkflowRunner::skill"
+          },
+          {
+            "kind": "file",
+            "line": 39,
+            "locator": "line 39: virtual std::string capture_compensation()",
+            "path": "include/agent_dispatch/workflow.hpp",
+            "sha256": "86d17b22740019cde22f916644b1983e250e79ed4d7e2b2a2881b4e75b3838a8",
+            "symbol": "virtual std::string capture_compensation()"
+          },
+          {
+            "kind": "file",
+            "line": 27,
+            "locator": "line 27: struct RefusesUndo : SkillExecutor",
+            "path": "tests/compensation_tests.cpp",
+            "sha256": "d205ba3d72ea4a36dc835144a0ed86f58b4bff6d5f5d982b607d60a817010d6b",
+            "symbol": "struct RefusesUndo : SkillExecutor"
+          },
+          {
+            "kind": "file",
+            "line": 166,
+            "locator": "line 166: runner.skill(\"x\", adapter)",
+            "path": "tests/compensation_tests.cpp",
+            "sha256": "d205ba3d72ea4a36dc835144a0ed86f58b4bff6d5f5d982b607d60a817010d6b",
+            "symbol": "runner.skill(\"x\", adapter)"
+          },
+          {
+            "kind": "file",
+            "line": 80,
+            "locator": "line 80: struct BrokenCompensation : SkillExecutor",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "b6f9be584323d73c548ec3bf491bbcaf29ab6e7b7aa3414cca8e513944aa2468",
+            "symbol": "struct BrokenCompensation : SkillExecutor"
+          }
+        ],
+        "execution_evidence": [
+          "AIC-09/final-native-run.json",
+          "AIC-09/final-restored-native-run.json",
+          "AIC-09/independent-compensation-review/repaired-ed34ae9126ee/result.json"
+        ],
+        "limitations": [
+          "开放范围是技能执行与补偿行为；更换Dispatcher调度算法仍需修改Runner，不宣称任意未来变化均无需改动。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "实际ClimateSkill、NavigationSkill以及RefusesUndo和旧execute-only替身都由SkillExecutor注册；新增补偿行为覆写端口，Runner没有具体技能类型分支。新增拒绝/异常补偿实现由同一执行器完成真实扩展检查。",
+        "score": 4,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 35,
+            "locator": "line 35: A failed/throwing action must leave adapter state unchanged",
+            "path": "include/agent_dispatch/workflow.hpp",
+            "sha256": "86d17b22740019cde22f916644b1983e250e79ed4d7e2b2a2881b4e75b3838a8",
+            "symbol": "A failed/throwing action must leave adapter state unchanged"
+          },
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: s.completed_steps.rbegin()",
+            "path": "src/workflow/runner.cpp",
+            "sha256": "950f182ba05c6357c9bd555a99809e376c5c1a9886536ac919e64cc64aed2d09",
+            "symbol": "s.completed_steps.rbegin()"
+          },
+          {
+            "kind": "file",
+            "line": 12,
+            "locator": "line 12: step.compensation_attempted = true",
+            "path": "src/workflow/runner.cpp",
+            "sha256": "950f182ba05c6357c9bd555a99809e376c5c1a9886536ac919e64cc64aed2d09",
+            "symbol": "step.compensation_attempted = true"
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: bool ClimateSkill::compensate",
+            "path": "src/adapters/local_skills.cpp",
+            "sha256": "064bd972b1c871a15a40b5a098598db55bf89da8bf8ed716d3f432b0d3cb597d",
+            "symbol": "bool ClimateSkill::compensate"
+          },
+          {
+            "kind": "file",
+            "line": 47,
+            "locator": "line 47: bool NavigationSkill::compensate",
+            "path": "src/adapters/local_skills.cpp",
+            "sha256": "064bd972b1c871a15a40b5a098598db55bf89da8bf8ed716d3f432b0d3cb597d",
+            "symbol": "bool NavigationSkill::compensate"
+          },
+          {
+            "kind": "file",
+            "line": 70,
+            "locator": "line 70: CHECK(climate.target() == 21)",
+            "path": "tests/compensation_tests.cpp",
+            "sha256": "d205ba3d72ea4a36dc835144a0ed86f58b4bff6d5f5d982b607d60a817010d6b",
+            "symbol": "CHECK(climate.target() == 21)"
+          },
+          {
+            "kind": "file",
+            "line": 134,
+            "locator": "line 134: CHECK(navigation.destination().empty())",
+            "path": "tests/compensation_tests.cpp",
+            "sha256": "d205ba3d72ea4a36dc835144a0ed86f58b4bff6d5f5d982b607d60a817010d6b",
+            "symbol": "CHECK(navigation.destination().empty())"
+          },
+          {
+            "kind": "file",
+            "line": 180,
+            "locator": "line 180: CHECK(adapter.undo_calls == 1)",
+            "path": "tests/compensation_tests.cpp",
+            "sha256": "d205ba3d72ea4a36dc835144a0ed86f58b4bff6d5f5d982b607d60a817010d6b",
+            "symbol": "CHECK(adapter.undo_calls == 1)"
+          }
+        ],
+        "execution_evidence": [
+          "AIC-09/final-native-run.json",
+          "AIC-09/final-restored-native-run.json",
+          "AIC-09/independent-compensation-review/repaired-ed34ae9126ee/result.json"
+        ],
+        "limitations": [
+          "替换关系覆盖本地技能执行协议；各技能动作字符串的合法域不同，未建立同一业务技能多实现间的完整行为等价合同。共享状态被并发交错工作流修改时不提供事务隔离。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "状态变化前捕获上下文，成功步骤按实际执行顺序的逆序补偿；Climate与Navigation均遵循失败不改状态、无效token不伪报成功和补偿错误留证语义，重复同技能/后续流程/取消/超时有当前运行证明。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 38,
+            "locator": "line 38: virtual bool execute",
+            "path": "include/agent_dispatch/workflow.hpp",
+            "sha256": "86d17b22740019cde22f916644b1983e250e79ed4d7e2b2a2881b4e75b3838a8",
+            "symbol": "virtual bool execute"
+          },
+          {
+            "kind": "file",
+            "line": 39,
+            "locator": "line 39: virtual std::string capture_compensation()",
+            "path": "include/agent_dispatch/workflow.hpp",
+            "sha256": "86d17b22740019cde22f916644b1983e250e79ed4d7e2b2a2881b4e75b3838a8",
+            "symbol": "virtual std::string capture_compensation()"
+          },
+          {
+            "kind": "file",
+            "line": 43,
+            "locator": "line 43: return execute(action, result)",
+            "path": "include/agent_dispatch/workflow.hpp",
+            "sha256": "86d17b22740019cde22f916644b1983e250e79ed4d7e2b2a2881b4e75b3838a8",
+            "symbol": "return execute(action, result)"
+          },
+          {
+            "kind": "file",
+            "line": 80,
+            "locator": "line 80: struct BrokenCompensation : SkillExecutor",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "b6f9be584323d73c548ec3bf491bbcaf29ab6e7b7aa3414cca8e513944aa2468",
+            "symbol": "struct BrokenCompensation : SkillExecutor"
+          }
+        ],
+        "limitations": [
+          "动作与补偿上下文仍是字符串，合法域和编码由各适配器解释；执行与补偿属于同一接口而非独立能力端口。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "SkillExecutor保留execute并提供默认capture_compensation/compensate钩子；无状态执行器无需实现额外状态方法，Runner不依赖温度/导航私有查询。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 32,
+            "locator": "line 32: class SkillExecutor",
+            "path": "include/agent_dispatch/workflow.hpp",
+            "sha256": "86d17b22740019cde22f916644b1983e250e79ed4d7e2b2a2881b4e75b3838a8",
+            "symbol": "class SkillExecutor"
+          },
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: executors_[std::move(name)] = &e",
+            "path": "src/workflow/definition.cpp",
+            "sha256": "a68b8887f11e8b630140e587c403645e76debbdbc61ed3e71ecdb83b0c8b008a",
+            "symbol": "executors_[std::move(name)] = &e"
+          }
+        ],
+        "limitations": [
+          "调度器未抽象，未证明每个未来易变依赖都可替换。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "工作流业务依赖自己定义的SkillExecutor，具体Climate/Navigation由调用侧注入。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 23,
+            "locator": "line 23: bool ClimateSkill::execute",
+            "path": "src/adapters/local_skills.cpp",
+            "sha256": "064bd972b1c871a15a40b5a098598db55bf89da8bf8ed716d3f432b0d3cb597d",
+            "symbol": "bool ClimateSkill::execute"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: WorkflowDefinition load_workflow",
+            "path": "src/manifest/workflow_catalog.cpp",
+            "sha256": "b394812b6fe42390f5c1950872629ea61ee9f6dee4c00704dd4436affa523918",
+            "symbol": "WorkflowDefinition load_workflow"
+          }
+        ],
+        "execution_evidence": [
+          "AIC-09/final-native-run.json",
+          "AIC-09/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "只完成当前主机环境验证，没有两种受支持平台/接口升级兼容回归。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "平台依赖主要限制在I/O、配置或适配处，业务核心消费标准数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 23,
+            "locator": "line 23: bool ClimateSkill::execute",
+            "path": "src/adapters/local_skills.cpp",
+            "sha256": "064bd972b1c871a15a40b5a098598db55bf89da8bf8ed716d3f432b0d3cb597d",
+            "symbol": "bool ClimateSkill::execute"
+          },
+          {
+            "kind": "file",
+            "line": 60,
+            "locator": "line 60: bool NavigationSkill::execute",
+            "path": "src/adapters/local_skills.cpp",
+            "sha256": "064bd972b1c871a15a40b5a098598db55bf89da8bf8ed716d3f432b0d3cb597d",
+            "symbol": "bool NavigationSkill::execute"
+          }
+        ],
+        "execution_evidence": [
+          "AIC-09/final-native-run.json",
+          "AIC-09/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "仅主机替身验证；运行时多传感器/多个数值配置不等同两组完整设备适配验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "业务消费参数、显式输入和共用计算逻辑，可从不同来源提供数据。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: project(ai_agent_dispatch VERSION",
+            "path": "CMakeLists.txt",
+            "sha256": "6497c097adf7bf9fdc2c6d66f59f1bc0f5171c3f31a316f9e3e3ab6c1850e3b1",
+            "symbol": "project(ai_agent_dispatch VERSION"
+          }
+        ],
+        "execution_evidence": [
+          "AIC-09/final-native-run.json",
+          "AIC-09/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "未合成分支/tag，运行参数或算法场景不自动算平台变体。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "实际Git仅main上的3次真实建设/修复提交，无已落实的多平台维护策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: s.completed_steps.rbegin()",
+            "path": "src/workflow/runner.cpp",
+            "sha256": "950f182ba05c6357c9bd555a99809e376c5c1a9886536ac919e64cc64aed2d09",
+            "symbol": "s.completed_steps.rbegin()"
+          },
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: bool ClimateSkill::compensate",
+            "path": "src/adapters/local_skills.cpp",
+            "sha256": "064bd972b1c871a15a40b5a098598db55bf89da8bf8ed716d3f432b0d3cb597d",
+            "symbol": "bool ClimateSkill::compensate"
+          },
+          {
+            "kind": "file",
+            "line": 47,
+            "locator": "line 47: bool NavigationSkill::compensate",
+            "path": "src/adapters/local_skills.cpp",
+            "sha256": "064bd972b1c871a15a40b5a098598db55bf89da8bf8ed716d3f432b0d3cb597d",
+            "symbol": "bool NavigationSkill::compensate"
+          },
+          {
+            "kind": "file",
+            "line": 19,
+            "locator": "line 19: target_ = previous_",
+            "path": "src/adapters/local_skills.cpp",
+            "sha256": "064bd972b1c871a15a40b5a098598db55bf89da8bf8ed716d3f432b0d3cb597d",
+            "symbol": "target_ = previous_"
+          },
+          {
+            "kind": "file",
+            "line": 56,
+            "locator": "line 56: destination_ = previous_",
+            "path": "src/adapters/local_skills.cpp",
+            "sha256": "064bd972b1c871a15a40b5a098598db55bf89da8bf8ed716d3f432b0d3cb597d",
+            "symbol": "destination_ = previous_"
+          }
+        ],
+        "limitations": [
+          "状态恢复中的解析/失败报告模式局部重复；不同数值和字符串数据编码不能单凭相似结构认定为应全部合并。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "审阅src：核心排队、实际完成顺序与逆向补偿遍历均由共用运行器实现；两个技能各自编码/解析上下文并保留直接restore便利入口。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 23,
+            "locator": "line 23: bool ClimateSkill::execute",
+            "path": "src/adapters/local_skills.cpp",
+            "sha256": "064bd972b1c871a15a40b5a098598db55bf89da8bf8ed716d3f432b0d3cb597d",
+            "symbol": "bool ClimateSkill::execute"
+          },
+          {
+            "kind": "file",
+            "line": 73,
+            "locator": "line 73: executor.execute(step.definition.action, result)",
+            "path": "src/workflow/runner.cpp",
+            "sha256": "950f182ba05c6357c9bd555a99809e376c5c1a9886536ac919e64cc64aed2d09",
+            "symbol": "executor.execute(step.definition.action, result)"
+          }
+        ],
+        "limitations": [
+          "此分不自动证明平台迁移、多设备运行或物理设备验证。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "生产工作流、适配器与调度代码使用C++标准库和值类型，文件读取局限于catalog与工具入口，没有平台专有调用进入业务。",
+        "score": 3,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 38,
+            "locator": "line 38: add_test(NAME compensation_context_regression",
+            "path": "CMakeLists.txt",
+            "sha256": "6497c097adf7bf9fdc2c6d66f59f1bc0f5171c3f31a316f9e3e3ab6c1850e3b1",
+            "symbol": "add_test(NAME compensation_context_regression"
+          },
+          {
+            "kind": "file",
+            "line": 17,
+            "locator": "line 17: static WorkflowDefinition repeated",
+            "path": "tests/compensation_tests.cpp",
+            "sha256": "d205ba3d72ea4a36dc835144a0ed86f58b4bff6d5f5d982b607d60a817010d6b",
+            "symbol": "static WorkflowDefinition repeated"
+          },
+          {
+            "kind": "file",
+            "line": 62,
+            "locator": "line 62: CHECK(applied.completed_steps.size() == 2)",
+            "path": "tests/compensation_tests.cpp",
+            "sha256": "d205ba3d72ea4a36dc835144a0ed86f58b4bff6d5f5d982b607d60a817010d6b",
+            "symbol": "CHECK(applied.completed_steps.size() == 2)"
+          },
+          {
+            "kind": "file",
+            "line": 105,
+            "locator": "line 105: CHECK(done.steps[0].compensation_context.empty()",
+            "path": "tests/compensation_tests.cpp",
+            "sha256": "d205ba3d72ea4a36dc835144a0ed86f58b4bff6d5f5d982b607d60a817010d6b",
+            "symbol": "CHECK(done.steps[0].compensation_context.empty()"
+          },
+          {
+            "kind": "file",
+            "line": 180,
+            "locator": "line 180: CHECK(adapter.undo_calls == 1)",
+            "path": "tests/compensation_tests.cpp",
+            "sha256": "d205ba3d72ea4a36dc835144a0ed86f58b4bff6d5f5d982b607d60a817010d6b",
+            "symbol": "CHECK(adapter.undo_calls == 1)"
+          },
+          {
+            "kind": "file",
+            "line": 72,
+            "locator": "line 72: CHECK(runner.get(timed).state == WorkflowState::TimedOut)",
+            "path": "tests/integration_tests.cpp",
+            "sha256": "b6f9be584323d73c548ec3bf491bbcaf29ab6e7b7aa3414cca8e513944aa2468",
+            "symbol": "CHECK(runner.get(timed).state == WorkflowState::TimedOut)"
+          }
+        ],
+        "execution_evidence": [
+          "AIC-09/final-native-run.json",
+          "AIC-09/final-restored-native-run.json"
+        ],
+        "limitations": [
+          "计数是断言调用，包含循环与原有仓内/仓外副本重复；单进程同步本地技能，不是云Agent、并发事务或真实车辆。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "仓内DAG→Dispatcher→两种Skill执行链覆盖依赖/幂等/截止期与补偿错误，新增79项检查包含重复同技能、非拓扑声明、实际完成逆序、取消/超时、拒绝/异常补偿及后续流程上下文；原源与完整恢复副本均实际通过。",
+        "score": 3,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "0e80e150bbaf4c2e1f5a94045860c87498b463ac"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "0e80e150bbaf4c2e1f5a94045860c87498b463ac"
+}

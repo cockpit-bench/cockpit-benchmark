@@ -1,0 +1,592 @@
+{
+  "execution": {
+    "limits": [
+      "Product builds consume the exact eight peer sources; no compiler or proprietary SDK was downloaded.",
+      "Local host build/cache/package behavior only; no cloud CI, signed release, ECU deployment or hardware execution.",
+      "The published source history has provenance metadata normalized. Original executed HEAD/tree and byte-equivalence evidence are retained explicitly; this metadata operation is not a new native run."
+    ],
+    "records": [
+      {
+        "path": "suites/intelligent-driving-center/execution/IDC-03.json",
+        "sha256": "855672760720a8a240ecc203c1f5178958c4c51c609d17465b6a12b004267b63"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+  "id": "IDC-03",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+    "id": "IDC-03",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 5,
+            "line_start": 4,
+            "locator": "lines 4-5: from .contracts",
+            "path": "buildflow/__main__.py",
+            "sha256": "25a36ae43e32b551e0cf8cabb4a763f30bf9b21c4a6d192196beda632f0f1624"
+          },
+          {
+            "kind": "file",
+            "line_end": 126,
+            "line_start": 109,
+            "locator": "lines 109-126: def resolve",
+            "path": "buildflow/contracts.py",
+            "sha256": "16e6250665ac8a3a6b6d243c71e94ea6b21af2fcc2d742b7f44c13cd98b89e45"
+          },
+          {
+            "kind": "file",
+            "line_end": 12,
+            "line_start": 12,
+            "locator": "lines 12-12: from .contracts",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          }
+        ],
+        "limitations": [
+          "这是本地构建工具的分层，不声称远端构建农场。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "CLI仅解析调度；contracts负责源身份、版本、DAG和安全路径；engine消费这些契约实施编译、缓存和打包，依赖方向可逐函数核对。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 68,
+            "line_start": 55,
+            "locator": "lines 55-68: def recover",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          },
+          {
+            "kind": "file",
+            "line_end": 188,
+            "line_start": 163,
+            "locator": "lines 163-188: def build",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          },
+          {
+            "kind": "file",
+            "line_end": 266,
+            "line_start": 247,
+            "locator": "lines 247-266: def package",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          }
+        ],
+        "limitations": [
+          "公开模块稳定性与高层封装仍不完整。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "契约、执行和命令入口是实际模块；但engine同时负责工作区所有权、进程探测、缓存、编译和ZIP，外部产品还调用其run_command/valid_cache等内部粒度函数。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 112,
+            "line_start": 89,
+            "locator": "lines 89-112: def topological",
+            "path": "buildflow/contracts.py",
+            "sha256": "16e6250665ac8a3a6b6d243c71e94ea6b21af2fcc2d742b7f44c13cd98b89e45"
+          },
+          {
+            "kind": "file",
+            "line_end": 145,
+            "line_start": 139,
+            "locator": "lines 139-145: def run_command",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          },
+          {
+            "kind": "file",
+            "line_end": 220,
+            "line_start": 203,
+            "locator": "lines 203-220: configure =",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          }
+        ],
+        "limitations": [
+          "没有真实替换构建后端，不能给全可替换最高档。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "依赖关系、路径、版本、产物和场景由产品配方提供，执行流程基本通过contracts和run_command边界；CMake/Ninja命令仍固定在engine。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 13,
+            "line_start": 1,
+            "locator": "lines 1-13: param(",
+            "path": "scripts/Build-Product.ps1",
+            "sha256": "a907cf23b23394e346159681819572a3131bf717f2a9f1c9ed89be8a045ca675"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete current tracked tree 1c1baf4b9265ec35ee350b97f44b085594fe286f and complete actual refs/history; no inferred CI or release branches",
+            "oid": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "不推测组织外部CI能力。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整跟踪树没有CI配置；本地PowerShell入口和实际测试日志不是仓内CI流水线。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 9,
+            "line_start": 1,
+            "locator": "lines 1-9: import argparse",
+            "path": "buildflow/__main__.py",
+            "sha256": "25a36ae43e32b551e0cf8cabb4a763f30bf9b21c4a6d192196beda632f0f1624"
+          },
+          {
+            "kind": "file",
+            "line_end": 8,
+            "line_start": 2,
+            "locator": "lines 2-8: from pathlib",
+            "path": "buildflow/contracts.py",
+            "sha256": "16e6250665ac8a3a6b6d243c71e94ea6b21af2fcc2d742b7f44c13cd98b89e45"
+          },
+          {
+            "kind": "file",
+            "line_end": 12,
+            "line_start": 2,
+            "locator": "lines 2-12: from pathlib",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          },
+          {
+            "kind": "file",
+            "line_end": 9,
+            "line_start": 9,
+            "locator": "lines 9-9: Python 3.10+",
+            "path": "README.md",
+            "sha256": "2300e89b53537f90598453102d36b9525a087d5ed7935e108981905a96247320"
+          },
+          {
+            "kind": "file",
+            "line_end": 119,
+            "line_start": 109,
+            "locator": "lines 109-119: def tool_identity",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          }
+        ],
+        "limitations": [
+          "此分只评构建工具自身；被构建的IDC-10产品仍有外部实现共同编译依赖。实际执行为Windows host工具链。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "构建工具本身只使用Python标准库，CLI/契约/执行模块可独立运行；Python版本和Git/CMake/Ninja/GCC调用边界明确，实际工具可执行文件/版本被记录。八个C/C++源码仓是被构建产品的输入，不是本工具的实现依赖，不能按集成产品的源码耦合给工具0档。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 24,
+            "line_start": 12,
+            "locator": "lines 12-24: def main",
+            "path": "buildflow/__main__.py",
+            "sha256": "25a36ae43e32b551e0cf8cabb4a763f30bf9b21c4a6d192196beda632f0f1624"
+          },
+          {
+            "kind": "file",
+            "line_end": 112,
+            "line_start": 110,
+            "locator": "lines 110-112: if manifest.get('schema')",
+            "path": "buildflow/contracts.py",
+            "sha256": "16e6250665ac8a3a6b6d243c71e94ea6b21af2fcc2d742b7f44c13cd98b89e45"
+          },
+          {
+            "kind": "file",
+            "line_end": 4,
+            "line_start": 2,
+            "locator": "lines 2-4: \"schema\"",
+            "path": "products.json",
+            "sha256": "cc63993c8be3ccd94e4e3b3e10474db8a8a86bfcb1366e8e9879d063c4844ac2"
+          }
+        ],
+        "limitations": [
+          "没有工具自身语义化API版本、迁移规则或跨版本兼容回归，故不沿用依赖版本校验的3档。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "工具自己的公开CLI/配方/锁契约只有schema整数1，未提供独立MAJOR.MINOR.PATCH接口契约。对依赖CMake项目版本、头文件SHA、ABI及冲突的真实校验属于消费方检查，不能替代工具自身API语义版本。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 53,
+            "line_start": 23,
+            "locator": "lines 23-53: def process_alive",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          },
+          {
+            "kind": "file",
+            "line_end": 200,
+            "line_start": 163,
+            "locator": "lines 163-200: def build",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          },
+          {
+            "kind": "file",
+            "line_end": 271,
+            "line_start": 247,
+            "locator": "lines 247-271: def package",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          }
+        ],
+        "limitations": [
+          "没有因测试通过或代码量小给职责满分。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "契约函数职责较清楚，但engine在同模块混合进程锁、状态落盘、命令执行、缓存与打包，build函数承担多个变更原因。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 210,
+            "line_start": 176,
+            "locator": "lines 176-210: \"adaptive\":",
+            "path": "products.json",
+            "sha256": "cc63993c8be3ccd94e4e3b3e10474db8a8a86bfcb1366e8e9879d063c4844ac2"
+          },
+          {
+            "kind": "file",
+            "line_end": 230,
+            "line_start": 216,
+            "locator": "lines 216-230: outputs =",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          }
+        ],
+        "limitations": [
+          "真实扩展限于已有CMake配方协议，不是任意插件系统。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "八种组件和两产品配置由同一配方执行；最终AP从一个archive扩成六个archive，仅调整产物配方即可由同一engine构建、核验和打包。新构建后端仍需改engine。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 11,
+            "line_start": 10,
+            "locator": "lines 10-11: class BuildError",
+            "path": "buildflow/contracts.py",
+            "sha256": "16e6250665ac8a3a6b6d243c71e94ea6b21af2fcc2d742b7f44c13cd98b89e45"
+          },
+          {
+            "kind": "file",
+            "line_end": 170,
+            "line_start": 163,
+            "locator": "lines 163-170: def build",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          }
+        ],
+        "limitations": [
+          "不同配方输入并非LSP实现替换实验。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "没有继承体系或实际替换实现间的行为契约；按合同中间档处理。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 44,
+            "line_start": 23,
+            "locator": "lines 23-44: if args.action == 'recover'",
+            "path": "buildflow/__main__.py",
+            "sha256": "25a36ae43e32b551e0cf8cabb4a763f30bf9b21c4a6d192196beda632f0f1624"
+          },
+          {
+            "kind": "file",
+            "line_end": 225,
+            "line_start": 212,
+            "locator": "lines 212-225: if component.get('scenario_target')",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          },
+          {
+            "kind": "file",
+            "line_end": 245,
+            "line_start": 216,
+            "locator": "lines 216-245: \"parking\":",
+            "path": "products.json",
+            "sha256": "cc63993c8be3ccd94e4e3b3e10474db8a8a86bfcb1366e8e9879d063c4844ac2"
+          }
+        ],
+        "limitations": [
+          "仍以字典传递复合配置，未形成完整类型化公共SDK。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "版本/DAG解析、build、package和recover各自提供独立调用面，调用者不必实现不使用的下载、部署或UI能力；配方可省略scenario并只声明库产物，两个C组件实际这样消费。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 119,
+            "line_start": 109,
+            "locator": "lines 109-119: def tool_identity",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          },
+          {
+            "kind": "file",
+            "line_end": 214,
+            "line_start": 203,
+            "locator": "lines 203-214: configure =",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          },
+          {
+            "kind": "file",
+            "line_end": 50,
+            "line_start": 23,
+            "locator": "lines 23-50: def process_alive",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          }
+        ],
+        "limitations": [
+          "构建后端只有一种，未夸大为全部依赖可替换。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "高层构建顺序依赖产品侧manifest/lock，外部工具路径由调用方传入；实际CMake过程和Windows进程API仍由engine具体实现。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 277,
+            "line_start": 250,
+            "locator": "lines 250-277: \"platforms\"",
+            "path": "products.json",
+            "sha256": "cc63993c8be3ccd94e4e3b3e10474db8a8a86bfcb1366e8e9879d063c4844ac2"
+          },
+          {
+            "kind": "file",
+            "line_end": 118,
+            "line_start": 108,
+            "locator": "lines 108-118: def test_incremental_corruption",
+            "path": "tests/test_buildflow.py",
+            "sha256": "797665f6cc61629f8c53e1752f6b2bb642fa66ccbf2dc1288ecdbcc6fdbd651d"
+          }
+        ],
+        "limitations": [
+          "验证范围为两种受支持host产品配置，不代表不同OS/ECU工具链迁移。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "urban Debug八组件与highway Release五组件均使用同一engine实际编译；仓内测试也核对平台变化使缓存失效，避免把旧平台产物误用为新配置。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 277,
+            "line_start": 250,
+            "locator": "lines 250-277: \"platforms\"",
+            "path": "products.json",
+            "sha256": "cc63993c8be3ccd94e4e3b3e10474db8a8a86bfcb1366e8e9879d063c4844ac2"
+          },
+          {
+            "kind": "file",
+            "line_end": 220,
+            "line_start": 203,
+            "locator": "lines 203-220: configure =",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          }
+        ],
+        "limitations": [
+          "无物理设备结果，host验证按合同保留2档。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "组件选型、构建类型和工具路径参数化并被两组真实配置消费；产物扩展名/ABI及CMake流程仍有MinGW主机假设，没有全部设备适配隔离。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 277,
+            "line_start": 250,
+            "locator": "lines 250-277: \"platforms\"",
+            "path": "products.json",
+            "sha256": "cc63993c8be3ccd94e4e3b3e10474db8a8a86bfcb1366e8e9879d063c4844ac2"
+          },
+          {
+            "kind": "file",
+            "line_end": 3,
+            "line_start": 3,
+            "locator": "lines 3-3: urban-parking",
+            "path": "README.md",
+            "sha256": "2300e89b53537f90598453102d36b9525a087d5ed7935e108981905a96247320"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete current tracked tree 1c1baf4b9265ec35ee350b97f44b085594fe286f and complete actual refs/history; no inferred CI or release branches",
+            "oid": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "只有本次实现和修复历史，不复刻扫描中的数千tag。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "单一实际main共享两组差异配方；八/五组件和Debug/Release均运行、缓存与打包通过。没有用别名tag伪造发布分支。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 227,
+            "line_start": 180,
+            "locator": "lines 180-227: for name in order:",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          },
+          {
+            "kind": "file",
+            "line_end": 12,
+            "line_start": 11,
+            "locator": "lines 11-12: python -m buildflow",
+            "path": "scripts/Build-Product.ps1",
+            "sha256": "a907cf23b23394e346159681819572a3131bf717f2a9f1c9ed89be8a045ca675"
+          }
+        ],
+        "limitations": [
+          "只针对自有构建逻辑，依赖库的算法重复另行评审。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "扫描本仓buildflow四个Python文件及唯一PowerShell入口，排除测试数据和锁清单。八组件统一经过同一fingerprint、命令、缓存和打包循环；PS入口只调用Python，没有另一份构建实现。",
+        "score": 3
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 52,
+            "line_start": 23,
+            "locator": "lines 23-52: def process_alive",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          },
+          {
+            "kind": "file",
+            "line_end": 119,
+            "line_start": 109,
+            "locator": "lines 109-119: def tool_identity",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          },
+          {
+            "kind": "file",
+            "line_end": 215,
+            "line_start": 203,
+            "locator": "lines 203-215: configure =",
+            "path": "buildflow/engine.py",
+            "sha256": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077"
+          }
+        ],
+        "limitations": [
+          "不能由标准库使用推断已在Linux/ECU运行。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "Windows PID查询被集中在process_alive，其他业务主要使用标准Python文件/进程接口；编译命令、路径及MinGW产物仍集中保留平台初始化假设。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line_end": 100,
+            "line_start": 58,
+            "locator": "lines 58-100: class NativeRecoveryTests",
+            "path": "tests/test_buildflow.py",
+            "sha256": "797665f6cc61629f8c53e1752f6b2bb642fa66ccbf2dc1288ecdbcc6fdbd651d"
+          },
+          {
+            "kind": "file",
+            "line_end": 132,
+            "line_start": 118,
+            "locator": "lines 118-132: def test_failed_task_resume",
+            "path": "tests/test_buildflow.py",
+            "sha256": "797665f6cc61629f8c53e1752f6b2bb642fa66ccbf2dc1288ecdbcc6fdbd651d"
+          },
+          {
+            "kind": "file",
+            "line_end": 152,
+            "line_start": 142,
+            "locator": "lines 142-152: def test_git_clean_line_ending",
+            "path": "tests/test_buildflow.py",
+            "sha256": "797665f6cc61629f8c53e1752f6b2bb642fa66ccbf2dc1288ecdbcc6fdbd651d"
+          }
+        ],
+        "limitations": [
+          "测试用小型C夹具验证工具边界；当前实际8组件产品编译/打包另有外部原始记录。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "12个仓内测试真实连接contracts、engine、Git源仓、CMake/Ninja和编译器；覆盖编译失败后续跑、源变化传递失效、损坏制品/缓存、版本/ABI/接口冲突、错误工作区和陈旧锁恢复，当前代码SHA绑定的运行全部通过。",
+        "score": 3
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "0126c386fb81044f3feedfa2c828e83bc7ce6bdf"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "0126c386fb81044f3feedfa2c828e83bc7ce6bdf"
+}

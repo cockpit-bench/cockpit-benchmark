@@ -7,7 +7,7 @@
     "path": "suites/legacy-v094.json",
     "sha256": "a1944ba5d6d8a5a5d58d1f3d7b270b26150cda56a165d12c3c9737df754cae5b"
   },
-  "schema_version": "benchmark-repository-types-2",
+  "schema_version": "benchmark-reporting-groups-3",
   "suites": [
     {
       "canonical_scores": {
@@ -84,6 +84,78 @@
       "score": 409,
       "status": "published",
       "technology": "MATLAB / Simulink"
+    },
+    {
+      "canonical_scores": {
+        "path": "suites/architecture-center/STANDARD_SCORES.json",
+        "sha256": "ded7f12f747fb12b2303575f15e8974fb78b9b535d80342290fe9f8516e1999e"
+      },
+      "contract": {
+        "path": "suites/architecture-center/contract-index.json",
+        "sha256": "a23c17970bdf0f5dfe18b58090c7d5d4021d77fc4f6b6adf64dc508f069cc395"
+      },
+      "failed_leaves": 0,
+      "id": "architecture-center",
+      "leaf_count": 142,
+      "manifest": {
+        "path": "suites/architecture-center/manifest.json",
+        "sha256": "16e9574918c23dd8ba9def42a11cf75a1e22ef4effeafb48798d9136dd405947"
+      },
+      "max_score": 436,
+      "name": "架构中心",
+      "published_repositories": 11,
+      "repository_count": 11,
+      "score": 205,
+      "status": "published",
+      "technology": "Mixed"
+    },
+    {
+      "canonical_scores": {
+        "path": "suites/ai-center/STANDARD_SCORES.json",
+        "sha256": "59d9ca22878db28f152fbd96467ede16e01dd352bc8a169474df33d09b7819c6"
+      },
+      "contract": {
+        "path": "suites/ai-center/contract-index.json",
+        "sha256": "a23c17970bdf0f5dfe18b58090c7d5d4021d77fc4f6b6adf64dc508f069cc395"
+      },
+      "failed_leaves": 0,
+      "id": "ai-center",
+      "leaf_count": 187,
+      "manifest": {
+        "path": "suites/ai-center/manifest.json",
+        "sha256": "83604316bab9778315cd1774cb45e592c2b49baadfa6fc71d573e10bf981a5c7"
+      },
+      "max_score": 616,
+      "name": "人工智能中心",
+      "published_repositories": 11,
+      "repository_count": 11,
+      "score": 312,
+      "status": "published",
+      "technology": "Mixed"
+    },
+    {
+      "canonical_scores": {
+        "path": "suites/intelligent-driving-center/STANDARD_SCORES.json",
+        "sha256": "75b2c3b76e221d00bf567b22f4037b7cec0dc8e72ef0394f9ac2779157496e28"
+      },
+      "contract": {
+        "path": "suites/intelligent-driving-center/contract-index.json",
+        "sha256": "a23c17970bdf0f5dfe18b58090c7d5d4021d77fc4f6b6adf64dc508f069cc395"
+      },
+      "failed_leaves": 0,
+      "id": "intelligent-driving-center",
+      "leaf_count": 182,
+      "manifest": {
+        "path": "suites/intelligent-driving-center/manifest.json",
+        "sha256": "fad2d37114add0b703716a8716abcf12e08de857307fe79ac88d67c32ab59fa3"
+      },
+      "max_score": 596,
+      "name": "智能驾驶中心",
+      "published_repositories": 11,
+      "repository_count": 11,
+      "score": 329,
+      "status": "published",
+      "technology": "Mixed"
     }
   ]
 }

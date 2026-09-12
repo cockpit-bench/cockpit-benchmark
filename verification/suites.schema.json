@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Separate APP, FW and New Energy MATLAB repository types",
+  "title": "Six separately reported benchmark groups",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -14,7 +14,10 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "benchmark-repository-types-2"
+      "enum": [
+        "benchmark-repository-types-2",
+        "benchmark-reporting-groups-3"
+      ]
     },
     "benchmark_id": {
       "const": "cockpit-benchmark"
@@ -37,7 +40,7 @@
     "suites": {
       "type": "array",
       "minItems": 3,
-      "maxItems": 3,
+      "maxItems": 6,
       "items": {
         "type": "object",
         "required": [
@@ -60,20 +63,27 @@
             "enum": [
               "app",
               "fw",
-              "new-energy-matlab"
+              "new-energy-matlab",
+              "architecture-center",
+              "ai-center",
+              "intelligent-driving-center"
             ]
           },
           "name": {
             "enum": [
               "APP",
               "FW",
-              "New Energy MATLAB"
+              "New Energy MATLAB",
+              "架构中心",
+              "人工智能中心",
+              "智能驾驶中心"
             ]
           },
           "technology": {
             "enum": [
               "Android",
-              "MATLAB / Simulink"
+              "MATLAB / Simulink",
+              "Mixed"
             ]
           },
           "status": {
@@ -145,5 +155,32 @@
         }
       }
     }
-  }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "schema_version": {
+            "const": "benchmark-reporting-groups-3"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "suites": {
+            "minItems": 6,
+            "maxItems": 6
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "suites": {
+            "minItems": 3,
+            "maxItems": 3
+          }
+        }
+      }
+    }
+  ]
 }

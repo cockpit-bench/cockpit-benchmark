@@ -1,0 +1,342 @@
+{
+  "execution": {
+    "limits": [
+      "MIL and host replay only; no physical device, ECU, SIL/PIL/HIL, BTC or certification.",
+      "Simulink coverage is distinct from generated C statement coverage; C statement coverage was not measured.",
+      "Independent equations and configured scenarios are maintainer checks, not candidate-model evaluation or blind gold."
+    ],
+    "records": [
+      {
+        "path": "suites/architecture-center/execution/ARC-04.json",
+        "sha256": "c3cfa5f20943419c0823e76171be1e470435009613e170a5488fc44c8e4bdcad"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+  "id": "ARC-04",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/matlab.json",
+      "sha256": "340ec05b3ae44e27bc82aca6ed9cd694f30fac96aa6b58073da313c1e6cbce71"
+    },
+    "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+    "id": "ARC-04",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "block_path": "SignalSupervisor/AcceleratorConditioner",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=31 SignalSupervisor/AcceleratorConditioner",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/SignalSupervisor.slx",
+            "sha256": "b0980452aa789c42642feaf89ab4f3721249bbd17e94a8293abb3c4c0118c052",
+            "sid": "31"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "hierarchy",
+        "reason": "八路资格判定与质量聚合有稳定分层，但顶层布置同时承接25输入、10输出和计数逻辑，粒度偏密。",
+        "score": 2
+      },
+      {
+        "comparison": {
+          "allowed_parameter_substitutions": {
+            "K_SteeringAge": "MAX_AGE",
+            "K_SteeringMax": "UPPER",
+            "K_SteeringMin": "LOWER",
+            "K_VehicleSpeedAge": "MAX_AGE",
+            "K_VehicleSpeedMax": "UPPER",
+            "K_VehicleSpeedMin": "LOWER"
+          },
+          "blocks_each": 24,
+          "complete_graph_equal_after_listed_parameter_substitution": true,
+          "directed_edges_each": 26,
+          "ignored": "Only display geometry/order. All block types, names, SIDs, remaining parameter expressions and full directed edges retained.",
+          "normalized_graph_sha256": "1c095d61115e6d56f8782f8e19025d411f11b72c2845497fd9083e790e000f9a"
+        },
+        "evidence": [
+          {
+            "block_path": "VehicleSpeedQualifierLib/VehicleSpeedQualifier/Conditions",
+            "kind": "model",
+            "locator": "simulink/systems/system_1.xml Block SID=13 Conditions",
+            "member": "simulink/systems/system_1.xml",
+            "path": "Model/components/VehicleSpeedQualifierLib.slx",
+            "sha256": "89bdbb8d83fbac427b82449094072e139d289516c7b86ea22b9b40c833718120",
+            "sid": "13"
+          },
+          {
+            "block_path": "SteeringQualifierLib/SteeringQualifier/Conditions",
+            "kind": "model",
+            "locator": "simulink/systems/system_1.xml Block SID=13 Conditions",
+            "member": "simulink/systems/system_1.xml",
+            "path": "Model/components/SteeringQualifierLib.slx",
+            "sha256": "3c008ac8724fbc232a3c65f50446a93016340f3bb907c1766cecf1f5f925fdba",
+            "sid": "13"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "reuse",
+        "reason": "两份实际五条件资格与去抖器：上下界/新鲜度/通信/非复位汇合；有效时饱和递增计数，否则清零；达到2样本后传递原值，否则Fallback零。完整24块及状态反馈连线一致，只有上下界/时效标定符号不同。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "SignalSupervisor/AcceleratorConditioner",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=31 SignalSupervisor/AcceleratorConditioner",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/SignalSupervisor.slx",
+            "sha256": "b0980452aa789c42642feaf89ab4f3721249bbd17e94a8293abb3c4c0118c052",
+            "sid": "31"
+          },
+          {
+            "kind": "file",
+            "locator": "Inputs/Outputs sheets, header row 4 and typed data from row 5",
+            "path": "Model/Interface.xlsx",
+            "sha256": "c0db59219a78747340e86123893737f78722c00673ad1e3726dd9ba2e4b5c117"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "interface",
+        "reason": "八路值/年龄/通信状态显式输入，类型和工作簿可查；受控接口变更记录和部分内部量约束不足。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "SignalSupervisor/AcceleratorConditioner",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=31 SignalSupervisor/AcceleratorConditioner",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/SignalSupervisor.slx",
+            "sha256": "b0980452aa789c42642feaf89ab4f3721249bbd17e94a8293abb3c4c0118c052",
+            "sid": "31"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "dataflow",
+        "reason": "大量长复位/质量支线向公共计数点聚合，根83条线只有10条具名，存在明显跳读负担。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "passed/samples/modelCoverageMeasured/cStatementCoverageMeasured",
+            "path": "Tests/results/test-result.json",
+            "sha256": "c413b57eb98dc9a45f90d6b323c12a5d6218204db26ea14b29eca359e3e0a6e2"
+          },
+          {
+            "kind": "file",
+            "locator": "stimulus, expected, absoluteTolerance, relativeTolerance",
+            "path": "Tests/TestData.mat",
+            "sha256": "4806a308c5589d3075519c74d7ae4f60660d83de72e8f566aac8888536be1739"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "unit_test",
+        "reason": "仓内Tests包含真实模型引用夹具、640有序样本和逐输出独立期望，并实测通过；报告仅测Simulink模型coverage，C语句覆盖未测，故按合同止于1档。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "SignalSupervisor/AcceleratorConditioner",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=31 SignalSupervisor/AcceleratorConditioner",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/SignalSupervisor.slx",
+            "sha256": "b0980452aa789c42642feaf89ab4f3721249bbd17e94a8293abb3c4c0118c052",
+            "sid": "31"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "naming",
+        "reason": "Qualifier按信号命名；NotValid0..7/Rejected0..7需回查端口对应，不能仅凭非默认名称判优秀。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "b6756ef5ecc95e484a48e7d0fa28ca3996deda1b7e76714faea224819acb4de7"
+          },
+          {
+            "block_path": "SignalSupervisor/AcceleratorConditioner",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=31 SignalSupervisor/AcceleratorConditioner",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/SignalSupervisor.slx",
+            "sha256": "b0980452aa789c42642feaf89ab4f3721249bbd17e94a8293abb3c4c0118c052",
+            "sid": "31"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "directory",
+        "reason": "Model与组件/启动脚本有基本分类，但接口表、标定和生产文件混置在模型树中，尚无更一致的工程分区。",
+        "score": 2
+      },
+      {
+        "evidence": [
+          {
+            "block_path": "SignalSupervisor/AcceleratorConditioner",
+            "kind": "model",
+            "locator": "simulink/systems/system_root.xml Block SID=31 SignalSupervisor/AcceleratorConditioner",
+            "member": "simulink/systems/system_root.xml",
+            "path": "Model/SignalSupervisor.slx",
+            "sha256": "b0980452aa789c42642feaf89ab4f3721249bbd17e94a8293abb3c4c0118c052",
+            "sid": "31"
+          },
+          {
+            "kind": "file",
+            "locator": "repository-specific model and component paths",
+            "path": "project_init.m",
+            "sha256": "a4d5d6e737e48800e812db30c3743084fcd5c41bc98c7e26a1c546f745c397fa"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "build_independence",
+        "reason": "当前构建直接加载源SLX/MDL或M脚本；没有达到受控Bus/Mask组件契约、独立包与版本锁定的边界。只有显式端口不据此跳到2档。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/SignalSupervisor.slx",
+            "sha256": "b0980452aa789c42642feaf89ab4f3721249bbd17e94a8293abb3c4c0118c052"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "3d1b82c43d854087fd5355452c21bafdadfad376",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "model_version",
+        "reason": "模型内AutoIncrement版本和实际构造Git提交可查，但未提供完整版本/信号变更表及正式评审差异记录。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "locator": "simulink/blockdiagram.xml P[@Name=\"ModelVersionFormat\"]",
+            "path": "Model/SignalSupervisor.slx",
+            "sha256": "b0980452aa789c42642feaf89ab4f3721249bbd17e94a8293abb3c4c0118c052"
+          },
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "3d1b82c43d854087fd5355452c21bafdadfad376",
+            "ref": "refs/heads/main"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "version_independence",
+        "reason": "存在模型内部自增版本，未形成MAJOR.MINOR.PATCH独立语义版本及发布兼容约定。",
+        "score": 1
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "3d1b82c43d854087fd5355452c21bafdadfad376",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "production parameter expressions and model workspace",
+            "path": "Model/SignalSupervisor.slx",
+            "sha256": "b0980452aa789c42642feaf89ab4f3721249bbd17e94a8293abb3c4c0118c052"
+          },
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "b6756ef5ecc95e484a48e7d0fa28ca3996deda1b7e76714faea224819acb4de7"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "release_branches",
+        "reason": "完整Git仅有实际初始/修复main历史，未落实可核对的跨车型/平台发布分支或多配置策略。",
+        "score": 0
+      },
+      {
+        "evidence": [
+          {
+            "kind": "git",
+            "locator": "Complete refs inventory and current main history; no inferred historical release branches",
+            "oid": "3d1b82c43d854087fd5355452c21bafdadfad376",
+            "ref": "refs/heads/main"
+          },
+          {
+            "kind": "file",
+            "locator": "production parameter expressions and model workspace",
+            "path": "Model/SignalSupervisor.slx",
+            "sha256": "b0980452aa789c42642feaf89ab4f3721249bbd17e94a8293abb3c4c0118c052"
+          },
+          {
+            "kind": "file",
+            "locator": "Repository model/load/test instructions",
+            "path": "README.md",
+            "sha256": "b6756ef5ecc95e484a48e7d0fa28ca3996deda1b7e76714faea224819acb4de7"
+          }
+        ],
+        "limitations": [
+          "仅本仓有界工程实现；不从文件数/可重放性推断生产完整性或语义质量。"
+        ],
+        "max_score": 3,
+        "name": "device_specificity",
+        "reason": "部分标定外置，可调节工程参数；仅验证默认设备假设，没有证明跨设备复用。",
+        "score": 1
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "6d4ecc7d48a66c00f7b232917196b7995015a466"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "6d4ecc7d48a66c00f7b232917196b7995015a466"
+}

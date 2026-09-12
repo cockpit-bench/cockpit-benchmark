@@ -1,0 +1,74 @@
+{
+  "actual": {
+    "bytes": 67264,
+    "commit_count": 5,
+    "extensions": {
+      ".json": 3,
+      ".md": 2,
+      ".ps1": 1,
+      ".py": 5,
+      "<noext>": 2
+    },
+    "gitlinks": [],
+    "refs": {
+      "refs/heads/main": "2cba4820803c8efe60859103d44d62fd8f833ff9"
+    },
+    "scope": "All tracked files of the scored target; excludes untracked build caches and dependency worktrees. Text line counts include generated and test files and are not production LOC.",
+    "source_lines_by_extension": {
+      ".py": 629
+    },
+    "tracked_file_count": 13
+  },
+  "center": "智能驾驶中心",
+  "conclusion": "Bounded structural and business proxy with declared deviations; not a full production distribution reproduction or independent holdout.",
+  "deviations": [
+    "扫描文件总数为45，本仓跟踪文件为13；统计范围不同且规模明显压缩，不声明生产整仓体量等价。",
+    "历史为本次真实构造/修复提交，未复制扫描中的大量分支/tag或虚构长期研发史。",
+    "仅提供了结构、模式和汇总，内部算法、标定值及全部生产依赖未提供；不能据此宣称业务实现相同。"
+  ],
+  "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+  "id": "IDC-03",
+  "implementation_kind": "python",
+  "matched_traits": [
+    "采用python实现并保留python_powershell的主要组织形态；以最终源码及构建入口核对。",
+    "业务为新编写的可执行有界切片；声明的模块、配置和接口具有实际调用方。"
+  ],
+  "observed": {
+    "branches": 103,
+    "build_label": "build_files",
+    "commit_count": 187,
+    "default_head_empty": false,
+    "extensions": {
+      ".exe": 1,
+      ".json": 9,
+      ".md": 1,
+      ".ps1": 4,
+      ".py": 25,
+      ".xlsx": 1,
+      "<noext>": 4
+    },
+    "file_count": 45,
+    "tags": 4548
+  },
+  "repairs": [],
+  "schema": "center-scan-profile-comparison-1",
+  "source_basis": {
+    "document_sha256": "55a68ccf2bc725c0bec0d322bfaa63c714a7915e9f1332f68a0605fbf33ba508",
+    "original_names": "Retained only in the local supplied-scan mapping",
+    "section_line": 3193,
+    "selection": "One supplied per-repository joint structural prototype; no target-score selection",
+    "spec_line": 3283
+  },
+  "target": {
+    "business": "build_orchestrator",
+    "layout": "python_powershell",
+    "planned_production_units": 0,
+    "repository_owned_tests": true
+  },
+  "tree": "0126c386fb81044f3feedfa2c828e83bc7ce6bdf",
+  "unknowns": [
+    "Scanner test_case_count=0 is not evidence that tests are absent.",
+    "Reported HTML percentages are not accepted as actual test coverage unless the report semantics and execution binding are verified.",
+    "Some large-source scans stop at 2500 source files; capped values are not whole-repository counts."
+  ]
+}

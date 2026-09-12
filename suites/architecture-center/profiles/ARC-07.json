@@ -1,0 +1,121 @@
+{
+  "actual": {
+    "bytes": 110762,
+    "commit_count": 5,
+    "extensions": {
+      ".json": 5,
+      ".m": 1,
+      ".md": 2,
+      ".py": 1,
+      "<noext>": 3
+    },
+    "gitlinks": [
+      {
+        "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+        "path": "components/arch-actuator-target",
+        "repository_id": "ARC-01"
+      },
+      {
+        "head": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+        "path": "components/arch-brake-stability",
+        "repository_id": "ARC-02"
+      },
+      {
+        "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+        "path": "components/arch-crosswind-control",
+        "repository_id": "ARC-05"
+      },
+      {
+        "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+        "path": "components/arch-motion-coordinator",
+        "repository_id": "ARC-03"
+      },
+      {
+        "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+        "path": "components/arch-signal-supervisor",
+        "repository_id": "ARC-04"
+      },
+      {
+        "head": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827",
+        "path": "components/arch-steering-redundancy",
+        "repository_id": "ARC-08"
+      },
+      {
+        "head": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+        "path": "components/arch-suspension-monitor",
+        "repository_id": "ARC-09"
+      },
+      {
+        "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+        "path": "components/arch-vehicle-safety",
+        "repository_id": "ARC-10"
+      },
+      {
+        "head": "258ba5ba20acffb8b4c16f0d7e905611498a1928",
+        "path": "components/arch-vehicle-state",
+        "repository_id": "ARC-06"
+      }
+    ],
+    "refs": {
+      "refs/heads/main": "43d3360c130d347dc3e2d818b25dc0e8716abc9f"
+    },
+    "scope": "All tracked files of the scored target; excludes untracked build caches and dependency worktrees. Text line counts include generated and test files and are not production LOC.",
+    "source_lines_by_extension": {
+      ".m": 63,
+      ".py": 213
+    },
+    "tracked_file_count": 12
+  },
+  "center": "架构中心",
+  "conclusion": "Bounded structural and business proxy with declared deviations; not a full production distribution reproduction or independent holdout.",
+  "deviations": [
+    "扫描文件总数为5，本仓跟踪文件为12；统计范围不同且规模明显压缩，不声明生产整仓体量等价。",
+    "历史为本次真实构造/修复提交，未复制扫描中的大量分支/tag或虚构长期研发史。",
+    "仅提供了结构、模式和汇总，内部算法、标定值及全部生产依赖未提供；不能据此宣称业务实现相同。",
+    "扫描默认HEAD为空；交付主线直接提供可运行内容并固定评测HEAD，此处选择可用性，不伪造空壳默认分支。"
+  ],
+  "head": "43d3360c130d347dc3e2d818b25dc0e8716abc9f",
+  "id": "ARC-07",
+  "implementation_kind": "integration",
+  "matched_traits": [
+    "采用integration实现并保留umbrella的主要组织形态；以最终源码及构建入口核对。",
+    "业务为新编写的可执行有界切片；声明的模块、配置和接口具有实际调用方。"
+  ],
+  "observed": {
+    "branches": 20,
+    "build_label": "umbrella",
+    "commit_count": 32,
+    "default_head_empty": true,
+    "extensions": {
+      ".m": 1,
+      ".md": 2,
+      ".xlsx": 1,
+      "<noext>": 1
+    },
+    "file_count": 5,
+    "tags": 98
+  },
+  "repairs": [
+    "采用九个真实Git子模块与版本/字节锁定；三个联合MATLAB场景实际连接九模型。"
+  ],
+  "schema": "center-scan-profile-comparison-1",
+  "source_basis": {
+    "document_sha256": "3c520994ae277431da28042e8fadfc90ac69cd273985b98b04ccc4157bb65282",
+    "original_names": "Retained only in the local supplied-scan mapping",
+    "section_line": 27258,
+    "selection": "One supplied per-repository joint structural prototype; no target-score selection",
+    "spec_line": 27336
+  },
+  "target": {
+    "business": "motion_integration",
+    "layout": "umbrella",
+    "planned_production_units": 0,
+    "repository_owned_tests": false
+  },
+  "tree": "208682dfe483e0af4cbc86fef09a6f9d68ded7f2",
+  "unknowns": [
+    "Scanner test_case_count=0 is not evidence that tests are absent.",
+    "Reported HTML percentages are not accepted as actual test coverage unless the report semantics and execution binding are verified.",
+    "Some large-source scans stop at 2500 source files; capped values are not whole-repository counts."
+  ]
+}

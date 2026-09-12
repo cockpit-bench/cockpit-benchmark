@@ -1,0 +1,178 @@
+{
+  "actual": {
+    "bytes": 1266700,
+    "commit_count": 1,
+    "extensions": {
+      ".a2l": 1,
+      ".c": 3,
+      ".css": 2,
+      ".csv": 1,
+      ".cvt": 1,
+      ".gif": 27,
+      ".h": 4,
+      ".html": 3,
+      ".js": 2,
+      ".json": 1,
+      ".m": 4,
+      ".mat": 2,
+      ".md": 4,
+      ".mdl": 4,
+      ".png": 2,
+      ".slx": 7,
+      ".txt": 1,
+      ".xlsx": 1,
+      "<noext>": 2
+    },
+    "gitlinks": [],
+    "model_census": {
+      "production_model_count": 10,
+      "root_expanded_block_count": 130,
+      "root_expanded_block_types": [
+        {
+          "count": 1,
+          "type": "Abs"
+        },
+        {
+          "count": 20,
+          "type": "Constant"
+        },
+        {
+          "count": 12,
+          "type": "DataTypeConversion"
+        },
+        {
+          "count": 1,
+          "type": "Gain"
+        },
+        {
+          "count": 25,
+          "type": "Inport"
+        },
+        {
+          "count": 13,
+          "type": "Logic"
+        },
+        {
+          "count": 15,
+          "type": "Outport"
+        },
+        {
+          "count": 9,
+          "type": "RelationalOperator"
+        },
+        {
+          "count": 4,
+          "type": "Saturate"
+        },
+        {
+          "count": 9,
+          "type": "SubSystem"
+        },
+        {
+          "count": 6,
+          "type": "Sum"
+        },
+        {
+          "count": 8,
+          "type": "Switch"
+        },
+        {
+          "count": 7,
+          "type": "UnitDelay"
+        }
+      ]
+    },
+    "refs": {
+      "refs/heads/main": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67"
+    },
+    "scope": "All tracked files of the scored target; excludes untracked build caches and dependency worktrees. Text line counts include generated and test files and are not production LOC.",
+    "source_lines_by_extension": {
+      ".c": 577,
+      ".h": 457,
+      ".m": 65
+    },
+    "tracked_file_count": 72
+  },
+  "center": "架构中心",
+  "conclusion": "Bounded structural and business proxy with declared deviations; not a full production distribution reproduction or independent holdout.",
+  "deviations": [
+    "扫描文件总数为1319，本仓跟踪文件为72；统计范围不同且规模明显压缩，不声明生产整仓体量等价。",
+    "历史为本次真实构造/修复提交，未复制扫描中的大量分支/tag或虚构长期研发史。",
+    "仅提供了结构、模式和汇总，内部算法、标定值及全部生产依赖未提供；不能据此宣称业务实现相同。",
+    "模型规模及工作簿模板为有界投影；没有补造扫描缺失的保护组件、认证、BTC、ECU或C语句覆盖记录。"
+  ],
+  "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+  "id": "ARC-10",
+  "implementation_kind": "matlab",
+  "matched_traits": [
+    "采用matlab实现并保留legacy_toolchain的主要组织形态；以最终源码及构建入口核对。",
+    "业务为新编写的可执行有界切片；声明的模块、配置和接口具有实际调用方。"
+  ],
+  "observed": {
+    "branches": 154,
+    "build_label": "matlab",
+    "commit_count": 235,
+    "default_head_empty": false,
+    "extensions": {
+      ".a2l": 11,
+      ".arxml": 11,
+      ".c": 87,
+      ".css": 6,
+      ".cvf": 1,
+      ".doc": 7,
+      ".fig": 3,
+      ".gif": 150,
+      ".h": 125,
+      ".html": 161,
+      ".js": 2,
+      ".m": 550,
+      ".mdl": 68,
+      ".mexw32": 3,
+      ".mexw64": 4,
+      ".png": 8,
+      ".pptx": 16,
+      ".r2013b": 3,
+      ".slx": 24,
+      ".tmp": 1,
+      ".txt": 36,
+      ".xlsm": 13,
+      ".xlsx": 22,
+      ".zip": 1,
+      "<noext>": 1
+    },
+    "file_count": 1319,
+    "model_scan": {
+      "a2l_count": 11,
+      "block_census": {},
+      "generated_c_files": 212,
+      "p_file_count": 0,
+      "scope": "The supplied model census can cover only sampled files; zero values from unsupported legacy parsing are unknown, not absence.",
+      "total_model_refs": 0,
+      "total_sfunctions": 0,
+      "total_subsystems": 0,
+      "xls_count": 22
+    },
+    "tags": 147
+  },
+  "repairs": [],
+  "schema": "center-scan-profile-comparison-1",
+  "source_basis": {
+    "document_sha256": "afad9102ede5bfa50557473305465ce5598d3855e28e2c8026d896dda6d02406",
+    "original_names": "Retained only in the local supplied-scan mapping",
+    "section_line": 5943,
+    "selection": "One supplied per-repository joint structural prototype; no target-score selection",
+    "spec_line": 6116
+  },
+  "target": {
+    "business": "vehicle_safety",
+    "layout": "legacy_toolchain",
+    "planned_production_units": 10,
+    "repository_owned_tests": true
+  },
+  "tree": "3085c2803f5add13a353c69f2beaf22e0bc177b8",
+  "unknowns": [
+    "Scanner test_case_count=0 is not evidence that tests are absent.",
+    "Reported HTML percentages are not accepted as actual test coverage unless the report semantics and execution binding are verified.",
+    "Some large-source scans stop at 2500 source files; capped values are not whole-repository counts."
+  ]
+}

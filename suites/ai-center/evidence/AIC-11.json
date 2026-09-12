@@ -1,0 +1,486 @@
+{
+  "execution": {
+    "limits": [
+      "Android runtime is one API35 x86_64 emulator, not a physical device or vehicle acceptance.",
+      "Execution is maintainer verification, not remote CI, candidate/model evaluation or independent holdout.",
+      "The full UI scenarios were replayed after final APK reconstruction; runtime artifact SHA matches the final build result. Bitwise deterministic APK builds are not claimed.",
+      "The published source history has provenance metadata normalized. Original executed HEAD/tree and byte-equivalence evidence are retained explicitly; this metadata operation is not a new native run."
+    ],
+    "records": [
+      {
+        "path": "suites/ai-center/execution/AIC-11.json",
+        "sha256": "368081e6b5b2a963778173d7f771dd76cc2114f15872bcfbda80bbaca110f2e1"
+      }
+    ],
+    "status": "passed"
+  },
+  "head": "b0851c013d9996e553cca4f58c2f787d06bf6b0f",
+  "id": "AIC-11",
+  "reference": {
+    "contract": {
+      "path": "suites/center-contracts/software.json",
+      "sha256": "29ff2679ff5beb8d16b77238f6803e1979d7ccae0c148f7eacfdacfa09213012"
+    },
+    "head": "b0851c013d9996e553cca4f58c2f787d06bf6b0f",
+    "id": "AIC-11",
+    "leaves": [
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: object LegacySession",
+            "path": "legacy-common/src/main/java/org/bench/personalhall/common/LegacySession.kt",
+            "sha256": "1d9dcd0e9240119cdc3add1388c37665cb5bc2efa2881f0d10a0629477773935",
+            "symbol": "object LegacySession"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class GarageScreen",
+            "path": "app/src/main/java/org/bench/personalhall/GarageScreen.kt",
+            "sha256": "aba8af81f77a22006dbe32787e51dbe119742d10a0264da627765e0e7474b0f7",
+            "symbol": "class GarageScreen"
+          }
+        ],
+        "limitations": [
+          "LegacySession 共享单例贯穿业务；多个页面直接调用缓存、积分和设备状态。"
+        ],
+        "max_score": 3,
+        "name": "architecture.layering",
+        "reason": "六模块按缓存、账号、车辆、服务和 app 分组，具有实际业务。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: implementation project",
+            "path": "feature-services/build.gradle",
+            "sha256": "48dba3d7eee6a3029e635b1e249c4a71359872465e9ebee97f758fd4651eec36",
+            "symbol": "implementation project"
+          },
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: class LegacyGraph",
+            "path": "app/src/main/java/org/bench/personalhall/LegacyGraph.kt",
+            "sha256": "c7dfb0bd2ce2cb2c8559586bf1792190c843784989a3cc5d18e1867f430660c3",
+            "symbol": "class LegacyGraph"
+          }
+        ],
+        "limitations": [
+          "feature-services 依赖账号与车辆具体实现；app 通过 LegacyGraph 访问所有具体对象。"
+        ],
+        "max_score": 3,
+        "name": "architecture.modularity",
+        "reason": "账号、车辆、缓存、服务准入有真实实现，36项服务共用这些部件。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class ServiceAdmission",
+            "path": "feature-services/src/main/java/org/bench/personalhall/services/ServiceAdmission.kt",
+            "sha256": "a5cfc3172fa5b35e170f20040284a5f8fb215ca1005bb5fb7d557520864bd2d0",
+            "symbol": "class ServiceAdmission"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: lateinit var preferences",
+            "path": "legacy-common/src/main/java/org/bench/personalhall/common/LegacySession.kt",
+            "sha256": "1d9dcd0e9240119cdc3add1388c37665cb5bc2efa2881f0d10a0629477773935",
+            "symbol": "lateinit var preferences"
+          }
+        ],
+        "limitations": [
+          "没有可替换的账户/车辆/缓存仓储接口。"
+        ],
+        "max_score": 3,
+        "name": "architecture.dependency_inversion",
+        "reason": "业务直接依赖具体 AccountStore/GarageStore 和进程全局偏好。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "ca2030beae73bdf3618af3ade92f04d3dd6d45cd2a6f75fbef276f543d520ce8",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "本机Gradle构建和维护者脚本不冒称仓内或远端CI。"
+        ],
+        "max_score": 3,
+        "name": "compilation.ci_independence",
+        "reason": "完整Git跟踪清单没有CI工作流/流水线配置。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 2,
+            "locator": "line 2: compileSdk 34",
+            "path": "app/build.gradle",
+            "sha256": "3cb175fcb1fbd6a23fabe084c400473360d8669d62ad25103f130c0e116cb0b6",
+            "symbol": "compileSdk 34"
+          },
+          {
+            "kind": "file",
+            "line": 1,
+            "locator": "line 1: version '8.3.0'",
+            "path": "build.gradle",
+            "sha256": "b9063dc2274b91928219fea705f2b471a37fb4472d1089c1e0a01b1fd0086f88",
+            "symbol": "version '8.3.0'"
+          }
+        ],
+        "limitations": [
+          "仍依赖Android SDK与固定包缓存/下载；未提供公开接口版本兼容合同，保守取包边界档。"
+        ],
+        "max_score": 3,
+        "name": "compilation.build_independence",
+        "reason": "Gradle8.4、AGP8.3.0、Kotlin1.9.22、SDK34版本明确，所有本仓模块可独立构建成APK/AAR。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: defaultConfig",
+            "path": "app/build.gradle",
+            "sha256": "3cb175fcb1fbd6a23fabe084c400473360d8669d62ad25103f130c0e116cb0b6",
+            "symbol": "defaultConfig"
+          }
+        ],
+        "limitations": [
+          "versionName、数据库版本和卡片递增revision都不能替代API版本。"
+        ],
+        "max_score": 3,
+        "name": "compilation.api_version",
+        "reason": "没有独立的公共API语义版本或兼容检查。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class GarageScreen",
+            "path": "app/src/main/java/org/bench/personalhall/GarageScreen.kt",
+            "sha256": "aba8af81f77a22006dbe32787e51dbe119742d10a0264da627765e0e7474b0f7",
+            "symbol": "class GarageScreen"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class AccountStore",
+            "path": "feature-account/src/main/java/org/bench/personalhall/account/AccountStore.kt",
+            "sha256": "ae45122f0ee0a00fe662895699f9e29ae8be8b7f795c59357c3eb3ef7c33e262",
+            "symbol": "class AccountStore"
+          }
+        ],
+        "limitations": [
+          "GarageScreen 同时处理车辆、行驶、联网、缓存过期/回滚测试，AccountStore 混合会员/主题/积分。"
+        ],
+        "max_score": 4,
+        "name": "solid.single_responsibility",
+        "reason": "一些模型、查找与卡片排序已分文件。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: fun content",
+            "path": "feature-services/src/main/java/org/bench/personalhall/services/ServiceGuides.kt",
+            "sha256": "48998eb82caa3e9f7b90bc26d937f4020c37b863932218c5c6d9fa03625153b9",
+            "symbol": "fun content"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: fun reason",
+            "path": "feature-services/src/main/java/org/bench/personalhall/services/ServiceAdmission.kt",
+            "sha256": "a5cfc3172fa5b35e170f20040284a5f8fb215ca1005bb5fb7d557520864bd2d0",
+            "symbol": "fun reason"
+          }
+        ],
+        "limitations": [
+          "特殊指南、准入类型、账户字段和路由仍靠多处固定分支变更。"
+        ],
+        "max_score": 4,
+        "name": "solid.open_closed",
+        "reason": "36项目录和主题/场景可以数据化增加。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: class CatalogCache",
+            "path": "card-cache/src/main/java/org/bench/personalhall/cache/CatalogCache.kt",
+            "sha256": "2bc761c7cd5a7e5071ac7689fedd742db63922e20b6f4a31ec21456b576ca1ea",
+            "symbol": "class CatalogCache"
+          }
+        ],
+        "limitations": [
+          "没有适用的替换实现/合同，按中档而非满分。"
+        ],
+        "max_score": 4,
+        "name": "solid.liskov_substitution",
+        "reason": "未发现有具体冲突的自定义继承关系。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: object LegacySession",
+            "path": "legacy-common/src/main/java/org/bench/personalhall/common/LegacySession.kt",
+            "sha256": "1d9dcd0e9240119cdc3add1388c37665cb5bc2efa2881f0d10a0629477773935",
+            "symbol": "object LegacySession"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class AccountStore",
+            "path": "feature-account/src/main/java/org/bench/personalhall/account/AccountStore.kt",
+            "sha256": "ae45122f0ee0a00fe662895699f9e29ae8be8b7f795c59357c3eb3ef7c33e262",
+            "symbol": "class AccountStore"
+          }
+        ],
+        "limitations": [
+          "LegacySession 向所有特征暴露整个 SharedPreferences 与账户/联网/行驶状态，缺少消费者专用接口。"
+        ],
+        "max_score": 4,
+        "name": "solid.interface_segregation",
+        "reason": "部分工具方法粒度较小。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: class ServiceAdmission",
+            "path": "feature-services/src/main/java/org/bench/personalhall/services/ServiceAdmission.kt",
+            "sha256": "a5cfc3172fa5b35e170f20040284a5f8fb215ca1005bb5fb7d557520864bd2d0",
+            "symbol": "class ServiceAdmission"
+          },
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: class CardArrangement",
+            "path": "feature-account/src/main/java/org/bench/personalhall/account/CardArrangement.kt",
+            "sha256": "aecd996ca6f7b685fadcc6892b672ec96e045194a2a54603aa1ccc5edfc47267",
+            "symbol": "class CardArrangement"
+          }
+        ],
+        "limitations": [
+          "更换存储/身份实现必须跨业务文件修改。"
+        ],
+        "max_score": 4,
+        "name": "solid.dependency_inversion",
+        "reason": "服务准入依赖账户/车库具体类，持久化偏好直接从单例取得。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 8,
+            "locator": "line 8: fun initialize",
+            "path": "legacy-common/src/main/java/org/bench/personalhall/common/LegacySession.kt",
+            "sha256": "1d9dcd0e9240119cdc3add1388c37665cb5bc2efa2881f0d10a0629477773935",
+            "symbol": "fun initialize"
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: class CatalogCache",
+            "path": "card-cache/src/main/java/org/bench/personalhall/cache/CatalogCache.kt",
+            "sha256": "2bc761c7cd5a7e5071ac7689fedd742db63922e20b6f4a31ec21456b576ca1ea",
+            "symbol": "class CatalogCache"
+          }
+        ],
+        "limitations": [
+          "SharedPreferences/Context/SQLite 与业务广泛混合，升级可能影响多模块。"
+        ],
+        "max_score": 3,
+        "name": "platform.upgrade",
+        "reason": "使用公开 Android API，没有私有OEM调用。",
+        "score": 1,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: val vehicles=",
+            "path": "feature-garage/src/main/java/org/bench/personalhall/garage/GarageStore.kt",
+            "sha256": "3d039ebd454ec8c8d101d4dc3a4e300164ce52cc3664acf582cdbcf4c0b09a14",
+            "symbol": "val vehicles="
+          },
+          {
+            "kind": "file",
+            "line": 7,
+            "locator": "line 7: service.evOnly",
+            "path": "feature-services/src/main/java/org/bench/personalhall/services/ServiceAdmission.kt",
+            "sha256": "a5cfc3172fa5b35e170f20040284a5f8fb215ca1005bb5fb7d557520864bd2d0",
+            "symbol": "service.evOnly"
+          }
+        ],
+        "limitations": [
+          "能力值和车辆目录仍在 GarageStore 硬编码，设备差异没有完全封装为适配合同。"
+        ],
+        "max_score": 3,
+        "name": "platform.device_specificity",
+        "reason": "三种车辆配置被实际使用，EV与HEV的准入差异已在UI验证。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: rootProject.name=",
+            "path": "settings.gradle",
+            "sha256": "ca2030beae73bdf3618af3ade92f04d3dd6d45cd2a6f75fbef276f543d520ce8",
+            "symbol": "rootProject.name="
+          }
+        ],
+        "limitations": [
+          "不伪造历史tags或设备分支；主题/场景变化不自动等同分支策略。"
+        ],
+        "max_score": 3,
+        "name": "platform.branch_strategy",
+        "reason": "只有本次本地main实际建设提交，没有已实施的多平台分支/变体策略。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 6,
+            "locator": "line 6: fun reserve",
+            "path": "card-cache/src/main/java/org/bench/personalhall/cache/BookingStore.kt",
+            "sha256": "d8c732742cbfcd8cb5dcb3dbb5f6c6bb592786db20442d8308fc898084d4f390",
+            "symbol": "fun reserve"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class AccountScreen",
+            "path": "app/src/main/java/org/bench/personalhall/AccountScreen.kt",
+            "sha256": "34bb7e5936f1f6bb96c057722434e2b6a01194a7cb8e2e9c40b11d1a38347d0a",
+            "symbol": "class AccountScreen"
+          },
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: class GarageScreen",
+            "path": "app/src/main/java/org/bench/personalhall/GarageScreen.kt",
+            "sha256": "aba8af81f77a22006dbe32787e51dbe119742d10a0264da627765e0e7474b0f7",
+            "symbol": "class GarageScreen"
+          }
+        ],
+        "limitations": [
+          "UI和偏好处理在多个页面重复，老式共享状态的维护点较多；未将JSON数据/协议字段算作重复逻辑。"
+        ],
+        "max_score": 3,
+        "name": "quality.duplication",
+        "reason": "预订去重/取消集中在 BookingStore，目录过滤和卡片编排各有单一实现。",
+        "score": 2,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 5,
+            "locator": "line 5: fun claimDaily",
+            "path": "feature-account/src/main/java/org/bench/personalhall/account/RewardBook.kt",
+            "sha256": "da4281399a923bae0bfffad601aece04efd563ca5bd00341ba1caf75ad99673c",
+            "symbol": "fun claimDaily"
+          },
+          {
+            "kind": "file",
+            "line": 9,
+            "locator": "line 9: fun recordTrip",
+            "path": "feature-garage/src/main/java/org/bench/personalhall/garage/GarageStore.kt",
+            "sha256": "3d039ebd454ec8c8d101d4dc3a4e300164ce52cc3664acf582cdbcf4c0b09a14",
+            "symbol": "fun recordTrip"
+          },
+          {
+            "kind": "file",
+            "line": 3,
+            "locator": "line 3: object PreferenceList",
+            "path": "legacy-common/src/main/java/org/bench/personalhall/common/PreferenceList.kt",
+            "sha256": "6277287ae3844df512daee9a3a2dd3eee86f59c4f45754224a5eb38492d1f44e",
+            "symbol": "object PreferenceList"
+          }
+        ],
+        "limitations": [
+          "模块存在不能替代平台隔离。"
+        ],
+        "max_score": 3,
+        "name": "platform.coupling",
+        "reason": "卡片排序、积分、车库等业务均经 LegacySession 直接写 Android 偏好，平台调用未受控。",
+        "score": 0,
+        "status": "scored"
+      },
+      {
+        "evidence": [
+          {
+            "kind": "file",
+            "line": 4,
+            "locator": "line 4: include ':app'",
+            "path": "settings.gradle",
+            "sha256": "ca2030beae73bdf3618af3ade92f04d3dd6d45cd2a6f75fbef276f543d520ce8",
+            "symbol": "include ':app'"
+          }
+        ],
+        "limitations": [
+          "仓外UI验证账户隔离/深链/配置/队列/缓存，只作为运行证据。"
+        ],
+        "max_score": 3,
+        "name": "quality.integration_test",
+        "reason": "该画像没有仓内测试，完整Git清单确认。",
+        "score": 0,
+        "status": "scored"
+      }
+    ],
+    "review_scope": "Source inspection and scoped actual execution, with cross-review of identified issues. Not blind gold or independent holdout.",
+    "status": "maintainer_reviewed",
+    "tree": "821f678bbfae87d485bfd6b208a32606521d9f16"
+  },
+  "schema": "center-source-evidence-1",
+  "tree": "821f678bbfae87d485bfd6b208a32606521d9f16"
+}

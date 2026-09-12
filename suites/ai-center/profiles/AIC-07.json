@@ -1,0 +1,106 @@
+{
+  "actual": {
+    "bytes": 114583,
+    "commit_count": 2,
+    "extensions": {
+      ".bat": 1,
+      ".conf": 1,
+      ".cpp": 12,
+      ".csv": 1,
+      ".gradle": 3,
+      ".hpp": 6,
+      ".jar": 1,
+      ".java": 3,
+      ".md": 3,
+      ".properties": 2,
+      ".rules": 1,
+      ".txt": 2,
+      ".xml": 1,
+      "<noext>": 4
+    },
+    "gitlinks": [],
+    "refs": {
+      "refs/heads/main": "8394177bed790a0c0ba557d87931e00bb0b13235"
+    },
+    "scope": "All tracked files of the scored target; excludes untracked build caches and dependency worktrees. Text line counts include generated and test files and are not production LOC.",
+    "source_lines_by_extension": {
+      ".cpp": 832,
+      ".hpp": 172,
+      ".java": 60
+    },
+    "tracked_file_count": 41
+  },
+  "center": "人工智能中心",
+  "conclusion": "Bounded structural and business proxy with declared deviations; not a full production distribution reproduction or independent holdout.",
+  "deviations": [
+    "扫描文件总数为1645，本仓跟踪文件为41；统计范围不同且规模明显压缩，不声明生产整仓体量等价。",
+    "历史为本次真实构造/修复提交，未复制扫描中的大量分支/tag或虚构长期研发史。",
+    "仅提供了结构、模式和汇总，内部算法、标定值及全部生产依赖未提供；不能据此宣称业务实现相同。",
+    "扫描默认HEAD为空；交付主线直接提供可运行内容并固定评测HEAD，此处选择可用性，不伪造空壳默认分支。"
+  ],
+  "head": "8394177bed790a0c0ba557d87931e00bb0b13235",
+  "id": "AIC-07",
+  "implementation_kind": "native_cpp",
+  "matched_traits": [
+    "采用native_cpp实现并保留native_jni的主要组织形态；以最终源码及构建入口核对。",
+    "业务为新编写的可执行有界切片；声明的模块、配置和接口具有实际调用方。"
+  ],
+  "observed": {
+    "branches": 82,
+    "build_label": "gradle",
+    "commit_count": 715,
+    "default_head_empty": true,
+    "extensions": {
+      ".bp": 26,
+      ".class": 8,
+      ".cmake": 13,
+      ".cpp": 482,
+      ".csv": 12,
+      ".h": 455,
+      ".in": 25,
+      ".jar": 4,
+      ".java": 13,
+      ".json": 167,
+      ".kt": 26,
+      ".kts": 3,
+      ".md": 18,
+      ".pl": 26,
+      ".png": 14,
+      ".puml": 15,
+      ".py": 17,
+      ".sh": 18,
+      ".svg": 24,
+      ".txt": 159,
+      ".webp": 10,
+      ".wsd": 14,
+      ".xml": 58,
+      ".zdl": 3,
+      "<noext>": 10
+    },
+    "file_count": 1645,
+    "tags": 699
+  },
+  "repairs": [
+    "按文件与构建证据判为native核心加Android/JNI外壳，不按误导性的单个gradle标签重建为纯APP。"
+  ],
+  "schema": "center-scan-profile-comparison-1",
+  "source_basis": {
+    "document_sha256": "22e81b7f45ffc6231582c5d72a5fa49769d65942e783b8f2d5929b67069ea520",
+    "original_names": "Retained only in the local supplied-scan mapping",
+    "section_line": 8440,
+    "selection": "One supplied per-repository joint structural prototype; no target-score selection",
+    "spec_line": 8613
+  },
+  "target": {
+    "business": "rule_engine",
+    "layout": "native_jni",
+    "planned_production_units": 0,
+    "repository_owned_tests": true
+  },
+  "tree": "90303ff3a3998adb99784c4b3017c5846ffa440a",
+  "unknowns": [
+    "Scanner test_case_count=0 is not evidence that tests are absent.",
+    "Reported HTML percentages are not accepted as actual test coverage unless the report semantics and execution binding are verified.",
+    "Some large-source scans stop at 2500 source files; capped values are not whole-repository counts."
+  ]
+}

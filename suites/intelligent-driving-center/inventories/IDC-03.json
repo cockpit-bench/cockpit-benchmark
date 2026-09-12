@@ -1,0 +1,59 @@
+{
+  "bytes": 67264,
+  "clean": true,
+  "commit_count": 5,
+  "default_ref": "refs/heads/main",
+  "evaluation_ref": "refs/heads/main",
+  "extensions": {
+    ".json": 3,
+    ".md": 2,
+    ".ps1": 1,
+    ".py": 5,
+    "<noext>": 2
+  },
+  "file_bytes": {
+    ".gitattributes": 44,
+    ".gitignore": 46,
+    "README.md": 3331,
+    "SOURCE_ORIGIN.md": 636,
+    "buildflow/__init__.py": 65,
+    "buildflow/__main__.py": 2267,
+    "buildflow/contracts.py": 5990,
+    "buildflow/engine.py": 14032,
+    "components.lock.json": 22853,
+    "products.json": 7195,
+    "scan-profile.json": 747,
+    "scripts/Build-Product.ps1": 645,
+    "tests/test_buildflow.py": 9413
+  },
+  "files": {
+    ".gitattributes": "eca0301728922494ffa0ace497e170eb62651cf99f908188312fe3e634cb2bc4",
+    ".gitignore": "43f2e4065dc8c9a84b873fe85f8326fcdf4b1852e9021f0e4f75d593095b848a",
+    "README.md": "2300e89b53537f90598453102d36b9525a087d5ed7935e108981905a96247320",
+    "SOURCE_ORIGIN.md": "74d99e967451f6938bd828b29151e8a09d06f9ebf04c932dc1c99b4f4b857295",
+    "buildflow/__init__.py": "bfca0b4fa376d0277d7ceb42c80a2377979432d317ac0aafe7ac44072e7322f8",
+    "buildflow/__main__.py": "25a36ae43e32b551e0cf8cabb4a763f30bf9b21c4a6d192196beda632f0f1624",
+    "buildflow/contracts.py": "16e6250665ac8a3a6b6d243c71e94ea6b21af2fcc2d742b7f44c13cd98b89e45",
+    "buildflow/engine.py": "66560f6c195f9a0ea6e27c7d7a7c78b6a32d20cecca0ab11b011728a1116d077",
+    "components.lock.json": "9c4cee60ac9fea52b8d93f8af567c52fe83006e1fa19d39dbf7c8ed376593c4c",
+    "products.json": "cc63993c8be3ccd94e4e3b3e10474db8a8a86bfcb1366e8e9879d063c4844ac2",
+    "scan-profile.json": "ae3eb84ddb42e10aa6451da7d534d1ed65ee9d283a752733caccbefeb02bba95",
+    "scripts/Build-Product.ps1": "a907cf23b23394e346159681819572a3131bf717f2a9f1c9ed89be8a045ca675",
+    "tests/test_buildflow.py": "797665f6cc61629f8c53e1752f6b2bb642fa66ccbf2dc1288ecdbcc6fdbd651d"
+  },
+  "full_history": true,
+  "gitlinks": [],
+  "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+  "id": "IDC-03",
+  "name": "drive-build-orchestrator",
+  "refs": {
+    "refs/heads/main": "2cba4820803c8efe60859103d44d62fd8f833ff9"
+  },
+  "remote_count": 0,
+  "source_lines_by_extension": {
+    ".py": 629
+  },
+  "tracked_file_count": 13,
+  "tree": "0126c386fb81044f3feedfa2c828e83bc7ce6bdf",
+  "worktree_equals_git_blobs": true
+}

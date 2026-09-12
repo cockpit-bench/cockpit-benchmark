@@ -1,0 +1,271 @@
+{
+  "checks": {
+    "compiled_types_passed": true,
+    "configuration_test": {
+      "configurations": [
+        {
+          "changedOutputs": 0,
+          "comparisons": 2560,
+          "configuration": "compact",
+          "maximumAbsoluteError": 5.108969558520471e-08,
+          "passed": true,
+          "samples": 640
+        },
+        {
+          "changedOutputs": 1061,
+          "comparisons": 2560,
+          "configuration": "utility",
+          "maximumAbsoluteError": 4.051253177372871e-08,
+          "passed": true,
+          "samples": 640
+        }
+      ],
+      "engine": "Simulink normal mode",
+      "module": "ParkingState",
+      "passed": true
+    },
+    "host_comparisons": 2560,
+    "host_samples": 640,
+    "mil_samples": 640,
+    "numeric_mismatches": 0,
+    "output_comparisons": 2560,
+    "unit_test": {
+      "cStatementCoverageMeasured": false,
+      "comparisons": 2560,
+      "engine": "MATLAB 2023b Simulink normal",
+      "maxAbsoluteError": 5.108969558520471e-08,
+      "modelCoverage": {
+        "condition": [
+          47,
+          54
+        ],
+        "decision": [
+          34,
+          38
+        ],
+        "mcdc": [
+          6,
+          11
+        ]
+      },
+      "modelCoverageMeasured": true,
+      "module": "ParkingState",
+      "passed": true,
+      "samples": 640
+    }
+  },
+  "engines": [
+    "MATLAB R2023b Simulink normal mode",
+    "Embedded Coder ERT output compiled and executed by MinGW GCC 8.1 x86-64"
+  ],
+  "head": "e629895f0302ae51e7f229794f72a9e06edbe183",
+  "id": "IDC-09",
+  "limits": [
+    "MIL and host replay only; no physical device, ECU, SIL/PIL/HIL, BTC or certification.",
+    "Simulink coverage is distinct from generated C statement coverage; C statement coverage was not measured.",
+    "Independent equations and configured scenarios are maintainer checks, not candidate-model evaluation or blind gold."
+  ],
+  "raw_packet": {
+    "bytes": 13886791,
+    "format": "candidate-raw-inputs-v1",
+    "name": "center-native-inputs-v0.12.0.zip",
+    "release_url": "https://github.com/cockpit-bench/cockpit-benchmark/releases/tag/v0.12.0",
+    "sha256": "d0d076424d5a83516bff67997779a1bc5125daa408c1ab52d025930cf72c348a",
+    "sources": {
+      "AIC-01": {
+        "head": "554118dcaed430f1712f1ac5c4be9ae9fc91e749",
+        "tree": "f7744f765c475125f20b2f83f31116a2c160c15a"
+      },
+      "AIC-02": {
+        "head": "69582afa41f69548179a6e8db297b326454ee4d3",
+        "tree": "5255217dbee9c9c032432b474b3aeab4a3f7d320"
+      },
+      "AIC-03": {
+        "head": "b7dc0937f48bbcf3b163ce46dd70098d708bbe50",
+        "tree": "f49cbccd75d0b5d313d7f686ab759f255ac46355"
+      },
+      "AIC-04": {
+        "head": "2a2987de0db0d345c77748aafbfd3b693a6ca073",
+        "tree": "2d0b4fea320f52d2e8e9d2392f6115bcd57f59bb"
+      },
+      "AIC-05": {
+        "head": "2f94a73210da7bb69575b806c7f431183fec759b",
+        "tree": "76e61f200adb540622de3743613ebee40f700a47"
+      },
+      "AIC-06": {
+        "head": "33e6f4c186d1548c2906d74232a9ffa0ebde6996",
+        "tree": "156371a7dfc973a2123010b9bb5c385639793ded"
+      },
+      "AIC-07": {
+        "head": "8394177bed790a0c0ba557d87931e00bb0b13235",
+        "tree": "90303ff3a3998adb99784c4b3017c5846ffa440a"
+      },
+      "AIC-08": {
+        "head": "58b1e989cf25e7431717b6c7a5b43ae8856962ec",
+        "tree": "e39b8dd3fe29167a2aad5eeba90147fb15a12a50"
+      },
+      "AIC-09": {
+        "head": "ed34ae9126eed17cc34806a0ab60e3b7f68fc071",
+        "tree": "0e80e150bbaf4c2e1f5a94045860c87498b463ac"
+      },
+      "AIC-10": {
+        "head": "04ecdf17210613d85535e4a51efd1a61ec3fab40",
+        "tree": "5119dd42132a3855a8e9db74658438e53c35ab7c"
+      },
+      "AIC-11": {
+        "head": "b0851c013d9996e553cca4f58c2f787d06bf6b0f",
+        "tree": "821f678bbfae87d485bfd6b208a32606521d9f16"
+      },
+      "ARC-01": {
+        "head": "bcd2260da9743271ffd2ed5d2b3da0b9f1794793",
+        "tree": "d05d608119d5b88086d9d077f9e6f2505dddf614"
+      },
+      "ARC-02": {
+        "head": "3919f7cf263b358c6d5bd75bc94911fdfe6b470d",
+        "tree": "70a72c0b2254efb4226a6fb19ad91be9aa47bbf7"
+      },
+      "ARC-03": {
+        "head": "c00b659f6a8003c62f56bec89f29896557aac022",
+        "tree": "10af906321d6cb8a8c0a1335ce6c8ca28932ddc7"
+      },
+      "ARC-04": {
+        "head": "3d1b82c43d854087fd5355452c21bafdadfad376",
+        "tree": "6d4ecc7d48a66c00f7b232917196b7995015a466"
+      },
+      "ARC-05": {
+        "head": "3e172ba8305a826f2e711782eab171dba9ab30a9",
+        "tree": "8af5b2293dfcd63936ecf6fbb553ab231b75c2c6"
+      },
+      "ARC-06": {
+        "head": "258ba5ba20acffb8b4c16f0d7e905611498a1928",
+        "tree": "6d2d152642b07aa4149c02c0982ddaf230a52c76"
+      },
+      "ARC-07": {
+        "head": "43d3360c130d347dc3e2d818b25dc0e8716abc9f",
+        "tree": "208682dfe483e0af4cbc86fef09a6f9d68ded7f2"
+      },
+      "ARC-08": {
+        "head": "344bb4b4ce19da1e5cfd2cbc00eaa089f8619827",
+        "tree": "f78aafac2df2c0eb3ff3a73cb10d23501f4eadf2"
+      },
+      "ARC-09": {
+        "head": "a990dbc493f1534eaefcf9ac1a57543191ed88f0",
+        "tree": "6a84feae70438c8f969d1ad35b7886ca20dbb7e5"
+      },
+      "ARC-10": {
+        "head": "fcc452edf6dd00b8bf99e045b82f460fd3d49c67",
+        "tree": "3085c2803f5add13a353c69f2beaf22e0bc177b8"
+      },
+      "ARC-11": {
+        "head": "204dab303944f787a4702e3dfb8d215b07ce0371",
+        "tree": "acac89513567bc9e4ee68c07397dafc9b746290f"
+      },
+      "IDC-01": {
+        "head": "ca9fa37711754fd3fccc1ada6145f75475a1649c",
+        "tree": "b2b6df534b7633fb0d8386dc886a9a3c9ff35822"
+      },
+      "IDC-02": {
+        "head": "7dc81b216d594b0bdee5fc1095a8296a8beef005",
+        "tree": "268b81e4c952971f5758f75d7a9bc944fc72713b"
+      },
+      "IDC-03": {
+        "head": "2cba4820803c8efe60859103d44d62fd8f833ff9",
+        "tree": "0126c386fb81044f3feedfa2c828e83bc7ce6bdf"
+      },
+      "IDC-04": {
+        "head": "257dcc87392c004a682b38b8df8645d5970997ab",
+        "tree": "52ecb01a014153e1d3895f15cd70cce512bf2cdf"
+      },
+      "IDC-05": {
+        "head": "9cbab3ba43d6f3388400b244f3b4ff356c3f17ff",
+        "tree": "a52ae34535e9dba329b2ae375c3b7eac78e9873b"
+      },
+      "IDC-06": {
+        "head": "0f4e6819ec2981f4a4170058402e7c8f6cf656a2",
+        "tree": "9c60b436285f8f63b768ff2c7caee7561c20bb87"
+      },
+      "IDC-07": {
+        "head": "30f934b48ae56ceee8c490ef655d6ef38c42dba7",
+        "tree": "530fd74a9901bf624d896edca3b4fd679fb3df7c"
+      },
+      "IDC-08": {
+        "head": "f0d4a2b60ddf8bd47968db7dc1f36c1f0ff1d7d1",
+        "tree": "6af5f27a12415791ff8abda0ecaea6f0317a77de"
+      },
+      "IDC-09": {
+        "head": "e629895f0302ae51e7f229794f72a9e06edbe183",
+        "tree": "25fbc686ebd7df7c69b7b5a8b3b9d50993688a92"
+      },
+      "IDC-10": {
+        "head": "13d83b57827247366cea13f88daba33234da8fc8",
+        "tree": "1fa6bbde6081ad3d00a5935fe70e6b4f8b13516c"
+      },
+      "IDC-11": {
+        "head": "fbb4014901ac35cd6b0083977eeee1e481d330c9",
+        "tree": "3fe05f9e66804cafa03b618d6465456b318b3b27"
+      }
+    }
+  },
+  "record_sha256": {
+    "IDC-09/compiled-interfaces.json": "2cb204eb34d168df911281e70f069589b0c5748aa320d21cf9a3d03c42910da2",
+    "IDC-09/final-model-census.json": "1c06213938a13266bc3aabbe14a3127e942dfe01ebd9d2a81a2a07a71c9d3998",
+    "IDC-09/host-build.log": "3a761806ea355b178a2a100fae8a4e3695b31c4e68e48c67aa83b2266210a48e",
+    "IDC-09/host-output.csv": "6fe072aca568d331627735caeb88d606cae5e6b8056e84629a3ac6af8a0718fa",
+    "IDC-09/host-result.json": "7e95c2bbd7321cc779fe11b666c98bc76ff0846a3238eb99b382a6f08e903701",
+    "IDC-09/native-inputs.mat": "c7f9270014941e002a86a9487628f1b936688d8e2dca2ab6782f307abb96d4b7",
+    "IDC-09/native-results.json": "3ab80a94a02e92fb9a54772ca7c9fbbdd49a7eb08a5686e503543e6990427c7a",
+    "IDC-09/reference-comparison.json": "bcc875042e974a319572ee73a182f97b84de9a2e7c57cdb4680dce80c1048c39",
+    "IDC-09/repository-records/result.json": "db8c232e32deb40aaddf752d73ddd5f69e7a1a258ffa85eff3660fe59bd64e10",
+    "IDC-09/repository-records/test-result.json": "f792ca7857e40d205a17e52411d44f395907861086e777b2f86877811148e83d",
+    "IDC-09/scenarios.json": "3d1316858db482f9268d9fa4da9e66a9d0a7df8a848c584cb231eadb018c1259"
+  },
+  "records": [
+    {
+      "path": "IDC-09/native-results.json",
+      "sha256": "3ab80a94a02e92fb9a54772ca7c9fbbdd49a7eb08a5686e503543e6990427c7a"
+    },
+    {
+      "path": "IDC-09/native-inputs.mat",
+      "sha256": "c7f9270014941e002a86a9487628f1b936688d8e2dca2ab6782f307abb96d4b7"
+    },
+    {
+      "path": "IDC-09/scenarios.json",
+      "sha256": "3d1316858db482f9268d9fa4da9e66a9d0a7df8a848c584cb231eadb018c1259"
+    },
+    {
+      "path": "IDC-09/compiled-interfaces.json",
+      "sha256": "2cb204eb34d168df911281e70f069589b0c5748aa320d21cf9a3d03c42910da2"
+    },
+    {
+      "path": "IDC-09/reference-comparison.json",
+      "sha256": "bcc875042e974a319572ee73a182f97b84de9a2e7c57cdb4680dce80c1048c39"
+    },
+    {
+      "path": "IDC-09/final-model-census.json",
+      "sha256": "1c06213938a13266bc3aabbe14a3127e942dfe01ebd9d2a81a2a07a71c9d3998"
+    },
+    {
+      "path": "IDC-09/repository-records/test-result.json",
+      "sha256": "f792ca7857e40d205a17e52411d44f395907861086e777b2f86877811148e83d"
+    },
+    {
+      "path": "IDC-09/repository-records/result.json",
+      "sha256": "db8c232e32deb40aaddf752d73ddd5f69e7a1a258ffa85eff3660fe59bd64e10"
+    },
+    {
+      "path": "IDC-09/host-result.json",
+      "sha256": "7e95c2bbd7321cc779fe11b666c98bc76ff0846a3238eb99b382a6f08e903701"
+    },
+    {
+      "path": "IDC-09/host-output.csv",
+      "sha256": "6fe072aca568d331627735caeb88d606cae5e6b8056e84629a3ac6af8a0718fa"
+    },
+    {
+      "path": "IDC-09/host-build.log",
+      "sha256": "3a761806ea355b178a2a100fae8a4e3695b31c4e68e48c67aa83b2266210a48e"
+    }
+  ],
+  "schema": "center-execution-summary-1",
+  "status": "passed",
+  "tree": "25fbc686ebd7df7c69b7b5a8b3b9d50993688a92"
+}

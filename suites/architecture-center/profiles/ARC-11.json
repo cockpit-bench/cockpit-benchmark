@@ -1,0 +1,73 @@
+{
+  "actual": {
+    "bytes": 13033,
+    "commit_count": 1,
+    "extensions": {
+      ".c": 10,
+      ".csv": 1,
+      ".h": 7,
+      ".md": 2,
+      ".txt": 1,
+      "<noext>": 4
+    },
+    "gitlinks": [],
+    "refs": {
+      "refs/heads/main": "204dab303944f787a4702e3dfb8d215b07ce0371"
+    },
+    "scope": "All tracked files of the scored target; excludes untracked build caches and dependency worktrees. Text line counts include generated and test files and are not production LOC.",
+    "source_lines_by_extension": {
+      ".c": 205,
+      ".h": 80
+    },
+    "tracked_file_count": 25
+  },
+  "center": "架构中心",
+  "conclusion": "Bounded structural and business proxy with declared deviations; not a full production distribution reproduction or independent holdout.",
+  "deviations": [
+    "扫描文件总数为47，本仓跟踪文件为25；统计范围不同且规模明显压缩，不声明生产整仓体量等价。",
+    "历史为本次真实构造/修复提交，未复制扫描中的大量分支/tag或虚构长期研发史。",
+    "仅提供了结构、模式和汇总，内部算法、标定值及全部生产依赖未提供；不能据此宣称业务实现相同。"
+  ],
+  "head": "204dab303944f787a4702e3dfb8d215b07ce0371",
+  "id": "ARC-11",
+  "implementation_kind": "native_c",
+  "matched_traits": [
+    "采用native_c实现并保留make_generated的主要组织形态；以最终源码及构建入口核对。",
+    "业务为新编写的可执行有界切片；声明的模块、配置和接口具有实际调用方。"
+  ],
+  "observed": {
+    "branches": 17,
+    "build_label": "make",
+    "commit_count": 25,
+    "default_head_empty": false,
+    "extensions": {
+      ".bat": 1,
+      ".c": 22,
+      ".h": 23,
+      ".mak": 1
+    },
+    "file_count": 47,
+    "tags": 18
+  },
+  "repairs": [],
+  "schema": "center-scan-profile-comparison-1",
+  "source_basis": {
+    "document_sha256": "afad9102ede5bfa50557473305465ce5598d3855e28e2c8026d896dda6d02406",
+    "original_names": "Retained only in the local supplied-scan mapping",
+    "section_line": 9506,
+    "selection": "One supplied per-repository joint structural prototype; no target-score selection",
+    "spec_line": 9595
+  },
+  "target": {
+    "business": "safety_runtime",
+    "layout": "make_generated",
+    "planned_production_units": 0,
+    "repository_owned_tests": false
+  },
+  "tree": "acac89513567bc9e4ee68c07397dafc9b746290f",
+  "unknowns": [
+    "Scanner test_case_count=0 is not evidence that tests are absent.",
+    "Reported HTML percentages are not accepted as actual test coverage unless the report semantics and execution binding are verified.",
+    "Some large-source scans stop at 2500 source files; capped values are not whole-repository counts."
+  ]
+}
